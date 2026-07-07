@@ -1,0 +1,65 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # ------------------------------------------------------
+    # 1️⃣ Redirect WWW → Non-WWW (preserve path)
+    # ------------------------------------------------------
+      # RewriteCond %{HTTP_HOST} ^www\.pcsglobalgroup\.com$ [NC]
+      # RewriteRule ^(.*)$ https://pcsglobalgroup.com/$1 [L,R=301]
+
+    # ------------------------------------------------------
+    # 2️⃣ Force HTTPS for all requests
+    # ------------------------------------------------------
+      # RewriteCond %{HTTPS} !=on
+      # RewriteRule ^(.*)$ https://pcsglobalgroup.com/$1 [L,R=301]
+
+    # ------------------------------------------------------
+    # 3️⃣ Remove Trailing Slashes (optional but clean)
+    # ------------------------------------------------------
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+      RewriteCond %{THE_REQUEST} /index\.php [NC]
+    RewriteRule ^index\.php/?(.*)$ /$1 [L,R=301,NC]
+
+    # ------------------------------------------------------
+    # 4️⃣ Laravel Authorization and Front Controller
+    # ------------------------------------------------------
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    RewriteCond %{HTTP:x-xsrf-token} .
+    RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
+
+    # ------------------------------------------------------
+    # 5️⃣ Redirect specific old URLs
+    # ------------------------------------------------------
+    Redirect 301 /payroll-outsourcing-services /payroll-services
+    RewriteRule ^blogs/Professional-Guide-for-Tax-Preparation-Planning/?$ /blogs/professional-guide-for-tax-preparation-planning [L,R=301]
+    
+    RewriteRule ^about-us/?$ https://pcsglobalgroup.com/about [L,R=301]
+    RewriteRule ^contact/?$ https://pcsglobalgroup.com/contact-us [L,R=301]
+    # Redirect 301 /bookkeeping https://pcsglobalgroup.com/bookkeeping-and-accounting-services
+    # Redirect 301 /bookkeeping/ https://pcsglobalgroup.com/bookkeeping-and-accounting-services
+    
+    Redirect 301 /bookkeeping https://pcsglobalgroup.com/outsourced-accounting-bookkeeping-services
+    Redirect 301 /bookkeeping/ https://pcsglobalgroup.com/outsourced-accounting-bookkeeping-services
+    Redirect 301 /bookkeeping-and-accounting-services https://pcsglobalgroup.com/outsourced-accounting-bookkeeping-services
+    Redirect 301 /taxation-services https://pcsglobalgroup.com/outsourced-taxation-services
+    Redirect 301 /payroll-services https://pcsglobalgroup.com/outsourced-payroll-services
+    
+    Redirect 301 /bookkeeping-accounting-services https://pcsglobalgroup.com/uk/outsource-tax-preparation-services/
+
+    # ------------------------------------------------------
+    # 6️⃣ Laravel Front Controller
+    # ------------------------------------------------------
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php82” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

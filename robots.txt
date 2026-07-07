@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /thank-you
+Allow: /
+Sitemap: https://pcsglobalgroup.com/sitemap.xml

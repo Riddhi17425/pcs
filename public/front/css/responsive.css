@@ -1,0 +1,1518 @@
+
+
+
+
+@media (min-width:1700px) {
+    .container {
+        max-width: 1500px !important;
+    }
+}
+
+@media (min-width:1900px) {
+    .container {
+        max-width: 1600px !important;
+    }
+}
+
+@media (max-width:1800px)
+{
+    .hero_rt video
+    {
+        width:75%;
+    }
+    
+    .hero_head {
+        font-size: 48px;
+        line-height: 66px;
+    }
+    .countries-box{
+            flex-wrap: wrap;
+            gap:20px;
+            justify-content: center;
+            align-items: center;
+    }
+    .hero_para {
+        font-size: 28px;
+        line-height: 38px;
+    }
+    
+    .hero_lt
+    {
+       left: 100px;
+    }
+    
+    .trust_banner 
+    {
+        padding:90px 0;
+    }
+    
+    .foot_rt
+    {
+       padding: 0 50px;
+    }
+    
+    .comp_bus_front
+    {
+        padding:25px;
+    }
+    
+    .comp_bus_child:hover .comp_bus_para
+    {
+        font-size: 25px;
+    }
+    
+    .aus_num
+    {
+        gap:10px;
+    }
+    
+    h2, .faq-head {
+    font-size: 42px;
+    line-height: 50px;
+}
+
+.aus_manag .com_bg_card
+{
+        width: 560px;
+}
+.aus_manag.usa_taxservices .com_bg_card{
+        width: 640px;
+}
+
+.header_flags img {
+   
+    bottom: -15%;
+}
+
+.com_hero_child h1
+{
+    font-size:60px;
+}
+
+.com_hero_child p {
+    font-size: 22px;
+    line-height: 32px;
+}
+
+.ser_Out 
+{
+     padding: 70px 0;
+}
+
+.counter_line h5 {
+    font-size: 18px;
+}
+
+.counter_line {
+    padding: 0 20px;
+}
+
+.ind_bot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.industries_card {
+    width: 190px;
+    height: 190px;
+}
+
+.industries_card img {
+    width: 65px;
+    height: 65px;
+}
+
+.industries_bot {
+    padding: 1px 10px;
+}
+
+.industries_card p {
+    font-size: 16px;
+}
+
+.mt-100 {
+    margin-top: 85px;
+}
+
+.container
+{
+  /*max-width: 1500px;  */
+}
+
+.secure_box_par {
+    gap: 20px;
+}
+
+
+}
+
+@media (max-width:1600px) {
+    body {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    .comp_bus_child:hover
+    {
+       height:435px;
+    }
+    
+    .comp_bus_child 
+    {
+     height: 235px;
+    }
+ .offcanvas-head{
+        font-size:25px;
+    }
+    .nav_ul {
+        gap: 30px;
+    }
+
+    .nav_ul li a {
+        font-size: 16px;
+    }
+
+    .com_btn1,
+    .com_btn2 {
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    h5 {
+        font-size: 16px;
+    }
+    .counter_line h5 {
+        font-size: 14px;
+    }
+
+    .comp_bus_child:hover .comp_bus_para {
+        font-size: 24px;
+    }
+
+    .comp_bus_para {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .counter_line h3 {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .counter_line {
+        padding: 0 25px;
+    }
+
+    .sub_head {
+        font-size: 22px;
+    }
+
+    .client_slider_par h3 {
+        font-size: 28px;
+    }
+
+    .com_hero_child h1 {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+
+    .com_hero_child p {
+        font-size: 20px;
+        line-height: 26px;
+        width:70%;
+        margin:0 auto;
+    }
+
+    .blogs_details .sub_head {
+        margin-top: 25px;
+    }
+
+    .com_inner_banner {
+        padding: 50px 40px;
+    }
+
+    .mt-100 {
+        margin-top: 40px;
+    }
+
+    .mt-80 {
+        margin-top: 50px;
+    }
+
+    .secure_box_par {
+        gap: 15px;
+    }
+
+    .secure_box h3 {
+        font-size: 36px;
+    }
+
+    .ecosystem_left h2 {
+        font-size: 36px;
+        line-height: 46px;
+    }
+
+    .com_sec_head_top {
+        padding: 0 50px;
+    }
+
+    .comp_bus_front {
+        padding: 15px;
+    }
+
+    .comp_bus_back {
+        padding: 5px;
+    }
+
+    .comp_bus_back_bt {
+        padding: 0 15px;
+    }
+
+    .comp_bus_child:hover.comp_bus_num {
+        font-size: 20px;
+    }
+
+    .counter_lt {
+        padding-right: 50px;
+    }
+
+    .trust_card {
+        padding: 20px;
+        width: 400px;
+    }
+
+    .trust_banner {
+         padding-bottom: 30px; 
+    }
+
+    .trust_card_head h3 {
+        font-size: 28px;
+    }
+
+    .trust_card_head img {
+        width: 50px;
+    }
+
+    .industries_bot {
+        padding: 15px 10px;
+    }
+
+    .ind_bot {
+        gap: 17px;
+    }
+
+    .industries_card {
+        width: 167px;
+        height: 167px;
+    }
+
+    .industries_card img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .industries_card p {
+        font-size: 16px;
+    }
+
+    .experts_card_bt {
+        padding: 15px 20px;
+    }
+
+    .our_experts_bot {
+        gap: 30px;
+    }
+
+    .slick_arrow span {
+        padding: 12px;
+    }
+
+    .slick_arrow {
+        gap: 18px;
+    }
+
+    .circular-progress {
+        /* width: 20px;
+        height: 20px; */
+    }
+
+    /* 
+    .inner-circle {
+    width: 70%;
+    height: 70%;
+} */
+
+    .footer_top {
+        padding: 60px 0 30px;
+    }
+
+    .about_unlock {
+        padding: 0 35px;
+    }
+
+    .com_bg_card {
+        padding: 20px;
+    }
+
+    .hero_lt {
+        left: 140px;
+    }
+
+    .hero_rt::after {
+        left: 13%;
+    }
+
+    .hero_rt video {
+        width: 72%;
+    }
+
+    .hero_para {
+        font-size: 30px;
+    }
+
+    .com_inner_banner h2 {
+        font-size: 38px;
+        line-height: 48px;
+    }
+
+    .com_hero {
+        background-size: cover;
+    }
+
+    .our_team_rt_s img {
+        width: 180px;
+    }
+
+    .our_team_rt_s h3 {
+        font-size: 30px;
+    }
+
+    .our_team_rt_s p {
+        font-size: 18px;
+    }
+
+    .our_team_rt_e svg {
+        position: absolute;
+        top: 0%;
+        left: -15%;
+    }
+
+    .checkbox-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .accuracy h3 {
+        font-size: 34px;
+        line-height: 48px;
+    }
+
+    .aus_manag .com_bg_card {
+        width: 570px;
+    }
+    .aus_manag.usa_taxservices .com_bg_card{
+        width: 558px;
+}
+
+    /*.tax_preparation ul {*/
+    /*    gap: 30px;*/
+    /*}*/
+
+    .accuracy p {
+        font-size: 28px;
+    }
+
+    .ser_Out {
+        padding: 70px 0;
+    }
+
+    .roll_update h5 {
+        line-height: 26px;
+    }
+    
+    .tax_preparation 
+    {
+        width:700px;
+    }
+    
+    .foot_rt {
+        padding: 0 40px;
+    }
+    
+    .dropdown-menu {
+  
+    inset: 30px auto auto 0px !important;
+   
+}
+
+
+}
+
+@media (max-width:1441px) {
+    .trust_banner{
+        height:348px;
+    }
+    
+    .about_us .sub_head{
+        font-size:16px;
+    }
+    .hero_lt {
+        left: 50px;
+    }
+
+    .hero_head {
+        font-size: 42px;
+        line-height: 50px;
+    }
+
+    .hero_gif {
+        width: 50px;
+    }
+
+    .hero_para {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .hero_lt_Ser {
+        font-size: 28px;
+    }
+
+    .hero_lt_bot {
+        row-gap: 10px;
+    }
+
+    .hero_lt_bot p {
+        font-size: 20px;
+    }
+
+    .hero_btn {
+        margin-top: 30px;
+    }
+
+    h2, .faq-head {
+        font-size: 38px;
+        line-height: 48px;
+    }
+
+
+    .comp_bus_child {
+        /*height: 350px;*/
+         height: 240px;
+    }
+
+    .comp_bus_child:hover {
+        height: 425px;
+    }
+
+    .sub_head {
+        font-size: 20px;
+    }
+
+    .ser_Out_lt svg {
+        width: 70px;
+        height: 70px;
+    }
+
+    .header_flags img {
+        bottom: -20%;
+        width: 150px;
+    }
+
+    .trust_banner {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+    /*.experts_slider .slick-slide{*/
+    /*    height:340px;*/
+    
+    /*}*/
+    .team-slider .slick-slide{
+        height:auto;
+    }
+.comp_bus_front{
+    justify-content: flex-start;
+    /*margin-top: 130px;*/
+}
+.tax_preparation ul{
+    margin-top:5px;
+}
+.trust_card_head img{
+    width:35px;
+}
+
+.hero_rt video
+{
+    width:70%;
+}
+.aus-img-9{
+    width:70%;
+}
+.choose_global .com_bg_card{
+    width:60%;
+}
+.com_bg_card_head{
+    margin-bottom:0;
+}
+.com_bg_card{
+        right: 30px;
+        left:unset;
+    bottom: 18px;
+}
+.com_bg_card ul{
+    margin-bottom:0!important;
+}
+.audit_comp_para{
+    font-size:16px;
+    margin-bottom:3px;
+}
+
+    .dropdown-menu {
+        inset: 30px auto auto 0px !important;
+    }
+
+}
+
+@media (max-width:1367px) {
+    
+     .comp_bus_child {
+       
+         height: 200px;
+    }
+    .inner-gif{
+        width:90px;
+    }
+    .menu-hover-over
+    {
+        width:70%;
+     }
+    .comp_bus_child:hover {
+        height: 400px;
+        width: 45%;
+    }
+    .comp_bus_child .mb-4{
+        margin-bottom:8px!important;
+    }
+
+    .accuracy h3 {
+        font-size: 28px;
+        color: var(--black6);
+        font-weight: 400;
+        line-height: 38px;
+    }
+
+    .accuracy p {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .fre_ques .fre_que {
+        margin-bottom: 25px;
+    }
+
+    .hero_rt video {
+        width: 60%;
+    }
+
+    .hero_head {
+        font-size: 38px;
+        line-height: 48px;
+    }
+
+    .hero_para {
+        font-size: 22px;
+        line-height: 25px;
+    }
+
+    .hero_lt_bot p {
+        font-size: 18px;
+    }
+
+    .hero_rt::after {
+        left: 376px;
+    }
+
+    .hero_lt_bot {
+        row-gap: 0px;
+    }
+
+    .hero_lt {
+        left: 72px;
+    }
+
+    /* .com_hero {
+        background-size: contain;
+    } */
+
+    .hero_gif {
+        width: 40px;
+    }
+
+    .hero_lt_Ser {
+        font-size: 26px;
+    }
+
+    h2, .faq-head{
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .comp_bus_front {
+        padding: 12px;
+    }
+
+    .comp_bus_num {
+        font-size: 16px;
+    }
+
+    .trust_card_head h3 {
+        font-size: 24px;
+    }
+
+    /* .trust_card_head img {
+        width: 40px;
+    } */
+
+    .industries_card {
+        width: 142px;
+        height: 142px;
+    }
+
+    .industries_card img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .industries_card p {
+        font-size: 14px;
+    }
+
+    .com_inner_banner h2 {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    .com_sec_head_top {
+        margin-bottom: 15px;
+    }
+
+    .circular-progress {
+        width: 30px;
+        height: 30px;
+    }
+
+    .our_experts_bot {
+        gap: 25px;
+    }
+
+    .slick_arrow span {
+        padding: 10px;
+    }
+
+    .com_hero {
+        padding: 80px 0;
+        
+    }
+
+    .com_hero_child h1 {
+        font-size: 42px;
+    }
+
+    .about_story {
+        padding-bottom: 30px;
+    }
+
+    .our_team_rt_e {
+        padding: 40px 40px 40px 0;
+    }
+
+    .our_team_rt_s h3 {
+        font-size: 22px;
+    }
+
+    .our_team_rt_s p {
+        font-size: 16px;
+    }
+
+    .our_team_rt_s img {
+        width: 160px;
+    }
+
+    .our_team_rt_e svg {
+        left: -16%;
+        width: 70px;
+    }
+
+    .experts_card {
+        margin: 0 10px;
+    }
+
+    .experts_card_bt {
+        padding: 11px;
+    }
+
+    .secure_box_par {
+        gap: 10px;
+    }
+
+    .secure_box h3 {
+        font-size: 32px;
+    }
+
+    .secure_box {
+        padding: 5px;
+        gap: 0px;
+    }
+
+    .ecosystem_left h2 {
+        font-size: 32px;
+        line-height: 44px;
+    }
+
+    .ser_Out_lt {
+        gap: 20px;
+    }
+
+    /*.ser_Out_lt svg {*/
+    /*    width: 90px;*/
+    /*    height: 90px;*/
+    /*}*/
+
+    .ecosystem_left h4 {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .ecosystem_left .sub_head {
+        font-size: 16px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 18px;
+    }
+
+    .checkbox-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        row-gap: 18px;
+        column-gap: 10px;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+        width: 15px;
+        height: 15px;
+    }
+
+    .ser_Out {
+        padding: 50px 0;
+    }
+
+    .aus_num .secure_box h3 {
+        font-size: 28px;
+    }
+
+    .aus_manag .com_bg_card {
+        width: 480px;
+    }
+    .aus_manag.usa_taxservices .com_bg_card{
+        width: 480px;
+}
+
+    .aus_manag .com_bg_card {
+        padding: 20px;
+    }
+
+    /*.choose_global .com_bg_card {*/
+    /*    width: 475px;*/
+    /*}*/
+
+    .header_flags img {
+        bottom: -20%;
+        width: 100px;
+    }
+
+    .order_cash h5 {
+        /* margin-bottom: 10px; */
+    }
+
+    .order_cash ul {
+        margin-bottom: 20px;
+    }
+
+    .preparation .feature-column:first-child {
+        padding: 0 15px 0 0;
+    }
+
+    .preparation .feature-column {
+        padding: 0 15px;
+    }
+
+    .preparation .feature-column:last-child {
+        padding-right: 0px;
+    }
+    
+      .foot_rt {
+        padding: 0 20px;
+    }
+     .dropdown-menu {
+        inset: 34px auto auto 0px !important;
+    }
+ .trust_banner_payroll{
+            height:345px!important;
+    }
+
+}
+
+@media (max-width:1200px)
+{
+        .comp_bus_child:hover {
+        height: 435px;
+    }
+    
+        .comp_bus_child {
+        height: 180px;
+    }
+}
+
+@media (max-width:1025px) {
+    .nav_ul {
+        gap: 17px;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    .counter_line {
+        padding: 0 13px;
+    }
+
+    .industries_card {
+        width: 122px;
+        height: 122px;
+    }
+
+    .ind_bot {
+        gap: 10px;
+    }
+
+    .com_inner_banner h2 {
+        margin-bottom: 30px;
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .com_inner_banner {
+        padding: 25px;
+    }
+
+    .client_slider_par h3 {
+        font-size: 24px;
+    }
+
+    .our_team_rt_s img {
+        width: 140px;
+    }
+
+    .our_team_rt_e {
+        padding: 30px 30px 30px 0;
+    }
+
+    .our_team_rt_s h3 {
+        font-size: 22px;
+    }
+
+    .future .com_bg_card {
+        width: 390px;
+        bottom: 10px;
+    }
+
+    .com_hero_child h1 {
+        font-size: 36px;
+    }
+
+    .trust_card {
+        width: 635px;
+    }
+
+    .procure_pay_bor {
+        padding: 0 31px;
+    }
+    
+     .foot_rt {
+        padding: 0 30px;
+    }
+}
+
+
+@media (max-width: 991px) {
+    
+    .decimal_style_item{
+        padding-left: 25px;
+    }
+    .service-item-lists{
+        grid-template-columns: repeat(2, 1fr);
+    }
+       .countries-box{
+            flex-wrap: wrap;
+            gap:20px;
+            justify-content: center;
+            align-items: center;
+    }
+    .trust_banner_payroll{
+        height: 420px !important;
+    }
+    .trust_banner{
+        background-size: cover;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav_links {
+        display:none;
+    }
+    
+        .nav_ul {
+             gap: 17px;
+             flex-direction: column;
+             align-items: start;
+             margin-top:40px;
+    }
+    
+    .dropdown-menu
+    {
+       width: 90vw;
+       padding: 0 5px;
+    }
+    
+    .menu-hover
+    {
+        height:auto;
+    }
+    
+    .menu-hover li {
+     
+     padding-left: 0; 
+    border: none;
+}
+
+.logo
+{
+    z-index:999999;
+}
+    
+    
+}
+
+@media (max-width:768px) {
+
+    .aus_manag.usa_taxservices .com_bg_card{
+        width: auto;
+         padding:10px 10px;
+    }
+    .taxation-counter .counter_line:last-child{
+         border-bottom: none; 
+    }
+    .taxation-counter .counter{
+        display: grid;
+    }
+    .taxation-counter .counter_line{
+        border-bottom: 1px solid #1797F2; 
+            border-left: none;
+            padding: 15px 10px;
+    }
+.sidebar_submenu .menu_heading{  
+    font-size:20px;
+     color: var(--blue);
+}
+    .foot_rt {
+        border: none;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #617CD4;
+    }
+
+    .footer_top {
+        padding: 30px 0;
+    }
+
+    .footer_bot {
+        text-align: center;
+        color: var(--white);
+        padding-bottom: 15px;
+    }
+
+    .com_hero_child p {
+        font-size: 14px;
+        line-height: 20px;
+        width:auto;
+    }
+
+    .com_hero_child h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .header_flags img {
+        display: none;
+    }
+
+
+
+    /* .com_hero img {
+        height: 250px;
+        object-fit: contain;
+    } */
+
+    .com_sec_head_top {
+        padding: 0;
+        text-align: start;
+    }
+
+    h2 {
+        font-size: 26px;
+        line-height: 36px;
+    }
+
+    /* .comp_bus_bot {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .comp_bus_child {
+        width: 100%;
+    } */
+
+    .ft_logo {
+        width: 120px;
+    }
+
+    .comp_bus_child:hover {
+        width: 100%;
+    }
+
+    .counter_lt {
+        padding-right: 0;
+    }
+
+    .counter {
+        margin-top: 30px;
+    }
+
+    /* .com_inner_banner h2 {
+        color: var(--white);
+        margin-bottom: 38px;
+        font-size: 24px;
+        line-height: 30px;
+    } */
+
+    .com_inner_banner {
+        padding: 15px;
+    }
+
+    .experts_card_bt {
+        padding: 15px;
+    }
+
+    .experts_card {
+        margin: 0 5px;
+    }
+
+    .circular-progress {
+        width: 30px;
+        height: 30px;
+    }
+
+    .slick_arrow span {
+        padding: 10px;
+    }
+
+    .our_experts_bot {
+        gap: 10px;
+    }
+
+    .our_experts_bot {
+        padding: 0;
+    }
+
+    .client_slider .slick-track {
+        gap: 50px;
+    }
+
+    .comp_bus_child:hover {
+        height: 100%;
+        width: 45%;
+    }
+
+    .comp_bus_child .comp_bus_back {
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 2;
+    }
+
+    .secure_box_par {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        display: none;
+    }
+
+    .secure_box {
+        width: 45%;
+    }
+
+    .secure_box p {
+        /* margin-bottom: 0px; */
+    }
+
+    .ser_Out_lt svg {
+        width: 80px;
+        height: 80px;
+    }
+
+    .ecosystem_left h2 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .ser_Out_lt {
+        gap: 20px;
+    }
+
+    .ecosystem_left .sub_head {
+        line-height: normal;
+    }
+
+    .ecosystem_left h4 {
+        font-size: 26px;
+    }
+
+    .contact {
+        padding: 0 0 30px 0;
+    }
+
+    .com_bg_card {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .com_bg_card {
+        position: static;
+    }
+
+    .ser_Out {
+        padding: 40px 0;
+    }
+
+    .accuracy {
+        padding-left: 0;
+    }
+
+    .accuracy h3 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .accuracy p {
+        font-size: 18px;
+        line-height: normal;
+    }
+
+    .fre_ques .sub_head {
+        line-height: 25px;
+        font-size: 18px;
+    }
+
+    .fre_ques .sub_head::before {
+        font-size: 24px;
+    }
+
+    .slick-dots li.slick-active button:before {
+        color: var(--blue);
+        opacity: 1;
+    }
+
+    .slick-dots li button:before {
+        font-size: 12px;
+        top: 6px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .counter_line {
+        padding: 0 10px;
+    }
+
+    .com_sec_head_top {
+        margin-bottom: 20px;
+    }
+
+    .industries_card {
+        width: 45%;
+        height: 140px;
+    }
+
+    .ind_bot {
+        justify-content: space-evenly;
+        gap: 15px;
+    }
+
+    .com_inner_banner h2 {
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    .mt-100 {
+        margin-top: 50px;
+    }
+
+    .our_team_rt_s {
+        text-align: center;
+    }
+
+    .future .com_bg_card {
+        width: 100%;
+        padding: 10px 0;
+        margin-top: 15px;
+    }
+
+    .our_team_lt h3 {
+        font-size: 26px;
+    }
+
+    .our_team_rt_e svg {
+        display: none;
+    }
+
+    .our_team_rt_s img {
+        width: 50%;
+        display: inline;
+    }
+
+    .com_hero {
+        padding: 30px 0;
+        margin-bottom: 0;
+        background-size: 100%;
+    background-position: top;
+    }
+
+    .ser_Out_lt svg {
+        width: 70px;
+        height: 70px;
+    }
+
+    .ecosystem_left .sub_head {
+        font-size: 18px;
+    }
+
+    .com_bg_card {
+        padding: 0;
+        margin-top: 24px;
+        background:#FFFFF6;
+    }
+
+    .fre_ques .accordion-collapse,
+    .fre_ques .sub_head {
+        padding-left: 44px;
+    }
+
+    .com_hero_child h1 {
+        width: 100%;
+    }
+
+    .preparation {
+        flex-direction: column;
+    }
+
+    .preparation .feature-column {
+        border: none;
+        padding: 0;
+    }
+
+
+    .budgeting_lising {
+        gap: 0px;
+        flex-direction: column;
+    }
+
+    .procure_pay_bor {
+        padding: 0 12px;
+        border: none;
+    }
+
+    .management_listing {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .management_listing li {
+        border-right: none;
+        padding: 0;
+        list-style:disc;
+    }
+
+    .roll_update h5 {
+        margin-top: 20px;
+    }
+
+    .footer_contant {
+        flex-direction: column;
+        row-gap: 24px;
+    }
+
+    .hero_lt {
+        position: static;
+        transform: translateY(0);
+    }
+
+    .hero {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero_rt video {
+        width: 100%;
+    }
+
+    .hero_head {
+        font-size: 24px;
+        line-height: 36px;
+    }
+
+    .hero_para {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .hero_lt_bot p {
+        font-size: 16px;
+        align-items: start;
+        gap: 10px;
+
+    }
+
+    .hero_lt {
+        padding: 35px 12px;
+    }
+
+    .industries_card_bg {
+        display: none;
+    }
+
+    .trust_banner {
+        padding: 40px 10px;
+    }
+
+    .trust_banner .trust_card {
+        width: 100%;
+    }
+    
+    .tax_preparation ul
+    {
+        gap: 10px; 
+        flex-direction: column;
+    }
+    
+    .dropdown-menu
+    {
+      transform: translate3d(0px, 0px, 0px) !important;
+      inset:unset !important;
+      margin-top:12px !important;
+    }
+    
+    .nav_ul li ul.dropdown-menu
+    {
+        padding: 10px 0px;
+
+    }
+    
+    .nav_links
+    {
+        overflow: auto;
+    }
+    
+    .dropdown-menu li
+    {
+      /*margin-bottom: 7px;*/
+    }
+    
+    .foot_rt
+    {
+        padding:0;
+    }
+    .comp_bus_slider .slick-track
+{
+    display:flex;
+}
+
+.inner-gif {
+    width: 70px;
+}
+
+.preparation ul,
+.budgeting_lising ul
+{
+ margin-bottom:0;   
+}
+.trust_banner_aus{
+    height: 455px;
+}
+.procure_pay {
+    margin-top: 30px;
+}
+.audit_comp_para {
+ 
+        margin-top: 15px;
+    }
+    
+    .com_bg_card_accounting
+    {
+        padding:0 10px;
+    }
+    .dropdown-menu{
+        position:unset!important;
+    }
+    
+    .footer_bot
+    {
+        flex-direction: column-reverse;
+        margin-top: 20px;
+    }
+    
+    .Privacy_link
+    {
+      width:100%;
+    }
+    
+}
+@media (max-width:560px){
+    .trust_banner{
+        height:290px;
+    }
+    .trust_banner_aus{
+         height:650px!important;
+    }
+    .trust_banner_uk{
+         height:650!important;
+    }
+    .trust_banner_strata{
+        height: 440px!important;
+    }
+    .tax_preparation ul{
+        margin-bottom:0;
+    }
+     .trust_banner_payroll{
+        height: 500px !important;
+    }
+    .trust_banner_security{
+         height: 600px !important;
+    }
+     .service-item-lists{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
