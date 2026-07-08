@@ -37,28 +37,32 @@ class ServiceController extends Controller
                 'name'  => $request->fullname,
             ]);
 
-            // Don’t show an error to bots — just act like it succeeded
+            // Don't show an error to bots — just act like it succeeded
             return redirect()->route('thank.you');
         }
         $request->validate([
-            'fullname' => 'required|string|max:255',
-            'email'    => 'required|email',
-            'phone'    => 'required|string|max:20',
-            'country'  => 'required|string',
-            'message'  => 'nullable|string',
+            'fullname'   => 'required|string|max:255',
+            'email'      => 'required|email',
+            'phone'      => 'required|string|max:20',
+            'full_phone' => 'nullable|string|max:20',
+            'country'    => 'required|string',
+            'message'    => 'nullable|string',
         ]);
+
+        $rawPhone = $request->full_phone ?: $request->phone;
+        $phone    = '+' . ltrim($rawPhone, '+');
 
         RequestForm::create([
             'fullname' => $request->fullname,
             'country'  => $request->country,
-            'phone'    => $request->phone,
+            'phone'    => $phone,
             'email'    => $request->email,
             'message'  => $request->message,
         ]);
         $sheetData = [
             'form_type' => 'Request Form',
             'name'      => $request->fullname ?? '',
-            'contact'   => $request->number ?? $request->phone ?? '',
+            'contact'   => $phone,
             'email'     => $request->email ?? '',
             'country'   => $request->country ?? '',
             'services'  => is_array($request->services)
@@ -101,7 +105,6 @@ class ServiceController extends Controller
             return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
 
         }
-        // return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
     }
 
     public function consultantstore(Request $request)

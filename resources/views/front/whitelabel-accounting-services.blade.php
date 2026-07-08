@@ -1249,23 +1249,16 @@
                         @error('email') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
 
-                    <div class="col-lg-6 form-group">
-                        <input type="tel" name="phone" value="{{ old('phone') }}"
-                         oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 15);"
-                                    maxlength="12" minlength="10" placeholder=" ">
-                        <label>Phone Number<span class="text-danger">*</span></label>
-                        @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
-                        <span id="mobile-error" style="color:red; display:none;">Please enter at least 10 digits</span>
-                    </div>
-
                    <div class="col-lg-6 form-group">
-                  <input type="text" name="companyName" value="{{ old('companyName') }}" maxlength="70"
-                  oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').replace(/\s+/g, ' ').trimStart();" placeholder=" ">
-                  <label>Company Name</label>
-                  @error('companyName') <span class="text-danger">{{ $message }}</span> @enderror
-               </div>
+                     <input type="tel" name="phone" id="contactPhone" value="{{ old('phone') }}"
+                     maxlength="20" minlength="10" placeholder="Phone Number">
+                     <label><span class="text-danger">*</span></label>
+                     @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
+                     <span id="mobile-error" style="color:red; display:none;">Please enter at least 10 digits</span>
+                     <input type="hidden" name="full_phone" id="contactFullPhone">
+                  </div>
 
-               <div class="col-lg-12 form-group">
+                    <div class="col-lg-6 form-group">
                   <select name="country" id="countrySelect">
                      <option value="" hidden>Select Country</option>
                      @foreach($countries as $country)
@@ -1274,6 +1267,15 @@
                   </select>
                   @error('country') <span class="text-danger">{{ $message }}</span> @enderror
                </div>
+
+                   <div class="col-lg-12 form-group">
+                  <input type="text" name="companyName" value="{{ old('companyName') }}" maxlength="70"
+                  oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').replace(/\s+/g, ' ').trimStart();" placeholder=" ">
+                  <label>Company Name</label>
+                  @error('companyName') <span class="text-danger">{{ $message }}</span> @enderror
+               </div>
+
+
 
                     <div class="col-lg-12 form-group">
                         <textarea rows="3" name="message"  placeholder=" ">{{ old('message') }}</textarea>
@@ -1597,30 +1599,92 @@
 
 <style>
     #consultation-form {
-    scroll-margin-top: 120px;
-}
+        scroll-margin-top: 120px;
+    }
+
+    /* --- intl-tel-input fixes for #contactPhone --- */
+
+    /* Push the input's text/placeholder right so it doesn't sit under the flag */
+    .iti input#contactPhone {
+        padding-left: 105px !important;
+    }
+
+    /* Push the floating label right to clear the flag + dial code area */
+    .form-group:has(#contactPhone) label {
+        left: 90px !important;
+    }
+
+    .iti {
+        width: 100%;
+        display: block;
+    }
+
+    /* Fix invisible country names in the dropdown */
+    .iti__country-list {
+        background-color: #fff !important;
+        z-index: 50;
+    }
+    .iti__country-list .iti__country-name,
+    .iti__country-list .iti__dial-code {
+        color: #182653 !important;
+    }
+    .iti__country.iti__highlight {
+        background-color: #f0f0f0 !important;
+    }
+    .iti__selected-dial-code{
+      color:#fff !important;
+    }
 </style>
 
 @if(!old('country'))
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const countrySelect = document.getElementById('countrySelect');
-    if (!countrySelect) return;
+    const phoneInput = document.getElementById('contactPhone');
+    const fullPhoneInput = document.getElementById('contactFullPhone');
+
+    if (!phoneInput) return;
+
+    // Init intl-tel-input, default to India while geo lookup resolves
+    const itiContact = window.intlTelInput(phoneInput, {
+        initialCountry: "in",
+        separateDialCode: true,
+        preferredCountries: ["in", "ae", "us", "gb"],
+        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js"
+    });
 
     fetch('https://ipwho.is/')
         .then(res => res.json())
         .then(data => {
             if (!data || data.success === false || !data.country) return;
 
-            const options = countrySelect.options;
-            for (let i = 0; i < options.length; i++) {
-                if (options[i].text.trim().toLowerCase() === data.country.trim().toLowerCase()) {
-                    countrySelect.value = options[i].value;
-                    break;
+            // Update country dropdown (existing behavior)
+            if (countrySelect) {
+                const options = countrySelect.options;
+                for (let i = 0; i < options.length; i++) {
+                    if (options[i].text.trim().toLowerCase() === data.country.trim().toLowerCase()) {
+                        countrySelect.value = options[i].value;
+                        break;
+                    }
                 }
+            }
+
+            // Update phone flag/code using the 2-letter country code
+            if (data.country_code) {
+                itiContact.setCountry(data.country_code.toLowerCase());
             }
         })
         .catch(err => console.warn('Country auto-detect failed:', err));
+
+    // Set full phone number (with dial code) before form submit
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function () {
+            const countryData = itiContact.getSelectedCountryData();
+            const number = phoneInput.value.replace(/\s+/g, "");
+            fullPhoneInput.value = "+" + countryData.dialCode + number;
+        });
+    }
 });
 </script>
 @endif

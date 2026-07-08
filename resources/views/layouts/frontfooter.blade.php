@@ -189,10 +189,10 @@
                                 <label>Email Address<span class="text-danger">*</span></label>
                             </div>
 
-                            <div class="col-lg-12 form-group">
-                                <input type="tel" name="phone" maxlength="12" minlength="10" placeholder=" "
-                                    oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
-                                <label>Phone Number<span class="text-danger">*</span></label>
+                           <div class="col-lg-12 form-group">
+                                <input type="tel" name="phone" id="requestPhone" maxlength="20" minlength="10" placeholder="Phone Number">
+                                <label><span class="text-danger">*</span></label>
+                                <input type="hidden" name="full_phone" id="requestFullPhone">
                             </div>
 
                             <div class="col-lg-12 form-group">
@@ -210,12 +210,12 @@
                                 <label>Message:</label>
                             </div>
 
-                            <div class="col-lg-12 form-group">
+                            <!-- <div class="col-lg-12 form-group">
                                 <div class="g-recaptcha"
                                     data-sitekey="6LfxJ7crAAAAAGJsj1iMJSQXpZLJE47H1h6StuUT"
                                     data-callback="onCaptchaSuccessRequest"></div>
                                 <span class="captcha-error text-danger" style="display:none;">Please verify you are not a robot.</span>
-                            </div>
+                            </div> -->
 
                             <div class="col-lg-12">
                                 <button type="submit" class="com_btn2 color-animated-button bubble-btn">
@@ -729,31 +729,93 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener('DOMContentLoaded', function () {
     const requestModal = document.getElementById('exampleModal');
     const countrySelect = document.getElementById('requestCountrySelect');
-    if (!requestModal || !countrySelect) return;
+    const phoneInput = document.getElementById('requestPhone');
+    const fullPhoneInput = document.getElementById('requestFullPhone');
+    const requestForm = document.getElementById('requestForm');
 
-    let countryDetected = false; // avoid re-fetching every time modal reopens
+    if (!requestModal || !phoneInput) return;
+
+    let itiRequest = null;
+    let countryDetected = false;
 
     requestModal.addEventListener('shown.bs.modal', function () {
-        if (countryDetected || countrySelect.value) return; // don't override if already set
+        // Init intl-tel-input only once, the first time the modal opens
+        if (!itiRequest) {
+            itiRequest = window.intlTelInput(phoneInput, {
+                initialCountry: "in",
+                separateDialCode: true,
+                preferredCountries: ["in", "ae", "us", "gb"],
+                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js"
+            });
+        }
+
+        if (countryDetected) return;
 
         fetch('https://ipwho.is/')
             .then(res => res.json())
             .then(data => {
                 if (!data || data.success === false || !data.country) return;
 
-                const options = countrySelect.options;
-                for (let i = 0; i < options.length; i++) {
-                    if (options[i].text.trim().toLowerCase() === data.country.trim().toLowerCase()) {
-                        countrySelect.value = options[i].value;
-                        break;
+                if (countrySelect && !countrySelect.value) {
+                    const options = countrySelect.options;
+                    for (let i = 0; i < options.length; i++) {
+                        if (options[i].text.trim().toLowerCase() === data.country.trim().toLowerCase()) {
+                            countrySelect.value = options[i].value;
+                            break;
+                        }
                     }
                 }
+
+                if (data.country_code && itiRequest) {
+                    itiRequest.setCountry(data.country_code.toLowerCase());
+                }
+
                 countryDetected = true;
             })
             .catch(err => console.warn('Country auto-detect failed:', err));
     });
+
+    if (requestForm) {
+        requestForm.addEventListener('submit', function () {
+            if (!itiRequest) return;
+            const countryData = itiRequest.getSelectedCountryData();
+            const number = phoneInput.value.replace(/\s+/g, "");
+            fullPhoneInput.value = "+" + countryData.dialCode + number;
+        });
+    }
 });
 </script>
+
+<style>
+    .iti input#requestPhone {
+        padding-left: 105px !important;
+    }
+    .form-group:has(#requestPhone) label {
+        left: 90px !important;
+    }
+    .iti {
+        width: 100%;
+        display: block;
+    }
+    .iti__country-list {
+        background-color: #fff !important;
+        z-index: 1060; /* higher than modal's z-index so dropdown isn't clipped */
+    }
+    .iti__country-list .iti__country-name,
+    .iti__country-list .iti__dial-code {
+        color: #182653 !important;
+    }
+    .iti__country.iti__highlight {
+        background-color: #f0f0f0 !important;
+    }
+    .iti .iti__selected-dial-code{
+        color:#111111;
+    }
+    #requestPhone::placeholder {
+    color: #111111;
+    opacity: 1;
+}
+</style>
 
 
 

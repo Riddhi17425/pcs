@@ -162,7 +162,7 @@
         <textarea id="waMessage" name="message" placeholder="Type your message"></textarea>
         <small class="text-danger waMessage-error"></small>
 
-        <input 
+        <input
           type="tel"
           id="wa_phone"
           name="number"
@@ -195,13 +195,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const countryName = document.getElementById("wa_country_name");
   const submitBtn = document.querySelector(".wa-btn");
 
-  const iti = window.intlTelInput(input, {
-    initialCountry: "in",
+const iti = window.intlTelInput(input, {
+    initialCountry: "auto",
     separateDialCode: true,
     preferredCountries: ["in", "ae", "us", "gb"],
-    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js"
+    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js",
+    geoIpLookup: function (callback) {
+      fetch("https://ipapi.co/json")
+        .then(function (res) { return res.json(); })
+        .then(function (data) { callback(data.country_code || "in"); })
+        .catch(function () { callback("in"); }); // fallback if lookup fails
+    }
   });
-
   // Open popup
   whatsappBtn.addEventListener("click", () => {
     whatsappPopup.classList.toggle("active");
@@ -261,7 +266,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //       document.querySelector(".wa_phone-error").textContent = "Phone number is required.";
 //       input.classList.add("input-error");
 //       isValid = false;
-//     } 
+//     }
 
 //     // Stop submit if invalid
 //     if (!isValid) {
