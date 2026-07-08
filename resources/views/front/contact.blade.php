@@ -19,7 +19,7 @@
 
                 <!-- Label and Icon -->
                 <span class="color-button__label relative z-10 will-change-transform me-2">Start the Conversation</span>
-                
+
               </a>
         </div>
     </div>
@@ -29,7 +29,7 @@
     <div class="container">
         <div class="text-center">
         <img src="{{asset('public/front/images/maps.png')}}" usemap="#image-map" alt="USA, UK, and Australia" style="max-width:100%; height:auto;">
-        
+
         </div>
     </div>
 </section>
@@ -49,7 +49,7 @@
                 <div class="row gy-4 gy-xxl-5 gx-lg-4">
 
                     <div class="col-lg-6 form-group">
-                        <input type="text" name="fullname" value="{{ old('fullname') }}" maxlength="70" 
+                        <input type="text" name="fullname" value="{{ old('fullname') }}" maxlength="70"
                         oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').replace(/\s+/g, ' ').trimStart();" placeholder=" ">
                         <label>Full Name<span class="text-danger">*</span></label>
                         @error('fullname') <span class="text-danger">{{ $message }}</span> @enderror
@@ -66,7 +66,7 @@
                     </div>
 
                     <div class="col-lg-6 form-group">
-                        <input type="tel" name="phone" value="{{ old('phone') }}" 
+                        <input type="tel" name="phone" value="{{ old('phone') }}"
                          oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 15);"
                                     maxlength="12" minlength="10" placeholder=" ">
                         <label>Phone Number<span class="text-danger">*</span></label>
@@ -75,7 +75,7 @@
                     </div>
 
                     <div class="col-lg-6 form-group">
-                        <select name="country">
+                         <select name="country" id="countrySelect">
                             <option value="" hidden>Select Country</option>
                             @foreach($countries as $country)
                                 <option value="{{ $country->name }}">{{ $country->name }}</option>
@@ -137,12 +137,12 @@
                         <label>Message:</label>
                     </div>
                     <div class="col-lg-12 form-group">
-                        <div class="g-recaptcha" 
+                        <div class="g-recaptcha"
                                 id="contactCaptcha"
-                                data-sitekey="6LfxJ7crAAAAAGJsj1iMJSQXpZLJE47H1h6StuUT" 
+                                data-sitekey="6LfxJ7crAAAAAGJsj1iMJSQXpZLJE47H1h6StuUT"
                                 data-callback="onCaptchaSuccessContact"></div>
                             <span class="captcha-error text-danger" style="display:none;">Please verify you are not a robot.</span>
-                        
+
                     </div>
                     <div class="col-lg-12">
                         <button type="submit" class="com_btn2 color-animated-button bubble-btn border-0"
@@ -242,12 +242,34 @@
     </div>
 </section>
 <script src="https://www.google.com/recaptcha/api.js?onload=initAllRecaptchas&render=explicit" async defer></script>
+
+@if(!old('country'))
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const countrySelect = document.getElementById('countrySelect');
+    if (!countrySelect) return;
+
+    fetch('https://ipwho.is/')
+        .then(res => res.json())
+        .then(data => {
+            if (!data || data.success === false || !data.country) return;
+
+            const options = countrySelect.options;
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].text.trim().toLowerCase() === data.country.trim().toLowerCase()) {
+                    countrySelect.value = options[i].value;
+                    break;
+                }
+            }
+        })
+        .catch(err => console.warn('Country auto-detect failed:', err));
+});
+</script>
+@endif
+
 @include('layouts.frontfooter')
 <script>
-   
+
 
 
 </script>
-
-
-

@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" href="{{asset('public/front/css/whitelabel-accounting-service.css')}}">
 
-<section class="com_hero" style="background-image: url('{{ asset('public/front/images/data-security-hero-bg.jpg') }}"> 
+<section class="com_hero" style="background-image: url('{{ asset('public/front/images/data-security-hero-bg.jpg') }}">
    <div class="container">
       <div class="com_hero_child">
          <h1>White Label Accounting Services for US, UK & Australian Firms</h1>
@@ -18,12 +18,12 @@
                <!-- Label and Icon -->
                <span class="color-button__label relative z-10 will-change-transform me-2">Book Your Free Consultation</span>
             </a>
-            
+
             <button type="button"
                 data-bs-toggle="modal" data-bs-target="#exampleModal" style="border: 1px solid #182653;
                background: transparent;" class="com_btn2 mt-3 mt-md-0 ms-md-3 color-animated-button bubble-btn"
                data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
-                                  
+
             <!--<a href="tel:(+44) 113 4034334" style="border: 1px solid #182653;-->
             <!--   background: transparent;" class="com_btn2 mt-3 mt-md-0 ms-md-3 color-animated-button bubble-btn"-->
             <!--   data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>-->
@@ -120,7 +120,7 @@
 <!--            </div>-->
 <!--            <div class="col-md-9">-->
 <!--                <div class="client_slider">-->
-                  
+
 <!--                        <div>-->
 <!--                            <img class="img-fluid"-->
 <!--                                 src="{{ asset('public/front/images/Homepage_01.png') }}"-->
@@ -332,7 +332,7 @@
             </div>
             <div class="col-md-9">
                 <div class="client_slider">
-                  
+
                         <div>
                             <img class="img-fluid"
                                  src="{{ asset('public/front/images/Homepage_01.png') }}"
@@ -482,7 +482,7 @@
                                  src="{{ asset('public/front/images/Homepage_25.png') }}"
                                   loading="lazy"
                                  alt="Homepage_25">
-                        </div> 
+                        </div>
                         <div>
                             <img class="img-fluid"
                                  src="{{ asset('public/front/images/Homepage_26.png') }}"
@@ -525,10 +525,10 @@
         </p>
         <p>This is what sets it apart from simple outsourcing, where the outside firm is often visible to the client. With white label accounting, offshore teams stay completely hidden from your clients, so your firm keeps full ownership of the client relationship.
         </p>
-        <p>With our white label accounting solutions, you get skilled accountants handling the daily work behind the scenes. That means you can serve more clients and expand your firm, without the effort and cost of hiring in-house. 
+        <p>With our white label accounting solutions, you get skilled accountants handling the daily work behind the scenes. That means you can serve more clients and expand your firm, without the effort and cost of hiring in-house.
         </p>
         <p><strong>Key Takeaways</strong></p>
-        
+
             <ul class="accounting_list">
                <li class="mb-2">
                    Your brand stays at the front and centre, always
@@ -572,7 +572,7 @@
         </p>
             </div>
         </div>
-        
+
         <div class="col-md-4">
             <div  class="secure_box text-start p-3 h-100 w-100">
                 <span><svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -583,7 +583,7 @@
                  <p class="mb-0 mt-3">When work comes up, you have to recruit, which is slow and costly. White label gives you a ready team to rely on, so you can take on more clients or handle busy seasons without posting a job advert or renting more office space.</p>
             </div>
         </div>
-        
+
         <div class="col-md-4">
             <div  class="secure_box text-start p-3 h-100 w-100">
                 <span><svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -597,7 +597,7 @@
                 <p class="mb-0 mt-3">You get qualified accountants who work across US, UK, and Australian standards. That means you can offer your clients a wider range of services than your own team might cover, from bookkeeping to complex reporting, without having to find and hire staff.</p>
             </div>
         </div>
-        
+
         <div class="col-md-4">
             <div  class="secure_box text-start p-3 h-100 w-100">
                 <span><svg width="50" height="53" viewBox="0 0 50 53" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -606,9 +606,9 @@
 </span>
                 <p class="mt-3 mb-0 sub_head">Increase Profit Margins</p>
                  <p class="mb-0 mt-3">Because white label work costs you less than employing staff, the gap between what you charge and what you pay widens. You bill at your usual rates while keeping your delivery costs low, so every client you serve adds more to your profits.</p>
-            </div> 
+            </div>
         </div>
-        
+
         <div class="col-md-4">
             <div  class="secure_box text-start p-3 h-100 w-100">
                 <span><svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -620,7 +620,7 @@
         </p>
             </div>
         </div>
-        
+
         <div class="col-md-4">
             <div  class="secure_box text-start p-3 h-100 w-100">
                 <span><svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -631,12 +631,12 @@
                  <p class="mb-0 mt-3">When the routine accounting is handled for you, your time is freed for the work that grows your firm. You can spend it advising clients, attracting new users, and building trust, rather than spending your evenings on other tasks.</p>
             </div>
         </div>
-      
+
     </div>
     </div>
-    
-  
-    
+
+
+
 </section>
 
 
@@ -653,7 +653,7 @@
                   <h3>White Label Bookkeeping Services</h3>
                   <span><img src="{{asset('public/front/images/trust_icon.png')}}" loading="lazy" alt="icon" /></span>
                </div>
-               <p>Good bookkeeping is the foundation that every report is based on. All the record-keeping for the clients is kept up-to-date and organised, so nothing is missed. Every day we record all your expenses, reconcile statements, and ensure your books reflect truly where your business stands. This provides you with accurate and reliable figures to rely on every month. 
+               <p>Good bookkeeping is the foundation that every report is based on. All the record-keeping for the clients is kept up-to-date and organised, so nothing is missed. Every day we record all your expenses, reconcile statements, and ensure your books reflect truly where your business stands. This provides you with accurate and reliable figures to rely on every month.
             </p>
                <ul>
                   <li><b>Transaction recording</b></li>
@@ -682,7 +682,7 @@
                   <h3>White Label Accounts Receivable Services </h3>
                   <span><img src="{{asset('public/front/images/trust_icon.png')}}" loading="lazy" alt="icon" /></span>
                </div>
-               <p>One of the hardest things for any business to achieve is on-time payment. Our <b>white label accounts receivable services</b> enable your clients to raise timely invoices, have good follow-up procedures, and bring in money faster. We raise accurate invoices, chase overdue payments firmly, and keep a close eye on what is still outstanding. 
+               <p>One of the hardest things for any business to achieve is on-time payment. Our <b>white label accounts receivable services</b> enable your clients to raise timely invoices, have good follow-up procedures, and bring in money faster. We raise accurate invoices, chase overdue payments firmly, and keep a close eye on what is still outstanding.
 </p>
                <ul>
                   <li><b>Customer invoicing</b></li>
@@ -697,7 +697,7 @@
                   <h3>White Label Payroll Processing </h3>
                   <span><img src="{{asset('public/front/images/trust_icon.png')}}" loading="lazy" alt="icon" /></span>
                </div>
-               <p>Payroll is one area where there is no room for mistakes, because people expect to be paid the right amount on the right day. We handle the entire payroll process for your clients, from the calculations through to the filings. Everything is worked out carefully and submitted on time, so staff are paid correctly, and the business stays compliant. 
+               <p>Payroll is one area where there is no room for mistakes, because people expect to be paid the right amount on the right day. We handle the entire payroll process for your clients, from the calculations through to the filings. Everything is worked out carefully and submitted on time, so staff are paid correctly, and the business stays compliant.
 </p>
                <ul>
                   <li><b>Pay run processing</b>
@@ -727,7 +727,7 @@
                </ul>
             </div>
          </div>
-         
+
          <div class="trust_banner trust_banner_home" style="background-image: url('{{asset('public/front/images/whitelabel-accounting-banner-6.webp')}}');">
             <div class="trust_card tax_preparation">
                <div class="trust_card_head">
@@ -746,7 +746,7 @@
                </ul>
             </div>
          </div>
-         
+
          <div class="trust_banner trust_banner_home" style="background-image: url('{{asset('public/front/images/whitelabel-accounting-banner-7.webp')}}');">
             <div class="trust_card tax_preparation">
                <div class="trust_card_head">
@@ -776,13 +776,13 @@
          <div class="col-lg-6 ">
             <div>
                <h2>Dedicated White Label Client Accounting Services (CAS)</h2>
-               <p>At PCS Global, we provide dedicated white label client accounting Services that help accounting firms deliver ongoing financial support to their clients without expanding their internal teams. Client Accounting Services (CAS) go beyond annual accounting and tax work, focusing on managing a client's day-to-day financial operations throughout the year. 
+               <p>At PCS Global, we provide dedicated white label client accounting Services that help accounting firms deliver ongoing financial support to their clients without expanding their internal teams. Client Accounting Services (CAS) go beyond annual accounting and tax work, focusing on managing a client's day-to-day financial operations throughout the year.
             </p>
                <p>In practice, we manage the books in the cloud, keep them updated, and give your clients a live view of their numbers whenever they log in. With <b>client accounting services outsourcing,</b> your firm offers this steady, modern service without building the team to run it.
             </p>
                <p>With the daily accounting handled by our <b>outsourced accounting support,</b> your firm can deliver a consistent monthly service that pays you on a regular basis.
             </p>
-               <a  href="#consultation-form" class="com_btn1 color-animated-button bubble-btn mt-3" 
+               <a  href="#consultation-form" class="com_btn1 color-animated-button bubble-btn mt-3"
                   data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
                   <!-- Bubble effect layers -->
                   <span class="color-button__background"></span>
@@ -813,7 +813,7 @@
    <div class="container">
       <div class="com_sec_head_top">
          <h2>Who We Help: Accounting Firms in the US, UK, and Australia</h2>
-         
+
     <p>At PCS Global, we support US, UK & Australian firms with our <b>white label accounting services</b> and work behind the scenes for all kinds of practices, so they can offer more services under their own brand name with less pressure on their staff.
 </p>
       </div>
@@ -844,7 +844,7 @@
                      <div>
                         <p>UK accounting practices juggle accounting, transaction, VAT, payroll, and year-end tasks. We handle all these day-to-day activities, so you can focus on advising clients and growing your enterprise.
                         </p>
-                        
+
                      </div>
                   </div>
                </div>
@@ -859,7 +859,7 @@
                      </div>
                      <div>
                     <p>Growth should never mean saying no to new clients. Our team picks up the extra work, giving bookkeeping businesses the capacity to take on more without hiring new staff.</p>
-                       
+
                      </div>
                   </div>
                </div>
@@ -875,12 +875,12 @@
                      <div>
 
                     <p>Every tax deadline counts, and we help you hit all of them. We provide steady back-office support that helps you process more returns accurately, so you can handle peak season without stress.</p>
-                       
+
                      </div>
                   </div>
                </div>
             </div>
-            
+
              <div class="experts_card team-card" style="background:#FFFFF6">
                <div class="com_bg_cards">
                   <img class="img-fluid" src="{{ asset('public/front/images/BAS-&-Accounting-Firms-(Australia).webp') }}" alt="bg1" />
@@ -888,16 +888,16 @@
                      <div class="com_bg_card_head">
                         <h3 class="sub_head">BAS & Accounting Firms (Australia) </h3>
                         <span><img src="{{ asset('public/front/images/trust_icon.png') }}" alt="icon" /></span>
-                     </div> 
+                     </div>
                      <div>
 
                     <p>BAS, GST, and local standards, all handled the right way. Our team works to these requirements, so it is always accurate, compliant, and ready for you to deliver to clients.</p>
-                       
+
                      </div>
                   </div>
                </div>
             </div>
-            
+
              <div class="experts_card team-card" style="background:#FFFFF6">
                <div class="com_bg_cards">
                   <img class="img-fluid" src="{{ asset('public/front/images/Virtual-CFO-Firms.webp') }}" alt="bg1" />
@@ -908,14 +908,14 @@
                      </div>
                      <div>
                         <p>You give the advice, and we handle the numbers behind it. We take care of the bookkeeping and reporting underneath, so your advice is always backed by accurate figures. </p>
-                       
+
                      </div>
                   </div>
                </div>
             </div>
-            
-           
-            
+
+
+
          </div>
       </div>
       <div class="our_experts_bot">
@@ -950,13 +950,13 @@
          <p>Our five-step white label accounting process makes it easy to bring us on board. </p>
       </div>
       <div class="timeline">
-         
+
          <!-- TIMELINE CONTAINER -->
          <div class="timeline__container" id="timelineAnimation">
-            
+
             <!-- LOGO -->
             <div class="timeline__header">
-               <img src="https://pcsglobalgroup.com/public/front/images/logo.svg" alt="Logo"> 
+               <img src="https://pcsglobalgroup.com/public/front/images/logo.svg" alt="Logo">
             </div>
 
             <!-- SVG LINE FOR 5 ITEMS -->
@@ -979,10 +979,10 @@
                   stroke-dasharray="10 12"
                   mask="url(#timeline-mask)" />
             </svg>
-            
+
             <!-- STARTING LINE CAP -->
             <div class="timeline__cap"></div>
-            
+
             <!-- ITEM 1 -->
             <div class="timeline__item timeline__item--1">
                <div class="timeline__arc-box">
@@ -995,7 +995,7 @@
                   We start with a simple conversation to understand your firm, your clients, and the work you want to hand over. This helps us see exactly where we can be helpful to you.
                </div>
             </div>
-            
+
             <!-- ITEM 2 -->
             <div class="timeline__item timeline__item--2">
                <div class="timeline__content js-group-2">
@@ -1008,7 +1008,7 @@
                   </div>
                </div>
             </div>
-            
+
             <!-- ITEM 3 -->
             <div class="timeline__item timeline__item--3">
                <div class="timeline__arc-box">
@@ -1021,7 +1021,7 @@
                   We then assign you a dedicated team with the right skills for your clients and regions. You get the same people each time, so they learn about your firm and preferences quickly.
                </div>
             </div>
-            
+
             <!-- ITEM 4 -->
             <div class="timeline__item timeline__item--4">
                <div class="timeline__content js-group-4">
@@ -1034,7 +1034,7 @@
                   </div>
                </div>
             </div>
-            
+
             <!-- ITEM 5 -->
             <div class="timeline__item timeline__item--5">
                <div class="timeline__arc-box">
@@ -1047,7 +1047,7 @@
                   From there, we handle the work day to day and keep you updated with regular reporting. You always know where things stand, what is done, what is in progress, and what is coming up.
                </div>
             </div>
-            
+
          </div>
       </div>
    </div>
@@ -1058,7 +1058,7 @@
    <div class="container">
       <div class="com_sec_head_top">
          <h2>Why Choose PCS Global Group as Your White Label Accounting Partner</h2>
-         <p>PCS Global works as an extension of your firm, delivering trusted white label accounting support that helps you scale operations, improve efficiency, and achieve sustainable growth. 
+         <p>PCS Global works as an extension of your firm, delivering trusted white label accounting support that helps you scale operations, improve efficiency, and achieve sustainable growth.
 </p>
       </div>
       <div class="our_experts_cen">
@@ -1073,7 +1073,7 @@
                      </div>
                      <div>
                         <p>We give you one consistent team that works only on your account. Because they know your firm and your clients well, the work runs smoothly, and you rarely have to explain things twice.  </p>
-                       
+
                      </div>
                   </div>
                </div>
@@ -1089,7 +1089,7 @@
                      <div>
                         <p> We match you with accountants who understand your clients' industries, so the work reflects how those businesses actually operate. That knowledge shows in cleaner books and more useful reports.
                         </p>
-                      
+
                      </div>
                   </div>
                </div>
@@ -1103,10 +1103,10 @@
                         <span><img src="{{ asset('public/front/images/trust_icon.png') }}" alt="icon" /></span>
                      </div>
                      <div>
-                        <p>Our teams work across US, UK, and Australian standards every day. Whichever market your clients belong to, the work is done right according to local rules and ready for you to deliver. 
+                        <p>Our teams work across US, UK, and Australian standards every day. Whichever market your clients belong to, the work is done right according to local rules and ready for you to deliver.
 
                         </p>
-                       
+
                      </div>
                   </div>
                </div>
@@ -1120,9 +1120,9 @@
                         <span><img src="{{ asset('public/front/images/trust_icon.png') }}" alt="icon" /></span>
                      </div>
                      <div>
-                        <p>You decide how much we do, whether that is a single service, a few clients, or everything behind the scenes. Scale it up or down whenever you like, with no long contracts. 
+                        <p>You decide how much we do, whether that is a single service, a few clients, or everything behind the scenes. Scale it up or down whenever you like, with no long contracts.
                         </p>
-                        
+
                      </div>
                   </div>
                </div>
@@ -1138,7 +1138,7 @@
                      <div>
                         <p>Your clients' data is backed by strong security, with controlled access and safe systems. We treat their information with the same care you would, because your reputation depends on it.
                         </p>
-                       
+
                      </div>
                   </div>
                </div>
@@ -1152,9 +1152,9 @@
                         <span><img src="{{ asset('public/front/images/trust_icon.png') }}" alt="icon" /></span>
                      </div>
                      <div>
-                        <p>Every engagement is covered by strict NDAs and proper data protection practices. Your clients stay yours, their data stays safe, and nothing about our role ever reaches them. 
+                        <p>Every engagement is covered by strict NDAs and proper data protection practices. Your clients stay yours, their data stays safe, and nothing about our role ever reaches them.
                         </p>
-                       
+
                      </div>
                   </div>
                </div>
@@ -1170,7 +1170,7 @@
                      <div>
                         <p> You always know what you are paying and what it covers, with no hidden fees or surprise charges. Clear pricing makes it easy to quote your own clients with confidence.
                         </p>
-                      
+
                      </div>
                   </div>
                </div>
@@ -1186,13 +1186,13 @@
                      <div>
                         <p>When work increases, we scale your team up fast; when it slows, we bring it back down. You always have the right level of support, without paying for staff you do not need.
                         </p>
-                       
+
                      </div>
                   </div>
                </div>
             </div>
-            
-         
+
+
          </div>
       </div>
       <div class="our_experts_bot">
@@ -1233,7 +1233,7 @@
                 <div class="row gy-4 gy-xxl-5 gx-lg-4">
 
                     <div class="col-lg-6 form-group">
-                        <input type="text" name="fullname" value="{{ old('fullname') }}" maxlength="70" 
+                        <input type="text" name="fullname" value="{{ old('fullname') }}" maxlength="70"
                         oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').replace(/\s+/g, ' ').trimStart();" placeholder=" ">
                         <label>Full Name<span class="text-danger">*</span></label>
                         @error('fullname') <span class="text-danger">{{ $message }}</span> @enderror
@@ -1250,7 +1250,7 @@
                     </div>
 
                     <div class="col-lg-6 form-group">
-                        <input type="tel" name="phone" value="{{ old('phone') }}" 
+                        <input type="tel" name="phone" value="{{ old('phone') }}"
                          oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 15);"
                                     maxlength="12" minlength="10" placeholder=" ">
                         <label>Phone Number<span class="text-danger">*</span></label>
@@ -1259,23 +1259,33 @@
                     </div>
 
                    <div class="col-lg-6 form-group">
-                        <input type="text" name="companyName" value="{{ old('companyName') }}" maxlength="70" 
-                        oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').replace(/\s+/g, ' ').trimStart();" placeholder=" ">
-                        <label>Company Name</label>
-                        @error('companyName') <span class="text-danger">{{ $message }}</span> @enderror
-                    </div>
-                   
+                  <input type="text" name="companyName" value="{{ old('companyName') }}" maxlength="70"
+                  oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').replace(/\s+/g, ' ').trimStart();" placeholder=" ">
+                  <label>Company Name</label>
+                  @error('companyName') <span class="text-danger">{{ $message }}</span> @enderror
+               </div>
+
+               <div class="col-lg-12 form-group">
+                  <select name="country" id="countrySelect">
+                     <option value="" hidden>Select Country</option>
+                     @foreach($countries as $country)
+                           <option value="{{ $country->name }}" {{ old('country') == $country->name ? 'selected' : '' }}>{{ $country->name }}</option>
+                     @endforeach
+                  </select>
+                  @error('country') <span class="text-danger">{{ $message }}</span> @enderror
+               </div>
+
                     <div class="col-lg-12 form-group">
                         <textarea rows="3" name="message"  placeholder=" ">{{ old('message') }}</textarea>
                         <label>Message:</label>
                     </div>
                     <div class="col-lg-12 form-group">
-                        <div class="g-recaptcha" 
+                        <div class="g-recaptcha"
                                 id="contactCaptcha"
-                                data-sitekey="6LfxJ7crAAAAAGJsj1iMJSQXpZLJE47H1h6StuUT" 
+                                data-sitekey="6LfxJ7crAAAAAGJsj1iMJSQXpZLJE47H1h6StuUT"
                                 data-callback="onCaptchaSuccessContact"></div>
                             <span class="captcha-error text-danger" style="display:none;">Please verify you are not a robot.</span>
-                        
+
                     </div>
                     <div class="col-lg-12">
                         <button type="submit" class="com_btn2 color-animated-button bubble-btn border-0"
@@ -1312,8 +1322,8 @@
                      data-bs-target="#faq1"
                      aria-expanded="true"
                      aria-controls="faq1">
-                     What is white label accounting? 
- 
+                     What is white label accounting?
+
                   </h5>
                   <div id="faq1"
                      class="accordion-collapse collapse show"
@@ -1331,7 +1341,7 @@
                      data-bs-target="#faq2"
                      aria-expanded="false"
                      aria-controls="faq2">
-                    How is white label accounting different from outsourcing? 
+                    How is white label accounting different from outsourcing?
                   </h5>
                   <div id="faq2"
                      class="accordion-collapse collapse"
@@ -1348,13 +1358,13 @@
                      data-bs-target="#faq3"
                      aria-expanded="false"
                      aria-controls="faq3">
-                     Can clients know that accounting work is outsourced? 
+                     Can clients know that accounting work is outsourced?
                   </h5>
                   <div id="faq3"
                      class="accordion-collapse collapse"
                      data-bs-parent="#faqAccordion">
                      <p>
-                       No. Everything reaches them under your name, in your formats, through you. We work entirely behind the scenes and have no contact with your clients unless you specifically ask for it. 
+                       No. Everything reaches them under your name, in your formats, through you. We work entirely behind the scenes and have no contact with your clients unless you specifically ask for it.
 
                      </p>
                   </div>
@@ -1366,13 +1376,13 @@
                      data-bs-target="#faq4"
                      aria-expanded="false"
                      aria-controls="faq4">
-                     Which accounting software do you support? 
+                     Which accounting software do you support?
                   </h5>
                   <div id="faq4"
                      class="accordion-collapse collapse"
                      data-bs-parent="#faqAccordion">
                      <p>
-                       We work across the main platforms, including QuickBooks, Xero, Sage, NetSuite, Zoho Books, FreshBooks, and MYOB. In most cases, we simply work with the software your firm already uses. 
+                       We work across the main platforms, including QuickBooks, Xero, Sage, NetSuite, Zoho Books, FreshBooks, and MYOB. In most cases, we simply work with the software your firm already uses.
                      </p>
                   </div>
                </div>
@@ -1383,7 +1393,7 @@
                      data-bs-target="#faq5"
                      aria-expanded="false"
                      aria-controls="faq5">
-                     Do you provide dedicated accountants? 
+                     Do you provide dedicated accountants?
                   </h5>
                   <div id="faq5"
                      class="accordion-collapse collapse"
@@ -1400,7 +1410,7 @@
                      data-bs-target="#faq6"
                      aria-expanded="false"
                      aria-controls="faq6">
-                     How secure is our client data? 
+                     How secure is our client data?
                   </h5>
                   <div id="faq6"
                      class="accordion-collapse collapse"
@@ -1417,7 +1427,7 @@
                      data-bs-target="#faq7"
                      aria-expanded="false"
                      aria-controls="faq7">
-                     Do you support US GAAP, UK GAAP, and Australian accounting standards? 
+                     Do you support US GAAP, UK GAAP, and Australian accounting standards?
                   </h5>
                   <div id="faq7"
                      class="accordion-collapse collapse"
@@ -1433,7 +1443,7 @@
                      data-bs-target="#faq8"
                      aria-expanded="false"
                      aria-controls="faq8">
-                     What industries do you specialise in? 
+                     What industries do you specialise in?
                   </h5>
                   <div id="faq8"
                      class="accordion-collapse collapse"
@@ -1450,13 +1460,13 @@
                      data-bs-target="#faq9"
                      aria-expanded="false"
                      aria-controls="faq9">
-                     How much do white label accounting services cost? 
+                     How much do white label accounting services cost?
                   </h5>
                   <div id="faq9"
                      class="accordion-collapse collapse"
                      data-bs-parent="#faqAccordion">
                      <p>
-                       It varies depending on the scope and scale of services required. You only pay for what you use, and we clearly present our cost structure upfront before you even commit. 
+                       It varies depending on the scope and scale of services required. You only pay for what you use, and we clearly present our cost structure upfront before you even commit.
 
                      </p>
                   </div>
@@ -1467,13 +1477,13 @@
                      data-bs-target="#faq10"
                      aria-expanded="false"
                      aria-controls="faq10">
-                     Can I scale my team up or down? 
+                     Can I scale my team up or down?
                   </h5>
                   <div id="faq10"
                      class="accordion-collapse collapse"
                      data-bs-parent="#faqAccordion">
                      <p>
-                       Yes, you can increase your support when things get busy and scale back when things slow down. When your workload varies, your support varies along with it, and you only ever pay what you need. 
+                       Yes, you can increase your support when things get busy and scale back when things slow down. When your workload varies, your support varies along with it, and you only ever pay what you need.
 
 
                      </p>
@@ -1517,22 +1527,22 @@
    document.addEventListener("DOMContentLoaded", () => {
       const timelinePath = document.getElementById("timelinePath");
       const timelineContainer = document.getElementById("timelineAnimation");
-      
+
       if(timelinePath && timelineContainer) {
          const pathLength = timelinePath.getTotalLength();
-         
+
          /* SVG LINE SETUP */
          timelinePath.style.strokeDasharray = pathLength;
          timelinePath.style.strokeDashoffset = pathLength;
-         
+
          const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                if (entry.isIntersecting) {
-                  
+
                   /* LINE ANIMATION */
                   timelinePath.style.transition = "stroke-dashoffset 2.5s ease-in-out";
                   timelinePath.style.strokeDashoffset = "0";
-                  
+
                   /* GROUP ANIMATION TIMING */
                   const animationGroups = [
                      { selector: ".js-group-1", delay: 300 },
@@ -1541,7 +1551,7 @@
                      { selector: ".js-group-4", delay: 1800 },
                      { selector: ".js-group-5", delay: 2300 }
                   ];
-                  
+
                   animationGroups.forEach((group) => {
                      setTimeout(() => {
                         document.querySelectorAll(group.selector).forEach((element) => {
@@ -1549,17 +1559,17 @@
                         });
                      }, group.delay);
                   });
-                  
+
                   /* CAP ANIMATION */
                   setTimeout(() => {
                      document.querySelector(".timeline__cap").classList.add("is-visible");
                   }, 100);
-                  
+
                   observer.unobserve(entry.target);
                }
             });
          }, { threshold: 0.2 });
-         
+
          observer.observe(timelineContainer);
       }
    });
@@ -1570,7 +1580,7 @@
          const target = document.getElementById("consultation-form");
          if (target) {
             setTimeout(() => {
-               const offset = 140; 
+               const offset = 140;
                const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
                const offsetPosition = elementPosition - offset;
                window.scrollTo({
@@ -1578,7 +1588,7 @@
                   behavior: "smooth"
                });
                sessionStorage.removeItem("scrollToContact");
-            }, 100); 
+            }, 100);
          }
       }
    });
@@ -1590,6 +1600,30 @@
     scroll-margin-top: 120px;
 }
 </style>
+
+@if(!old('country'))
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const countrySelect = document.getElementById('countrySelect');
+    if (!countrySelect) return;
+
+    fetch('https://ipwho.is/')
+        .then(res => res.json())
+        .then(data => {
+            if (!data || data.success === false || !data.country) return;
+
+            const options = countrySelect.options;
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].text.trim().toLowerCase() === data.country.trim().toLowerCase()) {
+                    countrySelect.value = options[i].value;
+                    break;
+                }
+            }
+        })
+        .catch(err => console.warn('Country auto-detect failed:', err));
+});
+</script>
+@endif
 
 
 @include('layouts.frontfooter')

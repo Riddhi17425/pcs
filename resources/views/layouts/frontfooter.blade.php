@@ -1,4 +1,4 @@
-    
+
 <footer class="mt-100 footer">
     <div class="container">
         <div class="footer_top">
@@ -11,7 +11,7 @@
                             by long-term partnerships with clients, and employees based on strong values of integrity
                             and trust.</p>
                         <div class="foot_social">
-                            
+
                             <!--<a href="https://api.whatsapp.com/send?phone=918460268698&text=Hello,%20I%27m%20visiting%20your%20website%20and%20would%20like%20to%20know%20more" target="_blank"><img src="{{asset('public/front/images/whatsapp.svg')}}" alt="whatsapp" loading="lazy"></a>-->
                             <a href="https://www.facebook.com/PCSGlobalGroup/" target="_blank"><img src="{{asset('public/front/images/facebook.svg')}}" alt="facebook" loading="lazy"></a>
                             <a href="https://www.instagram.com/pcsglobalgroup/" target="_blank"><img src="{{asset('public/front/images/insta.svg')}}" alt="insta" loading="lazy"></a>
@@ -25,7 +25,7 @@
 
                 <div class="col-lg-9">
                     <div class="footer_contant">
-                       
+
                             <div class="foot_rt">
                                 <h4 class="sub_head">Quick Links</h4>
                                 <ul>
@@ -35,7 +35,7 @@
                                     <li>
                                         <a href="{{route('about')}}">About Us</a>
                                     </li>
-                                  
+
                                     <li>
                                         <a href="{{route('datasecurity')}}">Data Security</a>
                                     </li>
@@ -48,17 +48,17 @@
                                     </li>
                                 </ul>
                             </div>
-                      
-                     
+
+
                             <div class="foot_rt">
                                 <h4 class="sub_head">Our Services</h4>
                                 <ul>
-                                    
+
                                      <li>
                                         <a href="{{ route('pcs.global.bookkeeping') }}">Accounting & Bookkeeping</a>
                                     </li>
-                                    
-                                   
+
+
                                     <li>
                                         <a href="{{ route('strata.management') }}">Strata Property Management</a>
                                     </li>
@@ -74,14 +74,14 @@
                                     <li>
                                         <a href="{{ route('it.automation') }}">IT Automation Services</a>
                                     </li>
-                                   
+
                                 </ul>
                             </div>
-                            
+
                             <!-- <div class="foot_rt">-->
                             <!--    <h4 class="sub_head">Accounting</h4>-->
                             <!--    <ul>-->
-                                    
+
                             <!--        <li>-->
                             <!--            <a href="{{ route('pcs.global.aus') }}">Accounting - PCS Global in Australia</a>-->
                             <!--        </li>-->
@@ -91,26 +91,26 @@
                             <!--        <li>-->
                             <!--            <a href="{{ route('pcs.global.uk') }}">Accounting - PCS Global in UK</a>-->
                             <!--        </li>-->
-                                   
+
                             <!--    </ul>-->
-                                
+
                             <!--     <h4 class="sub_head mt-4">Taxation</h4>-->
                             <!--     <ul>-->
                             <!--          <li>-->
                             <!--            <a href="{{ route('taxation-services-australian') }}">Taxation in Australia</a>-->
                             <!--        </li>-->
-                                    
+
                             <!--         <li>-->
                             <!--            <a href="{{ route('taxation-services-usa') }}">Taxation in USA</a>-->
                             <!--        </li>-->
-                                    
+
                             <!--         <li>-->
                             <!--            <a href="{{ route('taxation-services-uk') }}">Taxation in UK</a>-->
                             <!--        </li>-->
                             <!--     </ul>-->
                             <!--</div>-->
-                        
-                       
+
+
                             <div class="foot_rt border-end-0">
                                 <h4 class="sub_head">Contact Us</h4>
                                 <ul>
@@ -126,7 +126,7 @@
                                     <li>
                                         <a href="tel:(+44) 113 4034334"><b>UK :</b> (+44) 113 4034334 </a>
                                     </li>
-                                  
+
                                 </ul>
 
                                 <h4 class="sub_head email-head mt-4">Email Us:</h4>
@@ -135,10 +135,10 @@
                                     <li>
                                         <a href="mailto:info@pcsglobalgroup.com">info@pcsglobalgroup.com</a>
                                     </li>
-                                   
+
                                 </ul>
                             </div>
-                      
+
                     </div>
                 </div>
             </div>
@@ -148,7 +148,7 @@
             <p>©<span><?php echo date('Y'); ?></span> Progressive Corporate Services Pvt. Ltd., All Rights Reserved.</p>
 
             <p class="Privacy_link"><a href="{{ route('privacy-policy') }}">Privacy Policy</a></p>
- 
+
         </div>
     </div>
 </footer>
@@ -196,7 +196,7 @@
                             </div>
 
                             <div class="col-lg-12 form-group">
-                                <select name="country">
+                                 <select name="country" id="requestCountrySelect">
                                     <option value="" hidden>Select Country</option>
                                     @foreach($countries as $country)
                                         <option value="{{ $country->name }}">{{ $country->name }}</option>
@@ -231,7 +231,7 @@
 
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 </div>
 <!-- WhatsApp Floating Button -->
@@ -348,9 +348,9 @@
 
 
 
-     
+
 <!--  </style>-->
-  
+
 <!--    <div class="modal fade Whats_mpp_modal" id="exampleModal-4" tabindex="-1">-->
 <!--      <div class="modal-dialog modal-dialog-centered">-->
 <!--          <div class="modal-content popup-box popup-box_whatsapp">-->
@@ -381,7 +381,7 @@
 <!--                            <small class="text-danger d-none" id="wa_error">-->
 <!--                                Contact number must be required-->
 <!--                            </small>-->
-                            
+
 <!--                           hidden -->
 <!--                          <input type="hidden" name="number" id="wa_full_phone">-->
 <!--                          <input type="hidden" name="country" id="wa_country_name">-->
@@ -406,8 +406,8 @@
 <!--          <img src="https://www.mmpfilter.com/public/images/whatsapp.png" alt="whatsapp">-->
 <!--      </a>-->
 <!--  </div>-->
-    
-    
+
+
 
 <!--  <script>-->
 <!--document.addEventListener("DOMContentLoaded", function () {-->
@@ -640,7 +640,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
 
-          
+
 
             removeError(field);
             return true;
@@ -681,7 +681,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (fields.phone && !validateField(fields.phone, "phone")) valid = false;
             if (fields.country && !validateField(fields.country, "country")) valid = false;
             if (fields.services.length && !validateField(fields.services[0], "services")) valid = false;
-         
+
 
             // Captcha validation with widgetId
             if (typeof grecaptcha !== "undefined") {
@@ -723,6 +723,36 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 });
 
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const requestModal = document.getElementById('exampleModal');
+    const countrySelect = document.getElementById('requestCountrySelect');
+    if (!requestModal || !countrySelect) return;
+
+    let countryDetected = false; // avoid re-fetching every time modal reopens
+
+    requestModal.addEventListener('shown.bs.modal', function () {
+        if (countryDetected || countrySelect.value) return; // don't override if already set
+
+        fetch('https://ipwho.is/')
+            .then(res => res.json())
+            .then(data => {
+                if (!data || data.success === false || !data.country) return;
+
+                const options = countrySelect.options;
+                for (let i = 0; i < options.length; i++) {
+                    if (options[i].text.trim().toLowerCase() === data.country.trim().toLowerCase()) {
+                        countrySelect.value = options[i].value;
+                        break;
+                    }
+                }
+                countryDetected = true;
+            })
+            .catch(err => console.warn('Country auto-detect failed:', err));
+    });
+});
 </script>
 
 
