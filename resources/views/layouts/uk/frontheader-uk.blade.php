@@ -103,17 +103,6 @@
          inset: 12px auto auto 0px !important;
          }
       </style>
-      <!-- Google Tag Manager -->
-      <script>(function (w, d, s, l, i) {
-         w[l] = w[l] || []; w[l].push({
-           'gtm.start':
-             new Date().getTime(), event: 'gtm.js'
-         }); var f = d.getElementsByTagName(s)[0],
-           j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-             'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-         })(window, document, 'script', 'dataLayer', 'GTM-PW87W9HP');
-      </script>
-      <!-- End Google Tag Manager -->
       @verbatim
       <script type="application/ld+json">
          {
@@ -163,10 +152,6 @@
       @endverbatim
    </head>
    <body>
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW87W9HP" height="0" width="0"
-         style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
       <!--    <div id="loader">-->
       <!--       <div class="spinner-border" role="status">-->
       <!--<span class="visually-hidden">Loading...</span>-->
@@ -267,7 +252,7 @@
       </div>
       <script>
          document.addEventListener("DOMContentLoaded", function() {
-         
+
            // Force external links to open in new tab reliably
            document.querySelectorAll('.top-header a.external-link').forEach(link => {
              link.addEventListener('click', function(e) {
@@ -275,7 +260,7 @@
                window.open(link.href, '_blank', 'noopener,noreferrer'); // Open in new tab
              });
            });
-         
+
            // Force internal links (menu links) to navigate on first click
            document.querySelectorAll('nav a, .top-header a:not(.external-link)').forEach(link => {
              link.addEventListener('click', function(e) {
@@ -283,7 +268,7 @@
                window.location.href = this.href; // Full reload to ensure first-click navigation
              });
            });
-         
+
          });
       </script>
       <script>
@@ -296,7 +281,7 @@
              document.getElementById(target).classList.add('active');
            });
          });
-         
+
          // Back navigation
          document.querySelectorAll('.back-btn').forEach(btn => {
            btn.addEventListener('click', () => {

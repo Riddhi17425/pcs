@@ -7,10 +7,10 @@
         <div class="hero">
             <div class="hero_lt">
                 <div class="hero_lt_top">
-                    <h1 class="hero_head">Powered by <span><img class="hero_gif" src="{{asset('public/front/images/pcs_hero.gif')}}"
-                                alt="image" loading="lazy"></span>
+                  <h1 class="hero_head">Powered by <span><img class="hero_gif" src="{{asset('public/front/images/pcs_hero.gif')}}"
+                                alt="" aria-hidden="true"></span>
                         Accuracy ! <br /> Backed by Expertise</h1>
-                   
+
                     <p class="hero_para">Your Overseas Partners  <br/> For Workforce Solutions</p>
                 </div>
 
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="hero_btn">
-                    <a class="com_btn2 color-animated-button bubble-btn" href="javascript:void(0)"
+                    <a class="com_btn2 color-animated-button bubble-btn" href="{{ route('contact') }}"
                         data-bs-toggle="modal" data-bs-target="#exampleModal"
                         data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
@@ -61,13 +61,13 @@
     <div class="container">
         <div class="com_sec_head_top">
             <h2 class="mb-2 mb-xxl-4">Comprehensive Business <br /> Management & Consulting Solutions</h2>
-            <p>At PCS Global, we deliver expert consulting services that are strategically designed to help your organization navigate challenges, 
-                    enhance performance and build long-term resilience. Our team offers objective insights, customized strategies and practical solutions. 
+            <p>At PCS Global, we deliver expert consulting services that are strategically designed to help your organization navigate challenges,
+                    enhance performance and build long-term resilience. Our team offers objective insights, customized strategies and practical solutions.
                     Taking a holistic approach, we help businesses address their day-to-day operational needs, as well as complex business issues, with precision, professionalism, and care. </p>
         </div>
 
          <div class="comp_bus_bot d-none d-lg-flex">
-            
+
             <a href="{{ route('pcs.global.bookkeeping') }}" class="comp_bus_child">
                 <!-- First section: Image + Number -->
                 <div class="comp_bus_front">
@@ -84,14 +84,14 @@
                         <h6 class="comp_bus_num">01</h6>
                         <h6 class="comp_bus_para mb-4">Accounting and Finance</h6>
                         <p class="comp_bus_ext">
-                            Our all-inclusive accounting & finance services team takes care of all your books, ensuring accuracy and regulatory compliance, 
+                            Our all-inclusive accounting & finance services team takes care of all your books, ensuring accuracy and regulatory compliance,
                             powering clients to take control of their financial future with scalable and tech-enabled solutions.
 
                         </p>
                     </div>
                 </div>
             </a>
-            
+
             <a href="{{ route('taxation.services') }}" class="comp_bus_child">
                 <!-- First section: Image + Number -->
                 <div class="comp_bus_front">
@@ -109,14 +109,14 @@
                         <h6 class="comp_bus_num">02</h6>
                         <h6 class="comp_bus_para mb-4">Taxation</h6>
                         <p class="comp_bus_ext">
-                            With efficiency at our core, we deliver accurate and timely tax preparation services tailored for individuals, sole traders, 
+                            With efficiency at our core, we deliver accurate and timely tax preparation services tailored for individuals, sole traders,
                             and business entities through a streamlined, dependable process built for results.
 
                         </p>
                     </div>
                 </div>
             </a>
-            
+
             <a href="{{ route('payroll-outsourcing-services') }}" class="comp_bus_child">
                 <!-- First section: Image + Number -->
                 <div class="comp_bus_front">
@@ -136,13 +136,13 @@
                         <h6 class="comp_bus_para mb-4">Payroll
                             outsourcing</h6>
                         <p class="comp_bus_ext">
-                            At PCS Global, we deliver a comprehensive payroll outsourcing service that relieves you and allows you to focus on growing your business. 
-                            Our dedicated team ensures greater accuracy while also keeping in mind the laws and regulations. 
+                            At PCS Global, we deliver a comprehensive payroll outsourcing service that relieves you and allows you to focus on growing your business.
+                            Our dedicated team ensures greater accuracy while also keeping in mind the laws and regulations.
                         </p>
                     </div>
                 </div>
             </a>
-            
+
             <a href="{{ route('strata.management') }}" class="comp_bus_child">
                 <!-- First section: Image + Number -->
                 <div class="comp_bus_front">
@@ -160,13 +160,13 @@
                         <h6 class="comp_bus_num">04</h6>
                         <h6 class="comp_bus_para mb-4">Strata Management</h6>
                         <p class="comp_bus_ext">
-                           From budgeting and levy collection to maintenance coordination, we do it all. 
+                           From budgeting and levy collection to maintenance coordination, we do it all.
                            Our Strata Specialists streamline property maintenance services, acting as your virtual strata managers with a keen expert eye.
                         </p>
                     </div>
                 </div>
             </a>
-            
+
             <a href="{{ route('it.automation') }}" class="comp_bus_child">
                 <!-- First section: Image + Number -->
                 <div class="comp_bus_front">
@@ -184,13 +184,13 @@
                         <h6 class="comp_bus_num">05</h6>
                         <h6 class="comp_bus_para mb-4">IT Automation</h6>
                         <p class="comp_bus_ext">
-                            Our specialization in development, UI/UX, QA and enterprise solutions grows your business with a smarter system. 
+                            Our specialization in development, UI/UX, QA and enterprise solutions grows your business with a smarter system.
                             Custom tech solutions enhanced with digital integration enable a more efficient and scalable business.
                         </p>
                     </div>
                 </div>
             </a>
-            
+
             <a class="comp_bus_child" href="{{ route('recruitment.services') }}" >
                 <!-- First section: Image + Number -->
                 <div class="comp_bus_front">
@@ -208,17 +208,17 @@
                         <h6 class="comp_bus_num">06</h6>
                         <h6 class="comp_bus_para mb-4">Staffing & Recruitment</h6>
                         <p class="comp_bus_ext">
-                            Tailored staffing solutions for your business with the blend of flexible recruitment, contract hiring and offshore resource models. 
+                            Tailored staffing solutions for your business with the blend of flexible recruitment, contract hiring and offshore resource models.
                             Our global talent network ensures you have the right people for the right roles, right when you need them.
 
                         </p>
                     </div>
                 </div>
             </a>
-            
+
             </div>
-            
-        
+
+
         <!-- phone slider -->
         <div class="d-lg-none overflow-hidden">
             <div class="comp_bus_slider">
@@ -228,24 +228,24 @@
                         <h6 class="comp_bus_num_p">01</h6>
                         <a href="{{ route('pcs.global.bookkeeping') }}"><h6 class="comp_bus_para_P mb-4">Accounting and Finance</h6></a>
                         <p class="comp_bus_ext_P">
-                             Our all-inclusive accounting & finance services team takes care of all your books, ensuring accuracy and regulatory compliance, 
+                             Our all-inclusive accounting & finance services team takes care of all your books, ensuring accuracy and regulatory compliance,
                              powering clients to take control of their financial future with scalable and tech-enabled solutions.
                         </p>
                     </div>
                 </div>
-                
+
                 <div class="comp_bus_back_p">
                     <span><img class="img-fluid mb-3" src="{{asset('public/front/images/Taxation.jpg')}}" loading="lazy" alt="image"></span>
                     <div class="comp_bus_back_bt_p">
                         <h6 class="comp_bus_num_p">02</h6>
                         <a href="{{ route('taxation.services') }}"><h6 class="comp_bus_para_P mb-4">Taxation</h6></a>
                         <p class="comp_bus_ext_P">
-                           With efficiency at our core, we deliver accurate and timely tax preparation services tailored for individuals, sole traders, 
+                           With efficiency at our core, we deliver accurate and timely tax preparation services tailored for individuals, sole traders,
                             and business entities through a streamlined, dependable process built for results.
                         </p>
                     </div>
                 </div>
-                
+
                 <div class="comp_bus_back_p">
                     <span><img class="img-fluid mb-3" src="{{asset('public/front/images/Payroll_outsourcing.jpg')}}" loading="lazy" alt="image"></span>
                     <div class="comp_bus_back_bt_p">
@@ -253,43 +253,43 @@
                         <a href="{{ route('payroll-outsourcing-services') }}"><h6 class="comp_bus_para_P mb-4">Payroll
                             outsourcing</h6></a>
                         <p class="comp_bus_ext_P">
-                             At PCS Global, we deliver a comprehensive payroll outsourcing service that relieves you and allows you to focus on growing your business. 
-                            Our dedicated team ensures greater accuracy while also keeping in mind the laws and regulations. 
+                             At PCS Global, we deliver a comprehensive payroll outsourcing service that relieves you and allows you to focus on growing your business.
+                            Our dedicated team ensures greater accuracy while also keeping in mind the laws and regulations.
                         </p>
                     </div>
                 </div>
-                
+
                 <div class="comp_bus_back_p">
                     <span><img class="img-fluid mb-3" src="{{asset('public/front/images/Strata_Management.jpg')}}" loading="lazy" alt="image"></span>
                     <div class="comp_bus_back_bt_p">
                         <h6 class="comp_bus_num_p">04</h6>
                        <a href="{{ route('strata.management') }}"> <h6 class="comp_bus_para_P mb-4">Strata Management</h6></a>
                         <p class="comp_bus_ext_P">
-                            From budgeting and levy collection to maintenance coordination, we do it all. 
+                            From budgeting and levy collection to maintenance coordination, we do it all.
                            Our Strata Specialists streamline property maintenance services, acting as your virtual strata managers with a keen expert eye.
                         </p>
                     </div>
                 </div>
-                
+
                 <div class="comp_bus_back_p">
                     <span><img class="img-fluid mb-3" src="{{asset('public/front/images/IT_Automation.jpg')}}" loading="lazy" alt="image"></span>
                     <div class="comp_bus_back_bt_p">
                         <h6 class="comp_bus_num_p">05</h6>
-                       <a href="#"> <h6 class="comp_bus_para_P mb-4">IT Automation</h6></a>
+                       <a href="{{ route('it.automation') }}"> <h6 class="comp_bus_para_P mb-4">IT Automation</h6></a>
                         <p class="comp_bus_ext_P">
-                           Our specialization in development, UI/UX, QA and enterprise solutions grows your business with a smarter system. 
+                           Our specialization in development, UI/UX, QA and enterprise solutions grows your business with a smarter system.
                             Custom tech solutions enhanced with digital integration enable a more efficient and scalable business.
                         </p>
                     </div>
                 </div>
-                
+
                 <div class="comp_bus_back_p">
                     <span><img class="img-fluid mb-3" src="{{asset('public/front/images/Staffing__Recruitment.jpg')}}" loading="lazy" alt="image"></span>
                     <div class="comp_bus_back_bt_p">
                         <h6 class="comp_bus_num_p">06</h6>
                       <a href="{{ route('recruitment.services') }}"> <h6 class="comp_bus_para_P mb-4">Staffing & Recruitment</h6></a>
                         <p class="comp_bus_ext_P">
-                            Tailored staffing solutions for your business with the blend of flexible recruitment, contract hiring and offshore resource models. 
+                            Tailored staffing solutions for your business with the blend of flexible recruitment, contract hiring and offshore resource models.
                             Our global talent network ensures you have the right people for the right roles, right when you need them.
                         </p>
                     </div>
@@ -320,7 +320,7 @@
 
                     <div class="counter_line">
                         <h3 data-count="100">100+</h3>
-                        <h5>Years of Cumulative Experience</h5>
+                        <h5>Years of Combined Team Experience</h5>
                     </div>
 
                     <div class="counter_line">
@@ -350,7 +350,7 @@
                         <h3>Research & Analysis</h3>
                         <span><img src="{{asset('public/front/images/trust_icon.png')}}" loading="lazy" alt="icon" /></span>
                     </div>
-                    <p>Our analysts deliver data-driven insights that help unlock new opportunities for your business to grow. 
+                    <p>Our analysts deliver data-driven insights that help unlock new opportunities for your business to grow.
                         From market trends to operational metrics, we help you stay ahead by gaining clarity and reducing risks.
                     </p>
                 </div>
@@ -361,7 +361,7 @@
                         <h3>Tech-Powered Solutions</h3>
                         <span><img src="{{asset('public/front/images/trust_icon.png')}}" loading="lazy" alt="icon" /></span>
                     </div>
-                    <p>Organize operations and boost productivity by integrating advanced technologies, such as automation, cloud tools, and custom development. 
+                    <p>Organize operations and boost productivity by integrating advanced technologies, such as automation, cloud tools, and custom development.
                         Utilizing tech strategically to maximize ROI is what we strive for.
                     </p>
                 </div>
@@ -373,12 +373,12 @@
                         <span><img src="{{asset('public/front/images/trust_icon.png')}}" loading="lazy" alt="icon" /></span>
                     </div>
                     <div class="d-flex certificate-banner">
-                        
-                       
+
+
                         <img src="{{asset('public/front/images/certificate.png')}}" loading="lazy" alt="certifcate" class="img-fluid">
-                       
+
                     </div>
-                   
+
                 </div>
             </div>
             <div class="trust_banner trust_banner_home" style="background-image: url('{{asset('public/front/images/trust_bg3.png')}}');">
@@ -387,7 +387,7 @@
                         <h3>Available 24×7</h3>
                         <span><img src="{{asset('public/front/images/trust_icon.png')}}" loading="lazy" alt="icon" /></span>
                     </div>
-                    <p>To ensure reliability and responsiveness, our global support team is available 24/7 to address any queries that may arise, 
+                    <p>To ensure reliability and responsiveness, our global support team is available 24/7 to address any queries that may arise,
                         regardless of the time or location.
                     </p>
                 </div>
@@ -537,7 +537,7 @@
             </div>
             <div class="col-md-9">
                 <div class="client_slider">
-                  
+
                         <div>
                             <img class="img-fluid"
                                  src="{{ asset('public/front/images/Homepage_01.png') }}"
@@ -687,7 +687,7 @@
                                  src="{{ asset('public/front/images/Homepage_25.png') }}"
                                   loading="lazy"
                                  alt="Homepage_25">
-                        </div> 
+                        </div>
                         <div>
                             <img class="img-fluid"
                                  src="{{ asset('public/front/images/Homepage_26.png') }}"
@@ -724,7 +724,7 @@
             <h2>Our Global Reach</h2>
         </div>
         <div>
-            <img class="img-fluid" src="{{asset('public/front/images/MAP.gif')}}" alt="maps" loading="lazy"> 
+            <img class="img-fluid" src="{{asset('public/front/images/MAP.gif')}}" alt="maps" loading="lazy">
         </div>
     </div>
 </section>
@@ -739,7 +739,7 @@
                         <h2>Ready to streamline your business processes with global expertise?</h2>
 
 
-                                 <a class="com_btn1 color-animated-button bubble-btn" href="javascript:void(0)"
+                                 <a class="com_btn1 color-animated-button bubble-btn" href="{{ route('contact') }}"
                                 data-bs-toggle="modal" data-bs-target="#exampleModal"
                                 data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
@@ -795,7 +795,7 @@
 
         </div>
 
-       
+
         <div class="our_experts_bot slider1-controls">
     <div class="experts_info">
         <div class="circular-progress slider1-progress">
@@ -857,7 +857,7 @@
             <h2>Insights That Drive Smarter Business Decisions</h2>
         </div>
         <div class="row g-4 g-lg-5">
-        @foreach ($blogs->take(3) as $blog)    
+        @foreach ($blogs->take(3) as $blog)
             <div class="col-sm-6 col-lg-4">
                 <div class="blog-img-home">
                     <img class="img-fluid" src="{{asset('/'.$blog->front_image)}}" alt="image" loading="lazy">
@@ -877,9 +877,9 @@
             <h2>Voices from Across the Globe</h2>
         </div>
         <div class="our_experts_cen row align-items-center">
-            <div class="col-md-8"> 
+            <div class="col-md-8">
                 <div class="testimonial_slider">
-                    <div class="testimonial_card"> 
+                    <div class="testimonial_card">
                         <div class="row">
                             <div class="col-md-12">
                                 <img class="img-fluid mb-3" src="{{ asset('public/front/images/quotation-icon.svg') }}"  loading="lazy" alt="quotation-icon">
@@ -891,7 +891,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="testimonial_card"> 
+                    <div class="testimonial_card">
                         <div class="row">
                             <div class="col-md-12">
                                 <img class="img-fluid mb-3" src="{{ asset('public/front/images/quotation-icon.svg') }}"  loading="lazy" alt="quotation-icon">
@@ -903,7 +903,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="testimonial_card"> 
+                    <div class="testimonial_card">
                         <div class="row">
                             <div class="col-md-12">
                                 <img class="img-fluid mb-3" src="{{ asset('public/front/images/quotation-icon.svg') }}"  loading="lazy" alt="quotation-icon">
@@ -915,7 +915,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="testimonial_card"> 
+                    <div class="testimonial_card">
                         <div class="row">
                             <div class="col-md-12">
                                 <img class="img-fluid mb-3" src="{{ asset('public/front/images/quotation-icon.svg') }}" loading="lazy" alt="quotation-icon">
@@ -929,12 +929,12 @@
                     </div>
             </div>
             </div>
-            
+
             <div class="col-md-4">
                 <img class="img-fluid" src="{{ asset('public/front/images/testimonial.png') }}" alt="testimonial">
             </div>
         </div>
-        
+
          <div class="our_experts_bot slider3-controls">
     <div class="experts_info">
         <div class="circular-progress slider3-progress">
@@ -960,9 +960,7 @@
     </div>
 </div>
     </div>
-</section> 
+</section>
 
 
 @include('layouts.frontfooter')
-
-
