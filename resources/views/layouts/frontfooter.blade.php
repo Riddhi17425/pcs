@@ -190,10 +190,11 @@
                             </div>
 
                            <div class="col-lg-12 form-group">
-                                <input type="tel" name="phone" id="requestPhone" maxlength="20" minlength="10" placeholder="Phone Number">
-                                <label><span class="text-danger">*</span></label>
-                                <input type="hidden" name="full_phone" id="requestFullPhone">
-                            </div>
+                            <input type="tel" name="phone" id="requestPhone" maxlength="15" minlength="10" placeholder="Phone Number"
+                                oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
+                            <label><span class="text-danger">*</span></label>
+                            <input type="hidden" name="full_phone" id="requestFullPhone">
+                        </div>
 
                             <div class="col-lg-12 form-group">
                                  <select name="country" id="requestCountrySelect">
@@ -684,7 +685,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             // Captcha validation with widgetId
-            if (typeof grecaptcha !== "undefined") {
+            if (captchaWidgetId !== null && typeof grecaptcha !== "undefined") {
                 const captchaResponse = grecaptcha.getResponse(captchaWidgetId);
                 if (!captchaResponse) {
                     const errorEl = form.querySelector(".captcha-error");
@@ -710,6 +711,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // === RENDER RECAPTCHA FORMS ===
+    // window.initAllRecaptchas = function () {
+    //     document.querySelectorAll(".validated-form").forEach((form) => {
+    //         const captchaDiv = form.querySelector(".g-recaptcha");
+    //         if (captchaDiv) {
+    //             const widgetId = grecaptcha.render(captchaDiv, {
+    //                 sitekey: captchaDiv.getAttribute("data-sitekey")
+    //             });
+    //             initFormValidation(form, widgetId);
+    //         }
+    //     });
+    // };
+
     window.initAllRecaptchas = function () {
         document.querySelectorAll(".validated-form").forEach((form) => {
             const captchaDiv = form.querySelector(".g-recaptcha");
@@ -718,9 +731,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     sitekey: captchaDiv.getAttribute("data-sitekey")
                 });
                 initFormValidation(form, widgetId);
+            } else {
+                initFormValidation(form, null);
             }
         });
     };
+
+
+
 });
 
 </script>
