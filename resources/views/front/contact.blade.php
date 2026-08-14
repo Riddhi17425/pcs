@@ -65,9 +65,19 @@
                         @error('email') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
 
-                    <div class="col-lg-6 form-group">
+                    {{-- <div class="col-lg-6 form-group">
                         <input type="tel" name="phone" id="contactPhone" value="{{ old('phone') }}"
                             maxlength="20" minlength="10" placeholder="Phone Number">
+                        <label><span class="text-danger">*</span></label>
+                        @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
+                        <span id="mobile-error" style="color:red; display:none;">Please enter at least 10 digits</span>
+                        <input type="hidden" name="full_phone" id="contactFullPhone">
+                    </div> --}}
+
+                    <div class="col-lg-6 form-group">
+                        <input type="tel" name="phone" id="contactPhone" value="{{ old('phone') }}"
+                            maxlength="15" minlength="10" placeholder="Phone Number"
+                            oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
                         <label><span class="text-danger">*</span></label>
                         @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
                         <span id="mobile-error" style="color:red; display:none;">Please enter at least 10 digits</span>
