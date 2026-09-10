@@ -7,15 +7,17 @@
   <title>{!! $meta_title ?? 'PCS-Global' !!}</title>
   <meta name="description" content="{!! $meta_description ?? '' !!}">
   <meta name="base-url" content="{{ url('/') }}">
+      <!--<meta property="og:title" content="{!! $meta_title !!}">-->
     <meta property="og:title" content="{{ $meta_title ?? 'PCS-Global' }}">
-    <meta property="og:description" content="{{ $meta_description ?? '' }}">
-    <meta property="og:image" content="{{ $og_image ?? asset('public/front/images/fab_icon.png')}}" />
+    <meta property="og:description" content="{{ $meta_description }}">
+    <meta property="og:image" content="{{ !empty($og_image) ? $og_image : asset('front/images/fab_icon.png') }}" />
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="627">
     <meta property="og:url" content="{{url()->current()}}" />
     <meta property="og:type" content="website">
-    <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+    <meta name="robots" content="index, follow" />
 
+         
   <link rel="canonical" href="{{ url()->current() }}" />
   <link rel="icon" href="{{asset('public/front/images/fab_icon.png')}}" type="image/x-icon">
 
@@ -56,7 +58,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{asset('public/front/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('public/front/css/responsive.css')}}">
-
+  
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/css/intlTelInput.css">
 
    <style>
@@ -116,8 +118,8 @@
       color: #333;
     }
   </style>
-
-  <!-- Google Tag Manager -->
+  
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -125,164 +127,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-PW87W9HP');</script>
 <!-- End Google Tag Manager -->
 
-@verbatim
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "PCS Global Group",
-  "alternateName": "PCS Global Pvt Ltd.",
-  "url": "https://pcsglobalgroup.com/",
-  "logo": "https://pcsglobalgroup.com/public/front/images/logo.svg",
-  "contactPoint": [
-    {
-      "@type": "ContactPoint",
-      "telephone": "(+613) 9998 0494",
-      "contactType": "customer service",
-      "areaServed": "AU",
-      "availableLanguage": "en"
-    },
-    {
-      "@type": "ContactPoint",
-      "telephone": "(+1) 347 801 8715",
-      "contactType": "customer service",
-      "areaServed": "US",
-      "availableLanguage": "en"
-    },
-    {
-      "@type": "ContactPoint",
-      "telephone": "+44 113 4034334",
-      "contactType": "customer service",
-      "areaServed": "GB",
-      "availableLanguage": "en"
-    },
-    {
-      "@type": "ContactPoint",
-      "telephone": "(+91) 796 826 0121",
-      "contactType": "customer service",
-      "areaServed": "IN",
-      "availableLanguage": "en"
-    }
-  ],
-  "sameAs": [
-    "https://www.facebook.com/PCSGlobalGroup/",
-    "",
-    "https://www.linkedin.com/company/pcs-global-group/"
-  ]
-}
-</script>
-@endverbatim
-  <style>
-    .top-header {
-        background-color: #182653;
-        padding: 8px 0;
-      }
-      .country-list-wrapper {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
-        row-gap: 8px;
-      }
-      .country-list-items {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        white-space: nowrap;
-      }
 
-      .country-list-items img {
-        width: 20px;
-        height: auto;
-        flex-shrink: 0;
-      }
-      .country-list-items p {
-        margin-bottom: 0;
-        color: #fff;
-        font-size: 15px;
-        white-space: nowrap;
-      }
-      nav{
-          padding-top: 20px;
-      }
-      .top-header .phone-link {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        color: #fff;
-        font-size: 14px;
-        text-decoration: none;
-        white-space: nowrap;
-     }
-      .top-header .phone-link:hover {
-        text-decoration: underline;
-      }
 
-     @media (max-width: 767px) {
-      .country-list-wrapper {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-      }
-    }
-  </style>
 </head>
 
 <body>
-
    <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW87W9HP"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<!-- End Google Tag Manager (noscript) --> 
 
   <header>
-    <div class="top-header">
-  <div class="container">
-    <div class="country-list-wrapper">
-      <div class="country-list-items">
-        <a href="https://australia.pcsglobalgroup.com" target="_blank" class="external-link" rel="noopener noreferrer">
-          <img src="{{asset('public/front/images/contry-icon/australia-icon.png')}}" alt="australia icon" loading="lazy" class="img-fluid">
-        </a>
-        <a href="https://australia.pcsglobalgroup.com" target="_blank" class="external-link" rel="noopener noreferrer">
-          <p>Australia</p>
-        </a>
-        <a href="tel:+61399980494" class="phone-link">
-          <i class="fa-solid fa-phone"></i> <span>(+613) 9998 0494</span>
-        </a>
-      </div>
-
-      <div class="country-list-items">
-        <a href="https://uk.pcsglobalgroup.com" target="_blank" class="external-link">
-          <img src="{{asset('public/front/images/contry-icon/uk-icon.png')}}" alt="uk icon" loading="lazy" class="img-fluid">
-        </a>
-        <a href="https://uk.pcsglobalgroup.com" target="_blank" class="external-link">
-          <p>UK</p>
-        </a>
-        <a href="tel:+441134034334" class="phone-link">
-          <i class="fa-solid fa-phone"></i> <span>+44 113 4034334</span>
-        </a>
-      </div>
-
-      <div class="country-list-items">
-        <a href="https://us.pcsglobalgroup.com" target="_blank" class="external-link" rel="noopener noreferrer">
-          <img src="{{asset('public/front/images/contry-icon/us-icon.png')}}" alt="us icon" loading="lazy" class="img-fluid">
-        </a>
-        <a href="https://us.pcsglobalgroup.com" target="_blank" rel="noopener noreferrer" class="external-link">
-          <p>US</p>
-        </a>
-        <a href="tel:+13478018715" class="phone-link">
-          <i class="fa-solid fa-phone"></i> <span>(+1) 347 801 8715</span>
-        </a>
-      </div>
-
-      <div class="country-list-items">
-        <a href="tel:+917968260121" class="phone-link">
-          <i class="fa-solid fa-phone"></i> <span>(+91) 796 826 0121</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
     <div class="container">
       <nav>
         <div class="logo">
@@ -304,9 +159,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                            <a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 Services
-                <svg class="ms-1" width="16" height="8" viewBox="0 0 18 10" fill="none"
+                <svg class="ms-1" width="16" height="8" viewBox="0 0 18 10" fill="none" 
                   xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17 1L9 9L1 1" stroke="#333" stroke-width="1.5" stroke-linecap="round"
+                  <path d="M17 1L9 9L1 1" stroke="#333" stroke-width="1.5" stroke-linecap="round" 
                     stroke-linejoin="round" />
                 </svg>
               </a>
@@ -314,43 +169,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <ul class="dropdown-menu mega-menu p-0 m-0">
 
                                 <li class="mega-item">
-                                    <a class="dropdown-item d-flex justify-content-between align-items-center"
-                                       href="{{ route('white-label-accounting-services') }}">
-                                        White Label Accounting Services
-                                        <!--<span class="arrow">›</span>-->
-                                    </a>
-
-                                </li>
-                                <li class="mega-item">
-                                    <a class="dropdown-item d-flex justify-content-between align-items-center"
+                                    <a class="dropdown-item d-flex justify-content-between align-items-center" 
                                        href="{{ route('pcs.global.bookkeeping') }}">
                                         Accounting & Bookkeeping
                                         <!--<span class="arrow">›</span>-->
                                     </a>
-
+                          
                                 </li>
-
+                            
                                 <li class="mega-item">
                                     <a class="dropdown-item d-flex justify-content-between align-items-center"
                                        href="{{ route('taxation.services') }}">
                                         Taxation Services
                                         <!--<span class="arrow">›</span>-->
                                     </a>
-
+                            
                                 </li>
-
+                            
                                 <li>
                                     <a class="dropdown-item" href="{{ route('strata.management') }}">
                                         Strata Property Management
                                     </a>
                                 </li>
-
+                            
                                 <li>
                                     <a class="dropdown-item" href="{{ route('payroll.services') }}">
                                         Payroll Outsourcing Services
                                     </a>
                                 </li>
-
+                            
                                 <li>
                                     <a class="dropdown-item" href="{{ route('recruitment.services') }}">
                                         Recruitment Outsourcing Services
@@ -369,7 +216,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a href="{{route('blog')}}">Blogs</a></li>
             <li><a href="{{route('contact')}}">Contact Us</a></li>
             <li>
-              <a class="com_btn1 color-animated-button bubble-btn" href="{{ route('contact') }}" data-bs-toggle="modal"
+              <a class="com_btn1 color-animated-button bubble-btn" href="javascript:void(0)" data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
                 data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
@@ -394,9 +241,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </nav>
     </div>
   </header>
-
+  
   <!------------------------------------------->
-
+  
     <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasRight">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title">Menu</h5>
@@ -416,12 +263,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a href="{{route('datasecurity')}}">Data Security</a></li>
             <li><a href="{{route('blog')}}">Blogs</a></li>
             <li><a href="{{route('contact')}}">Contact Us</a></li>
-            <li><a href="tel:+61399980494">📞 Call Us: (+613) 9998 0494</a></li>
+           
           </ul>
-
-
+          
+          
              <div class="mt-4 text-center">
-                  <a class="com_btn1 color-animated-button bubble-btn" href="{{ route('contact') }}"
+                  <a class="com_btn1 color-animated-button bubble-btn" href="javascript:void(0)"
                 data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <span class="color-button__background"></span>
                 <span class="color-button__bubble-container"><span class="color-button__bubble"></span></span>
@@ -433,7 +280,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </svg>
               </a>
              </div>
-
+        
         </div>
       </div>
 
@@ -451,32 +298,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <!-- <span class="next-menu" data-target="menu-taxation">&rsaquo;</span>-->
              <li><a href="{{ route('strata.management') }}">Strata Property Management</a></li>
              <li><a href="{{ route('payroll.services') }}">Payroll Outsourcing Services</a></li>
-
-
+          
+          
           <li><a href="{{ route('recruitment.services') }}">Recruitment Outsourcing Services</a></li>
           <li><a href="{{ route('it.automation') }}">IT Automation Services</a></li>
-
+          
           </ul>
         </div>
       </div>
 
     </div>
   </div>
-
-
- <script>
-document.addEventListener("DOMContentLoaded", function() {
-
-  // Force external links to open in new tab reliably
-  document.querySelectorAll('.top-header a.external-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault(); // Prevent any JS interception
-      window.open(link.href, '_blank', 'noopener,noreferrer'); // Open in new tab
-    });
-  });
-
-});
-</script>
+  
  <script>
     // Next level navigation
     document.querySelectorAll('.next-menu').forEach(link => {
@@ -497,3 +330,5 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     });
   </script>
+
+

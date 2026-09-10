@@ -1,4 +1,3 @@
-
 <footer class="mt-100 footer">
     <div class="container">
         <div class="footer_top">
@@ -152,7 +151,7 @@
         </div>
     </div>
 </footer>
-@include('layouts.whatsapp')
+<!-- @include('layouts.whatsapp') -->
 
 <!-- Modal -->
 <div class="modal fade request_modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -211,13 +210,12 @@
                                 <label>Message:</label>
                             </div>
 
-                            <div class="col-lg-12 form-group">
+                            <!-- <div class="col-lg-12 form-group">
                                 <div class="g-recaptcha"
                                     data-sitekey="6LfxJ7crAAAAAGJsj1iMJSQXpZLJE47H1h6StuUT"
                                     data-callback="onCaptchaSuccessRequest"></div>
                                 <span class="captcha-error text-danger" style="display:none;">Please verify you are not a robot.</span>
-                            </div> 
-                            
+                            </div> -->
 
                             <div class="col-lg-12">
                                 <button type="submit" class="com_btn2 color-animated-button bubble-btn">
@@ -835,6 +833,3 @@ document.addEventListener('DOMContentLoaded', function () {
     opacity: 1;
 }
 </style>
-
-
-

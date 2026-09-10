@@ -11,14 +11,13 @@ use App\Models\Blogs;
 use App\Models\Faq;
 use Illuminate\Support\Carbon;
 use App\Models\WhatsappInquiry;
-use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
     public function index()
     {    
-        $meta_title = "Accounting Outsourcing Partner for UK, US & Australian Firms";
-        $meta_description = "PCS Global is a trusted accounting outsourcing partner for accounting firms, providing bookkeeping, taxation and payroll services in the UK, USA & Australia.";
+        $meta_title = "Property, Strata & Staffing Solutions for US, UK, & AU";
+        $meta_description = "PCS Global offers tailored property & strata management solutions, including accounting, payroll, bookkeeping, and recruitment in the USA, UK, and Australia.";
         $images = TrustedPartner::where('status','Active')->get();
         $industries = Industries::where('status','Active')->get();
         $ourexpert = OurExpert::where('status','Active')->get();
@@ -40,94 +39,43 @@ class HomeController extends Controller
         return view('front.privacy-policy',compact('meta_title','meta_description'));
     }
     
-    public function whatsaapinquiry(Request $request)
-    {
-        $validated = $request->validate([
-            'number' => 'required',
-            'message' => [
-                'nullable','string','max:500',
+    // public function whatsaapinquiry(Request $request)
+    // {
+    //     WhatsappInquiry::create([
+           
+    //         'number'  => $request->number,
+    //         'message'  => $request->message,
+    //     ]);
     
-                function ($attribute, $value, $fail) {
-                    if (!$value) return;
-                    
-                    if (preg_match('/<[^>]*>/', $value)) {
-                        $fail('HTML tags are not allowed.');
-                    }
+    //     $timestamp = Carbon::now()->format('Y-m-d H:i:s');
     
-                    if (preg_match('/https?:\/\/|www\./i', $value)) {
-                        $fail('Links are not allowed in message.');
-                    }
+    //     // Google Sheet expects:
+    //     // form_type, contact, message, date
+    //     $sheetsData = [
+    //         'form_type' => 'whatsapp inquiry',
+    //         'contact'   => $request->number,
+    //         'message'  => $request->message,
+    //         'date'      => $timestamp,
+    //     ];
+    //     try {
+    //         Http::withHeaders(['Content-Type' => 'application/json'])
+    //             ->post('https://script.google.com/macros/s/AKfycbx0NpN0bdDJrfxmdAny47IvxRqjVcTIg3CB3iu9ohoD4b_yj-GRVnnLUTO2N4llHG9fqA/exec', 
+    //                 $sheetsData
+    //             );
+    //     } catch (\Exception $e) {
+    //         \Log::error('Google Sheets Exception (WhatsApp Inquiry):', [
+    //             'message'   => $e->getMessage(),
+    //             'trace'     => $e->getTraceAsString(),
+    //             'data_sent' => $sheetsData
+    //         ]);
+    //     }
     
-                    if (preg_match('/[\x{0400}-\x{04FF}]/u', $value)) {
-                        $fail('Invalid characters detected.');
-                    }
-    
-                    $spamWords = ['seo','crypto','viagra','casino','furniture','wholesale'];
-                    $count = 0;
-    
-                    foreach ($spamWords as $word) {
-                        if (stripos($value, $word) !== false) {
-                            $count++;
-                        }
-                    }
-    
-                    if ($count >= 2) {
-                        $fail('Spam content detected.');
-                    }
-    
-                    preg_match_all('/https?:\/\/|www\./i', $value, $matches);
-                    if (count($matches[0]) > 1) {
-                        $fail('Too many links not allowed.');
-                    }
-                }
-            ],
-        ]);
         
-         // ❌ If honeypot filled → it's a bot
-        if (!empty($request->website_honey_point)) {
-            return back(); // silently ignore
-        }
+    //     $number = '918460268698'; // Change if needed
+    //     $message = 'Inquiry from the website.';
+    //     $whatsappUrl = "https://api.whatsapp.com/send/?phone={$number}&text=" . urlencode($message);
     
-     WhatsappInquiry::create([
-         
-            'message' => $request->message,
-            'number' =>  $request->number,
-        ]);
-    
-        $timestamp = Carbon::now('Asia/Kolkata')->format('Y-m-d H:i:s');
-        
-            // Google Sheet expects:
-            // form_type, contact, message, date
-            $sheetsData = [
-                'form_type' => 'whatsapp inquiry',
-                'contact'   => $request->number,
-                'message'  => $request->message,
-                'date'      => $timestamp,
-            ];
-        
-            // Send to Google Sheets
-            try {
-                Http::withHeaders(['Content-Type' => 'application/json'])
-                    ->post('https://script.google.com/macros/s/AKfycbx0NpN0bdDJrfxmdAny47IvxRqjVcTIg3CB3iu9ohoD4b_yj-GRVnnLUTO2N4llHG9fqA/exec', 
-                        $sheetsData
-                    );
-            } catch (\Exception $e) {
-                \Log::error('Google Sheets Exception (WhatsApp Inquiry):', [
-                    'message'   => $e->getMessage(),
-                    'trace'     => $e->getTraceAsString(),
-                    'data_sent' => $sheetsData
-                ]);
-            }
-    
-        $number = '918460268698'; // Or use $request->number if needed
-        $message = "Inquiry from Website\n\n"
-                . "Customer Number: " . $request->full_number . "\n"
-                . "Message: " . $request->message;
-        $whatsappUrl = "https://api.whatsapp.com/send/?phone={$number}&text=" . urlencode($message) . "&type=phone_number&app_absent=0";
-    
-        return redirect()->away($whatsappUrl);
-        
-    
-    }
+    //     return redirect()->away($whatsappUrl);
+    // }
    
 }

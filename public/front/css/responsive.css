@@ -25,12 +25,7 @@
         font-size: 48px;
         line-height: 66px;
     }
-    .countries-box{
-            flex-wrap: wrap;
-            gap:20px;
-            justify-content: center;
-            align-items: center;
-    }
+    
     .hero_para {
         font-size: 28px;
         line-height: 38px;
@@ -955,15 +950,6 @@
     .decimal_style_item{
         padding-left: 25px;
     }
-    .service-item-lists{
-        grid-template-columns: repeat(2, 1fr);
-    }
-       .countries-box{
-            flex-wrap: wrap;
-            gap:20px;
-            justify-content: center;
-            align-items: center;
-    }
     .trust_banner_payroll{
         height: 420px !important;
     }
@@ -1511,8 +1497,5 @@
     }
     .trust_banner_security{
          height: 600px !important;
-    }
-     .service-item-lists{
-        grid-template-columns: repeat(1, 1fr);
     }
 }

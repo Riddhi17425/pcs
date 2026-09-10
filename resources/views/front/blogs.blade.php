@@ -1,6 +1,5 @@
-@include('layouts.frontheader', [
-    'og_image' => asset('public/admin/blogs/what-are-the-duties-of-a-strata-manager-in-australia-6982d986039b2.jpg')
-])
+@include('layouts.frontheader')
+
 
 <section class="com_hero" style="background-image: url(' {{ asset('public/front/images/blog-hero-bg.png') }}'); ">
     <div class="container">

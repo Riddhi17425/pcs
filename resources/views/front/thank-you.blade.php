@@ -5,8 +5,7 @@
         <div class="text-center">
             
              <div class="com_hero_child mb-4">
-                <h1>Thank you for contacting us.</h1>
-                <h4 class="sub_head">We will be in touch shortly.</h4>
+                <h1>Every Move Counts, Every Partnership Matters</h1>
                 <p class="col-lg-8 m-auto">At PCS Global, we believe that the strongest victories are built through unity and shared vision. Thank you for placing your trust in us — your partnership is the key to future success.</p>
           </div>
           

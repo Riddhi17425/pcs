@@ -1,38 +1,8 @@
-
 @include('layouts.frontheader', [
     'og_image' => asset('/'.$blog->detail_image)
 ])
 
-<style>
-    table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-}
 
-table th,
-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-
-table th {
-    background-color: #182653;
-    font-weight: bold;
-    color:#fff;
-}
-
-table tr:nth-child(even) {
-    background-color: #fafafa;
-}
-
-table tr:hover {
-    background-color: #f1f1f1;
-}
-</style>
 <section class="com_hero" style="background-image: url('{{ asset('public/front/images/blog-hero-bg.png') }}');">
     <div class="container">
         <div class="com_hero_child">
@@ -114,53 +84,15 @@ table tr:hover {
 <section class="accoding" >
    <div class="container">
 @if (!empty($blog->blog_faq) && count($blog->blog_faq) > 0)
-@php
-        $faqItems = [];
-
-        if (!empty($blog->blog_faq)) {
-
-            $decodedFaqItems = $blog->blog_faq;
-
-            if (is_array($decodedFaqItems)) {
-                foreach ($decodedFaqItems as $item) {
-                    $question = trim(strip_tags($item['faq_title'] ?? ''));
-                    $answer = trim(strip_tags($item['faq_description'] ?? ''));
-
-                    if ($question && $answer) {
-                        $faqItems[] = [
-                            'question' => $question,
-                            'answer' => $answer,
-                        ];
-                    }
-                }
-            }
-        }
-
-        $faqSchema = [
-            '@context' => 'https://schema.org',
-            '@type' => 'FAQPage',
-            'mainEntity' => array_map(function ($item) {
-                return [
-                    '@type' => 'Question',
-                    'name' => $item['question'],
-                    'acceptedAnswer' => [
-                        '@type' => 'Answer',
-                        'text' => $item['answer'],
-                    ],
-                ];
-            }, $faqItems),
-        ];
-    @endphp
-
 <div class="row">
     <div class="col-lg-12">
-        <h4 class="text-center mb-5"><b>Frequently Asked Questions</b></h4>
+        <h2 class="text-center my-3">Frequently Asked Questions</h2>
 
         <div id="accordionExample">
             @foreach ($blog->blog_faq as $index => $faq)
                 <div class="faq-item mb-3">
                     
-                    <h5 class="faq-header {{ $index !== 0 ? 'collapsed' : '' }}"
+                    <h3 class="faq-header {{ $index !== 0 ? 'collapsed' : '' }}"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapse{{ $index }}"
                         aria-expanded="{{ $index === 0 ? 'true' : 'false' }}"
@@ -168,7 +100,7 @@ table tr:hover {
                         
                         <span>{{ $faq['faq_title'] }}</span>
                         <span class="faq-icon"></span>
-                    </h5>
+                    </h3>
 
                     <div id="collapse{{ $index }}"
                         class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}"
@@ -210,11 +142,7 @@ table tr:hover {
         </div>
     </div>
 </section>
-@if(!empty($faqItems))
-    <script type="application/ld+json">
-        {!! json_encode($faqSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
-    </script>
-@endif
+
 @include('layouts.frontfooter')
 
 <script>

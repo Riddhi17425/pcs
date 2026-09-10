@@ -2,11 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class WhatsappInquiry extends Model
 {
-    use HasFactory;
-    protected $guarded = [];
+    protected $table = 'WhatsappInquiry';
+    use SoftDeletes;    
+    protected $fillable = [
+        'id',
+        'message',
+        'number',
+    ];
+    
 }

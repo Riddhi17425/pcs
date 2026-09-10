@@ -1,6 +1,7 @@
-@include('layouts.frontheader', [
-    'og_image' => asset('public/front/images/Full-Range-Accounting.png')
-])
+
+
+@include('layouts.frontheader')
+
 <section class="com_hero" style="background-image: url('{{asset('public/front/images/data-security-hero-bg.jpg') }}');">
     <div class="container">
         <div class="com_hero_child header_flags">
@@ -44,44 +45,44 @@
         <div class="secure_box_par aus_num mt-5">
            
             <a class="secure_box">
-                <p>98%</p>
+                <h3>98%</h3>
                 <p>On-Time Reporting</p>
             </a>
 
             <a class="secure_box">
-                <p>30+</p>
+                <h3>30+</h3>
                 <p>Jurisdictions Covered</p>
             </a>
 
              <a class="secure_box">
-                <p>ISO 27001, 9001,</p>
+                <h3>ISO 27001, 9001,</h3>
                 <p>GDPR & HIPAA Ready</p>
             </a>
 
             <a class="secure_box">
-                <p>Up to 60%</p>
+                <h3>Up to 60%</h3>
                 <p>Cost Savings</p>
             </a>
 
             <a class="secure_box">
-                <p>100%</p>
+                <h3>100%</h3>
                 <p>Data Confidentiality Guaranteed</p>
             </a>
 
             <a class="secure_box">
-                <p>Certified </p>
+                <h3>Certified </h3>
                 <p>CA, CPA, & ACCA Teams</p>
             </a>
 
             <a class="secure_box">
-                <p>24/7</p>
+                <h3>24/7</h3>
                 <p>Multi-Time Zone Support</p>
             </a>
 
             
 
             <a class="secure_box">
-                <p>Real - time</p>
+                <h3>Real - time</h3>
                 <p>Financial Dashboards</p>
             </a>
         </div>
@@ -137,18 +138,18 @@
        <div class="d-flex justify-content-center">
             <div class="counter text-center m-0">
                     <div class="counter_line">
-                        <p data-count="60">60+</p>
-                        <p>No. of clients served</p>
+                        <h3 data-count="60">60+</h3>
+                        <h5>No. of clients served</h5>
                     </div>
 
                     <div class="counter_line">
-                        <p data-count="10">10+</p>
-                        <p>Presence in no. of countries</p>
+                        <h3 data-count="10">10+</h3>
+                        <h5>Presence in no. of countries</h5>
                     </div>
 
                     <div class="counter_line">
-                        <p data-count="800">800+</p>
-                        <p>No. of projects completed</p>
+                        <h3 data-count="800">800+</h3>
+                        <h5>No. of projects completed</h5>
                     </div>
                 </div>
        </div>
@@ -374,7 +375,7 @@
     <div class="container">
         <div class="">
              <div class="com_sec_head_top">
-                <h2 class="faq-head mb-2 mb-xxl-4">Accounting & Finance Roles We Provide At PCS Global</h2>
+                <h4 class="faq-head mb-2 mb-xxl-4">Accounting & Finance Roles We Provide At PCS Global</h4>
             </div>
             <div class="row justify-content-center mb-2">
                 <div class="col-lg-10">
@@ -501,7 +502,7 @@
     <div class="container">
         <div class="client_slider_par row align-items-center">
             <div class="col-md-3">
-                <h2 class="text-center">Tools & Technology We Use</h2>
+                <h3 class="text-center">Tools & Technology We Use</h3>
             </div>
             <div class="col-md-9">
                 <div class="client_slider">
@@ -596,9 +597,9 @@
                 <div class="trust_card tax_preparation">
                     <div class="trust_card_head">
                         <h3>Understanding Your Needs</h3>
-                        <span><img src="https://pcsglobalgroup.com/public/front/images/trust_icon.png" alt="icon"></span>
+                        <span><img src="https://intelliworkz.co.in/pcs-global/public/front/images/trust_icon.png" alt="icon"></span>
                     </div>
-                    <p>We begin with a deep dive consultation to uncover your team’s accounting and finance service needs, whether it is bookkeeping services, QuickBooks payrol,l or financial accounting. We document the entire journey to develop an accounting solution that meets your business model.
+                    <p>We begin with a deep dive consultation to uncover your team’s accounting and finance service needs, whether it is <strong><a href="https://en.wikipedia.org/wiki/Bookkeeping" target="_blank">bookkeeping services</a></strong>, QuickBooks payrol,l or financial accounting. We document the entire journey to develop an accounting solution that meets your business model.
 </p>
                 </div>
             </div>
@@ -607,7 +608,7 @@
                 <div class="trust_card tax_preparation">
                     <div class="trust_card_head">
                         <h3>Setting Up Your Team</h3>
-                        <span><img src="https://pcsglobalgroup.com/public/front/images/trust_icon.png" alt="icon"></span>
+                        <span><img src="https://intelliworkz.co.in/pcs-global/public/front/images/trust_icon.png" alt="icon"></span>
                     </div>
                     <p>Your dedicated account manager will be the applicable team lead with a dedicated team for your outsourced accounting services. Your account manager will ensure seamless communication and the cadence of deliverables. Our respective team of accounting professionals is dedicated to your account, with skilled progress on everything, from migrating records to system implementation.
 </p>
@@ -618,7 +619,7 @@
                 <div class="trust_card tax_preparation">
                     <div class="trust_card_head">
                         <h3>Automating Processes</h3>
-                        <span><img src="https://pcsglobalgroup.com/public/front/images/trust_icon.png" alt="icon"></span>
+                        <span><img src="https://intelliworkz.co.in/pcs-global/public/front/images/trust_icon.png" alt="icon"></span>
                     </div>
                    <p>We leverage efficient technology and our proven workflows to manage much of the everyday bookkeeping and accounting requirements, assuring accurate postings, reconciliations, and compliance with applicable regulations.
 </p>
@@ -629,7 +630,7 @@
                 <div class="trust_card tax_preparation">
                     <div class="trust_card_head">
                         <h3>Providing Real-Time Visibility</h3>
-                        <span><img src="https://pcsglobalgroup.com/public/front/images/trust_icon.png" alt="icon"></span>
+                        <span><img src="https://intelliworkz.co.in/pcs-global/public/front/images/trust_icon.png" alt="icon"></span>
                     </div>
                     <p>With PCS Global, you will enjoy secure access to real-time reports and dashboards that enable informed financial decisions.
 </p>
@@ -640,7 +641,7 @@
                 <div class="trust_card tax_preparation">
                     <div class="trust_card_head">
                         <h3>Continuous Improvement</h3>
-                        <span><img src="https://pcsglobalgroup.com/public/front/images/trust_icon.png" alt="icon"></span>
+                        <span><img src="https://intelliworkz.co.in/pcs-global/public/front/images/trust_icon.png" alt="icon"></span>
                     </div>
                     <p>Our outsourced accounting firm strives to always improve processes and accommodate the latest compliance updates, and to always provide scalable solutions as your organization continues to grow.
 </p>
@@ -663,7 +664,7 @@
                
                 <div class="row mt-4 mt-lg-5">
                     <div class="col-lg-6 pe-lg-4 pe-xxl-5">
-                        <h3>Expert Accounting Recommendations</h3>
+                        <h5>Expert Accounting Recommendations</h5>
                         <ul>
                             <li>
                                 Work with an accounting firm that delivers precision, insight and results, without the expense of building an in-house unit. 
@@ -671,7 +672,7 @@
                            
                         </ul>
 
-                        <h3>Scalable Accounting & Bookkeeping Services</h3>
+                        <h5>Scalable Accounting & Bookkeeping Services</h5>
                         <ul>
                             <li>
                                 Our accounting outsourcing services are fully scalable to reflect your growth without interruption. 
@@ -679,7 +680,7 @@
                            
                         </ul>
                         
-                        <h3>Reduce Costs Without Reducing Quality</h3>
+                        <h5>Reduce Costs Without Reducing Quality</h5>
                         <ul>
                             <li>
                                 You can outsource accounting services and save as much as 60% in operating expenses while still delivering quality. 
@@ -687,7 +688,7 @@
                            
                         </ul>
                         
-                        <h3>Leading Technology</h3>
+                        <h5>Leading Technology</h5>
                         <ul>
                             <li>
                                 We ensure real-time accuracy and reliability through technology, such as QuickBooks Payroll and other cloud-based accounting & bookkeeping services.
@@ -697,7 +698,7 @@
                     </div>
 
                     <div class="col-lg-6 ps-lg-4 ps-xxl-5">
-                        <h3>Global Compliance</h3>
+                        <h5>Global Compliance</h5>
                         <ul>
                             <li>
                                 You can comfortably meet all local and international compliance requirements when you work with an accounting outsourcing firm that understands the complexities.
@@ -706,14 +707,14 @@
                            
                         </ul>
 
-                        <h3>Fraud Prevention & Risk Identification</h3>
+                        <h5>Fraud Prevention & Risk Identification</h5>
                         <ul>
                             <li>
                                 You will be able to identify fraud practices sooner due to the services of our professional accounting and experience. 
                             </li>
                         </ul>
                         
-                        <h3>Industry Focused Accounting Services</h3>
+                        <h5>Industry Focused Accounting Services</h5>
                         <ul>
                             <li>
                                 We offer accounting services tailored for you, whether you are a small business or a large company.
@@ -721,7 +722,7 @@
                             </li>
                         </ul>
                         
-                        <h3>Dedicated Service & Account Manage</h3>
+                        <h5>Dedicated Service & Account Manage</h5>
                         <ul>
                             <li>
                                 You will work with a trusted contact in our firm, allowing you to experience the peace of mind that comes from knowing we understand your business.
