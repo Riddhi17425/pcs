@@ -4,20 +4,20 @@
             <div class="row gy-4 gy-lg-0 justify-content-between">
                 <div class="col-lg-3">
                     <div class="foot_lt">
-                        <a href="{{ url('/')}}"><img class="ft_logo" src="{{asset('public/front/images/footer-log.svg')}}" alt="logo" loading="lazy"></a>
+                        <a href="<?php echo e(url('/')); ?>"><img class="ft_logo" src="<?php echo e(asset('public/front/images/footer-log.svg')); ?>" alt="logo" loading="lazy"></a>
                         <p class="foot_lt_para">PCS Global is committed to delivering reliable and quality accounting
                             service and is driven
                             by long-term partnerships with clients, and employees based on strong values of integrity
                             and trust.</p>
                         <div class="foot_social">
 
-                            <!--<a href="https://api.whatsapp.com/send?phone=918460268698&text=Hello,%20I%27m%20visiting%20your%20website%20and%20would%20like%20to%20know%20more" target="_blank"><img src="{{asset('public/front/images/whatsapp.svg')}}" alt="whatsapp" loading="lazy"></a>-->
-                            <a href="https://www.facebook.com/PCSGlobalGroup/" target="_blank"><img src="{{asset('public/front/images/facebook.svg')}}" alt="facebook" loading="lazy"></a>
-                            <a href="https://www.instagram.com/pcsglobalgroup/" target="_blank"><img src="{{asset('public/front/images/insta.svg')}}" alt="insta" loading="lazy"></a>
-                            <a href="https://www.linkedin.com/company/pcs-global-group/" target="_blank"><img src="{{asset('public/front/images/linkedin.svg')}}" alt="linkedin" loading="lazy"></a>
+                            <!--<a href="https://api.whatsapp.com/send?phone=918460268698&text=Hello,%20I%27m%20visiting%20your%20website%20and%20would%20like%20to%20know%20more" target="_blank"><img src="<?php echo e(asset('public/front/images/whatsapp.svg')); ?>" alt="whatsapp" loading="lazy"></a>-->
+                            <a href="https://www.facebook.com/PCSGlobalGroup/" target="_blank"><img src="<?php echo e(asset('public/front/images/facebook.svg')); ?>" alt="facebook" loading="lazy"></a>
+                            <a href="https://www.instagram.com/pcsglobalgroup/" target="_blank"><img src="<?php echo e(asset('public/front/images/insta.svg')); ?>" alt="insta" loading="lazy"></a>
+                            <a href="https://www.linkedin.com/company/pcs-global-group/" target="_blank"><img src="<?php echo e(asset('public/front/images/linkedin.svg')); ?>" alt="linkedin" loading="lazy"></a>
                         </div>
                         <div class=" mt-4">
-                            <img src="{{asset('public/front/images/Logo_footer.png')}}" alt="Property, Strata & Staffing Solutions" class="img-fluid" loading="lazy">
+                            <img src="<?php echo e(asset('public/front/images/Logo_footer.png')); ?>" alt="Property, Strata & Staffing Solutions" class="img-fluid" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -29,21 +29,21 @@
                                 <h4 class="sub_head">Quick Links</h4>
                                 <ul>
                                     <li>
-                                        <a href="{{url('/')}}">Home</a>
+                                        <a href="<?php echo e(url('/')); ?>">Home</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('about')}}">About Us</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="{{route('datasecurity')}}">Data Security</a>
+                                        <a href="<?php echo e(route('about')); ?>">About Us</a>
                                     </li>
 
                                     <li>
-                                        <a href="{{route('blog')}}">Blogs</a>
+                                        <a href="<?php echo e(route('datasecurity')); ?>">Data Security</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="<?php echo e(route('blog')); ?>">Blogs</a>
                                     </li>
                                                                         <li>
-                                        <a href="{{route('contact')}}">Contact Us</a>
+                                        <a href="<?php echo e(route('contact')); ?>">Contact Us</a>
                                     </li>
                                 </ul>
                             </div>
@@ -54,24 +54,24 @@
                                 <ul>
 
                                      <li>
-                                        <a href="{{ route('pcs.global.bookkeeping') }}">Accounting & Bookkeeping</a>
+                                        <a href="<?php echo e(route('pcs.global.bookkeeping')); ?>">Accounting & Bookkeeping</a>
                                     </li>
 
 
                                     <li>
-                                        <a href="{{ route('strata.management') }}">Strata Property Management</a>
+                                        <a href="<?php echo e(route('strata.management')); ?>">Strata Property Management</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('payroll.services') }}">Payroll Outsourcing Services</a>
+                                        <a href="<?php echo e(route('payroll.services')); ?>">Payroll Outsourcing Services</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('taxation.services') }}">Taxation Services</a>
+                                        <a href="<?php echo e(route('taxation.services')); ?>">Taxation Services</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('recruitment.services') }}">Recruitment Outsourcing Services</a>
+                                        <a href="<?php echo e(route('recruitment.services')); ?>">Recruitment Outsourcing Services</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('it.automation') }}">IT Automation Services</a>
+                                        <a href="<?php echo e(route('it.automation')); ?>">IT Automation Services</a>
                                     </li>
 
                                 </ul>
@@ -82,13 +82,13 @@
                             <!--    <ul>-->
 
                             <!--        <li>-->
-                            <!--            <a href="{{ route('pcs.global.aus') }}">Accounting - PCS Global in Australia</a>-->
+                            <!--            <a href="<?php echo e(route('pcs.global.aus')); ?>">Accounting - PCS Global in Australia</a>-->
                             <!--        </li>-->
                             <!--        <li>-->
-                            <!--            <a href="{{ route('pcs.global.usa') }}">Accounting - PCS Global in USA</a>-->
+                            <!--            <a href="<?php echo e(route('pcs.global.usa')); ?>">Accounting - PCS Global in USA</a>-->
                             <!--        </li>-->
                             <!--        <li>-->
-                            <!--            <a href="{{ route('pcs.global.uk') }}">Accounting - PCS Global in UK</a>-->
+                            <!--            <a href="<?php echo e(route('pcs.global.uk')); ?>">Accounting - PCS Global in UK</a>-->
                             <!--        </li>-->
 
                             <!--    </ul>-->
@@ -96,15 +96,15 @@
                             <!--     <h4 class="sub_head mt-4">Taxation</h4>-->
                             <!--     <ul>-->
                             <!--          <li>-->
-                            <!--            <a href="{{ route('taxation-services-australian') }}">Taxation in Australia</a>-->
+                            <!--            <a href="<?php echo e(route('taxation-services-australian')); ?>">Taxation in Australia</a>-->
                             <!--        </li>-->
 
                             <!--         <li>-->
-                            <!--            <a href="{{ route('taxation-services-usa') }}">Taxation in USA</a>-->
+                            <!--            <a href="<?php echo e(route('taxation-services-usa')); ?>">Taxation in USA</a>-->
                             <!--        </li>-->
 
                             <!--         <li>-->
-                            <!--            <a href="{{ route('taxation-services-uk') }}">Taxation in UK</a>-->
+                            <!--            <a href="<?php echo e(route('taxation-services-uk')); ?>">Taxation in UK</a>-->
                             <!--        </li>-->
                             <!--     </ul>-->
                             <!--</div>-->
@@ -146,7 +146,7 @@
         <div class="footer_bot">
             <p>©<span><?php echo date('Y'); ?></span> Progressive Corporate Services Pvt. Ltd., All Rights Reserved.</p>
 
-            <p class="Privacy_link"><a href="{{ route('privacy-policy') }}">Privacy Policy</a></p>
+            <p class="Privacy_link"><a href="<?php echo e(route('privacy-policy')); ?>">Privacy Policy</a></p>
 
         </div>
     </div>
@@ -163,14 +163,14 @@
                     Call</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            @php
+            <?php
                 use App\Models\Country;
                 $countries = Country::all();
-            @endphp
+            ?>
             <div class="modal-body">
                 <div class="contact_bot">
-                    <form id="requestForm" class="validated-form" action="{{ route('request.store') }}" method="POST">
-                        @csrf
+                    <form id="requestForm" class="validated-form" action="<?php echo e(route('request.store')); ?>" method="POST">
+                        <?php echo csrf_field(); ?>
                         <div class="row gy-4 gy-lg-4 gy-xxl-4">
 
                             <div class="col-lg-12 form-group">
@@ -198,9 +198,9 @@
                             <div class="col-lg-12 form-group">
                                  <select name="country" id="requestCountrySelect">
                                     <option value="" hidden>Select Country</option>
-                                    @foreach($countries as $country)
-                                        <option value="{{ $country->name }}">{{ $country->name }}</option>
-                                    @endforeach
+                                    <?php $__currentLoopData = $countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <option value="<?php echo e($country->name); ?>"><?php echo e($country->name); ?></option>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </select>
                                 <!--<label>Choose Country<span class="text-danger">*</span></label>-->
                             </div>
@@ -236,7 +236,7 @@
 </div>
 <!-- WhatsApp Floating Button -->
 <!--<a href="https://api.whatsapp.com/send?phone=918460268698&text=Hello,%20I%27m%20visiting%20your%20website%20and%20would%20like%20to%20know%20more" class="whatsapp-float" target="_blank">-->
-<!--    <img src="{{asset('public/front/images/WhatsApp.svg')}}" alt="WhatsApp">-->
+<!--    <img src="<?php echo e(asset('public/front/images/WhatsApp.svg')); ?>" alt="WhatsApp">-->
 <!--</a>-->
 
 <!--<style>-->
@@ -363,8 +363,8 @@
 
 <!--               BODY -->
 <!--              <div class="modal-body">-->
-<!--                  <form method="POST" action="{{ route('whatsaapinquiry') }}" id="whatsappForm">-->
-<!--                      @csrf-->
+<!--                  <form method="POST" action="<?php echo e(route('whatsaapinquiry')); ?>" id="whatsappForm">-->
+<!--                      <?php echo csrf_field(); ?>-->
 
 <!--                       Message -->
 <!--                      <div class="mb-3">-->
@@ -505,7 +505,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <!-- custom js -->
-<script src="{{ asset('public/front/js/main.js') }}"></script>
+<script src="<?php echo e(asset('public/front/js/main.js')); ?>"></script>
 
 
 </body>
@@ -832,4 +832,4 @@ document.addEventListener('DOMContentLoaded', function () {
     color: #111111;
     opacity: 1;
 }
-</style>
+</style><?php /**PATH C:\xampp\htdocs\pcs\resources\views/layouts/frontfooter.blade.php ENDPATH**/ ?>

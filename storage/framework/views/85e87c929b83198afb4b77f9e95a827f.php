@@ -1,12 +1,12 @@
-@include('layouts.frontheader',[
+<?php echo $__env->make('layouts.frontheader',[
     'og_image' => asset('front/images/hero_img.png')
-])
+], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 <section>
     <div class="container-fluid px-0 overflow-hidden">
         <div class="hero">
             <div class="hero_lt">
                 <div class="hero_lt_top">
-                    <h1 class="hero_head">Powered by <span><img class="hero_gif" src="{{asset('front/images/pcs_hero.gif')}}"
+                    <h1 class="hero_head">Powered by <span><img class="hero_gif" src="<?php echo e(asset('front/images/pcs_hero.gif')); ?>"
                                 alt="image" loading="lazy"></span>
                         Accuracy ! <br /> Backed by Expertise</h1>
                    
@@ -15,10 +15,10 @@
 
                 <p class="hero_lt_Ser">Our Services</p>
                 <div class="hero_lt_bot">
-                    <p> <span><img src="{{asset('public/front/images/hero-dot.svg')}}" loading="lazy" alt="dot" height="16px" width="16px"></span> <span> Accounting And Finance</span></p>
-                    <p> <span><img src="{{asset('public/front/images/hero-dot.svg')}}" loading="lazy" alt="dot" height="16px" width="16px"></span><span> Strata Management</span></p>
-                    <p> <span><img src="{{asset('public/front/images/hero-dot.svg')}}" loading="lazy" alt="dot" height="16px" width="16px"></span> <span>Payroll and Taxation</span></p>
-                    <p> <span><img src="{{asset('public/front/images/hero-dot.svg')}}" loading="lazy" alt="dot" height="16px" width="16px"></span> <span>IT Automation</span></p>
+                    <p> <span><img src="<?php echo e(asset('public/front/images/hero-dot.svg')); ?>" loading="lazy" alt="dot" height="16px" width="16px"></span> <span> Accounting And Finance</span></p>
+                    <p> <span><img src="<?php echo e(asset('public/front/images/hero-dot.svg')); ?>" loading="lazy" alt="dot" height="16px" width="16px"></span><span> Strata Management</span></p>
+                    <p> <span><img src="<?php echo e(asset('public/front/images/hero-dot.svg')); ?>" loading="lazy" alt="dot" height="16px" width="16px"></span> <span>Payroll and Taxation</span></p>
+                    <p> <span><img src="<?php echo e(asset('public/front/images/hero-dot.svg')); ?>" loading="lazy" alt="dot" height="16px" width="16px"></span> <span>IT Automation</span></p>
                 </div>
 
                 <div class="hero_btn">
@@ -45,8 +45,8 @@
             </div>
 
             <div class="hero_rt">
-                <video autoplay muted loop playsinline preload="metadata" poster="{{ asset('public/front/images/hero_img.png') }}">
-                    <source src="{{asset('public/front/images/hero-video5.mp4')}}" type="video/mp4">
+                <video autoplay muted loop playsinline preload="metadata" poster="<?php echo e(asset('public/front/images/hero_img.png')); ?>">
+                    <source src="<?php echo e(asset('public/front/images/hero-video5.mp4')); ?>" type="video/mp4">
                 </video>
             </div>
         </div>
@@ -67,18 +67,18 @@
 
          <div class="comp_bus_bot d-none d-lg-flex">
             
-            <a href="{{ route('pcs.global.bookkeeping') }}" class="comp_bus_child">
+            <a href="<?php echo e(route('pcs.global.bookkeeping')); ?>" class="comp_bus_child">
                 <!-- First section: Image + Number -->
                 <div class="comp_bus_front">
                     <div class="comp_bus_fronts">
-                        <span><img class="img-fluid mb-4" src="{{asset('public/front/images/Accounting_and_Finance.jpg')}}"  loading="lazy" alt="image"></span>
+                        <span><img class="img-fluid mb-4" src="<?php echo e(asset('public/front/images/Accounting_and_Finance.jpg')); ?>"  loading="lazy" alt="image"></span>
                     <h6 class="comp_bus_num">01</h6>
                     <h6 class="comp_bus_para">Accounting and Finance</h6>
                     </div>
                 </div>
                 <!-- Second section: Title + Description -->
                 <div class="comp_bus_back">
-                    <span><img class="img-fluid mb-3" src="{{asset('public/front/images/Accounting_and_Finance.jpg')}}"  loading="lazy" alt="image"></span>
+                    <span><img class="img-fluid mb-3" src="<?php echo e(asset('public/front/images/Accounting_and_Finance.jpg')); ?>"  loading="lazy" alt="image"></span>
                     <div class="comp_bus_back_bt">
                         <h6 class="comp_bus_num">01</h6>
                         <h6 class="comp_bus_para mb-4">Accounting and Finance</h6>
@@ -91,11 +91,11 @@
                 </div>
             </a>
             
-            <a href="{{ route('taxation.services') }}" class="comp_bus_child">
+            <a href="<?php echo e(route('taxation.services')); ?>" class="comp_bus_child">
                 <!-- First section: Image + Number -->
                 <div class="comp_bus_front">
                      <div class="comp_bus_fronts">
-                    <span><img class="img-fluid mb-4" src="{{asset('public/front/images/Taxation.jpg')}}"  loading="lazy" alt="image"></span>
+                    <span><img class="img-fluid mb-4" src="<?php echo e(asset('public/front/images/Taxation.jpg')); ?>"  loading="lazy" alt="image"></span>
                     <h6 class="comp_bus_num">02</h6>
                     <h6 class="comp_bus_para">Taxation</h6>
                     </div>
@@ -103,7 +103,7 @@
 
                 <!-- Second section: Title + Description -->
                 <div class="comp_bus_back">
-                    <span><img class="img-fluid mb-3" src="{{asset('public/front/images/Taxation.jpg')}}"  loading="lazy" alt="image"></span>
+                    <span><img class="img-fluid mb-3" src="<?php echo e(asset('public/front/images/Taxation.jpg')); ?>"  loading="lazy" alt="image"></span>
                     <div class="comp_bus_back_bt">
                         <h6 class="comp_bus_num">02</h6>
                         <h6 class="comp_bus_para mb-4">Taxation</h6>
@@ -116,11 +116,11 @@
                 </div>
             </a>
             
-            <a href="{{ route('payroll-outsourcing-services') }}" class="comp_bus_child">
+            <a href="<?php echo e(route('payroll-outsourcing-services')); ?>" class="comp_bus_child">
                 <!-- First section: Image + Number -->
                 <div class="comp_bus_front">
                      <div class="comp_bus_fronts">
-                    <span><img class="img-fluid mb-4" src="{{asset('public/front/images/Payroll_outsourcing.jpg')}}"  loading="lazy" alt="image"></span>
+                    <span><img class="img-fluid mb-4" src="<?php echo e(asset('public/front/images/Payroll_outsourcing.jpg')); ?>"  loading="lazy" alt="image"></span>
                     <h6 class="comp_bus_num">03</h6>
                     <h6 class="comp_bus_para">Payroll
                         Outsourcing</h6>
@@ -129,7 +129,7 @@
 
                 <!-- Second section: Title + Description -->
                 <div class="comp_bus_back">
-                    <span><img class="img-fluid mb-3" src="{{asset('public/front/images/Payroll_outsourcing.jpg')}}" loading="lazy" alt="image"></span>
+                    <span><img class="img-fluid mb-3" src="<?php echo e(asset('public/front/images/Payroll_outsourcing.jpg')); ?>" loading="lazy" alt="image"></span>
                     <div class="comp_bus_back_bt">
                         <h6 class="comp_bus_num">03</h6>
                         <h6 class="comp_bus_para mb-4">Payroll
@@ -142,11 +142,11 @@
                 </div>
             </a>
             
-            <a href="{{ route('strata.management') }}" class="comp_bus_child">
+            <a href="<?php echo e(route('strata.management')); ?>" class="comp_bus_child">
                 <!-- First section: Image + Number -->
                 <div class="comp_bus_front">
                      <div class="comp_bus_fronts">
-                    <span><img class="img-fluid mb-4" src="{{asset('public/front/images/Strata_Management.jpg')}}" loading="lazy" alt="image"></span>
+                    <span><img class="img-fluid mb-4" src="<?php echo e(asset('public/front/images/Strata_Management.jpg')); ?>" loading="lazy" alt="image"></span>
                     <h6 class="comp_bus_num">04</h6>
                     <h6 class="comp_bus_para">Strata Management</h6>
                     </div>
@@ -154,7 +154,7 @@
 
                 <!-- Second section: Title + Description -->
                 <div class="comp_bus_back">
-                    <span><img class="img-fluid mb-3" src="{{asset('public/front/images/Strata_Management.jpg')}}" loading="lazy" alt="image"></span>
+                    <span><img class="img-fluid mb-3" src="<?php echo e(asset('public/front/images/Strata_Management.jpg')); ?>" loading="lazy" alt="image"></span>
                     <div class="comp_bus_back_bt">
                         <h6 class="comp_bus_num">04</h6>
                         <h6 class="comp_bus_para mb-4">Strata Management</h6>
@@ -166,11 +166,11 @@
                 </div>
             </a>
             
-            <a href="{{ route('it.automation') }}" class="comp_bus_child">
+            <a href="<?php echo e(route('it.automation')); ?>" class="comp_bus_child">
                 <!-- First section: Image + Number -->
                 <div class="comp_bus_front">
                      <div class="comp_bus_fronts">
-                    <span><img class="img-fluid mb-4  " src="{{asset('public/front/images/IT_Automation.jpg')}}" loading="lazy" alt="image"></span>
+                    <span><img class="img-fluid mb-4  " src="<?php echo e(asset('public/front/images/IT_Automation.jpg')); ?>" loading="lazy" alt="image"></span>
                     <h6 class="comp_bus_num">05</h6>
                     <h6 class="comp_bus_para">IT Automation</h6>
                     </div>
@@ -178,7 +178,7 @@
 
                 <!-- Second section: Title + Description -->
                 <div class="comp_bus_back">
-                    <span><img class="img-fluid mb-3" src="{{asset('public/front/images/IT_Automation.jpg')}}" loading="lazy" alt="image"></span>
+                    <span><img class="img-fluid mb-3" src="<?php echo e(asset('public/front/images/IT_Automation.jpg')); ?>" loading="lazy" alt="image"></span>
                     <div class="comp_bus_back_bt">
                         <h6 class="comp_bus_num">05</h6>
                         <h6 class="comp_bus_para mb-4">IT Automation</h6>
@@ -190,11 +190,11 @@
                 </div>
             </a>
             
-            <a class="comp_bus_child" href="{{ route('recruitment.services') }}" >
+            <a class="comp_bus_child" href="<?php echo e(route('recruitment.services')); ?>" >
                 <!-- First section: Image + Number -->
                 <div class="comp_bus_front">
                      <div class="comp_bus_fronts">
-                    <span><img class="img-fluid mb-4" src="{{asset('public/front/images/Staffing__Recruitment.jpg')}}" loading="lazy" alt="image"></span>
+                    <span><img class="img-fluid mb-4" src="<?php echo e(asset('public/front/images/Staffing__Recruitment.jpg')); ?>" loading="lazy" alt="image"></span>
                     <h6 class="comp_bus_num">06</h6>
                     <h6 class="comp_bus_para">Staffing & Recruitment</h6>
                     </div>
@@ -202,7 +202,7 @@
 
                 <!-- Second section: Title + Description -->
                 <div class="comp_bus_back">
-                    <span><img class="img-fluid mb-3" src="{{asset('public/front/images/Staffing__Recruitment.jpg')}}" loading="lazy" alt="image"></span>
+                    <span><img class="img-fluid mb-3" src="<?php echo e(asset('public/front/images/Staffing__Recruitment.jpg')); ?>" loading="lazy" alt="image"></span>
                     <div class="comp_bus_back_bt">
                         <h6 class="comp_bus_num">06</h6>
                         <h6 class="comp_bus_para mb-4">Staffing & Recruitment</h6>
@@ -222,10 +222,10 @@
         <div class="d-lg-none overflow-hidden">
             <div class="comp_bus_slider">
                 <div class="comp_bus_back_p">
-                    <span><img class="img-fluid mb-3" src="{{asset('public/front/images/Accounting_and_Finance.jpg')}}" loading="lazy" alt="image"></span>
+                    <span><img class="img-fluid mb-3" src="<?php echo e(asset('public/front/images/Accounting_and_Finance.jpg')); ?>" loading="lazy" alt="image"></span>
                     <div class="comp_bus_back_bt_p">
                         <h6 class="comp_bus_num_p">01</h6>
-                        <a href="{{ route('pcs.global.bookkeeping') }}"><h6 class="comp_bus_para_P mb-4">Accounting and Finance</h6></a>
+                        <a href="<?php echo e(route('pcs.global.bookkeeping')); ?>"><h6 class="comp_bus_para_P mb-4">Accounting and Finance</h6></a>
                         <p class="comp_bus_ext_P">
                              Our all-inclusive accounting & finance services team takes care of all your books, ensuring accuracy and regulatory compliance, 
                              powering clients to take control of their financial future with scalable and tech-enabled solutions.
@@ -234,10 +234,10 @@
                 </div>
                 
                 <div class="comp_bus_back_p">
-                    <span><img class="img-fluid mb-3" src="{{asset('public/front/images/Taxation.jpg')}}" loading="lazy" alt="image"></span>
+                    <span><img class="img-fluid mb-3" src="<?php echo e(asset('public/front/images/Taxation.jpg')); ?>" loading="lazy" alt="image"></span>
                     <div class="comp_bus_back_bt_p">
                         <h6 class="comp_bus_num_p">02</h6>
-                        <a href="{{ route('taxation.services') }}"><h6 class="comp_bus_para_P mb-4">Taxation</h6></a>
+                        <a href="<?php echo e(route('taxation.services')); ?>"><h6 class="comp_bus_para_P mb-4">Taxation</h6></a>
                         <p class="comp_bus_ext_P">
                            With efficiency at our core, we deliver accurate and timely tax preparation services tailored for individuals, sole traders, 
                             and business entities through a streamlined, dependable process built for results.
@@ -246,10 +246,10 @@
                 </div>
                 
                 <div class="comp_bus_back_p">
-                    <span><img class="img-fluid mb-3" src="{{asset('public/front/images/Payroll_outsourcing.jpg')}}" loading="lazy" alt="image"></span>
+                    <span><img class="img-fluid mb-3" src="<?php echo e(asset('public/front/images/Payroll_outsourcing.jpg')); ?>" loading="lazy" alt="image"></span>
                     <div class="comp_bus_back_bt_p">
                         <h6 class="comp_bus_num_p">03</h6>
-                        <a href="{{ route('payroll-outsourcing-services') }}"><h6 class="comp_bus_para_P mb-4">Payroll
+                        <a href="<?php echo e(route('payroll-outsourcing-services')); ?>"><h6 class="comp_bus_para_P mb-4">Payroll
                             outsourcing</h6></a>
                         <p class="comp_bus_ext_P">
                              At PCS Global, we deliver a comprehensive payroll outsourcing service that relieves you and allows you to focus on growing your business. 
@@ -259,10 +259,10 @@
                 </div>
                 
                 <div class="comp_bus_back_p">
-                    <span><img class="img-fluid mb-3" src="{{asset('public/front/images/Strata_Management.jpg')}}" loading="lazy" alt="image"></span>
+                    <span><img class="img-fluid mb-3" src="<?php echo e(asset('public/front/images/Strata_Management.jpg')); ?>" loading="lazy" alt="image"></span>
                     <div class="comp_bus_back_bt_p">
                         <h6 class="comp_bus_num_p">04</h6>
-                       <a href="{{ route('strata.management') }}"> <h6 class="comp_bus_para_P mb-4">Strata Management</h6></a>
+                       <a href="<?php echo e(route('strata.management')); ?>"> <h6 class="comp_bus_para_P mb-4">Strata Management</h6></a>
                         <p class="comp_bus_ext_P">
                             From budgeting and levy collection to maintenance coordination, we do it all. 
                            Our Strata Specialists streamline property maintenance services, acting as your virtual strata managers with a keen expert eye.
@@ -271,7 +271,7 @@
                 </div>
                 
                 <div class="comp_bus_back_p">
-                    <span><img class="img-fluid mb-3" src="{{asset('public/front/images/IT_Automation.jpg')}}" loading="lazy" alt="image"></span>
+                    <span><img class="img-fluid mb-3" src="<?php echo e(asset('public/front/images/IT_Automation.jpg')); ?>" loading="lazy" alt="image"></span>
                     <div class="comp_bus_back_bt_p">
                         <h6 class="comp_bus_num_p">05</h6>
                        <a href="#"> <h6 class="comp_bus_para_P mb-4">IT Automation</h6></a>
@@ -283,10 +283,10 @@
                 </div>
                 
                 <div class="comp_bus_back_p">
-                    <span><img class="img-fluid mb-3" src="{{asset('public/front/images/Staffing__Recruitment.jpg')}}" loading="lazy" alt="image"></span>
+                    <span><img class="img-fluid mb-3" src="<?php echo e(asset('public/front/images/Staffing__Recruitment.jpg')); ?>" loading="lazy" alt="image"></span>
                     <div class="comp_bus_back_bt_p">
                         <h6 class="comp_bus_num_p">06</h6>
-                      <a href="{{ route('recruitment.services') }}"> <h6 class="comp_bus_para_P mb-4">Staffing & Recruitment</h6></a>
+                      <a href="<?php echo e(route('recruitment.services')); ?>"> <h6 class="comp_bus_para_P mb-4">Staffing & Recruitment</h6></a>
                         <p class="comp_bus_ext_P">
                             Tailored staffing solutions for your business with the blend of flexible recruitment, contract hiring and offshore resource models. 
                             Our global talent network ensures you have the right people for the right roles, right when you need them.
@@ -330,7 +330,7 @@
             </div>
 
             <div class="col-lg-5">
-                <img class=" img-fluid" src="{{asset('public/front/images/who-are-we.png')}}" loading="lazy" alt="image" cccc>
+                <img class=" img-fluid" src="<?php echo e(asset('public/front/images/who-are-we.png')); ?>" loading="lazy" alt="image" cccc>
             </div>
         </div>
     </div>
@@ -343,48 +343,48 @@
             <p>Every task. Every detail. Done right, the first time.</p>
         </div>
         <div class="trust_scroll_wrapper">
-            <div class="trust_banner trust_banner_home" style="background-image: url('{{asset('public/front/images/trust_bg.png')}}');">
+            <div class="trust_banner trust_banner_home" style="background-image: url('<?php echo e(asset('public/front/images/trust_bg.png')); ?>');">
                 <div class="trust_card">
                     <div class="trust_card_head">
                         <h3>Research & Analysis</h3>
-                        <span><img src="{{asset('public/front/images/trust_icon.png')}}" loading="lazy" alt="icon" /></span>
+                        <span><img src="<?php echo e(asset('public/front/images/trust_icon.png')); ?>" loading="lazy" alt="icon" /></span>
                     </div>
                     <p>Our analysts deliver data-driven insights that help unlock new opportunities for your business to grow. 
                         From market trends to operational metrics, we help you stay ahead by gaining clarity and reducing risks.
                     </p>
                 </div>
             </div>
-            <div class="trust_banner trust_banner_home" style="background-image: url('{{asset('public/front/images/trust_bg2.png')}}');">
+            <div class="trust_banner trust_banner_home" style="background-image: url('<?php echo e(asset('public/front/images/trust_bg2.png')); ?>');">
                 <div class="trust_card">
                     <div class="trust_card_head">
                         <h3>Tech-Powered Solutions</h3>
-                        <span><img src="{{asset('public/front/images/trust_icon.png')}}" loading="lazy" alt="icon" /></span>
+                        <span><img src="<?php echo e(asset('public/front/images/trust_icon.png')); ?>" loading="lazy" alt="icon" /></span>
                     </div>
                     <p>Organize operations and boost productivity by integrating advanced technologies, such as automation, cloud tools, and custom development. 
                         Utilizing tech strategically to maximize ROI is what we strive for.
                     </p>
                 </div>
             </div>
-            <div class="trust_banner trust_banner_home" style="background-image: url('{{asset('public/front/images/our-certificate.png')}}');">
+            <div class="trust_banner trust_banner_home" style="background-image: url('<?php echo e(asset('public/front/images/our-certificate.png')); ?>');">
                 <div class="trust_card">
                     <div class="trust_card_head">
                         <h3>Our Certifications</h3>
-                        <span><img src="{{asset('public/front/images/trust_icon.png')}}" loading="lazy" alt="icon" /></span>
+                        <span><img src="<?php echo e(asset('public/front/images/trust_icon.png')); ?>" loading="lazy" alt="icon" /></span>
                     </div>
                     <div class="d-flex certificate-banner">
                         
                        
-                        <img src="{{asset('public/front/images/certificate.png')}}" loading="lazy" alt="certifcate" class="img-fluid">
+                        <img src="<?php echo e(asset('public/front/images/certificate.png')); ?>" loading="lazy" alt="certifcate" class="img-fluid">
                        
                     </div>
                    
                 </div>
             </div>
-            <div class="trust_banner trust_banner_home" style="background-image: url('{{asset('public/front/images/trust_bg3.png')}}');">
+            <div class="trust_banner trust_banner_home" style="background-image: url('<?php echo e(asset('public/front/images/trust_bg3.png')); ?>');">
                 <div class="trust_card">
                     <div class="trust_card_head">
                         <h3>Available 24×7</h3>
-                        <span><img src="{{asset('public/front/images/trust_icon.png')}}" loading="lazy" alt="icon" /></span>
+                        <span><img src="<?php echo e(asset('public/front/images/trust_icon.png')); ?>" loading="lazy" alt="icon" /></span>
                     </div>
                     <p>To ensure reliability and responsiveness, our global support team is available 24/7 to address any queries that may arise, 
                         regardless of the time or location.
@@ -399,7 +399,7 @@
 <!-- Industries -->
 
 <!-- global_exp -->
-@include('layouts.Industries-card')
+<?php echo $__env->make('layouts.Industries-card', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
 <section class="mt-100" >
     <div class="container">
@@ -410,7 +410,7 @@
             <div class="row justify-content-center mb-5">
                 <div class="col-lg-10">
                     <div class=" text-center">
-                        <img class=" img-fluid" src="{{ asset('public/front/images/accounting-finance-global.png') }}" loading="lazy" alt="outsourcing-services">
+                        <img class=" img-fluid" src="<?php echo e(asset('public/front/images/accounting-finance-global.png')); ?>" loading="lazy" alt="outsourcing-services">
                     </div>
                 </div>
             </div>
@@ -539,175 +539,175 @@
                   
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_01.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_01.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_01">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_02.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_02.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_02">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_03.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_03.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_03">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_04.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_04.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_04">
                         </div>
                          <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_05.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_05.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_05">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_06.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_06.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_06">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_07.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_07.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_07">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_08.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_08.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_08">
                         </div>
                          <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_09.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_09.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_09">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_10.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_10.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_10">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_11.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_11.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_11">
                         </div>
                          <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_12.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_12.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_12">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_13.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_13.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_13">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_14.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_14.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_14">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_15.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_15.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_15">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_16.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_16.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_16">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_17.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_17.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_17">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_18.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_18.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_18">
                         </div>
                           <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_19.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_19.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_19">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_20.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_20.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_20">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_21.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_21.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_21">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_22.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_22.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_22">
                         </div>
                          <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_23.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_23.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_23">
                         </div>
                          <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_24.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_24.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_24">
                         </div>
                          <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_25.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_25.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_25">
                         </div> 
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_26.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_26.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_26">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_27.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_27.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_27">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_28.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_28.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_28">
                         </div>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_29.png') }}"
+                                 src="<?php echo e(asset('public/front/images/Homepage_29.png')); ?>"
                                   loading="lazy"
                                  alt="Homepage_29">
                         </div>
@@ -723,7 +723,7 @@
             <h2>Our Global Reach</h2>
         </div>
         <div>
-            <img class="img-fluid" src="{{asset('public/front/images/MAP.gif')}}" alt="maps" loading="lazy"> 
+            <img class="img-fluid" src="<?php echo e(asset('public/front/images/MAP.gif')); ?>" alt="maps" loading="lazy"> 
         </div>
     </div>
 </section>
@@ -763,7 +763,7 @@
                 </div>
                 <div class="col-lg-5 mt-4">
                     <div>
-                        <img class="img-fluid" src="{{asset('public/front/images/coman_tree1.png')}}"  loading="lazy" alt="images">
+                        <img class="img-fluid" src="<?php echo e(asset('public/front/images/coman_tree1.png')); ?>"  loading="lazy" alt="images">
                     </div>
                 </div>
             </div>
@@ -781,15 +781,15 @@
 
         <div class="our_experts_cen">
             <div class="experts_slider team-slider">
-               @foreach($ourexpert as $expert)
+               <?php $__currentLoopData = $ourexpert; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $expert): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="experts_card team-card">
-                        <img class="img-fluid" src="{{ asset('/'.$expert->image) }}"  loading="lazy" alt="{{ $expert->name ?? 'expert'}}">
+                        <img class="img-fluid" src="<?php echo e(asset('/'.$expert->image)); ?>"  loading="lazy" alt="<?php echo e($expert->name ?? 'expert'); ?>">
                         <div class="experts_card_bt">
-                            <h4 class="sub_head">{{ $expert->name }}</h4>
-                            <p class="mb-0">{{ $expert->designation }}</p>
+                            <h4 class="sub_head"><?php echo e($expert->name); ?></h4>
+                            <p class="mb-0"><?php echo e($expert->designation); ?></p>
                         </div>
                     </div>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
 
         </div>
@@ -833,14 +833,14 @@
             </div>
             <div class="col-lg-10">
                 <div class="client_slider">
-                   @foreach($images as $image)
+                   <?php $__currentLoopData = $images; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $image): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div>
                             <img class="img-fluid"
-                                 src="{{ asset('/'.$image->image) }}"
+                                 src="<?php echo e(asset('/'.$image->image)); ?>"
                                   loading="lazy"
-                                 alt="{{ $client->name ?? 'client' }}">
+                                 alt="<?php echo e($client->name ?? 'client'); ?>">
                         </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
         </div>
@@ -856,17 +856,17 @@
             <h2>Insights That Drive Smarter Business Decisions</h2>
         </div>
         <div class="row g-4 g-lg-5">
-        @foreach ($blogs->take(3) as $blog)    
+        <?php $__currentLoopData = $blogs->take(3); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $blog): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>    
             <div class="col-sm-6 col-lg-4">
                 <div class="blog-img-home">
-                    <img class="img-fluid" src="{{asset('/'.$blog->front_image)}}" alt="image" loading="lazy">
+                    <img class="img-fluid" src="<?php echo e(asset('/'.$blog->front_image)); ?>" alt="image" loading="lazy">
                 </div>
                 <div class="ins_card">
-                    <p>{{ \Carbon\Carbon::parse($blog->date)->format('F j, Y') }}</p>
-                    <a href="{{ route('blogs.detail', $blog->url) }}"><h4 class="sub_head">{{$blog->title}}</h4></a>
+                    <p><?php echo e(\Carbon\Carbon::parse($blog->date)->format('F j, Y')); ?></p>
+                    <a href="<?php echo e(route('blogs.detail', $blog->url)); ?>"><h4 class="sub_head"><?php echo e($blog->title); ?></h4></a>
                 </div>
             </div>
-        @endforeach
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
     </div>
 </section>
@@ -881,7 +881,7 @@
                     <div class="testimonial_card"> 
                         <div class="row">
                             <div class="col-md-12">
-                                <img class="img-fluid mb-3" src="{{ asset('public/front/images/quotation-icon.svg') }}"  loading="lazy" alt="quotation-icon">
+                                <img class="img-fluid mb-3" src="<?php echo e(asset('public/front/images/quotation-icon.svg')); ?>"  loading="lazy" alt="quotation-icon">
                                 <p>For some time, I have been working in conjunction with the Director of PCS Global Group, Mr Prithvi Dodla, getting to understand their business methods. Clearly, with their experience in end-to-end accounting, administration side. PCS Global Group will thrive in providing business solutions to clients globally. I have seen first hand the high productivity levels and commitment to clients being second to none. This is why I have joined their team to be on the ground in Australia to assist them in delivering Accounting & the Strata Industry services.</p>
                                    <h3 class="sub_head mb-1">
                                         Matt Osborne
@@ -893,7 +893,7 @@
                     <div class="testimonial_card"> 
                         <div class="row">
                             <div class="col-md-12">
-                                <img class="img-fluid mb-3" src="{{ asset('public/front/images/quotation-icon.svg') }}"  loading="lazy" alt="quotation-icon">
+                                <img class="img-fluid mb-3" src="<?php echo e(asset('public/front/images/quotation-icon.svg')); ?>"  loading="lazy" alt="quotation-icon">
                                 <p>The PCS Group experts took the time to know my business and me. I have a real sense of security, knowing there’s always quality advice on hand as my business grows and I have to make more decisions.</p>
                                    <h3 class="sub_head mb-1">
                                        Darren Mason
@@ -905,7 +905,7 @@
                     <div class="testimonial_card"> 
                         <div class="row">
                             <div class="col-md-12">
-                                <img class="img-fluid mb-3" src="{{ asset('public/front/images/quotation-icon.svg') }}"  loading="lazy" alt="quotation-icon">
+                                <img class="img-fluid mb-3" src="<?php echo e(asset('public/front/images/quotation-icon.svg')); ?>"  loading="lazy" alt="quotation-icon">
                                 <p>The PCS team is extremely proactive and professional. They look after all my accounting and tax requirements so that I can concentrate on building my business.</p>
                                    <h3 class="sub_head mb-1">
                                        Barry Williams
@@ -917,7 +917,7 @@
                     <div class="testimonial_card"> 
                         <div class="row">
                             <div class="col-md-12">
-                                <img class="img-fluid mb-3" src="{{ asset('public/front/images/quotation-icon.svg') }}" loading="lazy" alt="quotation-icon">
+                                <img class="img-fluid mb-3" src="<?php echo e(asset('public/front/images/quotation-icon.svg')); ?>" loading="lazy" alt="quotation-icon">
                                 <p>They provide prompt, accurate, and professional service, relieving us of the burden of keeping up with ever-changing Payroll legislation. I particularly value having an expert contact I can contact if I have any questions, and they are familiar enough with our business to provide much-appreciated, tailored advice as needed.</p>
                                    <h3 class="sub_head mb-1">
                                        Jason Hoopai
@@ -930,7 +930,7 @@
             </div>
             
             <div class="col-md-4">
-                <img class="img-fluid" src="{{ asset('public/front/images/testimonial.png') }}" alt="testimonial">
+                <img class="img-fluid" src="<?php echo e(asset('public/front/images/testimonial.png')); ?>" alt="testimonial">
             </div>
         </div>
         
@@ -962,6 +962,7 @@
 </section> 
 
 
-@include('layouts.frontfooter')
+<?php echo $__env->make('layouts.frontfooter', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
 
+<?php /**PATH C:\xampp\htdocs\pcs\resources\views/front/dashboard.blade.php ENDPATH**/ ?>
