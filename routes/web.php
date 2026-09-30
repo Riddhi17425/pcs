@@ -18,13 +18,16 @@ use App\Http\Controllers\Web\AboutController;
 use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\ServiceController;
 use App\Http\Controllers\Web\BlogController;
+
 use Illuminate\Support\Facades\Artisan;
 
-    Route::get('clear', function () {
+Route::get('/clear', function () {
+    Artisan::call('route:clear');
     Artisan::call('optimize:clear');
- 
-    return 'Optimization cache cleared!';
-    });
+    return "Application cache cleared!";
+});
+
+
     Route::get('/', [HomeController::class, 'index'])->name('front.home');
     Route::get('/data-security', [HomeController::class, 'datasecurity'])->name('datasecurity');
     Route::get('/terms-and-condition', [HomeController::class, 'termsandcondition'])->name('terms-condition');
@@ -35,22 +38,46 @@ use Illuminate\Support\Facades\Artisan;
     Route::get('blog', [BlogController::class, 'blog'])->name('blog');
     Route::get('blogs/{url}', [BlogController::class, 'BlogsDetail'])->name('blogs.detail');
     Route::get('strata-management', [ServiceController::class, 'strataManagement'])->name('strata.management');
-    Route::get('bookkeeping-and-accounting-services', [ServiceController::class, 'accountingBookeeping'])->name('pcs.global.bookkeeping');
+    Route::get('white-label-accounting-services', [ServiceController::class, 'whitelabelAccountingServices'])->name('white-label-accounting-services');
+    
+    
+    // Route::get('test-taxation', [ServiceController::class, 'taxationservices'])->name('test.taxation'); // TEMP LINK
+    
+    // Route::get('bookkeeping-and-accounting-services', [ServiceController::class, 'accountingBookeeping'])->name('pcs.global.bookkeeping'); // OLD LINK
+    Route::get('outsourced-accounting-bookkeeping-services', [ServiceController::class, 'accountingBookeeping'])->name('pcs.global.bookkeeping');
+    
+    // Route::get('taxation-services', [ServiceController::class, 'taxationservices'])->name('taxation.services'); // OLD LINK
+    Route::get('outsourced-taxation-services', [ServiceController::class, 'taxationservices'])->name('taxation.services');
+    
+    // Route::get('payroll-services', [ServiceController::class, 'payrollService'])->name('payroll.services'); // OLD LINK
+    Route::get('outsourced-payroll-services', [ServiceController::class, 'payrollService'])->name('payroll.services');
+    
     Route::get('recruitment-services', [ServiceController::class, 'recruitmentService'])->name('recruitment.services');
-    Route::get('payroll-services', [ServiceController::class, 'payrollService'])->name('payroll.services');
     Route::get('payroll-outsourcing-services', [ServiceController::class, 'payrolloutsourcing'])->name('payroll-outsourcing-services');
-    Route::get('taxation-services', [ServiceController::class, 'taxationservices'])->name('taxation.services');
-    Route::get('us/bookkeeping-and-accounting-services', [ServiceController::class, 'globalUsa'])->name('pcs.global.usa');
+    
     Route::get('australia/bookkeeping-accounting-services', [ServiceController::class, 'globalAus'])->name('pcs.global.aus');
-    Route::get('uk/bookkeeping-accounting-services', [ServiceController::class, 'globalUk'])->name('pcs.global.uk');
+    Route::get('us/bookkeeping-and-accounting-services', [ServiceController::class, 'globalUsa'])->name('pcs.global.usa');
+    // Route::get('uk/bookkeeping-accounting-services', [ServiceController::class, 'globalUk'])->name('pcs.global.uk');
+    Route::get('uk/bookkeeping-accounting-services', function () {
+        return redirect('/uk/accounting-outsourcing-services/', 301);
+    })->name('pcs.global.uk');
+    
     Route::get('thank-you', [ServiceController::class, 'thankyou'])->name('thank.you');
     Route::get('us/taxation-services', [ServiceController::class, 'taxationservicesusa'])->name('taxation-services-usa');
     Route::get('australia/taxation-services', [ServiceController::class, 'taxationaustralian'])->name('taxation-services-australian');
     Route::get('uk/taxation-services', [ServiceController::class, 'taxationservicesuk'])->name('taxation-services-uk');
     Route::get('it-automation', [ServiceController::class, 'itautomation'])->name('it.automation');
     Route::post('/whatsaapinquiry', [HomeController::class, 'whatsaapinquiry'])->name('whatsaapinquiry');
-    
-    Route::get('whitelabel-accounting-services', [ServiceController::class, 'whitelabelAccountingServices'])->name('whitelabel-accounting-services');
+
+    //UK DIRECTORY ROUTES
+    // Route::get('uk/', [ServiceController::class, 'ukLanding'])->name('uk'); 
+    Route::get('uk/', function () {
+        return redirect('uk/about/', 301);
+    })->name('uk');
+    Route::get('uk/accounting-outsourcing-services/', [ServiceController::class, 'accountingOutSourcingServices'])->name('accounting.outsourcing.services');
+    Route::get('uk/small-business-accounting-services/', [ServiceController::class, 'smallBusinessAccountingServices'])->name('small.business.accounting.services');
+    Route::get('uk/outsource-tax-preparation-services/', [ServiceController::class, 'outsourceTaxPreparationServices'])->name('outsource.tax.preparation.services');
+    Route::get('uk/about/', [AboutController::class, 'ukAbout'])->name('uk.about');
 
     Route::post('/request-store', [ServiceController::class, 'requestStore'])->name('request.store');
     Route::post('consultant-store', [ServiceController::class, 'consultantstore'])->name('consultant.store');

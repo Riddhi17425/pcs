@@ -1,145 +1,127 @@
+
 <footer class="mt-100 footer">
     <div class="container">
         <div class="footer_top">
-            <div class="row gy-4 gy-lg-0 justify-content-between">
-                <div class="col-lg-3">
-                    <div class="foot_lt">
-                        <a href="<?php echo e(url('/')); ?>"><img class="ft_logo" src="<?php echo e(asset('public/front/images/footer-log.svg')); ?>" alt="logo" loading="lazy"></a>
-                        <p class="foot_lt_para">PCS Global is committed to delivering reliable and quality accounting
-                            service and is driven
-                            by long-term partnerships with clients, and employees based on strong values of integrity
-                            and trust.</p>
-                        <div class="foot_social">
-
-                            <!--<a href="https://api.whatsapp.com/send?phone=918460268698&text=Hello,%20I%27m%20visiting%20your%20website%20and%20would%20like%20to%20know%20more" target="_blank"><img src="<?php echo e(asset('public/front/images/whatsapp.svg')); ?>" alt="whatsapp" loading="lazy"></a>-->
-                            <a href="https://www.facebook.com/PCSGlobalGroup/" target="_blank"><img src="<?php echo e(asset('public/front/images/facebook.svg')); ?>" alt="facebook" loading="lazy"></a>
-                            <a href="https://www.instagram.com/pcsglobalgroup/" target="_blank"><img src="<?php echo e(asset('public/front/images/insta.svg')); ?>" alt="insta" loading="lazy"></a>
-                            <a href="https://www.linkedin.com/company/pcs-global-group/" target="_blank"><img src="<?php echo e(asset('public/front/images/linkedin.svg')); ?>" alt="linkedin" loading="lazy"></a>
-                        </div>
-                        <div class=" mt-4">
-                            <img src="<?php echo e(asset('public/front/images/Logo_footer.png')); ?>" alt="Property, Strata & Staffing Solutions" class="img-fluid" loading="lazy">
-                        </div>
+            <div class="footer_top_flex">
+                <div class="foot_lt">
+                    <a href="<?php echo e(url('/')); ?>"><img class="ft_logo" src="<?php echo e(asset('public/front/images/footer-log.svg')); ?>" alt="logo" loading="lazy"></a>
+                    <p class="foot_lt_para">PCS Global is committed to delivering reliable and quality accounting
+                        service and is driven
+                        by long-term partnerships with clients, and employees based on strong values of integrity
+                        and trust.</p>
+                    <div class="foot_social">
+                        <a href="https://www.linkedin.com/company/pcs-global-group/" target="_blank"><img src="<?php echo e(asset('public/front/images/linkedin.svg')); ?>" alt="linkedin" loading="lazy"></a>
+                        <a href="https://www.facebook.com/PCSGlobalGroup/" target="_blank"><img src="<?php echo e(asset('public/front/images/facebook.svg')); ?>" alt="facebook" loading="lazy"></a>
+                        <a href="https://www.instagram.com/pcsglobalgroup/" target="_blank"><img src="<?php echo e(asset('public/front/images/insta.svg')); ?>" alt="insta" loading="lazy"></a>
                     </div>
                 </div>
 
-                <div class="col-lg-9">
-                    <div class="footer_contant">
+                <div class="foot_links_group">
+                    <div class="foot_rt">
+                        <h4 class="sub_head">Quick Links</h4>
+                        <ul>
+                            <li>
+                                <a href="<?php echo e(url('/')); ?>">Home</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo e(route('about')); ?>">About Us</a>
+                            </li>
 
-                            <div class="foot_rt">
-                                <h4 class="sub_head">Quick Links</h4>
-                                <ul>
-                                    <li>
-                                        <a href="<?php echo e(url('/')); ?>">Home</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo e(route('about')); ?>">About Us</a>
-                                    </li>
+                            <li>
+                                <a href="<?php echo e(route('datasecurity')); ?>">Data Security</a>
+                            </li>
 
-                                    <li>
-                                        <a href="<?php echo e(route('datasecurity')); ?>">Data Security</a>
-                                    </li>
+                            <li>
+                                <a href="<?php echo e(route('contact')); ?>">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo e(route('blog')); ?>">Blogs</a>
+                            </li>
+                        </ul>
+                    </div>
 
-                                    <li>
-                                        <a href="<?php echo e(route('blog')); ?>">Blogs</a>
-                                    </li>
-                                                                        <li>
-                                        <a href="<?php echo e(route('contact')); ?>">Contact Us</a>
-                                    </li>
-                                </ul>
-                            </div>
+                    <div class="foot_rt">
+                        <h4 class="sub_head">Our Services</h4>
+                        <ul>
 
+                             <li>
+                                <a href="<?php echo e(route('pcs.global.bookkeeping')); ?>">Accounting & Bookkeeping</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo e(route('strata.management')); ?>">Strata Property Management</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo e(route('payroll.services')); ?>">Payroll Outsourcing Services</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo e(route('taxation.services')); ?>">Taxation Services</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo e(route('recruitment.services')); ?>">Recruitment Outsourcing Services</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo e(route('it.automation')); ?>">IT Automation Services</a>
+                            </li>
 
-                            <div class="foot_rt">
-                                <h4 class="sub_head">Our Services</h4>
-                                <ul>
+                        </ul>
+                    </div>
 
-                                     <li>
-                                        <a href="<?php echo e(route('pcs.global.bookkeeping')); ?>">Accounting & Bookkeeping</a>
-                                    </li>
+                    <div class="foot_rt border-end-0">
+                        <h4 class="sub_head">Contact Us</h4>
 
+                        <div class="foot_contact_block">
+                            <h6 class="foot_contact_label">Address:</h6>
+                            <p class="foot_contact_value">22A Mort Street Blacktown<br>NSW 2148 Australia.</p>
+                        </div>
 
-                                    <li>
-                                        <a href="<?php echo e(route('strata.management')); ?>">Strata Property Management</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo e(route('payroll.services')); ?>">Payroll Outsourcing Services</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo e(route('taxation.services')); ?>">Taxation Services</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo e(route('recruitment.services')); ?>">Recruitment Outsourcing Services</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo e(route('it.automation')); ?>">IT Automation Services</a>
-                                    </li>
+                        <div class="foot_contact_block">
+                            <h6 class="foot_contact_label">Call Us:</h6>
+                            <ul class="foot_call_list">
+                                <li>
+                                    <a href="tel:(+613) 9998 0494">
+                                        <img src="<?php echo e(asset('public/front/images/contry-icon/australia-icon.png')); ?>" alt="Australia" loading="lazy">
+                                        <span><b>AUS :</b> (+613) 9998 0494</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="tel:(+1) 347 801 8715">
+                                        <img src="<?php echo e(asset('public/front/images/contry-icon/us-icon.png')); ?>" alt="USA" loading="lazy">
+                                        <span><b>USA :</b> (+1) 347 801 8715</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="tel:(+91) 796 826 0121">
+                                        <img src="<?php echo e(asset('public/front/images/contry-icon/india-icon.svg')); ?>" alt="India" loading="lazy">
+                                        <span><b>IND :</b> (+91) 796 826 0121</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="tel:(+44) 113 4034334">
+                                        <img src="<?php echo e(asset('public/front/images/contry-icon/uk-icon.png')); ?>" alt="UK" loading="lazy">
+                                        <span><b>UK :</b> (+44) 113 4034334</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
 
-                                </ul>
-                            </div>
-
-                            <!-- <div class="foot_rt">-->
-                            <!--    <h4 class="sub_head">Accounting</h4>-->
-                            <!--    <ul>-->
-
-                            <!--        <li>-->
-                            <!--            <a href="<?php echo e(route('pcs.global.aus')); ?>">Accounting - PCS Global in Australia</a>-->
-                            <!--        </li>-->
-                            <!--        <li>-->
-                            <!--            <a href="<?php echo e(route('pcs.global.usa')); ?>">Accounting - PCS Global in USA</a>-->
-                            <!--        </li>-->
-                            <!--        <li>-->
-                            <!--            <a href="<?php echo e(route('pcs.global.uk')); ?>">Accounting - PCS Global in UK</a>-->
-                            <!--        </li>-->
-
-                            <!--    </ul>-->
-
-                            <!--     <h4 class="sub_head mt-4">Taxation</h4>-->
-                            <!--     <ul>-->
-                            <!--          <li>-->
-                            <!--            <a href="<?php echo e(route('taxation-services-australian')); ?>">Taxation in Australia</a>-->
-                            <!--        </li>-->
-
-                            <!--         <li>-->
-                            <!--            <a href="<?php echo e(route('taxation-services-usa')); ?>">Taxation in USA</a>-->
-                            <!--        </li>-->
-
-                            <!--         <li>-->
-                            <!--            <a href="<?php echo e(route('taxation-services-uk')); ?>">Taxation in UK</a>-->
-                            <!--        </li>-->
-                            <!--     </ul>-->
-                            <!--</div>-->
-
-
-                            <div class="foot_rt border-end-0">
-                                <h4 class="sub_head">Contact Us</h4>
-                                <ul>
-                                    <li>
-                                        <a href="tel:(+613) 9998 0494"><b>AUS :</b> (+613) 9998 0494</a>
-                                    </li>
-                                    <li>
-                                        <a href="tel:(+1) 347 801 8715"><b>USA :</b> (+1) 347 801 8715</a>
-                                    </li>
-                                    <li>
-                                        <a href="tel:(+91) 796 826 0121"><b>IND :</b> (+91) 796 826 0121</a>
-                                    </li>
-                                    <li>
-                                        <a href="tel:(+44) 113 4034334"><b>UK :</b> (+44) 113 4034334 </a>
-                                    </li>
-
-                                </ul>
-
-                                <h4 class="sub_head email-head mt-4">Email Us:</h4>
-
-                                <ul>
-                                    <li>
-                                        <a href="mailto:info@pcsglobalgroup.com">info@pcsglobalgroup.com</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-
+                        <div class="foot_contact_block mb-0">
+                            <h6 class="foot_contact_label">Email Us:</h6>
+                            <p class="foot_contact_value">
+                                <a href="mailto:info@pcsglobalgroup.com">info@pcsglobalgroup.com</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="footer_badges_wrap">
+            <div class="footer_badges">
+                <span class="badge_circle"><img src="<?php echo e(asset('public/front/images/figma-footer-badges/iso-9001.png')); ?>" alt="ISO 9001" loading="lazy"></span>
+                <span class="badge_box"><img src="<?php echo e(asset('public/front/images/figma-footer-badges/sca-vic-member.png')); ?>" alt="Strata Community Association VIC" loading="lazy"></span>
+                <span class="badge_circle"><img src="<?php echo e(asset('public/front/images/figma-footer-badges/iso-27001.png')); ?>" alt="ISO 27001" loading="lazy"></span>
+                <span class="badge_box"><img src="<?php echo e(asset('public/front/images/figma-footer-badges/sca-wa-member.png')); ?>" alt="Strata Community Association WA" loading="lazy"></span>
+                <span class="badge_circle"><img src="<?php echo e(asset('public/front/images/figma-footer-badges/gdpr.png')); ?>" alt="GDPR" loading="lazy"></span>
             </div>
         </div>
 
@@ -151,7 +133,7 @@
         </div>
     </div>
 </footer>
-
+<?php echo $__env->make('layouts.whatsapp', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
 <!-- Modal -->
 <div class="modal fade request_modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -159,8 +141,17 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="fs-5" id="exampleModalLabel">Request A
-                    Call</h5>
+                <div class="request_modal_title">
+                    <span class="request_modal_icon">
+                        <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.51089 1L6.15002 1.13169C6.91653 1.15942 7.59676 1.64346 7.89053 2.3702L8.96656 5.03213C9.217 5.65159 9.1496 6.35837 8.78693 6.91634L7.40831 9.0375C8.22454 10.2096 10.4447 12.9558 12.7955 14.5633L14.5484 13.4845C14.9939 13.2103 15.5273 13.1289 16.0314 13.2581L19.5161 14.1517C20.4429 14.3894 21.0674 15.2782 20.9942 16.2552L20.7705 19.2385C20.6919 20.2854 19.8351 21.1069 18.818 20.9887C5.39245 19.4276 -2.48056 0.99997 2.51089 1Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <h5 class="fs-5" id="exampleModalLabel">Request A Call</h5>
+                        <p class="request_modal_subtitle">We'll get back to you within 24 hours</p>
+                    </div>
+                </div>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <?php
@@ -173,7 +164,13 @@
                         <?php echo csrf_field(); ?>
                         <div class="row gy-4 gy-lg-4 gy-xxl-4">
 
-                            <div class="col-lg-12 form-group">
+                            <div class="col-lg-12 form-group form-group-icon">
+                                <span class="field_icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 12C14.4853 12 16.5 9.98528 16.5 7.5C16.5 5.01472 14.4853 3 12 3C9.51472 3 7.5 5.01472 7.5 7.5C7.5 9.98528 9.51472 12 12 12Z" stroke="#182653" stroke-width="1.5"/>
+                                        <path d="M4 20.5C4 16.9101 7.58172 14 12 14C16.4183 14 20 16.9101 20 20.5" stroke="#182653" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                </span>
                                 <input type="text" name="fullname" maxlength="70"
                                     oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'').replace(/\s+/g,' ').trimStart();" placeholder=" ">
                                 <label>Full Name<span class="text-danger">*</span></label>
@@ -183,7 +180,13 @@
                                 <label>Leave this field empty</label>
                                 <input type="text" name="fax_number" autocomplete="off">
                             </div>
-                            <div class="col-lg-12 form-group">
+                            <div class="col-lg-12 form-group form-group-icon">
+                                <span class="field_icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 6.5C3 5.67157 3.67157 5 4.5 5H19.5C20.3284 5 21 5.67157 21 6.5V17.5C21 18.3284 20.3284 19 19.5 19H4.5C3.67157 19 3 18.3284 3 17.5V6.5Z" stroke="#182653" stroke-width="1.5"/>
+                                        <path d="M3.5 6.5L12 13L20.5 6.5" stroke="#182653" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
                                 <input type="email" name="email" maxlength="70" placeholder=" ">
                                 <label>Email Address<span class="text-danger">*</span></label>
                             </div>
@@ -210,12 +213,12 @@
                                 <label>Message:</label>
                             </div>
 
-                            <!-- <div class="col-lg-12 form-group">
+                             <div class="col-lg-12 form-group">
                                 <div class="g-recaptcha"
                                     data-sitekey="6LfxJ7crAAAAAGJsj1iMJSQXpZLJE47H1h6StuUT"
                                     data-callback="onCaptchaSuccessRequest"></div>
                                 <span class="captcha-error text-danger" style="display:none;">Please verify you are not a robot.</span>
-                            </div> -->
+                            </div>
 
                             <div class="col-lg-12">
                                 <button type="submit" class="com_btn2 color-animated-button bubble-btn">

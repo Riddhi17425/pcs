@@ -1,0 +1,22 @@
+<svg width="36" height="24" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
+  <rect width="36" height="24" fill="#ffffff"/>
+  <rect width="36" height="8" fill="#FF9933"/>
+  <rect y="16" width="36" height="8" fill="#138808"/>
+  <circle cx="18" cy="12" r="3.2" fill="none" stroke="#000080" stroke-width="0.5"/>
+  <circle cx="18" cy="12" r="0.6" fill="#000080"/>
+  <g stroke="#000080" stroke-width="0.35">
+    <line x1="18" y1="8.8" x2="18" y2="15.2"/>
+    <line x1="14.8" y1="12" x2="21.2" y2="12"/>
+    <line x1="15.06" y1="9.06" x2="20.94" y2="14.94"/>
+    <line x1="15.06" y1="14.94" x2="20.94" y2="9.06"/>
+    <line x1="16.14" y1="8.14" x2="19.86" y2="15.86"/>
+    <line x1="19.86" y1="8.14" x2="16.14" y2="15.86"/>
+    <line x1="14.14" y1="10.14" x2="21.86" y2="13.86"/>
+    <line x1="14.14" y1="13.86" x2="21.86" y2="10.14"/>
+    <line x1="14.8" y1="12" x2="21.2" y2="12" transform="rotate(15 18 12)"/>
+    <line x1="14.8" y1="12" x2="21.2" y2="12" transform="rotate(30 18 12)"/>
+    <line x1="14.8" y1="12" x2="21.2" y2="12" transform="rotate(45 18 12)"/>
+    <line x1="14.8" y1="12" x2="21.2" y2="12" transform="rotate(60 18 12)"/>
+    <line x1="14.8" y1="12" x2="21.2" y2="12" transform="rotate(75 18 12)"/>
+  </g>
+</svg>

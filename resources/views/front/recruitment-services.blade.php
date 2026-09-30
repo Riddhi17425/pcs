@@ -1,4 +1,6 @@
-@include('layouts.frontheader')
+@include('layouts.frontheader', [
+    'og_image' => asset('public/front/images/recruitment-services2.png')
+])
 <section class="com_hero" style="background-image: url(' {{ asset('public/front/images/data-security-hero-bg.jpg') }}');">
     <div class="container">
         <div class="com_hero_child">
