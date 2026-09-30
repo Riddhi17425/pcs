@@ -77,9 +77,7 @@
                     <div class="col-lg-6 form-group">
                         <input type="tel" name="phone" id="contactPhone" value="{{ old('phone') }}"
                             maxlength="15" minlength="10" placeholder="Phone Number"
-                            onkeypress="return (event.charCode >= 48 && event.charCode <= 57);"
-                            oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);"
-                            onpaste="setTimeout(() => { this.value = this.value.replace(/[^0-9]/g,'').slice(0,15); }, 0);">
+                            oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
                         <label><span class="text-danger">*</span></label>
                         @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
                         <span id="mobile-error" style="color:red; display:none;">Please enter at least 10 digits</span>
