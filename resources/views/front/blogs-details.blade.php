@@ -46,7 +46,8 @@ table tr:hover {
     <div class="container">
         <div class="row g-4">
             <div class="col-lg-12 col-xxl-12 text-center">
-                <img class="img-fluid" src="{{asset('/'.$blog->detail_image)}}" alt="image">
+                <img class="img-fluid" src="{{ asset('/'.$blog->detail_image) }}"
+     alt="{{ $blog->detail_image_alt ?: $blog->title }}">
             </div>
             <div class="col-lg-12 col-xxl-12">
                 <div>
@@ -197,7 +198,8 @@ table tr:hover {
             @foreach ($blogs->take(3) as $data)
                 <div class="col-lg-4">
                     <div>
-                        <img class="img-fluid" src="{{asset('/'.$data->front_image)}}" alt="imah3ge">
+                        <img class="img-fluid" src="{{ asset('/'.$data->front_image) }}"
+     alt="{{ $data->front_image_alt ?: $data->title }}">
                     </div>
                     <div class="ins_card">
                         <p>{{ \Carbon\Carbon::parse($data->date)->format('F j, Y') }}</p>

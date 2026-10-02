@@ -16,7 +16,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 <div class="border-0 mb-4">
-                    <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
+                    <div
+                        class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
                         <h3 class="fw-bold mb-0">Add Blogs</h3>
                         <a href="{{ route('blogs') }}" class="btn btn-primary btn-set-task">Back</a>
                     </div>
@@ -39,7 +40,8 @@
                                         {{-- Title --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Title <span class="required-star">*</span></label>
-                                            <input type="text" name="title" class="form-control @error('title') is-invalid @enderror"
+                                            <input type="text" name="title"
+                                                class="form-control @error('title') is-invalid @enderror"
                                                 value="{{ old('title') }}" placeholder="Enter Title">
                                             @error('title')
                                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -48,7 +50,8 @@
                                         {{-- Blogs Url --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Url <span class="required-star">*</span></label>
-                                            <input type="text" name="url" class="form-control @error('url') is-invalid @enderror"
+                                            <input type="text" name="url"
+                                                class="form-control @error('url') is-invalid @enderror"
                                                 value="{{ old('url') }}" placeholder="Enter url">
                                             @error('url')
                                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -56,12 +59,13 @@
                                         </div>
 
                                         {{-- Short Description --}}
-                                    
+
                                         <div class="col-md-12 mb-3">
-                                            <label class="form-label">Short Description <span class="required-star">*</span></label>
+                                            <label class="form-label">Short Description <span
+                                                    class="required-star">*</span></label>
                                             <textarea name="short_description" id="short_description"
-                                                class="form-control @error('short_description') is-invalid @enderror"
-                                                value="{{ old('short_description') }}" placeholder="Enter short description">{{ old('short_description') }}</textarea>
+                                                class="form-control @error('short_description') is-invalid @enderror" value="{{ old('short_description') }}"
+                                                placeholder="Enter short description">{{ old('short_description') }}</textarea>
                                             @error('short_description')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -69,42 +73,69 @@
 
                                         {{-- Front Image --}}
                                         <div class="col-md-6 mb-3">
-                                            <label class="form-label">Front Image <span class="required-star">*</span></label>
-                                            <input type="file" name="front_image" class="form-control @error('front_image') is-invalid @enderror" id="blogs_front_image"  onchange="validateAndPreviewFrontImage()">
+                                            <label class="form-label">Front Image <span
+                                                    class="required-star">*</span></label>
+                                            <input type="file" name="front_image"
+                                                class="form-control @error('front_image') is-invalid @enderror"
+                                                id="blogs_front_image" onchange="validateAndPreviewFrontImage()">
                                             @error('front_image')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
-                                             <img id="preview_front_image" src="#" alt="Preview" class="mt-2" style="max-width: 120px; height: auto; display: none;" />
+                                            <img id="preview_front_image" src="#" alt="Preview" class="mt-2"
+                                                style="max-width: 120px; height: auto; display: none;" />
+                                                <label class="form-label mt-2 mb-1">Front Alt Text</label>
+                                            <input type="text" name="front_image_alt"
+                                                class="form-control mt-2 @error('front_image_alt') is-invalid @enderror"
+                                                value="{{ old('front_image_alt') }}" placeholder="Front image alt text">
+                                            @error('front_image_alt')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
 
                                         {{-- Detail Image --}}
                                         <div class="col-md-6 mb-3">
-                                            <label class="form-label">Detail Image <span class="required-star">*</span></label>
-                                            <input type="file" name="detail_image" class="form-control @error('detail_image') is-invalid @enderror" id="blogs_detail_image"  onchange="validateAndPreviewBannerImage()">
+                                            <label class="form-label">Detail Image <span
+                                                    class="required-star">*</span></label>
+                                            <input type="file" name="detail_image"
+                                                class="form-control @error('detail_image') is-invalid @enderror"
+                                                id="blogs_detail_image" onchange="validateAndPreviewBannerImage()">
                                             @error('detail_image')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
-                                             <img id="preview_detail_image" src="#" alt="Preview" class="mt-2" style="max-width: 120px; height: auto; display: none;" />
+                                            <img id="preview_detail_image" src="#" alt="Preview" class="mt-2"
+                                                style="max-width: 120px; height: auto; display: none;" />
+                                                <label class="form-label mt-2 mb-1">Detail Alt Text</label>
+                                            <input type="text" name="detail_image_alt"
+                                                class="form-control mt-2 @error('detail_image_alt') is-invalid @enderror"
+                                                value="{{ old('detail_image_alt') }}" placeholder="Detail image alt text">
+                                            @error('detail_image_alt')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
 
                                         {{-- Status --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Status <span class="required-star">*</span></label>
-                                            <select name="status" class="form-control @error('status') is-invalid @enderror">
-                                                <option value="Active" {{ old('status') == 'Active' ? 'selected' : '' }}>Active</option>
-                                                <option value="In-Active" {{ old('status') == 'In-Active' ? 'selected' : '' }}>Inactive</option>
+                                            <select name="status"
+                                                class="form-control @error('status') is-invalid @enderror">
+                                                <option value="Active" {{ old('status') == 'Active' ? 'selected' : '' }}>
+                                                    Active</option>
+                                                <option value="In-Active"
+                                                    {{ old('status') == 'In-Active' ? 'selected' : '' }}>Inactive</option>
                                             </select>
                                             @error('status')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                            <label for="date" class="form-label">Date <span class="required-star">*</span></label>
+                                            <label for="date" class="form-label">Date <span
+                                                    class="required-star">*</span></label>
                                             <input type="date" id="date" name="date" class="form-control">
                                         </div>
                                         {{-- Detail Description --}}
                                         <div class="card mb-4 border">
-                                            <div class="card-header bg-light"><strong>Detail Description</strong> <span class="required-star">*</span></div>
+                                            <div class="card-header bg-light"><strong>Detail Description</strong> <span
+                                                    class="required-star">*</span></div>
                                             <div class="card-body">
                                                 <textarea name="detail_description" class="form-control @error('detail_description') is-invalid @enderror"
                                                     rows="4" id="detail_description">{{ old('detail_description') }}</textarea>
@@ -117,8 +148,8 @@
                                         <div class="card mb-4 border">
                                             <div class="card-header bg-light"><strong>Conclusion</strong></div>
                                             <div class="card-body">
-                                                <textarea name="conclusion" class="form-control @error('conclusion') is-invalid @enderror"
-                                                    rows="4" id="conclusion">{{ old('conclusion') }}</textarea>
+                                                <textarea name="conclusion" class="form-control @error('conclusion') is-invalid @enderror" rows="4"
+                                                    id="conclusion">{{ old('conclusion') }}</textarea>
                                                 @error('conclusion')
                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                 @enderror
@@ -127,16 +158,20 @@
                                         {{-- Cta Image --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Cta Image</label>
-                                            <input type="file" name="cta_image" id="cta_image" class="form-control @error('cta_image') is-invalid @enderror" onchange="validateAndPreviewCTAImage()">
+                                            <input type="file" name="cta_image" id="cta_image"
+                                                class="form-control @error('cta_image') is-invalid @enderror"
+                                                onchange="validateAndPreviewCTAImage()">
                                             @error('cta_image')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
-                                             <img id="preview_cta_image" src="#" alt="Preview" class="mt-2" style="max-width: 100%; height: auto; display: none;" />
+                                            <img id="preview_cta_image" src="#" alt="Preview" class="mt-2"
+                                                style="max-width: 100%; height: auto; display: none;" />
                                         </div>
                                         {{-- Cta Text --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Cta Text</label>
-                                            <input type="text" name="cta_text" class="form-control @error('cta_text') is-invalid @enderror"
+                                            <input type="text" name="cta_text"
+                                                class="form-control @error('cta_text') is-invalid @enderror"
                                                 value="{{ old('cta_text') }}" placeholder="Enter cta text">
                                             @error('cta_text')
                                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -144,7 +179,8 @@
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Meta Title</label>
-                                            <input type="text" id="meta_title" name="meta_title" required class="form-control">
+                                            <input type="text" id="meta_title" name="meta_title" required
+                                                class="form-control">
                                         </div>
                                         <div class="col-md-12">
                                             <label for="meta_description" class="form-label">Meta Description</label>
@@ -152,11 +188,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="card mb-4 border">
                                     <div class="card-header bg-light d-flex justify-content-between align-items-center">
                                         <strong>FAQ Title & Description</strong>
-                                        <button type="button" id="addFaqBlock" class="btn btn-sm btn-success">+ Add More</button>
+                                        <button type="button" id="addFaqBlock" class="btn btn-sm btn-success">+ Add
+                                            More</button>
                                     </div>
                                     <div class="card-body" id="faqRepeater">
                                         {{-- One FAQ block --}}
@@ -167,7 +204,7 @@
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Description </label>
-                                                <textarea name="faq_description[]" class="form-control summernote" rows="4" ></textarea>
+                                                <textarea name="faq_description[]" class="form-control summernote" rows="4"></textarea>
                                             </div>
                                             <div class="text-end">
                                                 <button type="button" class="btn btn-danger removeFaq">Remove</button>
@@ -193,7 +230,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#detail_description').summernote({
                 placeholder: 'Enter Description here...',
                 height: 300,
@@ -256,18 +293,18 @@
             });
         });
     </script>
-    
+
     <script>
-    $(document).ready(function () {
-        // Initialize Summernote
-        $('.summernote').summernote({
-            height: 200,
-            placeholder: 'Enter Description here...'
-        });
- 
-        // Add More
-        $('#addFaqBlock').click(function () {
-            let block = `
+        $(document).ready(function() {
+            // Initialize Summernote
+            $('.summernote').summernote({
+                height: 200,
+                placeholder: 'Enter Description here...'
+            });
+
+            // Add More
+            $('#addFaqBlock').click(function() {
+                let block = `
 <div class="faqGroup border rounded p-3 mb-3">
 <div class="mb-3">
 <label class="form-label">Title </label>
@@ -282,18 +319,18 @@
 </div>
 </div>
             `;
-            $('#faqRepeater').append(block);
-            // Re-init summernote for new textareas
-            $('.summernote').summernote({
-                height: 200,
-                placeholder: 'Enter Description here...'
+                $('#faqRepeater').append(block);
+                // Re-init summernote for new textareas
+                $('.summernote').summernote({
+                    height: 200,
+                    placeholder: 'Enter Description here...'
+                });
+            });
+
+            // Remove block
+            $(document).on('click', '.removeFaq', function() {
+                $(this).closest('.faqGroup').remove();
             });
         });
- 
-        // Remove block
-        $(document).on('click', '.removeFaq', function () {
-            $(this).closest('.faqGroup').remove();
-        });
-    });
-</script>
+    </script>
 @endsection
