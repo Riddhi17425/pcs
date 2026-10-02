@@ -100,7 +100,7 @@ const cards = document.querySelectorAll(".comp_bus_child");
                 $(".slider3-progress"),
                 $(".slider3-prev"),
                 $(".slider3-next"),
-                1,
+                2,
             ));
     }),
     $(".client_slider").slick({

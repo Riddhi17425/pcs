@@ -3,8 +3,9 @@
 <style>
 .WhatsAppButton_mpp {
   position: fixed;
-  top: 50%;
-  right: 0;
+  bottom: 25px;
+  right: 25px;
+  top: auto;
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -29,23 +30,26 @@
 
 .whatsapp-popup {
   position: absolute;
-  bottom: -100px;
-  right: 60px;
+  bottom: 70px;
+  right: 0;
   width: 320px;
+  max-width: calc(100vw - 50px);
   background: #fff;
   box-shadow: 0 8px 30px rgba(0,0,0,0.18);
   border-radius: 14px;
-  transform: rotateY(90deg);
-  transform-origin: 100% 100%;
-  transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s;
+  transform: translateY(20px) scale(0.92);
+  transform-origin: bottom right;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease, visibility 0.35s;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
 }
 
 .whatsapp-popup.active {
-  transform: rotateY(0deg);
+  transform: translateY(0) scale(1);
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .wa_head {
@@ -79,7 +83,7 @@
   padding: 9px 11px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  font-size: 13px;
+  /* font-size: 13px; */
   outline: none;
 }
 
@@ -177,7 +181,7 @@
       </form>
     </div>
 
-    <img src="{{ asset('public/front/images/WhatsApp.svg') }}" id="whatsappBtn" alt="whatsapp">
+    <img src="{{ asset('public/front/images/whatsapp.svg') }}" id="whatsappBtn" alt="whatsapp">
   </div>
 </div>
 

@@ -46,11 +46,6 @@
         padding:90px 0;
     }
     
-    .foot_rt
-    {
-       padding: 0 50px;
-    }
-    
     .comp_bus_front
     {
         padding:25px;
@@ -107,24 +102,26 @@
     padding: 0 20px;
 }
 
-.ind_bot {
-    display: flex;
-    flex-wrap: wrap;
+.ind_track {
     gap: 20px;
 }
 
 .industries_card {
-    width: 190px;
-    height: 190px;
+    padding: 18px 22px;
+}
+
+.industries_icon {
+    width: 48px;
+    height: 48px;
 }
 
 .industries_card img {
-    width: 65px;
-    height: 65px;
+    width: 24px;
+    height: 24px;
 }
 
 .industries_bot {
-    padding: 1px 10px;
+    padding: 1px 0;
 }
 
 .industries_card p {
@@ -299,21 +296,25 @@
     }
 
     .industries_bot {
-        padding: 15px 10px;
+        padding: 15px 0;
     }
 
-    .ind_bot {
+    .ind_track {
         gap: 17px;
     }
 
     .industries_card {
-        width: 167px;
-        height: 167px;
+        padding: 16px 18px;
+    }
+
+    .industries_icon {
+        width: 44px;
+        height: 44px;
     }
 
     .industries_card img {
-        width: 50px;
-        height: 50px;
+        width: 22px;
+        height: 22px;
     }
 
     .industries_card p {
@@ -437,10 +438,6 @@
     .tax_preparation 
     {
         width:700px;
-    }
-    
-    .foot_rt {
-        padding: 0 40px;
     }
     
     .dropdown-menu {
@@ -678,13 +675,17 @@
     } */
 
     .industries_card {
-        width: 142px;
-        height: 142px;
+        padding: 14px 16px;
+    }
+
+    .industries_icon {
+        width: 40px;
+        height: 40px;
     }
 
     .industries_card img {
-        width: 40px;
-        height: 40px;
+        width: 20px;
+        height: 20px;
     }
 
     .industries_card p {
@@ -856,9 +857,6 @@
         padding-right: 0px;
     }
     
-      .foot_rt {
-        padding: 0 20px;
-    }
      .dropdown-menu {
         inset: 34px auto auto 0px !important;
     }
@@ -893,11 +891,10 @@
     }
 
     .industries_card {
-        width: 122px;
-        height: 122px;
+        padding: 12px 14px;
     }
 
-    .ind_bot {
+    .ind_track {
         gap: 10px;
     }
 
@@ -944,19 +941,35 @@
         padding: 0 31px;
     }
     
-     .foot_rt {
-        padding: 0 30px;
-    }
 }
 
 
 @media (max-width: 991px) {
-    
+
+    .trust_slider_wrap {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .trust_slider_lt {
+        width: 100%;
+        gap: 32px;
+        padding-right: clamp(20px, 5vw, 120px);
+    }
+
+    .trust_slider_head h2 {
+        font-size: 34px;
+        line-height: 42px;
+    }
+
     .decimal_style_item{
         padding-left: 25px;
     }
     .service-item-lists{
         grid-template-columns: repeat(2, 1fr);
+    }
+    .process_card {
+        width: 460px;
     }
        .countries-box{
             flex-wrap: wrap;
@@ -976,6 +989,10 @@
 
     .nav_links {
         display:none;
+    }
+
+    .nav_actions {
+        display: none;
     }
     
         .nav_ul {
@@ -1012,6 +1029,48 @@
 
 @media (max-width:768px) {
 
+    .precision_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cert_tools_tabs {
+        gap: 24px;
+    }
+
+    .cert_tools_tab {
+        font-size: 20px;
+    }
+
+    .cert_badges_row {
+        gap: 30px;
+    }
+
+    .cert_badge img {
+        height: 60px;
+    }
+
+    .process_card {
+        width: 85vw;
+    }
+
+    .trust_slider_sec {
+        padding: 50px 0;
+    }
+
+    .trust_slide {
+        flex-basis: 85vw;
+    }
+
+    .trust_slider_head h2 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .trust_slider_arrow {
+        width: 48px;
+        height: 48px;
+    }
+
     .aus_manag.usa_taxservices .com_bg_card{
         width: auto;
          padding:10px 10px;
@@ -1032,9 +1091,23 @@
      color: var(--blue);
 }
     .foot_rt {
-        border: none;
         padding-bottom: 20px;
         border-bottom: 1px solid #617CD4;
+    }
+
+    .foot_rt::after {
+        display: none;
+    }
+
+    .footer_top_flex,
+    .foot_links_group {
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 24px;
+    }
+
+    .foot_lt {
+        max-width: 100%;
     }
 
     .footer_top {
@@ -1140,8 +1213,9 @@
         padding: 0;
     }
 
-    .client_slider .slick-track {
-        gap: 50px;
+    .client_slider .slick-slide {
+        margin: 0 10px;
+        padding: 14px 20px;
     }
 
     .comp_bus_child:hover {
@@ -1253,13 +1327,16 @@
     }
 
     .industries_card {
-        width: 45%;
-        height: 140px;
+        padding: 14px 16px;
     }
 
-    .ind_bot {
-        justify-content: space-evenly;
+    .ind_track {
         gap: 15px;
+    }
+
+    .ind_row_up,
+    .ind_row_down {
+        transform: translateY(0);
     }
 
     .com_inner_banner h2 {

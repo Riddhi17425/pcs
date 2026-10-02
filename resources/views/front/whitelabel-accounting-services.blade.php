@@ -1632,7 +1632,7 @@
         background-color: #f0f0f0 !important;
     }
     .iti__selected-dial-code{
-      color:#fff !important;
+        color:#fff !important;
     }
 </style>
 

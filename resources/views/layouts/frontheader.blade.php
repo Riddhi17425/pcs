@@ -54,8 +54,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="{{asset('public/front/css/style.css')}}">
-  <link rel="stylesheet" href="{{asset('public/front/css/responsive.css')}}">
+  <link rel="stylesheet" href="{{asset('public/front/css/style.css')}}?v={{ filemtime(public_path('front/css/style.css')) }}">
+  <link rel="stylesheet" href="{{asset('public/front/css/responsive.css')}}?v={{ filemtime(public_path('front/css/responsive.css')) }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/css/intlTelInput.css">
 
@@ -173,58 +173,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 @endverbatim
   <style>
-    .top-header {
-        background-color: #182653;
-        padding: 8px 0;
-      }
-      .country-list-wrapper {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
-        row-gap: 8px;
-      }
-      .country-list-items {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        white-space: nowrap;
-      }
-
-      .country-list-items img {
-        width: 20px;
-        height: auto;
-        flex-shrink: 0;
-      }
-      .country-list-items p {
-        margin-bottom: 0;
-        color: #fff;
-        font-size: 15px;
-        white-space: nowrap;
-      }
       nav{
           padding-top: 20px;
       }
-      .top-header .phone-link {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        color: #fff;
-        font-size: 14px;
-        text-decoration: none;
-        white-space: nowrap;
-     }
-      .top-header .phone-link:hover {
-        text-decoration: underline;
-      }
-
-     @media (max-width: 767px) {
-      .country-list-wrapper {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-      }
-    }
   </style>
 </head>
 
@@ -235,54 +186,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-  <header>
-    <div class="top-header">
-  <div class="container">
-    <div class="country-list-wrapper">
-      <div class="country-list-items">
-        <a href="https://australia.pcsglobalgroup.com" target="_blank" class="external-link" rel="noopener noreferrer">
-          <img src="{{asset('public/front/images/contry-icon/australia-icon.png')}}" alt="australia icon" loading="lazy" class="img-fluid">
-        </a>
-        <a href="https://australia.pcsglobalgroup.com" target="_blank" class="external-link" rel="noopener noreferrer">
-          <p>Australia</p>
-        </a>
-        <a href="tel:+61399980494" class="phone-link">
-          <i class="fa-solid fa-phone"></i> <span>(+613) 9998 0494</span>
-        </a>
-      </div>
-
-      <div class="country-list-items">
-        <a href="https://uk.pcsglobalgroup.com" target="_blank" class="external-link">
-          <img src="{{asset('public/front/images/contry-icon/uk-icon.png')}}" alt="uk icon" loading="lazy" class="img-fluid">
-        </a>
-        <a href="https://uk.pcsglobalgroup.com" target="_blank" class="external-link">
-          <p>UK</p>
-        </a>
-        <a href="tel:+441134034334" class="phone-link">
-          <i class="fa-solid fa-phone"></i> <span>+44 113 4034334</span>
-        </a>
-      </div>
-
-      <div class="country-list-items">
-        <a href="https://us.pcsglobalgroup.com" target="_blank" class="external-link" rel="noopener noreferrer">
-          <img src="{{asset('public/front/images/contry-icon/us-icon.png')}}" alt="us icon" loading="lazy" class="img-fluid">
-        </a>
-        <a href="https://us.pcsglobalgroup.com" target="_blank" rel="noopener noreferrer" class="external-link">
-          <p>US</p>
-        </a>
-        <a href="tel:+13478018715" class="phone-link">
-          <i class="fa-solid fa-phone"></i> <span>(+1) 347 801 8715</span>
-        </a>
-      </div>
-
-      <div class="country-list-items">
-        <a href="tel:+917968260121" class="phone-link">
-          <i class="fa-solid fa-phone"></i> <span>(+91) 796 826 0121</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+  <header id="siteHeader">
     <div class="container">
       <nav>
         <div class="logo">
@@ -368,28 +272,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a href="{{route('datasecurity')}}">Data Security</a></li>
             <li><a href="{{route('blog')}}">Blogs</a></li>
             <li><a href="{{route('contact')}}">Contact Us</a></li>
-            <li>
-              <a class="com_btn1 color-animated-button bubble-btn" href="{{ route('contact') }}" data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
-
-                <!-- Bubble effect layers -->
-                <span class="color-button__background"></span>
-                <span class="color-button__bubble-container">
-                  <span class="color-button__bubble"></span>
-                </span>
-
-                <!-- Label and Icon -->
-                <span class="color-button__label relative z-10 will-change-transform me-2">Request A
-                  Call</span>
-                <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M2.51089 1L6.15002 1.13169C6.91653 1.15942 7.59676 1.64346 7.89053 2.3702L8.96656 5.03213C9.217 5.65159 9.1496 6.35837 8.78693 6.91634L7.40831 9.0375C8.22454 10.2096 10.4447 12.9558 12.7955 14.5633L14.5484 13.4845C14.9939 13.2103 15.5273 13.1289 16.0314 13.2581L19.5161 14.1517C20.4429 14.3894 21.0674 15.2782 20.9942 16.2552L20.7705 19.2385C20.6919 20.2854 19.8351 21.1069 18.818 20.9887C5.39245 19.4276 -2.48056 0.99997 2.51089 1Z"
-                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </a>
-            </li>
           </ul>
+        </div>
+
+        <div class="nav_actions">
+          <div class="dropdown country_select">
+            <button class="country_select_btn dropdown-toggle" type="button" id="countrySelectBtn"
+              data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+              <svg class="country_select_globe" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="9" stroke="#182653" stroke-width="1.5"/>
+                <path d="M3 12H21" stroke="#182653" stroke-width="1.5"/>
+                <path d="M12 3C14.5 5.5 15.75 8.5 15.75 12C15.75 15.5 14.5 18.5 12 21C9.5 18.5 8.25 15.5 8.25 12C8.25 8.5 9.5 5.5 12 3Z" stroke="#182653" stroke-width="1.5"/>
+              </svg>
+              <span>Global</span>
+              <svg width="14" height="8" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 1L9 9L1 1" stroke="#182653" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <ul class="dropdown-menu country_select_menu" aria-labelledby="countrySelectBtn">
+              <li>
+                <a class="dropdown-item" href="https://australia.pcsglobalgroup.com" target="_blank" rel="noopener noreferrer">
+                  <img src="{{asset('public/front/images/contry-icon/australia-icon.png')}}" alt="Australia">
+                  <span>Australia</span>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://uk.pcsglobalgroup.com" target="_blank" rel="noopener noreferrer">
+                  <img src="{{asset('public/front/images/contry-icon/uk-icon.png')}}" alt="UK">
+                  <span>UK</span>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://us.pcsglobalgroup.com" target="_blank" rel="noopener noreferrer">
+                  <img src="{{asset('public/front/images/contry-icon/us-icon.png')}}" alt="US">
+                  <span>US</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <a class="com_btn1 color-animated-button bubble-btn" href="{{ route('contact') }}" data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
+
+            <!-- Bubble effect layers -->
+            <span class="color-button__background"></span>
+            <span class="color-button__bubble-container">
+              <span class="color-button__bubble"></span>
+            </span>
+
+            <!-- Label and Icon -->
+            <span class="color-button__label relative z-10 will-change-transform me-2">Request A
+              Call</span>
+            <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.51089 1L6.15002 1.13169C6.91653 1.15942 7.59676 1.64346 7.89053 2.3702L8.96656 5.03213C9.217 5.65159 9.1496 6.35837 8.78693 6.91634L7.40831 9.0375C8.22454 10.2096 10.4447 12.9558 12.7955 14.5633L14.5484 13.4845C14.9939 13.2103 15.5273 13.1289 16.0314 13.2581L19.5161 14.1517C20.4429 14.3894 21.0674 15.2782 20.9942 16.2552L20.7705 19.2385C20.6919 20.2854 19.8351 21.1069 18.818 20.9887C5.39245 19.4276 -2.48056 0.99997 2.51089 1Z"
+                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
         </div>
       </nav>
     </div>
@@ -465,19 +405,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
  <script>
-document.addEventListener("DOMContentLoaded", function() {
-
-  // Force external links to open in new tab reliably
-  document.querySelectorAll('.top-header a.external-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault(); // Prevent any JS interception
-      window.open(link.href, '_blank', 'noopener,noreferrer'); // Open in new tab
-    });
-  });
-
-});
-</script>
- <script>
     // Next level navigation
     document.querySelectorAll('.next-menu').forEach(link => {
       link.addEventListener('click', e => {
@@ -494,6 +421,58 @@ document.addEventListener("DOMContentLoaded", function() {
         const backTarget = btn.getAttribute('data-back');
         document.querySelectorAll('.menu-level').forEach(menu => menu.classList.remove('active'));
         document.getElementById(backTarget).classList.add('active');
+      });
+    });
+  </script>
+
+  <script>
+    // Hide header on scroll down, show it on scroll up
+    (function () {
+      const header = document.getElementById('siteHeader');
+      if (!header) return;
+
+      let lastScrollY = window.scrollY;
+      const hideThreshold = 80; // don't hide until scrolled past header height
+      const delta = 5; // ignore tiny scroll jitters
+
+      window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+
+        if (Math.abs(currentScrollY - lastScrollY) < delta) return;
+
+        if (currentScrollY > lastScrollY && currentScrollY > hideThreshold) {
+          header.classList.add('header_hidden');
+        } else {
+          header.classList.remove('header_hidden');
+        }
+
+        lastScrollY = currentScrollY;
+      }, { passive: true });
+    })();
+  </script>
+
+  <script>
+    // Open header dropdowns (Services, country select) on hover instead of click
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof bootstrap === 'undefined') return;
+
+      document.querySelectorAll('header .dropdown').forEach(function (dropdown) {
+        const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
+        if (!toggle) return;
+
+        const instance = bootstrap.Dropdown.getOrCreateInstance(toggle);
+        let closeTimer;
+
+        dropdown.addEventListener('mouseenter', function () {
+          clearTimeout(closeTimer);
+          instance.show();
+        });
+
+        dropdown.addEventListener('mouseleave', function () {
+          closeTimer = setTimeout(function () {
+            instance.hide();
+          }, 150);
+        });
       });
     });
   </script>
