@@ -20,31 +20,92 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-        // Honeypot check (detect bots)
-        if (! empty($request->fax_number)) {
-            \Log::warning('Honeypot triggered — possible spam entry', [
+        // 1. HONEYPOT CHECK
+        if (!empty($request->fax_number))
+        {
+            Log::warning('Honeypot triggered — possible spam entry', [
                 'email' => $request->email,
                 'name'  => $request->fullname,
+                'ip'    => $request->ip(),
             ]);
 
-            // Don’t show an error to bots — just act like it succeeded
             return redirect()->route('thank.you');
         }
+
+        // 2. VALIDATION
         $request->validate([
-            'fullname'    => 'required|string|max:255',
-            'email'       => 'required|email',
-            'phone'       => 'required|string|max:20',
-            'full_phone'  => 'nullable|string|max:20',
-            'companyName' => 'nullable',
-            'country'     => 'nullable|string',
-            'services'    => 'nullable|array|min:1',
-            'message'     => 'nullable|string',
+            'fullname' => [
+                'required',
+                'string',
+                'min:2',
+                'max:70',
+                'regex:/^[a-zA-Z\s]+$/',
+            ],
+            'email' => [
+                'required',
+                'email',
+                'max:70',
+            ],
+            'phone' => [
+                'required',
+                'digits_between:10,15',
+            ],
+            'full_phone' => [
+                'nullable',
+                'string',
+                'max:20',
+            ],
+            'companyName' => [
+                'nullable',
+                'string',
+                'max:255',
+            ],
+            'country' => [
+                'nullable',
+                'string',
+                'max:255',
+            ],
+            'services' => [
+                'required',
+                'array',
+                'min:1',
+            ],
+            'services.*' => [
+                'string',
+                'max:255',
+            ],
+            'message' => [
+                'nullable',
+                'string',
+                'max:1000',
+            ],
+            'g-recaptcha-response' => [
+                'required',
+            ],
+        ], [
+            'fullname.required' => 'Please enter your full name.',
+            'fullname.min' => 'Name must be at least 2 characters.',
+            'fullname.max' => 'Name cannot exceed 70 characters.',
+            'fullname.regex' => 'Name can contain letters and spaces only.',
+
+            'email.required' => 'Please enter your email address.',
+            'email.email' => 'Please enter a valid email address.',
+            'email.max' => 'Email cannot exceed 70 characters.',
+
+            'phone.required' => 'Please enter your phone number.',
+            'phone.digits_between' => 'Phone number must contain 10 to 15 digits.',
+
+            'services.required' => 'Please select at least one service.',
+            'services.min' => 'Please select at least one service.',
+
+            'g-recaptcha-response.required' => 'Please verify you are not a robot.',
         ]);
 
+        // 3. PHONE
         $rawPhone = $request->full_phone ?: $request->phone;
-
         $phone = '+' . ltrim($rawPhone, '+');
 
+        // 4. SAVE CONTACT
         Contact::create([
             'fullname' => $request->fullname,
             'country'  => $request->country,
@@ -53,6 +114,8 @@ class ContactController extends Controller
             'services' => $request->services,
             'message'  => $request->message,
         ]);
+
+        // 5. GOOGLE SHEET DATA
         $sheetData = [
             'form_type' => 'Contact Form',
             'name'      => $request->fullname ?? '',
@@ -65,40 +128,48 @@ class ContactController extends Controller
             'message'   => $request->message ?? '',
             'date'      => now()->format('Y-m-d H:i:s'),
         ];
-        // Redirect to contact route with success message
+
+        // 6. SEND TO GOOGLE SHEET
         $response = Http::timeout(30)
             ->withHeaders([
                 'Content-Type' => 'application/json',
             ])
-            ->post('https://script.google.com/macros/s/AKfycbznUt89nic300-hxaU7aQJr_P3CcDUsbgtKOh49HfLljKp5saEKlCKgkHUKQB1vVEP6/exec', $sheetData);
+            ->post(
+                'https://script.google.com/macros/s/AKfycbznUt89nic300-hxaU7aQJr_P3CcDUsbgtKOh49HfLljKp5saEKlCKgkHUKQB1vVEP6/exec',
+                $sheetData
+            );
 
-        // Check response
-        if ($response->successful()) {
+        // 7. GOOGLE SHEET RESPONSE
+        if ($response->successful())
+        {
             $responseData = $response->json();
-            if (isset($responseData['status']) && $responseData['status'] === 'success') {
+            if (isset($responseData['status']) && $responseData['status'] === 'success')
+            {
                 Log::info('Data successfully sent to Google Sheets', [
                     'email'    => $request->email,
                     'response' => $responseData,
                 ]);
-                return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
-
-            } else {
+            } 
+            else
+            {
                 Log::warning('Google Sheets API returned error', [
                     'response' => $responseData,
                     'email'    => $request->email,
                 ]);
-                return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
-
             }
-        } else {
+        } 
+        else
+        {
             Log::error('Google Sheets API request failed', [
                 'status' => $response->status(),
                 'body'   => $response->body(),
                 'email'  => $request->email,
             ]);
-            return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
-
         }
-        // return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
+
+        // 8. SUCCESS
+        return redirect()
+            ->route('thank.you')
+            ->with('success', 'Your message has been sent successfully.');
     }
 }

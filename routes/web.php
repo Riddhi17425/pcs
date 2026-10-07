@@ -19,6 +19,8 @@ use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\ServiceController;
 use App\Http\Controllers\Web\BlogController;
 
+use App\Http\Controllers\SitemapController;
+
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('/clear', function () {
@@ -27,7 +29,7 @@ Route::get('/clear', function () {
     return "Application cache cleared!";
 });
 
-
+    Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
     Route::get('/', [HomeController::class, 'index'])->name('front.home');
     Route::get('/data-security', [HomeController::class, 'datasecurity'])->name('datasecurity');
     Route::get('/terms-and-condition', [HomeController::class, 'termsandcondition'])->name('terms-condition');

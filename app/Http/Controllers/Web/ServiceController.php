@@ -30,23 +30,69 @@ class ServiceController extends Controller
 
     public function requestStore(Request $request)
     {
-        // Honeypot check (detect bots)
-        if (! empty($request->fax_number)) {
+        // Honeypot check
+        if (!empty($request->fax_number))
+        {
             \Log::warning('Honeypot triggered — possible spam entry', [
                 'email' => $request->email,
                 'name'  => $request->fullname,
             ]);
-
-            // Don't show an error to bots — just act like it succeeded
             return redirect()->route('thank.you');
         }
+
         $request->validate([
-            'fullname'   => 'required|string|max:255',
-            'email'      => 'required|email',
-            'phone'      => 'required|string|max:20',
-            'full_phone' => 'nullable|string|max:20',
-            'country'    => 'required|string',
-            'message'    => 'nullable|string',
+            'fullname' => [
+                'required',
+                'string',
+                'min:2',
+                'max:70',
+                'regex:/^[a-zA-Z\s]+$/',
+            ],
+            'email' => [
+                'required',
+                'email',
+                'max:70',
+            ],
+            'phone' => [
+                'required',
+                'digits_between:10,15',
+            ],
+            'full_phone' => [
+                'nullable',
+                'string',
+                'max:20',
+            ],
+            'country' => [
+                'required',
+                'string',
+                'max:255',
+            ],
+            'message' => [
+                'nullable',
+                'string',
+                'max:1000',
+            ],
+            'g-recaptcha-response' => [
+                'required',
+            ],
+        ], [
+            'fullname.required' => 'Please enter your full name.',
+            'fullname.min'      => 'Full name must be at least 2 characters.',
+            'fullname.max'      => 'Full name may not exceed 70 characters.',
+            'fullname.regex'    => 'Full name may contain letters and spaces only.',
+
+            'email.required' => 'Please enter your email address.',
+            'email.email'    => 'Please enter a valid email address.',
+            'email.max'      => 'Email address may not exceed 70 characters.',
+
+            'phone.required'       => 'Please enter your phone number.',
+            'phone.digits_between' => 'Phone number must contain between 10 and 15 digits.',
+
+            'country.required' => 'Please select your country.',
+
+            'message.max' => 'Message may not exceed 1000 characters.',
+
+            'g-recaptcha-response.required' => 'Please verify that you are not a robot.',
         ]);
 
         $rawPhone = $request->full_phone ?: $request->phone;
@@ -59,6 +105,8 @@ class ServiceController extends Controller
             'email'    => $request->email,
             'message'  => $request->message,
         ]);
+
+        // Google Sheet data
         $sheetData = [
             'form_type' => 'Request Form',
             'name'      => $request->fullname ?? '',
@@ -71,40 +119,52 @@ class ServiceController extends Controller
             'message'   => $request->message ?? '',
             'date'      => now()->format('Y-m-d H:i:s'),
         ];
-        // Redirect to contact route with success message
+
+        // Send data to Google Sheets
         $response = Http::timeout(30)
             ->withHeaders([
                 'Content-Type' => 'application/json',
             ])
-            ->post('https://script.google.com/macros/s/AKfycbznUt89nic300-hxaU7aQJr_P3CcDUsbgtKOh49HfLljKp5saEKlCKgkHUKQB1vVEP6/exec', $sheetData);
+            ->post(
+                'https://script.google.com/macros/s/AKfycbznUt89nic300-hxaU7aQJr_P3CcDUsbgtKOh49HfLljKp5saEKlCKgkHUKQB1vVEP6/exec',
+                $sheetData
+            );
 
-        // Check response
-        if ($response->successful()) {
+        if ($response->successful())
+        {
             $responseData = $response->json();
-            if (isset($responseData['status']) && $responseData['status'] === 'success') {
+
+            if (isset($responseData['status']) && $responseData['status'] === 'success')
+            {
                 Log::info('Data successfully sent to Google Sheets', [
                     'email'    => $request->email,
                     'response' => $responseData,
                 ]);
-                return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
 
-            } else {
-                Log::warning('Google Sheets API returned error', [
-                    'response' => $responseData,
-                    'email'    => $request->email,
-                ]);
-                return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
-
+                return redirect()
+                    ->route('thank.you')
+                    ->with('success', 'Your message has been sent successfully.');
             }
-        } else {
-            Log::error('Google Sheets API request failed', [
-                'status' => $response->status(),
-                'body'   => $response->body(),
-                'email'  => $request->email,
-            ]);
-            return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
 
+            Log::warning('Google Sheets API returned error', [
+                'response' => $responseData,
+                'email'    => $request->email,
+            ]);
+
+            return redirect()
+                ->route('thank.you')
+                ->with('success', 'Your message has been sent successfully.');
         }
+
+        Log::error('Google Sheets API request failed', [
+            'status' => $response->status(),
+            'body'   => $response->body(),
+            'email'  => $request->email,
+        ]);
+
+        return redirect()
+            ->route('thank.you')
+            ->with('success', 'Your message has been sent successfully.');
     }
 
     public function consultantstore(Request $request)
@@ -150,8 +210,7 @@ class ServiceController extends Controller
     {
         $faq              = Faq::where('status', 'Active')->where('faq_url', 'pcs-global-bookkeeping')->first();
         $meta_title       = "Outsourced Bookkeeping & Accounting Services | PCS Global";
-        $meta_description = "Struggling with accounting? PCS Global provides outsourced bookkeeping & accounting services with certified CA, CPA teams & up to 60% savings!
-";
+        $meta_description = "Struggling with accounting? PCS Global provides outsourced bookkeeping & accounting services with certified CA, CPA teams & up to 60% savings!";
 
         return view('front.accounting-bookkeeping', compact('meta_title', 'meta_description', 'faq'));
     }
@@ -159,7 +218,6 @@ class ServiceController extends Controller
     public function payrollService()
     {
         $faq = Faq::where('status', 'Active')->where('faq_url', 'payroll-services')->first();
-
         $meta_title       = "Payroll Outsourcing Services | PCS Global";
         $meta_description = "PCS Global provides payroll outsourcing services for startups, SMEs, and enterprises, helping businesses manage payroll efficiently with expert professionals.";
 
@@ -194,7 +252,6 @@ class ServiceController extends Controller
     public function recruitmentService()
     {
         $faq = Faq::where('status', 'Active')->where('faq_url', 'recruitment-services')->first();
-
         $meta_title       = "Recruitment Process Outsourcing Services – RPO Solution";
         $meta_description = "PCS Global offers Recruitment Process Outsourcing (RPO) services to streamline hiring, cut recruitment costs, and help businesses attract top talent.";
 
@@ -204,7 +261,6 @@ class ServiceController extends Controller
     public function globalUsa()
     {
         $faq = Faq::where('status', 'Active')->where('faq_url', 'pcs-global-usa')->first();
-
         $meta_title       = "Accounting & Bookkeeping Services for US Businesses";
         $meta_description = "Looking for reliable accounting and bookkeeping services in the USA? PCS offers expert bookkeeping, VAT registration, payroll, and CFO solutions for SMEs.";
 
@@ -214,7 +270,6 @@ class ServiceController extends Controller
     public function globalAus()
     {
         $faq = Faq::where('status', 'Active')->where('faq_url', 'pcs-global-aus')->first();
-
         $meta_title       = "Accounting & Bookkeeping Services for Australian Businesses";
         $meta_description = "PCS is a leading Australia-based accounting and bookkeeping service provider. Outsource your financial tasks to our expert team and focus on growth.";
 
@@ -224,7 +279,6 @@ class ServiceController extends Controller
     public function globalUk()
     {
         $faq = Faq::where('status', 'Active')->where('faq_url', 'pcs-global-uk')->first();
-
         $meta_title       = "UK Expert Accounting & Bookkeeping Services";
         $meta_description = "PCS offers reliable accounting & bookkeeping services for UK SMEs—managing your back office, accounting, and compliance with expert precision.";
 
@@ -246,6 +300,7 @@ class ServiceController extends Controller
 
         return view('front.taxation-services-usa', compact('meta_title', 'meta_description'));
     }
+
     public function taxationaustralian()
     {
         $meta_title       = "Tax Preparation Services for Australian Business";
@@ -253,6 +308,7 @@ class ServiceController extends Controller
 
         return view('front.taxation-services-australian', compact('meta_title', 'meta_description'));
     }
+
     public function taxationservicesuk()
     {
         $meta_title       = "Tax Preparation Services in UK | PCS Global";
@@ -260,6 +316,7 @@ class ServiceController extends Controller
 
         return view('front.taxation-services-uk', compact('meta_title', 'meta_description'));
     }
+
     public function itautomation()
     {
         $meta_title       = "IT Outsourcing Services | IT Outsourcing Company";
@@ -297,8 +354,8 @@ class ServiceController extends Controller
     {
         $meta_title       = "Outsourced Accounting Services for UK Accounting Firms | PCS Global";
         $meta_description = "Scale your UK accounting firm with expert outsourced accounting services from PCS Global. Improve productivity, reduce costs, and meet deadlines easily.";
-
         $faq = Faq::where('status', 'Active')->where('faq_url', 'pcs-global-uk')->first();
+        
         return view('front.accounting-outsourcing-service', compact('meta_title', 'meta_description', 'faq'));
     }
 
@@ -310,5 +367,4 @@ class ServiceController extends Controller
 
         return view('front.whitelabel-accounting-services', compact('meta_title', 'meta_description', 'countries'));
     }
-
 }

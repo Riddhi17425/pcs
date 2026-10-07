@@ -173,7 +173,7 @@
                                 </span>
                                 <input type="text" name="fullname" maxlength="70"
                                     oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'').replace(/\s+/g,' ').trimStart();" placeholder=" ">
-                                <label>Full Name<span class="text-danger">*</span></label>
+                                <label>Full Name test<span class="text-danger">*</span></label>
                             </div>
                             <!-- Honeypot Field (hidden) -->
                             <div style="display:none;">
