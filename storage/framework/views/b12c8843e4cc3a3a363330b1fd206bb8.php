@@ -51,7 +51,7 @@
                     <div class="col-lg-6 form-group">
                         <input type="text" name="fullname" value="<?php echo e(old('fullname')); ?>" maxlength="70"
                         oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').replace(/\s+/g, ' ').trimStart();" placeholder=" ">
-                        <label>Full Name test2<span class="text-danger">*</span></label>
+                        <label>Full Name<span class="text-danger">*</span></label>
                         <?php $__errorArgs = ['fullname'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -369,4 +369,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-</script><?php /**PATH C:\xampp\htdocs\pcs\resources\views/front/contact.blade.php ENDPATH**/ ?>
+</script>
+<?php /**PATH C:\xampp\htdocs\pcs\resources\views/front/contact.blade.php ENDPATH**/ ?>

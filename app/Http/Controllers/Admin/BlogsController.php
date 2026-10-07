@@ -33,6 +33,8 @@ public function BlogsStore(Request $request)
         'url'                 => 'required|string',
         'front_image'         => 'required|file|mimes:jpg,jpeg,png,webp|max:2048',
         'detail_image'        => 'required|file|mimes:jpg,jpeg,png,webp|max:2048',
+        'front_image_alt'  => 'nullable|string|max:255',
+        'detail_image_alt' => 'nullable|string|max:255',
         'cta_image'           => 'nullable|file|mimes:jpg,jpeg,png,webp|max:2048',
         'status'              => 'required|in:Active,In-Active',
     ]);
@@ -46,6 +48,7 @@ public function BlogsStore(Request $request)
     try {
         $frontImagePath = null;
         $detailImagePath = null;
+        $ctaImagePath = null;
 
         $uploadPath = public_path('admin/blogs/');
         if (!file_exists($uploadPath)) {
@@ -126,7 +129,9 @@ public function BlogsStore(Request $request)
             'url'                => $request->url,
             'status'             => $request->status ?? 'Active',
             'front_image'        => $frontImagePath,
+            'front_image_alt'    => $request->front_image_alt,
             'detail_image'       => $detailImagePath,
+            'detail_image_alt'   => $request->detail_image_alt,
             'cta_image'          => $ctaImagePath,
             'cta_text'           => $request->cta_text,
             'meta_title'         =>$request->get('meta_title'),
@@ -195,12 +200,14 @@ public function BlogsStore(Request $request)
             'url'                 => 'required|string',
             'front_image'         => 'nullable|file|mimes:jpg,jpeg,png,webp|max:2048',
             'detail_image'        => 'nullable|file|mimes:jpg,jpeg,png,webp|max:2048',
+            'front_image_alt'  => 'nullable|string|max:255',
+            'detail_image_alt' => 'nullable|string|max:255',
             'cta_image'           => 'nullable|file|mimes:jpg,jpeg,png,webp|max:2048',
             'status'              => 'required|in:Active,In-Active',
         ]);
 
         if ($validator->fails()) {
-            return 1;
+            
             return redirect()->back()
                 ->withErrors($validator)
                 ->withInput()
@@ -309,7 +316,9 @@ public function BlogsStore(Request $request)
                 'url'                => $request->url,
                 'status'             => $request->status ?? 'Active',
                 'front_image'        => $frontImagePath,
+                'front_image_alt'    => $request->front_image_alt,
                 'detail_image'       => $detailImagePath,
+                'detail_image_alt'   => $request->detail_image_alt,
                 'cta_image'          => $ctaImagePath,
                 'cta_text'           => $request->cta_text,
                 'meta_title'         =>$request->get('meta_title'),
