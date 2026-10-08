@@ -67,8 +67,13 @@ return function (array $db) {
 
     $securityCards = [
         ['title' => 'Secure Data Handling', 'img' => $img('uk/security-1-5e658a.jpg'),
-         'text' => 'Your financial information requires rigorous protection at every stage. Your data is held and processed in secure systems, with access limited to the specialists working directly on your account. Set procedures dictate exactly how information is managed, retained and removed for the duration of the engagement. At no point is information passed on or moved without strict controls, keeping it secure throughout.'],
+         'text' => 'Your financial information is stored and processed securely, with access limited to specialists working on your account. Strict procedures control how data is managed, retained and removed throughout the engagement. '],
         ['title' => 'Confidentiality & Privacy', 'img' => $img('uk/security-2-188afb.jpg'),
+<<<<<<< HEAD
+         'text' => 'Confidentiality underpins every engagement. Signed non-disclosure agreements and firm confidentiality practices protect your data and your clients information. Your information is never used beyond the engagement. '],
+        ['title' => 'Quality & Process Controls', 'img' => $img('uk/security-3-7ba02f.jpg'),
+         'text' => 'Every piece of work follows a defined process and review stage before reaching you. This helps identify and address errors early, maintaining accuracy even during periods of high volume. '],
+=======
          'text' => 'Confidentiality underpins everything we do. Firm confidentiality practices and signed non-disclosure agreements cover every engagement, safeguarding both your data and your clients\'. Our role stays wholly private, and your information is never used beyond the engagement itself. That protects your standing and ensures your client relationships remain entirely yours.'],
         ['title' => 'Quality & Process Controls', 'img' => $img('uk/security-3-7ba02f.jpg'),
          'text' => 'Rather than relying on chance, we design accuracy directly into our workflow. Each piece of work moves through a set procedure and a review stage before it reaches you, so any error is caught and addressed early. This standard is maintained even during periods of high volume. You can therefore submit our work or hand it to clients knowing it has already passed a thorough check.'],
@@ -76,6 +81,7 @@ return function (array $db) {
          'text' => 'Genuine security is based on evidence, not simply on reassurances. Our practices align with recognised standards and certifications that establish clear requirements for protecting, accessing and managing data. That gives you independent proof your information is managed to a professional benchmark. It reflects the standard of protection any established business or practice is right to expect from an outsourcing partner.'],
         ['title' => 'Secure Technology & Communication', 'img' => $img('uk/security-2-188afb.jpg'),
          'text' => 'A significant share of data risk originates in routine activities such as unprotected email. As part of our offshore accounting support, we address this using secure, monitored systems and encrypted channels for every file and communication. Confidential material is never sent by unsecured routes, and entry to our systems is tightly restricted. Whether it is a short message or a full set of records, every exchange stays secure.'],
+>>>>>>> 143a62160b2bd03ce3a3b1a6a9b2dc626ab0eca0
     ];
 
     // core team (Malay, Prithvi, Umesh) config/home.php se aati hai; yahan sirf UK ka member
@@ -166,7 +172,7 @@ return function (array $db) {
 
         ['type' => 'overlay-cards', 'props' => [
             'title' => 'Your Data Security. Our Responsibility.',
-            'text' => 'Placing your financial information in the hands of an external team is an important decision, and one we treat with full seriousness. As a UK accounting outsourcing company trusted by businesses and firms, we regard security and confidentiality as fundamental to our work rather than as an addition to it.',
+            'text' => 'PCS Global treats the security and confidentiality of your financial information as a fundamental part of our UK accounting outsourcing services. Your data is protected through secure systems, controlled access, strict processes and confidential communication. ',
             'icon' => $img('common/security-icon.svg'),
             'cards' => $securityCards,
         ]],

@@ -8,9 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class RequestForm extends Model
 {
     use HasFactory;
+
     protected $table = 'request_form';
+
     protected $fillable = [
-        'fullname', 'email', 'phone', 'country', 'message'
+        'fullname',
+        'email',
+        'phone',
+        'country',
+        'company',
+        'city',
+        'service',
+        'message',
+        'page_url',
     ];
-     
 }
