@@ -73,6 +73,7 @@
   <link rel="stylesheet" href="{{asset('public/front/css/common/header-overlay.css')}}?v={{ filemtime(public_path('front/css/common/header-overlay.css')) }}">
   <link rel="stylesheet" href="{{asset('public/front/css/common/hero-dark.css')}}?v={{ filemtime(public_path('front/css/common/hero-dark.css')) }}">
   <link rel="stylesheet" href="{{asset('public/front/css/common/home-sections.css')}}?v={{ filemtime(public_path('front/css/common/home-sections.css')) }}">
+  <link rel="stylesheet" href="{{asset('public/front/css/common/contact-form.css')}}?v={{ filemtime(public_path('front/css/common/contact-form.css')) }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/css/intlTelInput.css">
 
@@ -321,13 +322,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a href="{{ $nav['data_security'] }}" target="_blank" rel="noopener">Data Security</a></li>
             <li><a href="{{ $nav['blog'] }}" target="_blank" rel="noopener">Blogs</a></li>
             <li><a href="{{ $nav['contact'] }}">Contact Us</a></li>
+            <li><a href="#">Country: {{ $nav['country']['name'] }} <span class="next-menu" data-target="menu-country">&rsaquo;</span></a></li>
             <li><a href="tel:{{ $nav['phone']['tel'] }}">📞 Call Us: {{ $nav['phone']['label'] }}</a></li>
           </ul>
 
 
              <div class="mt-4 text-center">
-                  <a class="com_btn1 color-animated-button bubble-btn" href="{{ $nav['contact'] }}"
-                data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <a class="com_btn1 color-animated-button bubble-btn" href="tel:{{ $nav['phone']['tel'] }}">
                 <span class="color-button__background"></span>
                 <span class="color-button__bubble-container"><span class="color-button__bubble"></span></span>
                 <span class="color-button__label relative z-10 me-2">Request A Call</span>
@@ -356,6 +357,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </ul>
         </div>
       </div>
+
+      @include('components.layout.mobile-countries')
 
     </div>
   </div>

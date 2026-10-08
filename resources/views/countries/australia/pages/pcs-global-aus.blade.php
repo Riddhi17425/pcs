@@ -211,7 +211,7 @@
                             <li>Audit-Ready Documentation</li>
                         </ul>
                     </div>
-                    <a class="com_btn1 color-animated-button bubble-btn" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    <a class="com_btn1 color-animated-button bubble-btn" href="tel:+61399980494"
                         data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
                         <!-- Bubble effect layers -->
@@ -410,7 +410,7 @@
                             <li>Year-End Statements</li>
                         </ul>
                     </div>
-                    <a class="com_btn1 color-animated-button bubble-btn" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    <a class="com_btn1 color-animated-button bubble-btn" href="tel:+61399980494"
                         data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
                         <!-- Bubble effect layers -->

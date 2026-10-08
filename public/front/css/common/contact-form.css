@@ -1,0 +1,157 @@
+/* Contact form band (footer ke upar) - sab countries ke home par. Component: components/sections/contact-form.blade.php */
+
+.contact_band {
+    padding: 60px 0;
+    background: linear-gradient(180deg, #182653 0%, #3555b9 100%);
+}
+
+.contact_band ~ .footer {
+    margin-top: 0;
+}
+
+.contact_band_head {
+    max-width: 760px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.contact_band_head h2 {
+    margin-bottom: 24px;
+    color: var(--white);
+}
+
+.contact_band_head p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--grey);
+}
+
+/* .contact_band_form {
+    max-width: 1200px;
+    margin: 0 auto;
+} */
+
+.cf_field input:not(.iti__search-input),
+.cf_field select,
+.cf_field textarea {
+    display: block;
+    width: 100%;
+    padding: 16px 24px;
+    border: 1px solid var(--grey);
+    border-radius: 0;
+    background: rgba(24, 38, 83, 0.1);
+    color: var(--white);
+    font-size: 18px;
+    line-height: 24px;
+    outline: none;
+}
+
+.cf_field textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.cf_field input:not(.iti__search-input)::placeholder,
+.cf_field textarea::placeholder {
+    color: var(--white);
+    opacity: 1;
+}
+
+.cf_field select {
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8' fill='none'%3E%3Cpath d='M1 1l6 6 6-6' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 24px center;
+}
+
+.cf_field select:invalid {
+    color: var(--white);
+}
+
+.cf_field select option {
+    color: var(--black1);
+}
+
+.cf_field input:not(.iti__search-input):focus,
+.cf_field select:focus,
+.cf_field textarea:focus {
+    border-color: var(--white);
+}
+
+.cf_field .iti {
+    width: 100%;
+}
+
+.cf_field .iti input[type="tel"] {
+    padding-left: 100px !important;
+}
+
+.cf_field .iti__selected-dial-code,
+.cf_field .iti__arrow {
+    color: var(--white) !important;
+}
+
+.contact_band .js-error {
+    display: block;
+    margin-top: 6px;
+    font-size: 14px;
+    color: #ffb3b3 !important;
+}
+
+.contact_band .captcha-error {
+    color: #ffb3b3 !important;
+}
+
+.contact_band_btn {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.contact_band_btn .com_btn2 {
+    border: 0;
+    border-radius: 5px;
+}
+
+@media (max-width: 767px) {
+    .contact_band {
+        padding: 40px 0;
+    }
+
+    .cf_field input:not(.iti__search-input),
+    .cf_field select,
+    .cf_field textarea {
+        padding: 14px 16px;
+        font-size: 16px;
+    }
+}
+
+/* phone country dropdown (intl-tel-input): light list, dark text */
+.cf_field .iti__search-input {
+    padding: 10px 12px 10px 36px;
+    border: 0;
+    border-bottom: 1px solid var(--grey);
+    background: var(--white);
+    color: var(--black1);
+    font-size: 16px;
+}
+
+.cf_field .iti__search-input::placeholder {
+    color: var(--black6);
+}
+
+.cf_field .iti__country-list,
+.cf_field .iti__country {
+    color: var(--black1);
+}
+
+/* phone flag ke paas ka dropdown arrow: white (arrow border se bana hota hai) */
+.cf_field .iti__arrow {
+    border-top-color: var(--white) !important;
+}
+
+.cf_field .iti__arrow--up {
+    border-top-color: transparent !important;
+    border-bottom-color: var(--white) !important;
+}

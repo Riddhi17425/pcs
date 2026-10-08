@@ -27,10 +27,10 @@ return function (array $db) {
     ];
 
     $clientCards = [
-        ['title' => 'Accounting Outsourcing for US Accounting & CPA Firms', 'img' => $img('us/client-1-182ac9.jpg'),
-         'text' => 'We handle bookkeeping, accounting back-office work, tax preparation support, and audit support, along with overflow and seasonal workloads when demand spikes. For firms that prefer it, we also provide white-label accounting and dedicated offshore accounting teams that operate under your brand. A growing number of US accounting firms outsourcing to India do so to grow steadily while keeping quality and client relationships firmly in their own hands.'],
         ['title' => 'Accounting Outsourcing for US Businesses', 'img' => $img('us/client-2.jpg'),
          'text' => 'We work with small and mid-sized companies, to fast-growing companies and those with slender finance teams, providing the extra support your business needs. For businesses with seasonal accounting cycles, we ramp up during the accounting high seasons, and ease down as those high seasons wrap up. It is a smart, scalable way to manage a larger in-house team. '],
+        ['title' => 'Accounting Outsourcing for US Accounting & CPA Firms', 'img' => $img('us/client-1-182ac9.jpg'),
+         'text' => 'We handle bookkeeping, accounting back-office work, tax preparation support, and audit support, along with overflow and seasonal workloads when demand spikes. For firms that prefer it, we also provide white-label accounting and dedicated offshore accounting teams that operate under your brand. A growing number of US accounting firms outsourcing to India do so to grow steadily while keeping quality and client relationships firmly in their own hands.'],
     ];
 
     $standards = [
@@ -50,8 +50,8 @@ return function (array $db) {
 
     $ind = fn ($name) => $img("common/industries/$name.svg");
     $industries = [
-        [[$ind('construction'), 'Construction'], [$ind('accounting'), 'Accounting & CPA Firms'], [$ind('construction'), 'Construction'], [$ind('real-estate'), 'Real Estate'], [$ind('strata'), 'Financial Services'], [$ind('construction'), 'Accounting & Auditing']],
-        [[$ind('construction'), 'Construction'], [$ind('manufacturing'), 'Manufacturing'], [$ind('professional-services'), 'Professional Services'], [$ind('legal'), 'Law Firms'], [$ind('healthcare'), 'Healthcare'], [$ind('ecommerce'), 'E-commerce & Retail']],
+        [[$ind('accounting'), 'Accounting & CPA Firms'], [$ind('real-estate'), 'Real Estate'], [$ind('construction'), 'Construction'], [$ind('manufacturing'), 'Manufacturing'], [$ind('healthcare'), 'Healthcare']],
+        [[$ind('legal'), 'Law Firms'], [$ind('professional-services'), 'Professional Services'], [$ind('ecommerce'), 'E-commerce & Retail'], [$ind('strata'), 'Technology'], [$ind('accounting'), 'Financial Services']],
     ];
 
     $processSteps = [
@@ -75,15 +75,18 @@ return function (array $db) {
 
     $securityCards = [
         ['title' => 'Secure Data Handling', 'img' => $img('us/security-1.jpg'),
-         'text' => 'Your financial information requires rigorous protection at every stage. Your data is held and processed in secure systems, with access limited to the specialists working directly on your account. '],
+         'text' => 'Your financial data is protected at every stage of the work. We keep it in secure systems and limit access to the specialists assigned to your account. Clear procedures cover how information is stored, used, and removed over the course of the engagement. Nothing is moved or shared without proper safeguards in place.'],
         ['title' => 'Confidentiality & Privacy', 'img' => $img('us/security-2.jpg'),
-         'text' => 'Confidentiality underpins everything we do. Firm confidentiality practices and signed non-disclosure agreements cover every engagement, safeguarding both your data and your clients\'. '],
+         'text' => 'Everything we handle for you stays confidential. We wrap every engagement in signed non-disclosure agreements (NDA) and strict confidentiality rules, covering both your records and those of the clients you serve. We stay out of sight throughout, and nothing you share is ever used outside the work we do for you. Your reputation and your client relationships stay entirely protected and confidential.'],
         ['title' => 'Quality & Process Controls', 'img' => $img('us/security-3.jpg'),
-         'text' => 'Rather than relying on chance, we design accuracy directly into our workflow. Each piece of work moves through a set procedure and a review stage before it reaches you, so any error is caught and addressed early. '],
+         'text' => 'QA forms the backbone of our processes. This ensures we prevent errors rather than relying on luck. Each job passes through a stringent QA review stage before it comes back to you. This established quality standard holds steady even when volumes rise. Our quality process is ISO 9001 certified.'],
+        ['title' => 'Certified Security Standards', 'img' => $img('us/security-1.jpg'),
+         'text' => 'Security standards are ISO 27001 certified, each carrying firm rules for how data must be protected and managed. It serves as third-party evidence that your data receives professional-grade handling. We understand our US clients\' expectations & requirements with respect to data security, and we adhere to them.'],
+        ['title' => 'Secure Technology & Communication', 'img' => $img('us/security-2.jpg'),
+         'text' => 'A great deal of data risk comes from everyday tools such as unsecured email. We close that gap using protected, monitored systems and encryption on every file and message we exchange. Confidential details are never sent by unsafe channels, and entry to our tools is kept under tight control. From a quick question to complete financial records, every exchange stays protected.'],
+        ['title' => 'Business Continuity & Data Protection', 'img' => $img('us/security-3.jpg'),
+         'text' => 'We maintain data protection measures and business continuity plans so your work continues without interruption. Backups, redundancy, and defined recovery procedures keep your information safe and your service running. You can depend on consistent delivery, whatever the circumstances.'],
     ];
-    foreach (config('home.security_extra') as $i => $card) {
-        $securityCards[] = $card + ['img' => $securityCards[$i]['img']];
-    }
 
     // core team (Malay, Prithvi, Umesh) config/home.php se aati hai; yahan sirf US ka member
     $team = [
@@ -114,10 +117,10 @@ return function (array $db) {
             'title' => 'Accounting Outsourcing Company for',
             'mark' => 'US Businesses & CPA Firms',
             'text' => 'US businesses and CPA firms turn to PCS Global, a trusted accounting outsourcing company, for their dedicated and scalable teams in accounting, bookkeeping, tax, payroll, and audit support. Companies choose us for accounting outsourcing for US firms because we function as a seamless extension of your team-not a far-away vendor. With dependable accounting outsourcing in the USA, we lower your costs and drive growth.',
-            'features' => ['US Accounting Expertise', 'Scalable Outsourcing Solutions', 'Dedicated Accounting Teams', 'US GAAP Support'],
+            'features' => ['US Accounting Expertise', 'Dedicated Accounting Teams', 'Scalable Outsourcing Solutions', 'US GAAP Support'],
             'primaryText' => 'Book a Free Consultation',
-            'secondaryText' => 'Talk to Our Accounting Expert',
-            'secondaryUrl' => $us('contact-us'),
+            'secondaryText' => 'Talk to Our Expert',
+            'secondaryUrl' => 'tel:+13478018715',
             'bg' => $img('common/hero-bg.png'),
             'person' => $img('us/hero-person.png'),
         ]],
@@ -149,13 +152,13 @@ return function (array $db) {
         ['type' => 'split-accordion', 'props' => [
             'id' => 'standardsAcc',
             'title' => 'US Accounting Standards &amp; Compliance Expertise',
-            'text' => 'US compliance leaves little room for error, and mistakes can quickly become expensive, so accuracy here is essential. Our people know US requirements thoroughly and complete every task to the standards that apply, which removes a major worry for you.',
+            'text' => 'US compliance leaves little room for error, and mistakes can quickly become expensive, so accuracy here is essential. Our team & processes are tailored to meet US requirements thoroughly and complete every task to the standards that apply, which removes a major worry for you.',
             'image' => $img('us/standards-6f1a69.jpg'),
             'items' => $standards,
         ]],
 
         ['type' => 'industry-pills', 'props' => [
-            'title' => 'Industries We Support Across US',
+            'title' => 'Industries We Support Across the United States',
             'rows' => $industries,
         ]],
 
@@ -178,7 +181,7 @@ return function (array $db) {
 
         ['type' => 'region-map', 'props' => [
             'id' => 'usMap',
-            'title' => 'PCS Global Serves Clients Across the US',
+            'title' => 'PCS Global Serves Clients Across United States',
             'size' => [1241, 726],
             'map' => ['src' => $img('us/map-us.svg'), 'x' => 0, 'y' => 0, 'w' => 1241],
             'logo' => ['src' => $img('common/map-logo.svg'), 'x' => 390, 'y' => 134, 'w' => 248.21],
@@ -199,6 +202,7 @@ return function (array $db) {
             'buttonText' => 'Book a Free Consultation',
             'bg' => $img('common/cta-bg.png'),
             'icon' => $img('common/icon-phone.svg'),
+            'phone' => '+13478018715',
         ]],
 
         ['type' => 'team-slider', 'props' => [
@@ -209,7 +213,7 @@ return function (array $db) {
 
         ['type' => 'clients-slider', 'props' => [
             'images' => $images,
-            'title' => 'Trusted by US Businesses &amp; Professional Firms',
+            'title' => 'Trusted by US Businesses &amp; CPA Firms',
         ]],
 
         ['type' => 'testimonials', 'props' => [

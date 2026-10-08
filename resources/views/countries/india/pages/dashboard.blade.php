@@ -23,24 +23,10 @@
                 </div>
 
                 <div class="hero_btn">
-                    <a class="com_btn2 color-animated-button bubble-btn" href="{{ route('contact') }}"
-                        data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
-
-                        <!-- Bubble effect layers -->
-                        <span class="color-button__background"></span>
-                        <span class="color-button__bubble-container">
-                            <span class="color-button__bubble"></span>
-                        </span>
-
-                        <!-- Label and Icon -->
-                        <span class="color-button__label relative z-10 will-change-transform me-2">Request A
-                            Call</span>
-                        <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2.51089 1L6.15002 1.13169C6.91653 1.15942 7.59676 1.64346 7.89053 2.3702L8.96656 5.03213C9.217 5.65159 9.1496 6.35837 8.78693 6.91634L7.40831 9.0375C8.22454 10.2096 10.4447 12.9558 12.7955 14.5633L14.5484 13.4845C14.9939 13.2103 15.5273 13.1289 16.0314 13.2581L19.5161 14.1517C20.4429 14.3894 21.0674 15.2782 20.9942 16.2552L20.7705 19.2385C20.6919 20.2854 19.8351 21.1069 18.818 20.9887C5.39245 19.4276 -2.48056 0.99997 2.51089 1Z" stroke="#182653" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-
-                    </a>
+                    {{-- AU / US / UK hero jaise do buttons (common/buttons.css) --}}
+                    <a class="com_btn2" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal">Book a Free Consultation</a>
+                    <a class="com_btn_outline com_btn_outline_light" href="tel:+917968260121">Talk to an Expert
+                        <img src="{{ asset('public/front/images/common/icon-phone.svg') }}" width="20" height="20" alt=""></a>
                 </div>
 
             </div>
@@ -878,80 +864,17 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     </div>
 </section>
-<section class="mt-80">
-    <div class="container">
-        <div class="mb-5 text-center">
-            <h2>Voices from Across the Globe</h2>
-        </div>
-        <div class="our_experts_cen row align-items-center">
-            <div class="col-md-12">
-                <div class="testimonial_slider">
-                    <div class="testimonial_card">
-                        <img class="quote_icon" src="{{ asset('public/front/images/quotation-icon.svg') }}"  loading="lazy" alt="quotation-icon">
-                        <p>For some time, I have been working in conjunction with the Director of PCS Global Group, Mr Prithvi Dodla, getting to understand their business methods. Clearly, with their experience in end-to-end accounting, administration side. PCS Global Group will thrive in providing business solutions to clients globally. I have seen first hand the high productivity levels and commitment to clients being second to none. This is why I have joined their team to be on the ground in Australia to assist them in delivering Accounting & the Strata Industry services.</p>
-                        <hr>
-                        <div class="testimonial_author">
-                            <h4>Matt Osborne</h4>
-                            <p>Owner</p>
-                        </div>
-                    </div>
-                    <div class="testimonial_card">
-                        <img class="quote_icon" src="{{ asset('public/front/images/quotation-icon.svg') }}"  loading="lazy" alt="quotation-icon">
-                        <p>The PCS Group experts took the time to know my business and me. I have a real sense of security, knowing there’s always quality advice on hand as my business grows and I have to make more decisions.</p>
-                        <hr>
-                        <div class="testimonial_author">
-                            <h4>Darren Mason</h4>
-                            <p>Financial Controller, Global Accounting Network</p>
-                        </div>
-                    </div>
-                    <div class="testimonial_card">
-                        <img class="quote_icon" src="{{ asset('public/front/images/quotation-icon.svg') }}"  loading="lazy" alt="quotation-icon">
-                        <p>The PCS team is extremely proactive and professional. They look after all my accounting and tax requirements so that I can concentrate on building my business.</p>
-                        <hr>
-                        <div class="testimonial_author">
-                            <h4>Barry Williams</h4>
-                            <p>Owner, V-Care Clinics</p>
-                        </div>
-                    </div>
-                    <div class="testimonial_card">
-                        <img class="quote_icon" src="{{ asset('public/front/images/quotation-icon.svg') }}" loading="lazy" alt="quotation-icon">
-                        <p>They provide prompt, accurate, and professional service, relieving us of the burden of keeping up with ever-changing Payroll legislation. I particularly value having an expert contact I can contact if I have any questions, and they are familiar enough with our business to provide much-appreciated, tailored advice as needed.</p>
-                        <hr>
-                        <div class="testimonial_author">
-                            <h4>Jason Hoopai</h4>
-                            <p>MD, Hoopai Financial Consultancy</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+{{-- Testimonials: AU / US / UK jaisa common section, content config/home.php ('testimonials') se --}}
+<x-sections.testimonials title="Voices from Across the Globe" :items="config('home.testimonials')" />
 
-         <div class="our_experts_bot slider3-controls">
-    <div class="experts_info">
-        <div class="circular-progress slider3-progress">
-            <div class="inner-circle"></div>
-        </div>
-        <p class="experts_counter slider3-counter"></p>
-    </div>
-    <hr>
-    <div class="slick_arrow">
-        <span class="arrow-prev slider3-prev">
-             <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">-->
-                        <path d="M1 6.32861L6 11.3286M1 6.32861L6 1.32861M1 6.32861H19" stroke="white" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-        </span>
-        <span class="arrow-next slider3-next">
-             <svg width="20" height="13" viewBox="0 0 20 13" fill="none"-->
-                       xmlns="http://www.w3.org/2000/svg">-->
-                    <path d="M19 6.32861L14 11.3286M19 6.32861L14 1.32861M19 6.32861H1" stroke="white"
-                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-        </span>
-    </div>
-</div>
-    </div>
-</section>
+{{-- Contact form: AU / US / UK jaisa common form (css/common/contact-form.css) --}}
+<x-sections.contact-form
+    title="Ready to Build a Smarter Outsourcing Team?"
+    text="Whether you need accounting, bookkeeping, tax, payroll, strata management or additional business support, PCS Global can help you build a dedicated outsourcing solution around your requirements."
+    :cities="['Ahmedabad', 'Mumbai', 'Delhi', 'Bengaluru', 'Pune', 'Other']"
+    :services="['Accounting & Bookkeeping', 'Strata Property Management', 'Payroll Outsourcing Services', 'Taxation Services', 'Recruitment Outsourcing Services', 'IT Automation Services']"
+    country="India"
+    phone-country="in" />
 
 
 @include('countries.india.layouts.footer')
