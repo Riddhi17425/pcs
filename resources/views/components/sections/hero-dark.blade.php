@@ -39,7 +39,8 @@
                 @endif
                 @if ($secondaryText)
                     <a class="com_btn_outline com_btn_outline_light" href="{{ $secondaryUrl }}">{{ $secondaryText }}
-                        <img src="{{ asset('public/front/images/common/icon-arrow-right.svg') }}" width="20" height="20" alt=""></a>
+                        {{-- tel: link ho to phone icon, warna arrow --}}
+                        <img src="{{ asset('public/front/images/common/' . (str_starts_with($secondaryUrl, 'tel:') ? 'icon-phone.svg' : 'icon-arrow-right.svg')) }}" width="20" height="20" alt=""></a>
                 @endif
             </div>
         </div>

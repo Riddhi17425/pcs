@@ -59,11 +59,22 @@ return function (array $db) {
 
     $ind = fn ($name) => $img("common/industries/$name.svg");
     $industries = [
-        [[$ind('construction'), 'Construction'], [$ind('accounting'), 'Accounting & Auditing'], [$ind('construction'), 'Construction'], [$ind('real-estate'), 'Real Estate & Property'], [$ind('strata'), 'Strata Management'], [$ind('construction'), 'Accounting & Auditing']],
-        [[$ind('construction'), 'Construction'], [$ind('manufacturing'), 'Manufacturing'], [$ind('professional-services'), 'Professional Services'], [$ind('legal'), 'Legal Services'], [$ind('healthcare'), 'Healthcare'], [$ind('ecommerce'), 'E-commerce & Retail']],
+        [[$ind('accounting'), 'Accounting & Auditing'], [$ind('construction'), 'Construction'], [$ind('real-estate'), 'Real Estate & Property'], [$ind('strata'), 'Strata Management'], [$ind('manufacturing'), 'Manufacturing']],
+        [[$ind('professional-services'), 'Professional Services'], [$ind('legal'), 'Legal Services'], [$ind('healthcare'), 'Healthcare'], [$ind('ecommerce'), 'E-commerce & Retail'], [$ind('professional-services'), 'Other relevant industries']],
     ];
 
-    $processSteps = config('home.process_steps');
+    $processSteps = [
+        ['title' => 'Discovery',
+         'text' => 'We start by understanding your business, challenges, workload and the tasks you want us to handle. Based on your requirements, we identify where we can help and recommend the best way to work together.'],
+        ['title' => 'Tailored Team',
+         'text' => 'We assemble a qualified team with the skills required for your business and your specific needs. Your dedicated team gets to know your company, preferences and expectations, ensuring continuity, smoother delivery and less repeated instruction.'],
+        ['title' => 'Workflow Integration',
+         'text' => 'We fit into your existing ways of working, using the same software, file-sharing and reporting formats. Secure access, communication processes and work delivery are agreed upfront, making the transition smooth and straightforward.'],
+        ['title' => 'Support',
+         'text' => 'Once setup is complete, your team manages bookkeeping, payroll, tax and reporting accurately and on schedule. You retain full control while we handle the day-to-day workload and keep you informed of progress and upcoming requirements.'],
+        ['title' => 'Review & Scale',
+         'text' => 'As your requirements change, our support adapts with you. We regularly review the work to maintain quality and can scale support up during busy periods or reduce it when demand eases, keeping the partnership flexible as you grow.'],
+    ];
 
     $certs = [
         [$img('figma-footer-badges/iso-9001.png'), 'ISO 9001'],
@@ -80,10 +91,11 @@ return function (array $db) {
          'text' => 'Discretion is central to how we work. Every engagement follows strict confidentiality practices and signed non-disclosure agreements to protect your information and that of your clients. Our involvement stays behind the scenes, safeguarding your reputation and client relationships. '],
         ['title' => 'Quality & Process Controls', 'img' => $img('australia/security-3.jpg'),
          'text' => 'Accuracy is built into every process. Tasks follow defined procedures and are reviewed before reaching you, allowing errors to be identified and corrected early. This maintains consistent quality even during high-volume periods, so you can use our work with confidence. '],
+        ['title' => 'Certified Security Standards', 'img' => $img('australia/security-1.jpg'),
+         'text' => 'We follow recognised security standards and certifications to ensure your data is protected, accessed and managed responsibly. This gives you confidence that your information is handled securely and professionally by a trusted outsourcing partner.'],
+        ['title' => 'Secure Technology & Communication', 'img' => $img('australia/security-2.jpg'),
+         'text' => 'We use secure, monitored systems and encrypted channels for files and communications. Sensitive information is never transmitted through unprotected means, while access to our systems is tightly controlled. This helps minimise everyday data risks and keeps your information secure.'],
     ];
-    foreach (config('home.security_extra') as $i => $card) {
-        $securityCards[] = $card + ['img' => $securityCards[$i]['img']];
-    }
 
     // core team (Malay, Prithvi, Umesh) config/home.php se aati hai; yahan sirf Australia ka member
     $team = [
@@ -119,7 +131,7 @@ return function (array $db) {
             'features' => ['Australian Accounting Expertise', 'Dedicated Professional Teams', 'Scalable Outsourcing Solutions', 'Secure & Confidential Delivery'],
             'primaryText' => 'Book a Free Consultation',
             'secondaryText' => 'Talk to an Expert',
-            'secondaryUrl' => $au('contact-us'),
+            'secondaryUrl' => 'tel:+61399980494',
             'bg' => $img('common/hero-bg.png'),
             'person' => $img('australia/hero-person.png'),
         ]],
@@ -171,7 +183,7 @@ return function (array $db) {
         ]],
 
         ['type' => 'overlay-cards', 'props' => [
-            'title' => 'Your Data Security. Our Responsibility',
+            'title' => 'Your Data Security. Our Responsibility.',
             'text' => 'Entrusting your financial information to an external team is a significant decision. As an offshore accounting company trusted by Australian firms, we treat security and confidentiality as fundamental to how we operate. ',
             'icon' => $img('common/security-icon.svg'),
             'cards' => $securityCards,
@@ -199,6 +211,7 @@ return function (array $db) {
             'buttonText' => 'Book a Free Consultation',
             'bg' => $img('common/cta-bg.png'),
             'icon' => $img('common/icon-phone.svg'),
+            'phone' => '+61399980494',
         ]],
 
         ['type' => 'team-slider', 'props' => [
@@ -229,7 +242,7 @@ return function (array $db) {
         ]],
 
         ['type' => 'contact-form', 'props' => [
-            'title' => 'Ready to Build the Right Outsourcing Solution?',
+            'title' => 'Ready to Scale With the Right Outsourcing Support?',
             'text' => 'Whether you need accounting, bookkeeping, tax, payroll, strata management or additional business support, PCS Global can help you build a dedicated outsourcing solution around your requirements.',
             'cities' => ['Sydney', 'Melbourne', 'Brisbane', 'Perth', 'Adelaide', 'Other'],
             'services' => array_column($serviceCards, 'title'),

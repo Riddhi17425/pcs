@@ -55,8 +55,8 @@ return function (array $db) {
 
     $ind = fn ($name) => $img("common/industries/$name.svg");
     $industries = [
-        [[$ind('construction'), 'Construction'], [$ind('accounting'), 'Accounting & Auditing Firms'], [$ind('construction'), 'Construction'], [$ind('real-estate'), 'Property & Real Estate'], [$ind('strata'), 'Technology'], [$ind('construction'), 'Accounting & Auditing']],
-        [[$ind('construction'), 'Construction'], [$ind('manufacturing'), 'Manufacturing'], [$ind('professional-services'), 'Professional Services'], [$ind('healthcare'), 'Healthcare'], [$ind('ecommerce'), 'E-commerce & Retail']],
+        [[$ind('accounting'), 'Accounting & Auditing Firms'], [$ind('professional-services'), 'Professional Services'], [$ind('construction'), 'Construction'], [$ind('real-estate'), 'Property & Real Estate']],
+        [[$ind('ecommerce'), 'E-commerce'], [$ind('manufacturing'), 'Manufacturing'], [$ind('healthcare'), 'Healthcare'], [$ind('strata'), 'Technology']],
     ];
 
     $certs = [
@@ -69,13 +69,14 @@ return function (array $db) {
         ['title' => 'Secure Data Handling', 'img' => $img('uk/security-1-5e658a.jpg'),
          'text' => 'Your financial information requires rigorous protection at every stage. Your data is held and processed in secure systems, with access limited to the specialists working directly on your account. Set procedures dictate exactly how information is managed, retained and removed for the duration of the engagement. At no point is information passed on or moved without strict controls, keeping it secure throughout.'],
         ['title' => 'Confidentiality & Privacy', 'img' => $img('uk/security-2-188afb.jpg'),
-         'text' => 'Confidentiality underpins everything we do. Firm confidentiality practices and signed non-disclosure agreements cover every engagement, safeguarding both your data and your clients. Our role stays wholly private, and your information is never used beyond the engagement itself. That protects your standing and ensures your client relationships remain entirely yours.'],
+         'text' => 'Confidentiality underpins everything we do. Firm confidentiality practices and signed non-disclosure agreements cover every engagement, safeguarding both your data and your clients\'. Our role stays wholly private, and your information is never used beyond the engagement itself. That protects your standing and ensures your client relationships remain entirely yours.'],
         ['title' => 'Quality & Process Controls', 'img' => $img('uk/security-3-7ba02f.jpg'),
          'text' => 'Rather than relying on chance, we design accuracy directly into our workflow. Each piece of work moves through a set procedure and a review stage before it reaches you, so any error is caught and addressed early. This standard is maintained even during periods of high volume. You can therefore submit our work or hand it to clients knowing it has already passed a thorough check.'],
+        ['title' => 'Certified Security Standards', 'img' => $img('uk/security-1-5e658a.jpg'),
+         'text' => 'Genuine security is based on evidence, not simply on reassurances. Our practices align with recognised standards and certifications that establish clear requirements for protecting, accessing and managing data. That gives you independent proof your information is managed to a professional benchmark. It reflects the standard of protection any established business or practice is right to expect from an outsourcing partner.'],
+        ['title' => 'Secure Technology & Communication', 'img' => $img('uk/security-2-188afb.jpg'),
+         'text' => 'A significant share of data risk originates in routine activities such as unprotected email. As part of our offshore accounting support, we address this using secure, monitored systems and encrypted channels for every file and communication. Confidential material is never sent by unsecured routes, and entry to our systems is tightly restricted. Whether it is a short message or a full set of records, every exchange stays secure.'],
     ];
-    foreach (config('home.security_extra') as $i => $card) {
-        $securityCards[] = $card + ['img' => $securityCards[$i]['img']];
-    }
 
     // core team (Malay, Prithvi, Umesh) config/home.php se aati hai; yahan sirf UK ka member
     $team = [
@@ -85,7 +86,7 @@ return function (array $db) {
     // Figma me sirf pehle sawal ka answer tha (wo bhi Australia wala); answers page ke content se likhe gaye hain
     $faqs = [
         ['q' => 'Why do UK accounting firms outsource accounting work?',
-         'a' => 'To increase capacity, manage busy periods such as year-end and self-assessment season, and take on additional clients without recruiting. Outsourcing provides skilled support under the firms own brand, at a lower cost than hiring in-house.'],
+         'a' => 'To increase capacity, manage busy periods such as year-end and self-assessment season, and take on additional clients without recruiting. Outsourcing provides skilled support under the firm\'s own brand, at a lower cost than hiring in-house.'],
         ['q' => 'What accounting functions can UK businesses outsource?',
          'a' => 'Most functions, including bookkeeping, payroll, VAT, tax preparation, financial reporting, and accounts payable and receivable. You can hand over one function alone or your whole finance operation.'],
         ['q' => 'Can PCS Global support UK accounting firms?',
@@ -105,12 +106,12 @@ return function (array $db) {
     return [
         ['type' => 'hero-dark', 'props' => [
             'title' => 'Accounting Outsourcing Company for',
-            'mark' => 'UK Businesses & Accountancy Firms',
+            'mark' => 'UK Businesses & Accounting Firms',
             'text' => 'PCS Global is a trusted accounting outsourcing company that takes on this work for businesses and accounting firms across the UK, spanning accounting, bookkeeping, payroll, tax and VAT. As an established accounting outsourcing company in the UK, we bring together experienced professionals, efficient processes and scalable support suited to your needs. Working as an extension of your team, we help you reduce costs, maintain compliance and grow with confidence.',
             'features' => ['UK-focused accounting support', 'Experienced accounting professionals', 'UK GAAP & IFRS expertise', 'HMRC-compliant processes'],
             'primaryText' => 'Book a Free Consultation',
             'secondaryText' => 'Talk to Our Expert',
-            'secondaryUrl' => $uk('contact-us'),
+            'secondaryUrl' => 'tel:+441134034334',
             'bg' => $img('common/hero-bg.png'),
             'person' => $img('uk/hero-person-5cb7ed.png'),
         ]],
@@ -172,7 +173,7 @@ return function (array $db) {
 
         ['type' => 'region-map', 'props' => [
             'id' => 'ukMap',
-            'title' => 'PCS Global Serves Clients Across UK',
+            'title' => 'PCS Global Serves Clients Across the United Kingdom',
             'size' => [1189.58, 955.61],
             'map' => ['src' => $img('uk/map-uk.svg'), 'x' => 0, 'y' => 0, 'w' => 1189.58],
             'logo' => ['src' => $img('common/map-logo.svg'), 'x' => 470.79, 'y' => 126, 'w' => 248.21],
@@ -193,6 +194,7 @@ return function (array $db) {
             'buttonText' => 'Book a Free Consultation',
             'bg' => $img('common/cta-bg.png'),
             'icon' => $img('common/icon-phone.svg'),
+            'phone' => '+441134034334',
         ]],
 
         ['type' => 'team-slider', 'props' => [
@@ -203,7 +205,7 @@ return function (array $db) {
 
         ['type' => 'clients-slider', 'props' => [
             'images' => $images,
-            'title' => 'Trusted by UK Businesses &amp; Professional Firms',
+            'title' => 'Trusted by UK Businesses &amp; Accountancy Firms',
         ]],
 
         ['type' => 'testimonials', 'props' => [

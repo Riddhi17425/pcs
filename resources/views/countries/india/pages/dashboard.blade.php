@@ -25,8 +25,8 @@
                 <div class="hero_btn">
                     {{-- AU / US / UK hero jaise do buttons (common/buttons.css) --}}
                     <a class="com_btn2" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal">Book a Free Consultation</a>
-                    <a class="com_btn_outline com_btn_outline_light" href="{{ route('contact') }}">Talk to an Expert
-                        <img src="{{ asset('public/front/images/common/icon-arrow-right.svg') }}" width="20" height="20" alt=""></a>
+                    <a class="com_btn_outline com_btn_outline_light" href="tel:+917968260121">Talk to an Expert
+                        <img src="{{ asset('public/front/images/common/icon-phone.svg') }}" width="20" height="20" alt=""></a>
                 </div>
 
             </div>
