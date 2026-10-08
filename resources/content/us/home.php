@@ -37,15 +37,15 @@ return function (array $db) {
         ['title' => 'US GAAP Accounting Support',
          'text' => 'Accurate accounts depend on applying US GAAP correctly and consistently. We handle your accounting to US GAAP, so your financial statements are correctly formatted and hold up under reporting, review, or audit. As guidance and standards are updated, our team stays updated. The result is dependable, standards-based accounting you can build decisions on.'],
         ['title' => 'Financial Reporting',
-         'text' => 'We prepare clear, accurate financial statements and management reports to US GAAP, so you always have a reliable view of your business and a sound basis for decisions.'],
+         'text' => 'Numbers only help when they are presented clearly enough. We produce financial reports that turn your raw data into a clear view of performance, cash position, and trends. Reports are accurate, consistent, and delivered on a schedule that suits your business. This gives owners, leadership, and stakeholders the insight they need, exactly when they need it.'],
         ['title' => 'General Ledger & Reconciliation',
-         'text' => 'We maintain your general ledger and reconcile your accounts every month, keeping your records accurate, current and ready for reporting.'],
+         'text' => 'A reliable general ledger is what keeps your financial picture accurate. We maintain your ledger and reconcile your accounts on a regular basis by identifying and rectifying discrepancies early. Bank, credit card, and account reconciliations are handled thoroughly, so nothing goes unnoticed. The outcome is an accurate ledger which forms the basis for every subsequent report.'],
         ['title' => 'Month-End & Year-End Closing',
-         'text' => 'We close your books on schedule each month and at year-end, with adjustments and reconciliations completed and reviewed.'],
+         'text' => 'Closing the books can take days your team would much rather spend in other places. We handle your monthly and year-end close, reconcile your accounts, post adjustments, and prepare your books for review. You start each new period with a clean slate and fresh numbers. '],
         ['title' => 'Audit Preparation & Documentation',
-         'text' => 'We get your schedules, reconciliations and backup documentation ready, so your auditor finds what they need and the audit runs smoothly.'],
+         'text' => 'Most of the hassle of an audit has to do with the preparation involved. We compile the documentation, schedules, and reconciliations auditors will be looking for in an organized fashion before the audit even starts. This lessens the back-and-forth, shortens the process, and gives your business a good impression.'],
         ['title' => 'Accounting Process & Internal Controls',
-         'text' => 'Every task follows a defined procedure with a review stage before it reaches you, so errors are caught early and your processes stay consistent.'],
+         'text' => 'Strong processes and controls protect the accuracy of everything your finance function produces. We follow clear, documented procedures and build sensible checks into the work, reducing the risk of error and oversight. Consistent processes also make your accounting easier to review and to scale as you grow. '],
     ];
 
     $ind = fn ($name) => $img("common/industries/$name.svg");
@@ -55,12 +55,16 @@ return function (array $db) {
     ];
 
     $processSteps = [
-        ['title' => 'Understand Your Requirements',
+        ['title' => 'Discovery',
          'text' => 'We start by learning about your business, what you are doing now, and which tasks you want to delegate to us. We use this initial consultation to demonstrate how we can provide value and the best way to complement your current workflow. We then customise the support based on your business needs.'],
-        ['title' => 'Build Your Team',
-         'text' => 'Next, we put together a team with the skills to carry out the work you require. The same team members stay involved with your account, so they understand your business, your financial and administrative systems, and your expectations - resulting in a reduced learning curve and consistent results.'],
-        ['title' => 'Integrate With Your Workflow',
+        ['title' => 'Tailored Team',
+         'text' => 'Next, we put together a team with the skills to carry out the work you require. The same team members stay involved with your account, so they understand your business, your financial and administrative systems, and your expectations - resulting in a reduced learning curve and consistent results. '],
+        ['title' => 'Workflow Integration',
          'text' => 'We then set up to work the way you already do. Our team uses your accounting software, your file-sharing, and your reporting formats, so there is nothing new for your staff to learn. We establish protected access and settle on the channels we will use to talk and share files. The switch is handled carefully, and we quickly become part of your day-to-day tasks.'],
+         ['title' => 'Support',
+         'text' => 'Once you are good to go, the work begins. We maintain your bookkeeping, payroll, tax, and financial reports in line and on track, providing you with progress updates and future plans along the way. You retain complete awareness and control over every piece of work, while we take care of the work as you handle the business.'],
+         ['title' => 'Review & Scale',
+         'text' => 'Support is flexible as your business evolves. We carry out quality reviews periodically and, as your requirements fluctuate, you can increase capacity when the demand is high and reduce it when it falls off. That is what makes us so flexible and, therefore, so valuable to you.'],
     ];
 
     $certs = [
@@ -90,19 +94,19 @@ return function (array $db) {
         ['q' => 'What accounting services can US businesses outsource?',
          'a' => 'Most finance functions, including bookkeeping, payroll, tax preparation support, financial reporting, general ledger and reconciliation, and audit support. You might hand over just one task, or your whole accounting function, whichever fits.'],
         ['q' => 'Why should a US business outsource accounting?',
-         'a' => 'Outsourcing gives you skilled accounting professionals at a considerably lower cost than a full in-house team, adds capacity when you need it, and frees your people to focus on growth.'],
+         'a' => 'Maximize your return on investment as you reduce costs, tap into professional expertise, and buy back internal time without hiring. Outsourcing provides you with additional capacity and expert resources on-demand.'],
         ['q' => 'Can PCS Global provide a dedicated accounting team?',
-         'a' => 'Yes. We put together a team with the skills your work requires, and the same team members stay on your account, so they understand your business, your systems and your expectations.'],
+         'a' => 'Yes. You get a dedicated team assigned to your account, so the same professionals learn your business and deliver consistent work over time.'],
         ['q' => 'Does PCS Global support US GAAP accounting?',
-         'a' => 'Yes. We handle your accounting to US GAAP, so your financial statements are correctly formatted and hold up under reporting, review or audit.'],
+         'a' => 'Yes. We will set up your accounting on US GAAP standards so that your statements are compliant and formatted for reporting, review, and auditing.'],
         ['q' => 'What accounting software does PCS Global support?',
-         'a' => 'We work inside the accounting software, file-sharing tools and reporting formats your business already uses, so nothing about your setup has to change.'],
+         'a' => 'We work with major platforms, including QuickBooks, Xero, Sage, and NetSuite, so we integrate with the tools your business already uses.'],
         ['q' => 'How does PCS Global protect financial data?',
-         'a' => 'Your data is held and processed in secure systems, access is limited to the specialists working on your account, and every engagement is covered by confidentiality practices and signed non-disclosure agreements.'],
+         'a' => 'Through secure systems, restricted access, signed non-disclosure agreements, and recognized security standards, so your information stays private and protected throughout.'],
         ['q' => 'How does the accounting outsourcing process work?',
-         'a' => 'We start by understanding your requirements, build a team around your work, and then integrate with your existing workflow, software and reporting formats, with secure access and agreed communication channels.'],
+         'a' => 'In five steps: we learn your requirements, assemble a dedicated team, connect with your systems, take on the daily work, and scale the support as you grow.'],
         ['q' => 'How can I get started with PCS Global?',
-         'a' => 'Book a free consultation. We will learn about your business and the tasks you want to delegate, and show you how we can add value.'],
+         'a' => 'Book a free consultation. We will talk through your requirements and show you how outsourcing could work for your business.'],
     ];
 
     return [
