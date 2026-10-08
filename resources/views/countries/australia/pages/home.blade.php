@@ -6,41 +6,47 @@
 
     $serviceCards = [
         ['title' => 'Accounting Outsourcing', 'img' => $img('figma-precision/accounting-outsourcing.png'), 'url' => $au('bookkeeping-accounting-services'),
-         'text' => 'Running and maintaining real-time, accurate accounts requires time and effort, which many teams cannot afford. We take care of all of this for you: reconciliations, ledgers, month-end closing, all fast and accurate so you know exactly where you stand at all times, at a fraction of the cost of having your own team do it.'],
+         'text' => 'Updating accurate accounts requires time and effort, which many teams cannot afford. We take care of reconciliations, ledgers, and month-end closing, ensuring you have the right visibility to your financial standing at a fraction of the cost. '],
         ['title' => 'Bookkeeping Outsourcing', 'img' => $img('figma-precision/bookkeeping-outsourcing-5d38e9.png'), 'url' => $au('bookkeeping-accounting-services'),
-         'text' => 'Sound financial decisions require updated and accurate records. We record and reconcile every transaction the moment it occurs - you never get caught out or have doubts about the figures. We work within the software you already use, so your systems remain unchanged. The result is precise, well-maintained books you can rely on throughout the year.'],
+         'text' => 'Sound financial decisions require updated and accurate records. We record and reconcile every transaction, working within the software you already use. The result is precise, well-maintained books you can rely on throughout the year. '],
         ['title' => 'Tax Preparation Outsourcing', 'img' => $img('figma-precision/tax-preparation-outsourcing.png'), 'url' => $au('taxation-services'),
-         'text' => 'Tax obligations place real demands on any business, particularly as deadlines approach. We prepare and review your returns in line with Australian requirements, verify the details, and lodge them on time. Our specialists remain updated with the rules that apply to your business, reducing errors and preventing missed deadlines. You receive accurate, compliant returns without the pressure.'],
+         'text' => 'Tax obligations place real demands on any business, particularly as deadlines approach. We prepare and review your returns in line with Australian Tax compliances, verify the details, and lodge them on time, reducing errors and missed deadlines. '],
         ['title' => 'BAS/IAS Return Services', 'img' => $img('figma-precision/bas-ias-return-services.png'), 'url' => $au('taxation-services'),
-         'text' => 'Activity statements are a recurring obligation that leaves little room for error. We manage your Business and Instalment Activity Statements in full, calculating your GST and PAYG, reconciling them against your records, and lodging ahead of the deadline. Every statement is reviewed before submission. The result is accurate statements, lodged on time, without the recurring pressure on your team'],
+         'text' => 'Installment activity statements are a recurring obligation that leaves little room for error. We manage your Business and Instalment Activity Statements, calculating GST and PAYG, reconciling records, and lodging accurate statements on time without the recurring pressure. '],
         ['title' => 'Payroll Outsourcing', 'img' => $img('figma-precision/payroll-outsourcing.png'), 'url' => url('australia') . '#consultation',
-         'text' => 'Payroll is among the most sensitive functions in any business, and accuracy is not optional. We manage the entire process, including pay runs, PAYG, superannuation, leave and Single Touch Payroll reporting to the ATO. Each cycle is calculated carefully and processed on schedule. Your employees are paid correctly, and your business remains compliant, without the administrative burden falling on you.'],
+         'text' => 'Payroll is among the most sensitive functions in any business, and accuracy is not optional. We manage pay runs, PAYG, superannuation, leave and Single Touch Payroll reporting to the ATO, ensuring employees are paid correctly and your business remains compliant.'],
         ['title' => 'Strata Management Services', 'img' => $img('figma-precision/strata-management-services-ae35ad.png'), 'url' => $au('strata-management'),
-         'text' => 'Strata finances are detailed and heavily governed by deadlines. Our specialists manage the financial side of your schemes and portfolios, from budgets and levies through to invoicing and owner reporting. Records are kept accurate, and reporting remains clear, so owners and committees always have a clear view of the finances. '],
+         'text' => 'Strata finances are detailed and heavily governed by deadlines. Our specialists manage the financial side of your schemes and portfolios, from budgets and levies through to invoicing and owner reporting, keeping records accurate and reporting clear. '],
     ];
 
     $clientSlides = [
         ['title' => 'Accounting & Finance Firms', 'img' => $img('figma-trust-slider/accounting-finance-firms.png'),
-         'text' => 'Declining work because your team has reached capacity is a costly constraint. We provide qualified support that operates discreetly under your own brand, enabling you to take on more clients and manage peak periods without immediate recruitment. All work is completed to your standards and returned ready for review. Your clients see only your firm, while you gain the capacity to grow.'],
+         'text' => 'We provide qualified accounting support under your own brand, helping you take on more clients and manage peak periods without immediate recruitment. Work is completed to your standards and returned ready for review, while your clients continue to see only your firm. '],
         ['title' => 'Small & Medium-Sized Businesses', 'img' => $img('figma-trust-slider/small-medium-businesses.png'),
-         'text' => 'Many small and medium businesses require a complete finance function but cannot justify the cost of an in-house team. This is precisely where we add value. We manage the full scope of everyday work, from bookkeeping and payroll to BAS and reporting, at a fraction of the cost of employing staff. It provides your business with the financial capability of a far larger organisation, without the overheads.'],
-         ['title' => 'Small & Medium-Sized Businesses', 'img' => $img('figma-trust-slider/small-medium-businesses.png'),
-         'text' => 'Many small and medium businesses require a complete finance function but cannot justify the cost of an in-house team. This is precisely where we add value. We manage the full scope of everyday work, from bookkeeping and payroll to BAS and reporting, at a fraction of the cost of employing staff. It provides your business with the financial capability of a far larger organisation, without the overheads.'],
+         'text' => 'We manage everyday accounting work, from bookkeeping and payroll to BAS and reporting, without the cost of a full-time in-house team. This gives your business the financial capability of a larger organisation while keeping overheads under control. '],
+         ['title' => 'Growing Businesses', 'img' => $img('figma-trust-slider/small-medium-businesses.png'),
+         'text' => 'Rapid growth can quickly place pressure on your finance function as sales, staff and transaction volumes increase. We scale alongside your business, providing additional support when required so your finances never become a constraint on continued growth. '],
+         ['title' => 'Professional Services Firms', 'img' => $img('figma-trust-slider/small-medium-businesses.png'),
+         'text' => 'We manage billing, payroll and compliance in the background, allowing your consultants and advisers to focus on client work. Your back office continues to operate accurately and reliably without taking valuable time away from the services that generate fees. '],
+         ['title' => 'Strata & Property Businesses', 'img' => $img('figma-trust-slider/small-medium-businesses.png'),
+         'text' => 'Our specialists manage levy collection, scheme budgets and owner reporting with the accuracy required by strata and property businesses. You gain reliable strata accounting and clear financial records without diverting your team from managing properties. '],
+         ['title' => 'Other Australian Businesses', 'img' => $img('figma-trust-slider/small-medium-businesses.png'),
+         'text' => 'Whatever your industry, we adapt to your existing processes, so there are no new systems to learn and no disruption to your operations. You may outsource a single function or your entire finance operation, according to your needs. It is flexible, scalable accounting support for Australian businesses of every size.'],
     ];
 
     $standards = [
         ['title' => 'Australian Accounting Standards',
          'text' => 'Financial statements must adhere to the correct standards to be both accurate and accepted. We prepare your accounts in accordance with AASB requirements, ensuring they are properly structured and ready for review, lodgement or audit. As the standards evolve, our team remains current, so your reporting never falls behind. '],
         ['title' => 'BAS & GST Support',
-         'text' => 'Activity statements leave little room for error. We calculate your GST and PAYG, reconcile them against your records, and lodge your BAS and IAS ahead of the deadline, with every statement reviewed before submission.'],
+         'text' => 'Errors in GST and activity statements are easily made and can prove costly. We manage the process in full, calculating your GST on sales and purchases, reconciling it against your records, and lodging on time. Every statement is reviewed before it reaches the ATO. This removes a demanding recurring task and protects you from avoidable errors and penalties.'],
         ['title' => 'PAYG & Payroll Requirements',
-         'text' => 'We manage pay runs, PAYG withholding, superannuation, leave and Single Touch Payroll reporting to the ATO, so your employees are paid correctly and your business remains compliant.'],
+         'text' => 'Australian payroll obligations are strict and allow little margin for error. We ensure every requirement is met, including PAYG withholding, superannuation, leave entitlements and Single Touch Payroll reporting to the ATO. Each pay cycle is processed accurately and on time. Your employees are paid correctly, and your business remains fully compliant.'],
         ['title' => 'ASIC Compliance Support',
-         'text' => 'We keep your financial records accurate and properly structured, so your business is ready for ASIC-related reporting, review and lodgement.'],
+         'text' => 'Meeting your ASIC obligations is essential to keeping your business in good standing, yet the deadlines are easily overlooked. We help you remain on top of them, from maintaining accurate records to lodging reports on time. Nothing is left to the last minute, and nothing is missed. It is consistent, year-round support that keeps your company compliant while you focus on running it.'],
         ['title' => 'Australian Tax Requirements',
-         'text' => 'We prepare and review your returns in line with Australian requirements, verify the details, and lodge them on time, staying current with the rules that apply to your business.'],
+         'text' => 'Accurate tax management protects your business on two fronts: it maintains compliance and ensures you pay no more than necessary. Our tax specialists prepare your returns in line with current Australian rules, apply the deductions to which you are entitled, and lodge on time. You remain fully compliant with the ATO while retaining more of what is yours. '],
         ['title' => 'Strata Accounting Requirements',
-         'text' => 'We manage the financial side of strata schemes and portfolios, from budgets and levies to invoicing and owner reporting, so owners and committees always have a clear view of the finances.'],
+         'text' => 'Strata schemes are governed by their own financial rules, and discrepancies are quickly noticed by owners. We prepare strata accounts accurately, manage levy and fund records correctly, and produce reporting that satisfies every requirement. Owners, committees and managers receive a clear and reliable view of the finances. It is specialist support that keeps strata properties compliant and their records in order.'],
     ];
 
     $ind = fn ($name) => $img("common/industries/$name.svg");
@@ -61,11 +67,11 @@
 
     $securityCards = [
         ['title' => 'Secure Data Handling', 'img' => $img('australia/security-1.jpg'),
-         'text' => 'Your financial information warrants proper protection at every stage. We store and manage your data within secure systems and restrict access strictly to the professionals assigned to your account. '],
+         'text' => 'We protect your financial information at every stage using secure systems and controlled access. Only professionals assigned to your account can access your data. Clear procedures govern how information is handled, stored and disposed of, keeping it protected from beginning to end. '],
         ['title' => 'Confidentiality & Privacy', 'img' => $img('australia/security-2.jpg'),
-         'text' => 'Discretion is central to how we work. Every engagement is governed by strict confidentiality practices and signed non-disclosure agreements that protect both your information and that of your clients. '],
+         'text' => 'Discretion is central to how we work. Every engagement follows strict confidentiality practices and signed non-disclosure agreements to protect your information and that of your clients. Our involvement stays behind the scenes, safeguarding your reputation and client relationships. '],
         ['title' => 'Quality & Process Controls', 'img' => $img('australia/security-3.jpg'),
-         'text' => 'Accuracy is built into our processes. Every task follows a defined procedure and is reviewed before it reaches you, so errors are identified and corrected early. '],
+         'text' => 'Accuracy is built into every process. Tasks follow defined procedures and are reviewed before reaching you, allowing errors to be identified and corrected early. This maintains consistent quality even during high-volume periods, so you can use our work with confidence. '],
     ];
     foreach (config('home.security_extra') as $i => $card) {
         $securityCards[] = $card + ['img' => $securityCards[$i]['img']];
@@ -82,29 +88,29 @@
         ['q' => 'What services does PCS Global provide in Australia?',
          'a' => 'We provide accounting, bookkeeping, tax preparation, BAS and IAS returns, payroll and strata management, all delivered by a dedicated team that works as an extension of yours.'],
         ['q' => 'Does PCS Global provide accounting outsourcing in Australia?',
-         'a' => 'Yes. PCS Global is an accounting outsourcing company supporting Australian businesses and accounting firms with reliable accounting, bookkeeping, tax, payroll and financial support.'],
+         'a' => 'Yes. We support Australian businesses and accounting firms with scalable outsourced accounting, tailored to your workload and prepared to Australian standards.'],
         ['q' => 'Does PCS Global work with Australian accounting firms?',
-         'a' => 'Yes. We provide qualified support that operates discreetly under your own brand, so your firm can take on more clients and manage peak periods without immediate recruitment. Your clients see only your firm.'],
+         'a' => 'Yes. Many of our clients are accounting and finance firms that rely on us to add capacity, manage busy periods, and take on more clients under their own brand.'],
         ['q' => 'Can PCS Global provide dedicated accounting professionals?',
-         'a' => 'Yes. Our dedicated team works as an extension of yours, and we help you build the right team around your workload and requirements.'],
+         'a' => 'Yes. The same team will work on your business, developing an understanding and knowledge that grows as they get to know you.'],
         ['q' => 'Can I outsource only specific accounting processes?',
-         'a' => 'Yes. You can outsource a single function such as bookkeeping, BAS/IAS returns or payroll, or a complete set of accounting services. We work out which work to take on and how best to sit alongside your team.'],
+         'a' => 'Yes. You may outsource a single task, such as bookkeeping or payroll, or hand over your entire finance function, depending on your requirements.'],
         ['q' => 'Can outsourcing support scale as my business grows?',
-         'a' => 'Yes. Our outsourcing solutions are scalable, so support can grow with your workload, from peak periods to long-term growth, without the overheads of in-house hiring.'],
-        ['q' => 'How does PCS Global work with Australian businesses?',
-         'a' => 'We start by understanding your requirements, build your team, and then integrate with your existing workflow, software and reporting formats, with secure access and agreed ways of communicating.'],
-        ['q' => 'How do I get started with PCS Global?',
-         'a' => 'Book a free consultation with us. We will learn how your business runs, identify the work to take on, and recommend the best way to work alongside your team.'],
+         'a' => 'Yes. Our support adapts to your fluctuating workload, so you can increase your capacity when needed and scale down to meet quieter periods, all without trouble or delay.'],
+         ['q' => 'How does PCS Global work with Australian businesses?',
+         'a' => 'Our step-by-step process is: we get to know your needs, assemble a dedicated team, liaise with your systems, provide support, and adapt to your size.'],
+         ['q' => 'How do I get started with PCS Global?',
+         'a' => 'Simply book a free consultation. We will discuss your requirements and show you how the right outsourcing solution could work for your business.'],
     ];
 @endphp
 
 <x-hero-dark
     title="Accounting Outsourcing Company for"
     mark="Australian Businesses & Firms"
-    text="PCS Global is a trusted Australian accounting outsourcing company supporting Australian businesses and accounting firms with reliable accounting, bookkeeping, tax, payroll, and financial support. Our dedicated team works as an extension of yours, helping you reduce costs, maintain compliance, and scale with confidence."
+    text="PCS Global is an established services company supporting Australian businesses and accounting firms with reliable accounting, bookkeeping, tax, payroll, and financial support. Our dedicated team works as an extension of your team, helping you reduce costs, maintain compliance, and scale with confidence."
     :features="['Australian Accounting Expertise', 'Dedicated Professional Teams', 'Scalable Outsourcing Solutions', 'Secure & Confidential Delivery']"
     primary-text="Book a Free Consultation"
-    secondary-text="Talk to Our Accounting Expert"
+    secondary-text="Talk to an Expert"
     :secondary-url="$au('contact-us')"
     :bg="$img('common/hero-bg.png')"
     :person="$img('australia/hero-person.png')" />
@@ -114,40 +120,41 @@
     alt="Why Partner With PCS Global"
     title="Why Partner with PCS Global?"
     :paragraphs="[
-        'The right partner does more than just take care of your accounting. They\'re an extension of your team, someone you can count on without having to follow up consistently. That\'s the quality PCS Global brings to every Australian business and accounting firm we serve - functioning as an authentic accounting outsourcing partner.',
-        'As a finance and outsourcing accounting company in Australia built on skilled professionals and disciplined processes, we deliver work you can rely on. For many Australian firms, accounting outsourcing to India has become an effective way to access expertise and reduce overheads at once, and we make that transition straightforward and secure. The outcome is greater capacity, lower costs, and more time for your team to focus on growth.',
+        'The right partner does more than just take care of your accounting. We work as an extension of your team, a partner you can count on without having to follow up consistently. We define our workflow to mirror yours which ensures consistency in project delivery. We provide seamless service delivery and strive to be a trusted accounting outsourcing partner.',
+        'As an accounting and finance outsourcing company in Australia built on skilled professionals and disciplined processes, we deliver work you can rely on. For many Australian firms, accounting outsourcing to India has become an effective way to access talent pool and reduce overheads at once, and we make that transition skilled seamless and secured. The outcome is greater capacity, lower costs, and more time for your team to focus on growth.',
     ]"
-    :stats="[[60, 'Happy Clients'], [100, 'Years of Team Experience'], [800, 'Projects Completed']]" />
+    :stats="[[60, 'Clients'], [800, 'Projects Completed'], [100, 'Combined Years of Team Experience']]" />
 
 <x-home.service-cards
     title="Outsourcing Financial Services We Provide in Australia"
-    text="When everyday accounting work takes up too much of your employees' working hours, support is what you need. PCS Global offers a full spectrum of accounting services that Australian businesses and practices depend on, from everyday bookkeeping through to specialist compliance, both as an individual service and as a complete service."
+    text="When everyday accounting work takes up too much of your employees' time, support is what you need. PCS Global offers accounting services Australian businesses and practices depend on, from everyday accounting, bookkeeping to specialist compliance, available as individual services or a complete package. "
     :cards="$serviceCards" />
 
 <x-home.trust-slider
     title="Outsourcing Accounting Solutions for Australian Businesses & Firms"
-    text="No two organisations operate in exactly the same way, so we do not apply a standard template. As an experienced accounting outsourcing firm, PCS Global tailors its support to your structure, your workload and your objectives. The following are the clients we most commonly support."
+    text="No two organisations operate the same way, so we tailor our accounting support to your structure, workload and objectives. We support australian businesses and firms with flexible, reliable accounting outsourcing solutions designed around their specific needs."
     :slides="$clientSlides" />
 
 <x-home.split-accordion
     id="standardsAcc"
     title="Australian Accounting Standards &amp; Compliance Expertise"
-    text="When everyday accounting work takes up too much of your employees' working hours, support is what you need. PCS Global offers a full spectrum of accounting services that Australian businesses and practices depend on, from everyday bookkeeping through to specialist compliance, both as an individual service and as a complete service."
+    text="We understand Australian accounting is governed by strict regulations, and the consequences of non-compliance can be significant. Our teams are trained in Australian accounting rules and standards, ensuring your work is always prepared correctly. "
     :image="$img('australia/standards.jpg')"
     :items="$standards" />
 
 <x-home.industry-pills title="Industries We Support Across Australia" :rows="$industries" />
 
 <x-home.process-steps
-    title="How Does PCS Global Work With Australia Clients?"
-    text="Beginning a partnership with PCS Global is a clear and structured process, designed to be simple and low-risk for you. Outsourcing accounting work to India is often assumed to be complex, yet our structured onboarding makes it straightforward and secure. In five stages, you move from a first conversation to a fully embedded team working alongside your own."
+    title="How Does PCS Global Work With Australian Clients? "
+    text="Working with PCS Global follows a clear, structured process designed to make accounting outsourcing simple and secure. These five steps take you from the initial discussion to a dedicated team working as an extension of your own. 
+"
     :steps="$processSteps" />
 
 <x-home.cert-tools :certs="$certs" />
 
 <x-home.overlay-cards
     title="Your Data Security. Our Responsibility"
-    text="Entrusting your financial information to an external team is a significant decision, and we treat that responsibility with the seriousness it deserves. As an offshore accounting company trusted by Australian firms, we regard security and confidentiality as fundamental to how we operate"
+    text="Entrusting your financial information to an external team is a significant decision. As an offshore accounting company trusted by Australian firms, we treat security and confidentiality as fundamental to how we operate. "
     :icon="$img('common/security-icon.svg')"
     :cards="$securityCards" />
 
@@ -184,7 +191,7 @@
 <x-home.faq-list id="ausFaq" :items="$faqs" />
 
 <x-home.contact-form
-    title="Ready to Build a Smarter Outsourcing Team?"
+    title="Ready to Build the Right Outsourcing Solution?"
     text="Whether you need accounting, bookkeeping, tax, payroll, strata management or additional business support, PCS Global can help you build a dedicated outsourcing solution around your requirements."
     :cities="['Sydney', 'Melbourne', 'Brisbane', 'Perth', 'Adelaide', 'Other']"
     :services="array_column($serviceCards, 'title')" />
