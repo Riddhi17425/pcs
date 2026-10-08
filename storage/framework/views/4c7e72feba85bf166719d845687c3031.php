@@ -51,7 +51,7 @@ unset($__defined_vars, $__key, $__value); ?>
     </div>
 </section>
 
-<?php if (! $__env->hasRenderedOnce('2981467f-4813-44a3-9a73-c27576482a1b')): $__env->markAsRenderedOnce('2981467f-4813-44a3-9a73-c27576482a1b'); ?>
+<?php if (! $__env->hasRenderedOnce('322c1af1-02d6-4d27-8665-10a56f9fe5ab')): $__env->markAsRenderedOnce('322c1af1-02d6-4d27-8665-10a56f9fe5ab'); ?>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const slider = document.getElementById('processSteps');
