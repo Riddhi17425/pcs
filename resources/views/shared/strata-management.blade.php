@@ -213,7 +213,7 @@
                             </ul>
                          </div>
                     </div>
-                     <a class="com_btn1 color-animated-button bubble-btn mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                     <a class="com_btn1 color-animated-button bubble-btn mt-3" href="tel:{{ $site['phone'] }}"
                         data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
                         <!-- Bubble effect layers -->

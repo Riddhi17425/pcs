@@ -586,6 +586,9 @@ nav {
 
 .hero_btn {
     margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
 }
 
 /* counter */
