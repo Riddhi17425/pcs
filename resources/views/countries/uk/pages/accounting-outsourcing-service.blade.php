@@ -1,4 +1,4 @@
-@include('countries.uk.layouts.frontheader-uk', [
+@include('countries.uk.layouts.header', [
     'og_image' => asset('public/front/images/Full-Range-Accounting.png')
 ])
 
@@ -604,4 +604,4 @@
     </div>
 </section>
 
-@include('countries.uk.layouts.frontfooter-uk')
+@include('countries.uk.layouts.footer')

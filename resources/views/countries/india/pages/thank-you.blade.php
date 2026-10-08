@@ -1,4 +1,4 @@
-@include('countries.india.layouts.frontheader')
+@include('countries.india.layouts.header')
 <section class="mt-80">
     <div class="container">
         
@@ -32,4 +32,4 @@
         </div>
     </div>
 </section>
-@include('countries.india.layouts.frontfooter')
+@include('countries.india.layouts.footer')

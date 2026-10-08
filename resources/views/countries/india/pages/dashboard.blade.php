@@ -1,4 +1,4 @@
-@include('countries.india.layouts.frontheader', [
+@include('countries.india.layouts.header', [
     'og_image' => asset('public/front/images/hero_img.png')
 ])
 
@@ -259,14 +259,6 @@
                     </div>
                 </div>
                 <div class="trust_slide">
-                    <div class="trust_slide_img trust_slide_img_certificate">
-                        <img src="{{ asset('public/front/images/certificate.png') }}" loading="lazy" alt="Our Certifications">
-                    </div>
-                    <div class="trust_slide_body">
-                        <h3>Our Certifications</h3>
-                    </div>
-                </div>
-                <div class="trust_slide">
                     <div class="trust_slide_img">
                         <img src="{{ asset('public/front/images/trust_bg3.png') }}" loading="lazy" alt="Available 24×7">
                     </div>
@@ -322,7 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- Industries -->
 
 <!-- global_exp -->
-@include('components.Industries-card')
+@include('components.india.industries-card')
 
 {{--
 <section class="mt-100" >
@@ -962,4 +954,4 @@ document.addEventListener("DOMContentLoaded", () => {
 </section>
 
 
-@include('countries.india.layouts.frontfooter')
+@include('countries.india.layouts.footer')

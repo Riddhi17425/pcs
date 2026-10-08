@@ -1,4 +1,4 @@
-@include('countries.india.layouts.frontheader', [
+@include('countries.india.layouts.header', [
     'og_image' => asset('public/front/images/why-choose-it-solution.png')
 ])
 <section class="com_hero" style="background-image: url(' {{ asset('public/front/images/data-security-hero-bg.jpg') }}');">
@@ -315,4 +315,4 @@ In today’s digital-first world, your audience is constantly scrolling, searchi
                                
                               </div>
                             </div>
-@include('countries.india.layouts.frontfooter')
+@include('countries.india.layouts.footer')

@@ -1,4 +1,4 @@
-@include('countries.australia.layouts.frontheader-au')
+@include('countries.australia.layouts.header')
 <section class="com_hero" style="background-image: url('{{ asset('public/front/images/data-security-hero-bg.jpg') }}');">
     <div class="container">
         <div class="com_hero_child header_flags">
@@ -705,4 +705,4 @@
     </div>
 </section>
 
-@include('countries.australia.layouts.frontfooter-au')
+@include('countries.australia.layouts.footer')

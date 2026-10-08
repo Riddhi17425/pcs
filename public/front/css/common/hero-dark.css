@@ -1,5 +1,5 @@
 /* Common hero: blue gradient + bg image, left text, right person image.
-   Component: resources/views/components/hero-dark.blade.php  (<x-hero-dark>) */
+   Component: resources/views/components/sections/hero-dark.blade.php  (type "hero-dark") */
 
 .hero_dark {
     position: relative;
@@ -16,6 +16,7 @@
     height: 100%;
     object-fit: cover;
     z-index: 0;
+    opacity: .2;
 }
 
 .hero_dark_person {
@@ -249,7 +250,7 @@
     }
 
     .hero_dark h1 {
-        font-size: clamp(34px, 3.6vw, 56px);
+        font-size: clamp(34px, 3vw, 56px);
     }
 
     .hero_dark_features li {
@@ -305,8 +306,8 @@
 /* ---------- compact sizing: content 100vh ke andar fit ho ---------- */
 @media (min-width: 992px) {
     .hero_dark h1 {
-        font-size: clamp(32px, 3.5vw, 56px);
-        line-height: 1.28;
+        font-size: clamp(32px, 3.2vw, 56px);
+        line-height: 1.4;
     }
 
     .hero_dark_features li {

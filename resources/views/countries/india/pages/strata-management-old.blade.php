@@ -1,4 +1,4 @@
-@include('countries.india.layouts.frontheader')
+@include('countries.india.layouts.header')
 
 <section class="com_hero" style="background-image: url(' {{ asset('public/front/images/data-security-hero-bg.jpg') }}');">
     <div class="container">
@@ -545,4 +545,4 @@ Global Strata Management Experts
 }
 </script>
 @endverbatim
-@include('countries.india.layouts.frontfooter')
+@include('countries.india.layouts.footer')

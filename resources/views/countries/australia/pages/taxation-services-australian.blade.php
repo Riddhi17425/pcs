@@ -1,4 +1,4 @@
-@include('countries.australia.layouts.frontheader-au')
+@include('countries.australia.layouts.header')
 <style>
     .com_bg_card_accounting{height:fit-content;}
 </style>
@@ -898,4 +898,4 @@ if (!sessionStorage.getItem("aus_redirect_done")) {
 }
 </script>
 
-@include('countries.australia.layouts.frontfooter-au')
+@include('countries.australia.layouts.footer')

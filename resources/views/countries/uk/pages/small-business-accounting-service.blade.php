@@ -1,4 +1,4 @@
-@include('countries.uk.layouts.frontheader-uk')
+@include('countries.uk.layouts.header')
 
 <link rel="stylesheet" href="{{asset('public/front/css/small-business-accounting-services.css')}}">
 
@@ -1194,4 +1194,4 @@ window.addEventListener("load", function () {
 </style>
 
 
-@include('countries.uk.layouts.frontfooter-uk')
+@include('countries.uk.layouts.footer')

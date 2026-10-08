@@ -23,3 +23,6 @@ Homestead.json
 Homestead.yaml
 Thumbs.db
 /public/front.zip
+
+# Figma MCP config (API key)
+/.mcp.json
