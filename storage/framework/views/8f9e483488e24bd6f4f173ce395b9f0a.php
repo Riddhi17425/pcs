@@ -30,15 +30,15 @@
         ['title' => 'US GAAP Accounting Support',
          'text' => 'Accurate accounts depend on applying US GAAP correctly and consistently. We handle your accounting to US GAAP, so your financial statements are correctly formatted and hold up under reporting, review, or audit. As guidance and standards are updated, our team stays updated. The result is dependable, standards-based accounting you can build decisions on.'],
         ['title' => 'Financial Reporting',
-         'text' => 'We prepare clear, accurate financial statements and management reports to US GAAP, so you always have a reliable view of your business and a sound basis for decisions.'],
+         'text' => 'Numbers only help when they are presented clearly enough. We produce financial reports that turn your raw data into a clear view of performance, cash position, and trends. Reports are accurate, consistent, and delivered on a schedule that suits your business. This gives owners, leadership, and stakeholders the insight they need, exactly when they need it.'],
         ['title' => 'General Ledger & Reconciliation',
-         'text' => 'We maintain your general ledger and reconcile your accounts every month, keeping your records accurate, current and ready for reporting.'],
+         'text' => 'A reliable general ledger is what keeps your financial picture accurate. We maintain your ledger and reconcile your accounts on a regular basis by identifying and rectifying discrepancies early. Bank, credit card, and account reconciliations are handled thoroughly, so nothing goes unnoticed. The outcome is an accurate ledger which forms the basis for every subsequent report.'],
         ['title' => 'Month-End & Year-End Closing',
-         'text' => 'We close your books on schedule each month and at year-end, with adjustments and reconciliations completed and reviewed.'],
+         'text' => 'Closing the books can take days your team would much rather spend in other places. We handle your monthly and year-end close, reconcile your accounts, post adjustments, and prepare your books for review. You start each new period with a clean slate and fresh numbers. '],
         ['title' => 'Audit Preparation & Documentation',
-         'text' => 'We get your schedules, reconciliations and backup documentation ready, so your auditor finds what they need and the audit runs smoothly.'],
+         'text' => 'Most of the hassle of an audit has to do with the preparation involved. We compile the documentation, schedules, and reconciliations auditors will be looking for in an organized fashion before the audit even starts. This lessens the back-and-forth, shortens the process, and gives your business a good impression.'],
         ['title' => 'Accounting Process & Internal Controls',
-         'text' => 'Every task follows a defined procedure with a review stage before it reaches you, so errors are caught early and your processes stay consistent.'],
+         'text' => 'Strong processes and controls protect the accuracy of everything your finance function produces. We follow clear, documented procedures and build sensible checks into the work, reducing the risk of error and oversight. Consistent processes also make your accounting easier to review and to scale as you grow. '],
     ];
 
     $ind = fn ($name) => $img("common/industries/$name.svg");
@@ -48,12 +48,16 @@
     ];
 
     $processSteps = [
-        ['title' => 'Understand Your Requirements',
+        ['title' => 'Discovery',
          'text' => 'We start by learning about your business, what you are doing now, and which tasks you want to delegate to us. We use this initial consultation to demonstrate how we can provide value and the best way to complement your current workflow. We then customise the support based on your business needs.'],
-        ['title' => 'Build Your Team',
-         'text' => 'Next, we put together a team with the skills to carry out the work you require. The same team members stay involved with your account, so they understand your business, your financial and administrative systems, and your expectations - resulting in a reduced learning curve and consistent results.'],
-        ['title' => 'Integrate With Your Workflow',
+        ['title' => 'Tailored Team',
+         'text' => 'Next, we put together a team with the skills to carry out the work you require. The same team members stay involved with your account, so they understand your business, your financial and administrative systems, and your expectations - resulting in a reduced learning curve and consistent results. '],
+        ['title' => 'Workflow Integration',
          'text' => 'We then set up to work the way you already do. Our team uses your accounting software, your file-sharing, and your reporting formats, so there is nothing new for your staff to learn. We establish protected access and settle on the channels we will use to talk and share files. The switch is handled carefully, and we quickly become part of your day-to-day tasks.'],
+         ['title' => 'Support',
+         'text' => 'Once you are good to go, the work begins. We maintain your bookkeeping, payroll, tax, and financial reports in line and on track, providing you with progress updates and future plans along the way. You retain complete awareness and control over every piece of work, while we take care of the work as you handle the business.'],
+         ['title' => 'Review & Scale',
+         'text' => 'Support is flexible as your business evolves. We carry out quality reviews periodically and, as your requirements fluctuate, you can increase capacity when the demand is high and reduce it when it falls off. That is what makes us so flexible and, therefore, so valuable to you.'],
     ];
 
     $certs = [
@@ -83,32 +87,32 @@
         ['q' => 'What accounting services can US businesses outsource?',
          'a' => 'Most finance functions, including bookkeeping, payroll, tax preparation support, financial reporting, general ledger and reconciliation, and audit support. You might hand over just one task, or your whole accounting function, whichever fits.'],
         ['q' => 'Why should a US business outsource accounting?',
-         'a' => 'Outsourcing gives you skilled accounting professionals at a considerably lower cost than a full in-house team, adds capacity when you need it, and frees your people to focus on growth.'],
+         'a' => 'Maximize your return on investment as you reduce costs, tap into professional expertise, and buy back internal time without hiring. Outsourcing provides you with additional capacity and expert resources on-demand.'],
         ['q' => 'Can PCS Global provide a dedicated accounting team?',
-         'a' => 'Yes. We put together a team with the skills your work requires, and the same team members stay on your account, so they understand your business, your systems and your expectations.'],
+         'a' => 'Yes. You get a dedicated team assigned to your account, so the same professionals learn your business and deliver consistent work over time.'],
         ['q' => 'Does PCS Global support US GAAP accounting?',
-         'a' => 'Yes. We handle your accounting to US GAAP, so your financial statements are correctly formatted and hold up under reporting, review or audit.'],
+         'a' => 'Yes. We will set up your accounting on US GAAP standards so that your statements are compliant and formatted for reporting, review, and auditing.'],
         ['q' => 'What accounting software does PCS Global support?',
-         'a' => 'We work inside the accounting software, file-sharing tools and reporting formats your business already uses, so nothing about your setup has to change.'],
+         'a' => 'We work with major platforms, including QuickBooks, Xero, Sage, and NetSuite, so we integrate with the tools your business already uses.'],
         ['q' => 'How does PCS Global protect financial data?',
-         'a' => 'Your data is held and processed in secure systems, access is limited to the specialists working on your account, and every engagement is covered by confidentiality practices and signed non-disclosure agreements.'],
+         'a' => 'Through secure systems, restricted access, signed non-disclosure agreements, and recognized security standards, so your information stays private and protected throughout.'],
         ['q' => 'How does the accounting outsourcing process work?',
-         'a' => 'We start by understanding your requirements, build a team around your work, and then integrate with your existing workflow, software and reporting formats, with secure access and agreed communication channels.'],
+         'a' => 'In five steps: we learn your requirements, assemble a dedicated team, connect with your systems, take on the daily work, and scale the support as you grow.'],
         ['q' => 'How can I get started with PCS Global?',
-         'a' => 'Book a free consultation. We will learn about your business and the tasks you want to delegate, and show you how we can add value.'],
+         'a' => 'Book a free consultation. We will talk through your requirements and show you how outsourcing could work for your business.'],
     ];
 ?>
 
 <?php if (isset($component)) { $__componentOriginala5a5a13e1717720bc44f83285b549fb3 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginala5a5a13e1717720bc44f83285b549fb3 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.hero-dark','data' => ['title' => 'Accounting Outsourcing Company for','mark' => 'US Businesses & CPA Firms','text' => 'US businesses and CPA firms turn to PCS Global, a trusted accounting outsourcing company, for their dedicated and scalable teams in accounting, bookkeeping, tax, payroll, and audit support. Companies choose us for accounting outsourcing for US firms because we function as a seamless extension of your team-not a far-away vendor. With dependable accounting outsourcing in the USA, we lower your costs and drive growth.','features' => ['US Accounting Expertise', 'Scalable Outsourcing Solutions', 'Dedicated Accounting Teams', 'US GAAP Support'],'primaryText' => 'Book a Free Consultation','secondaryText' => 'Talk to Our Accounting Expert','secondaryUrl' => $us('contact-us'),'bg' => $img('common/hero-bg.png'),'person' => $img('us/hero-person.png')]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.hero-dark','data' => ['title' => 'Accounting Outsourcing Company for','mark' => 'US Businesses & CPA Firms','text' => 'US businesses and CPA firms turn to PCS Global, a trusted accounting outsourcing company, for their dedicated and scalable teams in accounting, bookkeeping, tax, payroll, and audit support. Companies choose us for accounting outsourcing for US firms because we function as a seamless extension of your team-not a far-away vendor. With dependable accounting outsourcing in the USA, we lower your costs and drive growth.','features' => ['US Accounting Expertise', 'Scalable Outsourcing Solutions', 'Dedicated Accounting Teams', 'US GAAP Support'],'primaryText' => 'Book a Free Consultation','secondaryText' => 'Talk to Our Expert','secondaryUrl' => $us('contact-us'),'bg' => $img('common/hero-bg.png'),'person' => $img('us/hero-person.png')]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('hero-dark'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['title' => 'Accounting Outsourcing Company for','mark' => 'US Businesses & CPA Firms','text' => 'US businesses and CPA firms turn to PCS Global, a trusted accounting outsourcing company, for their dedicated and scalable teams in accounting, bookkeeping, tax, payroll, and audit support. Companies choose us for accounting outsourcing for US firms because we function as a seamless extension of your team-not a far-away vendor. With dependable accounting outsourcing in the USA, we lower your costs and drive growth.','features' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(['US Accounting Expertise', 'Scalable Outsourcing Solutions', 'Dedicated Accounting Teams', 'US GAAP Support']),'primary-text' => 'Book a Free Consultation','secondary-text' => 'Talk to Our Accounting Expert','secondary-url' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($us('contact-us')),'bg' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($img('common/hero-bg.png')),'person' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($img('us/hero-person.png'))]); ?>
+<?php $component->withAttributes(['title' => 'Accounting Outsourcing Company for','mark' => 'US Businesses & CPA Firms','text' => 'US businesses and CPA firms turn to PCS Global, a trusted accounting outsourcing company, for their dedicated and scalable teams in accounting, bookkeeping, tax, payroll, and audit support. Companies choose us for accounting outsourcing for US firms because we function as a seamless extension of your team-not a far-away vendor. With dependable accounting outsourcing in the USA, we lower your costs and drive growth.','features' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(['US Accounting Expertise', 'Scalable Outsourcing Solutions', 'Dedicated Accounting Teams', 'US GAAP Support']),'primary-text' => 'Book a Free Consultation','secondary-text' => 'Talk to Our Expert','secondary-url' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($us('contact-us')),'bg' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($img('common/hero-bg.png')),'person' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($img('us/hero-person.png'))]); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginala5a5a13e1717720bc44f83285b549fb3)): ?>
@@ -191,14 +195,14 @@
 
 <?php if (isset($component)) { $__componentOriginal203059af38fc2bb29e6304e0ae6e910d = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal203059af38fc2bb29e6304e0ae6e910d = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.home.split-accordion','data' => ['id' => 'standardsAcc','title' => 'US Accounting Standards &amp; Compliance Expertise','text' => 'US compliance leaves little room for error, and mistakes can quickly become expensive, so accuracy here is essential. Our people know US requirements thoroughly and complete every task to the standards that apply, which removes a major worry for you.','image' => $img('us/standards-6f1a69.jpg'),'items' => $standards]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.home.split-accordion','data' => ['id' => 'standardsAcc','title' => 'US Accounting Standards &amp; Compliance Expertise','text' => 'US compliance leaves little room for error, and mistakes can quickly become expensive, so accuracy here is essential. Our team & processes are tailored to meet US requirements thoroughly and complete every task to the standards that apply, which removes a major worry for you.','image' => $img('us/standards-6f1a69.jpg'),'items' => $standards]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('home.split-accordion'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['id' => 'standardsAcc','title' => 'US Accounting Standards &amp; Compliance Expertise','text' => 'US compliance leaves little room for error, and mistakes can quickly become expensive, so accuracy here is essential. Our people know US requirements thoroughly and complete every task to the standards that apply, which removes a major worry for you.','image' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($img('us/standards-6f1a69.jpg')),'items' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($standards)]); ?>
+<?php $component->withAttributes(['id' => 'standardsAcc','title' => 'US Accounting Standards &amp; Compliance Expertise','text' => 'US compliance leaves little room for error, and mistakes can quickly become expensive, so accuracy here is essential. Our team & processes are tailored to meet US requirements thoroughly and complete every task to the standards that apply, which removes a major worry for you.','image' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($img('us/standards-6f1a69.jpg')),'items' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($standards)]); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal203059af38fc2bb29e6304e0ae6e910d)): ?>
@@ -212,14 +216,14 @@
 
 <?php if (isset($component)) { $__componentOriginal4291b6497587e3258ccb9a75891f4e8b = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal4291b6497587e3258ccb9a75891f4e8b = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.home.industry-pills','data' => ['title' => 'Industries We Support Across US','rows' => $industries]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.home.industry-pills','data' => ['title' => 'Industries We Support Across the United States','rows' => $industries]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('home.industry-pills'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['title' => 'Industries We Support Across US','rows' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($industries)]); ?>
+<?php $component->withAttributes(['title' => 'Industries We Support Across the United States','rows' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($industries)]); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal4291b6497587e3258ccb9a75891f4e8b)): ?>
@@ -296,7 +300,7 @@
 
 <?php if (isset($component)) { $__componentOriginaldb92281e4cf1dcbd8f6e408112e328ca = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginaldb92281e4cf1dcbd8f6e408112e328ca = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.home.region-map','data' => ['id' => 'usMap','title' => 'PCS Global Serves Clients Across the US','size' => [1241, 726],'map' => ['src' => $img('us/map-us.svg'), 'x' => 0, 'y' => 0, 'w' => 1241],'logo' => ['src' => $img('common/map-logo.svg'), 'x' => 390, 'y' => 134, 'w' => 248.21],'photos' => [
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.home.region-map','data' => ['id' => 'usMap','title' => 'PCS Global Serves Clients Across United States','size' => [1241, 726],'map' => ['src' => $img('us/map-us.svg'), 'x' => 0, 'y' => 0, 'w' => 1241],'logo' => ['src' => $img('common/map-logo.svg'), 'x' => 390, 'y' => 134, 'w' => 248.21],'photos' => [
         [$img('us/city-california.png'), 23, 311, 242],
         [$img('us/city-texas-e7cd96.png'), 422, 365, 190],
         [$img('us/city-florida.png'), 860, 461, 272],
@@ -309,7 +313,7 @@
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['id' => 'usMap','title' => 'PCS Global Serves Clients Across the US','size' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute([1241, 726]),'map' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(['src' => $img('us/map-us.svg'), 'x' => 0, 'y' => 0, 'w' => 1241]),'logo' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(['src' => $img('common/map-logo.svg'), 'x' => 390, 'y' => 134, 'w' => 248.21]),'photos' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute([
+<?php $component->withAttributes(['id' => 'usMap','title' => 'PCS Global Serves Clients Across United States','size' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute([1241, 726]),'map' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(['src' => $img('us/map-us.svg'), 'x' => 0, 'y' => 0, 'w' => 1241]),'logo' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(['src' => $img('common/map-logo.svg'), 'x' => 390, 'y' => 134, 'w' => 248.21]),'photos' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute([
         [$img('us/city-california.png'), 23, 311, 242],
         [$img('us/city-texas-e7cd96.png'), 422, 365, 190],
         [$img('us/city-florida.png'), 860, 461, 272],
@@ -371,14 +375,14 @@
 
 <?php if (isset($component)) { $__componentOriginal48054dc71d2a171ab136376609eecf4d = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal48054dc71d2a171ab136376609eecf4d = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.home.clients-slider','data' => ['images' => $images,'title' => 'Trusted by US Businesses &amp; Professional Firms']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.home.clients-slider','data' => ['images' => $images,'title' => 'Trusted by US Businesses & CPA Firms']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('home.clients-slider'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['images' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($images),'title' => 'Trusted by US Businesses &amp; Professional Firms']); ?>
+<?php $component->withAttributes(['images' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($images),'title' => 'Trusted by US Businesses & CPA Firms']); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal48054dc71d2a171ab136376609eecf4d)): ?>

@@ -60,11 +60,11 @@
 
     $securityCards = [
         ['title' => 'Secure Data Handling', 'img' => $img('uk/security-1-5e658a.jpg'),
-         'text' => 'Your financial information requires rigorous protection at every stage. Your data is held and processed in secure systems, with access limited to the specialists working directly on your account. '],
+         'text' => 'Your financial information requires rigorous protection at every stage. Your data is held and processed in secure systems, with access limited to the specialists working directly on your account. Set procedures dictate exactly how information is managed, retained and removed for the duration of the engagement. At no point is information passed on or moved without strict controls, keeping it secure throughout.'],
         ['title' => 'Confidentiality & Privacy', 'img' => $img('uk/security-2-188afb.jpg'),
-         'text' => 'Confidentiality underpins everything we do. Firm confidentiality practices and signed non-disclosure agreements cover every engagement, safeguarding both your data and your clients\'. '],
+         'text' => 'Confidentiality underpins everything we do. Firm confidentiality practices and signed non-disclosure agreements cover every engagement, safeguarding both your data and your clients. Our role stays wholly private, and your information is never used beyond the engagement itself. That protects your standing and ensures your client relationships remain entirely yours.'],
         ['title' => 'Quality & Process Controls', 'img' => $img('uk/security-3-7ba02f.jpg'),
-         'text' => 'Rather than relying on chance, we design accuracy directly into our workflow. Each piece of work moves through a set procedure and a review stage before it reaches you, so any error is caught and addressed early. '],
+         'text' => 'Rather than relying on chance, we design accuracy directly into our workflow. Each piece of work moves through a set procedure and a review stage before it reaches you, so any error is caught and addressed early. This standard is maintained even during periods of high volume. You can therefore submit our work or hand it to clients knowing it has already passed a thorough check.'],
     ];
     foreach (config('home.security_extra') as $i => $card) {
         $securityCards[] = $card + ['img' => $securityCards[$i]['img']];
@@ -78,21 +78,21 @@
     // Figma me sirf pehle sawal ka answer tha (wo bhi Australia wala); answers page ke content se likhe gaye hain
     $faqs = [
         ['q' => 'Why do UK accounting firms outsource accounting work?',
-         'a' => 'Outsourcing gives UK firms qualified accounting support at a lower cost, adds capacity for busy periods, and frees your own team to focus on client relationships and growth.'],
+         'a' => 'To increase capacity, manage busy periods such as year-end and self-assessment season, and take on additional clients without recruiting. Outsourcing provides skilled support under the firms own brand, at a lower cost than hiring in-house.'],
         ['q' => 'What accounting functions can UK businesses outsource?',
-         'a' => 'Accounting, bookkeeping, payroll, tax preparation, VAT returns and reporting. You can outsource a single task or your complete accounting function.'],
+         'a' => 'Most functions, including bookkeeping, payroll, VAT, tax preparation, financial reporting, and accounts payable and receivable. You can hand over one function alone or your whole finance operation.'],
         ['q' => 'Can PCS Global support UK accounting firms?',
-         'a' => 'Yes. We work discreetly under your firm\'s brand, completing work to your standards and returning it ready for review, so you can take on more clients without immediate recruitment.'],
+         'a' => 'Yes. We act as an extension of your practice, managing client bookkeeping, accounts, tax, VAT, payroll and back-office work under your brand and to your standards.'],
         ['q' => 'Can I outsource bookkeeping for my UK business?',
-         'a' => 'Yes. We record and reconcile your transactions on an ongoing basis within your existing software, so your books stay current and accurate throughout the year.'],
+         'a' => 'Yes. We keep your books accurate and up to date, recording and reconciling every transaction within the software you already use.'],
         ['q' => 'Can PCS Global work with our existing accounting software?',
-         'a' => 'Yes. We work directly in the accounting software, file-sharing tools and reporting formats you already use, so your team adopts nothing new.'],
+         'a' => 'Yes. We operate from within the platforms you already use, such as Xero, QuickBooks and Sage, meaning there is no need to change your current systems.'],
         ['q' => 'How does PCS Global protect financial data?',
-         'a' => 'Your data is held and processed in secure systems, access is limited to the specialists working on your account, and every engagement is covered by confidentiality practices and signed non-disclosure agreements.'],
+         'a' => 'We get to work on your data in our secure environment, with access levels controlled, confidentiality agreements in place and complying with recognised security standards.'],
         ['q' => 'Can I scale my outsourced accounting team?',
-         'a' => 'Yes. Our support is scalable, so it can grow with your workload, from busy periods to long-term growth, without the overheads of in-house hiring.'],
+         'a' => 'Yes. Your team can expand as workloads increase and reduce as they ease, so your support consistently matches your requirements.'],
         ['q' => 'How does PCS Global work with UK clients?',
-         'a' => 'We start by understanding your requirements, build a team around your work, and then integrate with your existing workflow, software and reporting formats, with secure access and agreed ways of communicating.'],
+         'a' => 'The process is straightforward: we assess what you need, assign a dedicated team, work within your existing systems, manage the day-to-day, and adjust the level of support as your requirements change.'],
     ];
 @endphp
 
@@ -153,7 +153,7 @@
 
 <x-home.region-map
     id="ukMap"
-    title="PCS Global Serves Clients Across UK"
+    title="PCS Global Serves Clients Across the United Kingdom"
     :size="[1189.58, 955.61]"
     :map="['src' => $img('uk/map-uk.svg'), 'x' => 0, 'y' => 0, 'w' => 1189.58]"
     :logo="['src' => $img('common/map-logo.svg'), 'x' => 470.79, 'y' => 126, 'w' => 248.21]"
@@ -176,7 +176,8 @@
 
 <x-home.team-slider title="Meet the PCS Global UK Team" :members="$team" :experts="$ourexpert" />
 
-<x-home.clients-slider :images="$images" title="Trusted by UK Businesses &amp; Professional Firms" />
+<x-home.clients-slider :images="$images" title="Trusted by UK Businesses & Accountancy Firms
+" />
 
 <x-home.testimonials title="What Our UK-Based Clients Say" :items="config('home.testimonials')" />
 
