@@ -52,7 +52,8 @@ class ServiceController extends Controller
             'service'    => 'nullable|string|max:150',
         ]);
 
-        // Consultation form ke extra fields (company / city / service) message me jode jaate hain
+        // Google Sheet ke liye: company / city / service message me jode jaate hain
+        // (DB me ab ye alag columns me save hote hain)
         $details = collect(['Company' => $request->company, 'City' => $request->city, 'Service' => $request->service])
             ->filter()->map(fn ($v, $k) => "$k: $v")->implode(' | ');
         $message = trim($details . ($details && $request->message ? "\n" : '') . $request->message);
@@ -65,8 +66,13 @@ class ServiceController extends Controller
             'country'  => $request->country,
             'phone'    => $phone,
             'email'    => $request->email,
-            'message'  => $message,
+            'company'  => $request->company,
+            'city'     => $request->city,
+            'service'  => $request->service,
+            'message'  => $request->message,
+            'page_url' => url()->previous(),
         ]);
+
         $sheetData = [
             'form_type' => 'Request Form',
             'name'      => $request->fullname ?? '',
