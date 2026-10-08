@@ -50,8 +50,8 @@
                             <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.51 1l3.64.13c.77.03 1.45.51 1.74 1.24l1.08 2.66c.25.62.18 1.33-.18 1.88L7.41 9.04c.82 1.17 3.04 3.92 5.39 5.52l1.75-1.08c.45-.27.98-.36 1.48-.23l3.49.89c.93.24 1.55 1.13 1.48 2.1l-.22 2.99c-.08 1.05-.95 1.87-1.96 1.75C5.39 19.43-2.48 1 2.51 1Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </span>
                         <div>
-                            <p class="rq_head_title">Request A Call</p>
-                            <p class="rq_head_sub">Fields marked <span>*</span> are required</p>
+                            <p class="rq_head_title">Connect With Our Experts Today</p>
+                            <p class="rq_head_sub">Tell us about your requirements and our team will contact you shortly.</p>
                         </div>
                     </div>
 

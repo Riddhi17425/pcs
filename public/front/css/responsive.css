@@ -115,17 +115,17 @@
     height: 48px;
 }
 
-.industries_card img {
+/* .industries_card img {
     width: 24px;
     height: 24px;
-}
+} */
 
 .industries_bot {
     padding: 1px 0;
 }
 
 .industries_card p {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .mt-100 {
@@ -145,6 +145,12 @@
 }
 
 @media (max-width:1600px) {
+
+  .client_slider .slick-slide
+ {
+    margin: 0 10px;
+}
+
     body {
         font-size: 16px;
         line-height: 24px;
@@ -173,7 +179,6 @@
     .com_btn1,
     .com_btn2 {
         padding: 10px 25px;
-        font-size: 16px;
     }
 
     .logo img {
@@ -312,14 +317,14 @@
         height: 44px;
     }
 
-    .industries_card img {
+    /* .industries_card img {
         width: 22px;
         height: 22px;
-    }
+    } */
 
-    .industries_card p {
+    /* .industries_card p {
         font-size: 16px;
-    }
+    } */
 
     .experts_card_bt {
         padding: 15px 20px;
@@ -683,14 +688,14 @@
         height: 40px;
     }
 
-    .industries_card img {
+    /* .industries_card img {
         width: 20px;
         height: 20px;
-    }
+    } */
 
-    .industries_card p {
+    /* .industries_card p {
         font-size: 14px;
-    }
+    } */
 
     .com_inner_banner h2 {
         font-size: 32px;
@@ -1029,6 +1034,18 @@
 
 @media (max-width:768px) {
 
+
+
+    .trust_slide_body
+    {
+        padding: 0px;
+    }
+
+    .maps_gif img
+    {
+        max-width: 100%;
+    }
+
    .testimonial_card {
     padding: 24px;
 } 
@@ -1063,9 +1080,9 @@ nav {
         gap: 30px;
     }
 
-    .cert_badge img {
+    /* .cert_badge img {
         height: 60px;
-    }
+    } */
 
     .process_card {
         width: 85vw;
@@ -1539,6 +1556,8 @@ nav {
     .foot_rt
     {
         padding:0;
+        border-bottom: 0px;
+        width: 100%;
     }
     .comp_bus_slider .slick-track
 {

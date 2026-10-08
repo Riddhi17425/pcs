@@ -1072,11 +1072,12 @@ nav {
     height: 52px;
     background: #eff6ff;
     border-radius: 8px;
+    padding: 30px;
 }
 
 .industries_card img {
-    width: 26px;
-    height: 26px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
 }
 

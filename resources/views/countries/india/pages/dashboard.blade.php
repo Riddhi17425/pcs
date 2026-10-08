@@ -259,14 +259,6 @@
                     </div>
                 </div>
                 <div class="trust_slide">
-                    <div class="trust_slide_img trust_slide_img_certificate">
-                        <img src="{{ asset('public/front/images/certificate.png') }}" loading="lazy" alt="Our Certifications">
-                    </div>
-                    <div class="trust_slide_body">
-                        <h3>Our Certifications</h3>
-                    </div>
-                </div>
-                <div class="trust_slide">
                     <div class="trust_slide_img">
                         <img src="{{ asset('public/front/images/trust_bg3.png') }}" loading="lazy" alt="Available 24×7">
                     </div>
