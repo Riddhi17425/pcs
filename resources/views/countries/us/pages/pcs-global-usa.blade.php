@@ -1,4 +1,4 @@
-@include('layouts.frontheaderus')
+@include('countries.us.layouts.header')
 <section class="com_hero" style="background-image: url('{{ asset('public/front/images/data-security-hero-bg.jpg') }}');">
     <div class="container">
         <div class="com_hero_child header_flags">
@@ -729,4 +729,4 @@
 </section>
 
 
-@include('layouts.frontfooterus')
+@include('countries.us.layouts.footer')

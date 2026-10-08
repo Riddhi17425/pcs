@@ -1,4 +1,4 @@
-@include('countries.india.layouts.frontheader')
+@include('countries.india.layouts.header')
 
 
 <link rel="stylesheet" href="{{asset('public/front/css/whitelabel-accounting-service.css')}}">
@@ -807,7 +807,7 @@
 </section>
 
 
-@include('components.industry-specific')
+@include('components.india.industry-specific')
 
 <section class="our_experts mt-100 ">
    <div class="container">
@@ -1690,4 +1690,4 @@ document.addEventListener('DOMContentLoaded', function () {
 @endif
 
 
-@include('countries.india.layouts.frontfooter')
+@include('countries.india.layouts.footer')

@@ -1,4 +1,4 @@
-@include('countries.uk.layouts.frontheader-uk',['og_image' => asset('public/front/images/hero_img.png')])
+@include('countries.uk.layouts.header',['og_image' => asset('public/front/images/hero_img.png')])
 <section class="com_hero" style="background-image: url('{{ asset('public/front/images/about-hero-bg.jpg') }}');">
     <div class="container">
         <div class="com_hero_child">
@@ -358,4 +358,4 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
-@include('countries.uk.layouts.frontfooter-uk')
+@include('countries.uk.layouts.footer')

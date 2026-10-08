@@ -26,7 +26,7 @@
     <meta name="robots" content="noindex, follow">
 @endpush
 
-@include($isAu ? 'countries.australia.layouts.frontheader-au' : 'countries.india.layouts.frontheader', $meta)
+@include($isAu ? 'countries.australia.layouts.header' : 'countries.india.layouts.header', $meta)
 
 <section class="error_page">
     <div class="container">
@@ -53,4 +53,4 @@
     </div>
 </section>
 
-@include($isAu ? 'countries.australia.layouts.frontfooter-au' : 'countries.india.layouts.frontfooter')
+@include($isAu ? 'countries.australia.layouts.footer' : 'countries.india.layouts.footer')

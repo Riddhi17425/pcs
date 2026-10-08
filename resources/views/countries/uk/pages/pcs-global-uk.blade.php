@@ -1,4 +1,4 @@
-@include('countries.uk.layouts.frontheader-uk')
+@include('countries.uk.layouts.header')
 
 
 
@@ -605,4 +605,4 @@
     </div>
 </section>
 
-@include('countries.uk.layouts.frontfooter-uk')
+@include('countries.uk.layouts.footer')

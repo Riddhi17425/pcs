@@ -1,4 +1,4 @@
-@include('layouts.frontheaderus')
+@include('countries.us.layouts.header')
 
 <section class="com_hero" style="background-image: url('{{asset('public/front/images/data-security-hero-bg.jpg') }}');">
     <div class="container">
@@ -835,4 +835,4 @@ if (!sessionStorage.getItem("usa_redirect_done")) {
 }
 </script>
 
-@include('layouts.frontfooterus')
+@include('countries.us.layouts.footer')

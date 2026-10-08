@@ -1,4 +1,4 @@
-@include('countries.india.layouts.frontheader', [
+@include('countries.india.layouts.header', [
     'og_image' => asset('public/front/images/data-security1.webp')
 ])
 
@@ -491,4 +491,4 @@ PCS Global holds an internationally obedient security structure, aligning with m
 }
 </script>
 @endverbatim
-@include('countries.india.layouts.frontfooter')
+@include('countries.india.layouts.footer')

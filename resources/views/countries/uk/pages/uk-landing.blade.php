@@ -1,5 +1,5 @@
 
-@include('countries.uk.layouts.frontheader-uk',['og_image' => asset('public/front/images/hero_img.png')])
+@include('countries.uk.layouts.header',['og_image' => asset('public/front/images/hero_img.png')])
 
 
 
@@ -606,4 +606,4 @@
     </div>
 </section>
 
-@include('countries.uk.layouts.frontfooter-uk')
+@include('countries.uk.layouts.footer')

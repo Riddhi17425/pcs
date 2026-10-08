@@ -1,5 +1,5 @@
 /* Header ka overlay variant: hero ke upar transparent, white text.
-   Use: @include('...frontheader-xx', ['header_overlay' => true]) */
+   Use: @include('countries.<country>.layouts.header', ['header_overlay' => true]) */
 
 header.header_overlay {
     position: absolute;

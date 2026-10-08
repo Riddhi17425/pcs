@@ -1,4 +1,4 @@
-@include('countries.india.layouts.frontheader', [
+@include('countries.india.layouts.header', [
     'og_image' => asset('public/front/images/why-payroll-outsourcing.png')
 ])
 <section class="com_hero" style="background-image: url(' {{ asset('public/front/images/data-security-hero-bg.jpg') }}');">
@@ -319,7 +319,7 @@
 </section>
 <!-- Industries -->
 
-@include('components.payroll-outsourcing-Industries')
+@include('components.india.payroll-outsourcing-industries')
 <section class="ser_Out mt-100">
     <div class="container">
         <div class="row gy-4 justify-content-between align-items-center">
@@ -577,4 +577,4 @@
 }
 </script>
 @endverbatim
-@include('countries.india.layouts.frontfooter')
+@include('countries.india.layouts.footer')

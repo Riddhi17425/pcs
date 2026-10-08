@@ -1,6 +1,6 @@
 /* Common home page sections (sab countries me use hote hain).
-   Components: resources/views/components/home/ (split-accordion, industry-pills, overlay-cards, cta-dark)
-   aur components/australia/region-map. Baaki sections ki CSS style.css me pehle se hai. */
+   Components: resources/views/components/sections/ (split-accordion, industry-pills, overlay-cards, cta-dark,
+   region-map, contact-form). Baaki sections ki CSS style.css + responsive.css me hai. */
 
 /* ---------- split accordion (image + accordion list) ---------- */
 .split_acc {

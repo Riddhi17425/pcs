@@ -1,4 +1,4 @@
-@include('countries.india.layouts.frontheader')
+@include('countries.india.layouts.header')
 <section class="com_hero" style="background-image: url(' {{ asset('public/front/images/data-security-hero-bg.jpg') }}');">
     <div class="container">
         <div class="com_hero_child">
@@ -310,7 +310,7 @@
 </section>
 <!-- Industries -->
 
-@include('components.payroll-outsourcing-Industries')
+@include('components.india.payroll-outsourcing-industries')
 <section class="ser_Out mt-100">
     <div class="container">
         <div class="row gy-4 justify-content-between align-items-center">
@@ -562,4 +562,4 @@
 </section>
 
 
-@include('countries.india.layouts.frontfooter')
+@include('countries.india.layouts.footer')

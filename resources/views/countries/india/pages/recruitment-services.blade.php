@@ -1,4 +1,4 @@
-@include('countries.india.layouts.frontheader', [
+@include('countries.india.layouts.header', [
     'og_image' => asset('public/front/images/recruitment-services2.png')
 ])
 <section class="com_hero" style="background-image: url(' {{ asset('public/front/images/data-security-hero-bg.jpg') }}');">
@@ -294,4 +294,4 @@ These options empower businesses to scale efficiently while securing the right t
 </section>
 
 
-@include('countries.india.layouts.frontfooter')
+@include('countries.india.layouts.footer')

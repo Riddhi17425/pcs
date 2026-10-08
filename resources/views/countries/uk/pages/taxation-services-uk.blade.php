@@ -1,4 +1,4 @@
-@include('countries.uk.layouts.frontheader-uk')
+@include('countries.uk.layouts.header')
 
 <section class="com_hero" style="background-image: url('{{asset('public/front/images/data-security-hero-bg.jpg') }}');">
     <div class="container">
@@ -700,4 +700,4 @@ Can taxation services in the UK assist with HMRC compliance?
 
 
 
-@include('countries.uk.layouts.frontfooter-uk')
+@include('countries.uk.layouts.footer')

@@ -1,4 +1,4 @@
-@include('countries.india.layouts.frontheader', [
+@include('countries.india.layouts.header', [
     'og_image' => asset('public/front/images/hero_img.png')
 ])
 
@@ -314,7 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- Industries -->
 
 <!-- global_exp -->
-@include('components.Industries-card')
+@include('components.india.industries-card')
 
 {{--
 <section class="mt-100" >
@@ -954,4 +954,4 @@ document.addEventListener("DOMContentLoaded", () => {
 </section>
 
 
-@include('countries.india.layouts.frontfooter')
+@include('countries.india.layouts.footer')

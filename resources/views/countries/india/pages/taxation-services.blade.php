@@ -1,4 +1,4 @@
-@include('countries.india.layouts.frontheader', [
+@include('countries.india.layouts.header', [
     'og_image' => asset('public/front/images/taxation_services.png')
 ])
 
@@ -457,4 +457,4 @@
             </div>
         </div>
     </section>
-@include('countries.india.layouts.frontfooter')
+@include('countries.india.layouts.footer')

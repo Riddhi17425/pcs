@@ -1,4 +1,4 @@
-@include('countries.india.layouts.frontheader')
+@include('countries.india.layouts.header')
 
 <section class="privacy-policy py-5">
   <div class="container">
@@ -95,4 +95,4 @@
 .privacy-policy ul { padding-left: 1.2rem; }
 </style>
 
-@include('countries.india.layouts.frontfooter')
+@include('countries.india.layouts.footer')

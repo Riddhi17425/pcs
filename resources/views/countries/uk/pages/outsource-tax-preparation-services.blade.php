@@ -1,4 +1,4 @@
-@include('countries.uk.layouts.frontheader-uk', [
+@include('countries.uk.layouts.header', [
     'og_image' => asset('public/front/images/hero_img.png')
 ])
 
@@ -722,6 +722,6 @@ if (!sessionStorage.getItem("redirect_done")) {
 </script>
 
 
-@include('countries.uk.layouts.frontfooter-uk')
+@include('countries.uk.layouts.footer')
 
 
