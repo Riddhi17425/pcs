@@ -75,17 +75,17 @@ return function (array $db) {
 
     $securityCards = [
         ['title' => 'Secure Data Handling', 'img' => $img('us/security-1.jpg'),
-         'text' => 'Your financial data is protected at every stage of the work. We keep it in secure systems and limit access to the specialists assigned to your account. Clear procedures cover how information is stored, used, and removed over the course of the engagement. Nothing is moved or shared without proper safeguards in place.'],
+         'text' => 'Your financial data is protected at every stage of the work. We keep it in secure systems and limit access to specialists assigned to your account. Clear procedures govern how information is stored, used, and removed throughout the engagement.'],
         ['title' => 'Confidentiality & Privacy', 'img' => $img('us/security-2.jpg'),
-         'text' => 'Everything we handle for you stays confidential. We wrap every engagement in signed non-disclosure agreements (NDA) and strict confidentiality rules, covering both your records and those of the clients you serve. We stay out of sight throughout, and nothing you share is ever used outside the work we do for you. Your reputation and your client relationships stay entirely protected and confidential.'],
+         'text' => 'Everything we handle for you stays confidential. Every engagement is covered by signed non-disclosure agreements (NDA) and strict confidentiality rules. Your records and those of your clients remain protected, while your reputation and client relationships stay entirely confidential.'],
         ['title' => 'Quality & Process Controls', 'img' => $img('us/security-3.jpg'),
-         'text' => 'QA forms the backbone of our processes. This ensures we prevent errors rather than relying on luck. Each job passes through a stringent QA review stage before it comes back to you. This established quality standard holds steady even when volumes rise. Our quality process is ISO 9001 certified.'],
+         'text' => 'QA forms the backbone of our processes, helping us prevent errors rather than relying on luck. Every job passes through a stringent QA review before it comes back to you. This established quality standard remains consistent even when volumes rise. Our quality process is ISO 9001 certified.'],
         ['title' => 'Certified Security Standards', 'img' => $img('us/security-1.jpg'),
-         'text' => 'Security standards are ISO 27001 certified, each carrying firm rules for how data must be protected and managed. It serves as third-party evidence that your data receives professional-grade handling. We understand our US clients\' expectations & requirements with respect to data security, and we adhere to them.'],
+         'text' => 'Our security standards are ISO 27001 certified, with firm rules for how data must be protected and managed. This provides third-party evidence that your data receives professional-grade handling. We understand our US clients\' expectations and requirements for data security and adhere to them.'],
         ['title' => 'Secure Technology & Communication', 'img' => $img('us/security-2.jpg'),
-         'text' => 'A great deal of data risk comes from everyday tools such as unsecured email. We close that gap using protected, monitored systems and encryption on every file and message we exchange. Confidential details are never sent by unsafe channels, and entry to our tools is kept under tight control. From a quick question to complete financial records, every exchange stays protected.'],
+         'text' => 'We protect data exchanged through everyday tools such as email using secure, monitored systems and encryption. Confidential details are never sent through unsafe channels, and access to our tools remains tightly controlled. From quick questions to complete financial records, every exchange stays protected.'],
         ['title' => 'Business Continuity & Data Protection', 'img' => $img('us/security-3.jpg'),
-         'text' => 'We maintain data protection measures and business continuity plans so your work continues without interruption. Backups, redundancy, and defined recovery procedures keep your information safe and your service running. You can depend on consistent delivery, whatever the circumstances.'],
+         'text' => 'We maintain data protection measures and business continuity plans so your work continues without interruption. Backups, redundancy, and defined recovery procedures help keep your information safe and services running. You can depend on consistent delivery, whatever the circumstances.'],
     ];
 
     // core team (Malay, Prithvi, Umesh) config/home.php se aati hai; yahan sirf US ka member
@@ -174,7 +174,7 @@ return function (array $db) {
 
         ['type' => 'overlay-cards', 'props' => [
             'title' => 'Your Data Security. Our Responsibility.',
-            'text' => 'Trusting an outside team with your finances is not a step to take lightly, and the way we work reflects that. Security and confidentiality are core to how we operate, not features added on afterward, which is why US businesses and firms trust us with sensitive information.',
+            'text' => 'Trusting an outside team with your finances is not a step to take lightly. Security and confidentiality are core to how we operate, not features added afterward. This is why US businesses and firms trust us with sensitive financial information.',
             'icon' => $img('common/security-icon.svg'),
             'cards' => $securityCards,
         ]],
@@ -201,7 +201,6 @@ return function (array $db) {
             'title' => 'Need More Capacity Without Increasing Headcount?',
             'buttonText' => 'Book a Free Consultation',
             'bg' => $img('common/cta-bg.png'),
-            'icon' => $img('common/icon-phone.svg'),
             'phone' => '+13478018715',
         ]],
 

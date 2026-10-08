@@ -308,7 +308,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </button>
             <ul class="dropdown-menu country_select_menu" aria-labelledby="countrySelectBtn">
               <li>
-                <a class="dropdown-item" href="{{ url('australia') }}">
+                <a class="dropdown-item" href="{{ url('aus') }}">
                   <img src="{{asset('public/front/images/contry-icon/australia-icon.png')}}" alt="Australia">
                   <span>Australia</span>
                 </a>

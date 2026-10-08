@@ -276,7 +276,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="{{ url('australia') }}">
+                <a class="dropdown-item" href="{{ url('aus') }}">
                   <img src="{{asset('public/front/images/contry-icon/australia-icon.png')}}" alt="Australia">
                   <span>Australia</span>
                 </a>

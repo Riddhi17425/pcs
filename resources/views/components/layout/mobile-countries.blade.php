@@ -5,7 +5,7 @@
   $flagDir = asset('public/front/images/contry-icon');
   $mobileCountries = [
     ['Global', url('/'), null],
-    ['Australia', url('australia'), "$flagDir/australia-icon.png"],
+    ['Australia', url('aus'), "$flagDir/australia-icon.png"],
     ['UK', url('uk'), "$flagDir/uk-icon.png"],
     ['US', url('us'), "$flagDir/us-icon.png"],
   ];

@@ -1342,85 +1342,134 @@ nav {
     margin-bottom: 0;
 }
 
-/* How Does PCS Global Work With Australia Clients */
+/* How does PCS Global work (process steps): sab steps ek saath grid me, har card me icon + "Step 01" */
 
 .process_steps {
     display: flex;
-    align-self: stretch;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
-    overflow-x: auto;
-    cursor: grab;
-    user-select: none;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    -webkit-mask-image: linear-gradient(
-        to right,
-        rgb(0, 0, 0) calc(100% - 40px),
-        transparent 100%
-    );
-    mask-image: linear-gradient(
-        to right,
-        rgb(0, 0, 0) calc(100% - 40px),
-        transparent 100%
-    );
-}
-
-.process_steps::-webkit-scrollbar {
-    display: none;
-}
-
-.process_steps.dragging {
-    cursor: grabbing;
-}
-
-.process_steps.dragging .process_card {
-    pointer-events: none;
 }
 
 .process_card {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 32px;
-    padding: 24px;
+    gap: 24px;
+    flex: 0 0 calc((100% - 48px) / 3);
+    padding: 32px 28px;
+    background: var(--white);
     border: 1px solid #e2e2d5;
-    flex: 0 0 auto;
-    width: 568px;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.process_num {
+/* upar patli line, hover par poori khulti hai */
+.process_card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #c31c26, var(--blue));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.process_card:hover {
+    transform: translateY(-6px);
+    border-color: transparent;
+    box-shadow: 0 18px 40px rgba(24, 38, 83, 0.12);
+}
+
+.process_card:hover::before {
+    transform: scaleX(1);
+}
+
+.process_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.process_icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    border: 2px solid #c31c26;
-    border-radius: 100px;
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #2a3d7a, var(--blue));
+    color: var(--white);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.process_card:hover .process_icon {
+    transform: rotate(-6deg) scale(1.05);
+}
+
+.process_step_label {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: #c31c26;
-    font-size: 24px;
-    line-height: 24px;
 }
 
 .process_body {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
 }
 
 .process_body h3 {
     font-family: "Public Sans", sans-serif;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 1.3;
     color: var(--blue);
     margin: 0;
 }
 
 .process_body p {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 26px;
     color: var(--black6);
     margin: 0;
 }
 
+@media (max-width: 1199px) {
+    .process_card {
+        flex-basis: calc((100% - 24px) / 2);
+    }
+}
+
+@media (max-width: 767px) {
+    .process_steps {
+        gap: 16px;
+    }
+
+    .process_card {
+        flex-basis: 100%;
+        padding: 24px 20px;
+        gap: 20px;
+    }
+
+    .process_icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+    }
+
+    .process_body h3 {
+        font-size: 20px;
+    }
+}
 /* Certifications / Tools & Technology tabs */
 
 .cert_tools_tabs {

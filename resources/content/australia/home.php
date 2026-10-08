@@ -10,7 +10,7 @@ return function (array $db) {
     ['images' => $images, 'blogs' => $blogs, 'ourexpert' => $ourexpert] = $db;
 
     $img = fn ($file) => asset('public/front/images/' . $file);
-    $au = fn ($path) => url('australia/' . $path);
+    $au = fn ($path) => url('aus/' . $path);
 
     $serviceCards = [
         ['title' => 'Accounting Outsourcing', 'img' => $img('figma-precision/accounting-outsourcing.png'), 'url' => $au('bookkeeping-accounting-services'),
@@ -21,7 +21,7 @@ return function (array $db) {
          'text' => 'Tax obligations place real demands on any business, particularly as deadlines approach. We prepare and review your returns in line with Australian Tax compliances, verify the details, and lodge them on time, reducing errors and missed deadlines. '],
         ['title' => 'BAS/IAS Return Services', 'img' => $img('figma-precision/bas-ias-return-services.png'), 'url' => $au('taxation-services'),
          'text' => 'Installment activity statements are a recurring obligation that leaves little room for error. We manage your Business and Instalment Activity Statements, calculating GST and PAYG, reconciling records, and lodging accurate statements on time without the recurring pressure. '],
-        ['title' => 'Payroll Outsourcing', 'img' => $img('figma-precision/payroll-outsourcing.png'), 'url' => url('australia') . '#consultation',
+        ['title' => 'Payroll Outsourcing', 'img' => $img('figma-precision/payroll-outsourcing.png'), 'url' => url('aus') . '#consultation',
          'text' => 'Payroll is among the most sensitive functions in any business, and accuracy is not optional. We manage pay runs, PAYG, superannuation, leave and Single Touch Payroll reporting to the ATO, ensuring employees are paid correctly and your business remains compliant.'],
         ['title' => 'Strata Management Services', 'img' => $img('figma-precision/strata-management-services-ae35ad.png'), 'url' => $au('strata-management'),
          'text' => 'Strata finances are detailed and heavily governed by deadlines. Our specialists manage the financial side of your schemes and portfolios, from budgets and levies through to invoicing and owner reporting, keeping records accurate and reporting clear. '],
@@ -130,7 +130,7 @@ return function (array $db) {
             'text' => 'PCS Global is an established services company supporting Australian businesses and accounting firms with reliable accounting, bookkeeping, tax, payroll, and financial support. Our dedicated team works as an extension of your team, helping you reduce costs, maintain compliance, and scale with confidence.',
             'features' => ['Australian Accounting Expertise', 'Dedicated Professional Teams', 'Scalable Outsourcing Solutions', 'Secure & Confidential Delivery'],
             'primaryText' => 'Book a Free Consultation',
-            'secondaryText' => 'Talk to an Expert',
+            'secondaryText' => 'Talk to Our Expert',
             'secondaryUrl' => 'tel:+61399980494',
             'bg' => $img('common/hero-bg.png'),
             'person' => $img('australia/hero-person.png'),
@@ -210,7 +210,6 @@ return function (array $db) {
             'title' => 'Ready to Streamline Your Accounting work with PCS Global?',
             'buttonText' => 'Book a Free Consultation',
             'bg' => $img('common/cta-bg.png'),
-            'icon' => $img('common/icon-phone.svg'),
             'phone' => '+61399980494',
         ]],
 

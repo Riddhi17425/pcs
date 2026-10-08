@@ -972,10 +972,7 @@
     }
     .service-item-lists{
         grid-template-columns: repeat(2, 1fr);
-    }
-    .process_card {
-        width: 460px;
-    }
+    }
        .countries-box{
             flex-wrap: wrap;
             gap:20px;
@@ -1059,10 +1056,7 @@ nav {
     justify-content: space-between;
     padding-top: 0 !important;
 }
-
-    .process_steps {
-    gap: 20px;
-}
+
 
     .precision_grid {
         grid-template-columns: 1fr;
@@ -1083,10 +1077,7 @@ nav {
     /* .cert_badge img {
         height: 60px;
     } */
-
-    .process_card {
-        width: 85vw;
-    }
+
 
     .trust_slider_sec {
         padding: 50px 0;

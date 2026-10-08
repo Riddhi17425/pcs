@@ -107,7 +107,7 @@ return function (array $db) {
         ['type' => 'hero-dark', 'props' => [
             'title' => 'Accounting Outsourcing Company for',
             'mark' => 'UK Businesses & Accounting Firms',
-            'text' => 'PCS Global is a trusted accounting outsourcing company that takes on this work for businesses and accounting firms across the UK, spanning accounting, bookkeeping, payroll, tax and VAT. As an established accounting outsourcing company in the UK, we bring together experienced professionals, efficient processes and scalable support suited to your needs. Working as an extension of your team, we help you reduce costs, maintain compliance and grow with confidence.',
+            'text' => 'PCS Global is a trusted accounting outsourcing company supporting businesses and accounting firms across the UK with accounting, bookkeeping, payroll, tax and VAT services. Our experienced professionals, efficient processes and scalable support help you reduce costs, maintain compliance and grow with confidence.',
             'features' => ['UK-focused accounting support', 'Experienced accounting professionals', 'UK GAAP & IFRS expertise', 'HMRC-compliant processes'],
             'primaryText' => 'Book a Free Consultation',
             'secondaryText' => 'Talk to Our Expert',
@@ -193,7 +193,6 @@ return function (array $db) {
             'title' => 'Ready to Strengthen Your Accounting Support?',
             'buttonText' => 'Book a Free Consultation',
             'bg' => $img('common/cta-bg.png'),
-            'icon' => $img('common/icon-phone.svg'),
             'phone' => '+441134034334',
         ]],
 

@@ -1,6 +1,6 @@
 # PCS website: file structure guide
 
-4 country sites ek hi Laravel project me hain: **India** (main, `/`), **Australia** (`/australia`), **US** (`/us`), **UK** (`/uk`).
+4 country sites ek hi Laravel project me hain: **India** (main, `/`), **Australia** (`/aus`), **US** (`/us`), **UK** (`/uk`).
 
 ---
 
@@ -9,13 +9,13 @@
 | Page | URL | Route file | View / content |
 |---|---|---|---|
 | India home | `/` | `routes/countries/india.php` | `resources/views/countries/india/pages/dashboard.blade.php` |
-| Australia / US / UK home | `/australia`, `/us`, `/uk` | `routes/countries/<country>.php` | **Content:** `resources/content/<country>/home.php` · **View:** `resources/views/shared/country-home.blade.php` |
-| About (sab countries) | `/about`, `/australia/about`, `/us/about` | country route file | `resources/views/shared/about.blade.php` |
+| Australia / US / UK home | `/aus`, `/us`, `/uk` | `routes/countries/<country>.php` | **Content:** `resources/content/<country>/home.php` · **View:** `resources/views/shared/country-home.blade.php` |
+| About (sab countries) | `/about`, `/aus/about`, `/us/about` | country route file | `resources/views/shared/about.blade.php` |
 | Contact (sab countries) | `/contact-us`, `/<country>/contact-us` | country route file | `resources/views/shared/contact.blade.php` |
-| Strata management | `/strata-management`, `/australia/strata-management` | country route file | `resources/views/shared/strata-management.blade.php` |
+| Strata management | `/strata-management`, `/aus/strata-management` | country route file | `resources/views/shared/strata-management.blade.php` |
 | Blogs + blog detail | `/blog`, `/blogs/{url}` | `routes/countries/india.php` | `resources/views/shared/blogs.blade.php`, `blogs-details.blade.php` |
 | 404 | koi bhi galat URL | (Laravel khud) | `resources/views/errors/404.blade.php` |
-| Baaki country pages | `/australia/taxation-services`, `/uk/about` ... | country route file | `resources/views/countries/<country>/pages/` |
+| Baaki country pages | `/aus/taxation-services`, `/uk/about` ... | country route file | `resources/views/countries/<country>/pages/` |
 
 > `shared/` pages ek hi file hain, header/footer country ke hisab se lagta hai (`$site = config('sites.<country>')`).
 

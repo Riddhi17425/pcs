@@ -4,8 +4,6 @@
 <!-- Request A Call modal (sab countries). Style: public/front/css/common/request-modal.css
      JS hooks same hain: #requestForm (.validated-form), #requestPhone, #requestFullPhone, #requestCountrySelect -->
 @php
-    use App\Models\Country;
-    $countries = Country::all();
     $rqBadges = asset('public/front/images/figma-footer-badges');
 @endphp
 <div class="modal fade rq_modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -50,8 +48,8 @@
                             <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.51 1l3.64.13c.77.03 1.45.51 1.74 1.24l1.08 2.66c.25.62.18 1.33-.18 1.88L7.41 9.04c.82 1.17 3.04 3.92 5.39 5.52l1.75-1.08c.45-.27.98-.36 1.48-.23l3.49.89c.93.24 1.55 1.13 1.48 2.1l-.22 2.99c-.08 1.05-.95 1.87-1.96 1.75C5.39 19.43-2.48 1 2.51 1Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </span>
                         <div>
-                            <p class="rq_head_title">Request A Call</p>
-                            <p class="rq_head_sub">Fields marked <span>*</span> are required</p>
+                            <p class="rq_head_title">Connect With Our Experts Today</p>
+                            <p class="rq_head_sub">Tell us about your requirements and our team will contact you shortly.</p>
                         </div>
                     </div>
 
@@ -90,18 +88,8 @@
                                 <input type="hidden" name="full_phone" id="requestFullPhone">
                             </div>
 
-                            <div class="col-lg-12 rq_field">
-                                <label for="requestCountrySelect">Country <span>*</span></label>
-                                <div class="rq_input rq_input_select">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M3 12h18M12 3c2.5 2.5 3.75 5.5 3.75 9S14.5 18.5 12 21c-2.5-2.5-3.75-5.5-3.75-9S9.5 5.5 12 3Z" stroke="currentColor" stroke-width="1.5"/></svg>
-                                    <select name="country" id="requestCountrySelect">
-                                        <option value="" hidden>Select your country</option>
-                                        @foreach ($countries as $country)
-                                            <option value="{{ $country->name }}">{{ $country->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
+                            {{-- Country field form me nahi dikhta: phone number ke flag wali country yahan apne aap bharti hai --}}
+                            <input type="hidden" name="country" id="requestCountrySelect" value="India">
 
                             <div class="col-lg-12 rq_field">
                                 <label for="rqMessage">How can we help? <em>(optional)</em></label>
@@ -653,6 +641,12 @@ document.addEventListener('DOMContentLoaded', function () {
     let itiRequest = null;
     let countryDetected = false;
 
+    // hidden "country" = phone field me chuni hui country
+    function syncCountry() {
+        const name = itiRequest && itiRequest.getSelectedCountryData().name;
+        if (countrySelect && name) countrySelect.value = name.replace(/\s*\(.*\)\s*$/, '');
+    }
+
     requestModal.addEventListener('shown.bs.modal', function () {
         // Init intl-tel-input only once, the first time the modal opens
         if (!itiRequest) {
@@ -662,6 +656,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 preferredCountries: ["in", "ae", "us", "gb"],
                 utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js"
             });
+            phoneInput.addEventListener('countrychange', syncCountry);
+            syncCountry();
         }
 
         if (countryDetected) return;
@@ -671,18 +667,9 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(data => {
                 if (!data || data.success === false || !data.country) return;
 
-                if (countrySelect && !countrySelect.value) {
-                    const options = countrySelect.options;
-                    for (let i = 0; i < options.length; i++) {
-                        if (options[i].text.trim().toLowerCase() === data.country.trim().toLowerCase()) {
-                            countrySelect.value = options[i].value;
-                            break;
-                        }
-                    }
-                }
-
                 if (data.country_code && itiRequest) {
                     itiRequest.setCountry(data.country_code.toLowerCase());
+                    syncCountry();
                 }
 
                 countryDetected = true;

@@ -25,7 +25,7 @@
                 <div class="hero_btn">
                     {{-- AU / US / UK hero jaise do buttons (common/buttons.css) --}}
                     <a class="com_btn2" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal">Book a Free Consultation</a>
-                    <a class="com_btn_outline com_btn_outline_light" href="tel:+917968260121">Talk to an Expert
+                    <a class="com_btn_outline com_btn_outline_light" href="tel:+917968260121">Talk to Our Expert
                         <img src="{{ asset('public/front/images/common/icon-phone.svg') }}" width="20" height="20" alt=""></a>
                 </div>
 
@@ -75,78 +75,60 @@
         </div>
 
         <div class="precision_grid">
-            <a href="{{ route('pcs.global.bookkeeping') }}" class="precision_card">
+            <div class="precision_card">
                 <div class="precision_card_img">
                     <img src="{{ asset('public/front/images/figma-precision/accounting-outsourcing.png') }}" loading="lazy" alt="Accounting Outsourcing">
                 </div>
-                <span class="precision_card_arrow">
-                    <img src="{{ asset('public/front/images/figma-precision/precision-arrow.svg') }}" alt="">
-                </span>
                 <div class="precision_card_body">
                     <h3>Accounting Outsourcing</h3>
                     <p>Running and maintaining real-time, accurate accounts requires time and effort, which many teams cannot afford. We take care of all of this for you: reconciliations, ledgers, month-end closing, all fast and accurate so you know exactly where you stand at all times, at a fraction of the cost of having your own team do it.</p>
                 </div>
-            </a>
-            <a href="{{ route('pcs.global.bookkeeping') }}" class="precision_card">
+            </div>
+            <div class="precision_card">
                 <div class="precision_card_img">
                     <img src="{{ asset('public/front/images/figma-precision/bookkeeping-outsourcing-5d38e9.png') }}" loading="lazy" alt="Bookkeeping Outsourcing">
                 </div>
-                <span class="precision_card_arrow">
-                    <img src="{{ asset('public/front/images/figma-precision/precision-arrow.svg') }}" alt="">
-                </span>
                 <div class="precision_card_body">
                     <h3>Bookkeeping Outsourcing</h3>
                     <p>Sound financial decisions require updated and accurate records. We record and reconcile every transaction the moment it occurs - you never get caught out or have doubts about the figures. We work within the software you already use, so your systems remain unchanged. The result is precise, well-maintained books you can rely on throughout the year.</p>
                 </div>
-            </a>
-            <a href="{{ route('taxation.services') }}" class="precision_card">
+            </div>
+            <div class="precision_card">
                 <div class="precision_card_img">
                     <img src="{{ asset('public/front/images/figma-precision/tax-preparation-outsourcing.png') }}" loading="lazy" alt="Tax Preparation Outsourcing">
                 </div>
-                <span class="precision_card_arrow">
-                    <img src="{{ asset('public/front/images/figma-precision/precision-arrow.svg') }}" alt="">
-                </span>
                 <div class="precision_card_body">
                     <h3>Tax Preparation Outsourcing</h3>
                     <p>Tax obligations place real demands on any business, particularly as deadlines approach. We prepare and review your returns in line with Australian requirements, verify the details, and lodge them on time. Our specialists remain updated with the rules that apply to your business, reducing errors and preventing missed deadlines. You receive accurate, compliant returns without the pressure.</p>
                 </div>
-            </a>
-            <a href="{{ route('taxation.services') }}" class="precision_card">
+            </div>
+            <div class="precision_card">
                 <div class="precision_card_img">
                     <img src="{{ asset('public/front/images/figma-precision/bas-ias-return-services.png') }}" loading="lazy" alt="BAS/IAS Return Services">
                 </div>
-                <span class="precision_card_arrow">
-                    <img src="{{ asset('public/front/images/figma-precision/precision-arrow.svg') }}" alt="">
-                </span>
                 <div class="precision_card_body">
                     <h3>BAS/IAS Return Services</h3>
                     <p>Activity statements are a recurring obligation that leaves little room for error. We manage your Business and Instalment Activity Statements in full, calculating your GST and PAYG, reconciling them against your records, and lodging ahead of the deadline. Every statement is reviewed before submission. The result is accurate statements, lodged on time, without the recurring pressure on your team.</p>
                 </div>
-            </a>
-            <a href="{{ route('payroll-outsourcing-services') }}" class="precision_card">
+            </div>
+            <div class="precision_card">
                 <div class="precision_card_img">
                     <img src="{{ asset('public/front/images/figma-precision/payroll-outsourcing.png') }}" loading="lazy" alt="Payroll Outsourcing">
                 </div>
-                <span class="precision_card_arrow">
-                    <img src="{{ asset('public/front/images/figma-precision/precision-arrow.svg') }}" alt="">
-                </span>
                 <div class="precision_card_body">
                     <h3>Payroll Outsourcing</h3>
                     <p>Payroll is among the most sensitive functions in any business, and accuracy is not optional. We manage the entire process, including pay runs, PAYG, superannuation, leave and Single Touch Payroll reporting to the ATO. Each cycle is calculated carefully and processed on schedule. Your employees are paid correctly, and your business remains compliant, without the administrative burden falling on you.</p>
                 </div>
-            </a>
-            <a href="{{ route('strata.management') }}" class="precision_card">
+            </div>
+            <div class="precision_card">
                 <div class="precision_card_img">
                     <img src="{{ asset('public/front/images/figma-precision/strata-management-services-ae35ad.png') }}" loading="lazy" alt="Strata Management Services">
                 </div>
-                <span class="precision_card_arrow">
-                    <img src="{{ asset('public/front/images/figma-precision/precision-arrow.svg') }}" alt="">
-                </span>
                 <div class="precision_card_body">
                     <h3>Strata Management Services</h3>
                     <p>Strata finances are detailed and heavily governed by deadlines. Our specialists manage the financial side of your schemes and portfolios, from budgets and levies through to invoicing and owner reporting. Records are kept accurate, and reporting remains clear, so owners and committees always have a clear view of the finances.</p>
                 </div>
-            </a>
+            </div>
         </div>
     </div>
 </section>
@@ -431,38 +413,21 @@ document.addEventListener("DOMContentLoaded", () => {
 --}}
 
 <!-- How Does PCS Global Work With Australia Clients -->
-<section class="process_sec mt-100">
-    <div class="container">
-        <div class="com_sec_head_top">
-            <h2 class="mb-2 mb-xxl-4">How Does PCS Global Work With Australia Clients?</h2>
-            <p>Beginning a partnership with PCS Global is a clear and structured process, designed to be simple and low-risk for you. Outsourcing accounting work to India is often assumed to be complex, yet our structured onboarding makes it straightforward and secure. In five stages, you move from a first conversation to a fully embedded team working alongside your own.</p>
-        </div>
-
-        <div class="process_steps" id="processSteps">
-            <div class="process_card">
-                <div class="process_num">1</div>
-                <div class="process_body">
-                    <h3>Understand Your Requirements</h3>
-                    <p>Every engagement opens with a discussion. Our priority is to learn how your business runs, which areas are under most pressure, and the responsibilities you would prefer to pass on. With that understanding, we can pinpoint the work to take on and the best way to sit alongside your team.</p>
-                </div>
-            </div>
-            <div class="process_card">
-                <div class="process_num">2</div>
-                <div class="process_body">
-                    <h3>Build Your Team</h3>
-                    <p>The initial interview is usually a video call with a People & Culture colleague. We take the time for us to get to know each other and get a first impression. We will naturally answer your questions about us and the position you are applying for so you have a clear picture of your role with us.</p>
-                </div>
-            </div>
-            <div class="process_card">
-                <div class="process_num">3</div>
-                <div class="process_body">
-                    <h3>Integrate With Your Workflow</h3>
-                    <p>We then integrate with your established working methods. We work directly in the accounting software, file-sharing tools, and reporting formats already in place, so your team adopts nothing new. We arrange secure access and confirm how we will communicate and exchange work.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{{-- How does PCS Global work: common section (components/sections/process-steps), CSS style.css .process_* --}}
+@php
+    $processSteps = [
+        ['title' => 'Understand Your Requirements',
+         'text' => 'Every engagement opens with a discussion. Our priority is to learn how your business runs, which areas are under most pressure, and the responsibilities you would prefer to pass on. With that understanding, we can pinpoint the work to take on and the best way to sit alongside your team.'],
+        ['title' => 'Build Your Team',
+         'text' => 'The initial interview is usually a video call with a People & Culture colleague. We take the time for us to get to know each other and get a first impression. We will naturally answer your questions about us and the position you are applying for so you have a clear picture of your role with us.'],
+        ['title' => 'Integrate With Your Workflow',
+         'text' => 'We then integrate with your established working methods. We work directly in the accounting software, file-sharing tools, and reporting formats already in place, so your team adopts nothing new. We arrange secure access and confirm how we will communicate and exchange work.'],
+    ];
+@endphp
+<x-sections.process-steps
+    title="How Does PCS Global Work With Australia Clients?"
+    text="Beginning a partnership with PCS Global is a clear and structured process, designed to be simple and low-risk for you. Outsourcing accounting work to India is often assumed to be complex, yet our structured onboarding makes it straightforward and secure. In five stages, you move from a first conversation to a fully embedded team working alongside your own."
+    :steps="$processSteps" />
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -767,15 +732,8 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </span>
 
                                 <!-- Label and Icon -->
-                                <span class="color-button__label relative z-10 will-change-transform me-2">Request A
-                                    Call</span>
-                                <svg width="20" height="20" viewBox="0 0 22 22" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.51089 1L6.15002 1.13169C6.91653 1.15942 7.59676 1.64346 7.89053 2.3702L8.96656 5.03213C9.217 5.65159 9.1496 6.35837 8.78693 6.91634L7.40831 9.0375C8.22454 10.2096 10.4447 12.9558 12.7955 14.5633L14.5484 13.4845C14.9939 13.2103 15.5273 13.1289 16.0314 13.2581L19.5161 14.1517C20.4429 14.3894 21.0674 15.2782 20.9942 16.2552L20.7705 19.2385C20.6919 20.2854 19.8351 21.1069 18.818 20.9887C5.39245 19.4276 -2.48056 0.99997 2.51089 1Z"
-                                        stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round"/>
-                                </svg>
+                                <span class="color-button__label relative z-10 will-change-transform me-2">Book a Free Consultation</span>
+                                
                             </a>
                     </div>
                 </div>
