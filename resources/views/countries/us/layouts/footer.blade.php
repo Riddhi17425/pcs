@@ -13,11 +13,8 @@
         ['Blogs', route('blog'), true],                   // sab countries ka ek hi page, naye tab me
     ]"
     :services="[
-        ['Accounting Outsourcing', $usUrl('bookkeeping-and-accounting-services')],
-        ['Bookkeeping Outsourcing', $usUrl('bookkeeping-and-accounting-services')],
-        ['Tax Preparation Outsourcing', $usUrl('taxation-services')],
-        ['Payroll Outsourcing', url('us') . '#consultation'],
-        ['Audit Support', url('us') . '#consultation'],
+        ['Accounting & Bookkeeping', url('us/bookkeeping-and-accounting-services')],
+        ['Taxation Services', url('us/taxation-services')],
     ]"
     address="225 Cherry Street, 52K<br>New York, NY, 10002"
     :phones="[['number' => '(+1) 347 801 8715']]"

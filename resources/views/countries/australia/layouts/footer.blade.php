@@ -12,12 +12,9 @@
         ['Blogs', route('blog'), true],                   // sab countries ka ek hi page, naye tab me
     ]"
     :services="[
-        ['Accounting Outsourcing', $auUrl('bookkeeping-accounting-services')],
-        ['Bookkeeping Outsourcing', $auUrl('bookkeeping-accounting-services')],
-        ['Tax Preparation Outsourcing', $auUrl('taxation-services')],
-        ['BAS/IAS Return Services', $auUrl('taxation-services')],
-        ['Payroll Outsourcing', url('aus') . '#consultation'],      // page abhi nahi hai, form par
-        ['Strata Management Services', $auUrl('strata-management')],
+        ['Accounting & Bookkeeping', url('aus/bookkeeping-accounting-services')],
+        ['Taxation Services', url('aus/taxation-services')],
+        ['Strata Property Management', url('aus/strata-management')],
     ]"
     address="22A Mort Street Blacktown<br>NSW 2148 Australia."
     :phones="[['number' => '(+613) 9998 0494']]" />

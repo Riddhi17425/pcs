@@ -13,12 +13,9 @@
         ['Blogs', route('blog'), true],                   // sab countries ka ek hi page, naye tab me
     ]"
     :services="[
-        ['Accounting Outsourcing', $ukUrl('accounting-outsourcing-services')],
-        ['Small Business Accounting', $ukUrl('small-business-accounting-services')],
-        ['Bookkeeping Outsourcing', $ukUrl('accounting-outsourcing-services')],
-        ['Tax Preparation Outsourcing', $ukUrl('outsource-tax-preparation-services')],
-        ['Payroll Outsourcing', url('uk') . '#consultation'],
-        ['VAT Outsourcing', url('uk') . '#consultation'],
+        ['Accounting Outsourcing', url('uk/accounting-outsourcing-services')],
+        ['Small Business Accounting', url('uk/small-business-accounting-services')],
+        ['Tax Preparation Outsourcing', url('uk/outsource-tax-preparation-services')],
     ]"
     address="16 Field Maple Gardens, High Wycombe,<br>Buckinghamshire, HP10 9FN, United Kingdom"
     :phones="[['number' => '(+44) 113 4034334']]"
