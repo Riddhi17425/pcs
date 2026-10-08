@@ -1,0 +1,42 @@
+/* Header ka overlay variant: hero ke upar transparent, white text.
+   Use: @include('...frontheader-xx', ['header_overlay' => true]) */
+
+header.header_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+}
+
+.header_overlay .nav_ul li a {
+    color: var(--white);
+}
+
+.header_overlay .nav_ul li a:hover,
+.header_overlay .nav_ul li a.active {
+    color: var(--grey);
+}
+
+.header_overlay .nav_ul li .nav-link svg path {
+    stroke: var(--white);
+}
+
+.header_overlay .nav_ul .dropdown-menu li a {
+    color: var(--black3);
+}
+
+.header_overlay .menu-toggle span {
+    background: var(--white);
+}
+
+.header_overlay .country_select_btn {
+    background: var(--white);
+    border-color: var(--white);
+    padding: 12px;
+}
+
+.header_overlay .country_select_btn span {
+    font-size: 18px;
+    color: var(--blue);
+}

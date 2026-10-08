@@ -257,14 +257,14 @@ nav {
     color: var(--black3);
 }
 
-.country_select_menu {
+.country_select .country_select_menu {
     min-width: 160px;
     border: 1px solid var(--grey);
     border-radius: 8px;
     padding: 6px 0;
     overflow: hidden;
     position: absolute !important;
-    inset: 100% auto auto 0 !important;
+    inset: 100% 0 auto auto !important;
     margin-top: 8px !important;
 }
 

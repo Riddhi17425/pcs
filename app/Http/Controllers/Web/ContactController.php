@@ -10,12 +10,14 @@ use Illuminate\Support\Facades\Log;
 
 class ContactController extends Controller
 {
-    public function contact()
+    // Shared page: country route ke ->defaults('country', ...) se aati hai (config/sites.php)
+    public function contact($country = 'india')
     {
+        $site = config("sites.$country");
         $meta_title       = "Contact Us | Accounting, Bookkeeping &amp; Payroll Services";
         $meta_description = "Get in touch with PCS Global Group for expert Accounting, Bookkeeping, Payroll Services, and Strata Management solutions tailored to your business needs.";
         $countries        = Country::all();
-        return view('front.contact', compact('meta_title', 'meta_description', 'countries'));
+        return view('shared.contact', compact('meta_title', 'meta_description', 'countries', 'site'));
     }
 
     public function store(Request $request)

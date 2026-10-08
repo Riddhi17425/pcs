@@ -63,7 +63,7 @@ const cards = document.querySelectorAll(".comp_bus_child");
                 }));
         }
         (e(
-            $(".experts_slider"),
+            $(".experts_slider:not([data-slider])"),
             $(".slider1-counter"),
             $(".slider1-progress"),
             $(".slider1-prev"),
@@ -95,13 +95,28 @@ const cards = document.querySelectorAll(".comp_bus_child");
                 2,
             ),
             e(
-                $(".testimonial_slider"),
+                $(".testimonial_slider:not([data-slider])"),
                 $(".slider3-counter"),
                 $(".slider3-progress"),
                 $(".slider3-prev"),
                 $(".slider3-next"),
                 2,
-            ));
+            ),
+            // Generic slider: koi bhi element jisme data-slider ho. Naye sliders ke liye yehi use karo.
+            // <div data-slider data-slider-controls="slider5" data-slider-show="3"> + <x-home.slider-controls prefix="slider5" />
+            $("[data-slider]").each(function () {
+                const el = $(this);
+                if (el.hasClass("slick-initialized")) return;
+                const p = el.data("slider-controls");
+                e(
+                    el,
+                    $("." + p + "-counter"),
+                    $("." + p + "-progress"),
+                    $("." + p + "-prev"),
+                    $("." + p + "-next"),
+                    parseInt(el.data("slider-show"), 10) || 3,
+                );
+            }));
     }),
     $(".client_slider").slick({
         infinite: !0,

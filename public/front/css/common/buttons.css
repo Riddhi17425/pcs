@@ -1,0 +1,36 @@
+/* Common buttons (sab countries me use hote hain). Solid buttons ke liye style.css ke .com_btn1 / .com_btn2 use karo. */
+
+.com_btn_outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 34px;
+    font-size: 18px;
+    font-family: "Instrument Sans", sans-serif;
+    border-radius: 8px;
+    border: 1px solid var(--blue);
+    background: transparent;
+    color: var(--blue) !important;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.com_btn_outline:hover {
+    background: var(--blue);
+    color: var(--white) !important;
+}
+
+/* dark/blue background ke upar white outline wala button */
+.com_btn_outline_light {
+    border-color: var(--white);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--white) !important;
+}
+
+.com_btn_outline_light:hover {
+    background: var(--white);
+    color: var(--blue) !important;
+}
+
+.com_btn_outline_light:hover img {
+    filter: invert(1);
+}

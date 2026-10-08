@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p common/industries common/team)",
+      "Bash(mv australia/hero-bg.png australia/cta-bg.png australia/logo-white.svg australia/icon-check.svg australia/icon-arrow-right.svg australia/icon-plus.svg australia/icon-phone.svg australia/security-icon.svg common/)",
+      "Bash(mv australia/map-extra.svg common/map-logo.svg)",
+      "Bash(mv us/pin.png common/pin.png)",
+      "Bash(rm australia/pin.png)",
+      "Bash(sed -E 's/.*\"\\(US-[A-Z]+\\)\" #\\([0-9:]+\\) .*\"x\":\\([0-9.]+\\),\"y\":\\([0-9.]+\\)\\\\},\"dimensions\":\\\\{\"width\":\\([0-9.]+\\),\"height\":\\([0-9.]+\\)\\\\}.*/\\\\1 \\\\2 \\\\3 \\\\4 \\\\5 \\\\6/')",
+      "Read(//tmp/**)",
+      "Bash(cat /tmp/states.json)",
+      "Bash(sed -i 's/round\\(\\\\$x - 0.5, 2\\), round\\(\\\\$y - 0.5, 2\\)/round\\($x, 2\\), round\\($y, 2\\)/; s#// export me stroke ke liye 0.5px extra hota hai#// stroke inside \\(mask\\) hai, isliye export bounds = node position#' storage/app/figma-us-states/compose.php)",
+      "Bash(php storage/app/figma-us-states/compose.php)",
+      "Bash(grep -n 'x-australia.region-map\\\\|$faqs = \\\\[' resources/views/countries/australia/pages/home.blade.php)"
+    ]
+  }
+}

@@ -1,0 +1,356 @@
+/* Common hero: blue gradient + bg image, left text, right person image.
+   Component: resources/views/components/hero-dark.blade.php  (<x-hero-dark>) */
+
+.hero_dark {
+    position: relative;
+    overflow: hidden;
+    min-height: 920px;
+    padding: 207px 0 80px;
+    background: linear-gradient(180deg, #182653 0%, #3555b9 100%);
+}
+
+.hero_dark_bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero_dark_person {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 35vw;
+    max-width: 673px;
+    height: auto;
+    z-index: 1;
+}
+
+.hero_dark .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero_dark_content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.hero_dark_text {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.hero_dark h1 {
+    max-width: 1272px;
+    margin-bottom: 24px;
+    font-size: 66px;
+    line-height: 90px;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.hero_dark_mark {
+    display: block;
+    width: fit-content;
+    margin-left: -4px;
+    padding-left: 4px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.hero_dark_para {
+    max-width: 1022px;
+    color: #ddd;
+}
+
+.hero_dark_features {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    gap: 12px 40px;
+    max-width: 748px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.hero_dark_features li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 24px;
+    line-height: 30px;
+    color: var(--white);
+}
+
+.hero_dark_features img {
+    flex: 0 0 auto;
+}
+
+.hero_dark_btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+@media (max-width: 1400px) {
+    .hero_dark h1 {
+        font-size: 56px;
+        line-height: 72px;
+    }
+}
+
+@media (max-width: 991px) {
+    .hero_dark {
+        min-height: 0;
+        padding: 140px 0 60px;
+    }
+
+    .hero_dark_person {
+        display: none;
+    }
+
+    .hero_dark_content,
+    .hero_dark_text {
+        gap: 30px;
+    }
+
+    .hero_dark h1 {
+        font-size: 38px;
+        line-height: 48px;
+    }
+
+    .hero_dark_features {
+        grid-template-columns: 1fr;
+    }
+
+    .hero_dark_features li {
+        font-size: 20px;
+    }
+
+    .hero_dark_btns {
+        gap: 16px;
+    }
+}
+
+/* features: desktop par har item ek line me (UK ke lambe text ke liye bhi) */
+@media (min-width: 992px) {
+    .hero_dark_features {
+        width: max-content;
+        max-width: none;
+        column-gap: 80px;
+    }
+
+    .hero_dark_features li {
+        white-space: nowrap;
+    }
+}
+
+/* ---------- laptop / tablet landscape (992px - 1366px): heading fluid, text person ki image se door ---------- */
+@media (min-width: 992px) {
+    .hero_dark h1 {
+        font-size: clamp(40px, 4.2vw, 66px);
+        line-height: 1.36;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1366px) {
+    .hero_dark_person {
+        width: 30vw;
+    }
+
+    .hero_dark_para,
+    .hero_dark_features,
+    .hero_dark_btns {
+        max-width: 62%;
+    }
+
+    .hero_dark_features {
+        /* width: auto; */
+        column-gap: 28px;
+    }
+
+    .hero_dark_features li {
+        font-size: 19px;
+        line-height: 26px;
+        white-space: normal;
+    }
+
+    .hero_dark_btns {
+        gap: 14px;
+    }
+}
+
+/* ---------- full viewport hero (100vh) ----------
+   svh: mobile browser ki address bar ke saath bhi sahi height; vh fallback purane browsers ke liye.
+   Content vertical center me; header (absolute overlay) ke liye upar padding. */
+.hero_dark {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 130px 0 70px;
+}
+
+.hero_dark > .container {
+    width: 100%;
+}
+
+.hero_dark_content {
+    gap: clamp(28px, 5vh, 60px);
+}
+
+.hero_dark_text {
+    gap: clamp(24px, 4vh, 40px);
+}
+
+.hero_dark h1 {
+    margin-bottom: clamp(14px, 2.4vh, 24px);
+}
+
+@media (max-width: 991px) {
+    .hero_dark {
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: 110px 0 48px;
+    }
+}
+
+@media (max-width: 575px) {
+    .hero_dark {
+        padding: 96px 0 40px;
+    }
+
+    .hero_dark h1 {
+        font-size: clamp(30px, 8vw, 38px);
+        line-height: 1.25;
+    }
+
+    .hero_dark_features li {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .hero_dark_btns > a {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* chhoti height wali laptop / landscape phone: gaps aur padding kam */
+@media (max-height: 700px) and (min-width: 992px) {
+    .hero_dark {
+        padding: 112px 0 40px;
+    }
+
+    .hero_dark h1 {
+        font-size: clamp(34px, 3.6vw, 56px);
+    }
+
+    .hero_dark_features li {
+        font-size: 20px;
+    }
+}
+
+/* ---------- text kabhi person ki image ke upar nahi ----------
+   --hd-img = image ki width; content ki width = container - (image jitna container ke andar aata hai) - gap */
+.hero_dark {
+    --hd-img: min(35vw, 673px);
+}
+
+.hero_dark_person {
+    width: var(--hd-img);
+    max-width: none;
+}
+
+@media (min-width: 992px) {
+    .hero_dark_content {
+        max-width: calc(100% - max(0px, var(--hd-img) - (100vw - 100%) / 2 + 32px));
+    }
+
+    .hero_dark_para,
+    .hero_dark_features,
+    .hero_dark_btns,
+    .hero_dark h1 {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1366px) {
+    .hero_dark {
+        --hd-img: 30vw;
+    }
+}
+
+/* heading: lines barabar tootein (akela "for" ek line me na rahe) */
+.hero_dark h1 {
+    text-wrap: balance;
+}
+
+.hero_dark_mark {
+    text-wrap: balance;
+}
+
+@media (min-width: 992px) and (max-width: 1500px) {
+    .hero_dark h1 {
+        font-size: clamp(36px, 3.7vw, 54px);
+    }
+}
+
+/* ---------- compact sizing: content 100vh ke andar fit ho ---------- */
+@media (min-width: 992px) {
+    .hero_dark h1 {
+        font-size: clamp(32px, 3.5vw, 56px);
+        line-height: 1.28;
+    }
+
+    .hero_dark_features li {
+        font-size: clamp(17px, 1.4vw, 22px);
+        line-height: 1.3;
+    }
+
+    .hero_dark_para {
+        font-size: clamp(15px, 1.15vw, 18px);
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 991px) {
+    .hero_dark h1 {
+        font-size: clamp(28px, 6.2vw, 40px);
+    }
+}
+
+@media (max-width: 575px) {
+    .hero_dark {
+        padding: 88px 0 28px;
+    }
+
+    .hero_dark h1 {
+        font-size: clamp(26px, 7.4vw, 32px);
+    }
+
+    .hero_dark_content,
+    .hero_dark_text {
+        gap: 20px;
+    }
+
+    .hero_dark_features {
+        gap: 8px;
+    }
+
+    .hero_dark_features li {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .hero_dark_para {
+        font-size: 15px;
+        line-height: 24px;
+    }
+}

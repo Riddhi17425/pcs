@@ -1,0 +1,142 @@
+/* 404 / error page (sab countries). View: resources/views/errors/404.blade.php */
+
+.error_page {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0 110px;
+    text-align: center;
+    background: linear-gradient(180deg, #182653 0%, #3555b9 100%);
+}
+
+.error_page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../../images/common/hero-bg.png") center / cover no-repeat;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.error_page .container {
+    position: relative;
+    z-index: 1;
+}
+
+.error_page_in {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.error_code {
+    display: block;
+    margin-bottom: 8px;
+    font-family: "Public Sans", sans-serif;
+    font-size: clamp(110px, 18vw, 220px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -4px;
+    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.15) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.error_tag {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 6px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--grey);
+}
+
+.error_page h1 {
+    margin-bottom: 16px;
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.error_page p {
+    margin: 0 auto 36px;
+    max-width: 560px;
+    color: var(--grey);
+}
+
+.error_btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.error_links {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.error_links span {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: var(--grey);
+}
+
+.error_links ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.error_links a {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 999px;
+    font-size: 16px;
+    color: var(--white);
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.error_links a:hover {
+    background: var(--white);
+    color: var(--blue);
+}
+
+@media (max-width: 767px) {
+    .error_page {
+        padding: 80px 0;
+    }
+
+    .error_page h1 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .error_links {
+        margin-top: 40px;
+    }
+}
+
+.error_page ~ .footer {
+    margin-top: 0;
+}
+
+.error_btns > a {
+    font-size: 18px;
+}
+
+@media (max-width: 767px) {
+    .error_btns > a {
+        font-size: 16px;
+    }
+}

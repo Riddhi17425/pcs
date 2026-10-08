@@ -25,7 +25,7 @@ class ServiceController extends Controller
         $industries       = Industries::where('status', 'Active')->get();
         $ourexpert        = OurExpert::where('status', 'Active')->get();
         $blogs            = Blogs::orderBy('id', 'desc')->where('status', 'Active')->get();
-        return view('front.dashboard', compact('meta_title', 'meta_description', 'images', 'industries', 'ourexpert', 'blogs'));
+        return view('countries.india.pages.dashboard', compact('meta_title', 'meta_description', 'images', 'industries', 'ourexpert', 'blogs'));
     }
 
     public function requestStore(Request $request)
@@ -47,7 +47,15 @@ class ServiceController extends Controller
             'full_phone' => 'nullable|string|max:20',
             'country'    => 'required|string',
             'message'    => 'nullable|string',
+            'company'    => 'nullable|string|max:255',
+            'city'       => 'nullable|string|max:100',
+            'service'    => 'nullable|string|max:150',
         ]);
+
+        // Consultation form ke extra fields (company / city / service) message me jode jaate hain
+        $details = collect(['Company' => $request->company, 'City' => $request->city, 'Service' => $request->service])
+            ->filter()->map(fn ($v, $k) => "$k: $v")->implode(' | ');
+        $message = trim($details . ($details && $request->message ? "\n" : '') . $request->message);
 
         $rawPhone = $request->full_phone ?: $request->phone;
         $phone    = '+' . ltrim($rawPhone, '+');
@@ -57,7 +65,7 @@ class ServiceController extends Controller
             'country'  => $request->country,
             'phone'    => $phone,
             'email'    => $request->email,
-            'message'  => $request->message,
+            'message'  => $message,
         ]);
         $sheetData = [
             'form_type' => 'Request Form',
@@ -67,8 +75,8 @@ class ServiceController extends Controller
             'country'   => $request->country ?? '',
             'services'  => is_array($request->services)
                 ? implode(', ', $request->services)
-                : ($request->services ?? ''),
-            'message'   => $request->message ?? '',
+                : ($request->services ?? $request->service ?? ''),
+            'message'   => $message,
             'date'      => now()->format('Y-m-d H:i:s'),
         ];
         // Redirect to contact route with success message
@@ -134,7 +142,8 @@ class ServiceController extends Controller
         $meta_title       = "";
         $meta_description = "";
         $whychooseus      = WhyChooseUs::where('status', 'Active')->get();
-        return view('front.about', compact('meta_title', 'meta_description', 'whychooseus'));
+        $site             = config('sites.india');
+        return view('shared.about', compact('meta_title', 'meta_description', 'whychooseus', 'site'));
     }
 
     public function dataSecurity()
@@ -143,7 +152,7 @@ class ServiceController extends Controller
         $meta_title       = "Data Security & Protection Services | PCS Global ";
         $meta_description = "PCS Global cybersecurity solutions protect businesses from cyber threats, data breaches, and compliance risks, ensuring secure and uninterrupted operations.";
 
-        return view('front.data-security', compact('meta_title', 'meta_description', 'faq'));
+        return view('countries.india.pages.data-security', compact('meta_title', 'meta_description', 'faq'));
     }
 
     public function accountingBookeeping()
@@ -153,7 +162,7 @@ class ServiceController extends Controller
         $meta_description = "Struggling with accounting? PCS Global provides outsourced bookkeeping & accounting services with certified CA, CPA teams & up to 60% savings!
 ";
 
-        return view('front.accounting-bookkeeping', compact('meta_title', 'meta_description', 'faq'));
+        return view('countries.india.pages.accounting-bookkeeping', compact('meta_title', 'meta_description', 'faq'));
     }
 
     public function payrollService()
@@ -163,32 +172,34 @@ class ServiceController extends Controller
         $meta_title       = "Payroll Outsourcing Services | PCS Global";
         $meta_description = "PCS Global provides payroll outsourcing services for startups, SMEs, and enterprises, helping businesses manage payroll efficiently with expert professionals.";
 
-        return view('front.payroll-services', compact('meta_title', 'meta_description', 'faq'));
+        return view('countries.india.pages.payroll-services', compact('meta_title', 'meta_description', 'faq'));
     }
     public function taxationservices()
     {
         $meta_title       = "Taxation Services for US, UK & Australia | PCS Global";
         $meta_description = "PCS Global offers expert taxation services including corporate tax compliance, payroll tax, and international tax support for US, UK & Australia.";
 
-        return view('front.taxation-services', compact('meta_title', 'meta_description'));
+        return view('countries.india.pages.taxation-services', compact('meta_title', 'meta_description'));
     }
     public function payrolloutsourcing()
     {
         $meta_title       = "";
         $meta_description = "";
 
-        return view('front.payroll-outsourcing-services', compact('meta_title', 'meta_description'));
+        return view('countries.india.pages.payroll-outsourcing-services', compact('meta_title', 'meta_description'));
     }
 
-    public function strataManagement()
+    // Shared page: country route ke ->defaults('country', ...) se aati hai (config/sites.php)
+    public function strataManagement($country = 'india')
     {
+        $site        = config("sites.$country");
         $faq         = Faq::where('status', 'Active')->where('faq_url', 'strata-management')->first();
         $whychooseus = WhyChooseUs::where('status', 'Active')->get();
 
         $meta_title       = "Strata Management Services – PCS Global ";
         $meta_description = "PCS Global specializes in strata management, providing expert administration, operations & management for residential, commercial & industrial properties.";
 
-        return view('front.strata-management', compact('meta_title', 'meta_description', 'faq', 'whychooseus'));
+        return view('shared.strata-management', compact('meta_title', 'meta_description', 'faq', 'whychooseus', 'site'));
     }
 
     public function recruitmentService()
@@ -198,7 +209,7 @@ class ServiceController extends Controller
         $meta_title       = "Recruitment Process Outsourcing Services – RPO Solution";
         $meta_description = "PCS Global offers Recruitment Process Outsourcing (RPO) services to streamline hiring, cut recruitment costs, and help businesses attract top talent.";
 
-        return view('front.recruitment-services', compact('meta_title', 'meta_description', 'faq'));
+        return view('countries.india.pages.recruitment-services', compact('meta_title', 'meta_description', 'faq'));
     }
 
     public function globalUsa()
@@ -208,7 +219,7 @@ class ServiceController extends Controller
         $meta_title       = "Accounting & Bookkeeping Services for US Businesses";
         $meta_description = "Looking for reliable accounting and bookkeeping services in the USA? PCS offers expert bookkeeping, VAT registration, payroll, and CFO solutions for SMEs.";
 
-        return view('front.pcs-global-usa', compact('meta_title', 'meta_description', 'faq'));
+        return view('countries.us.pages.pcs-global-usa', compact('meta_title', 'meta_description', 'faq'));
     }
 
     public function globalAus()
@@ -218,7 +229,7 @@ class ServiceController extends Controller
         $meta_title       = "Accounting & Bookkeeping Services for Australian Businesses";
         $meta_description = "PCS is a leading Australia-based accounting and bookkeeping service provider. Outsource your financial tasks to our expert team and focus on growth.";
 
-        return view('front.pcs-global-aus', compact('meta_title', 'meta_description', 'faq'));
+        return view('countries.australia.pages.pcs-global-aus', compact('meta_title', 'meta_description', 'faq'));
     }
 
     public function globalUk()
@@ -228,7 +239,7 @@ class ServiceController extends Controller
         $meta_title       = "UK Expert Accounting & Bookkeeping Services";
         $meta_description = "PCS offers reliable accounting & bookkeeping services for UK SMEs—managing your back office, accounting, and compliance with expert precision.";
 
-        return view('front.pcs-global-uk', compact('meta_title', 'meta_description', 'faq'));
+        return view('countries.uk.pages.pcs-global-uk', compact('meta_title', 'meta_description', 'faq'));
     }
 
     public function thankyou()
@@ -236,7 +247,7 @@ class ServiceController extends Controller
         $meta_title       = "";
         $meta_description = "";
 
-        return view('front.thank-you', compact('meta_title', 'meta_description'));
+        return view('countries.india.pages.thank-you', compact('meta_title', 'meta_description'));
     }
 
     public function taxationservicesusa()
@@ -244,28 +255,28 @@ class ServiceController extends Controller
         $meta_title       = "Tax Preparation Services in USA | PCS Global";
         $meta_description = "At PCs Global, our expert US tax professionals assist you in minimizing your tax liability and staying fully compliant with state regulations.";
 
-        return view('front.taxation-services-usa', compact('meta_title', 'meta_description'));
+        return view('countries.us.pages.taxation-services-usa', compact('meta_title', 'meta_description'));
     }
     public function taxationaustralian()
     {
         $meta_title       = "Tax Preparation Services for Australian Business";
         $meta_description = "As a trusted Australian Tax Outsourcing partner, PCS Global specialises in corporate tax compliance, GST registration, and international tax structuring.";
 
-        return view('front.taxation-services-australian', compact('meta_title', 'meta_description'));
+        return view('countries.australia.pages.taxation-services-australian', compact('meta_title', 'meta_description'));
     }
     public function taxationservicesuk()
     {
         $meta_title       = "Tax Preparation Services in UK | PCS Global";
         $meta_description = "At PCS Global, we make taxation easy to understand for UK businesses, offering full-service assistance so businesses remain compliant and financially optimised.";
 
-        return view('front.taxation-services-uk', compact('meta_title', 'meta_description'));
+        return view('countries.uk.pages.taxation-services-uk', compact('meta_title', 'meta_description'));
     }
     public function itautomation()
     {
         $meta_title       = "IT Outsourcing Services | IT Outsourcing Company";
         $meta_description = "PCS Global Group is a leading IT outsourcing company offering secure, scalable IT outsourcing services to help businesses reduce costs and grow efficiently.";
         $faq              = Faq::where('status', 'Active')->where('faq_url', 'it-automation')->first();
-        return view('front.it-automation', compact('meta_title', 'meta_description', 'faq'));
+        return view('countries.india.pages.it-automation', compact('meta_title', 'meta_description', 'faq'));
     }
 
     public function smallBusinessAccountingServices(Request $request)
@@ -273,7 +284,7 @@ class ServiceController extends Controller
         $meta_title       = "Accounting Services for Small Businesses & SMEs | PCS Global";
         $meta_description = "Simplify your accounting with PCS Global. We provide dedicated services for UK small businesses and SMEs, ensuring compliance and financial clarity.";
 
-        return view('front.small-business-accounting-service', compact('meta_title', 'meta_description'));
+        return view('countries.uk.pages.small-business-accounting-service', compact('meta_title', 'meta_description'));
     }
 
     public function outsourceTaxPreparationServices(Request $request)
@@ -281,7 +292,7 @@ class ServiceController extends Controller
         $meta_title       = "Tax Preparation Services in UK | PCS Global";
         $meta_description = "At PCS Global, we make taxation easy to understand for UK businesses, offering full-service assistance so businesses remain compliant and financially optimised.";
 
-        return view('front.outsource-tax-preparation-services', compact('meta_title', 'meta_description'));
+        return view('countries.uk.pages.outsource-tax-preparation-services', compact('meta_title', 'meta_description'));
     }
 
     public function ukLanding(Request $request)
@@ -290,7 +301,7 @@ class ServiceController extends Controller
         $meta_description = "PCS offers reliable accounting & bookkeeping services for UK SMEs—managing your back office, accounting, and compliance with expert precision.";
         $faq              = Faq::where('status', 'Active')->where('faq_url', 'pcs-global-uk')->first();
 
-        return view('front.uk-landing', compact('meta_title', 'meta_description', 'faq'));
+        return view('countries.uk.pages.uk-landing', compact('meta_title', 'meta_description', 'faq'));
     }
 
     public function accountingOutSourcingServices(Request $request)
@@ -299,7 +310,7 @@ class ServiceController extends Controller
         $meta_description = "Scale your UK accounting firm with expert outsourced accounting services from PCS Global. Improve productivity, reduce costs, and meet deadlines easily.";
 
         $faq = Faq::where('status', 'Active')->where('faq_url', 'pcs-global-uk')->first();
-        return view('front.accounting-outsourcing-service', compact('meta_title', 'meta_description', 'faq'));
+        return view('countries.uk.pages.accounting-outsourcing-service', compact('meta_title', 'meta_description', 'faq'));
     }
 
     public function whitelabelAccountingServices()
@@ -308,7 +319,7 @@ class ServiceController extends Controller
         $meta_description = "PCS Global is trusted white label accounting partner offering bookkeeping, accounts payable, receivable and client accounting services for US, UK & Australian firms.";
         $countries        = Country::all();
 
-        return view('front.whitelabel-accounting-services', compact('meta_title', 'meta_description', 'countries'));
+        return view('countries.india.pages.whitelabel-accounting-services', compact('meta_title', 'meta_description', 'countries'));
     }
 
 }

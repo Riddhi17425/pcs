@@ -146,8 +146,8 @@
 
 @media (max-width:1600px) {
     body {
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 16px;
+        line-height: 24px;
     }
     
     .comp_bus_child:hover
@@ -234,7 +234,7 @@
     }
 
     .mt-100 {
-        margin-top: 40px;
+        margin-top: 60px;
     }
 
     .mt-80 {
@@ -1029,6 +1029,24 @@
 
 @media (max-width:768px) {
 
+   .testimonial_card {
+    padding: 24px;
+} 
+
+.testimonial_card p {
+    font-size: 20px;
+    line-height: 34px;
+}
+
+nav {
+    justify-content: space-between;
+    padding-top: 0 !important;
+}
+
+    .process_steps {
+    gap: 20px;
+}
+
     .precision_grid {
         grid-template-columns: 1fr;
     }
@@ -1336,7 +1354,7 @@
 
     .ind_row_up,
     .ind_row_down {
-        transform: translateY(0);
+        /* transform: translateY(0); */
     }
 
     .com_inner_banner h2 {
@@ -1591,5 +1609,253 @@
     }
      .service-item-lists{
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* ---------- footer: tablet / small laptop (769px - 1200px) ----------
+   grid ke 100px gaps is range me overflow karte the; ab links neeche 3 columns me aate hain */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .footer_top_flex {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .foot_lt {
+        max-width: 640px;
+    }
+
+    .foot_links_group {
+        grid-template-columns: repeat(3, minmax(0, auto));
+        justify-content: space-between;
+        gap: 50px;
+    }
+
+    .foot_rt::after {
+        right: -25px;
+    }
+
+    .foot_lt .foot_lt_para {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+
+/* ---------- trust slider (image cards): pehla card poora + dusra aadha (peek) ----------
+   card ki width slider ki apni width se banti hai, isliye har screen par ek poora + ek aadha card dikhta hai */
+.trust_slider_rt {
+    container-type: inline-size;
+}
+
+.trust_slide {
+    flex: 0 0 clamp(280px, calc((100cqw - 24px) / 1.5), 700px);
+}
+
+.trust_slider_track {
+    scroll-padding-left: 0;
+}
+
+/* laptop / tablet: heading upar (full width), slider neeche (full width) */
+@media (max-width: 1199px) {
+    .trust_slider_wrap {
+        flex-direction: column;
+        gap: 36px;
+        padding-right: 0;
+    }
+
+    .trust_slider_lt {
+        width: auto;
+        max-width: 760px;
+        min-height: 0;
+        padding-right: clamp(20px, 5vw, 120px);
+        gap: 28px;
+    }
+
+    .trust_slider_rt {
+        width: 100%;
+        flex: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .trust_slider_sec {
+        padding: 48px 0;
+    }
+
+    .trust_slider_head h2 {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .trust_slider_head p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .trust_slide {
+        flex-basis: clamp(260px, 78vw, 420px);
+    }
+
+    .trust_slide_img img {
+        height: 200px;
+    }
+
+    .trust_slider_arrow {
+        width: 48px;
+        height: 48px;
+    }
+
+    .partner_img img {
+    border-radius: 40px 0 40px 0;
+}
+
+.precision_card {
+    padding: 20px;
+}
+
+    .split_acc_img {
+        border-radius: 40px 0 40px 0;
+    }
+
+
+}
+
+
+/* ---------- footer: laptop / desktop (1201px - 1599px) ----------
+   left column aur 100px gaps ne links ko tang kar diya tha (headings 2 line me toot-te the) */
+.foot_rt .sub_head {
+    white-space: nowrap;
+}
+
+@media (min-width: 1201px) and (max-width: 1599px) {
+    .footer_top_flex {
+        grid-template-columns: minmax(260px, 360px) 1fr;
+        gap: 60px;
+    }
+
+    .foot_links_group {
+        gap: 70px;
+    }
+
+    .foot_rt::after {
+        right: -35px;
+    }
+
+    .foot_lt .foot_lt_para {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .foot_rt ul a,
+    .foot_contact_value {
+        font-size: 18px;
+    }
+}
+
+
+/* trust slider progress line: har card ka ek segment (button), bada click area, line 2px hi dikhti hai */
+button.trust_slider_seg {
+    position: relative;
+    height: 2px;
+    padding: 0;
+    border: 0;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+/* invisible bada click area */
+button.trust_slider_seg::after {
+    content: "";
+    position: absolute;
+    inset: -9px 0;
+}
+
+button.trust_slider_seg:hover {
+    background-color: #8fa4e6;
+}
+
+button.trust_slider_seg.active {
+    background-color: var(--white);
+}
+
+
+/* trust slider (desktop 1200px+): left heading column flexible, taaki cards Figma jaisi chaudi (~600px) rahe */
+@media (min-width: 1200px) {
+    .trust_slider_lt {
+        width: clamp(380px, 31vw, 600px);
+        gap: 40px;
+    }
+
+    .trust_slider_head h2 {
+        font-size: clamp(34px, 2.6vw, 48px);
+        line-height: 1.2;
+    }
+
+    .trust_slide {
+        flex-basis: clamp(460px, calc((100cqw - 24px) / 1.5), 640px);
+    }
+
+    .trust_slide_body p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
+
+/* ---------- footer badges (ISO / GDPR / strata): tablet + mobile ----------
+   lines (::before/::after) wrap hone par toot-ti thi; yahan hata kar badges ek saaf center row me */
+@media (max-width: 991px) {
+    .footer_badges_wrap {
+        padding: 28px 0;
+        border-top: 1px solid #3e5397;
+    }
+
+    .footer_badges {
+        gap: 16px;
+    }
+
+    .footer_badges::before,
+    .footer_badges::after {
+        display: none;
+    }
+
+    .footer_badges .badge_circle {
+        width: 84px;
+        height: 84px;
+    }
+
+    .footer_badges .badge_circle img {
+        max-width: 68px;
+        max-height: 66px;
+    }
+
+    .footer_badges .badge_box {
+        padding: 10px;
+    }
+
+    .footer_badges .badge_box img {
+        max-height: 40px;
+        max-width: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer_badges {
+        gap: 12px;
+    }
+
+    .footer_badges .badge_circle {
+        width: 72px;
+        height: 72px;
+    }
+
+    .footer_badges .badge_circle img {
+        max-width: 58px;
+        max-height: 56px;
+    }
+
+    .footer_badges .badge_box img {
+        max-height: 34px;
+        max-width: 90px;
     }
 }
