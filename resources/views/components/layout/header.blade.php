@@ -73,6 +73,7 @@
   <link rel="stylesheet" href="{{asset('public/front/css/common/header-overlay.css')}}?v={{ filemtime(public_path('front/css/common/header-overlay.css')) }}">
   <link rel="stylesheet" href="{{asset('public/front/css/common/hero-dark.css')}}?v={{ filemtime(public_path('front/css/common/hero-dark.css')) }}">
   <link rel="stylesheet" href="{{asset('public/front/css/common/home-sections.css')}}?v={{ filemtime(public_path('front/css/common/home-sections.css')) }}">
+  <link rel="stylesheet" href="{{asset('public/front/css/common/contact-form.css')}}?v={{ filemtime(public_path('front/css/common/contact-form.css')) }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/css/intlTelInput.css">
 

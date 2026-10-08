@@ -864,80 +864,17 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     </div>
 </section>
-<section class="mt-80">
-    <div class="container">
-        <div class="mb-5 text-center">
-            <h2>Voices from Across the Globe</h2>
-        </div>
-        <div class="our_experts_cen row align-items-center">
-            <div class="col-md-12">
-                <div class="testimonial_slider">
-                    <div class="testimonial_card">
-                        <img class="quote_icon" src="{{ asset('public/front/images/quotation-icon.svg') }}"  loading="lazy" alt="quotation-icon">
-                        <p>For some time, I have been working in conjunction with the Director of PCS Global Group, Mr Prithvi Dodla, getting to understand their business methods. Clearly, with their experience in end-to-end accounting, administration side. PCS Global Group will thrive in providing business solutions to clients globally. I have seen first hand the high productivity levels and commitment to clients being second to none. This is why I have joined their team to be on the ground in Australia to assist them in delivering Accounting & the Strata Industry services.</p>
-                        <hr>
-                        <div class="testimonial_author">
-                            <h4>Matt Osborne</h4>
-                            <p>Owner</p>
-                        </div>
-                    </div>
-                    <div class="testimonial_card">
-                        <img class="quote_icon" src="{{ asset('public/front/images/quotation-icon.svg') }}"  loading="lazy" alt="quotation-icon">
-                        <p>The PCS Group experts took the time to know my business and me. I have a real sense of security, knowing there’s always quality advice on hand as my business grows and I have to make more decisions.</p>
-                        <hr>
-                        <div class="testimonial_author">
-                            <h4>Darren Mason</h4>
-                            <p>Financial Controller, Global Accounting Network</p>
-                        </div>
-                    </div>
-                    <div class="testimonial_card">
-                        <img class="quote_icon" src="{{ asset('public/front/images/quotation-icon.svg') }}"  loading="lazy" alt="quotation-icon">
-                        <p>The PCS team is extremely proactive and professional. They look after all my accounting and tax requirements so that I can concentrate on building my business.</p>
-                        <hr>
-                        <div class="testimonial_author">
-                            <h4>Barry Williams</h4>
-                            <p>Owner, V-Care Clinics</p>
-                        </div>
-                    </div>
-                    <div class="testimonial_card">
-                        <img class="quote_icon" src="{{ asset('public/front/images/quotation-icon.svg') }}" loading="lazy" alt="quotation-icon">
-                        <p>They provide prompt, accurate, and professional service, relieving us of the burden of keeping up with ever-changing Payroll legislation. I particularly value having an expert contact I can contact if I have any questions, and they are familiar enough with our business to provide much-appreciated, tailored advice as needed.</p>
-                        <hr>
-                        <div class="testimonial_author">
-                            <h4>Jason Hoopai</h4>
-                            <p>MD, Hoopai Financial Consultancy</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+{{-- Testimonials: AU / US / UK jaisa common section, content config/home.php ('testimonials') se --}}
+<x-sections.testimonials title="Voices from Across the Globe" :items="config('home.testimonials')" />
 
-         <div class="our_experts_bot slider3-controls">
-    <div class="experts_info">
-        <div class="circular-progress slider3-progress">
-            <div class="inner-circle"></div>
-        </div>
-        <p class="experts_counter slider3-counter"></p>
-    </div>
-    <hr>
-    <div class="slick_arrow">
-        <span class="arrow-prev slider3-prev">
-             <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">-->
-                        <path d="M1 6.32861L6 11.3286M1 6.32861L6 1.32861M1 6.32861H19" stroke="white" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-        </span>
-        <span class="arrow-next slider3-next">
-             <svg width="20" height="13" viewBox="0 0 20 13" fill="none"-->
-                       xmlns="http://www.w3.org/2000/svg">-->
-                    <path d="M19 6.32861L14 11.3286M19 6.32861L14 1.32861M19 6.32861H1" stroke="white"
-                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-        </span>
-    </div>
-</div>
-    </div>
-</section>
+{{-- Contact form: AU / US / UK jaisa common form (css/common/contact-form.css) --}}
+<x-sections.contact-form
+    title="Ready to Build a Smarter Outsourcing Team?"
+    text="Whether you need accounting, bookkeeping, tax, payroll, strata management or additional business support, PCS Global can help you build a dedicated outsourcing solution around your requirements."
+    :cities="['Ahmedabad', 'Mumbai', 'Delhi', 'Bengaluru', 'Pune', 'Other']"
+    :services="['Accounting & Bookkeeping', 'Strata Property Management', 'Payroll Outsourcing Services', 'Taxation Services', 'Recruitment Outsourcing Services', 'IT Automation Services']"
+    country="India"
+    phone-country="in" />
 
 
 @include('countries.india.layouts.footer')

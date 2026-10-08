@@ -57,6 +57,7 @@
   <link rel="stylesheet" href="{{asset('public/front/css/style.css')}}?v={{ filemtime(public_path('front/css/style.css')) }}">
   <link rel="stylesheet" href="{{asset('public/front/css/common/buttons.css')}}?v={{ filemtime(public_path('front/css/common/buttons.css')) }}">
   <link rel="stylesheet" href="{{asset('public/front/css/common/request-modal.css')}}?v={{ filemtime(public_path('front/css/common/request-modal.css')) }}">
+  <link rel="stylesheet" href="{{asset('public/front/css/common/contact-form.css')}}?v={{ filemtime(public_path('front/css/common/contact-form.css')) }}">
   <link rel="stylesheet" href="{{asset('public/front/css/responsive.css')}}?v={{ filemtime(public_path('front/css/responsive.css')) }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/css/intlTelInput.css">
