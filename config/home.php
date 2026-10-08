@@ -23,10 +23,10 @@ return [
 
     // Data security slider: Figma ke 3 cards ke baad ye 3 aur (slider chalne ke liye). Image page deta hai.
     'security_extra' => [
-        ['title' => 'Certified Security Standards1',
-         'text' => 'Our practices align with recognised security standards and certifications that define how data should be protected, accessed and managed. This provides independent assurance that your information is handled professionally and securely, as you should expect from a trusted outsourcing partner. '],
+        ['title' => 'Certified Security Standards',
+         'text' => 'Our practices align with recognised security standards and certifications for protecting, accessing and managing data. This provides independent assurance that your information is handled to a professional benchmark. '],
         ['title' => 'Secure Technology & Communication',
-         'text' => 'We use secure, monitored systems and encrypted channels for files and communications. Sensitive information is never transmitted through unprotected means, while access to our systems is tightly controlled. This helps minimise everyday data risks and keeps your information secure. ' ],
+         'text' => 'We use secure, monitored systems and encrypted channels for files and communications. Access is tightly restricted, and confidential information is never sent through unsecured routes. ' ],
     ],
 
     // 'How does PCS Global work' ke 3 steps (Australia, UK)
