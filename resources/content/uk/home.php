@@ -69,13 +69,13 @@ return function (array $db) {
         ['title' => 'Secure Data Handling', 'img' => $img('uk/security-1-5e658a.jpg'),
          'text' => 'Your financial information is stored and processed securely, with access limited to specialists working on your account. Strict procedures control how data is managed, retained and removed throughout the engagement. '],
         ['title' => 'Confidentiality & Privacy', 'img' => $img('uk/security-2-188afb.jpg'),
-         'text' => 'Confidentiality underpins everything we do. Firm confidentiality practices and signed non-disclosure agreements cover every engagement, safeguarding both your data and your clients\'. Our role stays wholly private, and your information is never used beyond the engagement itself. That protects your standing and ensures your client relationships remain entirely yours.'],
+         'text' => 'Confidentiality underpins every engagement. Signed non-disclosure agreements and firm confidentiality practices protect your data and your clients\' information. Your information is never used beyond the engagement.'],
         ['title' => 'Quality & Process Controls', 'img' => $img('uk/security-3-7ba02f.jpg'),
-         'text' => 'Rather than relying on chance, we design accuracy directly into our workflow. Each piece of work moves through a set procedure and a review stage before it reaches you, so any error is caught and addressed early. This standard is maintained even during periods of high volume. You can therefore submit our work or hand it to clients knowing it has already passed a thorough check.'],
+         'text' => 'Every piece of work follows a defined process and review stage before reaching you. This helps identify and address errors early, maintaining accuracy even during periods of high volume. '],
         ['title' => 'Certified Security Standards', 'img' => $img('uk/security-1-5e658a.jpg'),
-         'text' => 'Genuine security is based on evidence, not simply on reassurances. Our practices align with recognised standards and certifications that establish clear requirements for protecting, accessing and managing data. That gives you independent proof your information is managed to a professional benchmark. It reflects the standard of protection any established business or practice is right to expect from an outsourcing partner.'],
+         'text' => 'Our practices align with recognised security standards and certifications for protecting, accessing and managing data. This provides independent assurance that your information is handled to a professional benchmark. '],
         ['title' => 'Secure Technology & Communication', 'img' => $img('uk/security-2-188afb.jpg'),
-         'text' => 'A significant share of data risk originates in routine activities such as unprotected email. As part of our offshore accounting support, we address this using secure, monitored systems and encrypted channels for every file and communication. Confidential material is never sent by unsecured routes, and entry to our systems is tightly restricted. Whether it is a short message or a full set of records, every exchange stays secure.'],
+         'text' => 'We use secure, monitored systems and encrypted channels for files and communications. Access is tightly restricted, and confidential information is never sent through unsecured routes. '],
     ];
 
     // core team (Malay, Prithvi, Umesh) config/home.php se aati hai; yahan sirf UK ka member

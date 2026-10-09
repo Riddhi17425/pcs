@@ -31,7 +31,7 @@
                         <span class="process_icon">
                             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{!! $icons[$loop->index % count($icons)] !!}</svg>
                         </span>
-                        <span class="process_step_label">Step {{ sprintf('%02d', $loop->iteration) }}</span>
+                        <!-- <span class="process_step_label">Step {{ sprintf('%02d', $loop->iteration) }}</span> -->
                     </div>
                     <div class="process_body">
                         <h3>{!! $step['title'] !!}</h3>
