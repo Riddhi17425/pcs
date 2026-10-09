@@ -116,7 +116,7 @@ return function (array $db) {
         ['type' => 'hero-dark', 'props' => [
             'title' => 'Accounting Outsourcing Company for',
             'mark' => 'US Businesses & CPA Firms',
-            'text' => 'US businesses and CPA firms turn to PCS Global, a trusted accounting outsourcing company, for their dedicated and scalable teams in accounting, bookkeeping, tax, payroll, and audit support. Companies choose us for accounting outsourcing for US firms because we function as a seamless extension of your team-not a far-away vendor. With dependable accounting outsourcing in the USA, we lower your costs and drive growth.',
+            'text' => 'US businesses and CPA firms trust PCS Global for dedicated, scalable teams across accounting, bookkeeping, tax, payroll, and audit support. We work as a seamless extension of your team, not a distant vendor. Our accounting outsourcing services help US firms reduce costs, improve efficiency, and drive sustainable growth.',
             'features' => ['US Accounting Expertise', 'Dedicated Accounting Teams', 'Scalable Outsourcing Solutions', 'US GAAP Support'],
             'primaryText' => 'Book a Free Consultation',
             'secondaryText' => 'Talk to Our Expert',
