@@ -119,7 +119,7 @@
               <li>
                 <a class="dropdown-item" href="{{ url('aus') }}">
                   <img src="{{asset('public/front/images/contry-icon/australia-icon.png')}}" alt="Australia">
-                  <span>Australia</span>
+                  <span>AU</span>
                 </a>
               </li>
               <li>

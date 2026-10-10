@@ -82,53 +82,60 @@
                     <img src="{{ asset('public/front/images/figma-precision/accounting-outsourcing.png') }}" loading="lazy" alt="Accounting Outsourcing">
                 </div>
                 <div class="precision_card_body">
-                    <h3>Accounting Outsourcing</h3>
-                    <p>Running and maintaining real-time, accurate accounts requires time and effort, which many teams cannot afford. We take care of all of this for you: reconciliations, ledgers, month-end closing, all fast and accurate so you know exactly where you stand at all times, at a fraction of the cost of having your own team do it.</p>
+                    <h3>Accounting and Finance</h3>
+                    <p>Our all-inclusive accounting & finance services team takes care of all your books, ensuring accuracy and regulatory compliance,
+                            powering clients to take control of their financial future with scalable and tech-enabled solutions.</p>
                 </div>
             </div>
             <div class="precision_card">
                 <div class="precision_card_img">
-                    <img src="{{ asset('public/front/images/figma-precision/bookkeeping-outsourcing-5d38e9.png') }}" loading="lazy" alt="Bookkeeping Outsourcing">
+                    <img src="{{ asset('public/front/images/Taxation.jpg') }}" loading="lazy" alt="Bookkeeping Outsourcing">
                 </div>
                 <div class="precision_card_body">
-                    <h3>Bookkeeping Outsourcing</h3>
-                    <p>Sound financial decisions require updated and accurate records. We record and reconcile every transaction the moment it occurs - you never get caught out or have doubts about the figures. We work within the software you already use, so your systems remain unchanged. The result is precise, well-maintained books you can rely on throughout the year.</p>
+                    <h3>Taxation</h3>
+                    <p>With efficiency at our core, we deliver accurate and timely tax preparation services tailored for individuals, sole traders,
+                            and business entities through a streamlined, dependable process built for results.</p>
                 </div>
             </div>
             <div class="precision_card">
                 <div class="precision_card_img">
-                    <img src="{{ asset('public/front/images/figma-precision/tax-preparation-outsourcing.png') }}" loading="lazy" alt="Tax Preparation Outsourcing">
+                    <img src="{{ asset('public/front/images/Payroll_outsourcing.jpg') }}" loading="lazy" alt="Tax Preparation Outsourcing">
                 </div>
                 <div class="precision_card_body">
-                    <h3>Tax Preparation Outsourcing</h3>
-                    <p>Tax obligations place real demands on any business, particularly as deadlines approach. We prepare and review your returns in line with Australian requirements, verify the details, and lodge them on time. Our specialists remain updated with the rules that apply to your business, reducing errors and preventing missed deadlines. You receive accurate, compliant returns without the pressure.</p>
+                    <h3>Payroll
+                        Outsourcing</h3>
+                    <p>At PCS Global, we deliver a comprehensive payroll outsourcing service that relieves you and allows you to focus on growing your business.
+                            Our dedicated team ensures greater accuracy while also keeping in mind the laws and regulations.</p>
                 </div>
             </div>
             <div class="precision_card">
                 <div class="precision_card_img">
-                    <img src="{{ asset('public/front/images/figma-precision/bas-ias-return-services.png') }}" loading="lazy" alt="BAS/IAS Return Services">
+                    <img src="{{ asset('public/front/images/Strata_Management.jpg') }}" loading="lazy" alt="BAS/IAS Return Services">
                 </div>
                 <div class="precision_card_body">
-                    <h3>BAS/IAS Return Services</h3>
-                    <p>Activity statements are a recurring obligation that leaves little room for error. We manage your Business and Instalment Activity Statements in full, calculating your GST and PAYG, reconciling them against your records, and lodging ahead of the deadline. Every statement is reviewed before submission. The result is accurate statements, lodged on time, without the recurring pressure on your team.</p>
+                    <h3>Strata Management</h3>
+                    <p>From budgeting and levy collection to maintenance coordination, we do it all.
+                           Our Strata Specialists streamline property maintenance services, acting as your virtual strata managers with a keen expert eye.</p>
                 </div>
             </div>
             <div class="precision_card">
                 <div class="precision_card_img">
-                    <img src="{{ asset('public/front/images/figma-precision/payroll-outsourcing.png') }}" loading="lazy" alt="Payroll Outsourcing">
+                    <img src="{{ asset('public/front/images/IT_Automation.jpg') }}" loading="lazy" alt="Payroll Outsourcing">
                 </div>
                 <div class="precision_card_body">
-                    <h3>Payroll Outsourcing</h3>
-                    <p>Payroll is among the most sensitive functions in any business, and accuracy is not optional. We manage the entire process, including pay runs, PAYG, superannuation, leave and Single Touch Payroll reporting to the ATO. Each cycle is calculated carefully and processed on schedule. Your employees are paid correctly, and your business remains compliant, without the administrative burden falling on you.</p>
+                    <h3>IT Automation</h3>
+                    <p>Our specialization in development, UI/UX, QA and enterprise solutions grows your business with a smarter system.
+                            Custom tech solutions enhanced with digital integration enable a more efficient and scalable business.</p>
                 </div>
             </div>
             <div class="precision_card">
                 <div class="precision_card_img">
-                    <img src="{{ asset('public/front/images/figma-precision/strata-management-services-ae35ad.png') }}" loading="lazy" alt="Strata Management Services">
+                    <img src="{{ asset('public/front/images/Staffing__Recruitment.jpg') }}" loading="lazy" alt="Strata Management Services">
                 </div>
                 <div class="precision_card_body">
-                    <h3>Strata Management Services</h3>
-                    <p>Strata finances are detailed and heavily governed by deadlines. Our specialists manage the financial side of your schemes and portfolios, from budgets and levies through to invoicing and owner reporting. Records are kept accurate, and reporting remains clear, so owners and committees always have a clear view of the finances.</p>
+                    <h3>Staffing & Recruitment</h3>
+                    <p>  Tailored staffing solutions for your business with the blend of flexible recruitment, contract hiring and offshore resource models.
+                            Our global talent network ensures you have the right people for the right roles, right when you need them.</p>
                 </div>
             </div>
         </div>
@@ -141,15 +148,17 @@
         <div class="row gy-5 gy-lg-0 justify-content-between align-items-center">
             <div class="col-lg-5">
                 <div class="partner_img">
-                    <img class="img-fluid" src="{{asset('public/front/images/who-are-we.png')}}" loading="lazy" alt="Why Partner With PCS Global">
+                    <img class="img-fluid" src="{{asset('public/front/images/who-are-we.webp')}}" loading="lazy" alt="Why Partner With PCS Global">
                 </div>
             </div>
 
             <div class="col-lg-6">
                 <div class="counter_lt">
-                    <h2 class="mb-3 mb-xxl-4">Why Partner With PCS Global?</h2>
-                    <p>The right partner does more than just take care of your accounting. They're an extension of your team, someone you can count on without having to follow up consistently. That's the quality PCS Global brings to every Australian business and accounting firm we serve - functioning as an authentic accounting outsourcing partner.</p>
-                    <p>As a finance and outsourcing accounting company in Australia built on skilled professionals and disciplined processes, we deliver work you can rely on. For many Australian firms, accounting outsourcing to India has become an effective way to access expertise and reduce overheads at once, and we make that transition straightforward and secure. The outcome is greater capacity, lower costs, and more time for your team to focus on growth.</p>
+                    <h2 class="mb-3 mb-xxl-4">Who Are We?</h2>
+                    <p>Decades of experience and expertise have led to PCS Global establishing a name for itself in overseas accounting and administrative solutions worldwide.
+                        With a strong presence in Australia, New Zealand, the US, the UK, Ireland, Europe and India, our teams empower businesses with accurate,
+                        timely and a combination of technology with human touch by delivering bespoke services.
+                    </p>
                 </div>
 
                 <div class="counter partner_stats">
@@ -177,8 +186,8 @@
     <div class="trust_slider_wrap">
         <div class="trust_slider_lt">
             <div class="trust_slider_head">
-                <h2>Outsourcing Accounting Solutions for Australian Businesses & Firms</h2>
-                <p>No two organisations operate in exactly the same way, so we do not apply a standard template. As an experienced accounting outsourcing firm, PCS Global tailors its support to your structure, your workload and your objectives. The following are the clients we most commonly support.</p>
+                <h2>Global Accounting Expertise. Tailored Business Solutions.</h2>
+                <p>At PCS Global, we deliver tailored accounting outsourcing solutions designed around your business structure, workload, and goals. From bookkeeping and payroll to tax preparation and financial reporting, our experienced team combines industry expertise, technology, and reliable support to help global businesses and accounting firms improve efficiency, maintain accuracy, and focus on growth.</p>
             </div>
             <div class="trust_slider_arrows">
                 <button type="button" class="trust_slider_arrow trust_slider_prev" aria-label="Previous">
@@ -192,7 +201,7 @@
 
         <div class="trust_slider_rt">
             <div class="trust_slider_track" id="trustSliderTrack">
-                <div class="trust_slide">
+                <!-- <div class="trust_slide">
                     <div class="trust_slide_img">
                         <img src="{{ asset('public/front/images/figma-trust-slider/accounting-finance-firms.png') }}" loading="lazy" alt="Accounting & Finance Firms">
                     </div>
@@ -209,7 +218,7 @@
                         <h3>Small & Medium-Sized Businesses</h3>
                         <p>Many small and medium businesses require a complete finance function but cannot justify the cost of an in-house team. This is precisely where we add value. We manage the full scope of everyday work, from bookkeeping and payroll to BAS and reporting, at a fraction of the cost of employing staff. It provides your business with the financial capability of a far larger organisation, without the overheads.</p>
                     </div>
-                </div>
+                </div> -->
                 <div class="trust_slide">
                     <div class="trust_slide_img">
                         <img src="{{ asset('public/front/images/trust_bg.png') }}" loading="lazy" alt="Research & Analysis">
@@ -243,9 +252,9 @@
                 <span class="trust_slider_seg"></span>
                 <span class="trust_slider_seg"></span>
                 <span class="trust_slider_seg"></span>
+                <!-- <span class="trust_slider_seg"></span>
                 <span class="trust_slider_seg"></span>
-                <span class="trust_slider_seg"></span>
-                <span class="trust_slider_seg"></span>
+                <span class="trust_slider_seg"></span> -->
             </div>
         </div>
     </div>

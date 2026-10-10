@@ -972,7 +972,8 @@
     }
     .service-item-lists{
         grid-template-columns: repeat(2, 1fr);
-    }
+    }
+
        .countries-box{
             flex-wrap: wrap;
             gap:20px;
@@ -1056,7 +1057,8 @@ nav {
     justify-content: space-between;
     padding-top: 0 !important;
 }
-
+
+
 
     .precision_grid {
         grid-template-columns: 1fr;
@@ -1077,7 +1079,8 @@ nav {
     /* .cert_badge img {
         height: 60px;
     } */
-
+
+
 
     .trust_slider_sec {
         padding: 50px 0;
@@ -1738,6 +1741,12 @@ nav {
 }
 
 @media (min-width: 1201px) and (max-width: 1599px) {
+
+    .foot_social img {
+    width: 30px;
+    height: 30px;
+}
+
     .footer_top_flex {
         grid-template-columns: minmax(260px, 360px) 1fr;
         gap: 60px;
