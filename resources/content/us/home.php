@@ -51,7 +51,7 @@ return function (array $db) {
     $ind = fn ($name) => $img("common/industries/$name.svg");
     $industries = [
         [[$ind('accounting'), 'Accounting & CPA Firms'], [$ind('real-estate'), 'Real Estate'], [$ind('construction'), 'Construction'], [$ind('manufacturing'), 'Manufacturing'], [$ind('healthcare'), 'Healthcare']],
-        [[$ind('legal'), 'Law Firms'], [$ind('professional-services'), 'Professional Services'], [$ind('ecommerce'), 'E-commerce & Retail'], [$ind('strata'), 'Technology'], [$ind('accounting'), 'Financial Services']],
+        [[$ind('legal'), 'Law Firms'], [$ind('professional-services'), 'Professional Services'], [$ind('ecommerce'), 'E-commerce & Retail'], [$ind('Technology'), 'Technology'], [$ind('Financial-Services'), 'Financial Services']],
     ];
 
     $processSteps = [
