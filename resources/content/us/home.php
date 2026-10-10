@@ -16,7 +16,7 @@ return function (array $db) {
     $serviceCards = [
         ['title' => 'Accounting Outsourcing Services', 'img' => $img('figma-precision/accounting-outsourcing.png'), 'url' => $us('bookkeeping-and-accounting-services'),
          'text' => 'Keeping your accounts accurate and current is demanding, and for many US companies it draws focus away from running the business. We take on the full accounting cycle, from reconciliations and the general ledger to closing your books each month and at year-end, all to US GAAP. You get a clear, current picture of your finances whenever you need it. And because you are not carrying a full in-house team, the cost is considerably lower.'],
-        ['title' => 'Bookkeeping Outsourcing Services', 'img' => $img('common/services/bookkeeping-team.jpg'), 'url' => $us('bookkeeping-and-accounting-services'),
+        ['title' => 'Bookkeeping Outsourcing Services', 'img' => $img('common/services/bookkeeping-team.webp'), 'url' => $us('bookkeeping-and-accounting-services'),
          'text' => 'Accurate books are the foundation everything else is built on, from tax filings to financial reporting. We log and match every transaction as it comes through, keeping your records current and your numbers something you can trust. We work inside the software your business already runs on, so nothing about your setup has to change. The result is clean, reliable books maintained month after month.'],
         ['title' => 'Outsourced Tax Preparation Services', 'img' => $img('common/services/tax-team.jpg'), 'url' => $us('taxation-services'),
          'text' => 'Tax season places real strain on US businesses and CPA firms alike. We provide tax preparation support that gets returns organized, reviewed, and ready to file on schedule, easing the pressure when it peaks. Our team stays current on the federal and state rules that affect your filings, which reduces errors and last-minute surprises. You receive accurate, well-prepared returns and a far smoother season.'],
@@ -29,7 +29,7 @@ return function (array $db) {
     $clientCards = [
         ['title' => 'Accounting Outsourcing for US Businesses', 'img' => $img('us/client-2.jpg'),
          'text' => 'We work with small and mid-sized companies, to fast-growing companies and those with slender finance teams, providing the extra support your business needs. For businesses with seasonal accounting cycles, we ramp up during the accounting high seasons, and ease down as those high seasons wrap up. It is a smart, scalable way to manage a larger in-house team. '],
-        ['title' => 'Accounting Outsourcing for US Accounting & CPA Firms', 'img' => $img('us/client-1-182ac9.jpg'),
+        ['title' => 'Accounting Outsourcing for CPA Firms', 'img' => $img('us/client-1-182ac9.jpg'),
          'text' => 'We handle bookkeeping, accounting back-office work, tax preparation support, and audit support, along with overflow and seasonal workloads when demand spikes. For firms that prefer it, we also provide white-label accounting and dedicated offshore accounting teams that operate under your brand. A growing number of US accounting firms outsourcing to India do so to grow steadily while keeping quality and client relationships firmly in their own hands.'],
     ];
 
@@ -74,17 +74,17 @@ return function (array $db) {
     ];
 
     $securityCards = [
-        ['title' => 'Secure Data Handling', 'img' => $img('us/security-1.jpg'),
+        ['title' => 'Secure Data Handling', 'img' => $img('australia/Secure-Data-Handling.webp'),
          'text' => 'Your financial data is protected at every stage of the work. We keep it in secure systems and limit access to specialists assigned to your account. Clear procedures govern how information is stored, used, and removed throughout the engagement.'],
-        ['title' => 'Confidentiality & Privacy', 'img' => $img('us/security-2.jpg'),
+        ['title' => 'Confidentiality & Privacy', 'img' => $img('australia/Confidentiality -Privacy.webp'),
          'text' => 'Everything we handle for you stays confidential. Every engagement is covered by signed non-disclosure agreements (NDA) and strict confidentiality rules. Your records and those of your clients remain protected, while your reputation and client relationships stay entirely confidential.'],
-        ['title' => 'Quality & Process Controls', 'img' => $img('us/security-3.jpg'),
+        ['title' => 'Quality & Process Controls', 'img' => $img('australia/Quality-Process-Controls.webp'),
          'text' => 'QA forms the backbone of our processes, helping us prevent errors rather than relying on luck. Every job passes through a stringent QA review before it comes back to you. This established quality standard remains consistent even when volumes rise. Our quality process is ISO 9001 certified.'],
-        ['title' => 'Certified Security Standards', 'img' => $img('us/security-1.jpg'),
+        ['title' => 'Certified Security Standards', 'img' => $img('australia/Certified-Security-Standards.webp'),
          'text' => 'Our security standards are ISO 27001 certified, with firm rules for how data must be protected and managed. This provides third-party evidence that your data receives professional-grade handling. We understand our US clients\' expectations and requirements for data security and adhere to them.'],
-        ['title' => 'Secure Technology & Communication', 'img' => $img('us/security-2.jpg'),
+        ['title' => 'Secure Technology & Communication', 'img' => $img('australia/Secure-Technology-Communication.webp'),
          'text' => 'We protect data exchanged through everyday tools such as email using secure, monitored systems and encryption. Confidential details are never sent through unsafe channels, and access to our tools remains tightly controlled. From quick questions to complete financial records, every exchange stays protected.'],
-        ['title' => 'Business Continuity & Data Protection', 'img' => $img('us/security-3.jpg'),
+        ['title' => 'Business Continuity & Data Protection', 'img' => $img('australia/Business-continuity.webp'),
          'text' => 'We maintain data protection measures and business continuity plans so your work continues without interruption. Backups, redundancy, and defined recovery procedures help keep your information safe and services running. You can depend on consistent delivery, whatever the circumstances.'],
     ];
 

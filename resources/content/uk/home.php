@@ -66,15 +66,15 @@ return function (array $db) {
     ];
 
     $securityCards = [
-        ['title' => 'Secure Data Handling', 'img' => $img('uk/security-1-5e658a.jpg'),
+        ['title' => 'Secure Data Handling', 'img' => $img('australia/Secure-Data-Handling.webp'),
          'text' => 'Your financial information is stored and processed securely, with access limited to specialists working on your account. Strict procedures control how data is managed, retained and removed throughout the engagement. '],
-        ['title' => 'Confidentiality & Privacy', 'img' => $img('uk/security-2-188afb.jpg'),
+        ['title' => 'Confidentiality & Privacy', 'img' => $img('australia/Confidentiality -Privacy.webp'),
          'text' => 'Confidentiality underpins every engagement. Signed non-disclosure agreements and firm confidentiality practices protect your data and your clients\' information. Your information is never used beyond the engagement.'],
-        ['title' => 'Quality & Process Controls', 'img' => $img('uk/security-3-7ba02f.jpg'),
+        ['title' => 'Quality & Process Controls', 'img' => $img('australia/Quality-Process-Controls.webp'),
          'text' => 'Every piece of work follows a defined process and review stage before reaching you. This helps identify and address errors early, maintaining accuracy even during periods of high volume. '],
-        ['title' => 'Certified Security Standards', 'img' => $img('uk/security-1-5e658a.jpg'),
+        ['title' => 'Certified Security Standards', 'img' => $img('australia/Certified-Security-Standards.webp'),
          'text' => 'Our practices align with recognised security standards and certifications for protecting, accessing and managing data. This provides independent assurance that your information is handled to a professional benchmark. '],
-        ['title' => 'Secure Technology & Communication', 'img' => $img('uk/security-2-188afb.jpg'),
+        ['title' => 'Secure Technology & Communication', 'img' => $img('australia/Secure-Technology-Communication.webp'),
          'text' => 'We use secure, monitored systems and encrypted channels for files and communications. Access is tightly restricted, and confidential information is never sent through unsecured routes. '],
     ];
 

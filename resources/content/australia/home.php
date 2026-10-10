@@ -28,17 +28,17 @@ return function (array $db) {
     ];
 
     $clientSlides = [
-        ['title' => 'Accounting & Finance Firms', 'img' => $img('figma-trust-slider/accounting-finance-firms.png'),
+        ['title' => 'Accounting & Finance Firms', 'img' => $img('figma-trust-slider/accounting-finance-firms.webp'),
          'text' => 'We provide qualified accounting support under your own brand, helping you take on more clients and manage peak periods without immediate recruitment. Work is completed to your standards and returned ready for review, while your clients continue to see only your firm. '],
-        ['title' => 'Small & Medium-Sized Businesses', 'img' => $img('figma-trust-slider/small-medium-businesses.png'),
+        ['title' => 'Small & Medium-Sized Businesses', 'img' => $img('figma-trust-slider/small-medium-businesses.webp'),
          'text' => 'We manage everyday accounting work, from bookkeeping and payroll to BAS and reporting, without the cost of a full-time in-house team. This gives your business the financial capability of a larger organisation while keeping overheads under control. '],
-         ['title' => 'Growing Businesses', 'img' => $img('figma-trust-slider/small-medium-businesses.png'),
+         ['title' => 'Growing Businesses', 'img' => $img('figma-trust-slider/Growing-Businesses.webp'),
          'text' => 'Rapid growth can quickly place pressure on your finance function as sales, staff and transaction volumes increase. We scale alongside your business, providing additional support when required so your finances never become a constraint on continued growth. '],
-         ['title' => 'Professional Services Firms', 'img' => $img('figma-trust-slider/small-medium-businesses.png'),
+         ['title' => 'Professional Services Firms', 'img' => $img('figma-trust-slider/Professional-Services-Firms.webp'),
          'text' => 'We manage billing, payroll and compliance in the background, allowing your consultants and advisers to focus on client work. Your back office continues to operate accurately and reliably without taking valuable time away from the services that generate fees. '],
-         ['title' => 'Strata & Property Businesses', 'img' => $img('figma-trust-slider/small-medium-businesses.png'),
+         ['title' => 'Strata & Property Businesses', 'img' => $img('figma-trust-slider/Strata-Property-Businesses.webp'),
          'text' => 'Our specialists manage levy collection, scheme budgets and owner reporting with the accuracy required by strata and property businesses. You gain reliable strata accounting and clear financial records without diverting your team from managing properties. '],
-         ['title' => 'Other Australian Businesses', 'img' => $img('figma-trust-slider/small-medium-businesses.png'),
+         ['title' => 'Other Australian Businesses', 'img' => $img('figma-trust-slider/Other-Australian-Businesses.webp'),
          'text' => 'Whatever your industry, we adapt to your existing processes, so there are no new systems to learn and no disruption to your operations. You may outsource a single function or your entire finance operation, according to your needs. It is flexible, scalable accounting support for Australian businesses of every size.'],
     ];
 
@@ -60,7 +60,7 @@ return function (array $db) {
     $ind = fn ($name) => $img("common/industries/$name.svg");
     $industries = [
         [[$ind('accounting'), 'Accounting & Auditing'], [$ind('construction'), 'Construction'], [$ind('real-estate'), 'Real Estate & Property'], [$ind('strata'), 'Strata Management'], [$ind('manufacturing'), 'Manufacturing']],
-        [[$ind('professional-services'), 'Professional Services'], [$ind('legal'), 'Legal Services'], [$ind('healthcare'), 'Healthcare'], [$ind('ecommerce'), 'E-commerce & Retail'], [$ind('professional-services'), 'Other relevant industries']],
+        [[$ind('professional-services'), 'Professional Services'], [$ind('legal'), 'Legal Services'], [$ind('healthcare'), 'Healthcare'], [$ind('ecommerce'), 'E-commerce & Retail']],
     ];
 
     $processSteps = [
@@ -85,15 +85,15 @@ return function (array $db) {
     ];
 
     $securityCards = [
-        ['title' => 'Secure Data Handling', 'img' => $img('australia/security-1.jpg'),
+        ['title' => 'Secure Data Handling', 'img' => $img('australia/Secure-Data-Handling.webp'),
          'text' => 'We protect your financial information at every stage using secure systems and controlled access. Only professionals assigned to your account can access your data. Clear procedures govern how information is handled, stored and disposed of, keeping it protected from beginning to end. '],
-        ['title' => 'Confidentiality & Privacy', 'img' => $img('australia/security-2.jpg'),
+        ['title' => 'Confidentiality & Privacy', 'img' => $img('australia/Confidentiality -Privacy.webp'),
          'text' => 'Discretion is central to how we work. Every engagement follows strict confidentiality practices and signed non-disclosure agreements to protect your information and that of your clients. Our involvement stays behind the scenes, safeguarding your reputation and client relationships. '],
-        ['title' => 'Quality & Process Controls', 'img' => $img('australia/security-3.jpg'),
+        ['title' => 'Quality & Process Controls', 'img' => $img('australia/Quality-Process-Controls.webp'),
          'text' => 'Accuracy is built into every process. Tasks follow defined procedures and are reviewed before reaching you, allowing errors to be identified and corrected early. This maintains consistent quality even during high-volume periods, so you can use our work with confidence. '],
-        ['title' => 'Certified Security Standards', 'img' => $img('australia/security-1.jpg'),
+        ['title' => 'Certified Security Standards', 'img' => $img('australia/Certified-Security-Standards.webp'),
          'text' => 'We follow recognised security standards and certifications to ensure your data is protected, accessed and managed responsibly. This gives you confidence that your information is handled securely and professionally by a trusted outsourcing partner.'],
-        ['title' => 'Secure Technology & Communication', 'img' => $img('australia/security-2.jpg'),
+        ['title' => 'Secure Technology & Communication', 'img' => $img('australia/Secure-Technology-Communication.webp'),
          'text' => 'We use secure, monitored systems and encrypted channels for files and communications. Sensitive information is never transmitted through unprotected means, while access to our systems is tightly controlled. This helps minimise everyday data risks and keeps your information secure.'],
     ];
 

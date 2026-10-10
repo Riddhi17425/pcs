@@ -6,16 +6,16 @@
 <x-layout.footer
     :home-url="$ukUrl('')"
     :quick-links="[
-        ['Home', $ukUrl('')],
-        ['About Us', $ukUrl('about')],
+        ['Home', route('uk')],
+        ['About Us', route('uk.about')],
         ['Data Security', route('datasecurity'), true],   // sab countries ka ek hi page, naye tab me
-        ['Contact Us', $ukUrl('contact-us')],
+        ['Contact Us', route('uk.contact')],
         ['Blogs', route('blog'), true],                   // sab countries ka ek hi page, naye tab me
     ]"
     :services="[
-        ['Accounting Outsourcing', url('uk/accounting-outsourcing-services')],
-        ['Small Business Accounting', url('uk/small-business-accounting-services')],
-        ['Tax Preparation Outsourcing', url('uk/outsource-tax-preparation-services')],
+        ['Accounting Outsourcing', route('accounting.outsourcing.services')],
+        ['Small Business Accounting', route('small.business.accounting.services')],
+        ['Tax Preparation Outsourcing', route('outsource.tax.preparation.services')],
     ]"
     address="16 Field Maple Gardens, High Wycombe,<br>Buckinghamshire, HP10 9FN, United Kingdom"
     :phones="[['number' => '(+44) 113 4034334']]"

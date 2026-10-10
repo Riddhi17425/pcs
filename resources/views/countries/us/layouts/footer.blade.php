@@ -6,15 +6,15 @@
 <x-layout.footer
     :home-url="$usUrl('')"
     :quick-links="[
-        ['Home', $usUrl('')],
-        ['About Us', $usUrl('about')],
+        ['Home',  route('us.home')],
+        ['About Us', route('us.about')],
         ['Data Security', route('datasecurity'), true],   // sab countries ka ek hi page, naye tab me
-        ['Contact Us', $usUrl('contact-us')],
+        ['Contact Us', route('us.contact')],
         ['Blogs', route('blog'), true],                   // sab countries ka ek hi page, naye tab me
     ]"
     :services="[
-        ['Accounting & Bookkeeping', url('us/bookkeeping-and-accounting-services')],
-        ['Taxation Services', url('us/taxation-services')],
+        ['Accounting & Bookkeeping', route('pcs.global.usa')],
+        ['Taxation Services', route('taxation-services-usa')],
     ]"
     address="225 Cherry Street, 52K<br>New York, NY, 10002"
     :phones="[['number' => '(+1) 347 801 8715']]"
