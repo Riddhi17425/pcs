@@ -56,7 +56,9 @@
                     <textarea name="message" rows="3" placeholder="Message:" aria-label="Message"></textarea>
                 </div>
                 <div class="col-12 cf_field">
-                    <div class="g-recaptcha" data-sitekey="6LfxJ7crAAAAAGJsj1iMJSQXpZLJE47H1h6StuUT"></div>
+                    {{-- <div class="g-recaptcha" data-sitekey="6LfxJ7crAAAAAGJsj1iMJSQXpZLJE47H1h6StuUT"></div> --}}
+                    <div class="g-recaptcha"
+                      data-sitekey="{{ app()->environment('local') ? '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' : '6LfxJ7crAAAAAGJsj1iMJSQXpZLJE47H1h6StuUT' }}"></div>
                     <span class="captcha-error text-danger" style="display:none;">Please verify you are not a robot.</span>
                 </div>
             </div>

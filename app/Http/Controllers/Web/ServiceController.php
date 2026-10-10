@@ -52,11 +52,7 @@ class ServiceController extends Controller
             'service'    => 'nullable|string|max:150',
         ]);
 
-        // Google Sheet ke liye: company / city / service message me jode jaate hain
-        // (DB me ab ye alag columns me save hote hain)
-        $details = collect(['Company' => $request->company, 'City' => $request->city, 'Service' => $request->service])
-            ->filter()->map(fn ($v, $k) => "$k: $v")->implode(' | ');
-        $message = trim($details . ($details && $request->message ? "\n" : '') . $request->message);
+       
 
         $rawPhone = $request->full_phone ?: $request->phone;
         $phone    = '+' . ltrim($rawPhone, '+');
@@ -74,7 +70,7 @@ class ServiceController extends Controller
         ]);
 
         $sheetData = [
-            'form_type' => 'Request Form',
+            'form_type' => ($request->country ?? 'Website') . ' Enquiry Form',
             'name'      => $request->fullname ?? '',
             'contact'   => $phone,
             'email'     => $request->email ?? '',
@@ -82,7 +78,7 @@ class ServiceController extends Controller
             'services'  => is_array($request->services)
                 ? implode(', ', $request->services)
                 : ($request->services ?? $request->service ?? ''),
-            'message'   => $message,
+            'message'   => $request->message ?? '',
             'date'      => now()->format('Y-m-d H:i:s'),
         ];
         // Redirect to contact route with success message
@@ -90,7 +86,7 @@ class ServiceController extends Controller
             ->withHeaders([
                 'Content-Type' => 'application/json',
             ])
-            ->post('https://script.google.com/macros/s/AKfycbznUt89nic300-hxaU7aQJr_P3CcDUsbgtKOh49HfLljKp5saEKlCKgkHUKQB1vVEP6/exec', $sheetData);
+            ->post('https://script.google.com/macros/s/AKfycbzoF3Y1kaEZZULS_qL6Jsq_vZ9Mz-k4A4cOlt773dyr1fMT1OXscj2dlufFOE_Y5zXw/exec', $sheetData);
 
         // Check response
         if ($response->successful()) {
