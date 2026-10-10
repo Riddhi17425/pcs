@@ -1,5 +1,5 @@
 {{-- UK home page (/uk). Controller: CountryHomeController@home (team / logos / blogs DB se: $ourexpert, $images, $blogs).
-     Har section seedha Blade/HTML me likha hai (upar @php me data, neeche markup); CSS: STRUCTURE.md ka section-table dekho.
+     Har section seedha Blade/HTML me likha hai (upar data ka PHP block, neeche markup); CSS: STRUCTURE.md ka section-table dekho.
      Text / images badalne ho to isi file me badlo. --}}
 @extends('layouts.app', ['header_overlay' => true])
 
