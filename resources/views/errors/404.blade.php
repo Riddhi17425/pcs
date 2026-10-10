@@ -1,4 +1,4 @@
-{{-- 404 page (sab countries). URL /aus/... ho to Australia ka header/footer, warna India ka. --}}
+{{-- 404 page (sab countries). URL /aus/... ho to Australia ka header/footer, warna India ka. Layout: layouts/app --}}
 @php
     $isAu = request()->is('aus', 'aus/*');
     $home = $isAu ? url('aus') : url('/');
@@ -17,7 +17,10 @@
             ['Strata Management', route('strata.management')],
             ['Blogs', route('blog')],
         ];
-    $meta = ['meta_title' => 'Page Not Found | PCS Global', 'meta_description' => 'The page you are looking for could not be found.'];
+    $meta_title = 'Page Not Found | PCS Global';
+    $meta_description = 'The page you are looking for could not be found.';
+    // 404 par route middleware nahi chalta, isliye site yahin chuni jaati hai
+    $site = \App\Support\Site::get($isAu ? 'australia' : 'india');
 @endphp
 
 @push('styles')
@@ -26,7 +29,9 @@
     <meta name="robots" content="noindex, follow">
 @endpush
 
-@include($isAu ? 'countries.australia.layouts.header' : 'countries.india.layouts.header', $meta)
+@extends('layouts.app')
+
+@section('content')
 
 <section class="error_page">
     <div class="container">
@@ -53,4 +58,4 @@
     </div>
 </section>
 
-@include($isAu ? 'countries.australia.layouts.footer' : 'countries.india.layouts.footer')
+@endsection
