@@ -56,7 +56,7 @@ return function (array $db) {
     $ind = fn ($name) => $img("common/industries/$name.svg");
     $industries = [
         [[$ind('accounting'), 'Accounting & Auditing Firms'], [$ind('professional-services'), 'Professional Services'], [$ind('construction'), 'Construction'], [$ind('real-estate'), 'Property & Real Estate']],
-        [[$ind('ecommerce'), 'E-commerce'], [$ind('manufacturing'), 'Manufacturing'], [$ind('healthcare'), 'Healthcare'], [$ind('strata'), 'Technology']],
+        [[$ind('ecommerce'), 'E-commerce'], [$ind('manufacturing'), 'Manufacturing'], [$ind('healthcare'), 'Healthcare'], [$ind('Technology'), 'Technology']],
     ];
 
     $certs = [
