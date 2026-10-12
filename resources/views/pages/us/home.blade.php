@@ -242,23 +242,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const segs = document.querySelectorAll('#trustSliderProgress .trust_slider_seg');
     if (!track || !segs.length) return;
 
-    const cards = () => Array.from(track.querySelectorAll('.trust_slide'));
+    const originalCards = Array.from(track.querySelectorAll('.trust_slide'));
+    const loopCards = originalCards.map((card) => {
+        const clone = card.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        clone.querySelectorAll('a, button, input, select, textarea, [tabindex]').forEach((element) => element.setAttribute('tabindex', '-1'));
+        track.appendChild(clone);
+        return clone;
+    });
     const cardLeft = (card) => card.offsetLeft - track.firstElementChild.offsetLeft;
+    const cycleWidth = () => cardLeft(loopCards[0]);
 
-    // jo card track ke left edge ke sabse paas hai wahi active; end tak scroll ho gaya ho to aakhri card
     function updateProgress() {
-        const list = cards();
-        const maxScroll = track.scrollWidth - track.clientWidth;
+        const width = cycleWidth();
+        const position = width > 0 ? track.scrollLeft % width : track.scrollLeft;
         let active = 0;
-        if (maxScroll > 0 && track.scrollLeft >= maxScroll - 2) {
-            active = list.length - 1;
-        } else {
-            let best = Infinity;
-            list.forEach((card, i) => {
-                const d = Math.abs(cardLeft(card) - track.scrollLeft);
-                if (d < best) { best = d; active = i; }
-            });
-        }
+        let best = Infinity;
+        originalCards.forEach((card, i) => {
+            const distance = Math.abs(cardLeft(card) - position);
+            if (distance < best) { best = distance; active = i; }
+        });
         segs.forEach((seg, i) => seg.classList.toggle('active', i === active));
     }
 
@@ -269,14 +272,23 @@ document.addEventListener("DOMContentLoaded", () => {
         track.scrollBy({ left: direction * (card.offsetWidth + gap), behavior: 'smooth' });
     }
 
+    function autoSlide() {
+        scrollByCard(1);
+    }
+
     segs.forEach((seg, i) => seg.addEventListener('click', () => {
-        const card = cards()[i];
+        const card = originalCards[i];
         if (card) track.scrollTo({ left: cardLeft(card), behavior: 'smooth' });
     }));
 
     prevBtn && prevBtn.addEventListener('click', () => scrollByCard(-1));
     nextBtn && nextBtn.addEventListener('click', () => scrollByCard(1));
-    track.addEventListener('scroll', updateProgress);
+    track.addEventListener('scroll', () => {
+        const width = cycleWidth();
+        while (width > 0 && track.scrollLeft >= width) track.scrollLeft -= width;
+        updateProgress();
+    });
+    window.setInterval(autoSlide, 4000);
     updateProgress();
 });
 </script>
@@ -374,7 +386,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>Getting started with PCS Global is simple, and the process is built to keep risk and disruption to a minimum. In these five stages, you go from an opening conversation to a team that functions as part of your own.</p>
         </div>
 
-        <div class="process_steps">
+        <div class="process_steps" data-slider data-slider-controls="slider4" data-slider-show="3" data-slider-controls-visible="{{ count($processStepsSteps) > 3 ? 'true' : 'false' }}">
             @foreach ($processStepsSteps as $step)
                 <div class="process_card">
                     <div class="process_head">
@@ -389,6 +401,27 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </div>
             @endforeach
+        </div>
+        <div class="our_experts_bot slider4-controls">
+            <div class="experts_info">
+                <div class="circular-progress slider4-progress">
+                    <div class="inner-circle"></div>
+                </div>
+                <p class="experts_counter slider4-counter"></p>
+            </div>
+            <hr>
+            <div class="slick_arrow">
+                <span class="arrow-prev slider4-prev" aria-label="Previous">
+                    <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M1 6.32861L6 11.3286M1 6.32861L6 1.3286M1 6.32861H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+                <span class="arrow-next slider4-next" aria-label="Next">
+                    <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M19 6.32861L14 11.3286M19 6.32861L14 1.3286M19 6.32861H1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+            </div>
         </div>
     </div>
 </section>
@@ -808,13 +841,16 @@ document.addEventListener('DOMContentLoaded', function () {
                         oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
                 </div>
                 <div class="col-lg-6 col-12 cf_field">
+                     <input type="text" name="city" maxlength="100" placeholder="Enter your City*:" aria-label="City" required>
+                </div>
+                <!-- <div class="col-lg-6 col-12 cf_field">
                     <select name="city" aria-label="Select City" required>
                         <option value="" hidden>Select City*:</option>
                         @foreach ($contactFormCities as $city)
                             <option value="{{ $city }}">{{ $city }}</option>
                         @endforeach
                     </select>
-                </div>
+                </div> -->
                 <div class="col-lg-6 col-12 cf_field">
                     <select name="service" aria-label="Choose Service" required>
                         <option value="" hidden>Choose Service*:</option>

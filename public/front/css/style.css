@@ -217,6 +217,10 @@ nav {
     gap: 20px;
 }
 
+.mobile_header_actions {
+    display: none;
+}
+
 .country_select {
     position: relative;
 }
@@ -1144,7 +1148,7 @@ nav {
 
 .com_inner_banner h2 {
     color: var(--white);
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 }
 
 .com_inner_banner p {
@@ -1351,6 +1355,27 @@ nav {
     gap: 24px;
 }
 
+.process_steps.slick-initialized .slick-list {
+    margin: 0 -12px;
+}
+
+.process_steps.slick-initialized .slick-track {
+    display: flex;
+    align-items: stretch;
+}
+
+.process_steps.slick-initialized .slick-slide {
+    flex: 0 0 auto;
+    height: auto;
+    margin: 0 12px;
+}
+
+@media (min-width: 1026px) {
+    .process_steps[data-slider-controls-visible="false"] + .slider4-controls {
+        display: none;
+    }
+}
+
 .process_card {
     position: relative;
     display: flex;
@@ -1366,7 +1391,7 @@ nav {
 }
 
 /* upar patli line, hover par poori khulti hai */
-.process_card::before {
+/* .process_card::before {
     content: "";
     position: absolute;
     top: 0;
@@ -1387,7 +1412,7 @@ nav {
 
 .process_card:hover::before {
     transform: scaleX(1);
-}
+} */
 
 .process_head {
     display: flex;
@@ -1400,6 +1425,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 6px;
     width: 56px;
     height: 56px;
     border-radius: 14px;
@@ -1409,9 +1435,9 @@ nav {
     transition: transform 0.3s ease;
 }
 
-.process_card:hover .process_icon {
+/* .process_card:hover .process_icon {
     transform: rotate(-6deg) scale(1.05);
-}
+} */
 
 .process_step_label {
     font-size: 14px;
@@ -1452,6 +1478,14 @@ nav {
 @media (max-width: 767px) {
     .process_steps {
         gap: 16px;
+    }
+
+    .process_steps.slick-initialized .slick-list {
+        margin: 0 -8px;
+    }
+
+    .process_steps.slick-initialized .slick-slide {
+        margin: 0 8px;
     }
 
     .process_card {

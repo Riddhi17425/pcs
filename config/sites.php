@@ -56,7 +56,7 @@ return [
                 ['Contact Us', 'contact'],
                 ['Blogs', 'blog'],
             ],
-            'address' => '22A Mort Street Blacktown<br>NSW 2148 Australia.',
+            'address' => 'Addor Aspire 2, 7th Floor,<br>Opp. Old Passport Office, University Area,<br>Ahmedabad - 380015<br>Gujarat, India',
             'phones' => [
                 ['number' => '(+613) 9998 0494', 'label' => 'AUS', 'icon' => 'contry-icon/australia-icon.png', 'alt' => 'Australia'],
                 ['number' => '(+1) 347 801 8715', 'label' => 'USA', 'icon' => 'contry-icon/us-icon.png', 'alt' => 'USA'],

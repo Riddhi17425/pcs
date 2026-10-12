@@ -7,7 +7,7 @@
 <section class="com_hero" style="background-image: url('{{ asset('public/front/images/about-hero-bg.jpg') }}');">
     <div class="container">
         <div class="com_hero_child">
-            <h1>About Us 11</h1>
+            <h1>About Us</h1>
             <!--<p>Unlock Your Potential. Focus on Growth. <br> Leave the Rest to Us.</p>-->
             <p>Outsource Routine Accelerate Results Harness Growth</p>
         </div>

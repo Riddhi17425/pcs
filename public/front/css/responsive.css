@@ -990,6 +990,30 @@
         display: flex;
     }
 
+    .mobile_header_actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-left: auto;
+    }
+
+    .mobile_country_select {
+        display: block;
+    }
+
+    .mobile_country_select_btn {
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        padding: 6px;
+        border-radius: 6px;
+    }
+
+    .mobile_country_select .country_select_menu {
+        width: auto;
+        min-width: 160px;
+    }
+
     .nav_links {
         display:none;
     }

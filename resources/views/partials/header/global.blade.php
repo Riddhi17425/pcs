@@ -7,10 +7,13 @@
         </div>
 
 
-        <div class="menu-toggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="mobile_header_actions">
+          @include('partials.mobile-country-dropdown', ['currentCountry' => ['name' => 'Global', 'flag' => null]])
+          <div class="menu-toggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
 
         <div class="nav_links" id="navLinks">
@@ -163,7 +166,6 @@
             <li><a href="{{route('datasecurity')}}">Data Security</a></li>
             <li><a href="{{route('blog')}}">Blogs</a></li>
             <li><a href="{{route('contact')}}">Contact Us</a></li>
-            <li><a href="#">Country: Global <span class="next-menu" data-target="menu-country">&rsaquo;</span></a></li>
             <li><a href="tel:+61399980494">📞 Call Us: (+613) 9998 0494</a></li>
           </ul>
 
@@ -206,8 +208,6 @@
           </ul>
         </div>
       </div>
-
-      @include('partials.mobile-countries')
 
     </div>
   </div>

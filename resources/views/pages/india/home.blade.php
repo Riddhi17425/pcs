@@ -9,19 +9,20 @@
         <div class="hero">
             <div class="hero_lt">
                 <div class="hero_lt_top">
-                  <h1 class="hero_head">Powered by <span><img class="hero_gif" src="{{asset('public/front/images/pcs_hero.gif')}}"
-                                alt="" aria-hidden="true"></span>
-                        Accuracy ! <br /> Backed by Expertise</h1>
+                  <h1 class="hero_head">Your Trusted Partner For
+                    <!-- <span><img class="hero_gif" src="{{asset('public/front/images/pcs_hero.gif')}}"
+                                alt="" aria-hidden="true"></span> -->
+                        <br /> Finance and Accounting <br> Outsourcing Solutions</h1>
 
-                    <p class="hero_para">Your Overseas Partners  <br/> For Workforce Solutions</p>
+                    <!-- <p class="hero_para">Your Overseas Partners  <br/> For Workforce Solutions</p> -->
                 </div>
 
                 <p class="hero_lt_Ser">Our Services</p>
                 <div class="hero_lt_bot">
-                    <p> <span><img src="{{asset('public/front/images/hero-dot.svg')}}" loading="lazy" alt="dot" height="16px" width="16px"></span> <span> Accounting And Finance</span></p>
-                    <p> <span><img src="{{asset('public/front/images/hero-dot.svg')}}" loading="lazy" alt="dot" height="16px" width="16px"></span><span> Strata Management</span></p>
-                    <p> <span><img src="{{asset('public/front/images/hero-dot.svg')}}" loading="lazy" alt="dot" height="16px" width="16px"></span> <span>Payroll and Taxation</span></p>
-                    <p> <span><img src="{{asset('public/front/images/hero-dot.svg')}}" loading="lazy" alt="dot" height="16px" width="16px"></span> <span>IT Automation</span></p>
+                    <p> <span><img src="{{asset('public/front/images/hero-dot.svg')}}" loading="lazy" alt="dot" height="16px" width="16px"></span> <span> Accounting Outsourcing</span></p>
+                    <p> <span><img src="{{asset('public/front/images/hero-dot.svg')}}" loading="lazy" alt="dot" height="16px" width="16px"></span><span> Bookkeeping Outsourcing</span></p>
+                    <p> <span><img src="{{asset('public/front/images/hero-dot.svg')}}" loading="lazy" alt="dot" height="16px" width="16px"></span> <span>Payroll Outsourcing</span></p>
+                    <p> <span><img src="{{asset('public/front/images/hero-dot.svg')}}" loading="lazy" alt="dot" height="16px" width="16px"></span> <span>Taxation Outsourcing</span></p>
                 </div>
 
                 <div class="hero_btn">
@@ -48,7 +49,7 @@
 
 <section class="clients mt-100">
     <div class="container">
-        <h2 class="text-center">Trusted By</h2>
+        <h2 class="text-center">Trusted by Global Accounting Firms & Businesses</h2>
     </div>
     <div class="client_slider_full">
         <div class="client_slider">
@@ -70,10 +71,8 @@
 <section class="comp_bus mt-100">
     <div class="container">
         <div class="com_sec_head_top">
-            <h2 class="mb-2 mb-xxl-4">Comprehensive Business <br /> Management & Consulting Solutions</h2>
-            <p>At PCS Global, we deliver expert consulting services that are strategically designed to help your organization navigate challenges,
-                    enhance performance and build long-term resilience. Our team offers objective insights, customized strategies and practical solutions.
-                    Taking a holistic approach, we help businesses address their day-to-day operational needs, as well as complex business issues, with precision, professionalism, and care. </p>
+            <h2 class="mb-2 mb-xxl-4">Comprehensive Accounting & Finance Outsourcing Solutions</h2>
+            <p>At PCS Global, we deliver complete accounting and finance outsourcing solutions tailored to global businesses and accounting firms. From accounting, bookkeeping, tax preparation, and payroll to recruitment and strata management, our dedicated professionals help reduce costs, streamline operations, and improve efficiency so you can focus on business growth. </p>
         </div>
 
         <div class="precision_grid">
@@ -82,9 +81,17 @@
                     <img src="{{ asset('public/front/images/figma-precision/accounting-outsourcing.png') }}" loading="lazy" alt="Accounting Outsourcing">
                 </div>
                 <div class="precision_card_body">
-                    <h3>Accounting and Finance</h3>
-                    <p>Our all-inclusive accounting & finance services team takes care of all your books, ensuring accuracy and regulatory compliance,
-                            powering clients to take control of their financial future with scalable and tech-enabled solutions.</p>
+                    <h3>Accounting Outsourcing</h3>
+                    <p>PCS Global provides reliable accounting outsourcing services to help businesses and accounting firms manage financial records, ledger maintenance, reconciliations, and month-end closing. Our experienced team delivers accurate, timely financial reporting and scalable support to streamline accounting operations, reduce costs, and improve efficiency.</p>
+                </div>
+            </div>
+            <div class="precision_card">
+                <div class="precision_card_img">
+                    <img src="{{ asset('public/front/images/common/services/bookkeeping-team.webp') }}" loading="lazy" alt="Bookkeeping Outsourcing">
+                </div>
+                <div class="precision_card_body">
+                    <h3>Bookkeeping Outsourcing</h3>
+                    <p>Keep your financial records accurate and up to date with PCS Global’s bookkeeping outsourcing services. From recording daily transactions and managing accounts payable and receivable to bank reconciliations and financial record maintenance, our team helps reduce administrative workloads, maintain organised books, and give you greater visibility into your business finances.</p>
                 </div>
             </div>
             <div class="precision_card">
@@ -92,9 +99,8 @@
                     <img src="{{ asset('public/front/images/Taxation.jpg') }}" loading="lazy" alt="Bookkeeping Outsourcing">
                 </div>
                 <div class="precision_card_body">
-                    <h3>Taxation</h3>
-                    <p>With efficiency at our core, we deliver accurate and timely tax preparation services tailored for individuals, sole traders,
-                            and business entities through a streamlined, dependable process built for results.</p>
+                    <h3>Tax Preparation Outsourcing</h3>
+                    <p>PCS Global provides reliable taxation outsourcing services to help businesses and accounting firms manage tax preparation, documentation, and compliance requirements efficiently. Our experienced team supports accurate tax processing, timely submissions, and streamlined workflows, helping you reduce administrative workloads and focus on your core business.</p>
                 </div>
             </div>
             <div class="precision_card">
@@ -102,23 +108,12 @@
                     <img src="{{ asset('public/front/images/Payroll_outsourcing.jpg') }}" loading="lazy" alt="Tax Preparation Outsourcing">
                 </div>
                 <div class="precision_card_body">
-                    <h3>Payroll
-                        Outsourcing</h3>
-                    <p>At PCS Global, we deliver a comprehensive payroll outsourcing service that relieves you and allows you to focus on growing your business.
-                            Our dedicated team ensures greater accuracy while also keeping in mind the laws and regulations.</p>
+                    <h3>Payroll Outsourcing</h3>
+                    <p>Simplify payroll management with PCS Global’s payroll outsourcing services. From payroll processing and salary calculations to deductions and payroll records, our team helps ensure accuracy, confidentiality, and compliance with applicable regulations. We help businesses save time, reduce errors, and manage payroll with confidence.</p>
                 </div>
             </div>
-            <div class="precision_card">
-                <div class="precision_card_img">
-                    <img src="{{ asset('public/front/images/Strata_Management.jpg') }}" loading="lazy" alt="BAS/IAS Return Services">
-                </div>
-                <div class="precision_card_body">
-                    <h3>Strata Management</h3>
-                    <p>From budgeting and levy collection to maintenance coordination, we do it all.
-                           Our Strata Specialists streamline property maintenance services, acting as your virtual strata managers with a keen expert eye.</p>
-                </div>
-            </div>
-            <div class="precision_card">
+            
+            <!-- <div class="precision_card">
                 <div class="precision_card_img">
                     <img src="{{ asset('public/front/images/IT_Automation.jpg') }}" loading="lazy" alt="Payroll Outsourcing">
                 </div>
@@ -127,15 +122,23 @@
                     <p>Our specialization in development, UI/UX, QA and enterprise solutions grows your business with a smarter system.
                             Custom tech solutions enhanced with digital integration enable a more efficient and scalable business.</p>
                 </div>
-            </div>
+            </div> -->
             <div class="precision_card">
                 <div class="precision_card_img">
                     <img src="{{ asset('public/front/images/Staffing__Recruitment.jpg') }}" loading="lazy" alt="Strata Management Services">
                 </div>
                 <div class="precision_card_body">
-                    <h3>Staffing & Recruitment</h3>
-                    <p>  Tailored staffing solutions for your business with the blend of flexible recruitment, contract hiring and offshore resource models.
-                            Our global talent network ensures you have the right people for the right roles, right when you need them.</p>
+                    <h3>Recruitment Outsourcing</h3>
+                    <p> PCS Global helps businesses streamline recruitment with flexible recruitment outsourcing support. From candidate sourcing and resume screening to interview coordination and hiring administration, our team helps simplify recruitment workflows, reduce internal workload, and support your changing workforce requirements.</p>
+                </div>
+            </div>
+            <div class="precision_card">
+                <div class="precision_card_img">
+                    <img src="{{ asset('public/front/images/Strata_Management.jpg') }}" loading="lazy" alt="BAS/IAS Return Services">
+                </div>
+                <div class="precision_card_body">
+                    <h3>Strata Management Services</h3>
+                    <p>PCS Global provides dependable strata management support to help Australian property managers and strata communities handle day-to-day administrative and financial tasks. From levy processing and budgeting support to records management, reporting, and maintenance coordination, our team helps improve operational efficiency and keep strata operations organised.</p>
                 </div>
             </div>
         </div>
@@ -154,7 +157,7 @@
 
             <div class="col-lg-6">
                 <div class="counter_lt">
-                    <h2 class="mb-3 mb-xxl-4">Who Are We?</h2>
+                    <h2 class="mb-3 mb-xxl-4">Why Partner with PCS Global?</h2>
                     <p>Decades of experience and expertise have led to PCS Global establishing a name for itself in overseas accounting and administrative solutions worldwide.
                         With a strong presence in Australia, New Zealand, the US, the UK, Ireland, Europe and India, our teams empower businesses with accurate,
                         timely and a combination of technology with human touch by delivering bespoke services.
@@ -268,10 +271,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const segs = document.querySelectorAll('#trustSliderProgress .trust_slider_seg');
     if (!track || !segs.length) return;
 
+    const originalCards = Array.from(track.querySelectorAll('.trust_slide'));
+    const loopCards = originalCards.map((card) => {
+        const clone = card.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        clone.querySelectorAll('a, button, input, select, textarea, [tabindex]').forEach((element) => element.setAttribute('tabindex', '-1'));
+        track.appendChild(clone);
+        return clone;
+    });
+    const cardLeft = (card) => card.offsetLeft - track.firstElementChild.offsetLeft;
+    const cycleWidth = () => cardLeft(loopCards[0]);
+
     function updateProgress() {
-        const maxScroll = track.scrollWidth - track.clientWidth;
-        const ratio = maxScroll > 0 ? track.scrollLeft / maxScroll : 0;
-        const activeIndex = Math.min(segs.length - 1, Math.round(ratio * (segs.length - 1)));
+        const width = cycleWidth();
+        const position = width > 0 ? track.scrollLeft % width : track.scrollLeft;
+        let active = 0;
+        let best = Infinity;
+        originalCards.forEach((card, i) => {
+            const distance = Math.abs(cardLeft(card) - position);
+            if (distance < best) { best = distance; active = i; }
+        });
+        const activeIndex = Math.min(segs.length - 1, Math.round(active * (segs.length - 1) / Math.max(1, originalCards.length - 1)));
         segs.forEach((seg, i) => seg.classList.toggle('active', i === activeIndex));
     }
 
@@ -282,9 +302,18 @@ document.addEventListener("DOMContentLoaded", () => {
         track.scrollBy({ left: direction * (card.offsetWidth + gap), behavior: 'smooth' });
     }
 
+    function autoSlide() {
+        scrollByCard(1);
+    }
+
     prevBtn && prevBtn.addEventListener('click', () => scrollByCard(-1));
     nextBtn && nextBtn.addEventListener('click', () => scrollByCard(1));
-    track.addEventListener('scroll', updateProgress);
+    track.addEventListener('scroll', () => {
+        const width = cycleWidth();
+        while (width > 0 && track.scrollLeft >= width) track.scrollLeft -= width;
+        updateProgress();
+    });
+    window.setInterval(autoSlide, 4000);
     updateProgress();
 });
 </script>
@@ -427,12 +456,16 @@ document.addEventListener("DOMContentLoaded", () => {
 {{-- How does PCS Global work: section, CSS style.css .process_* --}}
 @php
     $processSteps = [
-        ['title' => 'Understand Your Requirements',
-         'text' => 'Every engagement opens with a discussion. Our priority is to learn how your business runs, which areas are under most pressure, and the responsibilities you would prefer to pass on. With that understanding, we can pinpoint the work to take on and the best way to sit alongside your team.'],
-        ['title' => 'Build Your Team',
-         'text' => 'The initial interview is usually a video call with a People & Culture colleague. We take the time for us to get to know each other and get a first impression. We will naturally answer your questions about us and the position you are applying for so you have a clear picture of your role with us.'],
-        ['title' => 'Integrate With Your Workflow',
-         'text' => 'We then integrate with your established working methods. We work directly in the accounting software, file-sharing tools, and reporting formats already in place, so your team adopts nothing new. We arrange secure access and confirm how we will communicate and exchange work.'],
+        ['title' => 'Discovery',
+         'text' => 'We begin by understanding your business, existing workflows, operational challenges and outsourcing requirements. This helps us identify the right services, define clear expectations and recommend a tailored approach that aligns with your goals.'],
+        ['title' => 'Tailored Team',
+         'text' => 'We build a dedicated team with the relevant skills and experience to support your specific requirements. Our professionals become familiar with your processes, systems and expectations, providing consistent support and working as an extension of your in-house team.'],
+        ['title' => 'Workflow Integration',
+         'text' => 'We integrate with your existing systems, accounting software, communication channels and reporting processes. Access permissions, data-sharing protocols and responsibilities are established upfront to support a smooth transition, secure collaboration and minimal disruption to your operations.'],
+         ['title' => 'Ongoing Support',
+         'text' => 'Once the workflow is established, your dedicated team manages assigned accounting, bookkeeping, taxation, payroll and other support tasks according to agreed timelines and quality standards. You retain control and visibility while we handle day-to-day responsibilities and keep you updated on progress.'],
+         ['title' => 'Review & Scale',
+         'text' => 'We continuously review performance, work quality and evolving business requirements to ensure our support remains effective. Whether you need additional capacity during peak periods or a broader range of services as your business grows, we adapt our support to meet your changing needs.'],
     ];
 @endphp
 {{-- Process Steps --}}
@@ -456,11 +489,11 @@ document.addEventListener("DOMContentLoaded", () => {
 <section class="process_sec mt-100">
     <div class="container">
         <div class="com_sec_head_top">
-            <h2 class="mb-2 mb-xxl-4">How Does PCS Global Work With Australia Clients?</h2>
-            <p>Beginning a partnership with PCS Global is a clear and structured process, designed to be simple and low-risk for you. Outsourcing accounting work to India is often assumed to be complex, yet our structured onboarding makes it straightforward and secure. In five stages, you move from a first conversation to a fully embedded team working alongside your own.</p>
+            <h2 class="mb-2 mb-xxl-4">How Does PCS Global Work With Global Clients?</h2>
+            <p>Working with PCS Global follows a structured, transparent process designed to make accounting and finance outsourcing seamless, secure and efficient, wherever your business operates. From understanding your requirements to building a dedicated team and integrating with your workflows, we ensure reliable support that fits your business needs.</p>
         </div>
 
-        <div class="process_steps">
+        <div class="process_steps" data-slider data-slider-controls="slider4" data-slider-show="3" data-slider-controls-visible="{{ count($processStepsSteps) > 3 ? 'true' : 'false' }}">
             @foreach ($processStepsSteps as $step)
                 <div class="process_card">
                     <div class="process_head">
@@ -475,6 +508,27 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </div>
             @endforeach
+        </div>
+        <div class="our_experts_bot slider4-controls">
+            <div class="experts_info">
+                <div class="circular-progress slider4-progress">
+                    <div class="inner-circle"></div>
+                </div>
+                <p class="experts_counter slider4-counter"></p>
+            </div>
+            <hr>
+            <div class="slick_arrow">
+                <span class="arrow-prev slider4-prev" aria-label="Previous">
+                    <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M1 6.32861L6 11.3286M1 6.32861L6 1.32861M1 6.32861H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+                <span class="arrow-next slider4-next" aria-label="Next">
+                    <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M19 6.32861L14 11.3286M19 6.32861L14 1.32861M19 6.32861H1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+            </div>
         </div>
     </div>
 </section>
@@ -768,7 +822,9 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="row align-items-lg-end align-items-xxl-center">
                 <div class="col-lg-7">
                     <div class="com_inner_banner">
-                        <h2>Ready to streamline your business processes with global expertise?</h2>
+                        <h2>Ready to Simplify Your Accounting & Finance Operations?</h2>
+
+                        <p>Discuss your outsourcing requirements and get tailored solutions to improve efficiency, reduce operational workload, and support business growth.</p>
 
 
                                  <a class="com_btn1 color-animated-button bubble-btn" href="{{ route('contact') }}"
@@ -928,13 +984,13 @@ document.addEventListener("DOMContentLoaded", () => {
 {{-- Contact Form --}}
 @php
     $contactFormCities = ['Ahmedabad', 'Mumbai', 'Delhi', 'Bengaluru', 'Pune', 'Other'];
-    $contactFormServices = ['Accounting & Bookkeeping', 'Strata Property Management', 'Payroll Outsourcing Services', 'Taxation Services', 'Recruitment Outsourcing Services', 'IT Automation Services'];
+    $contactFormServices = ['Accounting Outsourcing', 'Bookkeeping Outsourcing', 'Taxation Outsourcing', 'Payroll Outsourcing', 'Recruitment Outsourcing', 'Strata Management Services'];
 @endphp
 <section class="contact_band mt-100" id="consultation">
     <div class="container">
         <div class="contact_band_head">
-            <h2>Ready to Build a Smarter Outsourcing Team?</h2>
-            <p>Whether you need accounting, bookkeeping, tax, payroll, strata management or additional business support, PCS Global can help you build a dedicated outsourcing solution around your requirements.</p>
+            <h2>Your Business Needs, Our Tailored Outsourcing Solutions</h2>
+            <p></p>
         </div>
 
         <form id="contactBandForm" class="validated-form contact_band_form" action="{{ route('request.store') }}" method="POST" novalidate>
@@ -963,12 +1019,15 @@ document.addEventListener("DOMContentLoaded", () => {
                         oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
                 </div>
                 <div class="col-lg-6 col-12 cf_field">
-                    <select name="city" aria-label="Select City" required>
-                        <option value="" hidden>Select City*:</option>
+                    <input type="text" name="city" maxlength="100" placeholder="Enter your City*:" aria-label="City" required>
+
+
+                    <!-- <select name="city" aria-label="Select City">
+                        <option value="" hidden>City:</option>
                         @foreach ($contactFormCities as $city)
                             <option value="{{ $city }}">{{ $city }}</option>
                         @endforeach
-                    </select>
+                    </select> -->
                 </div>
                 <div class="col-lg-6 col-12 cf_field">
                     <select name="service" aria-label="Choose Service" required>
