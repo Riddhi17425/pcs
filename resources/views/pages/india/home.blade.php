@@ -956,14 +956,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     <input type="email" name="email" maxlength="70" placeholder="Email Address*:" aria-label="Email Address">
                 </div>
                 <div class="col-lg-6 col-12 cf_field">
-                    <input type="text" name="company" maxlength="100" placeholder="Company Name*:" aria-label="Company Name" required>
+                    <input type="text" name="company" maxlength="100" placeholder="Company Name*:" aria-label="Company Name" >
                 </div>
                 <div class="col-lg-6 col-12 cf_field">
                     <input type="tel" name="phone" id="cfPhone" maxlength="15" minlength="10" placeholder="Phone Number*:" aria-label="Phone Number"
                         oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
                 </div>
                 <div class="col-lg-6 col-12 cf_field">
-                    <select name="city" aria-label="Select City" required>
+                    <select name="city" aria-label="Select City" >
                         <option value="" hidden>Select City*:</option>
                         @foreach ($contactFormCities as $city)
                             <option value="{{ $city }}">{{ $city }}</option>
@@ -971,7 +971,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </select>
                 </div>
                 <div class="col-lg-6 col-12 cf_field">
-                    <select name="service" aria-label="Choose Service" required>
+                    <select name="service" aria-label="Choose Service" >
                         <option value="" hidden>Choose Service*:</option>
                         @foreach ($contactFormServices as $service)
                             <option value="{{ $service }}">{{ $service }}</option>
@@ -1014,15 +1014,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // native required (company / city / service) ko common validator se pehle check karo
-    form.addEventListener('submit', function (e) {
-        if (!form.checkValidity()) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            form.reportValidity();
-            return;
-        }
-        fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
-    }, true);
+    // form.addEventListener('submit', function (e) {
+    //     if (!form.checkValidity()) {
+    //         e.preventDefault();
+    //         e.stopImmediatePropagation();
+    //         form.reportValidity();
+    //         return;
+    //     }
+    //     fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
+    // }, true);
+    form.addEventListener('submit', function () {
+    fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
+});
 });
 </script>
 @endsection
