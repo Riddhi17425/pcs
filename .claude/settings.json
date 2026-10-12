@@ -11,7 +11,11 @@
       "Bash(cat /tmp/states.json)",
       "Bash(sed -i 's/round\\(\\\\$x - 0.5, 2\\), round\\(\\\\$y - 0.5, 2\\)/round\\($x, 2\\), round\\($y, 2\\)/; s#// export me stroke ke liye 0.5px extra hota hai#// stroke inside \\(mask\\) hai, isliye export bounds = node position#' storage/app/figma-us-states/compose.php)",
       "Bash(php storage/app/figma-us-states/compose.php)",
-      "Bash(grep -n 'x-australia.region-map\\\\|$faqs = \\\\[' resources/views/countries/australia/pages/home.blade.php)"
+      "Bash(grep -n 'x-australia.region-map\\\\|$faqs = \\\\[' resources/views/countries/australia/pages/home.blade.php)",
+      "Bash(curl -sL \"http://localhost/pcs/public/aus/\" -o /tmp/aus.html -w \"%{http_code}\\\\n\")",
+      "Bash(grep -n \"country_select_btn\" -A5 /tmp/aus.html | head -20)",
+      "Bash(xargs grep -l \"stylesheet\")",
+      "Bash(curl -sL \"http://localhost/pcs/public/aus/\" -o /tmp/aus2.html -w \"%{http_code}\\\\n\")"
     ]
   }
 }
