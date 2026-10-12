@@ -363,7 +363,7 @@ nav {
     display: block !important;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
+    /* transform: translateY(10px); */
     transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
     pointer-events: none;
     z-index: 1000;
@@ -372,7 +372,7 @@ nav {
 .dropdown-menu.show {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translate(10%, 0);
     pointer-events: auto;
     padding: 0px;
 }
@@ -1277,8 +1277,8 @@ nav {
 
 .testimonial_card p {
     color: var(--blue);
-    font-size: 22px;
-    line-height: 33px;
+    font-size: 18px;
+    line-height: 28px;
 }
 
 .testimonial_card hr {

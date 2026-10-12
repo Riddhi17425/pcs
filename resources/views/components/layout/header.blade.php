@@ -276,9 +276,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="{{ url('aus') }}">
+                <a class="dropdown-item" href="{{ url('au') }}">
                   <img src="{{asset('public/front/images/contry-icon/australia-icon.png')}}" alt="Australia">
-                  <span>Australia</span>
+                  <span>AU</span>
                 </a>
               </li>
               <li>

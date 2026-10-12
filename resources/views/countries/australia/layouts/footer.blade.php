@@ -1,20 +1,20 @@
 {{-- Australia footer: common <x-layout.footer> + Australia ka data (Figma) --}}
 @php
-    $auUrl = fn ($path) => url('aus/' . $path);
+    $auUrl = fn ($path) => url('au/' . $path);
 @endphp
 <x-layout.footer
     :home-url="$auUrl('')"
     :quick-links="[
-        ['Home', $auUrl('')],
-        ['About Us', $auUrl('about')],
-        ['Data Security', route('datasecurity'), true],   // sab countries ka ek hi page, naye tab me
-        ['Contact Us', $auUrl('contact-us')],
-        ['Blogs', route('blog'), true],                   // sab countries ka ek hi page, naye tab me
+        ['Home', route('australia.home')],
+        ['About Us', route('australia.about')],
+        ['Data Security', route('datasecurity'), true],   
+        ['Contact Us', route('australia.contact')],
+        ['Blogs', route('blog'), true],                   
     ]"
     :services="[
-        ['Accounting & Bookkeeping', url('aus/bookkeeping-accounting-services')],
-        ['Taxation Services', url('aus/taxation-services')],
-        ['Strata Property Management', url('aus/strata-management')],
+        ['Accounting & Bookkeeping', route('pcs.global.aus')],
+        ['Taxation Services', route('taxation-services-australian')],
+        ['Strata Property Management', route('australia.strata')],
     ]"
     address="22A Mort Street Blacktown<br>NSW 2148 Australia."
     :phones="[['number' => '(+613) 9998 0494']]" />

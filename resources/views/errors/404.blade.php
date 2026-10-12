@@ -1,14 +1,14 @@
-{{-- 404 page (sab countries). URL /aus/... ho to Australia ka header/footer, warna India ka. --}}
+{{-- 404 page (sab countries). URL /au/... ho to Australia ka header/footer, warna India ka. Layout: layouts/app --}}
 @php
-    $isAu = request()->is('aus', 'aus/*');
-    $home = $isAu ? url('aus') : url('/');
-    $contact = $isAu ? url('aus/contact-us') : route('contact');
+    $isAu = request()->is('au', 'au/*');
+    $home = $isAu ? url('au') : url('/');
+    $contact = $isAu ? url('au/contact-us') : route('contact');
     $links = $isAu
         ? [
-            ['About Us', url('aus/about')],
-            ['Accounting & Bookkeeping', url('aus/bookkeeping-accounting-services')],
-            ['Taxation Services', url('aus/taxation-services')],
-            ['Strata Management', url('aus/strata-management')],
+            ['About Us', url('au/about')],
+            ['Accounting & Bookkeeping', url('au/bookkeeping-accounting-services')],
+            ['Taxation Services', url('au/taxation-services')],
+            ['Strata Management', url('au/strata-management')],
         ]
         : [
             ['About Us', route('about')],
@@ -17,7 +17,10 @@
             ['Strata Management', route('strata.management')],
             ['Blogs', route('blog')],
         ];
-    $meta = ['meta_title' => 'Page Not Found | PCS Global', 'meta_description' => 'The page you are looking for could not be found.'];
+    $meta_title = 'Page Not Found | PCS Global';
+    $meta_description = 'The page you are looking for could not be found.';
+    // 404 par route middleware nahi chalta, isliye site yahin chuni jaati hai
+    $site = \App\Support\Site::get($isAu ? 'australia' : 'india');
 @endphp
 
 @push('styles')
@@ -26,7 +29,9 @@
     <meta name="robots" content="noindex, follow">
 @endpush
 
-@include($isAu ? 'countries.australia.layouts.header' : 'countries.india.layouts.header', $meta)
+@extends('layouts.app')
+
+@section('content')
 
 <section class="error_page">
     <div class="container">
@@ -53,4 +58,4 @@
     </div>
 </section>
 
-@include($isAu ? 'countries.australia.layouts.footer' : 'countries.india.layouts.footer')
+@endsection

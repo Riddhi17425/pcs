@@ -6,9 +6,11 @@ use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\ServiceController;
 use App\Http\Controllers\Web\CountryHomeController;
 
-// US routes. Shared pages (home/about/contact) ko ->defaults('country') se header/footer milta hai.
-Route::get('us', [CountryHomeController::class, 'home'])->defaults('country', 'us')->name('us.home');
-Route::get('us/about', [AboutController::class, 'about'])->defaults('country', 'us')->name('us.about');
-Route::get('us/contact-us', [ContactController::class, 'contact'])->defaults('country', 'us')->name('us.contact');
-Route::get('us/bookkeeping-and-accounting-services', [ServiceController::class, 'globalUsa'])->name('pcs.global.usa');
-Route::get('us/taxation-services', [ServiceController::class, 'taxationservicesusa'])->name('taxation-services-usa');
+// US (/us/...). Middleware 'country:us' -> views me $site = config('sites.us')
+Route::middleware('country:us')->prefix('us')->group(function () {
+    Route::get('/', [CountryHomeController::class, 'home'])->name('us.home');
+    Route::get('about', [AboutController::class, 'about'])->name('us.about');
+    Route::get('contact-us', [ContactController::class, 'contact'])->name('us.contact');
+    Route::get('bookkeeping-and-accounting-services', [ServiceController::class, 'globalUsa'])->name('pcs.global.usa');
+    Route::get('taxation-services', [ServiceController::class, 'taxationservicesusa'])->name('taxation-services-usa');
+});

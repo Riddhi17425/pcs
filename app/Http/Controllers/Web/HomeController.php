@@ -23,7 +23,7 @@ class HomeController extends Controller
         $industries = Industries::where('status','Active')->get();
         $ourexpert = OurExpert::where('status','Active')->get();
         $blogs = Blogs::orderBy('id','desc')->where('status','Active')->get();
-        return view('countries.india.pages.dashboard',compact('meta_title','meta_description','images','industries','ourexpert','blogs'));
+        return view('pages.india.home',compact('meta_title','meta_description','images','industries','ourexpert','blogs'));
     }
     
     public function datasecurity()
@@ -31,13 +31,13 @@ class HomeController extends Controller
         $faq = Faq::where('status', 'Active')->where('faq_url', 'data-security')->first();
         $meta_title = "Data Security & Protection Services | PCS Global";
         $meta_description = "PCS Global cybersecurity solutions protect businesses from cyber threats, data breaches, and compliance risks, ensuring secure and uninterrupted operations";
-        return view('countries.india.pages.data-security',compact('meta_title','meta_description','faq'));
+        return view('pages.india.data-security',compact('meta_title','meta_description','faq'));
     }
     
     public function PrivacyPolicy(){
         $meta_title = "Privacy Policy | PCS Global - Data Collection & Protection";
         $meta_description = "Read the PCS Global Group Privacy Policy to understand how we collect, use, protect, and manage your personal data when you visit and interact with our website.";
-        return view('countries.india.pages.privacy-policy',compact('meta_title','meta_description'));
+        return view('pages.india.privacy-policy',compact('meta_title','meta_description'));
     }
     
     public function whatsaapinquiry(Request $request)

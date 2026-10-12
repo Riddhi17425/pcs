@@ -33,7 +33,7 @@ header.header_overlay {
 .header_overlay .country_select_btn {
     background: var(--white);
     border-color: var(--white);
-    padding: 12px;
+    /* padding: 12px; */
 }
 
 .header_overlay .country_select_btn span {
