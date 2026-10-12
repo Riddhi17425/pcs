@@ -5,7 +5,8 @@
     <div class="container">
       <nav>
         <div class="logo">
-          <a href="{{ $nav['home'] }}"><img src="{{ asset(!empty($header_overlay) ? 'public/front/images/common/logo-white.svg' : 'public/front/images/logo.svg') }}" loading="lazy" alt="logo"></a>
+          {{-- <a href="{{ $nav['home'] }}"><img src="{{ asset(!empty($header_overlay) ? 'public/front/images/common/logo-white.svg' : 'public/front/images/logo.svg') }}" loading="lazy" alt="logo"></a> --}}
+          <a href="{{ route('front.home') }}"><img src="{{ asset(!empty($header_overlay) ? 'public/front/images/common/logo-white.svg' : 'public/front/images/logo.svg') }}" loading="lazy" alt="logo"></a>
         </div>
 
 

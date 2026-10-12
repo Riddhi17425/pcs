@@ -319,9 +319,21 @@ document.addEventListener("DOMContentLoaded", function () {
             fullname: form.querySelector("[name='fullname']"),
             email: form.querySelector("[name='email']"),
             phone: form.querySelector("[name='phone']"),
+            company: form.querySelector("[name='company']"),
+            city: form.querySelector("[name='city']"),
+            service: form.querySelector("[name='service']"),
             country: form.querySelector("[name='country']"),
             services: form.querySelectorAll("[name='services[]']"),
-            // message: form.querySelector("[name='message']"),
+        };
+
+        const labels = {
+            fullname: "Full name",
+            email: "Email address",
+            phone: "Phone number",
+            company: "Company name",
+            city: "City",
+            service: "Service",
+            country: "Country"
         };
 
         const spamDomains = [
@@ -374,7 +386,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             if (!field.value.trim()) {
-                showError(field, `${name.charAt(0).toUpperCase() + name.slice(1)} is required`);
+                const label = labels[name] || (name.charAt(0).toUpperCase() + name.slice(1));
+                const msg = ["city", "service"].includes(name)
+                    ? `Please select ${label.toLowerCase()}`
+                    : `${label} is required`;
+                showError(field, msg);
                 return false;
             }
 
@@ -401,8 +417,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
 
-
-
             removeError(field);
             return true;
         }
@@ -426,7 +440,13 @@ document.addEventListener("DOMContentLoaded", function () {
         attachValidation(fields.fullname, "fullname");
         attachValidation(fields.email, "email");
         attachValidation(fields.phone, "phone");
-        // attachValidation(fields.message, "message");
+        attachValidation(fields.company, "company");
+
+        // Select fields: validate on change
+        [["city", fields.city], ["service", fields.service]].forEach(([name, sel]) => {
+            if (sel) sel.addEventListener("change", () => validateField(sel, name));
+        });
+
         if (fields.country) {
             fields.country.addEventListener("change", () => validateField(fields.country, "country"));
         }
@@ -440,9 +460,11 @@ document.addEventListener("DOMContentLoaded", function () {
             if (fields.fullname && !validateField(fields.fullname, "fullname")) valid = false;
             if (fields.email && !validateField(fields.email, "email")) valid = false;
             if (fields.phone && !validateField(fields.phone, "phone")) valid = false;
+            if (fields.company && !validateField(fields.company, "company")) valid = false;
+            if (fields.city && !validateField(fields.city, "city")) valid = false;
+            if (fields.service && !validateField(fields.service, "service")) valid = false;
             if (fields.country && !validateField(fields.country, "country")) valid = false;
             if (fields.services.length && !validateField(fields.services[0], "services")) valid = false;
-
 
             // Captcha validation with widgetId
             if (captchaWidgetId !== null && typeof grecaptcha !== "undefined") {
@@ -470,19 +492,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // === RENDER RECAPTCHA FORMS ===
-    // window.initAllRecaptchas = function () {
-    //     document.querySelectorAll(".validated-form").forEach((form) => {
-    //         const captchaDiv = form.querySelector(".g-recaptcha");
-    //         if (captchaDiv) {
-    //             const widgetId = grecaptcha.render(captchaDiv, {
-    //                 sitekey: captchaDiv.getAttribute("data-sitekey")
-    //             });
-    //             initFormValidation(form, widgetId);
-    //         }
-    //     });
-    // };
-
     window.initAllRecaptchas = function () {
         document.querySelectorAll(".validated-form").forEach((form) => {
             const captchaDiv = form.querySelector(".g-recaptcha");
@@ -496,10 +505,204 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     };
-
-
-
 });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     // === COMMON VALIDATION HANDLER FOR ALL FORMS ===
+//     function initFormValidation(form, captchaWidgetId) {
+//         if (!form) return;
+
+//         const submitBtn = form.querySelector("button[type='submit']");
+
+//         // Collect fields
+//         const fields = {
+//             fullname: form.querySelector("[name='fullname']"),
+//             email: form.querySelector("[name='email']"),
+//             phone: form.querySelector("[name='phone']"),
+//             company: form.querySelector("[name='company']"),
+//             city: form.querySelector("[name='city']"),
+//             service: form.querySelector("[name='service']"),
+//             country: form.querySelector("[name='country']"),
+//             services: form.querySelectorAll("[name='services[]']"),
+//             // message: form.querySelector("[name='message']"),
+//         };
+
+//         const spamDomains = [
+//           "tempmail.com","10minutemail.com","yopmail.com","mailinator.com","guerrillamail.com",
+//           "guerrillamail.net","maildrop.cc","maildrop.xyz","trashmail.com","trashmail.net",
+//           "getnada.com","nada.me","dispostable.com","disposablemail.com","mailnesia.com",
+//           "temp-mail.org","temp-mail.io","temporarymail.com","temp-mail.plus","mytemp.email",
+//           "throwawaymail.com","fakemailgenerator.com","tempemail.co","tempinbox.com",
+//           "spam4.me","mailcatch.com","mailboxtemporary.com","mintemail.com","10minutemail.net",
+//           "yopmail.fr","yopmail.net","nowmymail.com","mail-temporaire.com","spambox.us",
+//           "fakeinbox.com","spamgourmet.com","sharklasers.com","boun.cr","20minutemail.com",
+//           "emailondeck.com","mailinator2.com","mail-temp.com","temp-mail.org.uk","tempail.com",
+//           "mailexpire.com","pokemail.net","mailnull.com","instantemailaddress.com","tempmail.de",
+//           "tempmail.cc","tempmail.me","spamex.com","wegwerfemail.de","mailnesia.org"
+//         ];
+
+//         // Show error
+//         function showError(field, message) {
+//             let parent = field.closest(".form-group") || field.closest(".col-lg-6") || field.closest(".col-lg-12") || field.parentElement;
+//             let errorSpan = parent.querySelector(".js-error");
+//             if (!errorSpan) {
+//                 errorSpan = document.createElement("span");
+//                 errorSpan.classList.add("text-danger", "js-error");
+//                 parent.appendChild(errorSpan);
+//             }
+//             errorSpan.textContent = message;
+//         }
+
+//         // Remove error
+//         function removeError(field) {
+//             let parent = field.closest(".form-group") || field.closest(".col-lg-6") || field.closest(".col-lg-12") || field.parentElement;
+//             let errorSpan = parent.querySelector(".js-error");
+//             if (errorSpan) errorSpan.remove();
+//         }
+
+//         // Validation logic
+//         function validateField(field, name) {
+//             if (!field && name !== "services") return true;
+
+//             if (name === "services") {
+//                 if (!fields.services.length) return true;
+//                 const checked = Array.from(fields.services).some(chk => chk.checked);
+//                 if (!checked) {
+//                     showError(fields.services[0].closest(".col-lg-6") || fields.services[0].parentElement, "Please select at least one service");
+//                     return false;
+//                 } else {
+//                     removeError(fields.services[0].closest(".col-lg-6") || fields.services[0].parentElement);
+//                     return true;
+//                 }
+//             }
+
+//             if (!field.value.trim()) {
+//                 showError(field, `${name.charAt(0).toUpperCase() + name.slice(1)} is required`);
+//                 return false;
+//             }
+
+//             if (name === "phone") {
+//                 const cleaned = field.value.replace(/[^0-9]/g, "").slice(0, 15);
+//                 field.value = cleaned;
+//                 if (cleaned.length < 10) {
+//                     showError(field, "Phone number must be at least 10 digits");
+//                     return false;
+//                 }
+//             }
+
+//             if (name === "email") {
+//                 const emailVal = field.value.trim().toLowerCase();
+//                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//                 if (!emailRegex.test(emailVal)) {
+//                     showError(field, "Enter a valid email address");
+//                     return false;
+//                 }
+//                 const domain = emailVal.split("@")[1];
+//                 if (spamDomains.includes(domain)) {
+//                     showError(field, "Temporary / spam emails are not allowed");
+//                     return false;
+//                 }
+//             }
+
+
+
+//             removeError(field);
+//             return true;
+//         }
+
+//         // Blur + input listeners
+//         const blurred = new Set();
+//         function attachValidation(field, name) {
+//             if (!field) return;
+//             field.addEventListener("blur", () => {
+//                 blurred.add(field);
+//                 validateField(field, name);
+//             });
+//             field.addEventListener("input", () => {
+//                 removeError(field);
+//                 if (blurred.has(field)) {
+//                     validateField(field, name);
+//                 }
+//             });
+//         }
+
+//         attachValidation(fields.fullname, "fullname");
+//         attachValidation(fields.email, "email");
+//         attachValidation(fields.phone, "phone");
+//         // attachValidation(fields.message, "message");
+//         if (fields.country) {
+//             fields.country.addEventListener("change", () => validateField(fields.country, "country"));
+//         }
+//         if (fields.services.length) {
+//             fields.services.forEach(chk => chk.addEventListener("change", () => validateField(chk, "services")));
+//         }
+
+//         // On form submit
+//         form.addEventListener("submit", function (e) {
+//             let valid = true;
+//             if (fields.fullname && !validateField(fields.fullname, "fullname")) valid = false;
+//             if (fields.email && !validateField(fields.email, "email")) valid = false;
+//             if (fields.phone && !validateField(fields.phone, "phone")) valid = false;
+//             if (fields.country && !validateField(fields.country, "country")) valid = false;
+//             if (fields.services.length && !validateField(fields.services[0], "services")) valid = false;
+
+
+//             // Captcha validation with widgetId
+//             if (captchaWidgetId !== null && typeof grecaptcha !== "undefined") {
+//                 const captchaResponse = grecaptcha.getResponse(captchaWidgetId);
+//                 if (!captchaResponse) {
+//                     const errorEl = form.querySelector(".captcha-error");
+//                     if (errorEl) errorEl.style.display = "block";
+//                     valid = false;
+//                 }
+//             }
+
+//             if (!valid) {
+//                 e.preventDefault();
+//                 return;
+//             }
+
+//             // Disable submit + change text
+//             submitBtn.disabled = true;
+//             const label = submitBtn.querySelector(".color-button__label");
+//             if (label) {
+//                 label.textContent = "Submitting...";
+//             } else {
+//                 submitBtn.textContent = "Submitting...";
+//             }
+//         });
+//     }
+
+//     // === RENDER RECAPTCHA FORMS ===
+//     // window.initAllRecaptchas = function () {
+//     //     document.querySelectorAll(".validated-form").forEach((form) => {
+//     //         const captchaDiv = form.querySelector(".g-recaptcha");
+//     //         if (captchaDiv) {
+//     //             const widgetId = grecaptcha.render(captchaDiv, {
+//     //                 sitekey: captchaDiv.getAttribute("data-sitekey")
+//     //             });
+//     //             initFormValidation(form, widgetId);
+//     //         }
+//     //     });
+//     // };
+
+//     window.initAllRecaptchas = function () {
+//         document.querySelectorAll(".validated-form").forEach((form) => {
+//             const captchaDiv = form.querySelector(".g-recaptcha");
+//             if (captchaDiv) {
+//                 const widgetId = grecaptcha.render(captchaDiv, {
+//                     sitekey: captchaDiv.getAttribute("data-sitekey")
+//                 });
+//                 initFormValidation(form, widgetId);
+//             } else {
+//                 initFormValidation(form, null);
+//             }
+//         });
+//     };
+
+
+
+// });
 
 </script>
 

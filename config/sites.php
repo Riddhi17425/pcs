@@ -41,7 +41,7 @@ return [
         'blog_detail' => 'blogs.detail',
         'services' => [
             ['Accounting & Bookkeeping', 'pcs.global.bookkeeping'],
-            ['Strata Property Management', 'strata.management'],
+            // ['Strata Property Management', 'strata.management'],
             ['Payroll Outsourcing Services', 'payroll.services'],
             ['Taxation Services', 'taxation.services'],
             ['Recruitment Outsourcing Services', 'recruitment.services'],
@@ -58,9 +58,9 @@ return [
             ],
             'address' => 'Addor Aspire 2, 7th Floor,<br>Opp. Old Passport Office, University Area,<br>Ahmedabad - 380015<br>Gujarat, India',
             'phones' => [
+                ['number' => '(+91) 796 826 0121', 'label' => 'IND', 'icon' => 'contry-icon/india-icon.svg', 'alt' => 'India'],
                 ['number' => '(+613) 9998 0494', 'label' => 'AUS', 'icon' => 'contry-icon/australia-icon.png', 'alt' => 'Australia'],
                 ['number' => '(+1) 347 801 8715', 'label' => 'USA', 'icon' => 'contry-icon/us-icon.png', 'alt' => 'USA'],
-                ['number' => '(+91) 796 826 0121', 'label' => 'IND', 'icon' => 'contry-icon/india-icon.svg', 'alt' => 'India'],
                 ['number' => '(+44) 113 4034334', 'label' => 'UK', 'icon' => 'contry-icon/uk-icon.png', 'alt' => 'UK'],
             ],
         ],
@@ -82,7 +82,7 @@ return [
             'country' => ['name' => 'AU', 'flag' => 'australia-icon.png'],
         ],
         'footer' => [
-            'home' => 'australia.home',
+            'home' => 'front.home',
             'quick_links' => [
                 ['Home', 'australia.home'],
                 ['About Us', 'australia.about'],
@@ -116,7 +116,7 @@ return [
             'country' => ['name' => 'US', 'flag' => 'us-icon.png'],
         ],
         'footer' => [
-            'home' => 'us.home',
+            'home' => 'front.home',
             'quick_links' => [
                 ['Home', 'us.home'],
                 ['About Us', 'us.about'],
@@ -151,7 +151,7 @@ return [
             'country' => ['name' => 'UK', 'flag' => 'uk-icon.png'],
         ],
         'footer' => [
-            'home' => 'uk',
+            'home' => 'front.home',
             'quick_links' => [
                 ['Home', 'uk'],
                 ['About Us', 'uk.about'],

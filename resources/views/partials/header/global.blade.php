@@ -59,11 +59,11 @@
 
                                 </li>
 
-                                <li>
+                                {{-- <li>
                                     <a class="dropdown-item" href="{{ route('strata.management') }}">
                                         Strata Property Management
                                     </a>
-                                </li>
+                                </li> --}}
 
                                 <li>
                                     <a class="dropdown-item" href="{{ route('payroll.services') }}">
@@ -87,7 +87,7 @@
 
             <li><a href="{{route('datasecurity')}}">Data Security</a></li>
             <li><a href="{{route('blog')}}">Blogs</a></li>
-            <li><a href="{{route('contact')}}">Contact Us</a></li>
+            {{-- <li><a href="{{route('contact')}}">Contact Us</a></li> --}}
           </ul>
         </div>
 
@@ -198,7 +198,7 @@
              <!-- <span class="next-menu" data-target="menu-accounting">&rsaquo;</span>-->
             <li><a href="{{ route('taxation.services') }}">Taxation Services</a></li>
             <!-- <span class="next-menu" data-target="menu-taxation">&rsaquo;</span>-->
-             <li><a href="{{ route('strata.management') }}">Strata Property Management</a></li>
+             {{-- <li><a href="{{ route('strata.management') }}">Strata Property Management</a></li> --}}
              <li><a href="{{ route('payroll.services') }}">Payroll Outsourcing Services</a></li>
 
 
