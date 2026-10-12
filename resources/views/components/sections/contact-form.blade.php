@@ -77,7 +77,7 @@
 </section>
 
 @once
-<script>
+{{-- <script>
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contactBandForm');
     const phone = document.getElementById('cfPhone');
@@ -101,5 +101,85 @@ document.addEventListener('DOMContentLoaded', function () {
         fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
     }, true);
 });
+</script> --}}
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contactBandForm');
+    const phone = document.getElementById('cfPhone');
+    const fullPhone = document.getElementById('cfFullPhone');
+    if (!form || !phone || !window.intlTelInput) return;
+
+    const iti = window.intlTelInput(phone, {
+        initialCountry: @json($phoneCountry),
+        separateDialCode: true,
+        utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js'
+    });
+
+    // Sirf wo fields jo footer ka common handler validate nahi karta
+    const rules = {
+        fullname: v => !v.trim() ? 'Full name is required'
+                : v.trim().length < 3 ? 'Name must be at least 3 characters' : '',
+        company: v => !v.trim() ? 'Company name is required'
+                    : v.trim().length < 2 ? 'Enter a valid company name' : '',
+        city:    v => !v ? 'Please select a city' : '',
+        service: v => !v ? 'Please choose a service' : ''
+    };
+
+    function setError(field, msg) {
+        
+        const box = field.closest('.cf_field');
+         box.querySelectorAll('.js-error').forEach(e => {
+        if (e.dataset.cf !== '1') e.remove();
+    });
+        let err = box.querySelector('.js-error');
+        if (!msg) { if (err) err.remove(); return true; }
+        if (!err) {
+            err = document.createElement('span');
+            err.className = 'text-danger js-error';
+            err.style.display = 'block';
+            box.appendChild(err);
+        }
+        err.textContent = msg;
+        return false;
+    }
+
+    function validate(name) {
+        const field = form.elements[name];
+        return setError(field, rules[name](field.value));
+    }
+
+    Object.keys(rules).forEach(name => {
+        const field = form.elements[name];
+        const blurred = { v: false };
+        field.addEventListener('blur', () => { blurred.v = true; validate(name); });
+        field.addEventListener('input', () => { setError(field, ''); if (blurred.v) validate(name); });
+        field.addEventListener('change', () => validate(name));
+    });
+
+    // Footer handler ke saath chalta hai (ye pehle register hota hai)
+    form.addEventListener('submit', function (e) {
+        fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
+
+        let firstBad = null;
+        Object.keys(rules).forEach(name => {
+            if (!validate(name) && !firstBad) firstBad = form.elements[name];
+        });
+
+        if (firstBad) {
+            e.preventDefault();
+            firstBad.focus();
+
+            // Footer handler baaki fields valid hone par button disable kar deta hai, use wapas theek karo
+            setTimeout(() => {
+                const btn = form.querySelector("button[type='submit']");
+                btn.disabled = false;
+                const label = btn.querySelector('.color-button__label');
+                if (label) label.textContent = 'Request a Consultation';
+            }, 0);
+        }
+    });
+});
 </script>
+
 @endonce
