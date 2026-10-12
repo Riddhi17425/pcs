@@ -80,7 +80,7 @@
          'text' => 'Our security standards are ISO 27001 certified, with firm rules for how data must be protected and managed. This provides third-party evidence that your data receives professional-grade handling. We understand our US clients\' expectations and requirements for data security and adhere to them.'],
         ['title' => 'Secure Technology & Communication', 'img' => $img('australia/Secure-Technology-Communication.webp'),
          'text' => 'We protect data exchanged through everyday tools such as email using secure, monitored systems and encryption. Confidential details are never sent through unsafe channels, and access to our tools remains tightly controlled. From quick questions to complete financial records, every exchange stays protected.'],
-        ['title' => 'Business Continuity & Data Protection', 'img' => $img('australia/Business-Continuity-Data-Protection.webp'),
+        ['title' => 'Business Continuity & Data Protection', 'img' => $img('australia/Business-continuity.webp'),
          'text' => 'We maintain data protection measures and business continuity plans so your work continues without interruption. Backups, redundancy, and defined recovery procedures help keep your information safe and services running. You can depend on consistent delivery, whatever the circumstances.'],
     ];
 
