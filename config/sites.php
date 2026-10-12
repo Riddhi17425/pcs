@@ -79,7 +79,7 @@ return [
             'home' => 'australia.home',
             'about' => 'australia.about',
             'contact' => 'australia.contact',
-            'country' => ['name' => 'Australia', 'flag' => 'australia-icon.png'],
+            'country' => ['name' => 'AU', 'flag' => 'australia-icon.png'],
         ],
         'footer' => [
             'home' => 'australia.home',
