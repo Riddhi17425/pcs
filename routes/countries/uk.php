@@ -13,7 +13,8 @@ Route::middleware('country:uk')->prefix('uk')->group(function () {
     Route::get('about/', [AboutController::class, 'ukAbout'])->name('uk.about');
     Route::get('accounting-outsourcing-services/', [ServiceController::class, 'accountingOutSourcingServices'])->name('accounting.outsourcing.services');
     Route::get('small-business-accounting-services/', [ServiceController::class, 'smallBusinessAccountingServices'])->name('small.business.accounting.services');
-    Route::get('outsource-tax-preparation-services/', [ServiceController::class, 'outsourceTaxPreparationServices'])->name('outsource.tax.preparation.services');
+    // Route::get('outsource-tax-preparation-services/', [ServiceController::class, 'outsourceTaxPreparationServices'])->name('outsource.tax.preparation.services');
+    Route::get('tax-preparation-outsourcing-services/', [ServiceController::class, 'outsourceTaxPreparationServices'])->name('outsource.tax.preparation.services');
     Route::get('taxation-services', [ServiceController::class, 'taxationservicesuk'])->name('taxation-services-uk');
     // Route::get('bookkeeping-accounting-services', [ServiceController::class, 'globalUk'])->name('pcs.global.uk');
     Route::get('bookkeeping-accounting-services', function () {
