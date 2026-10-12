@@ -47,7 +47,7 @@
     $ind = fn ($name) => $img("common/industries/$name.svg");
     $industries = [
         [[$ind('accounting'), 'Accounting & CPA Firms'], [$ind('real-estate'), 'Real Estate'], [$ind('construction'), 'Construction'], [$ind('manufacturing'), 'Manufacturing'], [$ind('healthcare'), 'Healthcare']],
-        [[$ind('legal'), 'Law Firms'], [$ind('professional-services'), 'Professional Services'], [$ind('ecommerce'), 'E-commerce & Retail'], [$ind('strata'), 'Technology'], [$ind('accounting'), 'Financial Services']],
+        [[$ind('legal'), 'Law Firms'], [$ind('professional-services'), 'Professional Services'], [$ind('ecommerce'), 'E-commerce & Retail'], [$ind('Technology'), 'Technology'], [$ind('Financial-Services'), 'Financial Services']],
     ];
 
     $processSteps = [
@@ -70,17 +70,17 @@
     ];
 
     $securityCards = [
-        ['title' => 'Secure Data Handling', 'img' => $img('us/security-1.jpg'),
+        ['title' => 'Secure Data Handling', 'img' => $img('australia/Secure-Data-Handling.webp'),
          'text' => 'Your financial data is protected at every stage of the work. We keep it in secure systems and limit access to specialists assigned to your account. Clear procedures govern how information is stored, used, and removed throughout the engagement.'],
-        ['title' => 'Confidentiality & Privacy', 'img' => $img('us/security-2.jpg'),
+        ['title' => 'Confidentiality & Privacy', 'img' => $img('australia/Confidentiality -Privacy.webp'),
          'text' => 'Everything we handle for you stays confidential. Every engagement is covered by signed non-disclosure agreements (NDA) and strict confidentiality rules. Your records and those of your clients remain protected, while your reputation and client relationships stay entirely confidential.'],
-        ['title' => 'Quality & Process Controls', 'img' => $img('us/security-3.jpg'),
+        ['title' => 'Quality & Process Controls', 'img' => $img('australia/Quality-Process-Controls.webp'),
          'text' => 'QA forms the backbone of our processes, helping us prevent errors rather than relying on luck. Every job passes through a stringent QA review before it comes back to you. This established quality standard remains consistent even when volumes rise. Our quality process is ISO 9001 certified.'],
-        ['title' => 'Certified Security Standards', 'img' => $img('us/security-1.jpg'),
+        ['title' => 'Certified Security Standards', 'img' => $img('australia/Certified-Security-Standards.webp'),
          'text' => 'Our security standards are ISO 27001 certified, with firm rules for how data must be protected and managed. This provides third-party evidence that your data receives professional-grade handling. We understand our US clients\' expectations and requirements for data security and adhere to them.'],
-        ['title' => 'Secure Technology & Communication', 'img' => $img('us/security-2.jpg'),
+        ['title' => 'Secure Technology & Communication', 'img' => $img('australia/Secure-Technology-Communication.webp'),
          'text' => 'We protect data exchanged through everyday tools such as email using secure, monitored systems and encryption. Confidential details are never sent through unsafe channels, and access to our tools remains tightly controlled. From quick questions to complete financial records, every exchange stays protected.'],
-        ['title' => 'Business Continuity & Data Protection', 'img' => $img('us/security-3.jpg'),
+        ['title' => 'Business Continuity & Data Protection', 'img' => $img('australia/Business-continuity.webp'),
          'text' => 'We maintain data protection measures and business continuity plans so your work continues without interruption. Backups, redundancy, and defined recovery procedures help keep your information safe and services running. You can depend on consistent delivery, whatever the circumstances.'],
     ];
 
