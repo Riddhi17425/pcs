@@ -1,4 +1,4 @@
-{{-- Australia home page (/aus). Controller: CountryHomeController@home (team / logos / blogs DB se: $ourexpert, $images, $blogs).
+{{-- Australia home page (/au). Controller: CountryHomeController@home (team / logos / blogs DB se: $ourexpert, $images, $blogs).
      Har section seedha Blade/HTML me likha hai (upar data ka PHP block, neeche markup); CSS: STRUCTURE.md ka section-table dekho.
      Text / images badalne ho to isi file me badlo. --}}
 @extends('layouts.app', ['header_overlay' => true])
@@ -6,7 +6,7 @@
 @section('content')
 @php
     $img = fn ($file) => asset('public/front/images/' . $file);
-    $au = fn ($path) => url('aus/' . $path);
+    $au = fn ($path) => url('au/' . $path);
 
     $serviceCards = [
         ['title' => 'Accounting Outsourcing', 'img' => $img('figma-precision/accounting-outsourcing.png'), 'url' => $au('bookkeeping-accounting-services'),
@@ -17,7 +17,7 @@
          'text' => 'Tax obligations place real demands on any business, particularly as deadlines approach. We prepare and review your returns in line with Australian Tax compliances, verify the details, and lodge them on time, reducing errors and missed deadlines. '],
         ['title' => 'BAS/IAS Return Services', 'img' => $img('figma-precision/bas-ias-return-services.png'), 'url' => $au('taxation-services'),
          'text' => 'Installment activity statements are a recurring obligation that leaves little room for error. We manage your Business and Instalment Activity Statements, calculating GST and PAYG, reconciling records, and lodging accurate statements on time without the recurring pressure. '],
-        ['title' => 'Payroll Outsourcing', 'img' => $img('figma-precision/payroll-outsourcing.png'), 'url' => url('aus') . '#consultation',
+        ['title' => 'Payroll Outsourcing', 'img' => $img('figma-precision/payroll-outsourcing.png'), 'url' => url('au') . '#consultation',
          'text' => 'Payroll is among the most sensitive functions in any business, and accuracy is not optional. We manage pay runs, PAYG, superannuation, leave and Single Touch Payroll reporting to the ATO, ensuring employees are paid correctly and your business remains compliant.'],
         ['title' => 'Strata Management Services', 'img' => $img('figma-precision/strata-management-services-ae35ad.png'), 'url' => $au('strata-management'),
          'text' => 'Strata finances are detailed and heavily governed by deadlines. Our specialists manage the financial side of your schemes and portfolios, from budgets and levies through to invoicing and owner reporting, keeping records accurate and reporting clear. '],

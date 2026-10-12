@@ -1,14 +1,14 @@
-{{-- 404 page (sab countries). URL /aus/... ho to Australia ka header/footer, warna India ka. Layout: layouts/app --}}
+{{-- 404 page (sab countries). URL /au/... ho to Australia ka header/footer, warna India ka. Layout: layouts/app --}}
 @php
-    $isAu = request()->is('aus', 'aus/*');
-    $home = $isAu ? url('aus') : url('/');
-    $contact = $isAu ? url('aus/contact-us') : route('contact');
+    $isAu = request()->is('au', 'au/*');
+    $home = $isAu ? url('au') : url('/');
+    $contact = $isAu ? url('au/contact-us') : route('contact');
     $links = $isAu
         ? [
-            ['About Us', url('aus/about')],
-            ['Accounting & Bookkeeping', url('aus/bookkeeping-accounting-services')],
-            ['Taxation Services', url('aus/taxation-services')],
-            ['Strata Management', url('aus/strata-management')],
+            ['About Us', url('au/about')],
+            ['Accounting & Bookkeeping', url('au/bookkeeping-accounting-services')],
+            ['Taxation Services', url('au/taxation-services')],
+            ['Strata Management', url('au/strata-management')],
         ]
         : [
             ['About Us', route('about')],
