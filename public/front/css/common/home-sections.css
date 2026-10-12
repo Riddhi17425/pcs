@@ -386,6 +386,7 @@
 /* ---------- responsive ---------- */
 @media (max-width: 991px) {
     .split_acc {
+        display: block;
         flex-direction: column;
         gap: 30px;
     }
@@ -393,6 +394,7 @@
     .split_acc_img {
         position: relative;
         top: 0;
+        margin-bottom: 24px;
         flex: none;
         height: 300px;
         border-radius: 100px 0 40px 0;

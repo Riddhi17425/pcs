@@ -128,7 +128,7 @@
 @endphp
 <section class="hero_dark">
     <img class="hero_dark_bg" src="{{ $img('common/hero-bg.png') }}" alt="" aria-hidden="true">
-    <img class="hero_dark_person" src="{{ $img('australia/hero-person.png') }}" alt="">
+    <img class="hero_dark_person" src="{{ $img('australia/Australia-hero.webp') }}" alt="">
     <div class="container">
         <div class="hero_dark_content">
             <div class="hero_dark_text">
