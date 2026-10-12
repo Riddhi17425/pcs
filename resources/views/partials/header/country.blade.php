@@ -5,18 +5,14 @@
     <div class="container">
       <nav>
         <div class="logo">
-          {{-- <a href="{{ $nav['home'] }}"><img src="{{ asset(!empty($header_overlay) ? 'public/front/images/common/logo-white.svg' : 'public/front/images/logo.svg') }}" loading="lazy" alt="logo"></a> --}}
           <a href="{{ route('front.home') }}"><img src="{{ asset(!empty($header_overlay) ? 'public/front/images/common/logo-white.svg' : 'public/front/images/logo.svg') }}" loading="lazy" alt="logo"></a>
         </div>
 
 
-        <div class="mobile_header_actions">
-          @include('partials.mobile-country-dropdown', ['currentCountry' => $nav['country']])
-          <div class="menu-toggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+        <div class="menu-toggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
 
         <div class="nav_links" id="navLinks">
@@ -122,6 +118,7 @@
             <li><a href="{{ $nav['data_security'] }}" target="_blank" rel="noopener">Data Security</a></li>
             <li><a href="{{ $nav['blog'] }}" target="_blank" rel="noopener">Blogs</a></li>
             <li><a href="{{ $nav['contact'] }}">Contact Us</a></li>
+            <li><a href="#">Country: {{ $nav['country']['name'] }} <span class="next-menu" data-target="menu-country">&rsaquo;</span></a></li>
             <li><a href="tel:{{ $nav['phone']['tel'] }}">📞 Call Us: {{ $nav['phone']['label'] }}</a></li>
           </ul>
 
@@ -156,6 +153,8 @@
           </ul>
         </div>
       </div>
+
+      @include('partials.mobile-countries')
 
     </div>
   </div>
