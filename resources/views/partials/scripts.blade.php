@@ -1,17 +1,17 @@
 {{-- Footer ke baad ki sab scripts: form validation, recaptcha, CDN libraries, main.js (sab pages) --}}
 <!-- WhatsApp Floating Button -->
 <!--<a href="https://api.whatsapp.com/send?phone=918460268698&text=Hello,%20I%27m%20visiting%20your%20website%20and%20would%20like%20to%20know%20more" class="whatsapp-float" target="_blank">-->
-<!--    <img src="{{asset('public/front/images/WhatsApp.svg')}}" alt="WhatsApp">-->
+<!--    <img src="{{ asset('public/front/images/WhatsApp.svg') }}" alt="WhatsApp">-->
 <!--</a>-->
 
 <!--<style>-->
-      <!--/* ===== MODAL DESIGN ===== */-->
+<!--/* ===== MODAL DESIGN ===== */-->
 <!--      .Whats_mpp_modal .popup-box_whatsapp {-->
 <!--          border-radius: 16px;-->
-          <!--/* overflow: hidden;   */-->
+<!--/* overflow: hidden;   */-->
 <!--      }-->
 
-      <!--/* Header */-->
+<!--/* Header */-->
 <!--      .Whats_mpp_modal .popup-header {-->
 <!--          background: #182653;-->
 <!--          color: #fff;-->
@@ -27,12 +27,12 @@
 <!--          filter: invert(1);-->
 <!--      }-->
 
-      <!--/* Body */-->
+<!--/* Body */-->
 <!--      .Whats_mpp_modal .popup-box_whatsapp .modal-body {-->
 <!--          padding: 25px;-->
 <!--      }-->
 
-      <!--/* Inputs */-->
+<!--/* Inputs */-->
 <!--      .Whats_mpp_modal .popup-input {-->
 <!--          border-radius: 12px;-->
 <!--          height: 50px;-->
@@ -44,12 +44,12 @@
 <!--          border-color: #182653;-->
 <!--      }-->
 
-      <!--/* Textarea */-->
+<!--/* Textarea */-->
 <!--      .Whats_mpp_modal textarea.popup-input {-->
 <!--          height: 90px;-->
 <!--      }-->
 
-      <!--/* Button */-->
+<!--/* Button */-->
 <!--      .Whats_mpp_modal .popup-btn {-->
 <!--          background: #182653;-->
 <!--          color: #fff;-->
@@ -64,7 +64,7 @@
 <!--          color: #fff;-->
 <!--      }-->
 
-      <!--/* intl tel input full width */-->
+<!--/* intl tel input full width */-->
 <!--      .Whats_mpp_modal .iti {-->
 <!--          width: 100%;-->
 <!--      }-->
@@ -73,13 +73,13 @@
 <!--          border-radius: 10px 0 0 10px;-->
 <!--      }-->
 
-      <!--/* Remove modal scroll */-->
+<!--/* Remove modal scroll */-->
 <!--      .Whats_mpp_modal .modal-dialog {-->
 <!--          max-width: 420px;-->
 <!--      }-->
 
 <!--      .Whats_mpp_modal .modal-content {-->
-          <!--/* overflow: hidden; */-->
+<!--/* overflow: hidden; */-->
 <!--      }-->
 <!--.WhatsAppButton_mpp {-->
 <!--    background: #14a614;-->
@@ -174,77 +174,191 @@
 
 
 
-<!--  <script>-->
-<!--document.addEventListener("DOMContentLoaded", function () {-->
+<!--  <script>
+    -- >
+    <
+    !--document.addEventListener("DOMContentLoaded", function() {
+        -- >
 
-<!--    const input = document.getElementById("wa_phone");-->
-<!--    const error = document.getElementById("wa_error");-->
-<!--    const form = document.getElementById("whatsappForm");-->
-<!--    const fullPhone = document.getElementById("wa_full_phone");-->
-<!--    const countryName = document.getElementById("wa_country_name");-->
+        <
+        !--
+        const input = document.getElementById("wa_phone");
+        -- >
+        <
+        !--
+        const error = document.getElementById("wa_error");
+        -- >
+        <
+        !--
+        const form = document.getElementById("whatsappForm");
+        -- >
+        <
+        !--
+        const fullPhone = document.getElementById("wa_full_phone");
+        -- >
+        <
+        !--
+        const countryName = document.getElementById("wa_country_name");
+        -- >
 
-<!--    const iti = window.intlTelInput(input, {-->
-<!--        initialCountry: "auto",-->
-<!--        separateDialCode: true,-->
-<!--        preferredCountries: ["in", "ae", "us", "gb"],-->
-<!--        geoIpLookup: function (callback) {-->
-<!--            fetch("https://ipapi.co/json/")-->
-<!--                .then(res => res.json())-->
-<!--                .then(data => callback(data.country_code))-->
-<!--                .catch(() => callback("in"));-->
-<!--        },-->
-<!--        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js",-->
-<!--    });-->
+        <
+        !--
+        const iti = window.intlTelInput(input, {
+            -- >
+            <
+            !--initialCountry: "auto",
+            -- >
+            <
+            !--separateDialCode: true,
+            -- >
+            <
+            !--preferredCountries: ["in", "ae", "us", "gb"],
+            -- >
+            <
+            !--geoIpLookup: function(callback) {
+                -- >
+                <
+                !--fetch("https://ipapi.co/json/") -- >
+                    <
+                    !--.then(res => res.json()) -- >
+                    <
+                    !--.then(data => callback(data.country_code)) -- >
+                    <
+                    !--.catch(() => callback("in"));
+                -- >
+                <
+                !--
+            },
+            -- >
+            <
+            !--utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js",
+            -- >
+            <
+            !--
+        });
+        -- >
 
-    <!--// numbers only + live hide error-->
-<!--    input.addEventListener("input", function () {-->
-<!--        this.value = this.value.replace(/[^0-9]/g, '');-->
+        <
+        !-- // numbers only + live hide error-->
+        <
+        !--input.addEventListener("input", function() {
+            -- >
+            <
+            !--this.value = this.value.replace(/[^0-9]/g, '');
+            -- >
 
-<!--        if (this.value.length >= 10) {-->
-<!--            error.classList.add("d-none");-->
-<!--        }-->
-<!--    });-->
+            <
+            !--
+            if (this.value.length >= 10) {
+                -- >
+                <
+                !--error.classList.add("d-none");
+                -- >
+                <
+                !--
+            }-- >
+            <
+            !--
+        });
+        -- >
 
-    <!--// submit validation-->
-<!--    form.addEventListener("submit", function (e) {-->
+        <
+        !-- // submit validation-->
+        <
+        !--form.addEventListener("submit", function(e) {
+            -- >
 
-<!--        if (input.value.trim() === "") {-->
-<!--            error.innerText = "Contact number must be required";-->
-<!--            error.classList.remove("d-none");-->
-<!--            input.focus();-->
-<!--            e.preventDefault();-->
-<!--            return;-->
-<!--        }-->
+            <
+            !--
+            if (input.value.trim() === "") {
+                -- >
+                <
+                !--error.innerText = "Contact number must be required";
+                -- >
+                <
+                !--error.classList.remove("d-none");
+                -- >
+                <
+                !--input.focus();
+                -- >
+                <
+                !--e.preventDefault();
+                -- >
+                <
+                !--
+                return;
+                -- >
+                <
+                !--
+            }-- >
 
-<!--        if (input.value.length < 10 || input.value.length > 15) {-->
-<!--            error.innerText = "Contact number must be 10 to 15 digits";-->
-<!--            error.classList.remove("d-none");-->
-<!--            input.focus();-->
-<!--            e.preventDefault();-->
-<!--            return;-->
-<!--        }-->
+            <
+            !--
+            if (input.value.length < 10 || input.value.length > 15) {
+                -- >
+                <
+                !--error.innerText = "Contact number must be 10 to 15 digits";
+                -- >
+                <
+                !--error.classList.remove("d-none");
+                -- >
+                <
+                !--input.focus();
+                -- >
+                <
+                !--e.preventDefault();
+                -- >
+                <
+                !--
+                return;
+                -- >
+                <
+                !--
+            }-- >
 
-        <!--// ✅ valid-->
-<!--        error.classList.add("d-none");-->
+            <
+            !-- // ✅ valid-->
+            <
+            !--error.classList.add("d-none");
+            -- >
 
-<!--        const countryData = iti.getSelectedCountryData();-->
-<!--        fullPhone.value = "+" + countryData.dialCode + input.value;-->
-<!--        countryName.value = countryData.name;-->
-<!--    });-->
+            <
+            !--
+            const countryData = iti.getSelectedCountryData();
+            -- >
+            <
+            !--fullPhone.value = "+" + countryData.dialCode + input.value;
+            -- >
+            <
+            !--countryName.value = countryData.name;
+            -- >
+            <
+            !--
+        });
+        -- >
 
-<!--});-->
-<!--</script>-->
+        <
+        !--
+    });
+    -- >
+    <
+    !--
+</script>-->
 
 
 
 
 
- <script src="https://www.google.com/recaptcha/api.js?onload=initAllRecaptchas&render=explicit" async defer></script>
+<script src="https://www.google.com/recaptcha/api.js?onload=initAllRecaptchas&render=explicit" async defer></script>
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js" integrity="sha512-KFHXdr2oObHKI9w4Hv1XPKc898mE4kgYx58oqsc/JqqdLMDI4YjOLzom+EMlW8HFUd0QfjfAvxSL6sEq/a42fQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/additional-methods.min.js" integrity="sha512-owaCKNpctt4R4oShUTTraMPFKQWG9UdWTtG6GRzBjFV4VypcFi6+M3yc4Jk85s3ioQmkYWJbUl1b2b2r41RTjA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js"
+    integrity="sha512-KFHXdr2oObHKI9w4Hv1XPKc898mE4kgYx58oqsc/JqqdLMDI4YjOLzom+EMlW8HFUd0QfjfAvxSL6sEq/a42fQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/additional-methods.min.js"
+    integrity="sha512-owaCKNpctt4R4oShUTTraMPFKQWG9UdWTtG6GRzBjFV4VypcFi6+M3yc4Jk85s3ioQmkYWJbUl1b2b2r41RTjA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- bopotstrap css -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -274,525 +388,575 @@
 
 
 <script>
-const tabs = document.querySelectorAll('.left-tabs .tab-item[data-tab]');
+    const tabs = document.querySelectorAll('.left-tabs .tab-item[data-tab]');
 
-tabs.forEach(tab => {
-  const panel = document.getElementById(tab.dataset.tab);
+    tabs.forEach(tab => {
+        const panel = document.getElementById(tab.dataset.tab);
 
-  if(!panel) return;
+        if (!panel) return;
 
-  // Show panel on hover
-  tab.addEventListener('mouseenter', () => {
-    panel.style.display = 'flex';
-  });
+        // Show panel on hover
+        tab.addEventListener('mouseenter', () => {
+            panel.style.display = 'flex';
+        });
 
-  // Hide panel only if not hovering over panel
-  tab.addEventListener('mouseleave', () => {
-    setTimeout(() => {
-      if (!panel.matches(':hover')) {
-        panel.style.display = 'none';
-      }
-    }, 50);
-  });
-
-  // Keep panel visible if mouse is over panel
-  panel.addEventListener('mouseenter', () => {
-    panel.style.display = 'flex';
-  });
-
-  panel.addEventListener('mouseleave', () => {
-    panel.style.display = 'none';
-  });
-});
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    // === COMMON VALIDATION HANDLER FOR ALL FORMS ===
-    function initFormValidation(form, captchaWidgetId) {
-        if (!form) return;
-
-        const submitBtn = form.querySelector("button[type='submit']");
-
-        // Collect fields
-        const fields = {
-            fullname: form.querySelector("[name='fullname']"),
-            email: form.querySelector("[name='email']"),
-            phone: form.querySelector("[name='phone']"),
-            company: form.querySelector("[name='company']"),
-            city: form.querySelector("[name='city']"),
-            service: form.querySelector("[name='service']"),
-            country: form.querySelector("[name='country']"),
-            services: form.querySelectorAll("[name='services[]']"),
-        };
-
-        const labels = {
-            fullname: "Full name",
-            email: "Email address",
-            phone: "Phone number",
-            company: "Company name",
-            city: "City",
-            service: "Service",
-            country: "Country"
-        };
-
-        const spamDomains = [
-          "tempmail.com","10minutemail.com","yopmail.com","mailinator.com","guerrillamail.com",
-          "guerrillamail.net","maildrop.cc","maildrop.xyz","trashmail.com","trashmail.net",
-          "getnada.com","nada.me","dispostable.com","disposablemail.com","mailnesia.com",
-          "temp-mail.org","temp-mail.io","temporarymail.com","temp-mail.plus","mytemp.email",
-          "throwawaymail.com","fakemailgenerator.com","tempemail.co","tempinbox.com",
-          "spam4.me","mailcatch.com","mailboxtemporary.com","mintemail.com","10minutemail.net",
-          "yopmail.fr","yopmail.net","nowmymail.com","mail-temporaire.com","spambox.us",
-          "fakeinbox.com","spamgourmet.com","sharklasers.com","boun.cr","20minutemail.com",
-          "emailondeck.com","mailinator2.com","mail-temp.com","temp-mail.org.uk","tempail.com",
-          "mailexpire.com","pokemail.net","mailnull.com","instantemailaddress.com","tempmail.de",
-          "tempmail.cc","tempmail.me","spamex.com","wegwerfemail.de","mailnesia.org"
-        ];
-
-        // Show error
-        function showError(field, message) {
-            let parent = field.closest(".form-group") || field.closest(".col-lg-6") || field.closest(".col-lg-12") || field.parentElement;
-            let errorSpan = parent.querySelector(".js-error");
-            if (!errorSpan) {
-                errorSpan = document.createElement("span");
-                errorSpan.classList.add("text-danger", "js-error");
-                parent.appendChild(errorSpan);
-            }
-            errorSpan.textContent = message;
-        }
-
-        // Remove error
-        function removeError(field) {
-            let parent = field.closest(".form-group") || field.closest(".col-lg-6") || field.closest(".col-lg-12") || field.parentElement;
-            let errorSpan = parent.querySelector(".js-error");
-            if (errorSpan) errorSpan.remove();
-        }
-
-        // Validation logic
-        function validateField(field, name) {
-            if (!field && name !== "services") return true;
-
-            if (name === "services") {
-                if (!fields.services.length) return true;
-                const checked = Array.from(fields.services).some(chk => chk.checked);
-                if (!checked) {
-                    showError(fields.services[0].closest(".col-lg-6") || fields.services[0].parentElement, "Please select at least one service");
-                    return false;
-                } else {
-                    removeError(fields.services[0].closest(".col-lg-6") || fields.services[0].parentElement);
-                    return true;
+        // Hide panel only if not hovering over panel
+        tab.addEventListener('mouseleave', () => {
+            setTimeout(() => {
+                if (!panel.matches(':hover')) {
+                    panel.style.display = 'none';
                 }
+            }, 50);
+        });
+
+        // Keep panel visible if mouse is over panel
+        panel.addEventListener('mouseenter', () => {
+            panel.style.display = 'flex';
+        });
+
+        panel.addEventListener('mouseleave', () => {
+            panel.style.display = 'none';
+        });
+    });
+
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // === COMMON VALIDATION HANDLER FOR ALL FORMS ===
+        function initFormValidation(form, captchaWidgetId) {
+            if (!form) return;
+
+            const submitBtn = form.querySelector("button[type='submit']");
+
+            // Collect fields
+            const fields = {
+                fullname: form.querySelector("[name='fullname']"),
+                email: form.querySelector("[name='email']"),
+                phone: form.querySelector("[name='phone']"),
+                company: form.querySelector("[name='company']"),
+                city: form.querySelector("[name='city']"),
+                service: form.querySelector("[name='service']"),
+                country: form.querySelector("[name='country']"),
+                services: form.querySelectorAll("[name='services[]']"),
+            };
+
+            const labels = {
+                fullname: "Full name",
+                email: "Email address",
+                phone: "Phone number",
+                company: "Company name",
+                city: "City",
+                service: "Service",
+                country: "Country"
+            };
+
+            const spamDomains = [
+                "tempmail.com", "10minutemail.com", "yopmail.com", "mailinator.com", "guerrillamail.com",
+                "guerrillamail.net", "maildrop.cc", "maildrop.xyz", "trashmail.com", "trashmail.net",
+                "getnada.com", "nada.me", "dispostable.com", "disposablemail.com", "mailnesia.com",
+                "temp-mail.org", "temp-mail.io", "temporarymail.com", "temp-mail.plus", "mytemp.email",
+                "throwawaymail.com", "fakemailgenerator.com", "tempemail.co", "tempinbox.com",
+                "spam4.me", "mailcatch.com", "mailboxtemporary.com", "mintemail.com", "10minutemail.net",
+                "yopmail.fr", "yopmail.net", "nowmymail.com", "mail-temporaire.com", "spambox.us",
+                "fakeinbox.com", "spamgourmet.com", "sharklasers.com", "boun.cr", "20minutemail.com",
+                "emailondeck.com", "mailinator2.com", "mail-temp.com", "temp-mail.org.uk", "tempail.com",
+                "mailexpire.com", "pokemail.net", "mailnull.com", "instantemailaddress.com", "tempmail.de",
+                "tempmail.cc", "tempmail.me", "spamex.com", "wegwerfemail.de", "mailnesia.org"
+            ];
+
+            // Show error
+            function showError(field, message) {
+                let parent = field.closest(".form-group") || field.closest(".col-lg-6") || field.closest(
+                    ".col-lg-12") || field.parentElement;
+                let errorSpan = parent.querySelector(".js-error");
+                if (!errorSpan) {
+                    errorSpan = document.createElement("span");
+                    errorSpan.classList.add("text-danger", "js-error");
+                    parent.appendChild(errorSpan);
+                }
+                errorSpan.textContent = message;
             }
 
-            if (!field.value.trim()) {
-                const label = labels[name] || (name.charAt(0).toUpperCase() + name.slice(1));
-                const msg = ["city", "service"].includes(name)
-                    ? `Please select ${label.toLowerCase()}`
-                    : `${label} is required`;
-                showError(field, msg);
-                return false;
+            // Remove error
+            function removeError(field) {
+                let parent = field.closest(".form-group") || field.closest(".col-lg-6") || field.closest(
+                    ".col-lg-12") || field.parentElement;
+                let errorSpan = parent.querySelector(".js-error");
+                if (errorSpan) errorSpan.remove();
             }
 
-            if (name === "phone") {
-                const cleaned = field.value.replace(/[^0-9]/g, "").slice(0, 15);
-                field.value = cleaned;
-                if (cleaned.length < 10) {
-                    showError(field, "Phone number must be at least 10 digits");
+            // Validation logic
+            function validateField(field, name) {
+                if (!field && name !== "services") return true;
+
+                if (name === "services") {
+                    if (!fields.services.length) return true;
+                    const checked = Array.from(fields.services).some(chk => chk.checked);
+                    if (!checked) {
+                        showError(fields.services[0].closest(".col-lg-6") || fields.services[0].parentElement,
+                            "Please select at least one service");
+                        return false;
+                    } else {
+                        removeError(fields.services[0].closest(".col-lg-6") || fields.services[0]
+                        .parentElement);
+                        return true;
+                    }
+                }
+
+                if (!field.value.trim()) {
+                    const label = labels[name] || (name.charAt(0).toUpperCase() + name.slice(1));
+                    const msg = ["city", "service"].includes(name) ?
+                        `Please select ${label.toLowerCase()}` :
+                        `${label} is required`;
+                    showError(field, msg);
                     return false;
                 }
-            }
 
-            if (name === "email") {
-                const emailVal = field.value.trim().toLowerCase();
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(emailVal)) {
-                    showError(field, "Enter a valid email address");
-                    return false;
+                if (name === "phone") {
+                    const cleaned = field.value.replace(/[^0-9]/g, "").slice(0, 15);
+                    field.value = cleaned;
+                    if (cleaned.length < 10) {
+                        showError(field, "Phone number must be at least 10 digits");
+                        return false;
+                    }
                 }
-                const domain = emailVal.split("@")[1];
-                if (spamDomains.includes(domain)) {
-                    showError(field, "Temporary / spam emails are not allowed");
-                    return false;
+
+                if (name === "email") {
+                    const emailVal = field.value.trim().toLowerCase();
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(emailVal)) {
+                        showError(field, "Enter a valid email address");
+                        return false;
+                    }
+                    const domain = emailVal.split("@")[1];
+                    if (spamDomains.includes(domain)) {
+                        showError(field, "Temporary / spam emails are not allowed");
+                        return false;
+                    }
                 }
-            }
 
-            removeError(field);
-            return true;
-        }
-
-        // Blur + input listeners
-        const blurred = new Set();
-        function attachValidation(field, name) {
-            if (!field) return;
-            field.addEventListener("blur", () => {
-                blurred.add(field);
-                validateField(field, name);
-            });
-            field.addEventListener("input", () => {
                 removeError(field);
-                if (blurred.has(field)) {
+                return true;
+            }
+
+            // Blur + input listeners
+            const blurred = new Set();
+
+            function attachValidation(field, name) {
+                if (!field) return;
+                field.addEventListener("blur", () => {
+                    blurred.add(field);
                     validateField(field, name);
+                });
+                field.addEventListener("input", () => {
+                    removeError(field);
+                    if (blurred.has(field)) {
+                        validateField(field, name);
+                    }
+                });
+            }
+
+            attachValidation(fields.fullname, "fullname");
+            attachValidation(fields.email, "email");
+            attachValidation(fields.phone, "phone");
+            attachValidation(fields.company, "company");
+
+            // Select fields: validate on change
+            [
+                ["city", fields.city],
+                ["service", fields.service]
+            ].forEach(([name, sel]) => {
+                if (sel) sel.addEventListener("change", () => validateField(sel, name));
+            });
+
+            if (fields.country) {
+                fields.country.addEventListener("change", () => validateField(fields.country, "country"));
+            }
+            if (fields.services.length) {
+                fields.services.forEach(chk => chk.addEventListener("change", () => validateField(chk,
+                    "services")));
+            }
+
+            // On form submit
+            form.addEventListener("submit", function(e) {
+                let valid = true;
+                if (fields.fullname && !validateField(fields.fullname, "fullname")) valid = false;
+                if (fields.email && !validateField(fields.email, "email")) valid = false;
+                if (fields.phone && !validateField(fields.phone, "phone")) valid = false;
+                if (fields.company && !validateField(fields.company, "company")) valid = false;
+                if (fields.city && !validateField(fields.city, "city")) valid = false;
+                if (fields.service && !validateField(fields.service, "service")) valid = false;
+                if (fields.country && !validateField(fields.country, "country")) valid = false;
+                if (fields.services.length && !validateField(fields.services[0], "services")) valid =
+                    false;
+
+                // Captcha validation with widgetId
+                if (captchaWidgetId !== null && typeof grecaptcha !== "undefined") {
+                    const captchaResponse = grecaptcha.getResponse(captchaWidgetId);
+                    if (!captchaResponse) {
+                        const errorEl = form.querySelector(".captcha-error");
+                        if (errorEl) errorEl.style.display = "block";
+                        valid = false;
+                    }
+                }
+
+                if (!valid) {
+                    e.preventDefault();
+                    return;
+                }
+
+                // Disable submit + change text
+                submitBtn.disabled = true;
+                const label = submitBtn.querySelector(".color-button__label");
+                if (label) {
+                    label.textContent = "Submitting...";
+                } else {
+                    submitBtn.textContent = "Submitting...";
                 }
             });
         }
 
-        attachValidation(fields.fullname, "fullname");
-        attachValidation(fields.email, "email");
-        attachValidation(fields.phone, "phone");
-        attachValidation(fields.company, "company");
-
-        // Select fields: validate on change
-        [["city", fields.city], ["service", fields.service]].forEach(([name, sel]) => {
-            if (sel) sel.addEventListener("change", () => validateField(sel, name));
-        });
-
-        if (fields.country) {
-            fields.country.addEventListener("change", () => validateField(fields.country, "country"));
-        }
-        if (fields.services.length) {
-            fields.services.forEach(chk => chk.addEventListener("change", () => validateField(chk, "services")));
-        }
-
-        // On form submit
-        form.addEventListener("submit", function (e) {
-            let valid = true;
-            if (fields.fullname && !validateField(fields.fullname, "fullname")) valid = false;
-            if (fields.email && !validateField(fields.email, "email")) valid = false;
-            if (fields.phone && !validateField(fields.phone, "phone")) valid = false;
-            if (fields.company && !validateField(fields.company, "company")) valid = false;
-            if (fields.city && !validateField(fields.city, "city")) valid = false;
-            if (fields.service && !validateField(fields.service, "service")) valid = false;
-            if (fields.country && !validateField(fields.country, "country")) valid = false;
-            if (fields.services.length && !validateField(fields.services[0], "services")) valid = false;
-
-            // Captcha validation with widgetId
-            if (captchaWidgetId !== null && typeof grecaptcha !== "undefined") {
-                const captchaResponse = grecaptcha.getResponse(captchaWidgetId);
-                if (!captchaResponse) {
-                    const errorEl = form.querySelector(".captcha-error");
-                    if (errorEl) errorEl.style.display = "block";
-                    valid = false;
+        window.initAllRecaptchas = function() {
+            document.querySelectorAll(".validated-form").forEach((form) => {
+                const captchaDiv = form.querySelector(".g-recaptcha");
+                if (captchaDiv) {
+                    const widgetId = grecaptcha.render(captchaDiv, {
+                        sitekey: captchaDiv.getAttribute("data-sitekey")
+                    });
+                    initFormValidation(form, widgetId);
+                } else {
+                    initFormValidation(form, null);
                 }
-            }
+            });
+        };
+    });
 
-            if (!valid) {
-                e.preventDefault();
-                return;
-            }
+    // document.addEventListener("DOMContentLoaded", function () {
+    //     // === COMMON VALIDATION HANDLER FOR ALL FORMS ===
+    //     function initFormValidation(form, captchaWidgetId) {
+    //         if (!form) return;
 
-            // Disable submit + change text
-            submitBtn.disabled = true;
-            const label = submitBtn.querySelector(".color-button__label");
-            if (label) {
-                label.textContent = "Submitting...";
-            } else {
-                submitBtn.textContent = "Submitting...";
-            }
-        });
-    }
+    //         const submitBtn = form.querySelector("button[type='submit']");
 
-    window.initAllRecaptchas = function () {
-        document.querySelectorAll(".validated-form").forEach((form) => {
-            const captchaDiv = form.querySelector(".g-recaptcha");
-            if (captchaDiv) {
-                const widgetId = grecaptcha.render(captchaDiv, {
-                    sitekey: captchaDiv.getAttribute("data-sitekey")
-                });
-                initFormValidation(form, widgetId);
-            } else {
-                initFormValidation(form, null);
-            }
-        });
-    };
-});
+    //         // Collect fields
+    //         const fields = {
+    //             fullname: form.querySelector("[name='fullname']"),
+    //             email: form.querySelector("[name='email']"),
+    //             phone: form.querySelector("[name='phone']"),
+    //             company: form.querySelector("[name='company']"),
+    //             city: form.querySelector("[name='city']"),
+    //             service: form.querySelector("[name='service']"),
+    //             country: form.querySelector("[name='country']"),
+    //             services: form.querySelectorAll("[name='services[]']"),
+    //             // message: form.querySelector("[name='message']"),
+    //         };
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     // === COMMON VALIDATION HANDLER FOR ALL FORMS ===
-//     function initFormValidation(form, captchaWidgetId) {
-//         if (!form) return;
+    //         const spamDomains = [
+    //           "tempmail.com","10minutemail.com","yopmail.com","mailinator.com","guerrillamail.com",
+    //           "guerrillamail.net","maildrop.cc","maildrop.xyz","trashmail.com","trashmail.net",
+    //           "getnada.com","nada.me","dispostable.com","disposablemail.com","mailnesia.com",
+    //           "temp-mail.org","temp-mail.io","temporarymail.com","temp-mail.plus","mytemp.email",
+    //           "throwawaymail.com","fakemailgenerator.com","tempemail.co","tempinbox.com",
+    //           "spam4.me","mailcatch.com","mailboxtemporary.com","mintemail.com","10minutemail.net",
+    //           "yopmail.fr","yopmail.net","nowmymail.com","mail-temporaire.com","spambox.us",
+    //           "fakeinbox.com","spamgourmet.com","sharklasers.com","boun.cr","20minutemail.com",
+    //           "emailondeck.com","mailinator2.com","mail-temp.com","temp-mail.org.uk","tempail.com",
+    //           "mailexpire.com","pokemail.net","mailnull.com","instantemailaddress.com","tempmail.de",
+    //           "tempmail.cc","tempmail.me","spamex.com","wegwerfemail.de","mailnesia.org"
+    //         ];
 
-//         const submitBtn = form.querySelector("button[type='submit']");
+    //         // Show error
+    //         function showError(field, message) {
+    //             let parent = field.closest(".form-group") || field.closest(".col-lg-6") || field.closest(".col-lg-12") || field.parentElement;
+    //             let errorSpan = parent.querySelector(".js-error");
+    //             if (!errorSpan) {
+    //                 errorSpan = document.createElement("span");
+    //                 errorSpan.classList.add("text-danger", "js-error");
+    //                 parent.appendChild(errorSpan);
+    //             }
+    //             errorSpan.textContent = message;
+    //         }
 
-//         // Collect fields
-//         const fields = {
-//             fullname: form.querySelector("[name='fullname']"),
-//             email: form.querySelector("[name='email']"),
-//             phone: form.querySelector("[name='phone']"),
-//             company: form.querySelector("[name='company']"),
-//             city: form.querySelector("[name='city']"),
-//             service: form.querySelector("[name='service']"),
-//             country: form.querySelector("[name='country']"),
-//             services: form.querySelectorAll("[name='services[]']"),
-//             // message: form.querySelector("[name='message']"),
-//         };
+    //         // Remove error
+    //         function removeError(field) {
+    //             let parent = field.closest(".form-group") || field.closest(".col-lg-6") || field.closest(".col-lg-12") || field.parentElement;
+    //             let errorSpan = parent.querySelector(".js-error");
+    //             if (errorSpan) errorSpan.remove();
+    //         }
 
-//         const spamDomains = [
-//           "tempmail.com","10minutemail.com","yopmail.com","mailinator.com","guerrillamail.com",
-//           "guerrillamail.net","maildrop.cc","maildrop.xyz","trashmail.com","trashmail.net",
-//           "getnada.com","nada.me","dispostable.com","disposablemail.com","mailnesia.com",
-//           "temp-mail.org","temp-mail.io","temporarymail.com","temp-mail.plus","mytemp.email",
-//           "throwawaymail.com","fakemailgenerator.com","tempemail.co","tempinbox.com",
-//           "spam4.me","mailcatch.com","mailboxtemporary.com","mintemail.com","10minutemail.net",
-//           "yopmail.fr","yopmail.net","nowmymail.com","mail-temporaire.com","spambox.us",
-//           "fakeinbox.com","spamgourmet.com","sharklasers.com","boun.cr","20minutemail.com",
-//           "emailondeck.com","mailinator2.com","mail-temp.com","temp-mail.org.uk","tempail.com",
-//           "mailexpire.com","pokemail.net","mailnull.com","instantemailaddress.com","tempmail.de",
-//           "tempmail.cc","tempmail.me","spamex.com","wegwerfemail.de","mailnesia.org"
-//         ];
+    //         // Validation logic
+    //         function validateField(field, name) {
+    //             if (!field && name !== "services") return true;
 
-//         // Show error
-//         function showError(field, message) {
-//             let parent = field.closest(".form-group") || field.closest(".col-lg-6") || field.closest(".col-lg-12") || field.parentElement;
-//             let errorSpan = parent.querySelector(".js-error");
-//             if (!errorSpan) {
-//                 errorSpan = document.createElement("span");
-//                 errorSpan.classList.add("text-danger", "js-error");
-//                 parent.appendChild(errorSpan);
-//             }
-//             errorSpan.textContent = message;
-//         }
+    //             if (name === "services") {
+    //                 if (!fields.services.length) return true;
+    //                 const checked = Array.from(fields.services).some(chk => chk.checked);
+    //                 if (!checked) {
+    //                     showError(fields.services[0].closest(".col-lg-6") || fields.services[0].parentElement, "Please select at least one service");
+    //                     return false;
+    //                 } else {
+    //                     removeError(fields.services[0].closest(".col-lg-6") || fields.services[0].parentElement);
+    //                     return true;
+    //                 }
+    //             }
 
-//         // Remove error
-//         function removeError(field) {
-//             let parent = field.closest(".form-group") || field.closest(".col-lg-6") || field.closest(".col-lg-12") || field.parentElement;
-//             let errorSpan = parent.querySelector(".js-error");
-//             if (errorSpan) errorSpan.remove();
-//         }
+    //             if (!field.value.trim()) {
+    //                 showError(field, `${name.charAt(0).toUpperCase() + name.slice(1)} is required`);
+    //                 return false;
+    //             }
 
-//         // Validation logic
-//         function validateField(field, name) {
-//             if (!field && name !== "services") return true;
+    //             if (name === "phone") {
+    //                 const cleaned = field.value.replace(/[^0-9]/g, "").slice(0, 15);
+    //                 field.value = cleaned;
+    //                 if (cleaned.length < 10) {
+    //                     showError(field, "Phone number must be at least 10 digits");
+    //                     return false;
+    //                 }
+    //             }
 
-//             if (name === "services") {
-//                 if (!fields.services.length) return true;
-//                 const checked = Array.from(fields.services).some(chk => chk.checked);
-//                 if (!checked) {
-//                     showError(fields.services[0].closest(".col-lg-6") || fields.services[0].parentElement, "Please select at least one service");
-//                     return false;
-//                 } else {
-//                     removeError(fields.services[0].closest(".col-lg-6") || fields.services[0].parentElement);
-//                     return true;
-//                 }
-//             }
-
-//             if (!field.value.trim()) {
-//                 showError(field, `${name.charAt(0).toUpperCase() + name.slice(1)} is required`);
-//                 return false;
-//             }
-
-//             if (name === "phone") {
-//                 const cleaned = field.value.replace(/[^0-9]/g, "").slice(0, 15);
-//                 field.value = cleaned;
-//                 if (cleaned.length < 10) {
-//                     showError(field, "Phone number must be at least 10 digits");
-//                     return false;
-//                 }
-//             }
-
-//             if (name === "email") {
-//                 const emailVal = field.value.trim().toLowerCase();
-//                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//                 if (!emailRegex.test(emailVal)) {
-//                     showError(field, "Enter a valid email address");
-//                     return false;
-//                 }
-//                 const domain = emailVal.split("@")[1];
-//                 if (spamDomains.includes(domain)) {
-//                     showError(field, "Temporary / spam emails are not allowed");
-//                     return false;
-//                 }
-//             }
+    //             if (name === "email") {
+    //                 const emailVal = field.value.trim().toLowerCase();
+    //                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    //                 if (!emailRegex.test(emailVal)) {
+    //                     showError(field, "Enter a valid email address");
+    //                     return false;
+    //                 }
+    //                 const domain = emailVal.split("@")[1];
+    //                 if (spamDomains.includes(domain)) {
+    //                     showError(field, "Temporary / spam emails are not allowed");
+    //                     return false;
+    //                 }
+    //             }
 
 
 
-//             removeError(field);
-//             return true;
-//         }
+    //             removeError(field);
+    //             return true;
+    //         }
 
-//         // Blur + input listeners
-//         const blurred = new Set();
-//         function attachValidation(field, name) {
-//             if (!field) return;
-//             field.addEventListener("blur", () => {
-//                 blurred.add(field);
-//                 validateField(field, name);
-//             });
-//             field.addEventListener("input", () => {
-//                 removeError(field);
-//                 if (blurred.has(field)) {
-//                     validateField(field, name);
-//                 }
-//             });
-//         }
+    //         // Blur + input listeners
+    //         const blurred = new Set();
+    //         function attachValidation(field, name) {
+    //             if (!field) return;
+    //             field.addEventListener("blur", () => {
+    //                 blurred.add(field);
+    //                 validateField(field, name);
+    //             });
+    //             field.addEventListener("input", () => {
+    //                 removeError(field);
+    //                 if (blurred.has(field)) {
+    //                     validateField(field, name);
+    //                 }
+    //             });
+    //         }
 
-//         attachValidation(fields.fullname, "fullname");
-//         attachValidation(fields.email, "email");
-//         attachValidation(fields.phone, "phone");
-//         // attachValidation(fields.message, "message");
-//         if (fields.country) {
-//             fields.country.addEventListener("change", () => validateField(fields.country, "country"));
-//         }
-//         if (fields.services.length) {
-//             fields.services.forEach(chk => chk.addEventListener("change", () => validateField(chk, "services")));
-//         }
+    //         attachValidation(fields.fullname, "fullname");
+    //         attachValidation(fields.email, "email");
+    //         attachValidation(fields.phone, "phone");
+    //         // attachValidation(fields.message, "message");
+    //         if (fields.country) {
+    //             fields.country.addEventListener("change", () => validateField(fields.country, "country"));
+    //         }
+    //         if (fields.services.length) {
+    //             fields.services.forEach(chk => chk.addEventListener("change", () => validateField(chk, "services")));
+    //         }
 
-//         // On form submit
-//         form.addEventListener("submit", function (e) {
-//             let valid = true;
-//             if (fields.fullname && !validateField(fields.fullname, "fullname")) valid = false;
-//             if (fields.email && !validateField(fields.email, "email")) valid = false;
-//             if (fields.phone && !validateField(fields.phone, "phone")) valid = false;
-//             if (fields.country && !validateField(fields.country, "country")) valid = false;
-//             if (fields.services.length && !validateField(fields.services[0], "services")) valid = false;
-
-
-//             // Captcha validation with widgetId
-//             if (captchaWidgetId !== null && typeof grecaptcha !== "undefined") {
-//                 const captchaResponse = grecaptcha.getResponse(captchaWidgetId);
-//                 if (!captchaResponse) {
-//                     const errorEl = form.querySelector(".captcha-error");
-//                     if (errorEl) errorEl.style.display = "block";
-//                     valid = false;
-//                 }
-//             }
-
-//             if (!valid) {
-//                 e.preventDefault();
-//                 return;
-//             }
-
-//             // Disable submit + change text
-//             submitBtn.disabled = true;
-//             const label = submitBtn.querySelector(".color-button__label");
-//             if (label) {
-//                 label.textContent = "Submitting...";
-//             } else {
-//                 submitBtn.textContent = "Submitting...";
-//             }
-//         });
-//     }
-
-//     // === RENDER RECAPTCHA FORMS ===
-//     // window.initAllRecaptchas = function () {
-//     //     document.querySelectorAll(".validated-form").forEach((form) => {
-//     //         const captchaDiv = form.querySelector(".g-recaptcha");
-//     //         if (captchaDiv) {
-//     //             const widgetId = grecaptcha.render(captchaDiv, {
-//     //                 sitekey: captchaDiv.getAttribute("data-sitekey")
-//     //             });
-//     //             initFormValidation(form, widgetId);
-//     //         }
-//     //     });
-//     // };
-
-//     window.initAllRecaptchas = function () {
-//         document.querySelectorAll(".validated-form").forEach((form) => {
-//             const captchaDiv = form.querySelector(".g-recaptcha");
-//             if (captchaDiv) {
-//                 const widgetId = grecaptcha.render(captchaDiv, {
-//                     sitekey: captchaDiv.getAttribute("data-sitekey")
-//                 });
-//                 initFormValidation(form, widgetId);
-//             } else {
-//                 initFormValidation(form, null);
-//             }
-//         });
-//     };
+    //         // On form submit
+    //         form.addEventListener("submit", function (e) {
+    //             let valid = true;
+    //             if (fields.fullname && !validateField(fields.fullname, "fullname")) valid = false;
+    //             if (fields.email && !validateField(fields.email, "email")) valid = false;
+    //             if (fields.phone && !validateField(fields.phone, "phone")) valid = false;
+    //             if (fields.country && !validateField(fields.country, "country")) valid = false;
+    //             if (fields.services.length && !validateField(fields.services[0], "services")) valid = false;
 
 
+    //             // Captcha validation with widgetId
+    //             if (captchaWidgetId !== null && typeof grecaptcha !== "undefined") {
+    //                 const captchaResponse = grecaptcha.getResponse(captchaWidgetId);
+    //                 if (!captchaResponse) {
+    //                     const errorEl = form.querySelector(".captcha-error");
+    //                     if (errorEl) errorEl.style.display = "block";
+    //                     valid = false;
+    //                 }
+    //             }
 
-// });
+    //             if (!valid) {
+    //                 e.preventDefault();
+    //                 return;
+    //             }
 
+    //             // Disable submit + change text
+    //             submitBtn.disabled = true;
+    //             const label = submitBtn.querySelector(".color-button__label");
+    //             if (label) {
+    //                 label.textContent = "Submitting...";
+    //             } else {
+    //                 submitBtn.textContent = "Submitting...";
+    //             }
+    //         });
+    //     }
+
+    //     // === RENDER RECAPTCHA FORMS ===
+    //     // window.initAllRecaptchas = function () {
+    //     //     document.querySelectorAll(".validated-form").forEach((form) => {
+    //     //         const captchaDiv = form.querySelector(".g-recaptcha");
+    //     //         if (captchaDiv) {
+    //     //             const widgetId = grecaptcha.render(captchaDiv, {
+    //     //                 sitekey: captchaDiv.getAttribute("data-sitekey")
+    //     //             });
+    //     //             initFormValidation(form, widgetId);
+    //     //         }
+    //     //     });
+    //     // };
+
+    //     window.initAllRecaptchas = function () {
+    //         document.querySelectorAll(".validated-form").forEach((form) => {
+    //             const captchaDiv = form.querySelector(".g-recaptcha");
+    //             if (captchaDiv) {
+    //                 const widgetId = grecaptcha.render(captchaDiv, {
+    //                     sitekey: captchaDiv.getAttribute("data-sitekey")
+    //                 });
+    //                 initFormValidation(form, widgetId);
+    //             } else {
+    //                 initFormValidation(form, null);
+    //             }
+    //         });
+    //     };
+
+
+
+    // });
 </script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const requestModal = document.getElementById('exampleModal');
-    const countrySelect = document.getElementById('requestCountrySelect');
-    const phoneInput = document.getElementById('requestPhone');
-    const fullPhoneInput = document.getElementById('requestFullPhone');
-    const requestForm = document.getElementById('requestForm');
+    document.addEventListener('DOMContentLoaded', function() {
+        const requestModal = document.getElementById('exampleModal');
+        const countrySelect = document.getElementById('requestCountrySelect');
+        const phoneInput = document.getElementById('requestPhone');
+        const fullPhoneInput = document.getElementById('requestFullPhone');
+        const requestForm = document.getElementById('requestForm');
 
-    if (!requestModal || !phoneInput) return;
+        if (!requestModal || !phoneInput) return;
 
-    let itiRequest = null;
-    let countryDetected = false;
+        let itiRequest = null;
+        let countryDetected = false;
 
-    // hidden "country" = phone field me chuni hui country
-    function syncCountry() {
-        const name = itiRequest && itiRequest.getSelectedCountryData().name;
-        if (countrySelect && name) countrySelect.value = name.replace(/\s*\(.*\)\s*$/, '');
-    }
-
-    requestModal.addEventListener('shown.bs.modal', function () {
-        // Init intl-tel-input only once, the first time the modal opens
-        if (!itiRequest) {
-            itiRequest = window.intlTelInput(phoneInput, {
-                initialCountry: "in",
-                separateDialCode: true,
-                preferredCountries: ["in", "ae", "us", "gb"],
-                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js"
-            });
-            phoneInput.addEventListener('countrychange', syncCountry);
-            syncCountry();
+        // hidden "country" = phone field me chuni hui country
+        function syncCountry() {
+            const name = itiRequest && itiRequest.getSelectedCountryData().name;
+            if (countrySelect && name) countrySelect.value = name.replace(/\s*\(.*\)\s*$/, '');
         }
 
-        if (countryDetected) return;
+        requestModal.addEventListener('shown.bs.modal', function() {
+            // Init intl-tel-input only once, the first time the modal opens
+            if (!itiRequest) {
+                itiRequest = window.intlTelInput(phoneInput, {
+                    initialCountry: "in",
+                    separateDialCode: true,
+                    preferredCountries: ["in", "ae", "us", "gb"],
+                    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js"
+                });
+                phoneInput.addEventListener('countrychange', syncCountry);
+                syncCountry();
+            }
 
-        fetch('https://ipwho.is/')
-            .then(res => res.json())
-            .then(data => {
-                if (!data || data.success === false || !data.country) return;
+            if (countryDetected) return;
 
-                if (data.country_code && itiRequest) {
-                    itiRequest.setCountry(data.country_code.toLowerCase());
-                    syncCountry();
-                }
+            fetch('https://ipwho.is/')
+                .then(res => res.json())
+                .then(data => {
+                    if (!data || data.success === false || !data.country) return;
 
-                countryDetected = true;
-            })
-            .catch(err => console.warn('Country auto-detect failed:', err));
-    });
+                    if (data.country_code && itiRequest) {
+                        itiRequest.setCountry(data.country_code.toLowerCase());
+                        syncCountry();
+                    }
 
-    if (requestForm) {
-        requestForm.addEventListener('submit', function () {
-            if (!itiRequest) return;
-            const countryData = itiRequest.getSelectedCountryData();
-            const number = phoneInput.value.replace(/\s+/g, "");
-            fullPhoneInput.value = "+" + countryData.dialCode + number;
+                    countryDetected = true;
+                })
+                .catch(err => console.warn('Country auto-detect failed:', err));
         });
-    }
-});
+
+        if (requestForm) {
+            requestForm.addEventListener('submit', function() {
+                if (!itiRequest) return;
+                const countryData = itiRequest.getSelectedCountryData();
+                const number = phoneInput.value.replace(/\s+/g, "");
+                fullPhoneInput.value = "+" + countryData.dialCode + number;
+            });
+        }
+    });
 </script>
 
 <style>
     .iti input#requestPhone {
         padding-left: 105px !important;
     }
+
     .form-group:has(#requestPhone) label {
         left: 90px !important;
     }
+
     .iti {
         width: 100%;
         display: block;
     }
+
     .iti__country-list {
         background-color: #fff !important;
-        z-index: 1060; /* higher than modal's z-index so dropdown isn't clipped */
+        z-index: 1060;
+        /* higher than modal's z-index so dropdown isn't clipped */
     }
+
     .iti__country-list .iti__country-name,
     .iti__country-list .iti__dial-code {
         color: #182653 !important;
     }
+
     .iti__country.iti__highlight {
         background-color: #f0f0f0 !important;
     }
-    .iti .iti__selected-dial-code{
-        color:#111111;
+
+    .iti .iti__selected-dial-code {
+        color: #111111;
     }
+
     #requestPhone::placeholder {
-    color: #111111;
-    opacity: 1;
-}
+        color: #111111;
+        opacity: 1;
+    }
 </style>
+
+
+{{-- Back to top (sirf mobile / tablet) --}}
+<button type="button" id="backToTop" class="back_to_top" aria-label="Back to top">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true">
+        <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="#fff" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+    </svg>
+</button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.getElementById('backToTop');
+        if (!btn) return;
+
+        function toggleBtn() {
+            btn.classList.toggle('show', window.scrollY > 400);
+        }
+
+        window.addEventListener('scroll', toggleBtn, {
+            passive: true
+        });
+        toggleBtn();
+
+        btn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>

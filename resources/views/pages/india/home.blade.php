@@ -538,196 +538,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <div class="cert_tools_panel active" data-panel="certifications">
         <div class="container">
-            <div class="cert_badges_row">
-                <span class="cert_badge"><img src="{{ asset('public/front/images/figma-footer-badges/iso-9001.png') }}" alt="ISO 9001" loading="lazy"></span>
-                <span class="cert_badge"><img src="{{ asset('public/front/images/figma-footer-badges/sca-vic-member.png') }}" alt="Strata Community Association VIC" loading="lazy"></span>
-                <span class="cert_badge"><img src="{{ asset('public/front/images/figma-footer-badges/iso-27001.png') }}" alt="ISO 27001" loading="lazy"></span>
-                <span class="cert_badge"><img src="{{ asset('public/front/images/figma-footer-badges/sca-wa-member.png') }}" alt="Strata Community Association WA" loading="lazy"></span>
-                <span class="cert_badge"><img src="{{ asset('public/front/images/figma-footer-badges/gdpr.png') }}" alt="GDPR" loading="lazy"></span>
+            @php
+    $certBadges = [
+        ['iso-9001.png', 'ISO 9001'],
+        ['sca-vic-member.png', 'Strata Community Association VIC'],
+        ['iso-27001.png', 'ISO 27001'],
+        ['sca-wa-member.png', 'Strata Community Association WA'],
+        ['gdpr.png', 'GDPR'],
+    ];
+@endphp
+<div class="cert_badges_row">
+    <div class="cert_badges_track">
+        @foreach ([1, 2] as $pass)
+            @foreach ($certBadges as [$file, $alt])
+                <span class="cert_badge {{ $pass === 2 ? 'cert_dup' : '' }}" @if($pass === 2) aria-hidden="true" @endif>
+                    <img src="{{ asset('public/front/images/figma-footer-badges/' . $file) }}" alt="{{ $pass === 2 ? '' : $alt }}" loading="lazy">
+                </span>
+            @endforeach
+        @endforeach
+    </div>
+</div>
+        </div>
+    </div>
+
+        <div class="cert_tools_panel" data-panel="tools">
+        <div class="tools_marquee">
+            <div class="tools_track">
+                @foreach ([1, 2] as $pass)
+                    @for ($i = 1; $i <= 29; $i++)
+                        <span class="tools_item" @if($pass === 2) aria-hidden="true" @endif>
+                            <img src="{{ asset('public/front/images/Homepage_' . sprintf('%02d', $i) . '.png') }}"
+                                 alt="{{ $pass === 2 ? '' : 'Tool ' . $i }}" loading="lazy">
+                        </span>
+                    @endfor
+                @endforeach
             </div>
         </div>
-    </div>
-
-    <div class="cert_tools_panel" data-panel="tools">
-    <div class="client_slider_full">
-        <div class="client_slider">
-
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_01.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_01">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_02.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_02">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_03.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_03">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_04.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_04">
-                        </div>
-                         <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_05.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_05">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_06.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_06">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_07.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_07">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_08.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_08">
-                        </div>
-                         <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_09.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_09">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_10.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_10">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_11.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_11">
-                        </div>
-                         <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_12.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_12">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_13.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_13">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_14.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_14">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_15.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_15">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_16.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_16">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_17.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_17">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_18.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_18">
-                        </div>
-                          <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_19.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_19">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_20.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_20">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_21.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_21">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_22.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_22">
-                        </div>
-                         <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_23.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_23">
-                        </div>
-                         <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_24.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_24">
-                        </div>
-                         <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_25.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_25">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_26.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_26">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_27.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_27">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_28.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_28">
-                        </div>
-                        <div>
-                            <img class="img-fluid"
-                                 src="{{ asset('public/front/images/Homepage_29.png') }}"
-                                  loading="lazy"
-                                 alt="Homepage_29">
-                        </div>
-        </div>
-    </div>
     </div>
 </section>
 
@@ -962,15 +808,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     <input type="tel" name="phone" id="cfPhone" maxlength="15" minlength="10" placeholder="Phone Number*:" aria-label="Phone Number"
                         oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
                 </div>
-                <div class="col-lg-6 col-12 cf_field">
+                {{-- <div class="col-lg-6 col-12 cf_field">
                     <select name="city" aria-label="Select City" >
                         <option value="" hidden>Select City*:</option>
                         @foreach ($contactFormCities as $city)
                             <option value="{{ $city }}">{{ $city }}</option>
                         @endforeach
                     </select>
-                </div>
-                <div class="col-lg-6 col-12 cf_field">
+                </div> --}}
+                <div class="col-12 cf_field">
                     <select name="service" aria-label="Choose Service" >
                         <option value="" hidden>Choose Service*:</option>
                         @foreach ($contactFormServices as $service)

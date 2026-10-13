@@ -49,7 +49,7 @@
                         @endforeach
                     </select>
                 </div> --}}
-                <div class="col-lg-6 col-12 cf_field">
+                <div class="col-12 cf_field">
                     <input type="text" name="city" maxlength="70" placeholder="City*:" aria-label="City"
                         oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'').replace(/\s+/g,' ').trimStart();">
                 </div>
