@@ -11,17 +11,17 @@
 
     $serviceCards = [
         ['title' => 'Accounting Outsourcing', 'img' => $img('figma-precision/accounting-outsourcing.png'), 'url' => $uk('accounting-outsourcing-services'),
-         'text' => 'Producing accurate, up-to-date accounts requires ongoing time and attention that in-house teams often cannot spare. We manage the complete cycle for you, including reconciliations, ledgers and both the month-end and year-end close, prepared to UK standards. This gives you a clear and current view of your financial position at any time. Because there is no permanent team on your payroll, this expertise comes at a lower cost.'],
+         'text' => 'We manage the complete accounting cycle, including reconciliations, ledgers, and month-end and year-end close, prepared to UK standards. This gives you an up-to-date view of your financial position at a lower cost, without a permanent in-house team.'],
         ['title' => 'Small Business Accounting', 'img' => $img('common/services/bookkeeping-team.jpg'), 'url' => $uk('small-business-accounting-services'),
-         'text' => 'Startup UK businesses require a full finance function but rarely can justify a permanent team to run it. PCS Global provides that function on an outsourced basis, managing your day-to-day accounts, reporting and compliance so nothing is overlooked. You receive accurate records, clear figures and consistent support, all aligned with how your business operates.'],
+         'text' => 'Startup UK businesses need a full finance function but rarely can justify a permanent team. We manage day-to-day accounts, reporting and compliance, providing accurate records, clear figures and consistent support aligned with how your business operates.'],
         ['title' => 'Bookkeeping Outsourcing', 'img' => $img('common/services/tax-team.jpg'), 'url' => $uk('accounting-outsourcing-services'),
-         'text' => 'Reliable financial information begins with well-maintained bookkeeping, as every report and return depends on it. Our team records and reconciles transactions on an ongoing basis, so your records remain current and your figures reliable. We work within your existing software, leaving your systems unchanged. The outcome is a complete and accurate set of books maintained throughout the year.'],
+         'text' => 'Our team records and reconciles transactions on an ongoing basis, keeping your financial records current and reliable. We work within your existing software, leaving your systems unchanged while maintaining complete and accurate books throughout the year.'],
         ['title' => 'Tax Preparation Outsourcing', 'img' => $img('uk/service-tax.jpg'), 'url' => $uk('outsource-tax-preparation-services'),
-         'text' => 'For UK businesses, tax is one of the most demanding areas of compliance, particularly as filing deadlines approach. We prepare and review your returns to HMRC requirements and submit them before the deadline. Our specialists remain updated with the rules that apply to your circumstances, which minimises errors and prevents late submissions.'],
+         'text' => 'We prepare and review your tax returns to HMRC requirements and submit them before the deadline. Our specialists stay updated with the rules applicable to your circumstances, minimising errors and helping prevent late submissions.'],
         ['title' => 'Payroll Outsourcing', 'img' => $img('figma-precision/payroll-outsourcing.png'), 'url' => $consult,
-         'text' => 'Payroll allows no margin for error, as employees rightly expect to be paid correctly and on time. We manage the entire process, including pay runs, PAYE, Real Time Information submissions to HMRC and workplace pension contributions. Each cycle is verified and completed on schedule. This ensures your staff are paid accurately and on time.'],
+         'text' => 'We manage the entire payroll process, including pay runs, PAYE, Real Time Information submissions to HMRC and workplace pension contributions. Each cycle is verified and completed on schedule, ensuring your staff are paid accurately and on time.'],
         ['title' => 'VAT Outsourcing', 'img' => $img('uk/service-vat-b3d697.jpg'), 'url' => $consult,
-         'text' => 'VAT is one of the more error-prone areas of UK tax, and mistakes can prove costly. We manage the process from calculation to submission, determining what is due, reconciling it against your records, and filing under Making Tax Digital ahead of the deadline. Every return is reviewed before it is submitted to HMRC. This removes a demanding recurring task and reduces the risk of penalties.'],
+         'text' => 'We manage VAT from calculation to submission, reconciling amounts against your records and filing under Making Tax Digital (MTD) ahead of the deadline. Every return is reviewed before submission to HMRC, reducing the risk of errors and penalties.'],
     ];
 
     // Figma me in cards ka text Australia wala tha (AASB / GST / ATO); UK ke hisab se likha gaya hai
@@ -31,7 +31,7 @@
          'text' => 'For accounting practices, we operate as a discreet extension of your team, completing client work under your own brand. Our support covers client bookkeeping, accounts preparation, management accounts, tax preparation support, VAT, payroll, audit support and wider back-office accounting. All work is completed to your standards and returned ready for review, so your clients deal only with your firm.'],
         ['title' => 'Outsourcing for UK Businesses & SMEs', 'img' => $img('uk/client-2-372b2d.jpg'),
          'button' => ['Explore Small Business Accounting', $uk('small-business-accounting-services')],
-         'text' => 'When finance administration draws your team away from running the business, outsourcing restores that focus. We manage bookkeeping, financial reporting, payroll, VAT, tax preparation, accounts payable and receivable, and management accounting, in whatever combination you require. The work is accurate, compliant and aligned with your operations. As an effective route to accounting outsourcing for UK SMEs, it provides the financial capability of a far larger organisation without the cost of building one in-house.'],
+         'text' => 'When finance administration distracts your team from running the business, outsourcing restores that focus. We manage bookkeeping, financial reporting, payroll, VAT, tax preparation, accounts payable and receivable, and management accounting to suit your needs. Our accurate, compliant support gives UK SMEs the financial capabilities of a larger organisation without the cost of building an in-house team.'],
     ];
 
     $standards = [
@@ -180,7 +180,7 @@
     <div class="container">
         <div class="com_sec_head_top">
             <h2 class="mb-2 mb-xxl-4">Outsourcing Financial Services We Provide in the United Kingdom</h2>
-            <p>When routine finance tasks take up more of your team's time than they should, outsourcing returns that time to higher-value work. PCS Global manages the full range of outsourced finance and accounting functions UK businesses and firms require, available as a single service or a complete solution.</p>
+            <p>When routine finance tasks take up more of your team's time than they should, outsourcing returns that time to higher-value work.PCS Global provides outsourced finance and accounting services for UK businesses and firms, available as a single service or a complete solution.</p>
         </div>
 
         {{-- cards 3 ke multiple na hon to aakhri row center me --}}
@@ -375,7 +375,8 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="container">
         <div class="com_sec_head_top">
             <h2 class="mb-2 mb-xxl-4">How Does PCS Global Work With UK Clients?</h2>
-            <p>Beginning a partnership with PCS Global is a clear and structured process, designed to be simple and low-risk for you. Outsourcing accounting work to India is often assumed to be complex, yet our structured onboarding makes it straightforward and secure. In five stages, you move from a first conversation to a fully embedded team working alongside your own.</p>
+            <p>Working with PCS Global follows a clear, structured process designed to make accounting outsourcing from India simple, secure and low-risk. Across five stages, we take you from the initial conversation to a dedicated team integrated with your business, working seamlessly alongside your own staff.
+</p>
         </div>
 
         <div class="process_steps" data-slider data-slider-controls="slider4" data-slider-show="3" data-slider-controls-visible="{{ count($processStepsSteps) > 3 ? 'true' : 'false' }}">

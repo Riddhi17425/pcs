@@ -11,22 +11,22 @@
 
     $serviceCards = [
         ['title' => 'Accounting Outsourcing Services', 'img' => $img('figma-precision/accounting-outsourcing.png'), 'url' => $us('bookkeeping-and-accounting-services'),
-         'text' => 'Keeping your accounts accurate and current is demanding, and for many US companies it draws focus away from running the business. We take on the full accounting cycle, from reconciliations and the general ledger to closing your books each month and at year-end, all to US GAAP. You get a clear, current picture of your finances whenever you need it. And because you are not carrying a full in-house team, the cost is considerably lower.'],
+         'text' => 'We manage the full accounting cycle, from reconciliations and general ledger maintenance to monthly and year-end closing, in line with US GAAP. You get accurate, up-to-date financial records and a clear picture of your finances at a lower cost than maintaining a full in-house team.'],
         ['title' => 'Bookkeeping Outsourcing Services', 'img' => $img('common/services/bookkeeping-team.webp'), 'url' => $us('bookkeeping-and-accounting-services'),
-         'text' => 'Accurate books are the foundation everything else is built on, from tax filings to financial reporting. We log and match every transaction as it comes through, keeping your records current and your numbers something you can trust. We work inside the software your business already runs on, so nothing about your setup has to change. The result is clean, reliable books maintained month after month.'],
+         'text' => 'We record and match transactions to keep your financial records accurate, organized, and current. Working with your existing accounting software, we maintain reliable books month after month, supporting smoother tax filings and financial reporting without changing your setup.'],
         ['title' => 'Outsourced Tax Preparation Services', 'img' => $img('common/services/tax-team.jpg'), 'url' => $us('taxation-services'),
-         'text' => 'Tax season places real strain on US businesses and CPA firms alike. We provide tax preparation support that gets returns organized, reviewed, and ready to file on schedule, easing the pressure when it peaks. Our team stays current on the federal and state rules that affect your filings, which reduces errors and last-minute surprises. You receive accurate, well-prepared returns and a far smoother season.'],
+         'text' => 'We help US businesses and CPA firms organize, review, and prepare tax returns for timely filing. Our team stays current on applicable federal and state tax rules, helping reduce errors, avoid last-minute surprises, and make tax season more manageable.'],
         ['title' => 'Payroll Outsourcing Services', 'img' => $img('us/service-4.jpg'), 'url' => $consult,
-         'text' => 'Payroll is one area where employees notice mistakes immediately, so accuracy matters in every cycle. We manage the full process, including pay runs, withholdings, and the associated payroll tax filings, all processed correctly and on time. Your people are paid accurately, and your compliance obligations are met without adding to your team\'s workload. It removes a recurring, high-stakes responsibility from your team.'],
+         'text' => 'We manage payroll processing, withholdings, and related payroll tax filings accurately and on time. Our support helps ensure employees are paid correctly and compliance obligations are met, removing a recurring responsibility from your team\'s workload.'],
         ['title' => 'Outsourced Audit Support Services', 'img' => $img('us/service-5.jpg'), 'url' => $consult,
-         'text' => 'Audits seem a lot less painful when your papers are in order, and the work is done. We get your schedules, reconciliations, and backup documentation ready so that when it comes time for your audit, your auditor does not have to look far to find the information needed. We help facilitate an easier, smoother audit with less interruption to your employees\' work.'],
+         'text' => 'We prepare audit schedules, reconciliations, and supporting documentation so auditors can access the information they need. With organized records and documentation ready, we help streamline the audit process and minimize disruption to your employees\' daily work.'],
     ];
 
     $clientCards = [
         ['title' => 'Accounting Outsourcing for US Businesses', 'img' => $img('us/client-2.jpg'),
-         'text' => 'We work with small and mid-sized companies, to fast-growing companies and those with slender finance teams, providing the extra support your business needs. For businesses with seasonal accounting cycles, we ramp up during the accounting high seasons, and ease down as those high seasons wrap up. It is a smart, scalable way to manage a larger in-house team. '],
-        ['title' => 'Accounting Outsourcing for US Accounting & CPA Firms', 'img' => $img('us/client-1-182ac9.jpg'),
-         'text' => 'We handle bookkeeping, accounting back-office work, tax preparation support, and audit support, along with overflow and seasonal workloads when demand spikes. For firms that prefer it, we also provide white-label accounting and dedicated offshore accounting teams that operate under your brand. A growing number of US accounting firms outsourcing to India do so to grow steadily while keeping quality and client relationships firmly in their own hands.'],
+         'text' => 'We support small and mid-sized businesses, fast-growing companies, and businesses with lean finance teams. Our flexible accounting outsourcing services scale with your needs, increasing support during peak accounting periods and adjusting as demand eases. This helps you manage workloads efficiently without having a larger in-house team.'],
+        ['title' => 'Accounting Outsourcing for CPA Firms', 'img' => $img('us/client-1-182ac9.jpg'),
+         'text' => 'We handle bookkeeping, accounting back-office work, tax preparation, audit support, and overflow workloads during peak seasons. Our white-label services and dedicated offshore accounting teams help US accounting firms outsourcing to India scale efficiently under their own brand while maintaining quality and control over client relationships.'],
     ];
 
     $standards = [
@@ -52,15 +52,15 @@
 
     $processSteps = [
         ['title' => 'Discovery',
-         'text' => 'We start by learning about your business, what you are doing now, and which tasks you want to delegate to us. We use this initial consultation to demonstrate how we can provide value and the best way to complement your current workflow. We then customise the support based on your business needs.'],
+         'text' => 'We learn about your business, current processes, and the tasks you want to delegate. Through an initial consultation, we identify how our services can complement your workflow and customise support to meet your business needs.'],
         ['title' => 'Tailored Team',
-         'text' => 'Next, we put together a team with the skills to carry out the work you require. The same team members stay involved with your account, so they understand your business, your financial and administrative systems, and your expectations - resulting in a reduced learning curve and consistent results. '],
+         'text' => 'We assemble a skilled team suited to your requirements. The same team members support your account over time, learning your systems, processes, and expectations to reduce the learning curve and deliver consistent results.'],
         ['title' => 'Workflow Integration',
-         'text' => 'We then set up to work the way you already do. Our team uses your accounting software, your file-sharing, and your reporting formats, so there is nothing new for your staff to learn. We establish protected access and settle on the channels we will use to talk and share files. The switch is handled carefully, and we quickly become part of your day-to-day tasks.'],
+         'text' => 'We adapt to your existing accounting software, file-sharing systems, and reporting formats. With secure access and clear communication channels in place, we ensure a smooth transition and integrate seamlessly into your daily operations.'],
          ['title' => 'Support',
-         'text' => 'Once you are good to go, the work begins. We maintain your bookkeeping, payroll, tax, and financial reports in line and on track, providing you with progress updates and future plans along the way. You retain complete awareness and control over every piece of work, while we take care of the work as you handle the business.'],
+         'text' => 'We manage bookkeeping, payroll, tax, and financial reporting while keeping you informed through regular progress updates. You maintain complete visibility and control over the work while our team handles daily finance responsibilities.'],
          ['title' => 'Review & Scale',
-         'text' => 'Support is flexible as your business evolves. We carry out quality reviews periodically and, as your requirements fluctuate, you can increase capacity when the demand is high and reduce it when it falls off. That is what makes us so flexible and, therefore, so valuable to you.'],
+         'text' => 'We conduct periodic quality reviews and adjust support as your business evolves. You can increase team capacity during peak periods and scale back when demand decreases, ensuring flexible support that aligns with your changing needs.'],
     ];
 
     $certs = [
@@ -123,7 +123,7 @@
             <div class="hero_dark_text">
                 <div>
                     <h1>Accounting Outsourcing Company for <span class="hero_dark_mark">US Businesses &amp; CPA Firms</span></h1>
-                    <p class="hero_dark_para">US businesses and CPA firms trust PCS Global for dedicated, scalable teams across accounting, bookkeeping, tax, payroll, and audit support. We work as a seamless extension of your team, not a distant vendor. Our accounting outsourcing services help US firms reduce costs, improve efficiency, and drive sustainable growth.</p>
+                    <p class="hero_dark_para">PCS Global is a trusted accounting outsourcing company helping US businesses and CPA firms streamline accounting, bookkeeping, tax, payroll, and audit support. Our dedicated, scalable teams integrate seamlessly with your workflows, helping you reduce costs, improve efficiency, and focus on growth.</p>
                 </div>
                 @if (count($heroDarkFeatures))
                     <ul class="hero_dark_features">
@@ -188,7 +188,7 @@
     <div class="container">
         <div class="com_sec_head_top">
             <h2 class="mb-2 mb-xxl-4">Outsourcing Financial Services We Provide in the United States</h2>
-            <p>Day-to-day finance work can take hours that your people could use elsewhere-and the right accounting partner puts those hours to better use. From the basics to the sophisticated, PCS Global handles the accounting work your US business or firm counts on, whether you want one service or an end-to-end solution. </p>
+            <p>Day-to-day finance work takes time your team could use elsewhere. PCS Global handles the accounting work your US business or CPA firm counts on, from individual services to end-to-end solutions, helping you reduce costs and focus on growth.</p>
         </div>
 
         {{-- cards 3 ke multiple na hon to aakhri row center me --}}
@@ -383,7 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="container">
         <div class="com_sec_head_top">
             <h2 class="mb-2 mb-xxl-4">How Does PCS Global Work With US Clients?</h2>
-            <p>Getting started with PCS Global is simple, and the process is built to keep risk and disruption to a minimum. In these five stages, you go from an opening conversation to a team that functions as part of your own.</p>
+            <p>Getting started with PCS Global is simple, with a structured process designed to minimise risk and disruption. These five stages take you from the initial conversation to a dedicated team working as part of your business.</p>
         </div>
 
         <div class="process_steps" data-slider data-slider-controls="slider4" data-slider-show="3" data-slider-controls-visible="{{ count($processStepsSteps) > 3 ? 'true' : 'false' }}">

@@ -34,7 +34,7 @@ return [
         ['title' => 'Discovery',
          'text' => 'Every engagement opens with a discussion. Our priority is to learn how your business runs, which areas are under most pressure, and the responsibilities you would prefer to pass on. With that understanding, we can pinpoint the work to take on and the best way to sit alongside your team.'],
         ['title' => 'Tailored Team',
-         'text' => 'We then form your team, selecting professionals whose expertise aligns with your requirements. The same individuals remain with you over time, developing a clear understanding of your business, your preferences, and your standards. That continuity produces more efficient delivery and reduces the need for repeated instruction.'],
+         'text' => 'We build a dedicated team of professionals whose expertise matches your requirements. The same team supports you over time, understanding your business, preferences and standards. This continuity improves efficiency and reduces the need for repeated instructions.'],
         ['title' => 'Workflow Integration',
          'text' => 'We then integrate with your established working methods. We work directly in the accounting software, file-sharing tools, and reporting formats already in place, so your team adopts nothing new. We arrange secure access and confirm how we will communicate and exchange work.'],
          ['title' => 'Support',

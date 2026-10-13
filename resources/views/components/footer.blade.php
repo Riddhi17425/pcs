@@ -12,7 +12,7 @@
     'email' => 'info@pcsglobalgroup.com',
     'privacyUrl' => route('privacy-policy'),
     'logo' => asset('public/front/images/footer-log.svg'),
-    'about' => 'PCS Global is committed to delivering reliable and quality accounting service and is driven by long-term partnerships with clients, and employees based on strong values of integrity and trust.',
+    'about' => 'PCS Global is committed to delivering reliable finance and accounting outsourcing solutions, building long-term partnerships with global accounting firms and businesses based on integrity, trust, and mutual growth.',
     'copyright' => 'Progressive Corporate Services Pvt. Ltd., All Rights Reserved.',
     'social' => null,
     'badges' => null,
