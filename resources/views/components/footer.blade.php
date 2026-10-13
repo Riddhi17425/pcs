@@ -38,7 +38,8 @@
         <div class="footer_top">
             <div class="footer_top_flex">
                 <div class="foot_lt">
-                    <a href="{{ $homeUrl }}"><img class="ft_logo" src="{{ $logo }}" alt="logo" loading="lazy"></a>
+                    <!-- <a href="{{ $homeUrl }}"><img class="ft_logo" src="{{ $logo }}" alt="logo" loading="lazy"></a> -->
+                    <a href="{{ route('front.home') }}"><img class="ft_logo" src="{{ $logo }}" alt="logo" loading="lazy"></a>
                     <p class="foot_lt_para">{{ $about }}</p>
                     <div class="foot_social">
                         @foreach ($social as [$url, $icon, $alt])
