@@ -716,10 +716,4 @@ Can taxation services in the UK assist with HMRC compliance?
     </div>
 </section>
 
-<script>
-if (!sessionStorage.getItem("redirect_done")) {
-    sessionStorage.setItem("redirect_done", "true");
-    window.location.href = "/bookkeeping-accounting-services";
-}
-</script>
 @endsection

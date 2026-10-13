@@ -830,10 +830,4 @@ Our team of experienced <b>tax professionals</b> gives clear, practical solution
     </div>
 </section>
 
-<script>
-if (!sessionStorage.getItem("usa_redirect_done")) {
-    sessionStorage.setItem("usa_redirect_done", "true");
-    window.location.href = "/bookkeeping-and-accounting-services";
-}
-</script>
 @endsection

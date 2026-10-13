@@ -893,10 +893,4 @@ Our combination of local knowledge, international expertise, advanced technology
     </div>
 </section>
 
-<script>
-if (!sessionStorage.getItem("aus_redirect_done")) {
-    sessionStorage.setItem("aus_redirect_done", "true");
-    window.location.href = "/bookkeeping-accounting-services";
-}
-</script>
 @endsection

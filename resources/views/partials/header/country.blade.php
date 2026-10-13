@@ -31,16 +31,16 @@
                 </svg>
               </a>
 
-                            <ul class="dropdown-menu mega-menu p-0 m-0">
-                                @foreach ($nav['services'] as [$label, $url])
-                                    <li class="mega-item">
-                                        <a class="dropdown-item d-flex justify-content-between align-items-center" href="{{ $url }}">
-                                            {{ $label }}
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </li>
+                  <ul class="dropdown-menu mega-menu p-0 m-0">
+                      @foreach ($nav['services'] as [$label, $url])
+                          <li class="mega-item">
+                              <a class="dropdown-item d-flex justify-content-between align-items-center" href="{{ $url }}">
+                                  {{ $label }}
+                              </a>
+                          </li>
+                      @endforeach
+                  </ul>
+              </li>
 
             <li><a href="{{ $nav['data_security'] }}" target="_blank" rel="noopener">Data Security</a></li>
             <li><a href="{{ $nav['blog'] }}" target="_blank" rel="noopener">Blogs</a></li>

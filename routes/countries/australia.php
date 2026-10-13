@@ -16,7 +16,7 @@ Route::middleware('country:australia')->prefix('au')->group(function () {
     // Route::get('bookkeeping-accounting-services', [ServiceController::class, 'globalAus'])->name('pcs.global.aus');
     Route::get('accounting-outsourcing-services', [ServiceController::class, 'globalAus'])->name('pcs.global.aus');
     // Route::get('taxation-services', [ServiceController::class, 'taxationaustralian'])->name('taxation-services-australian');
-     Route::get('tax-preparation-outsourcing-services', [ServiceController::class, 'taxationaustralian'])->name('taxation-services-australian');
+     Route::get('tax-preparation-outsourcing-services', [ServiceController::class, 'taxationaustralian'])->name('taxation.services.australian');
 });
 
 // Keep existing /aus/... links working while /au/... is the canonical prefix.
