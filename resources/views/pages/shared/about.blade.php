@@ -2,7 +2,19 @@
 @extends('layouts.app', [
     'og_image' => asset('public/front/images/about-og.png')
 ])
-
+@php
+$country = $site['nav']['country']['name'] ?? null;
+    if(isset($country) && $country != null){
+        if(strtolower($country) == 'au'){
+            $meta_title = "About PCS Global | Accounting & Finance Outsourcing Partner";
+            $meta_description = $meta_description ?? "Learn about PCS Global, our experienced team, core values and commitment to accuracy, integrity and long-term partnerships with global accounting firms.";
+        } 
+        elseif(strtolower($country) == 'us'){
+            $meta_title = "About PCS Global | Accounting & Finance Outsourcing Partner";
+            $meta_description = $meta_description ?? "Learn about PCS Global, our experienced team, core values and commitment to accuracy, integrity and long-term partnerships with global accounting firms.";
+        }   
+    }
+@endphp
 @section('content')
 <section class="com_hero" style="background-image: url('{{ asset('public/front/images/about-hero-bg.jpg') }}');">
     <div class="container">

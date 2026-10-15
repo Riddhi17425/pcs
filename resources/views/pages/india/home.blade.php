@@ -224,7 +224,7 @@
                 </div> -->
                 <div class="trust_slide">
                     <div class="trust_slide_img">
-                        <img src="{{ asset('public/front/images/trust_bg.png') }}" loading="lazy" alt="Research & Analysis">
+                        <img src="{{ asset('public/front/images/Research-Analysis.webp') }}" loading="lazy" alt="Research & Analysis">
                     </div>
                     <div class="trust_slide_body">
                         <h3>Research & Analysis</h3>
@@ -233,7 +233,7 @@
                 </div>
                 <div class="trust_slide">
                     <div class="trust_slide_img">
-                        <img src="{{ asset('public/front/images/trust_bg2.png') }}" loading="lazy" alt="Tech-Powered Solutions">
+                        <img src="{{ asset('public/front/images/Tech-Powered-Solutions.webp') }}" loading="lazy" alt="Tech-Powered Solutions">
                     </div>
                     <div class="trust_slide_body">
                         <h3>Tech-Powered Solutions</h3>
@@ -242,7 +242,7 @@
                 </div>
                 <div class="trust_slide">
                     <div class="trust_slide_img">
-                        <img src="{{ asset('public/front/images/trust_bg3.png') }}" loading="lazy" alt="Available 24×7">
+                        <img src="{{ asset('public/front/images/Available-24.webp') }}" loading="lazy" alt="Available 24×7">
                     </div>
                     <div class="trust_slide_body">
                         <h3>Available 24×7</h3>
