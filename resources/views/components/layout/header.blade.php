@@ -213,10 +213,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
 
-        <div class="menu-toggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="mobile_header_actions">
+          @include('partials.mobile-country-dropdown', ['currentCountry' => $nav['country']])
+          <div class="menu-toggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
 
         <div class="nav_links" id="navLinks">
@@ -322,7 +325,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a href="{{ $nav['data_security'] }}" target="_blank" rel="noopener">Data Security</a></li>
             <li><a href="{{ $nav['blog'] }}" target="_blank" rel="noopener">Blogs</a></li>
             <li><a href="{{ $nav['contact'] }}">Contact Us</a></li>
-            <li><a href="#">Country: {{ $nav['country']['name'] }} <span class="next-menu" data-target="menu-country">&rsaquo;</span></a></li>
             <li><a href="tel:{{ $nav['phone']['tel'] }}">📞 Call Us: {{ $nav['phone']['label'] }}</a></li>
           </ul>
 
@@ -357,8 +359,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </ul>
         </div>
       </div>
-
-      @include('components.layout.mobile-countries')
 
     </div>
   </div>

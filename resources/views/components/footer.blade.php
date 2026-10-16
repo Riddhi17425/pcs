@@ -12,7 +12,7 @@
     'email' => 'info@pcsglobalgroup.com',
     'privacyUrl' => route('privacy-policy'),
     'logo' => asset('public/front/images/footer-log.svg'),
-    'about' => 'PCS Global is committed to delivering reliable and quality accounting service and is driven by long-term partnerships with clients, and employees based on strong values of integrity and trust.',
+    'about' => 'PCS Global is committed to delivering reliable finance and accounting outsourcing solutions, building long-term partnerships with global accounting firms and businesses based on integrity, trust, and mutual growth.',
     'copyright' => 'Progressive Corporate Services Pvt. Ltd., All Rights Reserved.',
     'social' => null,
     'badges' => null,
@@ -38,7 +38,8 @@
         <div class="footer_top">
             <div class="footer_top_flex">
                 <div class="foot_lt">
-                    <a href="{{ $homeUrl }}"><img class="ft_logo" src="{{ $logo }}" alt="logo" loading="lazy"></a>
+                    <!-- <a href="{{ $homeUrl }}"><img class="ft_logo" src="{{ $logo }}" alt="logo" loading="lazy"></a> -->
+                    <a href="{{ route('front.home') }}"><img class="ft_logo" src="{{ $logo }}" alt="logo" loading="lazy"></a>
                     <p class="foot_lt_para">{{ $about }}</p>
                     <div class="foot_social">
                         @foreach ($social as [$url, $icon, $alt])
