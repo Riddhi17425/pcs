@@ -71,7 +71,7 @@ class ContactController extends Controller
             ->withHeaders([
                 'Content-Type' => 'application/json',
             ])
-            ->post('https://script.google.com/macros/s/AKfycbznUt89nic300-hxaU7aQJr_P3CcDUsbgtKOh49HfLljKp5saEKlCKgkHUKQB1vVEP6/exec', $sheetData);
+            ->post('https://script.google.com/macros/s/AKfycbxcIU_MubfJF-n2Et1XSIK7H2qiX45wUz1cS2C3fJWZdKtU9q3RpQ-owYPXrM2on8S6mg/exec', $sheetData);
 
         // Check response
         if ($response->successful()) {

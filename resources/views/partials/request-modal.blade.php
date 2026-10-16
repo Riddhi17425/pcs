@@ -83,6 +83,7 @@
                                         oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
                                 </div>
                                 <input type="hidden" name="full_phone" id="requestFullPhone">
+                                <input type="hidden" name="form_type" value="Free Consultation Modal">
                             </div>
 
                             {{-- Country field form me nahi dikhta: phone number ke flag wali country yahan apne aap bharti hai --}}

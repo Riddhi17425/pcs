@@ -18,6 +18,13 @@ use Illuminate\Validation\ValidationException;
 
 class ServiceController extends Controller
 {
+    // Sheet 1: Enquire Now popup + baaki website enquiries (contact page ka form ContactController se isi sheet me jaata hai)
+    private const MAIN_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxcIU_MubfJF-n2Et1XSIK7H2qiX45wUz1cS2C3fJWZdKtU9q3RpQ-owYPXrM2on8S6mg/exec';
+
+    // Sheet 2: "Request a Consultation" band form + CTA button wala "Free Consultation" popup
+    // (khali kar doge to ye forms bhi Sheet 1 me jayenge)
+    private const CONSULTATION_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxmc2raCrl1hNlg7iZjRa11x4UarwXt9IKBOZRZ9thD6grj8hEZniC6Bl8BAddqoAug/exec';
+
     public function index()
     {
         $meta_title       = "";
@@ -52,6 +59,7 @@ class ServiceController extends Controller
             'company'    => 'nullable|string|max:255',
             'city'       => 'nullable|string|max:100',
             'service'    => 'nullable|string|max:150',
+            'form_type'  => 'nullable|string|max:100',
         ]);
 
         // reCAPTCHA server-side verification
@@ -77,24 +85,63 @@ class ServiceController extends Controller
             'page_url' => url()->previous(),
         ]);
 
-        $sheetData = [
-            'form_type' => ($request->country ?: 'Website') . ' Enquiry Form',
-            'name'      => $request->fullname ?? '',
-            'contact'   => $phone,
-            'email'     => $request->email ?? '',
-            'country'   => $request->country ?? '',
-            'services'  => is_array($request->services)
-                ? implode(', ', $request->services)
-                : ($request->services ?? $request->service ?? ''),
-            'message'   => $request->message ?? '',
-            'date'      => now()->format('Y-m-d H:i:s'),
-        ];
+        // Kaun sa form hai (sirf allowed labels, taaki koi sheet me kuch bhi na likh sake)
+        $allowedFormTypes = ['Enquire Now Popup', 'Request a Consultation', 'Free Consultation Modal','India Form', 'Australia Form', 'United Kingdom Form', 'United States Form'];
+        $formType = in_array($request->form_type, $allowedFormTypes, true)
+            ? $request->form_type
+            : 'Website Enquiry';
+
+        // $sheetData = [
+        //     'form_type' => $formType,
+        //     'name'      => $request->fullname ?? '',
+        //     'email'     => $request->email ?? '',
+        //     'contact'   => $phone,
+        //     'company'   => $request->company ?? '',
+        //     'country'   => $request->country ?? '',
+        //     'city'      => $request->city ?? '',
+        //     'services'  => is_array($request->services)
+        //         ? implode(', ', $request->services)
+        //         : ($request->services ?? $request->service ?? ''),
+        //     'message'   => $request->message ?? '',
+        //     'page_url'  => url()->previous(),
+        //     'date'      => now()->format('Y-m-d H:i:s'),
+        // ];
+         
+        $serviceValue = is_array($request->services)
+    ? implode(', ', $request->services)
+    : ($request->services ?? $request->service ?? '');
+
+$sheetData = [
+    'form_type' => $formType,
+    'name'      => $request->fullname ?? '',
+    'email'     => $request->email ?? '',
+    'contact'   => $phone,
+    'company'   => $request->company ?? '',
+    'country'   => $request->country ?? '',
+    'city'      => $request->city ?? '',
+    'services'  => $serviceValue,
+    'service'    => $serviceValue,
+    'Service'    => $serviceValue,
+    'Services'   => $serviceValue,
+    'message'   => $request->message ?? '',
+    'page_url'  => url()->previous(),
+    'date'      => now()->format('Y-m-d H:i:s'),
+];
+
+
+
+        // Kaun si sheet me jayega: consultation wale 2 forms -> Sheet 2, baaki sab -> Sheet 1
+        $consultationForms = ['Request a Consultation', 'Free Consultation Modal',
+    'India Form', 'Australia Form', 'United Kingdom Form', 'United States Form',];
+        $sheetUrl = (in_array($formType, $consultationForms, true) && self::CONSULTATION_SHEET_URL !== '')
+            ? self::CONSULTATION_SHEET_URL
+            : self::MAIN_SHEET_URL;
 
         // Google Sheet fail ho to bhi user ko success dikhana hai (data DB me save ho chuka hai)
         try {
             $response = Http::timeout(30)
                 ->withHeaders(['Content-Type' => 'application/json'])
-                ->post('https://script.google.com/macros/s/AKfycbzoF3Y1kaEZZULS_qL6Jsq_vZ9Mz-k4A4cOlt773dyr1fMT1OXscj2dlufFOE_Y5zXw/exec', $sheetData);
+                ->post($sheetUrl, $sheetData);
 
             if ($response->successful() && $response->json('status') === 'success') {
                 Log::info('Data successfully sent to Google Sheets', ['email' => $request->email]);

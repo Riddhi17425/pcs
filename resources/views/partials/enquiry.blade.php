@@ -2,7 +2,7 @@
 /* Floating enquiry button */
 .enquiry-btn {
   position: fixed;
-  top: 60%;
+  top: 50%;
   right: 0;
   bottom: auto;
   z-index: 1000;
@@ -81,7 +81,7 @@
 .enquiry-field-wide, .enquiry-submit, .enquiry-status, .enquiry-captcha { grid-column: 1 / -1; }
 
 .enquiry-field label {
-  display: block; margin-bottom: 4px; color: #26364f; font-size: 13px; font-weight: 500;
+  display: block; margin-bottom: 4px; color: #26364f; font-size: 13px; font-weight: 600;
 }
 .enquiry-field input,
 .enquiry-field textarea,
@@ -217,6 +217,7 @@ p.js-error { display: block; margin: 4px 0 0; color: #a52020; font-size: 12px; l
             autocomplete="tel" maxlength="15" inputmode="numeric">
         </div>
         <input type="hidden" name="full_phone" value="">
+        <input type="hidden" name="form_type" value="Enquire Now Popup">
 
         <div class="enquiry-field">
           <label for="enqCompany">Company Name</label>
@@ -237,7 +238,7 @@ p.js-error { display: block; margin: 4px 0 0; color: #a52020; font-size: 12px; l
           <p class="captcha-error" role="alert" hidden>Please complete the CAPTCHA verification.</p>
         </div>
 
-        <button type="submit" class="enquiry-submit" id="submitEnquiry">Submit</button>
+        <button type="submit" class="enquiry-submit" id="submitEnquiry">Submit Enquiry</button>
 
         <p class="enquiry-status" id="enquiryStatus" role="status" aria-live="polite"></p>
       </form>
