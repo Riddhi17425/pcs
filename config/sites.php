@@ -4,6 +4,8 @@
 // - Route group ka middleware 'country:<key>' (routes/countries/*.php) is site ko views me $site bana ke share karta hai.
 // - Links yahan route NAMES hain; App\Support\Site unhe URL bana deta hai.
 // - Blogs aur Data Security sab countries ka ek hi (main) page hai; dusri countries unhe naye tab me kholti hain.
+// - 'phone_country' = contact form ke phone field ka default flag (ISO2 code, intl-tel-input)
+// - 'country_name'  = contact form ke country dropdown ka default (countries table ke `name` se match hona chahiye)
 // Poora map: STRUCTURE.md (project root)
 
 // Australia / US / UK ek hi header use karte hain, isliye CSS bhi same (order zaroori hai)
@@ -28,6 +30,8 @@ $isoBadges = [
 return [
     'india' => [
         'header' => 'global',   // resources/views/partials/header/global.blade.php
+        'phone_country' => 'in',
+        'country_name' => 'India',
         'css' => [
             'style.css',
             'common/buttons.css',
@@ -68,6 +72,8 @@ return [
 
     'australia' => [
         'header' => 'country',   // resources/views/partials/header/country.blade.php
+        'phone_country' => 'au',
+        'country_name' => 'Australia',
         'css' => $countryCss,
         'phone' => ['tel' => '+61399980494', 'label' => '(+613) 9998 0494'],
         'services' => [
@@ -103,6 +109,8 @@ return [
 
     'us' => [
         'header' => 'country',
+        'phone_country' => 'us',
+        'country_name' => 'United States',
         'css' => $countryCss,
         'phone' => ['tel' => '+13478018715', 'label' => '(+1) 347 801 8715'],
         'services' => [
@@ -137,6 +145,8 @@ return [
 
     'uk' => [
         'header' => 'country',
+        'phone_country' => 'gb',
+        'country_name' => 'United Kingdom',
         'css' => $countryCss,
         'phone' => ['tel' => '+441134034334', 'label' => '(+44) 113 4034334'],
         'services' => [

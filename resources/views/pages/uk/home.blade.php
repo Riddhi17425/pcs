@@ -434,10 +434,16 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="cert_tools_panel active" data-panel="certifications">
         <div class="container">
             <div class="cert_badges_row">
-                @foreach ($certToolsCerts as [$imgCertTools, $alt])
-                    <span class="cert_badge"><img src="{{ $imgCertTools }}" alt="{{ $alt }}" loading="lazy"></span>
-                @endforeach
-            </div>
+    <div class="cert_badges_track">
+        @foreach ([1, 2] as $pass)
+            @foreach ($certToolsCerts as [$imgCertTools, $alt])
+                <span class="cert_badge {{ $pass === 2 ? 'cert_dup' : '' }}" @if($pass === 2) aria-hidden="true" @endif>
+                    <img src="{{ $imgCertTools }}" alt="{{ $pass === 2 ? '' : $alt }}" loading="lazy">
+                </span>
+            @endforeach
+        @endforeach
+    </div>
+</div>
         </div>
     </div>
 
@@ -604,7 +610,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <img class="cta_dark_bg" src="{{ $img('common/cta-bg.png') }}" alt="" aria-hidden="true">
             <div class="cta_dark_in">
                 <h2>Ready to Strengthen Your Accounting Support?</h2>
-                <a class="com_btn_outline com_btn_outline_light"  href="tel:+441134034334" >
+                <a class="com_btn_outline com_btn_outline_light" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Book a Free Consultation
                 </a>
             </div>
@@ -833,18 +839,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     <input type="tel" name="phone" id="cfPhone" maxlength="15" minlength="10" placeholder="Phone Number*:" aria-label="Phone Number"
                         oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
                 </div>
-                <div class="col-lg-6 col-12 cf_field">
+                {{-- <div class="col-lg-6 col-12 cf_field">
                     <input type="text" name="city" maxlength="100" placeholder="Enter your City*:" aria-label="City" required>
-                </div>
+                </div> --}}
                 <!-- <div class="col-lg-6 col-12 cf_field">
                     <select name="city" aria-label="Select City" required>
                         <option value="" hidden>Select City*:</option>
-                        @foreach ($contactFormCities as $city)
+                        {{-- @foreach ($contactFormCities as $city)
                             <option value="{{ $city }}">{{ $city }}</option>
-                        @endforeach
+                        @endforeach --}}
                     </select>
                 </div> -->
-                <div class="col-lg-6 col-12 cf_field">
+                <div class="col-12 cf_field">
                     <select name="service" aria-label="Choose Service" required>
                         <option value="" hidden>Choose Service*:</option>
                         @foreach ($contactFormServices as $service)

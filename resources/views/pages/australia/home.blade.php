@@ -9,6 +9,9 @@
     $au = fn ($path) => url('au/' . $path);
 
     $serviceCards = [
+
+        ['title' => 'Strata Management Services', 'img' => $img('figma-precision/strata-management-services-ae35ad.png'), 'url' => $au('strata-management'),
+         'text' => 'Strata finances are detailed and heavily governed by deadlines. Our specialists manage the financial side of your schemes and portfolios, from budgets and levies through to invoicing and owner reporting, keeping records accurate and reporting clear. '],
         ['title' => 'Accounting Outsourcing', 'img' => $img('figma-precision/accounting-outsourcing.png'), 'url' => $au('bookkeeping-accounting-services'),
          'text' => 'Updating accurate accounts requires time and effort, which many teams cannot afford. We take care of reconciliations, ledgers, and month-end closing, ensuring you have the right visibility to your financial standing at a fraction of the cost. '],
         ['title' => 'Bookkeeping Outsourcing', 'img' => $img('figma-precision/bookkeeping-outsourcing-5d38e9.png'), 'url' => $au('bookkeeping-accounting-services'),
@@ -19,8 +22,7 @@
          'text' => 'Installment activity statements are a recurring obligation that leaves little room for error. We manage your Business and Instalment Activity Statements, calculating GST and PAYG, reconciling records, and lodging accurate statements on time without the recurring pressure. '],
         ['title' => 'Payroll Outsourcing', 'img' => $img('figma-precision/payroll-outsourcing.png'), 'url' => url('au') . '#consultation',
          'text' => 'Payroll is among the most sensitive functions in any business, and accuracy is not optional. We manage pay runs, PAYG, superannuation, leave and Single Touch Payroll reporting to the ATO, ensuring employees are paid correctly and your business remains compliant.'],
-        ['title' => 'Strata Management Services', 'img' => $img('figma-precision/strata-management-services-ae35ad.png'), 'url' => $au('strata-management'),
-         'text' => 'Strata finances are detailed and heavily governed by deadlines. Our specialists manage the financial side of your schemes and portfolios, from budgets and levies through to invoicing and owner reporting, keeping records accurate and reporting clear. '],
+        
     ];
 
     $clientSlides = [
@@ -471,10 +473,16 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="cert_tools_panel active" data-panel="certifications">
         <div class="container">
             <div class="cert_badges_row">
-                @foreach ($certToolsCerts as [$imgCertTools, $alt])
-                    <span class="cert_badge"><img src="{{ $imgCertTools }}" alt="{{ $alt }}" loading="lazy"></span>
-                @endforeach
-            </div>
+    <div class="cert_badges_track">
+        @foreach ([1, 2] as $pass)
+            @foreach ($certToolsCerts as [$imgCertTools, $alt])
+                <span class="cert_badge {{ $pass === 2 ? 'cert_dup' : '' }}" @if($pass === 2) aria-hidden="true" @endif>
+                    <img src="{{ $imgCertTools }}" alt="{{ $pass === 2 ? '' : $alt }}" loading="lazy">
+                </span>
+            @endforeach
+        @endforeach
+    </div>
+</div>
         </div>
     </div>
 
@@ -642,7 +650,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <img class="cta_dark_bg" src="{{ $img('common/cta-bg.png') }}" alt="" aria-hidden="true">
             <div class="cta_dark_in">
                 <h2>Ready to Streamline Your Accounting work with PCS Global?</h2>
-                <a class="com_btn_outline com_btn_outline_light"  href="tel:+61399980494" >
+                <a class="com_btn_outline com_btn_outline_light" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Book a Free Consultation
                 </a>
             </div>
@@ -871,18 +879,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     <input type="tel" name="phone" id="cfPhone" maxlength="15" minlength="10" placeholder="Phone Number*:" aria-label="Phone Number"
                         oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
                 </div>
-                <div class="col-lg-6 col-12 cf_field">
-                    <input type="text" name="city" maxlength="100" placeholder="Enter your City*:" aria-label="Company Name" required>
-                </div>
-                <!-- <div class="col-lg-6 col-12 cf_field">
-                    <select name="city" aria-label="Select City" required>
-                        <option value="" hidden>Select City*:</option>
-                        @foreach ($contactFormCities as $city)
+               {{-- <div class="col-lg-6 col-12 cf_field">
+                    <input type="text" name="city" maxlength="100" placeholder="Enter your City*:" aria-label="City" required> --}}
+
+
+                    <!-- <select name="city" aria-label="Select City">
+                        <option value="" hidden>City:</option>
+                        {{-- @foreach ($contactFormCities as $city)
                             <option value="{{ $city }}">{{ $city }}</option>
-                        @endforeach
-                    </select>
-                </div> -->
-                <div class="col-lg-6 col-12 cf_field">
+                        @endforeach --}}
+                    </select> -->
+                {{-- </div> --}}
+                <div class="col-12 cf_field">
                     <select name="service" aria-label="Choose Service" required>
                         <option value="" hidden>Choose Service*:</option>
                         @foreach ($contactFormServices as $service)

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/css/intlTelInput.min.css">
+{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/css/intlTelInput.min.css">
 
 <style>
 .WhatsAppButton_mpp {
@@ -416,4 +416,4 @@ $("#whatsappForm").validate({
 });
 
 });
-</script>
+</script> --}}

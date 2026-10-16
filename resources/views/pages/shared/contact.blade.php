@@ -68,15 +68,6 @@
                         @error('email') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
 
-                    {{-- <div class="col-lg-6 form-group">
-                        <input type="tel" name="phone" id="contactPhone" value="{{ old('phone') }}"
-                            maxlength="20" minlength="10" placeholder="Phone Number">
-                        <label><span class="text-danger">*</span></label>
-                        @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
-                        <span id="mobile-error" style="color:red; display:none;">Please enter at least 10 digits</span>
-                        <input type="hidden" name="full_phone" id="contactFullPhone">
-                    </div> --}}
-
                     <div class="col-lg-6 form-group">
                         <input type="tel" name="phone" id="contactPhone" value="{{ old('phone') }}"
                             maxlength="15" minlength="10" placeholder="Phone Number"
@@ -95,7 +86,6 @@
                             @endforeach
                         </select>
                         <!--<label>Choose Country<span class="text-danger">*</span></label>-->
-                        @error('country') <span class="text-danger">{{ $message }}</span> @enderror
                         @error('country') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
 
@@ -283,7 +273,6 @@
     }
 </style>
 
-@if(!old('country'))
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const countrySelect = document.getElementById('countrySelect');
@@ -292,33 +281,51 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!phoneInput) return;
 
+    // Current site ki country (config/sites.php -> phone_country / country_name)
+    const siteCountry = @json($site['phone_country'] ?? 'in');
+    const siteCountryName = @json($site['country_name'] ?? 'India');
+    const isGlobal = siteCountry === 'in';   // sirf Global (India) site par IP auto-detect
+    const hasOldCountry = @json((bool) old('country'));
+
     const itiContact = window.intlTelInput(phoneInput, {
-        initialCountry: "in",
+        initialCountry: siteCountry,
         separateDialCode: true,
         preferredCountries: ["in", "ae", "us", "gb"],
         utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js"
     });
 
-    fetch('https://ipwho.is/')
-        .then(res => res.json())
-        .then(data => {
-            if (!data || data.success === false || !data.country) return;
+    function selectCountryByName(name) {
+        if (!countrySelect || !name) return;
+        const target = name.trim().toLowerCase();
+        for (let i = 0; i < countrySelect.options.length; i++) {
+            if (countrySelect.options[i].text.trim().toLowerCase() === target) {
+                countrySelect.value = countrySelect.options[i].value;
+                return;
+            }
+        }
+    }
 
-            if (countrySelect) {
-                const options = countrySelect.options;
-                for (let i = 0; i < options.length; i++) {
-                    if (options[i].text.trim().toLowerCase() === data.country.trim().toLowerCase()) {
-                        countrySelect.value = options[i].value;
-                        break;
+    // Validation error ke baad purani selected country rehne do
+    if (hasOldCountry && countrySelect) {
+        countrySelect.value = @json(old('country'));
+    } else {
+        // Country dropdown ko current site par set karo
+        selectCountryByName(siteCountryName);
+
+        // Global site par hi IP se auto-detect; AU / UK / US par site ki country fixed rahegi
+        if (isGlobal) {
+            fetch('https://ipwho.is/')
+                .then(res => res.json())
+                .then(data => {
+                    if (!data || data.success === false || !data.country) return;
+                    selectCountryByName(data.country);
+                    if (data.country_code) {
+                        itiContact.setCountry(data.country_code.toLowerCase());
                     }
-                }
-            }
-
-            if (data.country_code) {
-                itiContact.setCountry(data.country_code.toLowerCase());
-            }
-        })
-        .catch(err => console.warn('Country auto-detect failed:', err));
+                })
+                .catch(err => console.warn('Country auto-detect failed:', err));
+        }
+    }
 
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
@@ -330,7 +337,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 </script>
-@endif
 @endsection
 
 @push('scripts')

@@ -78,6 +78,16 @@
         <div class="precision_grid">
             <div class="precision_card">
                 <div class="precision_card_img">
+                    <img src="{{ asset('public/front/images/Strata_Management.jpg') }}" loading="lazy" alt="BAS/IAS Return Services">
+                </div>
+                <div class="precision_card_body">
+                    <h3>Strata Management Services</h3>
+                    <p>PCS Global provides dependable strata management support to help Australian property managers and strata communities handle day-to-day administrative and financial tasks. From levy processing and budgeting support to records management, reporting, and maintenance coordination, our team helps improve operational efficiency and keep strata operations organised.</p>
+                </div>
+            </div>
+
+            <div class="precision_card">
+                <div class="precision_card_img">
                     <img src="{{ asset('public/front/images/figma-precision/accounting-outsourcing.png') }}" loading="lazy" alt="Accounting Outsourcing">
                 </div>
                 <div class="precision_card_body">
@@ -132,15 +142,7 @@
                     <p> PCS Global helps businesses streamline recruitment with flexible recruitment outsourcing support. From candidate sourcing and resume screening to interview coordination and hiring administration, our team helps simplify recruitment workflows, reduce internal workload, and support your changing workforce requirements.</p>
                 </div>
             </div>
-            <div class="precision_card">
-                <div class="precision_card_img">
-                    <img src="{{ asset('public/front/images/Strata_Management.jpg') }}" loading="lazy" alt="BAS/IAS Return Services">
-                </div>
-                <div class="precision_card_body">
-                    <h3>Strata Management Services</h3>
-                    <p>PCS Global provides dependable strata management support to help Australian property managers and strata communities handle day-to-day administrative and financial tasks. From levy processing and budgeting support to records management, reporting, and maintenance coordination, our team helps improve operational efficiency and keep strata operations organised.</p>
-                </div>
-            </div>
+            
         </div>
     </div>
 </section>
@@ -224,7 +226,7 @@
                 </div> -->
                 <div class="trust_slide">
                     <div class="trust_slide_img">
-                        <img src="{{ asset('public/front/images/trust_bg.png') }}" loading="lazy" alt="Research & Analysis">
+                        <img src="{{ asset('public/front/images/Research-Analysis.webp') }}" loading="lazy" alt="Research & Analysis">
                     </div>
                     <div class="trust_slide_body">
                         <h3>Research & Analysis</h3>
@@ -233,7 +235,7 @@
                 </div>
                 <div class="trust_slide">
                     <div class="trust_slide_img">
-                        <img src="{{ asset('public/front/images/trust_bg2.png') }}" loading="lazy" alt="Tech-Powered Solutions">
+                        <img src="{{ asset('public/front/images/Tech-Powered-Solutions.webp') }}" loading="lazy" alt="Tech-Powered Solutions">
                     </div>
                     <div class="trust_slide_body">
                         <h3>Tech-Powered Solutions</h3>
@@ -242,7 +244,7 @@
                 </div>
                 <div class="trust_slide">
                     <div class="trust_slide_img">
-                        <img src="{{ asset('public/front/images/trust_bg3.png') }}" loading="lazy" alt="Available 24×7">
+                        <img src="{{ asset('public/front/images/Available-24.webp') }}" loading="lazy" alt="Available 24×7">
                     </div>
                     <div class="trust_slide_body">
                         <h3>Available 24×7</h3>
@@ -592,13 +594,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <div class="cert_tools_panel active" data-panel="certifications">
         <div class="container">
-            <div class="cert_badges_row">
-                <span class="cert_badge"><img src="{{ asset('public/front/images/figma-footer-badges/iso-9001.png') }}" alt="ISO 9001" loading="lazy"></span>
-                <span class="cert_badge"><img src="{{ asset('public/front/images/figma-footer-badges/sca-vic-member.png') }}" alt="Strata Community Association VIC" loading="lazy"></span>
-                <span class="cert_badge"><img src="{{ asset('public/front/images/figma-footer-badges/iso-27001.png') }}" alt="ISO 27001" loading="lazy"></span>
-                <span class="cert_badge"><img src="{{ asset('public/front/images/figma-footer-badges/sca-wa-member.png') }}" alt="Strata Community Association WA" loading="lazy"></span>
-                <span class="cert_badge"><img src="{{ asset('public/front/images/figma-footer-badges/gdpr.png') }}" alt="GDPR" loading="lazy"></span>
-            </div>
+            @php
+    $certBadges = [
+        ['iso-9001.png', 'ISO 9001'],
+        ['sca-vic-member.png', 'Strata Community Association VIC'],
+        ['iso-27001.png', 'ISO 27001'],
+        ['sca-wa-member.png', 'Strata Community Association WA'],
+        ['gdpr.png', 'GDPR'],
+    ];
+@endphp
+<div class="cert_badges_row">
+    <div class="cert_badges_track">
+        @foreach ([1, 2] as $pass)
+            @foreach ($certBadges as [$file, $alt])
+                <span class="cert_badge {{ $pass === 2 ? 'cert_dup' : '' }}" @if($pass === 2) aria-hidden="true" @endif>
+                    <img src="{{ asset('public/front/images/figma-footer-badges/' . $file) }}" alt="{{ $pass === 2 ? '' : $alt }}" loading="lazy">
+                </span>
+            @endforeach
+        @endforeach
+    </div>
+</div>
         </div>
     </div>
 
@@ -1012,25 +1027,25 @@ document.addEventListener("DOMContentLoaded", () => {
                     <input type="email" name="email" maxlength="70" placeholder="Email Address*:" aria-label="Email Address">
                 </div>
                 <div class="col-lg-6 col-12 cf_field">
-                    <input type="text" name="company" maxlength="100" placeholder="Company Name*:" aria-label="Company Name" >
+                    <input type="text" name="company" maxlength="100" placeholder="Company Name*:" aria-label="Company Name" required>
                 </div>
                 <div class="col-lg-6 col-12 cf_field">
                     <input type="tel" name="phone" id="cfPhone" maxlength="15" minlength="10" placeholder="Phone Number*:" aria-label="Phone Number"
                         oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
                 </div>
-                <div class="col-lg-6 col-12 cf_field">
-                    <input type="text" name="city" maxlength="100" placeholder="Enter your City*:" aria-label="City" required>
+                {{-- <div class="col-lg-6 col-12 cf_field">
+                    <input type="text" name="city" maxlength="100" placeholder="City:" aria-label="City"> --}}
 
 
                     <!-- <select name="city" aria-label="Select City">
                         <option value="" hidden>City:</option>
-                        @foreach ($contactFormCities as $city)
+                        {{-- @foreach ($contactFormCities as $city)
                             <option value="{{ $city }}">{{ $city }}</option>
-                        @endforeach
+                        @endforeach --}}
                     </select> -->
-                </div>
-                <div class="col-lg-6 col-12 cf_field">
-                    <select name="service" aria-label="Choose Service" >
+                {{-- </div> --}}
+                <div class="col-12 cf_field">
+                    <select name="service" aria-label="Choose Service" required>
                         <option value="" hidden>Choose Service*:</option>
                         @foreach ($contactFormServices as $service)
                             <option value="{{ $service }}">{{ $service }}</option>
@@ -1073,18 +1088,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // native required (company / city / service) ko common validator se pehle check karo
-    // form.addEventListener('submit', function (e) {
-    //     if (!form.checkValidity()) {
-    //         e.preventDefault();
-    //         e.stopImmediatePropagation();
-    //         form.reportValidity();
-    //         return;
-    //     }
-    //     fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
-    // }, true);
-    form.addEventListener('submit', function () {
-    fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
-});
+    form.addEventListener('submit', function (e) {
+        if (!form.checkValidity()) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            form.reportValidity();
+            return;
+        }
+        fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
+    }, true);
 });
 </script>
 @endsection
