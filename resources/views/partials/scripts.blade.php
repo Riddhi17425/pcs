@@ -222,17 +222,49 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // === RENDER RECAPTCHA FORMS ===
+    // window.initAllRecaptchas = function () {
+    //     document.querySelectorAll(".validated-form").forEach((form) => {
+    //         const captchaDiv = form.querySelector(".g-recaptcha");
+    //         if (captchaDiv) {
+    //             const widgetId = grecaptcha.render(captchaDiv, {
+    //                 sitekey: captchaDiv.getAttribute("data-sitekey")
+    //             });
+    //             initFormValidation(form, widgetId);
+    //         } else {
+    //             initFormValidation(form, null);
+    //         }
+    //     });
+    // };
     window.initAllRecaptchas = function () {
-        document.querySelectorAll(".validated-form").forEach((form) => {
-            const captchaDiv = form.querySelector(".g-recaptcha");
-            if (captchaDiv) {
-                const widgetId = grecaptcha.render(captchaDiv, {
-                    sitekey: captchaDiv.getAttribute("data-sitekey")
-                });
-                initFormValidation(form, widgetId);
-            } else {
-                initFormValidation(form, null);
-            }
+        // Localhost par Google ki test key, live par jo data-sitekey diya hai wahi
+        const host = location.hostname;
+        const isLocal = host === 'localhost' || host === '127.0.0.1' || host.endsWith('.test');
+        const TEST_KEY = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
+
+        document.querySelectorAll('.g-recaptcha').forEach(function (captchaDiv) {
+            if (captchaDiv.querySelector('iframe')) return; // already render ho chuka
+
+            const cbName  = captchaDiv.getAttribute('data-callback');
+            const expName = captchaDiv.getAttribute('data-expired-callback');
+
+            const widgetId = grecaptcha.render(captchaDiv, {
+                sitekey: isLocal ? TEST_KEY : captchaDiv.getAttribute('data-sitekey'),
+                callback: function () {
+                    if (cbName && typeof window[cbName] === 'function') window[cbName]();
+                },
+                'expired-callback': function () {
+                    if (expName && typeof window[expName] === 'function') window[expName]();
+                }
+            });
+            captchaDiv.dataset.widgetId = widgetId;
+
+            const form = captchaDiv.closest('.validated-form');
+            if (form) initFormValidation(form, widgetId);
+        });
+
+        // Jin forms me captcha nahi hai
+        document.querySelectorAll('.validated-form').forEach(function (form) {
+            if (!form.querySelector('.g-recaptcha')) initFormValidation(form, null);
         });
     };
 });

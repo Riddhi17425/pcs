@@ -14,6 +14,7 @@ use App\Models\WhyChooseUs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Validation\ValidationException;
 
 class ServiceController extends Controller
 {
@@ -32,45 +33,52 @@ class ServiceController extends Controller
     {
         // Honeypot check (detect bots)
         if (! empty($request->fax_number)) {
-            \Log::warning('Honeypot triggered — possible spam entry', [
+            Log::warning('Honeypot triggered — possible spam entry', [
                 'email' => $request->email,
                 'name'  => $request->fullname,
             ]);
 
-            // Don't show an error to bots — just act like it succeeded
-            return redirect()->route('thank.you');
+            // Bots ko error mat dikhao — success jaisa behave karo
+            return $this->requestSuccess($request);
         }
+
         $request->validate([
-            'fullname'   => 'required|string|max:255',
-            'email'      => 'required|email',
+            'fullname'   => 'required|string|min:2|max:255',
+            'email'      => 'required|email|max:255',
             'phone'      => 'required|string|max:20',
             'full_phone' => 'nullable|string|max:20',
-            'country'    => 'required|string',
-            'message'    => 'nullable|string',
+            'country'    => 'nullable|string|max:100',
+            'message'    => 'nullable|string|max:1000',
             'company'    => 'nullable|string|max:255',
             'city'       => 'nullable|string|max:100',
             'service'    => 'nullable|string|max:150',
         ]);
 
-       
+        // reCAPTCHA server-side verification
+        // (sirf tab jab form me captcha field aaya ho, taaki is route ko use karne wale baaki forms na tootein)
+        if ($request->has('g-recaptcha-response') && ! $this->captchaPassed($request)) {
+            throw ValidationException::withMessages([
+                'g-recaptcha-response' => 'Captcha verification failed. Please try again.',
+            ]);
+        }
 
         $rawPhone = $request->full_phone ?: $request->phone;
         $phone    = '+' . ltrim($rawPhone, '+');
 
         RequestForm::create([
             'fullname' => $request->fullname,
-            'country'  => $request->country,
+            'country'  => $request->country ?? '',
             'phone'    => $phone,
             'email'    => $request->email,
-            'company'  => $request->company,
-            'city'     => $request->city,
-            'service'  => $request->service,
-            'message'  => $request->message,
+            'company'  => $request->company ?? '',
+            'city'     => $request->city ?? '',
+            'service'  => $request->service ?? '',
+            'message'  => $request->message ?? '',
             'page_url' => url()->previous(),
         ]);
 
         $sheetData = [
-            'form_type' => ($request->country ?? 'Website') . ' Enquiry Form',
+            'form_type' => ($request->country ?: 'Website') . ' Enquiry Form',
             'name'      => $request->fullname ?? '',
             'contact'   => $phone,
             'email'     => $request->email ?? '',
@@ -81,39 +89,77 @@ class ServiceController extends Controller
             'message'   => $request->message ?? '',
             'date'      => now()->format('Y-m-d H:i:s'),
         ];
-        // Redirect to contact route with success message
-        $response = Http::timeout(30)
-            ->withHeaders([
-                'Content-Type' => 'application/json',
-            ])
-            ->post('https://script.google.com/macros/s/AKfycbzoF3Y1kaEZZULS_qL6Jsq_vZ9Mz-k4A4cOlt773dyr1fMT1OXscj2dlufFOE_Y5zXw/exec', $sheetData);
 
-        // Check response
-        if ($response->successful()) {
-            $responseData = $response->json();
-            if (isset($responseData['status']) && $responseData['status'] === 'success') {
-                Log::info('Data successfully sent to Google Sheets', [
-                    'email'    => $request->email,
-                    'response' => $responseData,
-                ]);
-                return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
+        // Google Sheet fail ho to bhi user ko success dikhana hai (data DB me save ho chuka hai)
+        try {
+            $response = Http::timeout(30)
+                ->withHeaders(['Content-Type' => 'application/json'])
+                ->post('https://script.google.com/macros/s/AKfycbzoF3Y1kaEZZULS_qL6Jsq_vZ9Mz-k4A4cOlt773dyr1fMT1OXscj2dlufFOE_Y5zXw/exec', $sheetData);
 
+            if ($response->successful() && $response->json('status') === 'success') {
+                Log::info('Data successfully sent to Google Sheets', ['email' => $request->email]);
             } else {
                 Log::warning('Google Sheets API returned error', [
-                    'response' => $responseData,
-                    'email'    => $request->email,
+                    'status' => $response->status(),
+                    'body'   => $response->body(),
+                    'email'  => $request->email,
                 ]);
-                return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
-
             }
-        } else {
+        } catch (\Throwable $e) {
             Log::error('Google Sheets API request failed', [
-                'status' => $response->status(),
-                'body'   => $response->body(),
-                'email'  => $request->email,
+                'error' => $e->getMessage(),
+                'email' => $request->email,
             ]);
-            return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
+        }
 
+        return $this->requestSuccess($request);
+    }
+
+    /**
+     * AJAX (jQuery) request ko JSON, normal form post ko thank-you redirect.
+     */
+    private function requestSuccess(Request $request)
+    {
+        if ($request->expectsJson()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Your message has been sent successfully.',
+            ]);
+        }
+
+        return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
+    }
+
+    /**
+     * Google reCAPTCHA token ko server par verify karta hai.
+     */
+    private function captchaPassed(Request $request): bool
+    {
+        // Localhost par Google ki test secret, live par apni secret key yahan daalo
+        $secret = in_array($request->getHost(), ['localhost', '127.0.0.1'])
+            ? '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe'
+            : '';
+
+        if ($secret === '') {
+            return true; // secret nahi hai to server-side check skip
+        }
+
+        $token = $request->input('g-recaptcha-response');
+        if (! $token) {
+            return false;
+        }
+
+        try {
+            $res = Http::asForm()->timeout(10)->post('https://www.google.com/recaptcha/api/siteverify', [
+                'secret'   => $secret,
+                'response' => $token,
+                'remoteip' => $request->ip(),
+            ]);
+
+            return $res->successful() && $res->json('success') === true;
+        } catch (\Throwable $e) {
+            Log::error('reCAPTCHA verify failed', ['error' => $e->getMessage()]);
+            return false;
         }
     }
 
@@ -140,7 +186,6 @@ class ServiceController extends Controller
 
     public function about()
     {
-        // return 1;
         $meta_title       = "";
         $meta_description = "";
         $whychooseus      = WhyChooseUs::where('status', 'Active')->get();
@@ -175,6 +220,7 @@ class ServiceController extends Controller
 
         return view('pages.india.payroll-services', compact('meta_title', 'meta_description', 'faq'));
     }
+
     public function taxationservices()
     {
         $meta_title       = "Taxation Services for US, UK & Australia | PCS Global";
@@ -182,6 +228,7 @@ class ServiceController extends Controller
 
         return view('pages.india.taxation-services', compact('meta_title', 'meta_description'));
     }
+
     public function payrolloutsourcing()
     {
         $meta_title       = "";
@@ -257,6 +304,7 @@ class ServiceController extends Controller
 
         return view('pages.us.taxation-services-usa', compact('meta_title', 'meta_description'));
     }
+
     public function taxationaustralian()
     {
         $meta_title       = "Tax Preparation Services for Australian Business";
@@ -264,6 +312,7 @@ class ServiceController extends Controller
 
         return view('pages.australia.taxation-services-australian', compact('meta_title', 'meta_description'));
     }
+
     public function taxationservicesuk()
     {
         $meta_title       = "Tax Preparation Services in UK | PCS Global";
@@ -271,6 +320,7 @@ class ServiceController extends Controller
 
         return view('pages.uk.taxation-services-uk', compact('meta_title', 'meta_description'));
     }
+
     public function itautomation()
     {
         $meta_title       = "IT Outsourcing Services | IT Outsourcing Company";

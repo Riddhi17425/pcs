@@ -28,14 +28,14 @@
     </div>
 </section>
 
-<section>
+{{-- <section>
     <div class="container">
         <div class="text-center">
         <img src="{{asset('public/front/images/maps.png')}}" usemap="#image-map" alt="USA, UK, and Australia" style="max-width:100%; height:auto;">
 
         </div>
     </div>
-</section>
+</section> --}}
 
 <section class="contact mt-100" id="jumpcontect">
     <div class="container">

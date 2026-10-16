@@ -80,7 +80,7 @@
 
     .enquiry-header h2 {
         color: #111111;
-        font-size: 16px;
+        font-size: 20px;
         font-family: "Public Sans", sans-serif;
     }
 
@@ -117,7 +117,7 @@
 
     .enquiry-field label {
         margin-bottom: 3px;
-        font-size: 11px;
+        font-size: 15px;
     }
 
     .enquiry-field input,
