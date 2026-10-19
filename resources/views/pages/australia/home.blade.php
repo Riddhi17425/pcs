@@ -856,7 +856,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         <form id="contactBandForm" class="validated-form contact_band_form" action="{{ route('request.store') }}" method="POST" novalidate>
             @csrf
-            <input type="hidden" name="form_type" value="Australia Form">
+            <input type="hidden" name="form_type" value="Australia Footer Form">
             <input type="hidden" name="country" id="cfCountry" value="Australia">
             <input type="hidden" name="full_phone" id="cfFullPhone">
             {{-- Honeypot (bots ke liye) --}}

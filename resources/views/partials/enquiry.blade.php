@@ -110,6 +110,15 @@
 .enquiry-field input::placeholder,
 .enquiry-field textarea::placeholder { color: #929baa; }
 
+/* Phone country flag + code */
+.iti { width: 100%; display: block; }
+.enquiry-field .iti input#enqPhone { padding-left: 100px !important; }
+.iti .iti__selected-dial-code { color: #182653; }
+.iti__country-list { background: #fff !important; }
+.iti__country-list .iti__country-name,
+.iti__country-list .iti__dial-code { color: #182653 !important; }
+.iti--container { z-index: 10000 !important; }
+
 /* Validation (jQuery Validate) */
 .enquiry-field input.is-invalid,
 .enquiry-field textarea.is-invalid { border-color: #a52020; }
@@ -216,8 +225,9 @@ p.js-error { display: block; margin: 4px 0 0; color: #a52020; font-size: 12px; l
           <input id="enqPhone" name="phone" type="tel" placeholder="Enter your phone number"
             autocomplete="tel" maxlength="15" inputmode="numeric">
         </div>
-        <input type="hidden" name="full_phone" value="">
-        <input type="hidden" name="form_type" value="Enquire Now Popup">
+        <input type="hidden" name="full_phone" id="enqFullPhone" value="">
+        <input type="hidden" name="country" id="enqCountry" value="India">
+        <input type="hidden" name="form_type" value="Enquire Now">
 
         <div class="enquiry-field">
           <label for="enqCompany">Company Name</label>
@@ -275,6 +285,43 @@ window.addEventListener("load", function () {
       return this.optional(element) || /^[0-9]{10,15}$/.test(value);
     }, "Phone number must be 10 to 15 digits.");
 
+    /* ---------- Phone country code + IP detect ---------- */
+    var phoneEl = $form.find('[name="phone"]')[0];
+    var $country = $("#enqCountry");
+    var siteCountry = @json($site['phone_country'] ?? 'in');
+    var iti = null, detected = false;
+
+    function syncCountry() {
+      var d = iti && iti.getSelectedCountryData();
+      if (d && d.name) $country.val(d.name.replace(/\s*\(.*\)\s*$/, ""));
+    }
+
+    function detectCountry() {
+      if (detected) return;
+      fetch("https://ipwho.is/")
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (!data || data.success === false || !data.country_code) return;
+          iti.setCountry(data.country_code.toLowerCase());
+          syncCountry();
+          detected = true;
+        })
+        .catch(function (err) { console.warn("Country auto-detect failed:", err); });
+    }
+
+    function initPhone() {
+      if (iti || !window.intlTelInput || !phoneEl) return;
+      iti = window.intlTelInput(phoneEl, {
+        initialCountry: siteCountry,          // IP detect fail ho to site ki country
+        separateDialCode: true,
+        dropdownContainer: document.body,     // modal ke andar clip na ho
+        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js"
+      });
+      phoneEl.addEventListener("countrychange", syncCountry);
+      syncCountry();
+      detectCountry();
+    }
+
     /* ---------- Validate setup ---------- */
     var validator = $form.validate({
       // honeypot aur captcha textarea ko validation se bahar rakho
@@ -298,7 +345,8 @@ window.addEventListener("load", function () {
         }
       },
       errorPlacement: function ($error, $element) {
-        $error.insertAfter($element); // field ke bilkul neeche
+        var $iti = $element.closest(".iti");
+        $error.insertAfter($iti.length ? $iti : $element); // field ke bilkul neeche
       },
       highlight: function (el) {
         $(el).addClass("is-invalid");
@@ -355,6 +403,7 @@ window.addEventListener("load", function () {
     function openModal() {
       previousFocus = document.activeElement;
       $overlay.addClass("active");
+      initPhone();
       $("body").css("overflow", "hidden");
       $closeBtn.trigger("focus");
     }
@@ -375,7 +424,9 @@ window.addEventListener("load", function () {
     /* ---------- AJAX submit ---------- */
     function sendForm() {
       $status.attr("class", "enquiry-status").text("");
-      $form.find('[name="full_phone"]').val($.trim($form.find('[name="phone"]').val()));
+      syncCountry();
+      var dial = iti ? iti.getSelectedCountryData().dialCode : "";
+      $form.find('[name="full_phone"]').val("+" + dial + $.trim($form.find('[name="phone"]').val()));
       $submitBtn.prop("disabled", true).text("Sending...");
 
       $.ajax({

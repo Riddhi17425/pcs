@@ -83,7 +83,11 @@
                                         oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
                                 </div>
                                 <input type="hidden" name="full_phone" id="requestFullPhone">
-                                <input type="hidden" name="form_type" value="Free Consultation Modal">
+                                @php
+                                    $rqCountryLabels = ['au' => 'Australia', 'gb' => 'UK', 'us' => 'US', 'in' => 'India'];
+                                    $rqFormType = ($rqCountryLabels[$site['phone_country'] ?? 'in'] ?? 'India') . ' Consultation Form';
+                                @endphp
+                                <input type="hidden" name="form_type" value="{{ $rqFormType }}">
                             </div>
 
                             {{-- Country field form me nahi dikhta: phone number ke flag wali country yahan apne aap bharti hai --}}

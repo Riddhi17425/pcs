@@ -86,7 +86,17 @@ class ServiceController extends Controller
         ]);
 
         // Kaun sa form hai (sirf allowed labels, taaki koi sheet me kuch bhi na likh sake)
-        $allowedFormTypes = ['Enquire Now Popup', 'Request a Consultation', 'Free Consultation Modal','India Form', 'Australia Form', 'United Kingdom Form', 'United States Form'];
+        $allowedFormTypes = ['Enquire Now',
+                                'Request a Consultation',
+                                'India Consultation Form',
+                                'Australia Consultation Form',
+                                'UK Consultation Form',
+                                'US Consultation Form',
+                                'India Footer Form',
+                                'Australia Footer Form',
+                                'UK Footer Form',
+                                'US Footer Form',
+                            ];
         $formType = in_array($request->form_type, $allowedFormTypes, true)
             ? $request->form_type
             : 'Website Enquiry';
@@ -131,8 +141,16 @@ $sheetData = [
 
 
         // Kaun si sheet me jayega: consultation wale 2 forms -> Sheet 2, baaki sab -> Sheet 1
-        $consultationForms = ['Request a Consultation', 'Free Consultation Modal',
-    'India Form', 'Australia Form', 'United Kingdom Form', 'United States Form',];
+        $consultationForms = ['Request a Consultation',
+                                'India Consultation Form',
+                                'Australia Consultation Form',
+                                'UK Consultation Form',
+                                'US Consultation Form',
+                                'India Footer Form',
+                                'Australia Footer Form',
+                                'UK Footer Form',
+                                'US Footer Form',
+                            ];
         $sheetUrl = (in_array($formType, $consultationForms, true) && self::CONSULTATION_SHEET_URL !== '')
             ? self::CONSULTATION_SHEET_URL
             : self::MAIN_SHEET_URL;
