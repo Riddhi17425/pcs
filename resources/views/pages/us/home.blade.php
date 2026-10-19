@@ -824,7 +824,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         <form id="contactBandForm" class="validated-form contact_band_form" action="{{ route('request.store') }}" method="POST" novalidate>
             @csrf
-            <input type="hidden" name="country" value="United States">
+            <input type="hidden" name="form_type" value="US Footer Form">
+            <input type="hidden" name="country" id="cfCountry" value="United States">
             <input type="hidden" name="full_phone" id="cfFullPhone">
             {{-- Honeypot (bots ke liye) --}}
             <div style="display:none;">
@@ -888,7 +889,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-<script>
+{{-- <script>
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contactBandForm');
     const phone = document.getElementById('cfPhone');
@@ -909,6 +910,43 @@ document.addEventListener('DOMContentLoaded', function () {
             form.reportValidity();
             return;
         }
+        fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
+    }, true);
+});
+</script> --}}
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contactBandForm');
+    const phone = document.getElementById('cfPhone');
+    const fullPhone = document.getElementById('cfFullPhone');
+    const countryInput = document.getElementById('cfCountry');
+    if (!form || !phone || !window.intlTelInput) return;
+
+    const iti = window.intlTelInput(phone, {
+        initialCountry: @json('us'),
+        separateDialCode: true,
+        utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js'
+    });
+
+    // flag me jo country select ho, wahi "country" field me jaye
+    function syncCountry() {
+        const d = iti.getSelectedCountryData();
+        if (d && d.name && countryInput) {
+            countryInput.value = d.name.replace(/\s*\(.*\)\s*$/, '');
+        }
+    }
+    syncCountry();
+    phone.addEventListener('countrychange', syncCountry);
+
+    form.addEventListener('submit', function (e) {
+        if (!form.checkValidity()) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            form.reportValidity();
+            return;
+        }
+        syncCountry();
         fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
     }, true);
 });

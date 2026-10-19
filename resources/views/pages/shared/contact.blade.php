@@ -28,14 +28,25 @@
     </div>
 </section>
 
-<section>
+{{-- <section>
     <div class="container">
         <div class="text-center">
         <img src="{{asset('public/front/images/maps.png')}}" usemap="#image-map" alt="USA, UK, and Australia" style="max-width:100%; height:auto;">
 
         </div>
     </div>
-</section>
+</section> --}}
+
+@php
+    // Country-wise services (ContactController::servicesFor() ki list se bilkul same rakhna)
+    $pageCountry = $site['phone_country'] ?? 'in';
+    $contactServices = [
+        'us' => ['Accounting Outsourcing Services', 'Bookkeeping Outsourcing Services', 'Outsourced Tax Preparation Services', 'Payroll Outsourcing Services', 'Outsourced Audit Support Services'],
+        'gb' => ['Accounting Outsourcing', 'Small Business Accounting', 'Bookkeeping Outsourcing', 'Tax Preparation Outsourcing', 'Payroll Outsourcing', 'VAT Outsourcing'],
+        'au' => ['Accounting Outsourcing', 'Bookkeeping Outsourcing', 'Tax Preparation Outsourcing', 'BAS/IAS Return Services', 'Payroll Outsourcing', 'Strata Management Services'],
+        'in' => ['Accounting & Bookkeeping', 'Payroll Outsourcing Services', 'Taxation Services', 'Recruitment Outsourcing Services', 'IT Automation Services'],
+    ][$pageCountry] ?? [];
+@endphp
 
 <section class="contact mt-100" id="jumpcontect">
     <div class="container">
@@ -49,6 +60,7 @@
         <div class="contact_bot">
             <form id="contactForm" class="validated-form" action="{{ route('contact.store') }}" method="POST">
                 @csrf
+                <input type="hidden" name="page_country" value="{{ $site['phone_country'] ?? 'in' }}">
                 <div class="row gy-4 gy-xxl-5 gx-lg-4">
 
                     <div class="col-lg-6 form-group">
@@ -89,52 +101,16 @@
                         @error('country') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
 
-                    <div class="col-lg-6">
-                        <h6 class="mb-4">Select one or more services to see how PCS Global can support you.<span class="text-danger">*</span>:</h6>
-                        <div class="checkbox-grid">
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="services[]" value="Accounting And Finance" id="service1">
-                                <label for="service1">Accounting And Finance</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="services[]" value="Payroll Outsourcing" id="service2">
-                                <label for="service2">Payroll Outsourcing</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="services[]" value="Staffing & Recruitment" id="service3">
-                                <label for="service3">Staffing & Recruitment</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="services[]" value="Taxation" id="service4">
-                                <label for="service4">Taxation</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="services[]" value="IT Automation" id="service5">
-                                <label for="service5">IT Automation</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="services[]"  value="Strata Management" id="service6">
-                                <label for="service6">Strata Management</label>
-                            </div>
-                        </div>
-                        @error('services') <span class="text-danger">{{ $message }}</span> @enderror
+                    <div class="col-lg-12 form-group">
+                        <select name="service" id="serviceSelect">
+                            <option value="" hidden>Choose Service*</option>
+                            @foreach($contactServices as $service)
+                                <option value="{{ $service }}" {{ old('service') === $service ? 'selected' : '' }}>{{ $service }}</option>
+                            @endforeach
+                        </select>
+                        @error('service') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
-                    <div class="col-lg-6 d-none d-lg-block">
-                        <div class="contact-icons">
-                            <span><img id="service1-img" class="img-fluid" src="{{ asset('public/front/images/contact_image1.png') }}"
-                                    alt="image"></span>
-                            <span><img id="service2-img" class="img-fluid" src="{{ asset('public/front/images/contact_image2.png') }}"
-                                    alt="image"></span>
-                            <span><img id="service3-img" class="img-fluid" src="{{ asset('public/front/images/contact_image3.png') }}"
-                                    alt="image"></span>
-                            <span><img id="service4-img" class="img-fluid" src="{{ asset('public/front/images/contact_image4.png') }}"
-                                    alt="image"></span>
-                            <span><img id="service5-img" class="img-fluid" src="{{ asset('public/front/images/contact_image5.png') }}"
-                                    alt="image"></span>
-                            <span><img id="service6-img" class="img-fluid" src="{{ asset('public/front/images/contact_image6.png') }}"
-                                    alt="image"></span>
-                        </div>
-                    </div>
+
                     <div class="col-lg-12 form-group">
                         <textarea rows="1" name="message"  placeholder=" ">{{ old('message') }}</textarea>
                         <label>Message:</label>

@@ -16,6 +16,7 @@
             @csrf
             <input type="hidden" name="country" value="{{ $country }}">
             <input type="hidden" name="full_phone" id="cfFullPhone">
+            <input type="hidden" name="form_type" value="Request a Consultation">
             {{-- Honeypot (bots ke liye) --}}
             <div style="display:none;">
                 <label>Leave this field empty</label>
