@@ -118,39 +118,28 @@ class ServiceController extends Controller
         // ];
          
         $serviceValue = is_array($request->services)
-    ? implode(', ', $request->services)
-    : ($request->services ?? $request->service ?? '');
+        ? implode(', ', $request->services)
+        : ($request->services ?? $request->service ?? '');
 
-$sheetData = [
-    'form_type' => $formType,
-    'name'      => $request->fullname ?? '',
-    'email'     => $request->email ?? '',
-    'contact'   => $phone,
-    'company'   => $request->company ?? '',
-    'country'   => $request->country ?? '',
-    'city'      => $request->city ?? '',
-    'services'  => $serviceValue,
-    'service'    => $serviceValue,
-    'Service'    => $serviceValue,
-    'Services'   => $serviceValue,
-    'message'   => $request->message ?? '',
-    'page_url'  => url()->previous(),
-    'date'      => now()->format('Y-m-d H:i:s'),
-];
-
-
-
-        // Kaun si sheet me jayega: consultation wale 2 forms -> Sheet 2, baaki sab -> Sheet 1
-        $consultationForms = ['Request a Consultation',
-                                'India Consultation Form',
-                                'Australia Consultation Form',
-                                'UK Consultation Form',
-                                'US Consultation Form',
-                                'India Footer Form',
-                                'Australia Footer Form',
-                                'UK Footer Form',
-                                'US Footer Form',
-                            ];
+        $sheetData = [
+            'form_type' => $formType,
+            'name'      => $request->fullname ?? '',
+            'email'     => $request->email ?? '',
+            'contact'   => $phone,
+            'company'   => $request->company ?? '',
+            'country'   => $request->country ?? '',
+            'city'      => $request->city ?? '',
+            'services'  => $serviceValue,
+            'service'    => $serviceValue,
+            'Service'    => $serviceValue,
+            'Services'   => $serviceValue,
+            'message'   => $request->message ?? '',
+            'page_url'  => url()->previous(),
+            'date'      => now()->format('Y-m-d H:i:s'),
+        ];
+   
+        $consultationForms = ['Request a Consultation', 'Free Consultation Modal',
+    'India Form', 'Australia Form', 'United Kingdom Form', 'United States Form',];
         $sheetUrl = (in_array($formType, $consultationForms, true) && self::CONSULTATION_SHEET_URL !== '')
             ? self::CONSULTATION_SHEET_URL
             : self::MAIN_SHEET_URL;

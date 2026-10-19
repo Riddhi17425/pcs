@@ -13,7 +13,7 @@
   border: none;
   border-radius: 0 8px 8px 0;
   color: #fff;
-  background: #182653;
+  background: #e43441;
   font: 600 14px/1 "Instrument Sans", sans-serif;
   cursor: pointer;
   writing-mode: vertical-rl;
@@ -22,7 +22,7 @@
   transition: background .2s, box-shadow .2s;
 }
 .enquiry-btn svg { display: none; }
-.enquiry-btn:hover { background: #3555b9; transform: translateY(-50%) rotate(180deg); }
+.enquiry-btn:hover { background: #182653; transform: translateY(-50%) rotate(180deg); }
 .enquiry-btn:focus-visible { outline: 3px solid #8ba6ff; outline-offset: 3px; }
 
 /* Overlay + modal */
