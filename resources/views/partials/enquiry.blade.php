@@ -18,11 +18,26 @@
   cursor: pointer;
   writing-mode: vertical-rl;
   transform: translateY(-50%) rotate(180deg);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, .25);
+  /*box-shadow: 0 4px 15px rgba(0, 0, 0, .25);*/
   transition: background .2s, box-shadow .2s;
+  animation: enquiryPulse 1.5s infinite !important;
+  box-shadow: 0 4px 15px rgba(228, 52, 65, 0.25);
 }
+
+@keyframes enquiryPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(228, 52, 65, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(228, 52, 65, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(228, 52, 65, 0);
+    }
+}
+    
 .enquiry-btn svg { display: none; }
-.enquiry-btn:hover { background: #182653; transform: translateY(-50%) rotate(180deg); }
+/*.enquiry-btn:hover { background: #182653; transform: translateY(-50%) rotate(180deg); }*/
 .enquiry-btn:focus-visible { outline: 3px solid #8ba6ff; outline-offset: 3px; }
 
 /* Overlay + modal */
