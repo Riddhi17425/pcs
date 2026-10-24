@@ -28,15 +28,6 @@
     </div>
 </section>
 
-{{-- <section>
-    <div class="container">
-        <div class="text-center">
-        <img src="{{asset('public/front/images/maps.png')}}" usemap="#image-map" alt="USA, UK, and Australia" style="max-width:100%; height:auto;">
-
-        </div>
-    </div>
-</section> --}}
-
 @php
     // Country-wise services (ContactController::servicesFor() ki list se bilkul same rakhna)
     $pageCountry = $site['phone_country'] ?? 'in';
@@ -44,7 +35,7 @@
         'us' => ['Accounting Outsourcing Services', 'Bookkeeping Outsourcing Services', 'Outsourced Tax Preparation Services', 'Payroll Outsourcing Services', 'Outsourced Audit Support Services'],
         'gb' => ['Accounting Outsourcing', 'Small Business Accounting', 'Bookkeeping Outsourcing', 'Tax Preparation Outsourcing', 'Payroll Outsourcing', 'VAT Outsourcing'],
         'au' => ['Accounting Outsourcing', 'Bookkeeping Outsourcing', 'Tax Preparation Outsourcing', 'BAS/IAS Return Services', 'Payroll Outsourcing', 'Strata Management Services'],
-        'in' => ['Accounting & Bookkeeping', 'Payroll Outsourcing Services', 'Taxation Services', 'Recruitment Outsourcing Services', 'IT Automation Services'],
+        'in' => ['Accounting Outsourcing Services','Bookkeeping Outsourcing Services','Outsourced Tax Preparation Services','Payroll Outsourcing Services','Recruitment Outsourcing Services','Strata Management Services'],
     ][$pageCountry] ?? [];
 @endphp
 
@@ -88,17 +79,14 @@
                         @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
                         <span id="mobile-error" style="color:red; display:none;">Please enter at least 10 digits</span>
                         <input type="hidden" name="full_phone" id="contactFullPhone">
+                        {{-- country ab phone field ke country code se bharta hai --}}
+                        <input type="hidden" name="country" id="contactCountry" value="{{ old('country') }}">
                     </div>
 
+                    {{-- Company Name (country dropdown ki jagah, koi validation nahi) --}}
                     <div class="col-lg-6 form-group">
-                         <select name="country" id="countrySelect">
-                            <option value="" hidden>Select Country</option>
-                            @foreach($countries as $country)
-                                <option value="{{ $country->name }}">{{ $country->name }}</option>
-                            @endforeach
-                        </select>
-                        <!--<label>Choose Country<span class="text-danger">*</span></label>-->
-                        @error('country') <span class="text-danger">{{ $message }}</span> @enderror
+                        <input type="text" name="company" value="{{ old('company') }}" maxlength="100" placeholder=" ">
+                        <label>Company Name</label>
                     </div>
 
                     <div class="col-lg-12 form-group">
@@ -251,17 +239,15 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const countrySelect = document.getElementById('countrySelect');
     const phoneInput = document.getElementById('contactPhone');
     const fullPhoneInput = document.getElementById('contactFullPhone');
+    const countryInput = document.getElementById('contactCountry');
 
     if (!phoneInput) return;
 
-    // Current site ki country (config/sites.php -> phone_country / country_name)
+    // Current site ki country (config/sites.php -> phone_country)
     const siteCountry = @json($site['phone_country'] ?? 'in');
-    const siteCountryName = @json($site['country_name'] ?? 'India');
     const isGlobal = siteCountry === 'in';   // sirf Global (India) site par IP auto-detect
-    const hasOldCountry = @json((bool) old('country'));
 
     const itiContact = window.intlTelInput(phoneInput, {
         initialCountry: siteCountry,
@@ -270,42 +256,35 @@ document.addEventListener('DOMContentLoaded', function () {
         utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js"
     });
 
-    function selectCountryByName(name) {
-        if (!countrySelect || !name) return;
-        const target = name.trim().toLowerCase();
-        for (let i = 0; i < countrySelect.options.length; i++) {
-            if (countrySelect.options[i].text.trim().toLowerCase() === target) {
-                countrySelect.value = countrySelect.options[i].value;
-                return;
-            }
+    // Phone field me jo country chuni hai wahi hidden "country" me jayegi
+    function syncCountry() {
+        const name = itiContact.getSelectedCountryData().name;
+        if (countryInput && name) {
+            countryInput.value = name.replace(/\s*\(.*\)\s*$/, '');
         }
     }
 
-    // Validation error ke baad purani selected country rehne do
-    if (hasOldCountry && countrySelect) {
-        countrySelect.value = @json(old('country'));
-    } else {
-        // Country dropdown ko current site par set karo
-        selectCountryByName(siteCountryName);
+    phoneInput.addEventListener('countrychange', syncCountry);
+    syncCountry();
 
-        // Global site par hi IP se auto-detect; AU / UK / US par site ki country fixed rahegi
-        if (isGlobal) {
-            fetch('https://ipwho.is/')
-                .then(res => res.json())
-                .then(data => {
-                    if (!data || data.success === false || !data.country) return;
-                    selectCountryByName(data.country);
-                    if (data.country_code) {
-                        itiContact.setCountry(data.country_code.toLowerCase());
-                    }
-                })
-                .catch(err => console.warn('Country auto-detect failed:', err));
-        }
+    // Global site par hi IP se auto-detect; AU / UK / US par site ki country fixed rahegi
+    if (isGlobal) {
+        fetch('https://ipwho.is/')
+            .then(res => res.json())
+            .then(data => {
+                if (!data || data.success === false) return;
+                if (data.country_code) {
+                    itiContact.setCountry(data.country_code.toLowerCase());
+                    syncCountry();
+                }
+            })
+            .catch(err => console.warn('Country auto-detect failed:', err));
     }
 
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function () {
+            syncCountry();
             const countryData = itiContact.getSelectedCountryData();
             const number = phoneInput.value.replace(/\s+/g, "");
             fullPhoneInput.value = "+" + countryData.dialCode + number;

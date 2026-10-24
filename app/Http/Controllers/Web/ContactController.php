@@ -47,11 +47,12 @@ class ContactController extends Controller
                 'Strata Management Services',
             ],
             'in' => [
-                'Accounting & Bookkeeping',
+                'Accounting Outsourcing Services',
+                'Bookkeeping Outsourcing Services',
+                'Outsourced Tax Preparation Services',
                 'Payroll Outsourcing Services',
-                'Taxation Services',
                 'Recruitment Outsourcing Services',
-                'IT Automation Services',
+                'Strata Management Services',
             ],
         ];
 
@@ -77,7 +78,7 @@ class ContactController extends Controller
             'email'       => 'required|email',
             'phone'       => 'required|string|max:20',
             'full_phone'  => 'nullable|string|max:20',
-            'companyName' => 'nullable',
+            'company'     => 'nullable|string|max:255',
             'country'     => 'nullable|string',
             'service'     => ['required', 'string', 'max:150', Rule::in($allowedServices)],
             'message'     => 'nullable|string',
@@ -108,6 +109,7 @@ class ContactController extends Controller
             'name'      => $request->fullname ?? '',
             'contact'   => $phone,
             'email'     => $request->email ?? '',
+            'company'   => $request->company ?? '',
             'country'   => $request->country ?? '',
             'services'  => $request->service ?? '',
             'service'   => $request->service ?? '',
