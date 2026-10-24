@@ -18,11 +18,7 @@ use App\Http\Controllers\Web\AboutController;
 use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\ServiceController;
 use App\Http\Controllers\Web\BlogController;
-<<<<<<< HEAD
 use App\Http\Controllers\SitemapController;
-=======
-
->>>>>>> ab623b20ca4c3d59082bbc24007c3f5a8a1c2979
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('/clear', function () {
