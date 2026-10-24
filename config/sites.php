@@ -4,6 +4,8 @@
 // - Route group ka middleware 'country:<key>' (routes/countries/*.php) is site ko views me $site bana ke share karta hai.
 // - Links yahan route NAMES hain; App\Support\Site unhe URL bana deta hai.
 // - Blogs aur Data Security sab countries ka ek hi (main) page hai; dusri countries unhe naye tab me kholti hain.
+// - 'phone_country' = contact form ke phone field ka default flag (ISO2 code, intl-tel-input)
+// - 'country_name'  = contact form ke country dropdown ka default (countries table ke `name` se match hona chahiye)
 // Poora map: STRUCTURE.md (project root)
 
 // Australia / US / UK ek hi header use karte hain, isliye CSS bhi same (order zaroori hai)
@@ -28,6 +30,8 @@ $isoBadges = [
 return [
     'india' => [
         'header' => 'global',   // resources/views/partials/header/global.blade.php
+        'phone_country' => 'in',
+        'country_name' => 'India',
         'css' => [
             'style.css',
             'common/buttons.css',
@@ -41,7 +45,7 @@ return [
         'blog_detail' => 'blogs.detail',
         'services' => [
             ['Accounting & Bookkeeping', 'pcs.global.bookkeeping'],
-            ['Strata Property Management', 'strata.management'],
+            // ['Strata Property Management', 'strata.management'],
             ['Payroll Outsourcing Services', 'payroll.services'],
             ['Taxation Services', 'taxation.services'],
             ['Recruitment Outsourcing Services', 'recruitment.services'],
@@ -56,11 +60,11 @@ return [
                 ['Contact Us', 'contact'],
                 ['Blogs', 'blog'],
             ],
-            'address' => '22A Mort Street Blacktown<br>NSW 2148 Australia.',
+            'address' => 'Addor Aspire 2, 7th Floor,<br>Opp. Old Passport Office, University Area,<br>Ahmedabad - 380015<br>Gujarat, India',
             'phones' => [
+                ['number' => '(+91) 796 826 0121', 'label' => 'IND', 'icon' => 'contry-icon/india-icon.svg', 'alt' => 'India'],
                 ['number' => '(+613) 9998 0494', 'label' => 'AUS', 'icon' => 'contry-icon/australia-icon.png', 'alt' => 'Australia'],
                 ['number' => '(+1) 347 801 8715', 'label' => 'USA', 'icon' => 'contry-icon/us-icon.png', 'alt' => 'USA'],
-                ['number' => '(+91) 796 826 0121', 'label' => 'IND', 'icon' => 'contry-icon/india-icon.svg', 'alt' => 'India'],
                 ['number' => '(+44) 113 4034334', 'label' => 'UK', 'icon' => 'contry-icon/uk-icon.png', 'alt' => 'UK'],
             ],
         ],
@@ -68,11 +72,13 @@ return [
 
     'australia' => [
         'header' => 'country',   // resources/views/partials/header/country.blade.php
+        'phone_country' => 'au',
+        'country_name' => 'Australia',
         'css' => $countryCss,
         'phone' => ['tel' => '+61399980494', 'label' => '(+613) 9998 0494'],
         'services' => [
             ['Accounting & Bookkeeping', 'pcs.global.aus'],
-            ['Taxation Services', 'taxation-services-australian'],
+            ['Taxation Services', 'taxation.services.australian'],
             ['Strata Property Management', 'australia.strata'],
         ],
         'nav' => [
@@ -82,7 +88,7 @@ return [
             'country' => ['name' => 'AU', 'flag' => 'australia-icon.png'],
         ],
         'footer' => [
-            'home' => 'australia.home',
+            'home' => 'front.home',
             'quick_links' => [
                 ['Home', 'australia.home'],
                 ['About Us', 'australia.about'],
@@ -103,6 +109,8 @@ return [
 
     'us' => [
         'header' => 'country',
+        'phone_country' => 'us',
+        'country_name' => 'United States',
         'css' => $countryCss,
         'phone' => ['tel' => '+13478018715', 'label' => '(+1) 347 801 8715'],
         'services' => [
@@ -116,7 +124,7 @@ return [
             'country' => ['name' => 'US', 'flag' => 'us-icon.png'],
         ],
         'footer' => [
-            'home' => 'us.home',
+            'home' => 'front.home',
             'quick_links' => [
                 ['Home', 'us.home'],
                 ['About Us', 'us.about'],
@@ -137,6 +145,8 @@ return [
 
     'uk' => [
         'header' => 'country',
+        'phone_country' => 'gb',
+        'country_name' => 'United Kingdom',
         'css' => $countryCss,
         'phone' => ['tel' => '+441134034334', 'label' => '(+44) 113 4034334'],
         'services' => [
@@ -151,7 +161,7 @@ return [
             'country' => ['name' => 'UK', 'flag' => 'uk-icon.png'],
         ],
         'footer' => [
-            'home' => 'uk',
+            'home' => 'front.home',
             'quick_links' => [
                 ['Home', 'uk'],
                 ['About Us', 'uk.about'],

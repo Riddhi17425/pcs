@@ -1,6 +1,6 @@
 {{-- Australia footer: common <x-layout.footer> + Australia ka data (Figma) --}}
 @php
-    $auUrl = fn ($path) => url('aus/' . $path);
+    $auUrl = fn ($path) => url('au/' . $path);
 @endphp
 <x-layout.footer
     :home-url="$auUrl('')"

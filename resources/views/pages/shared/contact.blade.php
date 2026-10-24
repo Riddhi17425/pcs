@@ -28,14 +28,25 @@
     </div>
 </section>
 
-<section>
+{{-- <section>
     <div class="container">
         <div class="text-center">
         <img src="{{asset('public/front/images/maps.png')}}" usemap="#image-map" alt="USA, UK, and Australia" style="max-width:100%; height:auto;">
 
         </div>
     </div>
-</section>
+</section> --}}
+
+@php
+    // Country-wise services (ContactController::servicesFor() ki list se bilkul same rakhna)
+    $pageCountry = $site['phone_country'] ?? 'in';
+    $contactServices = [
+        'us' => ['Accounting Outsourcing Services', 'Bookkeeping Outsourcing Services', 'Outsourced Tax Preparation Services', 'Payroll Outsourcing Services', 'Outsourced Audit Support Services'],
+        'gb' => ['Accounting Outsourcing', 'Small Business Accounting', 'Bookkeeping Outsourcing', 'Tax Preparation Outsourcing', 'Payroll Outsourcing', 'VAT Outsourcing'],
+        'au' => ['Accounting Outsourcing', 'Bookkeeping Outsourcing', 'Tax Preparation Outsourcing', 'BAS/IAS Return Services', 'Payroll Outsourcing', 'Strata Management Services'],
+        'in' => ['Accounting & Bookkeeping', 'Payroll Outsourcing Services', 'Taxation Services', 'Recruitment Outsourcing Services', 'IT Automation Services'],
+    ][$pageCountry] ?? [];
+@endphp
 
 <section class="contact mt-100" id="jumpcontect">
     <div class="container">
@@ -49,6 +60,7 @@
         <div class="contact_bot">
             <form id="contactForm" class="validated-form" action="{{ route('contact.store') }}" method="POST">
                 @csrf
+                <input type="hidden" name="page_country" value="{{ $site['phone_country'] ?? 'in' }}">
                 <div class="row gy-4 gy-xxl-5 gx-lg-4">
 
                     <div class="col-lg-6 form-group">
@@ -67,15 +79,6 @@
                         <label>Email Address<span class="text-danger">*</span></label>
                         @error('email') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
-
-                    {{-- <div class="col-lg-6 form-group">
-                        <input type="tel" name="phone" id="contactPhone" value="{{ old('phone') }}"
-                            maxlength="20" minlength="10" placeholder="Phone Number">
-                        <label><span class="text-danger">*</span></label>
-                        @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
-                        <span id="mobile-error" style="color:red; display:none;">Please enter at least 10 digits</span>
-                        <input type="hidden" name="full_phone" id="contactFullPhone">
-                    </div> --}}
 
                     <div class="col-lg-6 form-group">
                         <input type="tel" name="phone" id="contactPhone" value="{{ old('phone') }}"
@@ -96,55 +99,18 @@
                         </select>
                         <!--<label>Choose Country<span class="text-danger">*</span></label>-->
                         @error('country') <span class="text-danger">{{ $message }}</span> @enderror
-                        @error('country') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
 
-                    <div class="col-lg-6">
-                        <h6 class="mb-4">Select one or more services to see how PCS Global can support you.<span class="text-danger">*</span>:</h6>
-                        <div class="checkbox-grid">
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="services[]" value="Accounting And Finance" id="service1">
-                                <label for="service1">Accounting And Finance</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="services[]" value="Payroll Outsourcing" id="service2">
-                                <label for="service2">Payroll Outsourcing</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="services[]" value="Staffing & Recruitment" id="service3">
-                                <label for="service3">Staffing & Recruitment</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="services[]" value="Taxation" id="service4">
-                                <label for="service4">Taxation</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="services[]" value="IT Automation" id="service5">
-                                <label for="service5">IT Automation</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" name="services[]"  value="Strata Management" id="service6">
-                                <label for="service6">Strata Management</label>
-                            </div>
-                        </div>
-                        @error('services') <span class="text-danger">{{ $message }}</span> @enderror
+                    <div class="col-lg-12 form-group">
+                        <select name="service" id="serviceSelect">
+                            <option value="" hidden>Choose Service*</option>
+                            @foreach($contactServices as $service)
+                                <option value="{{ $service }}" {{ old('service') === $service ? 'selected' : '' }}>{{ $service }}</option>
+                            @endforeach
+                        </select>
+                        @error('service') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
-                    <div class="col-lg-6 d-none d-lg-block">
-                        <div class="contact-icons">
-                            <span><img id="service1-img" class="img-fluid" src="{{ asset('public/front/images/contact_image1.png') }}"
-                                    alt="image"></span>
-                            <span><img id="service2-img" class="img-fluid" src="{{ asset('public/front/images/contact_image2.png') }}"
-                                    alt="image"></span>
-                            <span><img id="service3-img" class="img-fluid" src="{{ asset('public/front/images/contact_image3.png') }}"
-                                    alt="image"></span>
-                            <span><img id="service4-img" class="img-fluid" src="{{ asset('public/front/images/contact_image4.png') }}"
-                                    alt="image"></span>
-                            <span><img id="service5-img" class="img-fluid" src="{{ asset('public/front/images/contact_image5.png') }}"
-                                    alt="image"></span>
-                            <span><img id="service6-img" class="img-fluid" src="{{ asset('public/front/images/contact_image6.png') }}"
-                                    alt="image"></span>
-                        </div>
-                    </div>
+
                     <div class="col-lg-12 form-group">
                         <textarea rows="1" name="message"  placeholder=" ">{{ old('message') }}</textarea>
                         <label>Message:</label>
@@ -283,7 +249,6 @@
     }
 </style>
 
-@if(!old('country'))
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const countrySelect = document.getElementById('countrySelect');
@@ -292,33 +257,51 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!phoneInput) return;
 
+    // Current site ki country (config/sites.php -> phone_country / country_name)
+    const siteCountry = @json($site['phone_country'] ?? 'in');
+    const siteCountryName = @json($site['country_name'] ?? 'India');
+    const isGlobal = siteCountry === 'in';   // sirf Global (India) site par IP auto-detect
+    const hasOldCountry = @json((bool) old('country'));
+
     const itiContact = window.intlTelInput(phoneInput, {
-        initialCountry: "in",
+        initialCountry: siteCountry,
         separateDialCode: true,
         preferredCountries: ["in", "ae", "us", "gb"],
         utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js"
     });
 
-    fetch('https://ipwho.is/')
-        .then(res => res.json())
-        .then(data => {
-            if (!data || data.success === false || !data.country) return;
+    function selectCountryByName(name) {
+        if (!countrySelect || !name) return;
+        const target = name.trim().toLowerCase();
+        for (let i = 0; i < countrySelect.options.length; i++) {
+            if (countrySelect.options[i].text.trim().toLowerCase() === target) {
+                countrySelect.value = countrySelect.options[i].value;
+                return;
+            }
+        }
+    }
 
-            if (countrySelect) {
-                const options = countrySelect.options;
-                for (let i = 0; i < options.length; i++) {
-                    if (options[i].text.trim().toLowerCase() === data.country.trim().toLowerCase()) {
-                        countrySelect.value = options[i].value;
-                        break;
+    // Validation error ke baad purani selected country rehne do
+    if (hasOldCountry && countrySelect) {
+        countrySelect.value = @json(old('country'));
+    } else {
+        // Country dropdown ko current site par set karo
+        selectCountryByName(siteCountryName);
+
+        // Global site par hi IP se auto-detect; AU / UK / US par site ki country fixed rahegi
+        if (isGlobal) {
+            fetch('https://ipwho.is/')
+                .then(res => res.json())
+                .then(data => {
+                    if (!data || data.success === false || !data.country) return;
+                    selectCountryByName(data.country);
+                    if (data.country_code) {
+                        itiContact.setCountry(data.country_code.toLowerCase());
                     }
-                }
-            }
-
-            if (data.country_code) {
-                itiContact.setCountry(data.country_code.toLowerCase());
-            }
-        })
-        .catch(err => console.warn('Country auto-detect failed:', err));
+                })
+                .catch(err => console.warn('Country auto-detect failed:', err));
+        }
+    }
 
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
@@ -330,7 +313,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 </script>
-@endif
 @endsection
 
 @push('scripts')

@@ -5,14 +5,29 @@
     <div class="container">
       <nav>
         <div class="logo">
-          <a href="{{ $nav['home'] }}"><img src="{{ asset(!empty($header_overlay) ? 'public/front/images/common/logo-white.svg' : 'public/front/images/logo.svg') }}" loading="lazy" alt="logo"></a>
+          <a href="{{ route('front.home') }}"><img src="{{ asset(!empty($header_overlay) ? 'public/front/images/common/logo-white.svg' : 'public/front/images/logo.svg') }}" loading="lazy" alt="logo"></a>
         </div>
 
 
-        <div class="menu-toggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="mobile_header_right d-lg-none">
+          <div class="dropdown mobile_country_select">
+            <button class="mobile_country_btn" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Select country">
+              <img src="{{ asset('public/front/images/contry-icon/' . $nav['country']['flag']) }}" alt="{{ $nav['country']['name'] }}">
+              <svg width="12" height="7" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 1L9 9L1 1" stroke="#182653" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="dropdown-menu mobile_country_menu">
+              <li><a class="dropdown-item" href="{{ url('/') }}">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#182653" stroke-width="1.5"/><path d="M3 12H21" stroke="#182653" stroke-width="1.5"/><path d="M12 3C14.5 5.5 15.75 8.5 15.75 12C15.75 15.5 14.5 18.5 12 21C9.5 18.5 8.25 15.5 8.25 12C8.25 8.5 9.5 5.5 12 3Z" stroke="#182653" stroke-width="1.5"/></svg>
+                <span>Global</span></a></li>
+              <li><a class="dropdown-item" href="{{ url('au') }}"><img src="{{ asset('public/front/images/contry-icon/australia-icon.png') }}" alt="Australia"><span>AU</span></a></li>
+              <li><a class="dropdown-item" href="{{ url('uk') }}"><img src="{{ asset('public/front/images/contry-icon/uk-icon.png') }}" alt="UK"><span>UK</span></a></li>
+              <li><a class="dropdown-item" href="{{ url('us') }}"><img src="{{ asset('public/front/images/contry-icon/us-icon.png') }}" alt="US"><span>US</span></a></li>
+            </ul>
+          </div>
+
+          <div class="menu-toggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+            <span></span><span></span><span></span>
+          </div>
         </div>
 
         <div class="nav_links" id="navLinks">
@@ -72,7 +87,7 @@
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="{{ url('aus') }}">
+                <a class="dropdown-item" href="{{ url('au') }}">
                   <img src="{{asset('public/front/images/contry-icon/australia-icon.png')}}" alt="Australia">
                   <span>AU</span>
                 </a>
@@ -101,8 +116,15 @@
 
     <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasRight">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title">Menu</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      <a href="{{ url('/') }}" class="offcanvas-logo">
+        <img src="{{ asset('public/front/images/logo.svg') }}" alt="PCS Global">
+      </a>
+      <div class="offcanvas-head-right">
+        <span class="offcanvas-flag">
+          <img src="{{ asset('public/front/images/contry-icon/' . $nav['country']['flag']) }}" alt="{{ $nav['country']['name'] }}">
+        </span>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
     </div>
 
     <div class="offcanvas-body">
@@ -117,22 +139,20 @@
             <!--<li><a href="#" class="next-menu" data-target="menu-products">Products <span>&rsaquo;</span></a></li>-->
             <li><a href="{{ $nav['data_security'] }}" target="_blank" rel="noopener">Data Security</a></li>
             <li><a href="{{ $nav['blog'] }}" target="_blank" rel="noopener">Blogs</a></li>
-            <li><a href="{{ $nav['contact'] }}">Contact Us</a></li>
-            <li><a href="#">Country: {{ $nav['country']['name'] }} <span class="next-menu" data-target="menu-country">&rsaquo;</span></a></li>
-            <li><a href="tel:{{ $nav['phone']['tel'] }}">📞 Call Us: {{ $nav['phone']['label'] }}</a></li>
           </ul>
 
 
              <div class="mt-4 text-center">
-                  <a class="com_btn1 color-animated-button bubble-btn" href="tel:{{ $nav['phone']['tel'] }}">
+                  <a class="com_btn1 color-animated-button bubble-btn" href="javascript:void(0)"
+                     data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-dismiss="offcanvas">
                 <span class="color-button__background"></span>
                 <span class="color-button__bubble-container"><span class="color-button__bubble"></span></span>
-                <span class="color-button__label relative z-10 me-2">Request A Call</span>
-                <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <span class="color-button__label relative z-10 me-2">Contact Us</span>
+                {{-- <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M2.51 1L6.15 1.13C6.92 1.16 7.6 1.64 7.89 2.37L8.97 5.03C9.22 5.65 9.15 6.36 8.79 6.92L7.41 9.04C8.22 10.21 10.44 12.96 12.79 14.56L14.55 13.48C15 13.21 15.53 13.13 16.03 13.26L19.52 14.15C20.44 14.39 21.07 15.28 20.99 16.26L20.77 19.24C20.69 20.29 19.84 21.11 18.82 20.99C5.39 19.43 -2.48 1 2.51 1Z"
                     stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+                </svg> --}}
               </a>
              </div>
 
@@ -153,8 +173,6 @@
           </ul>
         </div>
       </div>
-
-      @include('partials.mobile-countries')
 
     </div>
   </div>

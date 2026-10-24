@@ -1,6 +1,6 @@
 # PCS website: file structure guide
 
-4 country sites ek hi Laravel project me hain: **India / Global** (main, `/`), **Australia** (`/aus`), **US** (`/us`), **UK** (`/uk`).
+4 country sites ek hi Laravel project me hain: **India / Global** (main, `/`), **Australia** (`/au`), **US** (`/us`), **UK** (`/uk`).
 Structure standard Laravel jaisa hai: **route group → controller → page view (`@extends` layout) → components / partials**.
 
 ---
@@ -27,13 +27,13 @@ resources/views/layouts/app.blade.php     <html>: head, header, @yield('content'
 | Page | URL | View |
 |---|---|---|
 | India home | `/` | `pages/india/home.blade.php` |
-| Australia / US / UK home | `/aus`, `/us`, `/uk` | `pages/<country>/home.blade.php` (controller: `CountryHomeController`) |
-| About | `/about`, `/aus/about`, `/us/about` | `pages/shared/about.blade.php` (UK: `pages/uk/uk_about.blade.php`) |
+| Australia / US / UK home | `/au`, `/us`, `/uk` | `pages/<country>/home.blade.php` (controller: `CountryHomeController`) |
+| About | `/about`, `/au/about`, `/us/about` | `pages/shared/about.blade.php` (UK: `pages/uk/uk_about.blade.php`) |
 | Contact | `/contact-us`, `/<country>/contact-us` | `pages/shared/contact.blade.php` |
-| Strata management | `/strata-management`, `/aus/strata-management` | `pages/shared/strata-management.blade.php` |
+| Strata management | `/strata-management`, `/au/strata-management` | `pages/shared/strata-management.blade.php` |
 | Blogs + blog detail | `/blog`, `/blogs/{url}` | `pages/shared/blogs.blade.php`, `blogs-details.blade.php` |
-| 404 | koi bhi galat URL | `errors/404.blade.php` (`/aus/...` par Australia header/footer) |
-| Baaki country pages | `/aus/taxation-services`, `/uk/...` ... | `pages/<country>/...` |
+| 404 | koi bhi galat URL | `errors/404.blade.php` (`/au/...` par Australia header/footer) |
+| Baaki country pages | `/au/taxation-services`, `/uk/...` ... | `pages/<country>/...` |
 
 > `pages/shared/` ka ek hi page sab countries me chalta hai. Header/footer route group ki country ka lagta hai (`$site`).
 

@@ -11,17 +11,17 @@
 
     $serviceCards = [
         ['title' => 'Accounting Outsourcing', 'img' => $img('figma-precision/accounting-outsourcing.png'), 'url' => $uk('accounting-outsourcing-services'),
-         'text' => 'Producing accurate, up-to-date accounts requires ongoing time and attention that in-house teams often cannot spare. We manage the complete cycle for you, including reconciliations, ledgers and both the month-end and year-end close, prepared to UK standards. This gives you a clear and current view of your financial position at any time. Because there is no permanent team on your payroll, this expertise comes at a lower cost.'],
+         'text' => 'We manage the complete accounting cycle, including reconciliations, ledgers, and month-end and year-end close, prepared to UK standards. This gives you an up-to-date view of your financial position at a lower cost, without a permanent in-house team.'],
         ['title' => 'Small Business Accounting', 'img' => $img('common/services/bookkeeping-team.jpg'), 'url' => $uk('small-business-accounting-services'),
-         'text' => 'Startup UK businesses require a full finance function but rarely can justify a permanent team to run it. PCS Global provides that function on an outsourced basis, managing your day-to-day accounts, reporting and compliance so nothing is overlooked. You receive accurate records, clear figures and consistent support, all aligned with how your business operates.'],
+         'text' => 'Startup UK businesses need a full finance function but rarely can justify a permanent team. We manage day-to-day accounts, reporting and compliance, providing accurate records, clear figures and consistent support aligned with how your business operates.'],
         ['title' => 'Bookkeeping Outsourcing', 'img' => $img('common/services/tax-team.jpg'), 'url' => $uk('accounting-outsourcing-services'),
-         'text' => 'Reliable financial information begins with well-maintained bookkeeping, as every report and return depends on it. Our team records and reconciles transactions on an ongoing basis, so your records remain current and your figures reliable. We work within your existing software, leaving your systems unchanged. The outcome is a complete and accurate set of books maintained throughout the year.'],
+         'text' => 'Our team records and reconciles transactions on an ongoing basis, keeping your financial records current and reliable. We work within your existing software, leaving your systems unchanged while maintaining complete and accurate books throughout the year.'],
         ['title' => 'Tax Preparation Outsourcing', 'img' => $img('uk/service-tax.jpg'), 'url' => $uk('outsource-tax-preparation-services'),
-         'text' => 'For UK businesses, tax is one of the most demanding areas of compliance, particularly as filing deadlines approach. We prepare and review your returns to HMRC requirements and submit them before the deadline. Our specialists remain updated with the rules that apply to your circumstances, which minimises errors and prevents late submissions.'],
+         'text' => 'We prepare and review your tax returns to HMRC requirements and submit them before the deadline. Our specialists stay updated with the rules applicable to your circumstances, minimising errors and helping prevent late submissions.'],
         ['title' => 'Payroll Outsourcing', 'img' => $img('figma-precision/payroll-outsourcing.png'), 'url' => $consult,
-         'text' => 'Payroll allows no margin for error, as employees rightly expect to be paid correctly and on time. We manage the entire process, including pay runs, PAYE, Real Time Information submissions to HMRC and workplace pension contributions. Each cycle is verified and completed on schedule. This ensures your staff are paid accurately and on time.'],
+         'text' => 'We manage the entire payroll process, including pay runs, PAYE, Real Time Information submissions to HMRC and workplace pension contributions. Each cycle is verified and completed on schedule, ensuring your staff are paid accurately and on time.'],
         ['title' => 'VAT Outsourcing', 'img' => $img('uk/service-vat-b3d697.jpg'), 'url' => $consult,
-         'text' => 'VAT is one of the more error-prone areas of UK tax, and mistakes can prove costly. We manage the process from calculation to submission, determining what is due, reconciling it against your records, and filing under Making Tax Digital ahead of the deadline. Every return is reviewed before it is submitted to HMRC. This removes a demanding recurring task and reduces the risk of penalties.'],
+         'text' => 'We manage VAT from calculation to submission, reconciling amounts against your records and filing under Making Tax Digital (MTD) ahead of the deadline. Every return is reviewed before submission to HMRC, reducing the risk of errors and penalties.'],
     ];
 
     // Figma me in cards ka text Australia wala tha (AASB / GST / ATO); UK ke hisab se likha gaya hai
@@ -31,7 +31,7 @@
          'text' => 'For accounting practices, we operate as a discreet extension of your team, completing client work under your own brand. Our support covers client bookkeeping, accounts preparation, management accounts, tax preparation support, VAT, payroll, audit support and wider back-office accounting. All work is completed to your standards and returned ready for review, so your clients deal only with your firm.'],
         ['title' => 'Outsourcing for UK Businesses & SMEs', 'img' => $img('uk/client-2-372b2d.jpg'),
          'button' => ['Explore Small Business Accounting', $uk('small-business-accounting-services')],
-         'text' => 'When finance administration draws your team away from running the business, outsourcing restores that focus. We manage bookkeeping, financial reporting, payroll, VAT, tax preparation, accounts payable and receivable, and management accounting, in whatever combination you require. The work is accurate, compliant and aligned with your operations. As an effective route to accounting outsourcing for UK SMEs, it provides the financial capability of a far larger organisation without the cost of building one in-house.'],
+         'text' => 'When finance administration distracts your team from running the business, outsourcing restores that focus. We manage bookkeeping, financial reporting, payroll, VAT, tax preparation, accounts payable and receivable, and management accounting to suit your needs. Our accurate, compliant support gives UK SMEs the financial capabilities of a larger organisation without the cost of building an in-house team.'],
     ];
 
     $standards = [
@@ -108,7 +108,7 @@
 @endphp
 <section class="hero_dark">
     <img class="hero_dark_bg" src="{{ $img('common/hero-bg.png') }}" alt="" aria-hidden="true">
-    <img class="hero_dark_person" src="{{ $img('uk/hero-person-5cb7ed.png') }}" alt="">
+    <img class="hero_dark_person" src="{{ $img('uk/UK-hero.webp') }}" alt="">
     <div class="container">
         <div class="hero_dark_content">
             <div class="hero_dark_text">
@@ -180,7 +180,7 @@
     <div class="container">
         <div class="com_sec_head_top">
             <h2 class="mb-2 mb-xxl-4">Outsourcing Financial Services We Provide in the United Kingdom</h2>
-            <p>When routine finance tasks take up more of your team's time than they should, outsourcing returns that time to higher-value work. PCS Global manages the full range of outsourced finance and accounting functions UK businesses and firms require, available as a single service or a complete solution.</p>
+            <p>When routine finance tasks take up more of your team's time than they should, outsourcing returns that time to higher-value work.PCS Global provides outsourced finance and accounting services for UK businesses and firms, available as a single service or a complete solution.</p>
         </div>
 
         {{-- cards 3 ke multiple na hon to aakhri row center me --}}
@@ -234,23 +234,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const segs = document.querySelectorAll('#trustSliderProgress .trust_slider_seg');
     if (!track || !segs.length) return;
 
-    const cards = () => Array.from(track.querySelectorAll('.trust_slide'));
+    const originalCards = Array.from(track.querySelectorAll('.trust_slide'));
+    const loopCards = originalCards.map((card) => {
+        const clone = card.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        clone.querySelectorAll('a, button, input, select, textarea, [tabindex]').forEach((element) => element.setAttribute('tabindex', '-1'));
+        track.appendChild(clone);
+        return clone;
+    });
     const cardLeft = (card) => card.offsetLeft - track.firstElementChild.offsetLeft;
+    const cycleWidth = () => cardLeft(loopCards[0]);
 
-    // jo card track ke left edge ke sabse paas hai wahi active; end tak scroll ho gaya ho to aakhri card
     function updateProgress() {
-        const list = cards();
-        const maxScroll = track.scrollWidth - track.clientWidth;
+        const width = cycleWidth();
+        const position = width > 0 ? track.scrollLeft % width : track.scrollLeft;
         let active = 0;
-        if (maxScroll > 0 && track.scrollLeft >= maxScroll - 2) {
-            active = list.length - 1;
-        } else {
-            let best = Infinity;
-            list.forEach((card, i) => {
-                const d = Math.abs(cardLeft(card) - track.scrollLeft);
-                if (d < best) { best = d; active = i; }
-            });
-        }
+        let best = Infinity;
+        originalCards.forEach((card, i) => {
+            const distance = Math.abs(cardLeft(card) - position);
+            if (distance < best) { best = distance; active = i; }
+        });
         segs.forEach((seg, i) => seg.classList.toggle('active', i === active));
     }
 
@@ -261,14 +264,23 @@ document.addEventListener("DOMContentLoaded", () => {
         track.scrollBy({ left: direction * (card.offsetWidth + gap), behavior: 'smooth' });
     }
 
+    function autoSlide() {
+        scrollByCard(1);
+    }
+
     segs.forEach((seg, i) => seg.addEventListener('click', () => {
-        const card = cards()[i];
+        const card = originalCards[i];
         if (card) track.scrollTo({ left: cardLeft(card), behavior: 'smooth' });
     }));
 
     prevBtn && prevBtn.addEventListener('click', () => scrollByCard(-1));
     nextBtn && nextBtn.addEventListener('click', () => scrollByCard(1));
-    track.addEventListener('scroll', updateProgress);
+    track.addEventListener('scroll', () => {
+        const width = cycleWidth();
+        while (width > 0 && track.scrollLeft >= width) track.scrollLeft -= width;
+        updateProgress();
+    });
+    window.setInterval(autoSlide, 4000);
     updateProgress();
 });
 </script>
@@ -363,10 +375,11 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="container">
         <div class="com_sec_head_top">
             <h2 class="mb-2 mb-xxl-4">How Does PCS Global Work With UK Clients?</h2>
-            <p>Beginning a partnership with PCS Global is a clear and structured process, designed to be simple and low-risk for you. Outsourcing accounting work to India is often assumed to be complex, yet our structured onboarding makes it straightforward and secure. In five stages, you move from a first conversation to a fully embedded team working alongside your own.</p>
+            <p>Working with PCS Global follows a clear, structured process designed to make accounting outsourcing from India simple, secure and low-risk. Across five stages, we take you from the initial conversation to a dedicated team integrated with your business, working seamlessly alongside your own staff.
+</p>
         </div>
 
-        <div class="process_steps">
+        <div class="process_steps" data-slider data-slider-controls="slider4" data-slider-show="3" data-slider-controls-visible="{{ count($processStepsSteps) > 3 ? 'true' : 'false' }}">
             @foreach ($processStepsSteps as $step)
                 <div class="process_card">
                     <div class="process_head">
@@ -381,6 +394,27 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </div>
             @endforeach
+        </div>
+        <div class="our_experts_bot slider4-controls">
+            <div class="experts_info">
+                <div class="circular-progress slider4-progress">
+                    <div class="inner-circle"></div>
+                </div>
+                <p class="experts_counter slider4-counter"></p>
+            </div>
+            <hr>
+            <div class="slick_arrow">
+                <span class="arrow-prev slider4-prev" aria-label="Previous">
+                    <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M1 6.32861L6 11.3286M1 6.32861L6 1.32861M1 6.32861H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+                <span class="arrow-next slider4-next" aria-label="Next">
+                    <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M19 6.32861L14 11.3286M19 6.32861L14 1.32861M19 6.32861H1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+            </div>
         </div>
     </div>
 </section>
@@ -400,10 +434,16 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="cert_tools_panel active" data-panel="certifications">
         <div class="container">
             <div class="cert_badges_row">
-                @foreach ($certToolsCerts as [$imgCertTools, $alt])
-                    <span class="cert_badge"><img src="{{ $imgCertTools }}" alt="{{ $alt }}" loading="lazy"></span>
-                @endforeach
-            </div>
+    <div class="cert_badges_track">
+        @foreach ([1, 2] as $pass)
+            @foreach ($certToolsCerts as [$imgCertTools, $alt])
+                <span class="cert_badge {{ $pass === 2 ? 'cert_dup' : '' }}" @if($pass === 2) aria-hidden="true" @endif>
+                    <img src="{{ $imgCertTools }}" alt="{{ $pass === 2 ? '' : $alt }}" loading="lazy">
+                </span>
+            @endforeach
+        @endforeach
+    </div>
+</div>
         </div>
     </div>
 
@@ -570,7 +610,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <img class="cta_dark_bg" src="{{ $img('common/cta-bg.png') }}" alt="" aria-hidden="true">
             <div class="cta_dark_in">
                 <h2>Ready to Strengthen Your Accounting Support?</h2>
-                <a class="com_btn_outline com_btn_outline_light"  href="tel:+441134034334" >
+                <a class="com_btn_outline com_btn_outline_light" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Book a Free Consultation
                 </a>
             </div>
@@ -776,7 +816,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         <form id="contactBandForm" class="validated-form contact_band_form" action="{{ route('request.store') }}" method="POST" novalidate>
             @csrf
-            <input type="hidden" name="country" value="United Kingdom">
+            <input type="hidden" name="form_type" value="UK Footer Form">
+            <input type="hidden" name="country" id="cfCountry" value="United Kingdom">
             <input type="hidden" name="full_phone" id="cfFullPhone">
             {{-- Honeypot (bots ke liye) --}}
             <div style="display:none;">
@@ -799,15 +840,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     <input type="tel" name="phone" id="cfPhone" maxlength="15" minlength="10" placeholder="Phone Number*:" aria-label="Phone Number"
                         oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
                 </div>
-                <div class="col-lg-6 col-12 cf_field">
+                {{-- <div class="col-lg-6 col-12 cf_field">
+                    <input type="text" name="city" maxlength="100" placeholder="Enter your City*:" aria-label="City" required>
+                </div> --}}
+                <!-- <div class="col-lg-6 col-12 cf_field">
                     <select name="city" aria-label="Select City" required>
                         <option value="" hidden>Select City*:</option>
-                        @foreach ($contactFormCities as $city)
+                        {{-- @foreach ($contactFormCities as $city)
                             <option value="{{ $city }}">{{ $city }}</option>
-                        @endforeach
+                        @endforeach --}}
                     </select>
-                </div>
-                <div class="col-lg-6 col-12 cf_field">
+                </div> -->
+                <div class="col-12 cf_field">
                     <select name="service" aria-label="Choose Service" required>
                         <option value="" hidden>Choose Service*:</option>
                         @foreach ($contactFormServices as $service)
@@ -837,7 +881,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-<script>
+{{-- <script>
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contactBandForm');
     const phone = document.getElementById('cfPhone');
@@ -858,6 +902,43 @@ document.addEventListener('DOMContentLoaded', function () {
             form.reportValidity();
             return;
         }
+        fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
+    }, true);
+});
+</script> --}}
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contactBandForm');
+    const phone = document.getElementById('cfPhone');
+    const fullPhone = document.getElementById('cfFullPhone');
+    const countryInput = document.getElementById('cfCountry');
+    if (!form || !phone || !window.intlTelInput) return;
+
+    const iti = window.intlTelInput(phone, {
+        initialCountry: @json('gb'),
+        separateDialCode: true,
+        utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js'
+    });
+
+    // flag me jo country select ho, wahi "country" field me jaye
+    function syncCountry() {
+        const d = iti.getSelectedCountryData();
+        if (d && d.name && countryInput) {
+            countryInput.value = d.name.replace(/\s*\(.*\)\s*$/, '');
+        }
+    }
+    syncCountry();
+    phone.addEventListener('countrychange', syncCountry);
+
+    form.addEventListener('submit', function (e) {
+        if (!form.checkValidity()) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            form.reportValidity();
+            return;
+        }
+        syncCountry();
         fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
     }, true);
 });

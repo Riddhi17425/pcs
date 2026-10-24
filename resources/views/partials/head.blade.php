@@ -11,7 +11,11 @@
     <meta property="og:image:height" content="627">
     <meta property="og:url" content="{{url()->current()}}" />
     <meta property="og:type" content="website">
-    <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+    @if (request()->is('au/about', 'uk/about', 'us/about', 'au/contact-us', 'uk/contact-us', 'us/contact-us'))
+    <meta name="robots" content="noindex, nofollow">
+    @else
+    <meta name="robots" content="index, follow">
+    @endif
 
   <link rel="canonical" href="{{ url()->current() }}" />
   <link rel="icon" href="{{asset('public/front/images/fab_icon.png')}}" type="image/x-icon">

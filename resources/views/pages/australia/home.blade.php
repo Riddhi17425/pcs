@@ -1,4 +1,4 @@
-{{-- Australia home page (/aus). Controller: CountryHomeController@home (team / logos / blogs DB se: $ourexpert, $images, $blogs).
+{{-- Australia home page (/au). Controller: CountryHomeController@home (team / logos / blogs DB se: $ourexpert, $images, $blogs).
      Har section seedha Blade/HTML me likha hai (upar data ka PHP block, neeche markup); CSS: STRUCTURE.md ka section-table dekho.
      Text / images badalne ho to isi file me badlo. --}}
 @extends('layouts.app', ['header_overlay' => true])
@@ -6,9 +6,12 @@
 @section('content')
 @php
     $img = fn ($file) => asset('public/front/images/' . $file);
-    $au = fn ($path) => url('aus/' . $path);
+    $au = fn ($path) => url('au/' . $path);
 
     $serviceCards = [
+
+        ['title' => 'Strata Management Services', 'img' => $img('figma-precision/strata-management-services-ae35ad.png'), 'url' => $au('strata-management'),
+         'text' => 'Strata finances are detailed and heavily governed by deadlines. Our specialists manage the financial side of your schemes and portfolios, from budgets and levies through to invoicing and owner reporting, keeping records accurate and reporting clear. '],
         ['title' => 'Accounting Outsourcing', 'img' => $img('figma-precision/accounting-outsourcing.png'), 'url' => $au('bookkeeping-accounting-services'),
          'text' => 'Updating accurate accounts requires time and effort, which many teams cannot afford. We take care of reconciliations, ledgers, and month-end closing, ensuring you have the right visibility to your financial standing at a fraction of the cost. '],
         ['title' => 'Bookkeeping Outsourcing', 'img' => $img('figma-precision/bookkeeping-outsourcing-5d38e9.png'), 'url' => $au('bookkeeping-accounting-services'),
@@ -17,10 +20,9 @@
          'text' => 'Tax obligations place real demands on any business, particularly as deadlines approach. We prepare and review your returns in line with Australian Tax compliances, verify the details, and lodge them on time, reducing errors and missed deadlines. '],
         ['title' => 'BAS/IAS Return Services', 'img' => $img('figma-precision/bas-ias-return-services.png'), 'url' => $au('taxation-services'),
          'text' => 'Installment activity statements are a recurring obligation that leaves little room for error. We manage your Business and Instalment Activity Statements, calculating GST and PAYG, reconciling records, and lodging accurate statements on time without the recurring pressure. '],
-        ['title' => 'Payroll Outsourcing', 'img' => $img('figma-precision/payroll-outsourcing.png'), 'url' => url('aus') . '#consultation',
+        ['title' => 'Payroll Outsourcing', 'img' => $img('figma-precision/payroll-outsourcing.png'), 'url' => url('au') . '#consultation',
          'text' => 'Payroll is among the most sensitive functions in any business, and accuracy is not optional. We manage pay runs, PAYG, superannuation, leave and Single Touch Payroll reporting to the ATO, ensuring employees are paid correctly and your business remains compliant.'],
-        ['title' => 'Strata Management Services', 'img' => $img('figma-precision/strata-management-services-ae35ad.png'), 'url' => $au('strata-management'),
-         'text' => 'Strata finances are detailed and heavily governed by deadlines. Our specialists manage the financial side of your schemes and portfolios, from budgets and levies through to invoicing and owner reporting, keeping records accurate and reporting clear. '],
+        
     ];
 
     $clientSlides = [
@@ -56,7 +58,7 @@
     $ind = fn ($name) => $img("common/industries/$name.svg");
     $industries = [
         [[$ind('accounting'), 'Accounting & Auditing'], [$ind('construction'), 'Construction'], [$ind('real-estate'), 'Real Estate & Property'], [$ind('strata'), 'Strata Management'], [$ind('manufacturing'), 'Manufacturing']],
-        [[$ind('professional-services'), 'Professional Services'], [$ind('legal'), 'Legal Services'], [$ind('healthcare'), 'Healthcare'], [$ind('ecommerce'), 'E-commerce & Retail'], [$ind('professional-services'), 'Other relevant industries']],
+        [[$ind('professional-services'), 'Professional Services'], [$ind('legal'), 'Legal Services'], [$ind('healthcare'), 'Healthcare'], [$ind('ecommerce'), 'E-commerce & Retail']],
     ];
 
     $processSteps = [
@@ -128,7 +130,7 @@
 @endphp
 <section class="hero_dark">
     <img class="hero_dark_bg" src="{{ $img('common/hero-bg.png') }}" alt="" aria-hidden="true">
-    <img class="hero_dark_person" src="{{ $img('australia/hero-person.png') }}" alt="">
+    <img class="hero_dark_person" src="{{ $img('australia/Australia-hero.webp') }}" alt="">
     <div class="container">
         <div class="hero_dark_content">
             <div class="hero_dark_text">
@@ -272,23 +274,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const segs = document.querySelectorAll('#trustSliderProgress .trust_slider_seg');
     if (!track || !segs.length) return;
 
-    const cards = () => Array.from(track.querySelectorAll('.trust_slide'));
+    const originalCards = Array.from(track.querySelectorAll('.trust_slide'));
+    const loopCards = originalCards.map((card) => {
+        const clone = card.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        clone.querySelectorAll('a, button, input, select, textarea, [tabindex]').forEach((element) => element.setAttribute('tabindex', '-1'));
+        track.appendChild(clone);
+        return clone;
+    });
     const cardLeft = (card) => card.offsetLeft - track.firstElementChild.offsetLeft;
+    const cycleWidth = () => cardLeft(loopCards[0]);
 
-    // jo card track ke left edge ke sabse paas hai wahi active; end tak scroll ho gaya ho to aakhri card
     function updateProgress() {
-        const list = cards();
-        const maxScroll = track.scrollWidth - track.clientWidth;
+        const width = cycleWidth();
+        const position = width > 0 ? track.scrollLeft % width : track.scrollLeft;
         let active = 0;
-        if (maxScroll > 0 && track.scrollLeft >= maxScroll - 2) {
-            active = list.length - 1;
-        } else {
-            let best = Infinity;
-            list.forEach((card, i) => {
-                const d = Math.abs(cardLeft(card) - track.scrollLeft);
-                if (d < best) { best = d; active = i; }
-            });
-        }
+        let best = Infinity;
+        originalCards.forEach((card, i) => {
+            const distance = Math.abs(cardLeft(card) - position);
+            if (distance < best) { best = distance; active = i; }
+        });
         segs.forEach((seg, i) => seg.classList.toggle('active', i === active));
     }
 
@@ -299,14 +304,23 @@ document.addEventListener("DOMContentLoaded", () => {
         track.scrollBy({ left: direction * (card.offsetWidth + gap), behavior: 'smooth' });
     }
 
+    function autoSlide() {
+        scrollByCard(1);
+    }
+
     segs.forEach((seg, i) => seg.addEventListener('click', () => {
-        const card = cards()[i];
+        const card = originalCards[i];
         if (card) track.scrollTo({ left: cardLeft(card), behavior: 'smooth' });
     }));
 
     prevBtn && prevBtn.addEventListener('click', () => scrollByCard(-1));
     nextBtn && nextBtn.addEventListener('click', () => scrollByCard(1));
-    track.addEventListener('scroll', updateProgress);
+    track.addEventListener('scroll', () => {
+        const width = cycleWidth();
+        while (width > 0 && track.scrollLeft >= width) track.scrollLeft -= width;
+        updateProgress();
+    });
+    window.setInterval(autoSlide, 4000);
     updateProgress();
 });
 </script>
@@ -404,7 +418,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>Working with PCS Global follows a clear, structured process designed to make accounting outsourcing simple and secure. These five steps take you from the initial discussion to a dedicated team working as an extension of your own. </p>
         </div>
 
-        <div class="process_steps">
+        <div class="process_steps" data-slider data-slider-controls="slider4" data-slider-show="3" data-slider-controls-visible="{{ count($processStepsSteps) > 3 ? 'true' : 'false' }}">
             @foreach ($processStepsSteps as $step)
                 <div class="process_card">
                     <div class="process_head">
@@ -419,6 +433,27 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </div>
             @endforeach
+        </div>
+        <div class="our_experts_bot slider4-controls">
+            <div class="experts_info">
+                <div class="circular-progress slider4-progress">
+                    <div class="inner-circle"></div>
+                </div>
+                <p class="experts_counter slider4-counter"></p>
+            </div>
+            <hr>
+            <div class="slick_arrow">
+                <span class="arrow-prev slider4-prev" aria-label="Previous">
+                    <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M1 6.32861L6 11.3286M1 6.32861L6 1.32861M1 6.32861H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+                <span class="arrow-next slider4-next" aria-label="Next">
+                    <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M19 6.32861L14 11.3286M19 6.32861L14 1.32861M19 6.32861H1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+            </div>
         </div>
     </div>
 </section>
@@ -438,10 +473,16 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="cert_tools_panel active" data-panel="certifications">
         <div class="container">
             <div class="cert_badges_row">
-                @foreach ($certToolsCerts as [$imgCertTools, $alt])
-                    <span class="cert_badge"><img src="{{ $imgCertTools }}" alt="{{ $alt }}" loading="lazy"></span>
-                @endforeach
-            </div>
+    <div class="cert_badges_track">
+        @foreach ([1, 2] as $pass)
+            @foreach ($certToolsCerts as [$imgCertTools, $alt])
+                <span class="cert_badge {{ $pass === 2 ? 'cert_dup' : '' }}" @if($pass === 2) aria-hidden="true" @endif>
+                    <img src="{{ $imgCertTools }}" alt="{{ $pass === 2 ? '' : $alt }}" loading="lazy">
+                </span>
+            @endforeach
+        @endforeach
+    </div>
+</div>
         </div>
     </div>
 
@@ -609,7 +650,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <img class="cta_dark_bg" src="{{ $img('common/cta-bg.png') }}" alt="" aria-hidden="true">
             <div class="cta_dark_in">
                 <h2>Ready to Streamline Your Accounting work with PCS Global?</h2>
-                <a class="com_btn_outline com_btn_outline_light"  href="tel:+61399980494" >
+                <a class="com_btn_outline com_btn_outline_light" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Book a Free Consultation
                 </a>
             </div>
@@ -815,7 +856,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         <form id="contactBandForm" class="validated-form contact_band_form" action="{{ route('request.store') }}" method="POST" novalidate>
             @csrf
-            <input type="hidden" name="country" value="Australia">
+            <input type="hidden" name="form_type" value="Australia Footer Form">
+            <input type="hidden" name="country" id="cfCountry" value="Australia">
             <input type="hidden" name="full_phone" id="cfFullPhone">
             {{-- Honeypot (bots ke liye) --}}
             <div style="display:none;">
@@ -838,15 +880,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     <input type="tel" name="phone" id="cfPhone" maxlength="15" minlength="10" placeholder="Phone Number*:" aria-label="Phone Number"
                         oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
                 </div>
-                <div class="col-lg-6 col-12 cf_field">
-                    <select name="city" aria-label="Select City" required>
-                        <option value="" hidden>Select City*:</option>
-                        @foreach ($contactFormCities as $city)
+               {{-- <div class="col-lg-6 col-12 cf_field">
+                    <input type="text" name="city" maxlength="100" placeholder="Enter your City*:" aria-label="City" required> --}}
+
+
+                    <!-- <select name="city" aria-label="Select City">
+                        <option value="" hidden>City:</option>
+                        {{-- @foreach ($contactFormCities as $city)
                             <option value="{{ $city }}">{{ $city }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="col-lg-6 col-12 cf_field">
+                        @endforeach --}}
+                    </select> -->
+                {{-- </div> --}}
+                <div class="col-12 cf_field">
                     <select name="service" aria-label="Choose Service" required>
                         <option value="" hidden>Choose Service*:</option>
                         @foreach ($contactFormServices as $service)
@@ -876,7 +921,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-<script>
+{{-- <script>
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contactBandForm');
     const phone = document.getElementById('cfPhone');
@@ -897,6 +942,44 @@ document.addEventListener('DOMContentLoaded', function () {
             form.reportValidity();
             return;
         }
+        fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
+    }, true);
+});
+</script> --}}
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contactBandForm');
+    const phone = document.getElementById('cfPhone');
+    const fullPhone = document.getElementById('cfFullPhone');
+    const countryInput = document.getElementById('cfCountry');
+    if (!form || !phone || !window.intlTelInput) return;
+
+    const iti = window.intlTelInput(phone, {
+        initialCountry: @json('au'),
+        separateDialCode: true,
+        utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js'
+    });
+
+    // flag me jo country select ho, wahi "country" field me jaye
+    function syncCountry() {
+        const d = iti.getSelectedCountryData();
+        if (d && d.name && countryInput) {
+            countryInput.value = d.name.replace(/\s*\(.*\)\s*$/, '');
+        }
+    }
+    syncCountry();
+    phone.addEventListener('countrychange', syncCountry);
+
+    form.addEventListener('submit', function (e) {
+        if (!form.checkValidity()) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            form.reportValidity();
+            return;
+        }
+        syncCountry();
         fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
     }, true);
 });

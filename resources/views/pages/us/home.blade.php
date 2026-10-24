@@ -11,24 +11,25 @@
 
     $serviceCards = [
         ['title' => 'Accounting Outsourcing Services', 'img' => $img('figma-precision/accounting-outsourcing.png'), 'url' => $us('bookkeeping-and-accounting-services'),
-         'text' => 'Keeping your accounts accurate and current is demanding, and for many US companies it draws focus away from running the business. We take on the full accounting cycle, from reconciliations and the general ledger to closing your books each month and at year-end, all to US GAAP. You get a clear, current picture of your finances whenever you need it. And because you are not carrying a full in-house team, the cost is considerably lower.'],
+         'text' => 'We manage the full accounting cycle, from reconciliations and general ledger maintenance to monthly and year-end closing, in line with US GAAP. You get accurate, up-to-date financial records and a clear picture of your finances at a lower cost than maintaining a full in-house team.'],
         ['title' => 'Bookkeeping Outsourcing Services', 'img' => $img('common/services/bookkeeping-team.webp'), 'url' => $us('bookkeeping-and-accounting-services'),
-         'text' => 'Accurate books are the foundation everything else is built on, from tax filings to financial reporting. We log and match every transaction as it comes through, keeping your records current and your numbers something you can trust. We work inside the software your business already runs on, so nothing about your setup has to change. The result is clean, reliable books maintained month after month.'],
+         'text' => 'We record and match transactions to keep your financial records accurate, organized, and current. Working with your existing accounting software, we maintain reliable books month after month, supporting smoother tax filings and financial reporting without changing your setup.'],
         ['title' => 'Outsourced Tax Preparation Services', 'img' => $img('common/services/tax-team.jpg'), 'url' => $us('taxation-services'),
-         'text' => 'Tax season places real strain on US businesses and CPA firms alike. We provide tax preparation support that gets returns organized, reviewed, and ready to file on schedule, easing the pressure when it peaks. Our team stays current on the federal and state rules that affect your filings, which reduces errors and last-minute surprises. You receive accurate, well-prepared returns and a far smoother season.'],
+         'text' => 'We help US businesses and CPA firms organize, review, and prepare tax returns for timely filing. Our team stays current on applicable federal and state tax rules, helping reduce errors, avoid last-minute surprises, and make tax season more manageable.'],
         ['title' => 'Payroll Outsourcing Services', 'img' => $img('us/service-4.jpg'), 'url' => $consult,
-         'text' => 'Payroll is one area where employees notice mistakes immediately, so accuracy matters in every cycle. We manage the full process, including pay runs, withholdings, and the associated payroll tax filings, all processed correctly and on time. Your people are paid accurately, and your compliance obligations are met without adding to your team\'s workload. It removes a recurring, high-stakes responsibility from your team.'],
+         'text' => 'We manage payroll processing, withholdings, and related payroll tax filings accurately and on time. Our support helps ensure employees are paid correctly and compliance obligations are met, removing a recurring responsibility from your team\'s workload.'],
         ['title' => 'Outsourced Audit Support Services', 'img' => $img('us/service-5.jpg'), 'url' => $consult,
-         'text' => 'Audits seem a lot less painful when your papers are in order, and the work is done. We get your schedules, reconciliations, and backup documentation ready so that when it comes time for your audit, your auditor does not have to look far to find the information needed. We help facilitate an easier, smoother audit with less interruption to your employees\' work.'],
+         'text' => 'We prepare audit schedules, reconciliations, and supporting documentation so auditors can access the information they need. With organized records and documentation ready, we help streamline the audit process and minimize disruption to your employees\' daily work.'],
     ];
 
     $clientCards = [
-        ['title' => 'Accounting Outsourcing for US Businesses', 'img' => $img('us/client-2.jpg'),
-         'text' => 'We work with small and mid-sized companies, to fast-growing companies and those with slender finance teams, providing the extra support your business needs. For businesses with seasonal accounting cycles, we ramp up during the accounting high seasons, and ease down as those high seasons wrap up. It is a smart, scalable way to manage a larger in-house team. '],
-        ['title' => 'Accounting Outsourcing for US Accounting & CPA Firms', 'img' => $img('us/client-1-182ac9.jpg'),
-         'text' => 'We handle bookkeeping, accounting back-office work, tax preparation support, and audit support, along with overflow and seasonal workloads when demand spikes. For firms that prefer it, we also provide white-label accounting and dedicated offshore accounting teams that operate under your brand. A growing number of US accounting firms outsourcing to India do so to grow steadily while keeping quality and client relationships firmly in their own hands.'],
-    ];
-
+    ['title' => 'Accounting Outsourcing for US Businesses', 'img' => $img('us/client-2.jpg'),
+     'button' => ['Get a Free Consultation', '#'],
+     'text' => 'We support small and mid-sized businesses, fast-growing companies, and businesses with lean finance teams. Our flexible accounting outsourcing services scale with your needs, increasing support during peak accounting periods and adjusting as demand eases. This helps you manage workloads efficiently without having a larger in-house team.'],
+    ['title' => 'Accounting Outsourcing for CPA Firms', 'img' => $img('us/client-1-182ac9.jpg'),
+     'button' => ['Get a Free Consultation', '#'],
+     'text' => 'We handle bookkeeping, accounting back-office work, tax preparation, audit support, and overflow workloads during peak seasons. Our white-label services and dedicated offshore accounting teams help US accounting firms outsourcing to India scale efficiently under their own brand while maintaining quality and control over client relationships.'],
+];
     $standards = [
         ['title' => 'US GAAP Accounting Support',
          'text' => 'Accurate accounts depend on applying US GAAP correctly and consistently. We handle your accounting to US GAAP, so your financial statements are correctly formatted and hold up under reporting, review, or audit. As guidance and standards are updated, our team stays updated. The result is dependable, standards-based accounting you can build decisions on.'],
@@ -52,15 +53,15 @@
 
     $processSteps = [
         ['title' => 'Discovery',
-         'text' => 'We start by learning about your business, what you are doing now, and which tasks you want to delegate to us. We use this initial consultation to demonstrate how we can provide value and the best way to complement your current workflow. We then customise the support based on your business needs.'],
+         'text' => 'We learn about your business, current processes, and the tasks you want to delegate. Through an initial consultation, we identify how our services can complement your workflow and customise support to meet your business needs.'],
         ['title' => 'Tailored Team',
-         'text' => 'Next, we put together a team with the skills to carry out the work you require. The same team members stay involved with your account, so they understand your business, your financial and administrative systems, and your expectations - resulting in a reduced learning curve and consistent results. '],
+         'text' => 'We assemble a skilled team suited to your requirements. The same team members support your account over time, learning your systems, processes, and expectations to reduce the learning curve and deliver consistent results.'],
         ['title' => 'Workflow Integration',
-         'text' => 'We then set up to work the way you already do. Our team uses your accounting software, your file-sharing, and your reporting formats, so there is nothing new for your staff to learn. We establish protected access and settle on the channels we will use to talk and share files. The switch is handled carefully, and we quickly become part of your day-to-day tasks.'],
+         'text' => 'We adapt to your existing accounting software, file-sharing systems, and reporting formats. With secure access and clear communication channels in place, we ensure a smooth transition and integrate seamlessly into your daily operations.'],
          ['title' => 'Support',
-         'text' => 'Once you are good to go, the work begins. We maintain your bookkeeping, payroll, tax, and financial reports in line and on track, providing you with progress updates and future plans along the way. You retain complete awareness and control over every piece of work, while we take care of the work as you handle the business.'],
+         'text' => 'We manage bookkeeping, payroll, tax, and financial reporting while keeping you informed through regular progress updates. You maintain complete visibility and control over the work while our team handles daily finance responsibilities.'],
          ['title' => 'Review & Scale',
-         'text' => 'Support is flexible as your business evolves. We carry out quality reviews periodically and, as your requirements fluctuate, you can increase capacity when the demand is high and reduce it when it falls off. That is what makes us so flexible and, therefore, so valuable to you.'],
+         'text' => 'We conduct periodic quality reviews and adjust support as your business evolves. You can increase team capacity during peak periods and scale back when demand decreases, ensuring flexible support that aligns with your changing needs.'],
     ];
 
     $certs = [
@@ -117,13 +118,13 @@
 @endphp
 <section class="hero_dark">
     <img class="hero_dark_bg" src="{{ $img('common/hero-bg.png') }}" alt="" aria-hidden="true">
-    <img class="hero_dark_person" src="{{ $img('us/hero-person.png') }}" alt="">
+    <img class="hero_dark_person" src="{{ $img('us/US-hero.webp') }}" alt="">
     <div class="container">
         <div class="hero_dark_content">
             <div class="hero_dark_text">
                 <div>
                     <h1>Accounting Outsourcing Company for <span class="hero_dark_mark">US Businesses &amp; CPA Firms</span></h1>
-                    <p class="hero_dark_para">US businesses and CPA firms trust PCS Global for dedicated, scalable teams across accounting, bookkeeping, tax, payroll, and audit support. We work as a seamless extension of your team, not a distant vendor. Our accounting outsourcing services help US firms reduce costs, improve efficiency, and drive sustainable growth.</p>
+                    <p class="hero_dark_para">PCS Global is a trusted accounting outsourcing company helping US businesses and CPA firms streamline accounting, bookkeeping, tax, payroll, and audit support. Our dedicated, scalable teams integrate seamlessly with your workflows, helping you reduce costs, improve efficiency, and focus on growth.</p>
                 </div>
                 @if (count($heroDarkFeatures))
                     <ul class="hero_dark_features">
@@ -188,7 +189,7 @@
     <div class="container">
         <div class="com_sec_head_top">
             <h2 class="mb-2 mb-xxl-4">Outsourcing Financial Services We Provide in the United States</h2>
-            <p>Day-to-day finance work can take hours that your people could use elsewhere-and the right accounting partner puts those hours to better use. From the basics to the sophisticated, PCS Global handles the accounting work your US business or firm counts on, whether you want one service or an end-to-end solution. </p>
+            <p>Day-to-day finance work takes time your team could use elsewhere. PCS Global handles the accounting work your US business or CPA firm counts on, from individual services to end-to-end solutions, helping you reduce costs and focus on growth.</p>
         </div>
 
         {{-- cards 3 ke multiple na hon to aakhri row center me --}}
@@ -216,7 +217,7 @@
     $card = function ($slide) {
         $cert = !empty($slide['certificate']) ? 'trust_slide_img_certificate' : '';
         $para = !empty($slide['text']) ? '<p>' . $slide['text'] . '</p>' : '';
-        $btn = !empty($slide['button']) ? '<div class="trust_slide_btn"><a class="com_btn_outline com_btn_outline_light" href="' . e($slide['button'][1]) . '">' . e($slide['button'][0]) . '</a></div>' : '';
+       $btn = !empty($slide['button']) ? '<div class="trust_slide_btn"><a class="com_btn_outline com_btn_outline_light" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal">' . e($slide['button'][0]) . '</a></div>' : '';
         return '<div class="trust_slide"><div class="trust_slide_img ' . $cert . '"><img src="' . e($slide['img']) . '" loading="lazy" alt="' . e(strip_tags($slide['title'])) . '"></div>'
             . '<div class="trust_slide_body"><h3>' . $slide['title'] . '</h3>' . $para . '</div>' . $btn . '</div>';
     };
@@ -242,23 +243,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const segs = document.querySelectorAll('#trustSliderProgress .trust_slider_seg');
     if (!track || !segs.length) return;
 
-    const cards = () => Array.from(track.querySelectorAll('.trust_slide'));
+    const originalCards = Array.from(track.querySelectorAll('.trust_slide'));
+    const loopCards = originalCards.map((card) => {
+        const clone = card.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        clone.querySelectorAll('a, button, input, select, textarea, [tabindex]').forEach((element) => element.setAttribute('tabindex', '-1'));
+        track.appendChild(clone);
+        return clone;
+    });
     const cardLeft = (card) => card.offsetLeft - track.firstElementChild.offsetLeft;
+    const cycleWidth = () => cardLeft(loopCards[0]);
 
-    // jo card track ke left edge ke sabse paas hai wahi active; end tak scroll ho gaya ho to aakhri card
     function updateProgress() {
-        const list = cards();
-        const maxScroll = track.scrollWidth - track.clientWidth;
+        const width = cycleWidth();
+        const position = width > 0 ? track.scrollLeft % width : track.scrollLeft;
         let active = 0;
-        if (maxScroll > 0 && track.scrollLeft >= maxScroll - 2) {
-            active = list.length - 1;
-        } else {
-            let best = Infinity;
-            list.forEach((card, i) => {
-                const d = Math.abs(cardLeft(card) - track.scrollLeft);
-                if (d < best) { best = d; active = i; }
-            });
-        }
+        let best = Infinity;
+        originalCards.forEach((card, i) => {
+            const distance = Math.abs(cardLeft(card) - position);
+            if (distance < best) { best = distance; active = i; }
+        });
         segs.forEach((seg, i) => seg.classList.toggle('active', i === active));
     }
 
@@ -269,14 +273,23 @@ document.addEventListener("DOMContentLoaded", () => {
         track.scrollBy({ left: direction * (card.offsetWidth + gap), behavior: 'smooth' });
     }
 
+    function autoSlide() {
+        scrollByCard(1);
+    }
+
     segs.forEach((seg, i) => seg.addEventListener('click', () => {
-        const card = cards()[i];
+        const card = originalCards[i];
         if (card) track.scrollTo({ left: cardLeft(card), behavior: 'smooth' });
     }));
 
     prevBtn && prevBtn.addEventListener('click', () => scrollByCard(-1));
     nextBtn && nextBtn.addEventListener('click', () => scrollByCard(1));
-    track.addEventListener('scroll', updateProgress);
+    track.addEventListener('scroll', () => {
+        const width = cycleWidth();
+        while (width > 0 && track.scrollLeft >= width) track.scrollLeft -= width;
+        updateProgress();
+    });
+    window.setInterval(autoSlide, 4000);
     updateProgress();
 });
 </script>
@@ -371,10 +384,10 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="container">
         <div class="com_sec_head_top">
             <h2 class="mb-2 mb-xxl-4">How Does PCS Global Work With US Clients?</h2>
-            <p>Getting started with PCS Global is simple, and the process is built to keep risk and disruption to a minimum. In these five stages, you go from an opening conversation to a team that functions as part of your own.</p>
+            <p>Getting started with PCS Global is simple, with a structured process designed to minimise risk and disruption. These five stages take you from the initial conversation to a dedicated team working as part of your business.</p>
         </div>
 
-        <div class="process_steps">
+        <div class="process_steps" data-slider data-slider-controls="slider4" data-slider-show="3" data-slider-controls-visible="{{ count($processStepsSteps) > 3 ? 'true' : 'false' }}">
             @foreach ($processStepsSteps as $step)
                 <div class="process_card">
                     <div class="process_head">
@@ -389,6 +402,27 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </div>
             @endforeach
+        </div>
+        <div class="our_experts_bot slider4-controls">
+            <div class="experts_info">
+                <div class="circular-progress slider4-progress">
+                    <div class="inner-circle"></div>
+                </div>
+                <p class="experts_counter slider4-counter"></p>
+            </div>
+            <hr>
+            <div class="slick_arrow">
+                <span class="arrow-prev slider4-prev" aria-label="Previous">
+                    <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M1 6.32861L6 11.3286M1 6.32861L6 1.3286M1 6.32861H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+                <span class="arrow-next slider4-next" aria-label="Next">
+                    <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M19 6.32861L14 11.3286M19 6.32861L14 1.3286M19 6.32861H1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+            </div>
         </div>
     </div>
 </section>
@@ -408,10 +442,16 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="cert_tools_panel active" data-panel="certifications">
         <div class="container">
             <div class="cert_badges_row">
-                @foreach ($certToolsCerts as [$imgCertTools, $alt])
-                    <span class="cert_badge"><img src="{{ $imgCertTools }}" alt="{{ $alt }}" loading="lazy"></span>
-                @endforeach
-            </div>
+    <div class="cert_badges_track">
+        @foreach ([1, 2] as $pass)
+            @foreach ($certToolsCerts as [$imgCertTools, $alt])
+                <span class="cert_badge {{ $pass === 2 ? 'cert_dup' : '' }}" @if($pass === 2) aria-hidden="true" @endif>
+                    <img src="{{ $imgCertTools }}" alt="{{ $pass === 2 ? '' : $alt }}" loading="lazy">
+                </span>
+            @endforeach
+        @endforeach
+    </div>
+</div>
         </div>
     </div>
 
@@ -578,7 +618,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <img class="cta_dark_bg" src="{{ $img('common/cta-bg.png') }}" alt="" aria-hidden="true">
             <div class="cta_dark_in">
                 <h2>Need More Capacity Without Increasing Headcount?</h2>
-                <a class="com_btn_outline com_btn_outline_light"  href="tel:+13478018715" >
+                <a class="com_btn_outline com_btn_outline_light" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal" >
                     Book a Free Consultation
                 </a>
             </div>
@@ -784,7 +824,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         <form id="contactBandForm" class="validated-form contact_band_form" action="{{ route('request.store') }}" method="POST" novalidate>
             @csrf
-            <input type="hidden" name="country" value="United States">
+            <input type="hidden" name="form_type" value="US Footer Form">
+            <input type="hidden" name="country" id="cfCountry" value="United States">
             <input type="hidden" name="full_phone" id="cfFullPhone">
             {{-- Honeypot (bots ke liye) --}}
             <div style="display:none;">
@@ -807,15 +848,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     <input type="tel" name="phone" id="cfPhone" maxlength="15" minlength="10" placeholder="Phone Number*:" aria-label="Phone Number"
                         oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
                 </div>
-                <div class="col-lg-6 col-12 cf_field">
+                {{-- <div class="col-lg-6 col-12 cf_field">
+                     <input type="text" name="city" maxlength="100" placeholder="Enter your City*:" aria-label="City" required>
+                </div> --}}
+                <!-- <div class="col-lg-6 col-12 cf_field">
                     <select name="city" aria-label="Select City" required>
                         <option value="" hidden>Select City*:</option>
-                        @foreach ($contactFormCities as $city)
+                        {{-- @foreach ($contactFormCities as $city)
                             <option value="{{ $city }}">{{ $city }}</option>
-                        @endforeach
+                        @endforeach --}}
                     </select>
-                </div>
-                <div class="col-lg-6 col-12 cf_field">
+                </div> -->
+                <div class="col-12 cf_field">
                     <select name="service" aria-label="Choose Service" required>
                         <option value="" hidden>Choose Service*:</option>
                         @foreach ($contactFormServices as $service)
@@ -845,7 +889,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-<script>
+{{-- <script>
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contactBandForm');
     const phone = document.getElementById('cfPhone');
@@ -866,6 +910,43 @@ document.addEventListener('DOMContentLoaded', function () {
             form.reportValidity();
             return;
         }
+        fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
+    }, true);
+});
+</script> --}}
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contactBandForm');
+    const phone = document.getElementById('cfPhone');
+    const fullPhone = document.getElementById('cfFullPhone');
+    const countryInput = document.getElementById('cfCountry');
+    if (!form || !phone || !window.intlTelInput) return;
+
+    const iti = window.intlTelInput(phone, {
+        initialCountry: @json('us'),
+        separateDialCode: true,
+        utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js'
+    });
+
+    // flag me jo country select ho, wahi "country" field me jaye
+    function syncCountry() {
+        const d = iti.getSelectedCountryData();
+        if (d && d.name && countryInput) {
+            countryInput.value = d.name.replace(/\s*\(.*\)\s*$/, '');
+        }
+    }
+    syncCountry();
+    phone.addEventListener('countrychange', syncCountry);
+
+    form.addEventListener('submit', function (e) {
+        if (!form.checkValidity()) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            form.reportValidity();
+            return;
+        }
+        syncCountry();
         fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
     }, true);
 });

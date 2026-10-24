@@ -990,6 +990,30 @@
         display: flex;
     }
 
+    .mobile_header_actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-left: auto;
+    }
+
+    .mobile_country_select {
+        display: block;
+    }
+
+    .mobile_country_select_btn {
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        padding: 6px;
+        border-radius: 6px;
+    }
+
+    .mobile_country_select .country_select_menu {
+        width: auto;
+        min-width: 160px;
+    }
+
     .nav_links {
         display:none;
     }
@@ -1877,4 +1901,259 @@ button.trust_slider_seg.active {
         max-height: 34px;
         max-width: 90px;
     }
+}
+
+
+
+/* header menu dropdown css */
+
+.offcanvas-logo img { height: 40px; width: auto; display: block; }
+
+@media (max-width: 991px) {
+
+  /* logo left, [country + hamburger] right, ek hi row me */
+  header nav {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0 !important;
+    padding-bottom: 0;
+  }
+
+  .mobile_header_right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-left: auto;
+  }
+
+  /* purana absolute/margin wagairah hata do */
+  .mobile_header_right .menu-toggle {
+    position: static !important;
+    margin: 0 !important;
+    inset: auto !important;
+    transform: none !important;
+    display: flex;
+  }
+
+  .mobile_country_select { position: relative; }
+
+  .mobile_country_btn {
+    display: flex; align-items: center; gap: 6px;
+    background: #fff; border: 1px solid #182653; border-radius: 6px;
+    padding: 6px 10px; line-height: 1;
+  }
+  .mobile_country_btn img { width: 24px; height: auto; border-radius: 2px; display: block; }
+
+  /* global .dropdown-menu mobile rules ko override */
+  .mobile_country_menu.dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 50% !important;
+    right: auto !important;
+    inset: 100% auto auto 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    min-width: 120px;
+    margin-top: 8px !important;
+    padding: 6px 0;
+    border: 0; border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.18);
+    z-index: 1050;
+  }
+  .mobile_country_menu .dropdown-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 14px; font-weight: 600; color: #182653; padding: 8px 14px;
+  }
+  .mobile_country_menu .dropdown-item img { width: 24px; height: auto; border-radius: 2px; }
+}
+
+/* end header menu dropdown css */
+
+/* offcanvas (mobile menu) header: logo left, [flag + close] right */
+.offcanvas-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+
+.offcanvas-header .offcanvas-logo { flex: 0 0 auto; }
+
+.offcanvas-head-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
+}
+
+.offcanvas-head-right .btn-close { margin: 0; padding: 0; }
+
+.offcanvas-flag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 8px;
+  border: 1px solid #d5d9e3;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.offcanvas-flag img { width: 24px; height: auto; display: block; border-radius: 2px; }
+
+/* certifications: desktop par pehle jaisa (track layout me nahi aata, duplicate hidden) */
+.cert_badges_track { display: contents; }
+.cert_dup { display: none; }
+
+/* certifications: mobile / tablet par auto-scroll */
+@media (max-width: 991px) {
+  .cert_badges_row {
+    display: block;
+    overflow: hidden;
+  }
+
+  .cert_badges_track {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: max-content;
+    animation: certScroll 22s linear infinite;
+  }
+
+  .cert_badges_track .cert_badge,
+  .cert_badges_track .cert_dup {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    padding-right: 40px; /* gap ki jagah padding, taaki loop seamless rahe */
+  }
+
+  .cert_badges_track .cert_badge img {
+    height: 60px;
+    width: auto;
+    max-width: none;
+  }
+}
+
+@keyframes certScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* motion pasand na ho (accessibility): animation band, swipe se scroll */
+@media (prefers-reduced-motion: reduce) and (max-width: 991px) {
+  .cert_badges_row { overflow-x: auto; }
+  .cert_badges_track { animation: none; }
+  .cert_dup { display: none !important; }
+}
+
+.cert_tools_tab:focus,
+.cert_tools_tab:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* tools & technology: CSS marquee (desktop + mobile) */
+.tools_marquee { overflow: hidden; width: 100%; }
+
+.tools_track {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: max-content;
+  animation: toolsScroll 120s linear infinite;
+}
+
+.tools_item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.tools_item img {
+  height: 50px;
+  width: auto;
+  max-width: none;
+  display: block;
+}
+
+.tools_marquee:hover .tools_track { animation-play-state: paused; }
+
+@keyframes toolsScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (max-width: 991px) {
+  .tools_track { animation-duration: 80s; }
+  .tools_item { padding: 0 14px; }
+  .tools_item img { height: 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tools_marquee { overflow-x: auto; }
+  .tools_track { animation: none; }
+}
+
+/* footer headings: red underline (sirf mobile / tablet) */
+@media (max-width: 991px) {
+  .foot_rt .sub_head {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+  }
+
+  .foot_rt .sub_head::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    background: #e43441;
+  }
+}
+
+/* back to top: mobile + desktop dono par */
+.back_to_top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: 16px;
+  bottom: 90px;            /* WhatsApp button ke upar, overlap na ho */
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: #e43441;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  cursor: pointer;
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity .25s, transform .25s, visibility .25s, background .25s;
+}
+
+.back_to_top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back_to_top:hover { background: #2a3d7a; }
+
+/* desktop par thoda neeche aur kone ke paas */
+@media (min-width: 992px) {
+  .back_to_top {
+    right: 30px;
+    bottom: 30px;
+    width: 48px;
+    height: 48px;
+  }
 }

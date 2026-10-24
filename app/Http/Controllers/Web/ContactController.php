@@ -7,6 +7,7 @@ use App\Models\Country;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Validation\Rule;
 
 class ContactController extends Controller
 {
@@ -19,18 +20,128 @@ class ContactController extends Controller
         return view('pages.shared.contact', compact('meta_title', 'meta_description', 'countries'));
     }
 
+    private function servicesFor(string $country): array
+    {
+        $all = [
+            'us' => [
+                'Accounting Outsourcing Services',
+                'Bookkeeping Outsourcing Services',
+                'Outsourced Tax Preparation Services',
+                'Payroll Outsourcing Services',
+                'Outsourced Audit Support Services',
+            ],
+            'gb' => [
+                'Accounting Outsourcing',
+                'Small Business Accounting',
+                'Bookkeeping Outsourcing',
+                'Tax Preparation Outsourcing',
+                'Payroll Outsourcing',
+                'VAT Outsourcing',
+            ],
+            'au' => [
+                'Accounting Outsourcing',
+                'Bookkeeping Outsourcing',
+                'Tax Preparation Outsourcing',
+                'BAS/IAS Return Services',
+                'Payroll Outsourcing',
+                'Strata Management Services',
+            ],
+            'in' => [
+                'Accounting & Bookkeeping',
+                'Payroll Outsourcing Services',
+                'Taxation Services',
+                'Recruitment Outsourcing Services',
+                'IT Automation Services',
+            ],
+        ];
+
+        return $all[$country] ?? $all['in'];
+    }
+
     public function store(Request $request)
     {
-        // Honeypot check (detect bots)
-        if (! empty($request->fax_number)) {
-            \Log::warning('Honeypot triggered — possible spam entry', [
+        if (!empty($request->fax_number)) {
+            Log::warning('Honeypot triggered — possible spam entry', [
                 'email' => $request->email,
                 'name'  => $request->fullname,
+                'ip'    => $request->ip(),
             ]);
 
-            // Don’t show an error to bots — just act like it succeeded
             return redirect()->route('thank.you');
         }
+
+        // 2. VALIDATION
+        $request->validate([
+            'fullname' => [
+                'required',
+                'string',
+                'min:2',
+                'max:70',
+                'regex:/^[a-zA-Z\s]+$/',
+            ],
+            'email' => [
+                'required',
+                'email',
+                'max:70',
+            ],
+            'phone' => [
+                'required',
+                'digits_between:10,15',
+            ],
+            'full_phone' => [
+                'nullable',
+                'string',
+                'max:20',
+            ],
+            'companyName' => [
+                'nullable',
+                'string',
+                'max:255',
+            ],
+            'country' => [
+                'nullable',
+                'string',
+                'max:255',
+            ],
+            'services' => [
+                'required',
+                'array',
+                'min:1',
+            ],
+            'services.*' => [
+                'string',
+                'max:255',
+            ],
+            'message' => [
+                'nullable',
+                'string',
+                'max:1000',
+            ],
+            'g-recaptcha-response' => [
+                'required',
+            ],
+        ], [
+            'fullname.required' => 'Please enter your full name.',
+            'fullname.min' => 'Name must be at least 2 characters.',
+            'fullname.max' => 'Name cannot exceed 70 characters.',
+            'fullname.regex' => 'Name can contain letters and spaces only.',
+
+            'email.required' => 'Please enter your email address.',
+            'email.email' => 'Please enter a valid email address.',
+            'email.max' => 'Email cannot exceed 70 characters.',
+
+            'phone.required' => 'Please enter your phone number.',
+            'phone.digits_between' => 'Phone number must contain 10 to 15 digits.',
+
+            'services.required' => 'Please select at least one service.',
+            'services.min' => 'Please select at least one service.',
+
+            'g-recaptcha-response.required' => 'Please verify you are not a robot.',
+        ]);
+
+        $pageCountry     = strtolower((string) $request->page_country);
+        $allowedServices = $this->servicesFor($pageCountry);
+
         $request->validate([
             'fullname'    => 'required|string|max:255',
             'email'       => 'required|email',
@@ -38,68 +149,67 @@ class ContactController extends Controller
             'full_phone'  => 'nullable|string|max:20',
             'companyName' => 'nullable',
             'country'     => 'nullable|string',
-            'services'    => 'nullable|array|min:1',
+            'service'     => ['required', 'string', 'max:150', Rule::in($allowedServices)],
             'message'     => 'nullable|string',
         ]);
 
+        // 3. PHONE
         $rawPhone = $request->full_phone ?: $request->phone;
-
         $phone = '+' . ltrim($rawPhone, '+');
 
+        // 4. SAVE CONTACT
         Contact::create([
             'fullname' => $request->fullname,
             'country'  => $request->country,
             'phone'    => $phone,
             'email'    => $request->email,
-            'services' => $request->services,
+            'service'  => $request->service,
             'message'  => $request->message,
         ]);
+
+        $contactFormTypes = [
+            'au' => 'Australia Contact Form',
+            'gb' => 'UK Contact Form',
+            'us' => 'US Contact Form',
+            'in' => 'India Contact Form',
+        ];
+        $formType = $contactFormTypes[$pageCountry] ?? 'India Contact Form';
+
         $sheetData = [
-            'form_type' => 'Contact Form',
+            'form_type' => $formType,
             'name'      => $request->fullname ?? '',
             'contact'   => $phone,
             'email'     => $request->email ?? '',
             'country'   => $request->country ?? '',
-            'services'  => is_array($request->services)
-                ? implode(', ', $request->services)
-                : ($request->services ?? ''),
+            'services'  => $request->service ?? '',
+            'service'   => $request->service ?? '',
+            'Service'   => $request->service ?? '',
+            'Services'  => $request->service ?? '',
             'message'   => $request->message ?? '',
             'date'      => now()->format('Y-m-d H:i:s'),
         ];
-        // Redirect to contact route with success message
-        $response = Http::timeout(30)
-            ->withHeaders([
-                'Content-Type' => 'application/json',
-            ])
-            ->post('https://script.google.com/macros/s/AKfycbznUt89nic300-hxaU7aQJr_P3CcDUsbgtKOh49HfLljKp5saEKlCKgkHUKQB1vVEP6/exec', $sheetData);
 
-        // Check response
-        if ($response->successful()) {
-            $responseData = $response->json();
-            if (isset($responseData['status']) && $responseData['status'] === 'success') {
-                Log::info('Data successfully sent to Google Sheets', [
-                    'email'    => $request->email,
-                    'response' => $responseData,
-                ]);
-                return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
+        try {
+            $response = Http::timeout(30)
+                ->withHeaders(['Content-Type' => 'application/json'])
+                ->post('https://script.google.com/macros/s/AKfycbxcIU_MubfJF-n2Et1XSIK7H2qiX45wUz1cS2C3fJWZdKtU9q3RpQ-owYPXrM2on8S6mg/exec', $sheetData);
 
+            if ($response->successful() && $response->json('status') === 'success') {
+                Log::info('Data successfully sent to Google Sheets', ['email' => $request->email]);
             } else {
                 Log::warning('Google Sheets API returned error', [
-                    'response' => $responseData,
-                    'email'    => $request->email,
+                    'status' => $response->status(),
+                    'body'   => $response->body(),
+                    'email'  => $request->email,
                 ]);
-                return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
-
             }
-        } else {
+        } catch (\Throwable $e) {
             Log::error('Google Sheets API request failed', [
-                'status' => $response->status(),
-                'body'   => $response->body(),
-                'email'  => $request->email,
+                'error' => $e->getMessage(),
+                'email' => $request->email,
             ]);
-            return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
-
         }
-        // return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
+
+        return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
     }
 }

@@ -83,6 +83,11 @@
                                         oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
                                 </div>
                                 <input type="hidden" name="full_phone" id="requestFullPhone">
+                                @php
+                                    $rqCountryLabels = ['au' => 'Australia', 'gb' => 'UK', 'us' => 'US', 'in' => 'India'];
+                                    $rqFormType = ($rqCountryLabels[$site['phone_country'] ?? 'in'] ?? 'India') . ' Consultation Form';
+                                @endphp
+                                <input type="hidden" name="form_type" value="{{ $rqFormType }}">
                             </div>
 
                             {{-- Country field form me nahi dikhta: phone number ke flag wali country yahan apne aap bharti hai --}}
@@ -102,7 +107,7 @@
 
                             <div class="col-lg-12">
                                 <button type="submit" class="rq_submit">
-                                    <span class="color-button__label">Request a Call Back</span>
+                                    <span class="color-button__label">Get a Free Consultation</span>
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 </button>
                                 <p class="rq_note">

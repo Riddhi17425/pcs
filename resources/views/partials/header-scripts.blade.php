@@ -48,10 +48,11 @@
 
   <script>
     // Open header dropdowns (Services, country select) on hover instead of click
+    // (mobile country dropdown tap se chalta hai, isliye usse bahar rakha hai)
     document.addEventListener('DOMContentLoaded', function () {
       if (typeof bootstrap === 'undefined') return;
 
-      document.querySelectorAll('header .dropdown').forEach(function (dropdown) {
+      document.querySelectorAll('header .dropdown:not(.mobile_country_select)').forEach(function (dropdown) {
         const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
         if (!toggle) return;
 
