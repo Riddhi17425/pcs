@@ -1,4 +1,4 @@
-{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/css/intlTelInput.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/css/intlTelInput.min.css">
 
 <style>
 .WhatsAppButton_mpp {
@@ -158,7 +158,7 @@
       <form class="wa_form" method="POST" action="{{ route('whatsaapinquiry') }}" id="whatsappForm" target="_blank">
         @csrf
 
-  
+         <!-- Honeypot field (hidden from users) -->
         <div style="display:none;">
             <input type="text" name="website_honey_point" id="wa_website_honey_point">
         </div>
@@ -181,7 +181,7 @@
       </form>
     </div>
 
-    <img src="{{ asset('public/front/images/whatsapp.svg') }}" id="whatsappBtn" alt="whatsapp">
+    <!--<img src="{{ asset('public/front/images/whatsapp.svg') }}" id="whatsappBtn" alt="whatsapp">-->
   </div>
 </div>
 
@@ -416,4 +416,4 @@ $("#whatsappForm").validate({
 });
 
 });
-</script> --}}
+</script>

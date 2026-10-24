@@ -29,7 +29,7 @@
     :phones="$site['footer']['phones']"
     :badges="$site['footer']['badges']" />
 
-<!-- @include('partials.whatsapp') -->
+@include('partials.whatsapp')
 
 @include('partials.request-modal')
 

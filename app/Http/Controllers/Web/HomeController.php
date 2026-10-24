@@ -17,8 +17,8 @@ class HomeController extends Controller
 {
     public function index()
     {    
-        $meta_title = "Accounting Outsourcing Partner for UK, US & Australian Firms";
-        $meta_description = "PCS Global is a trusted accounting outsourcing partner for accounting firms, providing bookkeeping, taxation and payroll services in the UK, USA & Australia.";
+        $meta_title = "Accounting Outsourcing Company for Global Firms & Businesses | PCS Global";
+        $meta_description = "PCS Global is a trusted accounting outsourcing company, supporting global businesses and firms with bookkeeping, tax, payroll and financial solutions. Inquire Now!";
         $images = TrustedPartner::where('status','Active')->get();
         $industries = Industries::where('status','Active')->get();
         $ourexpert = OurExpert::where('status','Active')->get();
@@ -108,7 +108,7 @@ class HomeController extends Controller
             // Send to Google Sheets
             try {
                 Http::withHeaders(['Content-Type' => 'application/json'])
-                    ->post('https://script.google.com/macros/s/AKfycbx0NpN0bdDJrfxmdAny47IvxRqjVcTIg3CB3iu9ohoD4b_yj-GRVnnLUTO2N4llHG9fqA/exec', 
+                    ->post('https://script.google.com/macros/s/AKfycbzCZlpHawQYaU0QRmVYRndglaOyYhFoNHCME-7eiA7zRBLGSxetFYRPAAtH2tiBXkmz/exec', 
                         $sheetsData
                     );
             } catch (\Exception $e) {

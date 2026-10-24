@@ -31,7 +31,21 @@
                         <div class="card-body">
                             <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-
+                                
+                                @if (session('error'))
+                                    <div class="alert alert-danger">{{ session('error') }}</div>
+                                @endif
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul class="mb-0">
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                
+                                
                                 {{-- Blogs Info --}}
                                 <div class="card mb-4 border">
                                     <div class="card-header bg-light"><strong>Blogs Information</strong></div>
@@ -127,10 +141,14 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                        <div class="col-md-6 mb-3">
-                                            <label for="date" class="form-label">Date <span
-                                                    class="required-star">*</span></label>
-                                            <input type="date" id="date" name="date" class="form-control">
+                                       <div class="col-md-6 mb-3">
+                                            <label for="date" class="form-label">Date <span class="required-star">*</span></label>
+                                            <input type="date" id="date" name="date"
+                                                class="form-control @error('date') is-invalid @enderror"
+                                                value="{{ old('date') }}" required>
+                                            @error('date')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         {{-- Detail Description --}}
                                         <div class="card mb-4 border">
