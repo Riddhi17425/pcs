@@ -25,7 +25,7 @@ Route::middleware('country:india')->group(function () {
     // Route::get('test-taxation', [ServiceController::class, 'taxationservices'])->name('test.taxation'); // TEMP LINK
 
     // Route::get('bookkeeping-and-accounting-services', [ServiceController::class, 'accountingBookeeping'])->name('pcs.global.bookkeeping'); // OLD LINK
-    Route::get('outsourced-accounting-bookkeeping-services', [ServiceController::class, 'accountingBookeeping'])->name('pcs.global.bookkeeping');
+    Route::get('accounting-outsourcing-services', [ServiceController::class, 'accountingBookeeping'])->name('pcs.global.bookkeeping');
 
     // Route::get('taxation-services', [ServiceController::class, 'taxationservices'])->name('taxation.services'); // OLD LINK
     Route::get('outsourced-taxation-services', [ServiceController::class, 'taxationservices'])->name('taxation.services');

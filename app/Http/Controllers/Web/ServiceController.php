@@ -258,9 +258,8 @@ class ServiceController extends Controller
     public function accountingBookeeping()
     {
         $faq              = Faq::where('status', 'Active')->where('faq_url', 'pcs-global-bookkeeping')->first();
-        $meta_title       = "Outsourced Bookkeeping & Accounting Services | PCS Global";
-        $meta_description = "Struggling with accounting? PCS Global provides outsourced bookkeeping & accounting services with certified CA, CPA teams & up to 60% savings!
-";
+        $meta_title       = "Accounting Outsourcing Services | PCS Global";
+        $meta_description = "Looking for accounting outsourcing services? PCS Global supports businesses and accounting firms with accounts payable, receivables and financial reporting.";
 
         return view('pages.india.accounting-bookkeeping', compact('meta_title', 'meta_description', 'faq'));
     }

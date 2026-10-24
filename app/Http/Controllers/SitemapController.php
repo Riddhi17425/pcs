@@ -27,7 +27,7 @@ class SitemapController extends Controller
             'contact-us',
             'strata-management',
             'white-label-accounting-services',
-            'outsourced-accounting-bookkeeping-services',
+            'accounting-outsourcing-services',
             'outsourced-taxation-services',
             'outsourced-payroll-services',
             'recruitment-services',
