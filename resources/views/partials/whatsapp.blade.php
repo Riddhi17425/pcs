@@ -60,7 +60,7 @@
   justify-content: space-between;
 }
 
-.wa_head h5 {
+.wa_head .wa_title {
   color: #fff;
   margin: 0;
   font-size: 15px;
@@ -151,7 +151,7 @@
 
     <div class="whatsapp-popup" id="whatsappPopup">
       <div class="wa_head">
-        <h5>Contact on WhatsApp</h5>
+        <p class="wa_title">Contact on WhatsApp</p>
         <span class="close-inquiry">&times;</span>
       </div>
 

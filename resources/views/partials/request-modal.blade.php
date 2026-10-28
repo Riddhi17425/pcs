@@ -14,7 +14,7 @@
                 {{-- Left: brand panel --}}
                 <aside class="rq_side">
                     <span class="rq_eyebrow">Free Consultation</span>
-                    <h5 class="rq_title" id="exampleModalLabel">Let’s talk about your accounting needs</h5>
+                    <p class="rq_title" id="exampleModalLabel">Let’s talk about your accounting needs</p>
                     <p class="rq_lead">Share a few details and one of our accounting experts will call you back within 24 hours.</p>
 
                     <ul class="rq_points">

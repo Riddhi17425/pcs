@@ -163,7 +163,7 @@
       <div class="menu-level" id="menu-services">
         <div class="menu-header">
           <button class="back-btn" data-back="menu-main">&lsaquo; Back</button>
-          <h6 class="m-0">Services</h6>
+          <p class="m-0 menu-services-title">Services</p>
         </div>
         <div class="menu-body">
           <ul>
