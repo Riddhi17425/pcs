@@ -265,7 +265,9 @@ table tr:hover {
         'headline' => \Illuminate\Support\Str::limit(strip_tags($blog->title), 110, ''),
         'description' => $blogDesc,
         'image' => [asset('/' . $blog->detail_image)],
-        'datePublished' => \Carbon\Carbon::parse($blog->date)->toIso8601String(),
+        'datePublished' => \Carbon\Carbon::parse($blog->date)
+    ->setTimeFrom(\Carbon\Carbon::parse($blog->created_at ?? $blog->date))
+    ->toIso8601String(),
         'dateModified' => \Carbon\Carbon::parse($blog->updated_at ?? $blog->date)->toIso8601String(),
         'author' => [
             '@type' => 'Organization',
