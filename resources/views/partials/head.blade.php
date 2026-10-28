@@ -11,7 +11,7 @@
     <meta property="og:image:height" content="627">
     <meta property="og:url" content="{{url()->current()}}" />
     <meta property="og:type" content="website">
-   @if (request()->is('au/about', 'uk/about', 'us/about', 'au/contact-us', 'uk/contact-us', 'us/contact-us'))
+   @if (request()->is('au/about', 'uk/about', 'us/about', 'au/contact-us', 'uk/contact-us', 'us/contact-us', 'privacy-policy'))
     <meta name="robots" content="noindex, nofollow">
     @else
         <meta name="robots" content="index, follow">
