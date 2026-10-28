@@ -1,0 +1,188 @@
+/* Tax outsourcing page (/outsourced-taxation-services) - sirf is page ki extra CSS.
+   Baaki sab accounting-outsourcing.css + common/*.css se aata hai. View: pages/india/taxation-services.blade.php */
+
+/* ---------- CPA & Taxation Firms: editorial split (left sticky intro + image, right numbered rows) ---------- */
+.tax_firms {
+    padding: 90px 0;
+    background: #f3f3e6;
+    border-top: 1px solid #e2e2d5;
+    border-bottom: 1px solid #e2e2d5;
+}
+
+.tax_firms_inner {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 80px;
+    align-items: start;
+}
+
+.tax_firms_intro {
+    position: sticky;
+    top: 110px;
+}
+
+.tax_firms_intro h2 {
+    margin-bottom: 20px;
+    color: var(--blue);
+}
+
+.tax_firms_intro p {
+    margin-bottom: 28px;
+}
+
+.tax_firms_img {
+    margin-top: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tax_firms_img img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* numbered rows, patli divider line ke saath (box / card nahi) */
+.tax_firms_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px solid #cfcfbd;
+}
+
+.tax_firm_row {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 24px;
+    padding: 34px 0;
+    border-top: 1px solid #cfcfbd;
+}
+
+/* sirf line icon (box nahi), hover par halka sa rang badalta hai */
+.tax_firm_icon {
+    display: block;
+    color: #9aa1bd;
+    transition: color 0.3s ease;
+}
+
+.tax_firm_icon svg {
+    display: block;
+}
+
+.tax_firm_row h3 {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 10px;
+    font-size: 26px;
+    line-height: 34px;
+    color: var(--blue);
+}
+
+/* hover par title ke neeche underline khulti hai */
+.tax_firm_row h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: var(--blue);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.tax_firm_row p {
+    margin: 0;
+    max-width: 620px;
+}
+
+.tax_firm_row:hover .tax_firm_icon {
+    color: var(--blue);
+}
+
+.tax_firm_row:hover h3::after {
+    transform: scaleX(1);
+}
+
+/* ---------- scroll reveal (class .tax_js html par JS lagati hai, JS na ho to content dikhta rahe) ---------- */
+.tax_js .tax_reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.tax_js .tax_reveal.is_visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tax_js .tax_reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .tax_firm_icon,
+    .tax_firm_row h3::after {
+        transition: none;
+    }
+}
+
+@media (max-width: 1199px) {
+    .tax_firms_inner {
+        gap: 48px;
+    }
+
+    .tax_firm_row {
+        grid-template-columns: 52px 1fr;
+        gap: 18px;
+    }
+
+    .tax_firm_row h3 {
+        font-size: 23px;
+        line-height: 31px;
+    }
+}
+
+@media (max-width: 991px) {
+    .tax_firms {
+        padding: 64px 0;
+    }
+
+    .tax_firms_inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .tax_firms_intro {
+        position: static;
+    }
+
+    .tax_firms_img {
+        margin-top: 28px;
+    }
+}
+
+@media (max-width: 767px) {
+    .tax_firms {
+        padding: 48px 0;
+    }
+
+    .tax_firm_row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 24px 0;
+    }
+
+    .tax_firm_icon svg {
+        width: 34px;
+        height: 34px;
+    }
+
+    .tax_firm_row h3 {
+        font-size: 21px;
+        line-height: 29px;
+    }
+}

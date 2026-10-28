@@ -276,8 +276,8 @@ class ServiceController extends Controller
 
     public function taxationservices()
     {
-        $meta_title       = "Taxation Services for US, UK & Australia | PCS Global";
-        $meta_description = "PCS Global offers expert taxation services including corporate tax compliance, payroll tax, and international tax support for US, UK & Australia.";
+        $meta_title       = "Tax Preparation Outsourcing Services | PCS Global";
+        $meta_description = "Outsource tax preparation to PCS Global: workpapers, draft returns and sales tax workings for CPA firms and businesses in the USA, UK and Australia.";
 
         return view('pages.india.taxation-services', compact('meta_title', 'meta_description'));
     }
