@@ -29,13 +29,6 @@ Route::get('/clear', function () {
     return "Application cache cleared!";
 });
 
-<<<<<<< HEAD
-
-require __DIR__.'/countries/india.php';
-require __DIR__.'/countries/australia.php';
-require __DIR__.'/countries/uk.php';
-require __DIR__.'/countries/us.php';
-=======
     Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
     Route::get('/', [HomeController::class, 'index'])->name('front.home');
     Route::get('/data-security', [HomeController::class, 'datasecurity'])->name('datasecurity');
@@ -87,7 +80,6 @@ require __DIR__.'/countries/us.php';
     Route::get('uk/small-business-accounting-services/', [ServiceController::class, 'smallBusinessAccountingServices'])->name('small.business.accounting.services');
     Route::get('uk/outsource-tax-preparation-services/', [ServiceController::class, 'outsourceTaxPreparationServices'])->name('outsource.tax.preparation.services');
     Route::get('uk/about/', [AboutController::class, 'ukAbout'])->name('uk.about');
->>>>>>> e4443faafb704acf07d7d1de2eafe4af29d7eba5
 
     Route::post('/request-store', [ServiceController::class, 'requestStore'])->name('request.store');
     Route::post('consultant-store', [ServiceController::class, 'consultantstore'])->name('consultant.store');

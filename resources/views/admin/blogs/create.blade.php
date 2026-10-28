@@ -130,7 +130,17 @@
                                         <div class="col-md-6 mb-3">
                                             <label for="date" class="form-label">Date <span
                                                     class="required-star">*</span></label>
-                                            <input type="date" id="date" name="date" class="form-control">
+                                            <input
+                                                type="date"
+                                                id="date"
+                                                name="date"
+                                                class="form-control @error('date') is-invalid @enderror"
+                                                value="{{ old('date') }}"
+                                            >
+
+                                            @error('date')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         {{-- Detail Description --}}
                                         <div class="card mb-4 border">
