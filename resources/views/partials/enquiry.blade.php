@@ -1,5 +1,4 @@
 <style>
-/* Floating enquiry button */
 .enquiry-btn {
   position: fixed;
   top: 50%;
@@ -78,6 +77,20 @@
   display: flex; flex: 0 0 40px; align-items: center; justify-content: center;
   width: 40px; height: 40px; border-radius: 10px; background: rgba(255, 255, 255, .15);
 }
+.enquiry-header h2,
+.enquiry-title { margin: 0; color: #fff; font-size: 20px; font-weight: 600; font-family: "Public Sans", sans-serif; }
+.enquiry-title { line-height: 56px; }
+@media (max-width: 1800px) { .enquiry-title { line-height: 50px; } }
+@media (max-width: 1441px) { .enquiry-title { line-height: 48px; } }
+@media (max-width: 1367px) { .enquiry-title { line-height: 36px; } }
+@media (max-width: 768px)  { .enquiry-title { line-height: 36px; } }
+.enquiry-close {
+  padding: 0 0 0 12px; border: 0; color: #fff; background: transparent;
+  font-size: 27px; line-height: 1; cursor: pointer;
+}
+.enquiry-body { padding: 20px 28px 24px; }
+
+/* Form */
 #enquiryForm {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -206,6 +219,7 @@ p.js-error { display: block; margin: 4px 0 0; color: #a52020; font-size: 12px; l
     </div>
 
     <div class="enquiry-body">
+      {{-- "validated-form" class jaan-bunjh kar nahi lagayi (global main.js ke saath conflict se bachne ke liye) --}}
       <form id="enquiryForm" action="{{ route('request.store') }}" method="POST" novalidate>
         @csrf
 
@@ -351,7 +365,7 @@ window.addEventListener("load", function () {
       },
       errorPlacement: function ($error, $element) {
         var $iti = $element.closest(".iti");
-        $error.insertAfter($iti.length ? $iti : $element); // field ke bilkul neeche
+        $error.insertAfter($iti.length ? $iti : $element); 
       },
       highlight: function (el) {
         $(el).addClass("is-invalid");
@@ -360,11 +374,9 @@ window.addEventListener("load", function () {
         $(el).removeClass("is-invalid");
       },
       onkeyup: function (el) {
-        // error dikhne ke baad hi typing par live re-check
         if ($(el).hasClass("is-invalid")) this.element(el);
       },
       invalidHandler: function () {
-        // captcha bhi check karo, taaki saare errors ek saath dikhein
         var token = $form.find('[name="g-recaptcha-response"]').val() || "";
         $captchaErr.text("Please complete the CAPTCHA verification.").prop("hidden", !!token);
       },
@@ -380,7 +392,6 @@ window.addEventListener("load", function () {
       }
     });
 
-    // Phone me sirf digits
     $form.find('[name="phone"]').on("input", function () {
       this.value = this.value.replace(/\D/g, "").slice(0, 15);
     });
