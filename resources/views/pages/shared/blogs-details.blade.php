@@ -253,8 +253,7 @@ table tr:hover {
 {{-- ===== BlogPosting schema (dynamic) ===== --}}
 @php
     $blogUrl  = url()->current();
-    $blogDesc = \Illuminate\Support\Str::limit(trim(preg_replace('/\s+/', ' ', strip_tags($blog->short_description ?? ''))), 160);
-
+$blogDesc = trim(preg_replace('/\s+/', ' ', strip_tags($blog->meta_description ?: ($blog->short_description ?? ''))));
     $blogSchema = [
         '@context' => 'https://schema.org',
         '@type' => 'BlogPosting',
