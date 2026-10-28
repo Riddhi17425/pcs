@@ -12,8 +12,8 @@
         ]
         : [
             ['About Us', route('about')],
-            ['Accounting & Bookkeeping', route('pcs.global.bookkeeping')],
-            ['Taxation Services', route('taxation.services')],
+            ['Accounting Outsourcing Services', route('pcs.global.bookkeeping')],
+            ['Tax Outsourcing Services', route('taxation.services')],
             ['Strata Management', route('strata.management')],
             ['Blogs', route('blog')],
         ];
@@ -46,14 +46,14 @@
                 <a class="com_btn_outline com_btn_outline_light" href="{{ $contact }}">Contact Us</a>
             </div>
 
-            <div class="error_links">
+            <!-- <div class="error_links">
                 <span>Or try one of these pages</span>
                 <ul>
                     @foreach ($links as [$label, $url])
                         <li><a href="{{ $url }}">{{ $label }}</a></li>
                     @endforeach
                 </ul>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>

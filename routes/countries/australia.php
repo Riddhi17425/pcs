@@ -6,7 +6,7 @@ use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\ServiceController;
 use App\Http\Controllers\Web\CountryHomeController;
 
-// Australia (/au/...). Middleware 'country:australia' -> views me $site = config('sites.australia')
+// Australia (/aus/...). Middleware 'country:australia' -> views me $site = config('sites.australia')
 Route::middleware('country:australia')->prefix('au')->group(function () {
     Route::get('/', [CountryHomeController::class, 'home'])->name('australia.home');
     Route::get('about', [AboutController::class, 'about'])->name('australia.about');

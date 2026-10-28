@@ -47,11 +47,12 @@ class ContactController extends Controller
                 'Strata Management Services',
             ],
             'in' => [
-                'Accounting & Bookkeeping',
+                'Accounting Outsourcing Services',
+                'Bookkeeping Outsourcing Services',
+                'Outsourced Tax Preparation Services',
                 'Payroll Outsourcing Services',
-                'Taxation Services',
                 'Recruitment Outsourcing Services',
-                'IT Automation Services',
+                'Strata Management Services',
             ],
         ];
 
@@ -60,84 +61,14 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-        if (!empty($request->fax_number)) {
+        // Honeypot check (detect bots)
+        if (! empty($request->fax_number)) {
             Log::warning('Honeypot triggered — possible spam entry', [
                 'email' => $request->email,
                 'name'  => $request->fullname,
-                'ip'    => $request->ip(),
             ]);
-
             return redirect()->route('thank.you');
         }
-
-        // 2. VALIDATION
-        $request->validate([
-            'fullname' => [
-                'required',
-                'string',
-                'min:2',
-                'max:70',
-                'regex:/^[a-zA-Z\s]+$/',
-            ],
-            'email' => [
-                'required',
-                'email',
-                'max:70',
-            ],
-            'phone' => [
-                'required',
-                'digits_between:10,15',
-            ],
-            'full_phone' => [
-                'nullable',
-                'string',
-                'max:20',
-            ],
-            'companyName' => [
-                'nullable',
-                'string',
-                'max:255',
-            ],
-            'country' => [
-                'nullable',
-                'string',
-                'max:255',
-            ],
-            'services' => [
-                'required',
-                'array',
-                'min:1',
-            ],
-            'services.*' => [
-                'string',
-                'max:255',
-            ],
-            'message' => [
-                'nullable',
-                'string',
-                'max:1000',
-            ],
-            'g-recaptcha-response' => [
-                'required',
-            ],
-        ], [
-            'fullname.required' => 'Please enter your full name.',
-            'fullname.min' => 'Name must be at least 2 characters.',
-            'fullname.max' => 'Name cannot exceed 70 characters.',
-            'fullname.regex' => 'Name can contain letters and spaces only.',
-
-            'email.required' => 'Please enter your email address.',
-            'email.email' => 'Please enter a valid email address.',
-            'email.max' => 'Email cannot exceed 70 characters.',
-
-            'phone.required' => 'Please enter your phone number.',
-            'phone.digits_between' => 'Phone number must contain 10 to 15 digits.',
-
-            'services.required' => 'Please select at least one service.',
-            'services.min' => 'Please select at least one service.',
-
-            'g-recaptcha-response.required' => 'Please verify you are not a robot.',
-        ]);
 
         $pageCountry     = strtolower((string) $request->page_country);
         $allowedServices = $this->servicesFor($pageCountry);
@@ -147,17 +78,15 @@ class ContactController extends Controller
             'email'       => 'required|email',
             'phone'       => 'required|string|max:20',
             'full_phone'  => 'nullable|string|max:20',
-            'companyName' => 'nullable',
+            'company'     => 'nullable|string|max:255',
             'country'     => 'nullable|string',
             'service'     => ['required', 'string', 'max:150', Rule::in($allowedServices)],
             'message'     => 'nullable|string',
         ]);
 
-        // 3. PHONE
         $rawPhone = $request->full_phone ?: $request->phone;
-        $phone = '+' . ltrim($rawPhone, '+');
+        $phone    = '+' . ltrim($rawPhone, '+');
 
-        // 4. SAVE CONTACT
         Contact::create([
             'fullname' => $request->fullname,
             'country'  => $request->country,
@@ -180,6 +109,7 @@ class ContactController extends Controller
             'name'      => $request->fullname ?? '',
             'contact'   => $phone,
             'email'     => $request->email ?? '',
+            'company'   => $request->company ?? '',
             'country'   => $request->country ?? '',
             'services'  => $request->service ?? '',
             'service'   => $request->service ?? '',

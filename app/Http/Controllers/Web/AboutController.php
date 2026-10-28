@@ -20,7 +20,7 @@ class AboutController extends Controller
         $faq = Faq::where('status', 'Active')->where('faq_url', 'about')->first();
         return view('pages.shared.about',compact('meta_title','meta_description','whychooseus','teamMembers','faq'));
     }
-    
+   
     public function ukAbout(Request $request){
         $meta_title="About PCS Global | Accounting & Finance Outsourcing Partner";
         $meta_description="Learn about PCS Global, our experienced team, core values and commitment to accuracy, integrity and long-term partnerships with global accounting firms.";
@@ -29,5 +29,6 @@ class AboutController extends Controller
         $faq = Faq::where('status', 'Active')->where('faq_url', 'about')->first();
         return view('pages.uk.uk_about',compact('meta_title','meta_description','whychooseus','teamMembers','faq'));
     }
+ 
     
 }

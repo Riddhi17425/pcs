@@ -1,0 +1,295 @@
+/* Accounting outsourcing page (/outsourced-accounting-bookkeeping-services) - sirf is page ki CSS.
+   Sections AU / US / UK home wale hain (style.css + common/hero-dark.css + common/home-sections.css);
+   yahan sirf India header aur is page ke liye chhote modifiers hain. View: pages/india/accounting-bookkeeping.blade.php */
+
+/* ---------- section heading ke neeche button ---------- */
+.acc_head_btn {
+    margin-top: 28px;
+}
+
+/* ---------- text + image (What are / Why India) ---------- */
+.acc_split_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.acc_split_text p:last-child {
+    margin-bottom: 0;
+}
+
+.acc_split_text .com_btn1 {
+    align-self: flex-start;
+    margin-top: 12px;
+}
+
+.acc_note {
+    padding-left: 14px;
+    border-left: 2px solid #e43441;
+    color: var(--blue);
+    font-weight: 500;
+}
+
+/* ---------- service cards: tablet par 2 column (site default 768px se neeche 1 column) ---------- */
+@media (min-width: 576px) and (max-width: 991px) {
+    .acc_services_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .acc_services_grid .precision_card {
+        padding: 20px;
+    }
+
+    .acc_services_grid .precision_card_img img {
+        height: 200px;
+    }
+}
+
+/* ---------- USA / UK / Australia: 3 cards (trust_grid 2 column ka 3 column variant) ---------- */
+.acc_region_grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.acc_region_grid .trust_slide_btn .com_btn_outline {
+    padding: 10px 22px;
+    font-size: 16px;
+}
+
+.acc_region_grid .trust_slide_btn svg {
+    flex: 0 0 auto;
+}
+
+@media (max-width: 1199px) {
+    .acc_region_grid .trust_slide_btn .com_btn_outline {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 991px) {
+    .acc_region_grid {
+        grid-template-columns: 1fr;
+        max-width: 640px;
+        margin: 0 auto;
+    }
+}
+
+/* ---------- Why choose: benefit cards (process_card design, slider ke bina grid) ---------- */
+.acc_benefits {
+    margin-top: 60px;
+}
+
+@media (max-width: 767px) {
+    .acc_benefits {
+        margin-top: 40px;
+    }
+}
+
+/* ---------- hero (light): heading + paragraph + CTAs left, key benefits right ---------- */
+.acc_hero_light {
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0 90px;
+    background:
+        radial-gradient(circle at 92% 8%, rgba(53, 85, 185, 0.12) 0, rgba(53, 85, 185, 0) 38%),
+        radial-gradient(circle at 4% 100%, rgba(203, 235, 255, 0.7) 0, rgba(203, 235, 255, 0) 40%),
+        #fffff6;
+}
+
+.acc_hero_inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.acc_hero_light h1 {
+    margin-bottom: 24px;
+    font-size: clamp(32px, 3.6vw, 58px);
+    line-height: 1.22;
+    font-weight: 600;
+    color: var(--black1);
+    text-wrap: balance;
+}
+
+.acc_hero_light h1 span {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 0 14px;
+    border-radius: 8px;
+    background: #cbebff;
+    color: var(--blue);
+}
+
+.acc_hero_light p {
+    max-width: 960px;
+    margin: 0 auto 32px;
+    font-size: clamp(16px, 1.15vw, 18px);
+    line-height: 1.7;
+}
+
+.acc_hero_light p strong {
+    color: var(--blue);
+}
+
+.acc_hero_btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.acc_hero_btns .com_btn1,
+.acc_hero_btns .com_btn_outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 30px;
+}
+
+/* key benefits: ek saaf horizontal strip */
+.acc_hero_benefits {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 56px auto 0;
+    max-width: 1240px;
+    border: 1px solid #e2e2d5;
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: 0 16px 40px rgba(24, 38, 83, 0.07);
+    text-align: left;
+}
+
+.acc_hero_benefit {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 24px 22px;
+    border-left: 1px solid #e2e2d5;
+    font-size: 17px;
+    line-height: 1.35;
+    font-weight: 500;
+    color: var(--blue);
+}
+
+.acc_hero_benefit:first-child {
+    border-left: 0;
+}
+
+.acc_hero_benefit_icon {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: #eff6ff;
+    color: var(--blue);
+}
+
+@media (max-width: 1199px) {
+    .acc_hero_benefits {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .acc_hero_benefit:nth-child(3) {
+        border-left: 0;
+    }
+
+    .acc_hero_benefit:nth-child(n+3) {
+        border-top: 1px solid #e2e2d5;
+    }
+}
+
+@media (max-width: 991px) {
+    .acc_hero_light {
+        padding: 48px 0 56px;
+    }
+
+    .acc_hero_benefits {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 575px) {
+    .acc_hero_light {
+        padding: 36px 0 44px;
+    }
+
+    .acc_hero_benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .acc_hero_benefit {
+        border-left: 0;
+        padding: 16px 18px;
+        font-size: 16px;
+    }
+
+    .acc_hero_benefit + .acc_hero_benefit {
+        border-top: 1px solid #e2e2d5;
+    }
+
+    .acc_hero_btns > a {
+        width: 100%;
+        justify-content: center;
+    }
+}
+/* ---------- software slider: heading / paragraph / logos ke beech gap kam ---------- */
+.acc_software {
+    margin-top: 60px;
+}
+
+.acc_software .com_sec_head_top {
+    margin-bottom: 8px;
+}
+
+.acc_software .com_sec_head_top h2 {
+    margin-bottom: 10px !important;
+}
+
+.acc_software .com_sec_head_top p {
+    margin-bottom: 0;
+}
+
+.acc_software .client_slider {
+    padding: 8px 0;
+}
+
+@media (max-width: 767px) {
+    .acc_software {
+        margin-top: 40px;
+    }
+}
+
+/* business needs slider: left column ka button */
+.trust_slider_head .com_btn2 {
+    margin-top: 8px;
+}
+
+/* why choose: stats strip heading ke neeche, center me */
+.acc_why_stats {
+    max-width: 900px;
+    margin: 0 auto 48px;
+}
+
+.acc_why_stats .counter_line {
+    padding: 0 24px;
+}
+
+.com_sec_head_top p + p {
+    margin-top: 12px;
+}
+
+/* why choose: paragraph aur image/accordion ke beech gap */
+.acc_why .com_sec_head_top {
+    margin-bottom: 56px;
+}
+
+@media (max-width: 991px) {
+    .acc_why .com_sec_head_top {
+        margin-bottom: 32px;
+    }
+}

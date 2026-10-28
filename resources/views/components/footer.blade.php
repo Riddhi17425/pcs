@@ -1,8 +1,3 @@
-{{-- Footer (sab countries): <x-footer>. Layout (layouts/app) har country ka data config/sites.php -> 'footer' se deta hai:
-     quickLinks = [[label, url, newTab (optional bool)], ...]
-     services = [[label, url], ...]
-     phones = [['number' => '(+613) 9998 0494', 'label' => 'AUS' (optional), 'icon' => url (optional), 'alt' => 'Australia'], ...]
-     address = html string.  Baaki cheezein (logo, about, social, badges, copyright) ke defaults hain. --}}
 @props([
     'homeUrl' => url('/'),
     'quickLinks' => [],
@@ -12,7 +7,8 @@
     'email' => 'info@pcsglobalgroup.com',
     'privacyUrl' => route('privacy-policy'),
     'logo' => asset('public/front/images/footer-log.svg'),
-    'about' => 'PCS Global is committed to delivering reliable finance and accounting outsourcing solutions, building long-term partnerships with global accounting firms and businesses based on integrity, trust, and mutual growth.',
+    'about' =>
+        'PCS Global is committed to delivering reliable finance and accounting outsourcing solutions, building long-term partnerships with global accounting firms and businesses based on integrity, trust, and mutual growth.',
     'copyright' => 'Progressive Corporate Services Pvt. Ltd., All Rights Reserved.',
     'social' => null,
     'badges' => null,
@@ -78,7 +74,8 @@
         display: none;
     }
 
-    .enquiry-header h2 {
+    .enquiry-header h2,
+    .enquiry-title {
         color: #111111;
         font-size: 20px;
         font-family: "Public Sans", sans-serif;
@@ -166,16 +163,29 @@
     }
 
     @keyframes enquiryBackdropIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
 
     @keyframes enquiryPanelIn {
-        from { opacity: 0; transform: translate3d(8px, -4px, 0) scale(.98); }
-        to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+        from {
+            opacity: 0;
+            transform: translate3d(8px, -4px, 0) scale(.98);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1);
+        }
     }
 
     @media (prefers-reduced-motion: reduce) {
+
         .enquiry-overlay.active,
         .enquiry-modal {
             animation: none;
@@ -225,27 +235,31 @@
             <div class="footer_top_flex">
                 <div class="foot_lt">
                     <!-- <a href="{{ $homeUrl }}"><img class="ft_logo" src="{{ $logo }}" alt="logo" loading="lazy"></a> -->
-                    <a href="{{ route('front.home') }}"><img class="ft_logo" src="{{ $logo }}" alt="logo" loading="lazy"></a>
+                    <a href="{{ route('front.home') }}"><img class="ft_logo" src="{{ $logo }}" alt="logo"
+                            loading="lazy"></a>
                     <p class="foot_lt_para">{{ $about }}</p>
                     <div class="foot_social">
                         @foreach ($social as [$url, $icon, $alt])
-                            <a href="{{ $url }}" target="_blank"><img src="{{ $icon }}" alt="{{ $alt }}" loading="lazy"></a>
+                            <a href="{{ $url }}" target="_blank"><img src="{{ $icon }}"
+                                    alt="{{ $alt }}" loading="lazy"></a>
                         @endforeach
                     </div>
                 </div>
 
                 <div class="foot_links_group">
                     <div class="foot_rt">
-                        <h4 class="sub_head">Quick Links</h4>
+                        <p class="sub_head">Quick Links</p>
                         <ul>
                             @foreach ($quickLinks as $link)
-                                <li><a href="{{ $link[1] }}"@if (!empty($link[2])) target="_blank" rel="noopener"@endif>{{ $link[0] }}</a></li>
+                                <li><a
+                                        href="{{ $link[1] }}"@if (!empty($link[2])) target="_blank" rel="noopener" @endif>{{ $link[0] }}</a>
+                                </li>
                             @endforeach
                         </ul>
                     </div>
 
                     <div class="foot_rt">
-                        <h4 class="sub_head">Our Services</h4>
+                        <p class="sub_head">Our Services</p>
                         <ul>
                             @foreach ($services as [$label, $url])
                                 <li><a href="{{ $url }}">{!! $label !!}</a></li>
@@ -254,23 +268,28 @@
                     </div>
 
                     <div class="foot_rt border-end-0">
-                        <h4 class="sub_head">Contact Us</h4>
+                        <p class="sub_head">Contact Us</p>
 
                         <div class="foot_contact_block">
-                            <h6 class="foot_contact_label">Address:</h6>
+                            <p class="foot_contact_label">Address:</p>
                             <p class="foot_contact_value">{!! $address !!}</p>
                         </div>
 
                         <div class="foot_contact_block">
-                            <h6 class="foot_contact_label">Call Us:</h6>
+                            <p class="foot_contact_label">Call Us:</p>
                             <ul class="foot_call_list">
                                 @foreach ($phones as $phone)
                                     <li>
                                         <a href="tel:{{ $phone['number'] }}">
                                             @if (!empty($phone['icon']))
-                                                <img src="{{ $phone['icon'] }}" alt="{{ $phone['alt'] ?? '' }}" loading="lazy">
+                                                <img src="{{ $phone['icon'] }}" alt="{{ $phone['alt'] ?? '' }}"
+                                                    loading="lazy">
                                             @endif
-                                            <span>@if (!empty($phone['label']))<b>{{ $phone['label'] }} :</b> @endif{{ $phone['number'] }}</span>
+                                            <span>
+                                                @if (!empty($phone['label']))
+                                                    <b>{{ $phone['label'] }} :</b>
+                                                @endif{{ $phone['number'] }}
+                                            </span>
                                         </a>
                                     </li>
                                 @endforeach
@@ -278,7 +297,7 @@
                         </div>
 
                         <div class="foot_contact_block mb-0">
-                            <h6 class="foot_contact_label">Email Us:</h6>
+                            <p class="foot_contact_label">Email Us:</p>
                             <p class="foot_contact_value">
                                 <a href="mailto:{{ $email }}">{{ $email }}</a>
                             </p>
@@ -291,7 +310,8 @@
         <div class="footer_badges_wrap">
             <div class="footer_badges">
                 @foreach ($badges as [$img, $alt, $shape])
-                    <span class="badge_{{ $shape }}"><img src="{{ $img }}" alt="{{ $alt }}" loading="lazy"></span>
+                    <span class="badge_{{ $shape }}"><img src="{{ $img }}" alt="{{ $alt }}"
+                            loading="lazy"></span>
                 @endforeach
             </div>
         </div>

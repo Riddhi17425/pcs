@@ -31,7 +31,21 @@
                         <div class="card-body">
                             <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-
+                                
+                                @if (session('error'))
+                                    <div class="alert alert-danger">{{ session('error') }}</div>
+                                @endif
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul class="mb-0">
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                
+                                
                                 {{-- Blogs Info --}}
                                 <div class="card mb-4 border">
                                     <div class="card-header bg-light"><strong>Blogs Information</strong></div>

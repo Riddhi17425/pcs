@@ -44,10 +44,10 @@ return [
         'blog' => 'blog',
         'blog_detail' => 'blogs.detail',
         'services' => [
-            ['Accounting & Bookkeeping', 'pcs.global.bookkeeping'],
+            ['Accounting Outsourcing Services', 'pcs.global.bookkeeping'],
             // ['Strata Property Management', 'strata.management'],
             ['Payroll Outsourcing Services', 'payroll.services'],
-            ['Taxation Services', 'taxation.services'],
+            ['Tax Outsourcing Services', 'taxation.services'],
             ['Recruitment Outsourcing Services', 'recruitment.services'],
             ['IT Automation Services', 'it.automation'],
         ],

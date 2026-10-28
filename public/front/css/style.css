@@ -3742,3 +3742,23 @@ select:-webkit-autofill {
 .maps_gif img {
     max-width: 75%;
 }
+
+
+
+/* Mobile menu "Services" title: pehle <h6 class="m-0"> tha. h6 jaisa font aur line-height wapas set (p ko body ka font/line-height milta hai) */
+.menu-header .menu-services-title {
+    font-family: "Public Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+
+.foot_rt p.sub_head {
+    font-family: "Public Sans", sans-serif;
+    line-height: 1.2;
+}
+
+.foot_contact_label {
+    line-height: 1.2;
+}

@@ -1,4 +1,4 @@
-{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/css/intlTelInput.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/css/intlTelInput.min.css">
 
 <style>
 .WhatsAppButton_mpp {
@@ -60,7 +60,7 @@
   justify-content: space-between;
 }
 
-.wa_head h5 {
+.wa_head .wa_title {
   color: #fff;
   margin: 0;
   font-size: 15px;
@@ -151,14 +151,13 @@
 
     <div class="whatsapp-popup" id="whatsappPopup">
       <div class="wa_head">
-        <h5>Contact on WhatsApp</h5>
+        <p class="wa_title">Contact on WhatsApp</p>
         <span class="close-inquiry">&times;</span>
       </div>
 
       <form class="wa_form" method="POST" action="{{ route('whatsaapinquiry') }}" id="whatsappForm" target="_blank">
         @csrf
 
-  
         <div style="display:none;">
             <input type="text" name="website_honey_point" id="wa_website_honey_point">
         </div>
@@ -181,7 +180,7 @@
       </form>
     </div>
 
-    <img src="{{ asset('public/front/images/whatsapp.svg') }}" id="whatsappBtn" alt="whatsapp">
+    <!--<img src="{{ asset('public/front/images/whatsapp.svg') }}" id="whatsappBtn" alt="whatsapp">-->
   </div>
 </div>
 
@@ -416,4 +415,4 @@ $("#whatsappForm").validate({
 });
 
 });
-</script> --}}
+</script>

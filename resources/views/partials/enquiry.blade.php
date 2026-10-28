@@ -1,5 +1,4 @@
 <style>
-/* Floating enquiry button */
 .enquiry-btn {
   position: fixed;
   top: 50%;
@@ -18,11 +17,25 @@
   cursor: pointer;
   writing-mode: vertical-rl;
   transform: translateY(-50%) rotate(180deg);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, .25);
+  /*box-shadow: 0 4px 15px rgba(0, 0, 0, .25);*/
   transition: background .2s, box-shadow .2s;
+  animation: enquiryPulse 1.5s infinite !important;
+  box-shadow: 0 4px 15px rgba(228, 52, 65, 0.25);
 }
+
+@keyframes enquiryPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(228, 52, 65, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(228, 52, 65, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(228, 52, 65, 0);
+    }
+}
+    
 .enquiry-btn svg { display: none; }
-.enquiry-btn:hover { background: #182653; transform: translateY(-50%) rotate(180deg); }
 .enquiry-btn:focus-visible { outline: 3px solid #8ba6ff; outline-offset: 3px; }
 
 /* Overlay + modal */
@@ -64,7 +77,13 @@
   display: flex; flex: 0 0 40px; align-items: center; justify-content: center;
   width: 40px; height: 40px; border-radius: 10px; background: rgba(255, 255, 255, .15);
 }
-.enquiry-header h2 { margin: 0; color: #fff; font-size: 20px; font-weight: 600; }
+.enquiry-header h2,
+.enquiry-title { margin: 0; color: #fff; font-size: 20px; font-weight: 600; font-family: "Public Sans", sans-serif; }
+.enquiry-title { line-height: 56px; }
+@media (max-width: 1800px) { .enquiry-title { line-height: 50px; } }
+@media (max-width: 1441px) { .enquiry-title { line-height: 48px; } }
+@media (max-width: 1367px) { .enquiry-title { line-height: 36px; } }
+@media (max-width: 768px)  { .enquiry-title { line-height: 36px; } }
 .enquiry-close {
   padding: 0 0 0 12px; border: 0; color: #fff; background: transparent;
   font-size: 27px; line-height: 1; cursor: pointer;
@@ -151,7 +170,8 @@ p.js-error { display: block; margin: 4px 0 0; color: #a52020; font-size: 12px; l
   .enquiry-overlay { padding: 8px; }
   .enquiry-modal { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); }
   .enquiry-header { padding: 12px 16px; }
-  .enquiry-header h2 { font-size: 18px; }
+  .enquiry-header h2,
+  .enquiry-title { font-size: 18px; }
   .enquiry-header-icon { width: 36px; height: 36px; flex-basis: 36px; }
   .enquiry-body { padding: 16px 18px 18px; }
   #enquiryForm { gap: 9px 12px; }
@@ -193,7 +213,7 @@ p.js-error { display: block; margin: 4px 0 0; color: #a52020; font-size: 12px; l
             <path d="m4.5 7 7.5 6 7.5-6" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </span>
-        <h2 id="enquiryTitle">Enquire Now</h2>
+        <p class="enquiry-title" id="enquiryTitle">Enquire Now</p>
       </div>
       <button type="button" class="enquiry-close" id="closeEnquiry" aria-label="Close enquiry form">&times;</button>
     </div>
@@ -312,9 +332,9 @@ window.addEventListener("load", function () {
     function initPhone() {
       if (iti || !window.intlTelInput || !phoneEl) return;
       iti = window.intlTelInput(phoneEl, {
-        initialCountry: siteCountry,          // IP detect fail ho to site ki country
+        initialCountry: siteCountry,          
         separateDialCode: true,
-        dropdownContainer: document.body,     // modal ke andar clip na ho
+        dropdownContainer: document.body,     
         utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js"
       });
       phoneEl.addEventListener("countrychange", syncCountry);
@@ -324,7 +344,6 @@ window.addEventListener("load", function () {
 
     /* ---------- Validate setup ---------- */
     var validator = $form.validate({
-      // honeypot aur captcha textarea ko validation se bahar rakho
       ignore: ".enquiry-honeypot input, [name='g-recaptcha-response']",
       errorElement: "p",
       errorClass: "js-error",
@@ -346,7 +365,7 @@ window.addEventListener("load", function () {
       },
       errorPlacement: function ($error, $element) {
         var $iti = $element.closest(".iti");
-        $error.insertAfter($iti.length ? $iti : $element); // field ke bilkul neeche
+        $error.insertAfter($iti.length ? $iti : $element); 
       },
       highlight: function (el) {
         $(el).addClass("is-invalid");
@@ -355,11 +374,9 @@ window.addEventListener("load", function () {
         $(el).removeClass("is-invalid");
       },
       onkeyup: function (el) {
-        // error dikhne ke baad hi typing par live re-check
         if ($(el).hasClass("is-invalid")) this.element(el);
       },
       invalidHandler: function () {
-        // captcha bhi check karo, taaki saare errors ek saath dikhein
         var token = $form.find('[name="g-recaptcha-response"]').val() || "";
         $captchaErr.text("Please complete the CAPTCHA verification.").prop("hidden", !!token);
       },
@@ -375,7 +392,6 @@ window.addEventListener("load", function () {
       }
     });
 
-    // Phone me sirf digits
     $form.find('[name="phone"]').on("input", function () {
       this.value = this.value.replace(/\D/g, "").slice(0, 15);
     });
@@ -439,7 +455,6 @@ window.addEventListener("load", function () {
         headers: { "X-Requested-With": "XMLHttpRequest", "Accept": "application/json" }
       })
       .done(function (data) {
-        // Success: thank-you page par bhejo
         $submitBtn.prop("disabled", true).text("Redirecting...");
         window.location.href = "{{ route('thank.you') }}";
       })
