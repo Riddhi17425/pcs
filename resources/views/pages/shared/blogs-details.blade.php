@@ -35,6 +35,45 @@ table tr:nth-child(even) {
 table tr:hover {
     background-color: #f1f1f1;
 }
+
+/* ===== SEO heading hierarchy fix (tag badle hain, look same rakhne ke liye) ===== */
+
+/* "Conclusion": h5 -> h2. Global h2 ki line-height (56px) na aaye, isliye purani (h5 jaisi) 1.2 */
+.conclusion-title {
+    line-height: 1.2;
+}
+
+/* "Frequently Asked Questions": h4 -> h2. Size/weight/color wahi jo pehle h4 se aate the */
+.faq-title {
+    font-size: calc(1.275rem + .3vw);
+    line-height: 1.2;
+    font-weight: 500;
+    color: inherit;
+}
+
+@media (min-width: 1200px) {
+    .faq-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Blog content ke andar h2 / h3 / h4 me alag-alag size, taaki hierarchy dikhe (h2 35px pehle jaisa hi hai) */
+.blogs_details h3 {
+    font-size: 28px;
+}
+
+.blogs_details h4 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--black3);
+}
+
+/* Blog content paragraph / list size: 16px -> 18px (sirf blog detail page) */
+.blogs_details p,
+.blogs_details li {
+    font-size: 18px;
+    line-height: 28px;
+}
 </style>
 <section class="com_hero" style="background-image: url('{{ asset('public/front/images/blog-hero-bg.png') }}');">
     <div class="container">
@@ -112,7 +151,7 @@ table tr:hover {
 </section>
 
 <div class="container">
-    <h5 class="sub_head mt-lg-5">Conclusion</h5>
+    <h2 class="sub_head conclusion-title mt-lg-5">Conclusion</h2>
     {!! $blog->conclusion !!}
 </div>
 <section class="accoding" >
@@ -158,13 +197,13 @@ table tr:hover {
 
 <div class="row">
     <div class="col-lg-12">
-        <h4 class="text-center mb-5"><b>Frequently Asked Questions</b></h4>
+        <h2 class="text-center mb-5 faq-title"><b>Frequently Asked Questions</b></h2>
 
         <div id="accordionExample">
             @foreach ($blog->blog_faq as $index => $faq)
                 <div class="faq-item mb-3">
                     
-                    <h5 class="faq-header {{ $index !== 0 ? 'collapsed' : '' }}"
+                    <h3 class="sub_head faq-header {{ $index !== 0 ? 'collapsed' : '' }}"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapse{{ $index }}"
                         aria-expanded="{{ $index === 0 ? 'true' : 'false' }}"
@@ -172,7 +211,7 @@ table tr:hover {
                         
                         <span>{{ $faq['faq_title'] }}</span>
                         <span class="faq-icon"></span>
-                    </h5>
+                    </h3>
 
                     <div id="collapse{{ $index }}"
                         class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}"
@@ -207,7 +246,7 @@ table tr:hover {
                     <div class="ins_card">
                         <p>{{ \Carbon\Carbon::parse($data->date)->format('F j, Y') }}</p>
                         <a href="{{ route($site['blog_detail'], $data->url) }}">
-                            <h4 class="sub_head">{!! $data->title !!}</h4>
+                            <h3 class="sub_head">{!! $data->title !!}</h3>
                         </a>
                     </div>
                 </div>
@@ -215,6 +254,45 @@ table tr:hover {
         </div>
     </div>
 </section>
+
+{{-- ===== BlogPosting schema (dynamic) ===== --}}
+@php
+    $blogUrl  = url()->current();
+    $blogDesc = \Illuminate\Support\Str::limit(trim(preg_replace('/\s+/', ' ', strip_tags($blog->short_description ?? ''))), 160);
+
+    $blogSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BlogPosting',
+        'mainEntityOfPage' => [
+            '@type' => 'WebPage',
+            '@id' => $blogUrl,
+        ],
+        'headline' => \Illuminate\Support\Str::limit(strip_tags($blog->title), 110, ''),
+        'description' => $blogDesc,
+        'image' => [asset('/' . $blog->detail_image)],
+        'datePublished' => \Carbon\Carbon::parse($blog->date)->toIso8601String(),
+        'dateModified' => \Carbon\Carbon::parse($blog->updated_at ?? $blog->date)->toIso8601String(),
+        'author' => [
+            '@type' => 'Organization',
+            'name' => 'PCS Global',
+            'url' => url('/'),
+        ],
+        'publisher' => [
+            '@type' => 'Organization',
+            'name' => 'PCS Global',
+            'logo' => [
+                '@type' => 'ImageObject',
+                'url' => asset('public/front/images/logo.svg'),
+            ],
+        ],
+    ];
+@endphp
+
+<script type="application/ld+json">
+    {!! json_encode($blogSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+</script>
+
+{{-- ===== FAQPage schema ===== --}}
 @if(!empty($faqItems))
     <script type="application/ld+json">
         {!! json_encode($faqSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}

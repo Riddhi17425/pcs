@@ -78,7 +78,9 @@
         display: none;
     }
 
-    .enquiry-header h2 {
+    /* Modal title ab h2 nahi, p.enquiry-title hai (SEO heading fix) - look same */
+    .enquiry-header h2,
+    .enquiry-title {
         color: #111111;
         font-size: 20px;
         font-family: "Public Sans", sans-serif;
@@ -236,7 +238,7 @@
 
                 <div class="foot_links_group">
                     <div class="foot_rt">
-                        <h4 class="sub_head">Quick Links</h4>
+                        <p class="sub_head">Quick Links</p>
                         <ul>
                             @foreach ($quickLinks as $link)
                                 <li><a href="{{ $link[1] }}"@if (!empty($link[2])) target="_blank" rel="noopener"@endif>{{ $link[0] }}</a></li>
@@ -245,7 +247,7 @@
                     </div>
 
                     <div class="foot_rt">
-                        <h4 class="sub_head">Our Services</h4>
+                        <p class="sub_head">Our Services</p>
                         <ul>
                             @foreach ($services as [$label, $url])
                                 <li><a href="{{ $url }}">{!! $label !!}</a></li>
@@ -254,15 +256,15 @@
                     </div>
 
                     <div class="foot_rt border-end-0">
-                        <h4 class="sub_head">Contact Us</h4>
+                        <p class="sub_head">Contact Us</p>
 
                         <div class="foot_contact_block">
-                            <h6 class="foot_contact_label">Address:</h6>
+                            <p class="foot_contact_label">Address:</p>
                             <p class="foot_contact_value">{!! $address !!}</p>
                         </div>
 
                         <div class="foot_contact_block">
-                            <h6 class="foot_contact_label">Call Us:</h6>
+                            <p class="foot_contact_label">Call Us:</p>
                             <ul class="foot_call_list">
                                 @foreach ($phones as $phone)
                                     <li>
@@ -278,7 +280,7 @@
                         </div>
 
                         <div class="foot_contact_block mb-0">
-                            <h6 class="foot_contact_label">Email Us:</h6>
+                            <p class="foot_contact_label">Email Us:</p>
                             <p class="foot_contact_value">
                                 <a href="mailto:{{ $email }}">{{ $email }}</a>
                             </p>

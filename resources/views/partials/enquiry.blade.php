@@ -79,7 +79,15 @@
   display: flex; flex: 0 0 40px; align-items: center; justify-content: center;
   width: 40px; height: 40px; border-radius: 10px; background: rgba(255, 255, 255, .15);
 }
-.enquiry-header h2 { margin: 0; color: #fff; font-size: 20px; font-weight: 600; }
+/* Modal title ab h2 nahi, p.enquiry-title hai (SEO heading fix).
+   font-family + line-height wahi rakhe hain jo pehle global h2 se aati thi, taaki look same rahe */
+.enquiry-header h2,
+.enquiry-title { margin: 0; color: #fff; font-size: 20px; font-weight: 600; font-family: "Public Sans", sans-serif; }
+.enquiry-title { line-height: 56px; }
+@media (max-width: 1800px) { .enquiry-title { line-height: 50px; } }
+@media (max-width: 1441px) { .enquiry-title { line-height: 48px; } }
+@media (max-width: 1367px) { .enquiry-title { line-height: 36px; } }
+@media (max-width: 768px)  { .enquiry-title { line-height: 36px; } }
 .enquiry-close {
   padding: 0 0 0 12px; border: 0; color: #fff; background: transparent;
   font-size: 27px; line-height: 1; cursor: pointer;
@@ -166,7 +174,8 @@ p.js-error { display: block; margin: 4px 0 0; color: #a52020; font-size: 12px; l
   .enquiry-overlay { padding: 8px; }
   .enquiry-modal { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); }
   .enquiry-header { padding: 12px 16px; }
-  .enquiry-header h2 { font-size: 18px; }
+  .enquiry-header h2,
+  .enquiry-title { font-size: 18px; }
   .enquiry-header-icon { width: 36px; height: 36px; flex-basis: 36px; }
   .enquiry-body { padding: 16px 18px 18px; }
   #enquiryForm { gap: 9px 12px; }
@@ -208,7 +217,7 @@ p.js-error { display: block; margin: 4px 0 0; color: #a52020; font-size: 12px; l
             <path d="m4.5 7 7.5 6 7.5-6" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </span>
-        <h2 id="enquiryTitle">Enquire Now</h2>
+        <p class="enquiry-title" id="enquiryTitle">Enquire Now</p>
       </div>
       <button type="button" class="enquiry-close" id="closeEnquiry" aria-label="Close enquiry form">&times;</button>
     </div>
