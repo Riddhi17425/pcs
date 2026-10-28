@@ -158,7 +158,6 @@
       <form class="wa_form" method="POST" action="{{ route('whatsaapinquiry') }}" id="whatsappForm" target="_blank">
         @csrf
 
-         <!-- Honeypot field (hidden from users) -->
         <div style="display:none;">
             <input type="text" name="website_honey_point" id="wa_website_honey_point">
         </div>

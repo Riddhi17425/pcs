@@ -1,8 +1,4 @@
-{{-- Footer (sab countries): <x-footer>. Layout (layouts/app) har country ka data config/sites.php -> 'footer' se deta hai:
-     quickLinks = [[label, url, newTab (optional bool)], ...]
-     services = [[label, url], ...]
-     phones = [['number' => '(+613) 9998 0494', 'label' => 'AUS' (optional), 'icon' => url (optional), 'alt' => 'Australia'], ...]
-     address = html string.  Baaki cheezein (logo, about, social, badges, copyright) ke defaults hain. --}}
+
 @props([
     'homeUrl' => url('/'),
     'quickLinks' => [],
@@ -78,7 +74,6 @@
         display: none;
     }
 
-    /* Modal title ab h2 nahi, p.enquiry-title hai (SEO heading fix) - look same */
     .enquiry-header h2,
     .enquiry-title {
         color: #111111;

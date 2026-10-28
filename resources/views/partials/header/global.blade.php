@@ -1,5 +1,4 @@
-{{-- Header (India / Global site) --}}
-  <header id="siteHeader">
+<header id="siteHeader">
     <div class="container">
       <nav class="pt-0  ">
         <div class="logo">

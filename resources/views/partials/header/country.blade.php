@@ -1,5 +1,3 @@
-{{-- Header (Australia / US / UK). Data: config/sites.php -> 'nav' (App\Support\Site URLs bana deta hai).
-     $header_overlay = true (page ke @extends se) -> header hero ke upar transparent. --}}
 @php($nav = $site['nav'])
   <header id="siteHeader" class="{{ !empty($header_overlay) ? 'header_overlay' : '' }}">
     <div class="container">

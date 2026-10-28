@@ -36,14 +36,11 @@ table tr:hover {
     background-color: #f1f1f1;
 }
 
-/* ===== SEO heading hierarchy fix (tag badle hain, look same rakhne ke liye) ===== */
 
-/* "Conclusion": h5 -> h2. Global h2 ki line-height (56px) na aaye, isliye purani (h5 jaisi) 1.2 */
 .conclusion-title {
     line-height: 1.2;
 }
 
-/* "Frequently Asked Questions": h4 -> h2. Size/weight/color wahi jo pehle h4 se aate the */
 .faq-title {
     font-size: calc(1.275rem + .3vw);
     line-height: 1.2;
@@ -57,7 +54,6 @@ table tr:hover {
     }
 }
 
-/* Blog content ke andar h2 / h3 / h4 me alag-alag size, taaki hierarchy dikhe (h2 35px pehle jaisa hi hai) */
 .blogs_details h3 {
     font-size: 28px;
 }
@@ -68,7 +64,6 @@ table tr:hover {
     color: var(--black3);
 }
 
-/* Blog content paragraph / list size: 16px -> 18px (sirf blog detail page) */
 .blogs_details p,
 .blogs_details li {
     font-size: 18px;
@@ -310,7 +305,7 @@ document.querySelectorAll('h5').forEach(h5 => {
 // Then handle the special case inside blogs_details .col-lg-12
 const block = document.querySelector('.blogs_details .col-lg-12');
 if (block) {
-    const firstH5 = block.querySelector('h5'); // only first h5 in that block
+    const firstH5 = block.querySelector('h5'); 
     if (firstH5) {
         firstH5.classList.add('mt-0');
     }

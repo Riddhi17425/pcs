@@ -37,7 +37,6 @@
 }
     
 .enquiry-btn svg { display: none; }
-/*.enquiry-btn:hover { background: #182653; transform: translateY(-50%) rotate(180deg); }*/
 .enquiry-btn:focus-visible { outline: 3px solid #8ba6ff; outline-offset: 3px; }
 
 /* Overlay + modal */
@@ -79,22 +78,6 @@
   display: flex; flex: 0 0 40px; align-items: center; justify-content: center;
   width: 40px; height: 40px; border-radius: 10px; background: rgba(255, 255, 255, .15);
 }
-/* Modal title ab h2 nahi, p.enquiry-title hai (SEO heading fix).
-   font-family + line-height wahi rakhe hain jo pehle global h2 se aati thi, taaki look same rahe */
-.enquiry-header h2,
-.enquiry-title { margin: 0; color: #fff; font-size: 20px; font-weight: 600; font-family: "Public Sans", sans-serif; }
-.enquiry-title { line-height: 56px; }
-@media (max-width: 1800px) { .enquiry-title { line-height: 50px; } }
-@media (max-width: 1441px) { .enquiry-title { line-height: 48px; } }
-@media (max-width: 1367px) { .enquiry-title { line-height: 36px; } }
-@media (max-width: 768px)  { .enquiry-title { line-height: 36px; } }
-.enquiry-close {
-  padding: 0 0 0 12px; border: 0; color: #fff; background: transparent;
-  font-size: 27px; line-height: 1; cursor: pointer;
-}
-.enquiry-body { padding: 20px 28px 24px; }
-
-/* Form */
 #enquiryForm {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -223,7 +206,6 @@ p.js-error { display: block; margin: 4px 0 0; color: #a52020; font-size: 12px; l
     </div>
 
     <div class="enquiry-body">
-      {{-- "validated-form" class jaan-bunjh kar nahi lagayi (global main.js ke saath conflict se bachne ke liye) --}}
       <form id="enquiryForm" action="{{ route('request.store') }}" method="POST" novalidate>
         @csrf
 
@@ -336,9 +318,9 @@ window.addEventListener("load", function () {
     function initPhone() {
       if (iti || !window.intlTelInput || !phoneEl) return;
       iti = window.intlTelInput(phoneEl, {
-        initialCountry: siteCountry,          // IP detect fail ho to site ki country
+        initialCountry: siteCountry,          
         separateDialCode: true,
-        dropdownContainer: document.body,     // modal ke andar clip na ho
+        dropdownContainer: document.body,     
         utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js"
       });
       phoneEl.addEventListener("countrychange", syncCountry);
@@ -348,7 +330,6 @@ window.addEventListener("load", function () {
 
     /* ---------- Validate setup ---------- */
     var validator = $form.validate({
-      // honeypot aur captcha textarea ko validation se bahar rakho
       ignore: ".enquiry-honeypot input, [name='g-recaptcha-response']",
       errorElement: "p",
       errorClass: "js-error",
@@ -463,7 +444,6 @@ window.addEventListener("load", function () {
         headers: { "X-Requested-With": "XMLHttpRequest", "Accept": "application/json" }
       })
       .done(function (data) {
-        // Success: thank-you page par bhejo
         $submitBtn.prop("disabled", true).text("Redirecting...");
         window.location.href = "{{ route('thank.you') }}";
       })

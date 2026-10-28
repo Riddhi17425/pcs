@@ -1,5 +1,3 @@
-<!-- Request A Call modal (sab countries). Style: public/front/css/common/request-modal.css
-     JS hooks same hain: #requestForm (.validated-form), #requestPhone, #requestFullPhone, #requestCountrySelect -->
 @php
     $rqBadges = asset('public/front/images/figma-footer-badges');
 @endphp
@@ -90,7 +88,6 @@
                                 <input type="hidden" name="form_type" value="{{ $rqFormType }}">
                             </div>
 
-                            {{-- Country field form me nahi dikhta: phone number ke flag wali country yahan apne aap bharti hai --}}
                             <input type="hidden" name="country" id="requestCountrySelect" value="India">
 
                             <div class="col-lg-12 rq_field">
