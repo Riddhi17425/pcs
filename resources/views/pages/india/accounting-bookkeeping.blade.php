@@ -138,7 +138,7 @@
         ['q' => 'Does PCS Global provide accounting outsourcing services in the USA, UK and Australia?',
          'a' => 'Yes. We work with businesses and firms in all three markets, following the relevant accounting standards and reporting cycles. Regulatory filings and professional sign-off remain with you or your licensed adviser.'],
     ];
-
+        
     // card icons (24x24, stroke): process steps aur benefits ke liye
     $icon = [
         'search'   => '<circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4.5-4.5"/>',

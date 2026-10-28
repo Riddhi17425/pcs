@@ -64,7 +64,7 @@
                                 <li class="mega-item">
                                     <a class="dropdown-item d-flex justify-content-between align-items-center"
                                        href="{{ route('taxation.services') }}">
-                                        Taxation Services
+                                        Tax Outsourcing Services
                                         <!--<span class="arrow">›</span>-->
                                     </a>
 
@@ -213,7 +213,7 @@
           <ul>
              <li><a href="{{ route('pcs.global.bookkeeping') }}">Accounting Outsourcing Services</a></li>
              <!-- <span class="next-menu" data-target="menu-accounting">&rsaquo;</span>-->
-            <li><a href="{{ route('taxation.services') }}">Taxation Services</a></li>
+            <li><a href="{{ route('taxation.services') }}">Tax Outsourcing Services</a></li>
             <!-- <span class="next-menu" data-target="menu-taxation">&rsaquo;</span>-->
              {{-- <li><a href="{{ route('strata.management') }}">Strata Property Management</a></li> --}}
              <li><a href="{{ route('payroll.services') }}">Payroll Outsourcing Services</a></li>

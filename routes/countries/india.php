@@ -28,7 +28,9 @@ Route::middleware('country:india')->group(function () {
     Route::get('accounting-outsourcing-services', [ServiceController::class, 'accountingBookeeping'])->name('pcs.global.bookkeeping');
 
     // Route::get('taxation-services', [ServiceController::class, 'taxationservices'])->name('taxation.services'); // OLD LINK
-    Route::get('outsourced-taxation-services', [ServiceController::class, 'taxationservices'])->name('taxation.services');
+    // Route::get('outsourced-taxation-services', [ServiceController::class, 'taxationservices'])->name('taxation.services'); // OLD LINK
+    Route::get('tax-preparation-outsourcing-services', [ServiceController::class, 'taxationservices'])->name('taxation.services');
+    // Route::redirect('outsourced-taxation-services', '/tax-preparation-outsourcing-services', 301); 
 
     // Route::get('payroll-services', [ServiceController::class, 'payrollService'])->name('payroll.services'); // OLD LINK
     Route::get('outsourced-payroll-services', [ServiceController::class, 'payrollService'])->name('payroll.services');
