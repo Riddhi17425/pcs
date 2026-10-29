@@ -29,7 +29,7 @@ class SitemapController extends Controller
             'white-label-accounting-services',
             'accounting-outsourcing-services',
             'tax-preparation-outsourcing-services',
-            'outsourced-payroll-services',
+            'bookkeeping-outsourcing-services',
             'recruitment-services',
             'payroll-outsourcing-services',
             'australia/bookkeeping-accounting-services',

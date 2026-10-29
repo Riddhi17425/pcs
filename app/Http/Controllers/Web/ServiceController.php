@@ -266,28 +266,26 @@ class ServiceController extends Controller
 
     public function payrollService()
     {
-        $faq = Faq::where('status', 'Active')->where('faq_url', 'payroll-services')->first();
-
         $meta_title       = "Payroll Outsourcing Services | PCS Global";
-        $meta_description = "PCS Global provides payroll outsourcing services for startups, SMEs, and enterprises, helping businesses manage payroll efficiently with expert professionals.";
+        $meta_description = "PCS Global provides outsourced payroll solutions for businesses seeking accurate payroll processing, streamlined administration and scalable support. Talk to Us!";
 
-        return view('pages.india.payroll-services', compact('meta_title', 'meta_description', 'faq'));
+        return view('pages.india.payroll-services', compact('meta_title', 'meta_description'));
+    }
+
+    public function bookkeepingServices()
+    {
+        $meta_title       = "Bookkeeping Outsourcing Services | PCS Global";
+        $meta_description = "Looking for bookkeeping outsourcing services? PCS Global helps businesses and accounting firms manage daily bookkeeping, reconciliations and financial records.";
+
+        return view('pages.india.bookkeeping-services', compact('meta_title', 'meta_description'));
     }
 
     public function taxationservices()
     {
         $meta_title       = "Tax Preparation Outsourcing Services | PCS Global";
-        $meta_description = "Outsource tax preparation to PCS Global: workpapers, draft returns and sales tax workings for CPA firms and businesses in the USA, UK and Australia.";
+        $meta_description = "PCS Global provides tax preparation outsourcing services, including tax returns, tax compliance and reliable tax support for businesses and accounting firms.";
 
         return view('pages.india.taxation-services', compact('meta_title', 'meta_description'));
-    }
-
-    public function payrolloutsourcing()
-    {
-        $meta_title       = "";
-        $meta_description = "";
-
-        return view('pages.india.payroll-outsourcing-services', compact('meta_title', 'meta_description'));
     }
 
     // Shared page (India, Australia). Header/footer: route middleware 'country:<key>' -> $site

@@ -25,3 +25,5 @@ Thumbs.db
 
 # Figma MCP config (API key)
 /.mcp.json
+
+/backups

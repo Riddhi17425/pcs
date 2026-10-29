@@ -64,6 +64,13 @@
 
                                 <li class="mega-item">
                                     <a class="dropdown-item d-flex justify-content-between align-items-center"
+                                       href="{{ route('bookkeeping.services') }}">
+                                        Bookkeeping Outsourcing Services
+                                    </a>
+                                </li>
+
+                                <li class="mega-item">
+                                    <a class="dropdown-item d-flex justify-content-between align-items-center"
                                        href="{{ route('taxation.services') }}">
                                         Tax Outsourcing Services
                                         <!--<span class="arrow">›</span>-->
@@ -213,6 +220,7 @@
         <div class="menu-body">
           <ul>
              <li><a href="{{ route('pcs.global.bookkeeping') }}">Accounting Outsourcing Services</a></li>
+             <li><a href="{{ route('bookkeeping.services') }}">Bookkeeping Outsourcing Services</a></li>
              <!-- <span class="next-menu" data-target="menu-accounting">&rsaquo;</span>-->
             <li><a href="{{ route('taxation.services') }}">Tax Outsourcing Services</a></li>
             <!-- <span class="next-menu" data-target="menu-taxation">&rsaquo;</span>-->
