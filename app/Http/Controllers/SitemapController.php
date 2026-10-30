@@ -21,6 +21,7 @@ class SitemapController extends Controller
             '/outsourced-accounting-bookkeeping-services',
             '/outsourced-taxation-services',
             '/outsourced-payroll-services',
+            'payroll-outsourcing-services',
             '/recruitment-services',
             '/it-automation',
             '/data-security',
