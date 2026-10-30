@@ -265,60 +265,7 @@
     </div>
 </section>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const track = document.getElementById('trustSliderTrack');
-    const prevBtn = document.querySelector('.trust_slider_prev');
-    const nextBtn = document.querySelector('.trust_slider_next');
-    const segs = document.querySelectorAll('#trustSliderProgress .trust_slider_seg');
-    if (!track || !segs.length) return;
-
-    const originalCards = Array.from(track.querySelectorAll('.trust_slide'));
-    const loopCards = originalCards.map((card) => {
-        const clone = card.cloneNode(true);
-        clone.setAttribute('aria-hidden', 'true');
-        clone.querySelectorAll('a, button, input, select, textarea, [tabindex]').forEach((element) => element.setAttribute('tabindex', '-1'));
-        track.appendChild(clone);
-        return clone;
-    });
-    const cardLeft = (card) => card.offsetLeft - track.firstElementChild.offsetLeft;
-    const cycleWidth = () => cardLeft(loopCards[0]);
-
-    function updateProgress() {
-        const width = cycleWidth();
-        const position = width > 0 ? track.scrollLeft % width : track.scrollLeft;
-        let active = 0;
-        let best = Infinity;
-        originalCards.forEach((card, i) => {
-            const distance = Math.abs(cardLeft(card) - position);
-            if (distance < best) { best = distance; active = i; }
-        });
-        const activeIndex = Math.min(segs.length - 1, Math.round(active * (segs.length - 1) / Math.max(1, originalCards.length - 1)));
-        segs.forEach((seg, i) => seg.classList.toggle('active', i === activeIndex));
-    }
-
-    function scrollByCard(direction) {
-        const card = track.querySelector('.trust_slide');
-        if (!card) return;
-        const gap = parseFloat(getComputedStyle(track).gap) || 0;
-        track.scrollBy({ left: direction * (card.offsetWidth + gap), behavior: 'smooth' });
-    }
-
-    function autoSlide() {
-        scrollByCard(1);
-    }
-
-    prevBtn && prevBtn.addEventListener('click', () => scrollByCard(-1));
-    nextBtn && nextBtn.addEventListener('click', () => scrollByCard(1));
-    track.addEventListener('scroll', () => {
-        const width = cycleWidth();
-        while (width > 0 && track.scrollLeft >= width) track.scrollLeft -= width;
-        updateProgress();
-    });
-    window.setInterval(autoSlide, 4000);
-    updateProgress();
-});
-</script>
+<script src="{{ asset('public/front/js/trust-slider.js') }}?v={{ filemtime(public_path('front/js/trust-slider.js')) }}" defer></script>
 
 
 <!-- Industries -->

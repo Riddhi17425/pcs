@@ -27,6 +27,10 @@ class SitemapController extends Controller
             '/data-security',
             '/blog',
             '/contact-us',
+            '/accounting-outsourcing-services',
+            '/tax-preparation-outsourcing-services',
+            '/bookkeeping-outsourcing-services',
+            '/payroll-outsourcing-services',
 
             // AUSTRALIA PAGES
             '/au',

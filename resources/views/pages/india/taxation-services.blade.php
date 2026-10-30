@@ -7,7 +7,7 @@
 ])
 
 @push('styles')
-    @foreach (['common/hero-dark.css', 'common/home-sections.css', 'pages/accounting-outsourcing.css', 'pages/taxation-outsourcing.css'] as $css)
+    @foreach (['common/hero-dark.css', 'common/home-sections.css', 'pages/accounting-outsourcing.css', 'common/service-split.css'] as $css)
         <link rel="stylesheet" href="{{ asset('public/front/css/' . $css) }}?v={{ filemtime(public_path('front/css/' . $css)) }}">
     @endforeach
 @endpush
@@ -29,17 +29,17 @@
     ];
 
     $services = [
-        ['title' => 'Tax Preparation Outsourcing', 'img' => $img('Taxation.jpg'),
+        ['title' => 'Tax Preparation Outsourcing', 'img' => $img('tax-outsourcing/tax-preparation-outsourcing.webp'),
          'text' => 'Our outsourced tax preparation service organises client source documents, reconciles income and expenses to the accounts, and builds indexed workpapers and supporting schedules. Your reviewer starts from a complete, structured file.'],
-        ['title' => 'Tax Return Outsourcing', 'img' => $img('Taxation_Services_banner.jpg'),
+        ['title' => 'Tax Return Outsourcing', 'img' => $img('tax-outsourcing/tax-return-outsourcing.webp'),
          'text' => 'With tax return outsourcing, draft returns are completed in your firm’s software from the prepared workpapers. Each return is delivered with an open-items list, so your preparer reviews with full context.'],
-        ['title' => 'Sales Tax Outsourcing', 'img' => $img('digital-taxation.png'),
+        ['title' => 'Sales Tax Outsourcing', 'img' => $img('tax-outsourcing/sales-tax-outsourcing.webp'),
          'text' => 'For US clients, we prepare sales tax workings by jurisdiction, reconcile tax collected to the general ledger and draft returns for approval. For UK and Australian clients, we prepare the equivalent VAT and GST workings.'],
-        ['title' => 'Tax Compliance Outsourcing', 'img' => $img('Strategic_Tax_Preparation.png'),
+        ['title' => 'Tax Compliance Outsourcing', 'img' => $img('tax-outsourcing/tax-compliance-outsourcing.webp'),
          'text' => 'We maintain filing calendars, prepare extension and estimated tax workings, and keep supporting documents organised by client. Deadlines are tracked, while compliance decisions and lodgements remain with your licensed professional.'],
-        ['title' => 'Corporate Tax Preparation &amp; Compliance', 'img' => $img('Corporate_Tax_Planning.png'),
+        ['title' => 'Corporate Tax Preparation &amp; Compliance', 'img' => $img('tax-outsourcing/corporate-tax-preparation.webp'),
          'text' => 'We prepare tax provisions, book-to-tax adjustments, depreciation schedules and draft corporate returns from year-end accounts. Every adjustment is documented and traceable for your reviewer.'],
-        ['title' => 'Individual &amp; Personal Tax Return Preparation', 'img' => $img('Tax-Preparation-Firms.webp'),
+        ['title' => 'Individual &amp; Personal Tax Return Preparation', 'img' => $img('tax-outsourcing/individual-tax-return-preparation.webp'),
          'text' => 'We prepare individual returns covering employment income, investments, rental property, capital gains and deductions. Each return arrives with a clear list of open questions for your preparer.'],
     ];
 
@@ -76,16 +76,17 @@
         ['title' => 'For Enterprises',
          'text' => 'We prepare tax provision workpapers, fixed asset schedules and indirect tax reconciliations within your internal controls and review structure.'],
     ];
-    $needImages = ['figma-trust-slider/small-medium-businesses.webp', 'figma-trust-slider/Growing-Businesses.webp', 'figma-trust-slider/Professional-Services-Firms.webp'];
+    // Same order as $businessNeeds above
+    $needImages = ['tax-outsourcing/tax-small-medium-businesses.webp', 'tax-outsourcing/tax-growing-businesses.webp', 'tax-outsourcing/tax-enterprises.webp'];
 
     $regions = [
-        ['title' => 'USA Tax Outsourcing Services', 'img' => $img('Accounting_-_PCS_Global_in_USA.jpg'),
+        ['title' => 'USA Tax Outsourcing Services', 'img' => $img('tax-outsourcing/usa-tax-outsourcing.webp'),
          'button' => ['Explore US Tax Services', route('taxation-services-usa')],
          'text' => 'We prepare federal and state returns, sales tax workings and supporting schedules for US CPA firms and businesses. Firms obtain Section 7216 consent before client information is shared offshore.'],
-        ['title' => 'UK Tax Outsourcing Services', 'img' => $img('Accounting_-_PCS_Global_in_UK.jpg'),
+        ['title' => 'UK Tax Outsourcing Services', 'img' => $img('tax-outsourcing/uk-tax-outsourcing.webp'),
          'button' => ['Explore UK Tax Services', route('taxation-services-uk')],
          'text' => 'We prepare Self Assessment, partnership, trust and Corporation Tax workings, along with VAT reconciliations. Records are kept ready for Making Tax Digital for Income Tax quarterly updates, in effect since April.'],
-        ['title' => 'Australia Tax Outsourcing Services', 'img' => $img('Accounting_-_PCS_Global_in_Australia.jpg'),
+        ['title' => 'Australia Tax Outsourcing Services', 'img' => $img('tax-outsourcing/australia-tax-outsourcing.webp'),
          'button' => ['Explore Australian Tax Services', route('taxation.services.australian')],
          'text' => 'We prepare individual, company, partnership and trust return workings and BAS/GST reconciliations. Registered agents obtain client permission for offshore work and remain responsible for lodgement.'],
     ];
@@ -111,17 +112,17 @@
     ];
 
     $securityCards = [
-        ['title' => 'Certified Standards', 'img' => $img('australia/Certified-Security-Standards.webp'),
+        ['title' => 'Certified Standards', 'img' => $img('tax-outsourcing/certified-standards.webp'),
          'text' => 'Our ISO 27001 certification covers how client tax data is stored, accessed and transferred, and ISO 9001 covers how each return is prepared and checked. Personal data is processed under GDPR.'],
-        ['title' => 'Consent &amp; Confidentiality', 'img' => $img('australia/Confidentiality -Privacy.webp'),
+        ['title' => 'Consent &amp; Confidentiality', 'img' => $img('tax-outsourcing/consent-confidentiality.webp'),
          'text' => 'A non-disclosure agreement is signed before any data is shared. We work only on files where your firm has obtained the required client consent.'],
-        ['title' => 'Controlled Access', 'img' => $img('australia/Secure-Data-Handling.webp'),
+        ['title' => 'Controlled Access', 'img' => $img('tax-outsourcing/controlled-access.webp'),
          'text' => 'Only assigned preparers can access your files, with multi-factor authentication at every login. Access levels are set by your firm.'],
-        ['title' => 'Secure File Transfer', 'img' => $img('australia/Secure-Technology-Communication.webp'),
+        ['title' => 'Secure File Transfer', 'img' => $img('tax-outsourcing/secure-file-transfer.webp'),
          'text' => 'Source documents, workpapers and draft returns move only through encrypted channels (TLS 1.3, AES-256). Client tax data is never sent by personal email or unsecured file links.'],
-        ['title' => 'Protected Systems &amp; Backups', 'img' => $img('australia/Business-continuity.webp'),
+        ['title' => 'Protected Systems &amp; Backups', 'img' => $img('tax-outsourcing/protected-systems-backups.webp'),
          'text' => 'Our systems are IP-restricted and protected by firewalls and intrusion prevention. Stored data is encrypted and backed up off-site.'],
-        ['title' => 'Return Quality Checks', 'img' => $img('australia/Quality-Process-Controls.webp'),
+        ['title' => 'Return Quality Checks', 'img' => $img('tax-outsourcing/return-quality-checks.webp'),
          'text' => 'Every return passes a second internal review against your checklist. Unconfirmed items are flagged for your reviewer, never assumed.'],
     ];
 
@@ -173,7 +174,7 @@
     $arrow = '<svg width="18" height="12" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19 6.33L14 11.33M19 6.33L14 1.33M19 6.33H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
     $heroBenefits = [
-        ['Dedicated Offshore Tax Preparation Teams', '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M18 14.3c2.1.7 3.5 2.6 3.5 5.7"/>'],
+        ['Dedicated Tax Preparation Teams', '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M18 14.3c2.1.7 3.5 2.6 3.5 5.7"/>'],
         ['Certified to ISO 27001 and ISO 9001', '<circle cx="12" cy="9" r="5.5"/><path d="m8.5 13.3-1.5 7.2 5-2.7 5 2.7-1.5-7.2"/>'],
         ['US, UK &amp; Australian Tax Return Experience', '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 3.8 5.5 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.5-3.8-9S9.5 5.5 12 3Z"/>'],
         ['Secure &amp; Confidential Project Delivery', '<rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/><path d="M12 14.5v2.5"/>'],
@@ -212,7 +213,6 @@
     <div class="container">
         <div class="com_sec_head_top">
             <h2 class="mb-2 mb-xxl-4">Technology and Software We Support</h2>
-            <p>Our team works in QuickBooks, Xero, Sage, NetSuite, Zoho Books, FreshBooks, MYOB and Microsoft Excel.</p>
         </div>
     </div>
     <div class="client_slider_full">
@@ -235,7 +235,7 @@
         <div class="row gy-4 gy-lg-0 justify-content-between align-items-stretch">
             <div class="col-lg-5">
                 <div class="partner_img">
-                    <img class="img-fluid" src="{{ $img('Taxation_Services_banner.jpg') }}" loading="lazy" alt="What Are Taxation Outsourcing Services">
+                    <img class="img-fluid" src="{{ $img('tax-outsourcing/what-are-taxation-outsourcing.webp') }}" loading="lazy" alt="What Are Taxation Outsourcing Services">
                 </div>
             </div>
             <div class="col-lg-6">
@@ -266,7 +266,7 @@
             </div>
             <div class="col-lg-5 order-1 order-lg-2">
                 <div class="partner_img">
-                    <img class="img-fluid" src="{{ $img('Tax-Preparation-Firms.webp') }}" loading="lazy" alt="Why Global Companies Outsource Tax Services to India">
+                    <img class="img-fluid" src="{{ $img('tax-outsourcing/why-outsource-tax-india.webp') }}" loading="lazy" alt="Why Global Companies Outsource Tax Services to India">
                 </div>
             </div>
         </div>
@@ -298,22 +298,22 @@
 </section>
 
 {{-- CPA & Taxation Firms (editorial split: left sticky intro + image, right numbered rows; CSS: pages/taxation-outsourcing.css) --}}
-<section class="tax_firms mt-100">
+<section class="svc_split mt-100">
     <div class="container">
-        <div class="tax_firms_inner">
-            <div class="tax_firms_intro tax_reveal">
+        <div class="svc_split_inner">
+            <div class="svc_split_intro svc_reveal">
                 <h2>Tax Outsourcing Services for CPA &amp; Taxation Firms</h2>
                 <p>Taxation and CPA firms use our team to expand preparation capacity in filing season and across the year. We work with your software, follow your checklists and return every file for review and signature.</p>
                 <a class="com_btn1" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal">Request a Consultation</a>
-                <div class="tax_firms_img">
-                    <img src="{{ $img('Tax-Preparation-Firms.webp') }}" loading="lazy" alt="Tax preparation support for CPA and taxation firms">
+                <div class="svc_split_img">
+                    <img src="{{ $img('tax-outsourcing/tax-support-cpa-firms.webp') }}" loading="lazy" alt="Tax preparation support for CPA and taxation firms">
                 </div>
             </div>
 
-            <ol class="tax_firms_list">
+            <ol class="svc_split_list">
                 @foreach ($firmServices as $card)
-                    <li class="tax_firm_row tax_reveal">
-                        <span class="tax_firm_icon">
+                    <li class="svc_split_row svc_reveal">
+                        <span class="svc_split_icon">
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{!! $firmIcons[$card['icon']] !!}</svg>
                         </span>
                         <div>
@@ -331,11 +331,11 @@
 <script>
 // CPA & Taxation Firms: scroll reveal (IntersectionObserver; reduced-motion / no-support par sab seedha dikhta hai)
 (function () {
-    const items = document.querySelectorAll('.tax_reveal');
+    const items = document.querySelectorAll('.svc_reveal');
     if (!items.length || !('IntersectionObserver' in window) ||
         window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    document.documentElement.classList.add('tax_js');
+    document.documentElement.classList.add('svc_js');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (!entry.isIntersecting) return;
@@ -394,54 +394,7 @@
 </section>
 
 @push('scripts')
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const track = document.getElementById('trustSliderTrack');
-    const prevBtn = document.querySelector('.trust_slider_prev');
-    const nextBtn = document.querySelector('.trust_slider_next');
-    const segs = document.querySelectorAll('#trustSliderProgress .trust_slider_seg');
-    if (!track || !segs.length) return;
-
-    const originalCards = Array.from(track.querySelectorAll('.trust_slide'));
-    const loopCards = originalCards.map((card) => {
-        const clone = card.cloneNode(true);
-        clone.setAttribute('aria-hidden', 'true');
-        clone.querySelectorAll('a, button, input, select, textarea, [tabindex]').forEach((el) => el.setAttribute('tabindex', '-1'));
-        track.appendChild(clone);
-        return clone;
-    });
-    const cardLeft = (card) => card.offsetLeft - track.firstElementChild.offsetLeft;
-    const cycleWidth = () => cardLeft(loopCards[0]);
-
-    function updateProgress() {
-        const width = cycleWidth();
-        const position = width > 0 ? track.scrollLeft % width : track.scrollLeft;
-        let active = 0, best = Infinity;
-        originalCards.forEach((card, i) => {
-            const distance = Math.abs(cardLeft(card) - position);
-            if (distance < best) { best = distance; active = i; }
-        });
-        segs.forEach((seg, i) => seg.classList.toggle('active', i === active));
-    }
-
-    function scrollByCard(direction) {
-        const card = track.querySelector('.trust_slide');
-        if (!card) return;
-        const gap = parseFloat(getComputedStyle(track).gap) || 0;
-        track.scrollBy({ left: direction * (card.offsetWidth + gap), behavior: 'smooth' });
-    }
-
-    prevBtn && prevBtn.addEventListener('click', () => scrollByCard(-1));
-    nextBtn && nextBtn.addEventListener('click', () => scrollByCard(1));
-    track.addEventListener('scroll', () => {
-        const width = cycleWidth();
-        while (width > 0 && track.scrollLeft >= width) track.scrollLeft -= width;
-        updateProgress();
-    });
-    window.setInterval(() => scrollByCard(1), 4000);
-    updateProgress();
-});
-</script>
+<script src="{{ asset('public/front/js/trust-slider.js') }}?v={{ filemtime(public_path('front/js/trust-slider.js')) }}" defer></script>
 @endpush
 
 {{-- Industry Pills --}}
@@ -638,7 +591,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div class="split_acc">
             <div class="split_acc_img">
-                <img src="{{ $img('Offshore_Tax_Preparation.png') }}" loading="lazy" alt="Why Businesses Choose PCS Global for Tax Outsourcing">
+                <img src="{{ $img('tax-outsourcing/why-choose-tax-outsourcing.webp') }}" loading="lazy" alt="Why Businesses Choose PCS Global for Tax Outsourcing">
             </div>
             <div class="split_acc_list accordion" id="whyAcc">
                 @foreach ($benefits as $i => $item)
