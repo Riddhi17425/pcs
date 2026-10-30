@@ -176,16 +176,29 @@
                                             @enderror
                                         </div>
                                         {{-- Cta Text --}}
-                                        <div class="col-md-6 mb-3">
-                                            <label class="form-label">Cta Text</label>
-                                            <input type="text" name="cta_text"
-                                                class="form-control @error('cta_text') is-invalid @enderror"
-                                                value="{{ $blogs->cta_text }}" value="{{ old('cta_text') }}"
-                                                placeholder="Enter cta text">
-                                            @error('cta_text')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label">Cta Text</label>
+                                                <input type="text" name="cta_text"
+                                                    class="form-control @error('cta_text') is-invalid @enderror"
+                                                    value="{{ old('cta_text', $blogs->cta_text) }}"
+                                                    placeholder="Enter cta text">
+                                                @error('cta_text')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+
+                                            {{-- Cta Button Text --}}
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label">Cta Button Text</label>
+                                                <input type="text" name="cta_btn_text"
+                                                    class="form-control @error('cta_btn_text') is-invalid @enderror"
+                                                    value="{{ old('cta_btn_text', $blogs->cta_btn_text) }}"
+                                                    placeholder="Enter cta button text">
+                                                @error('cta_btn_text')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="col-md-6 mb-3"></div>
                                         {{-- Meta Title --}}
                                         <div class="col-md-6">
                                             <label for="meta_title" class="form-label">Meta Title</label>

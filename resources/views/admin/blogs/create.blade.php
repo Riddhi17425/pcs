@@ -195,6 +195,17 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
+                                        {{-- Cta Button Text --}}
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label">Cta Button Text</label>
+                                                <input type="text" name="cta_btn_text"
+                                                    class="form-control @error('cta_btn_text') is-invalid @enderror"
+                                                    value="{{ old('cta_btn_text') }}" placeholder="Enter cta button text">
+                                                @error('cta_btn_text')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="col-md-6 mb-3"></div>
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Meta Title</label>
                                             <input type="text" id="meta_title" name="meta_title" required
@@ -338,7 +349,6 @@
 </div>
             `;
                 $('#faqRepeater').append(block);
-                // Re-init summernote for new textareas
                 $('.summernote').summernote({
                     height: 200,
                     placeholder: 'Enter Description here...'
