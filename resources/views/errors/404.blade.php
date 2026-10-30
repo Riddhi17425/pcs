@@ -13,6 +13,7 @@
         : [
             ['About Us', route('about')],
             ['Accounting Outsourcing Services', route('pcs.global.bookkeeping')],
+            ['Bookkeeping Outsourcing Services', route('bookkeeping.services')],
             ['Tax Outsourcing Services', route('taxation.services')],
             ['Strata Management', route('strata.management')],
             ['Blogs', route('blog')],

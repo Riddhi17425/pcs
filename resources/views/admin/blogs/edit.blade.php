@@ -29,6 +29,34 @@
                 <div class="col-sm-12">
                     <div class="card mb-3">
                         <div class="card-body">
+                            {{-- Display success message --}}
+                            @if (session('success'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    {{ session('success') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                </div>
+                            @endif
+
+                            {{-- Display general error message --}}
+                            @if (session('error'))
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ session('error') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                </div>
+                            @endif
+
+                            {{-- Display all validation errors --}}
+                            @if ($errors->any())
+                                <div class="alert alert-danger" role="alert">
+                                    <strong>Please fix the following errors:</strong>
+
+                                    <ul class="mb-0 mt-2">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <form action="{{ route('blogs.update', $blogs->id) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
@@ -135,8 +163,24 @@
                                         <div class="col-md-6 mb-3">
                                             <label for="date" class="form-label">Date <span
                                                     class="required-star">*</span></label>
-                                            <input type="date" id="date" value="{{ $blogs->date }}"
-                                                name="date" class="form-control">
+                                            <div class="mb-3">
+                                                <label for="date" class="form-label">
+                                                    Date <span class="text-danger">*</span>
+                                                </label>
+
+                                                <input
+                                                    type="date"
+                                                    name="date"
+                                                    id="date"
+                                                    class="form-control @error('date') is-invalid @enderror"
+                                                    value="{{ old('date', $blogs->date ? \Carbon\Carbon::parse($blogs->date)->format('Y-m-d') : '') }}"
+                                                    required
+                                                >
+
+                                                @error('date')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
                                         </div>
                                         {{-- Detail Description --}}
                                         <div class="card mb-4 border">
@@ -176,6 +220,7 @@
                                             @enderror
                                         </div>
                                         {{-- Cta Text --}}
+<<<<<<< HEAD
                                             <div class="col-md-6 mb-3">
                                                 <label class="form-label">Cta Text</label>
                                                 <input type="text" name="cta_text"
@@ -199,6 +244,20 @@
                                                 @enderror
                                             </div>
                                             <div class="col-md-6 mb-3"></div>
+=======
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Cta Text</label>
+                                            <input type="text"
+                                                name="cta_text"
+                                                class="form-control @error('cta_text') is-invalid @enderror"
+                                                value="{{ old('cta_text', $blogs->cta_text) }}"
+                                                placeholder="Enter cta text">
+
+                                            @error('cta_text')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+>>>>>>> 9eb2174aa87a89077ec19f9450b6284b096f0969
                                         {{-- Meta Title --}}
                                         <div class="col-md-6">
                                             <label for="meta_title" class="form-label">Meta Title</label>

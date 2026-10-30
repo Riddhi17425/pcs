@@ -13,53 +13,62 @@ class SitemapController extends Controller
         $xml = '<?xml version="1.0" encoding="UTF-8"?>';
         $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
-        // HOMEPAGE
-        $xml .= '<url>';
-        $xml .= '<loc>' . url('/') . '</loc>';
-        $xml .= '<lastmod>' . $todayTime . '</lastmod>';
-        $xml .= '<priority>1.00</priority>';
-        $xml .= '</url>';
-
         // STATIC PAGES
         $staticPages = [
-            'data-security',
-            'about',
-            'contact-us',
-            'strata-management',
-            'white-label-accounting-services',
-            'accounting-outsourcing-services',
-            'tax-preparation-outsourcing-services',
-            'outsourced-payroll-services',
-            'recruitment-services',
+            '/',
+            '/about',
+            '/white-label-accounting-services',
+            '/outsourced-accounting-bookkeeping-services',
+            '/outsourced-taxation-services',
+            '/outsourced-payroll-services',
             'payroll-outsourcing-services',
-            'australia/bookkeeping-accounting-services',
-            'us/bookkeeping-and-accounting-services',
-            'us/taxation-services',
-            'australia/taxation-services',
-            'uk/taxation-services',
-            'it-automation',
-            'uk/accounting-outsourcing-services/',
-            'uk/small-business-accounting-services/',
-            'uk/outsource-tax-preparation-services/',
-            'uk/about/',
-            'blog',
+            '/recruitment-services',
+            '/it-automation',
+            '/data-security',
+            '/blog',
+            '/contact-us',
+            '/accounting-outsourcing-services',
+            '/tax-preparation-outsourcing-services',
+            '/bookkeeping-outsourcing-services',
+            '/payroll-outsourcing-services',
+
+            // AUSTRALIA PAGES
+            '/au',
+            '/au/about',
+            '/au/accounting-outsourcing-services',
+            '/au/tax-preparation-outsourcing-services',
+            '/au/strata-management-services',
+            '/au/contact-us',
+
+            // UK PAGES
+            '/uk',
+            '/uk/about',
+            '/uk/accounting-outsourcing-services',
+            '/uk/small-business-accounting-services',
+            '/uk/tax-preparation-outsourcing-services',
+            '/uk/contact-us',
+
+            // US PAGES
+            '/us',
+            '/us/about',
+            '/us/accounting-outsourcing-services',
+            '/us/tax-preparation-outsourcing-services',
+            '/us/contact-us',
         ];
 
         foreach ($staticPages as $page)
         {
             $xml .= '<url>';
-            $xml .= '<loc>' . url($page) . '</loc>';
+            $xml .= '<loc>' . htmlspecialchars(url($page), ENT_XML1, 'UTF-8') . '</loc>';
             $xml .= '<lastmod>' . $todayTime . '</lastmod>';
-            $xml .= '<changefreq>monthly</changefreq>';
-            $xml .= '<priority>0.60</priority>';
             $xml .= '</url>';
         }
 
-        // DYNAMIC BLOG PAGES
+        // DYNAMIC BLOG DETAIL PAGES
         $blogs = Blogs::where('status', 'Active')
             ->whereNotNull('url')
             ->where('url', '!=', '')
-            ->latest('updated_at')
+            ->orderBy('updated_at', 'asc')
             ->get();
 
         foreach ($blogs as $blog)
@@ -68,16 +77,17 @@ class SitemapController extends Controller
                 ? $blog->updated_at->toAtomString()
                 : $todayTime;
 
+            $blogUrl = url('blogs/' . $blog->url);
+
             $xml .= '<url>';
-            $xml .= '<loc>' . url('blogs/' . $blog->url) . '</loc>';
+            $xml .= '<loc>' . htmlspecialchars($blogUrl, ENT_XML1, 'UTF-8') . '</loc>';
             $xml .= '<lastmod>' . $lastModified . '</lastmod>';
-            $xml .= '<changefreq>monthly</changefreq>';
-            $xml .= '<priority>0.60</priority>';
             $xml .= '</url>';
         }
 
         $xml .= '</urlset>';
 
-        return response($xml, 200)->header('Content-Type', 'application/xml');
+        return response($xml, 200)
+            ->header('Content-Type', 'application/xml; charset=UTF-8');
     }
 }

@@ -32,11 +32,14 @@ Route::middleware('country:india')->group(function () {
     Route::get('tax-preparation-outsourcing-services', [ServiceController::class, 'taxationservices'])->name('taxation.services');
     // Route::redirect('outsourced-taxation-services', '/tax-preparation-outsourcing-services', 301); 
 
+    Route::get('bookkeeping-outsourcing-services', [ServiceController::class, 'bookkeepingServices'])->name('bookkeeping.services');
+
     // Route::get('payroll-services', [ServiceController::class, 'payrollService'])->name('payroll.services'); // OLD LINK
-    Route::get('outsourced-payroll-services', [ServiceController::class, 'payrollService'])->name('payroll.services');
+    // Route::get('outsourced-payroll-services', [ServiceController::class, 'payrollService'])->name('payroll.services'); // OLD LINK
+    Route::get('payroll-outsourcing-services', [ServiceController::class, 'payrollService'])->name('payroll.services');
+    Route::get('outsourced-payroll-services', fn () => redirect()->route('payroll.services', [], 301)); // purana URL -> naya (SEO)
 
     Route::get('recruitment-services', [ServiceController::class, 'recruitmentService'])->name('recruitment.services');
-    Route::get('payroll-outsourcing-services', [ServiceController::class, 'payrolloutsourcing'])->name('payroll-outsourcing-services');
     Route::get('thank-you', [ServiceController::class, 'thankyou'])->name('thank.you');
     Route::get('it-automation', [ServiceController::class, 'itautomation'])->name('it.automation');
     Route::post('/whatsaapinquiry', [HomeController::class, 'whatsaapinquiry'])->name('whatsaapinquiry');

@@ -24,7 +24,7 @@ public function BlogsStore(Request $request)
 {
     // Step 1: Validation
     $validator = Validator::make($request->all(), [
-        'title'               => 'required|string',
+        'title'               => 'required|string|max:255',
         'short_description'   => 'required|string',
         'detail_description'  => 'required|string',
         'conclusion'          => 'nullable|string',
@@ -38,6 +38,11 @@ public function BlogsStore(Request $request)
         'detail_image_alt' => 'nullable|string|max:255',
         'cta_image'           => 'nullable|file|mimes:jpg,jpeg,png,webp|max:2048',
         'status'              => 'required|in:Active,In-Active',
+
+        'faq_title'           => 'nullable|array',
+        'faq_title.*'         => 'nullable|string',
+        'faq_description'     => 'nullable|array',
+        'faq_description.*'   => 'nullable|string',
     ]);
 
     if ($validator->fails()) {
@@ -59,6 +64,7 @@ public function BlogsStore(Request $request)
         // Step 2: Handle front_image upload
         if ($request->hasFile('front_image')) {
             $frontImage = $request->file('front_image');
+            
             $frontName = \Str::slug(pathinfo($frontImage->getClientOriginalName(), PATHINFO_FILENAME)) . '-' . uniqid() . '.' . $frontImage->getClientOriginalExtension();
             $frontSavePath = $uploadPath . $frontName;
 
@@ -193,10 +199,11 @@ public function BlogsStore(Request $request)
     {
         // Step 1: Validation
         $validator = Validator::make($request->all(), [
-            'title'               => 'required|string',
+            'title'               => 'required|string|max:255',
             'short_description'   => 'required|string',
             'detail_description'  => 'required|string',
             'conclusion'          => 'nullable|string',
+<<<<<<< HEAD
             'cta_text'            => 'nullable|string',
             'cta_btn_text' => 'nullable|string|max:255',
             'date'                => 'required',
@@ -206,7 +213,29 @@ public function BlogsStore(Request $request)
             'front_image_alt'  => 'nullable|string|max:255',
             'detail_image_alt' => 'nullable|string|max:255',
             'cta_image'           => 'nullable|file|mimes:jpg,jpeg,png,webp|max:2048',
+=======
+            'cta_text'            => 'nullable|string|max:255',
+
+            'date'                => 'required|date_format:Y-m-d',
+            'url'                 => 'required|string|max:255',
+
+            'front_image'         => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'detail_image'        => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'cta_image'           => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+
+            'front_image_alt'     => 'nullable|string|max:255',
+            'detail_image_alt'    => 'nullable|string|max:255',
+
+            'meta_title'          => 'required|string|max:255',
+            'meta_description'    => 'nullable|string',
+
+>>>>>>> 9eb2174aa87a89077ec19f9450b6284b096f0969
             'status'              => 'required|in:Active,In-Active',
+
+            'faq_title'           => 'nullable|array',
+            'faq_title.*'         => 'nullable|string',
+            'faq_description'     => 'nullable|array',
+            'faq_description.*'   => 'nullable|string',
         ]);
 
         if ($validator->fails()) {
@@ -335,5 +364,4 @@ public function BlogsStore(Request $request)
             return redirect()->back()->with('error', 'Failed to update blogs: ' . $e->getMessage());
         }
     }
-
 }

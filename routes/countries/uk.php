@@ -3,8 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\AboutController;
 use App\Http\Controllers\Web\ContactController;
-use App\Http\Controllers\Web\ServiceController;
-use App\Http\Controllers\Web\CountryHomeController;
+use App\Http\Controllers\Web\ServiceController;use App\Http\Controllers\Web\CountryHomeController;
 
 // UK (/uk/...). Middleware 'country:uk' -> views me $site = config('sites.uk')
 Route::middleware('country:uk')->prefix('uk')->group(function () {
