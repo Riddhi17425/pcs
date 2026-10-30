@@ -1,13 +1,16 @@
 <?php
 
 namespace App\Models;
-use Illuminate\Database\Eloquent\SoftDeletes;
+
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Blogs extends Model
 {
-    protected $table = 'blogs';
     use SoftDeletes;
+
+    protected $table = 'blogs';
+
     protected $fillable = [
         'title',
         'short_description',
@@ -25,13 +28,10 @@ class Blogs extends Model
         'blog_faq',
         'status',
         'conclusion',
-        'cta_image',
-        'updated_at',
-        'deleted_at'
     ];
-    
+
     protected $casts = [
         'blog_faq' => 'array',
+        'date' => 'date:Y-m-d',
     ];
 }
- 

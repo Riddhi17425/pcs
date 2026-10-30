@@ -1,5 +1,4 @@
 <style>
-/* Floating enquiry button */
 .enquiry-btn {
   position: fixed;
   top: 50%;
@@ -37,7 +36,6 @@
 }
     
 .enquiry-btn svg { display: none; }
-/*.enquiry-btn:hover { background: #182653; transform: translateY(-50%) rotate(180deg); }*/
 .enquiry-btn:focus-visible { outline: 3px solid #8ba6ff; outline-offset: 3px; }
 
 /* Overlay + modal */
@@ -79,8 +77,6 @@
   display: flex; flex: 0 0 40px; align-items: center; justify-content: center;
   width: 40px; height: 40px; border-radius: 10px; background: rgba(255, 255, 255, .15);
 }
-/* Modal title ab h2 nahi, p.enquiry-title hai (SEO heading fix).
-   font-family + line-height wahi rakhe hain jo pehle global h2 se aati thi, taaki look same rahe */
 .enquiry-header h2,
 .enquiry-title { margin: 0; color: #fff; font-size: 20px; font-weight: 600; font-family: "Public Sans", sans-serif; }
 .enquiry-title { line-height: 56px; }
@@ -336,9 +332,9 @@ window.addEventListener("load", function () {
     function initPhone() {
       if (iti || !window.intlTelInput || !phoneEl) return;
       iti = window.intlTelInput(phoneEl, {
-        initialCountry: siteCountry,          // IP detect fail ho to site ki country
+        initialCountry: siteCountry,          
         separateDialCode: true,
-        dropdownContainer: document.body,     // modal ke andar clip na ho
+        dropdownContainer: document.body,     
         utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js"
       });
       phoneEl.addEventListener("countrychange", syncCountry);
@@ -348,7 +344,6 @@ window.addEventListener("load", function () {
 
     /* ---------- Validate setup ---------- */
     var validator = $form.validate({
-      // honeypot aur captcha textarea ko validation se bahar rakho
       ignore: ".enquiry-honeypot input, [name='g-recaptcha-response']",
       errorElement: "p",
       errorClass: "js-error",
@@ -370,7 +365,7 @@ window.addEventListener("load", function () {
       },
       errorPlacement: function ($error, $element) {
         var $iti = $element.closest(".iti");
-        $error.insertAfter($iti.length ? $iti : $element); // field ke bilkul neeche
+        $error.insertAfter($iti.length ? $iti : $element); 
       },
       highlight: function (el) {
         $(el).addClass("is-invalid");
@@ -379,11 +374,9 @@ window.addEventListener("load", function () {
         $(el).removeClass("is-invalid");
       },
       onkeyup: function (el) {
-        // error dikhne ke baad hi typing par live re-check
         if ($(el).hasClass("is-invalid")) this.element(el);
       },
       invalidHandler: function () {
-        // captcha bhi check karo, taaki saare errors ek saath dikhein
         var token = $form.find('[name="g-recaptcha-response"]').val() || "";
         $captchaErr.text("Please complete the CAPTCHA verification.").prop("hidden", !!token);
       },
@@ -399,7 +392,6 @@ window.addEventListener("load", function () {
       }
     });
 
-    // Phone me sirf digits
     $form.find('[name="phone"]').on("input", function () {
       this.value = this.value.replace(/\D/g, "").slice(0, 15);
     });
@@ -463,7 +455,6 @@ window.addEventListener("load", function () {
         headers: { "X-Requested-With": "XMLHttpRequest", "Accept": "application/json" }
       })
       .done(function (data) {
-        // Success: thank-you page par bhejo
         $submitBtn.prop("disabled", true).text("Redirecting...");
         window.location.href = "{{ route('thank.you') }}";
       })

@@ -1,4 +1,3 @@
-{{-- Shared page (sab countries). Header/footer: layouts/app ($site = route middleware 'country:<key>') --}}
 @extends('layouts.app', [
     'og_image' => asset('public/front/images/maps.png')
 ])
@@ -29,7 +28,6 @@
 </section>
 
 @php
-    // Country-wise services (ContactController::servicesFor() ki list se bilkul same rakhna)
     $pageCountry = $site['phone_country'] ?? 'in';
     $contactServices = [
         'us' => ['Accounting Outsourcing Services', 'Bookkeeping Outsourcing Services', 'Outsourced Tax Preparation Services', 'Payroll Outsourcing Services', 'Outsourced Audit Support Services'],
@@ -44,8 +42,10 @@
         <div class="contact_top">
             <h2 class="mb-4">Let’s Streamline Your <br /> Business <img src="{{asset('public/front/images/handshake.gif')}}" alt="icon" class="inner-gif"> Operations</h2>
 
-            <p class="mb-0 col-xl-6 col-xxl-4 m-auto">We’re here to help you manage finance, IT, and recruitment—globally.
-                Just fill out the form, or reach out via email at <a href="mailto:info@pcsglobalgroup.com"><b>info@pcsglobalgroup.com</b></a></p>
+            {{-- <p class="mb-0 col-xl-6 col-xxl-4 m-auto">We’re here to help you manage finance and accounting outsourcing solutions.
+Just fill out the form, or reach out via email at <a href="mailto:info@pcsglobalgroup.com"><b>info@pcsglobalgroup.com</b></a></p> --}}
+<p class="mb-0 col-xl-7 m-auto">We’re here to help you manage finance and accounting outsourcing solutions.<br class="d-none d-xl-inline">
+Just fill out the form, or reach out via email at <a href="mailto:info@pcsglobalgroup.com"><b>info@pcsglobalgroup.com</b></a></p>
         </div>
 
         <div class="contact_bot">
@@ -79,11 +79,9 @@
                         @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
                         <span id="mobile-error" style="color:red; display:none;">Please enter at least 10 digits</span>
                         <input type="hidden" name="full_phone" id="contactFullPhone">
-                        {{-- country ab phone field ke country code se bharta hai --}}
                         <input type="hidden" name="country" id="contactCountry" value="{{ old('country') }}">
                     </div>
 
-                    {{-- Company Name (country dropdown ki jagah, koi validation nahi) --}}
                     <div class="col-lg-6 form-group">
                         <input type="text" name="company" value="{{ old('company') }}" maxlength="100" placeholder=" ">
                         <label>Company Name</label>
@@ -245,9 +243,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!phoneInput) return;
 
-    // Current site ki country (config/sites.php -> phone_country)
     const siteCountry = @json($site['phone_country'] ?? 'in');
-    const isGlobal = siteCountry === 'in';   // sirf Global (India) site par IP auto-detect
+    const isGlobal = siteCountry === 'in';  
 
     const itiContact = window.intlTelInput(phoneInput, {
         initialCountry: siteCountry,
@@ -256,7 +253,6 @@ document.addEventListener('DOMContentLoaded', function () {
         utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js"
     });
 
-    // Phone field me jo country chuni hai wahi hidden "country" me jayegi
     function syncCountry() {
         const name = itiContact.getSelectedCountryData().name;
         if (countryInput && name) {
@@ -267,7 +263,6 @@ document.addEventListener('DOMContentLoaded', function () {
     phoneInput.addEventListener('countrychange', syncCountry);
     syncCountry();
 
-    // Global site par hi IP se auto-detect; AU / UK / US par site ki country fixed rahegi
     if (isGlobal) {
         fetch('https://ipwho.is/')
             .then(res => res.json())

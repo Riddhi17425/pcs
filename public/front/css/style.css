@@ -3743,7 +3743,7 @@ select:-webkit-autofill {
     max-width: 75%;
 }
 
-/* ===== SEO heading fix: h4/h6 -> p (look pehle jaisa hi rakhne ke liye) ===== */
+
 
 /* Mobile menu "Services" title: pehle <h6 class="m-0"> tha. h6 jaisa font aur line-height wapas set (p ko body ka font/line-height milta hai) */
 .menu-header .menu-services-title {
@@ -3753,14 +3753,12 @@ select:-webkit-autofill {
     line-height: 1.2;
 }
 
-/* Footer column headings (Quick Links / Our Services / Contact Us): pehle <h4 class="sub_head"> the.
-   Size/color/weight/margin .sub_head se aate hain; yaha sirf h4 wali font-family aur line-height wapas */
+
 .foot_rt p.sub_head {
     font-family: "Public Sans", sans-serif;
     line-height: 1.2;
 }
 
-/* Footer labels (Address / Call Us / Email Us): pehle <h6>. Sirf h6 wali line-height wapas, baaki class me pehle se hai */
 .foot_contact_label {
     line-height: 1.2;
 }
