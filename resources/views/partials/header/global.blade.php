@@ -195,8 +195,7 @@
 
 
              <div class="mt-4 text-center">
-                  <a class="com_btn1 color-animated-button bubble-btn" href="javascript:void(0)"
-                     data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-dismiss="offcanvas">
+                  <a class="com_btn1 color-animated-button bubble-btn" href="{{ route('contact') }}">
                 <span class="color-button__background"></span>
                 <span class="color-button__bubble-container"><span class="color-button__bubble"></span></span>
                 <span class="color-button__label relative z-10 me-2">Contact Us</span>
