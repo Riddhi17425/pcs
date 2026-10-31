@@ -1,4 +1,3 @@
-
 @extends('layouts.app', [
     'og_image' => asset('/'.$blog->detail_image)
 ])
@@ -65,10 +64,20 @@ table tr:hover {
 
 .blogs_details p,
 .blogs_details li {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 28px;
 }
+/* Blog detail CTA button size */
+    .blogs_details .com_inner_banner .com_btn1 {
+        padding: 8px 18px;
+        font-size: 14px;
+    }
 </style>
+
+@php
+    $faqItems = [];
+@endphp
+
 <section class="com_hero" style="background-image: url('{{ asset('public/front/images/blog-hero-bg.png') }}');">
     <div class="container">
         <div class="com_hero_child">
@@ -80,144 +89,146 @@ table tr:hover {
 
 <section class="blogs_details">
     <div class="container">
-        <div class="row g-4">
-            <div class="col-lg-12 col-xxl-12 text-center">
-                <img class="img-fluid" src="{{ asset('/'.$blog->detail_image) }}"
-     alt="{{ $blog->detail_image_alt ?: $blog->title }}">
-            </div>
-            <div class="col-lg-12 col-xxl-12">
-                <div>
+
+        <!-- Detail Image -->
+        <div class="text-center blog_hero_img">
+            <img class="img-fluid" src="{{ asset('/'.$blog->detail_image) }}"
+                alt="{{ $blog->detail_image_alt ?: $blog->title }}">
+        </div>
+
+        <div class="blog-guide-section">
+
+            <!-- Sidebar (TOC) -->
+            <aside class="blog-sidebar">
+                <p class="toc_title">CONTENTS</p>
+                <ul id="dynamic-sidebar">
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="blog-content">
+
+                <!-- Short Description -->
+                <div class="blog-content-section">
                     {!! $blog->short_description !!}
                 </div>
-            </div>
 
-            <div class="col-lg-12">
-                <div >
+                <!-- Main Description -->
+                <div class="blog-content-section">
                     {!! $blog->detail_description !!}
-                    
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section>
-    <div class="container">
-        <div class="com_inner_banners my-4 my-lg-3">
-            <div class="row align-items-lg-end align-items-xxl-center">
-                <div class="col-lg-7">
-                    <div class="com_inner_banner">
-                        <h2>{!! $blog->cta_text !!}</h2>
+                <!-- CTA Banner -->
+                <div class="blog-content-section">
+                    <div class="com_inner_banners my-4 my-lg-3">
+                        <div class="row align-items-lg-end align-items-xxl-center">
+                            <div class="col-lg-7">
+                                <div class="com_inner_banner">
+                                    <h2>{!! $blog->cta_text !!}</h2>
 
-                        <a class="com_btn1 color-animated-button bubble-btn" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                            data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
+                                    <a class="com_btn1 color-animated-button bubble-btn" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                        data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                            <span class="color-button__background"></span>
-                            <span class="color-button__bubble-container">
-                                <span class="color-button__bubble"></span>
-                            </span>
+                                        <!-- Bubble effect layers -->
+                                        <span class="color-button__background"></span>
+                                        <span class="color-button__bubble-container">
+                                            <span class="color-button__bubble"></span>
+                                        </span>
 
-                            <svg width="20" height="20" viewBox="0 0 22 22" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M2.51089 1L6.15002 1.13169C6.91653 1.15942 7.59676 1.64346 7.89053 2.3702L8.96656 5.03213C9.217 5.65159 9.1496 6.35837 8.78693 6.91634L7.40831 9.0375C8.22454 10.2096 10.4447 12.9558 12.7955 14.5633L14.5484 13.4845C14.9939 13.2103 15.5273 13.1289 16.0314 13.2581L19.5161 14.1517C20.4429 14.3894 21.0674 15.2782 20.9942 16.2552L20.7705 19.2385C20.6919 20.2854 19.8351 21.1069 18.818 20.9887C5.39245 19.4276 -2.48056 0.99997 2.51089 1Z"
-                                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                            <span class="color-button__label relative z-10 will-change-transform ms-2">Schedule a Free
-                                Consultation</span>
-
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-5 mt-4">
-                    <div>
-                        <img class="img-fluid" src="{{ asset('/' . ($blog->cta_image ?? 'public/front/images/coman_tree1.png')) }}" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="container">
-    <h2 class="sub_head conclusion-title mt-lg-5">Conclusion</h2>
-    {!! $blog->conclusion !!}
-</div>
-<section class="accoding" >
-   <div class="container">
-@if (!empty($blog->blog_faq) && count($blog->blog_faq) > 0)
-@php
-        $faqItems = [];
-
-        if (!empty($blog->blog_faq)) {
-
-            $decodedFaqItems = $blog->blog_faq;
-
-            if (is_array($decodedFaqItems)) {
-                foreach ($decodedFaqItems as $item) {
-                    $question = trim(strip_tags($item['faq_title'] ?? ''));
-                    $answer = trim(strip_tags($item['faq_description'] ?? ''));
-
-                    if ($question && $answer) {
-                        $faqItems[] = [
-                            'question' => $question,
-                            'answer' => $answer,
-                        ];
-                    }
-                }
-            }
-        }
-
-        $faqSchema = [
-            '@context' => 'https://schema.org',
-            '@type' => 'FAQPage',
-            'mainEntity' => array_map(function ($item) {
-                return [
-                    '@type' => 'Question',
-                    'name' => $item['question'],
-                    'acceptedAnswer' => [
-                        '@type' => 'Answer',
-                        'text' => $item['answer'],
-                    ],
-                ];
-            }, $faqItems),
-        ];
-    @endphp
-
-<div class="row">
-    <div class="col-lg-12">
-        <h2 class="text-center mb-5 faq-title"><b>Frequently Asked Questions</b></h2>
-
-        <div id="accordionExample">
-            @foreach ($blog->blog_faq as $index => $faq)
-                <div class="faq-item mb-3">
-                    
-                    <h3 class="sub_head faq-header {{ $index !== 0 ? 'collapsed' : '' }}"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapse{{ $index }}"
-                        aria-expanded="{{ $index === 0 ? 'true' : 'false' }}"
-                        aria-controls="collapse{{ $index }}">
-                        
-                        <span>{{ $faq['faq_title'] }}</span>
-                        <span class="faq-icon"></span>
-                    </h3>
-
-                    <div id="collapse{{ $index }}"
-                        class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}"
-                        data-bs-parent="#accordionExample">
-
-                        <div class="faq-body">
-                            {!! $faq['faq_description'] !!}
+                                        <!-- Label (phone icon removed, text dynamic) -->
+                                        <span class="color-button__label relative z-10 will-change-transform">
+                                            {{ $blog->cta_btn_text ?: 'Schedule a Free Consultation' }}
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 mt-4">
+                                <div>
+                                    <img class="img-fluid" src="{{ asset('/' . ($blog->cta_image ?? 'public/front/images/coman_tree1.png')) }}" alt="">
+                                </div>
+                            </div>
                         </div>
                     </div>
-
                 </div>
-            @endforeach
+
+                <!-- Conclusion -->
+                <div class="blog-content-section" id="conclusion">
+                    <h2 class="sub_head conclusion-title mt-lg-5">Conclusion</h2>
+                    {!! $blog->conclusion !!}
+                </div>
+
+                <!-- FAQs -->
+                @if (!empty($blog->blog_faq) && count($blog->blog_faq) > 0)
+                    @php
+                        $faqItems = [];
+
+                        $decodedFaqItems = $blog->blog_faq;
+
+                        if (is_array($decodedFaqItems)) {
+                            foreach ($decodedFaqItems as $item) {
+                                $question = trim(strip_tags($item['faq_title'] ?? ''));
+                                $answer = trim(strip_tags($item['faq_description'] ?? ''));
+
+                                if ($question && $answer) {
+                                    $faqItems[] = [
+                                        'question' => $question,
+                                        'answer' => $answer,
+                                    ];
+                                }
+                            }
+                        }
+
+                        $faqSchema = [
+                            '@context' => 'https://schema.org',
+                            '@type' => 'FAQPage',
+                            'mainEntity' => array_map(function ($item) {
+                                return [
+                                    '@type' => 'Question',
+                                    'name' => $item['question'],
+                                    'acceptedAnswer' => [
+                                        '@type' => 'Answer',
+                                        'text' => $item['answer'],
+                                    ],
+                                ];
+                            }, $faqItems),
+                        ];
+                    @endphp
+
+                    <div class="blog-content-section accoding" id="faqs">
+                        <h2 class="text-center mb-5 faq-title"><b>Frequently Asked Questions</b></h2>
+
+                        <div id="accordionExample">
+                            @foreach ($blog->blog_faq as $index => $faq)
+                                <div class="faq-item mb-3">
+
+                                    <h3 class="sub_head faq-header {{ $index !== 0 ? 'collapsed' : '' }}"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapse{{ $index }}"
+                                        aria-expanded="{{ $index === 0 ? 'true' : 'false' }}"
+                                        aria-controls="collapse{{ $index }}">
+
+                                        <span>{{ $faq['faq_title'] }}</span>
+                                        <span class="faq-icon"></span>
+                                    </h3>
+
+                                    <div id="collapse{{ $index }}"
+                                        class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}"
+                                        data-bs-parent="#accordionExample">
+
+                                        <div class="faq-body">
+                                            {!! $faq['faq_description'] !!}
+                                        </div>
+                                    </div>
+
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                @endif
+
+            </div>
         </div>
     </div>
-</div>
-@endif
-</div>
 </section>
 
 <section class="mt-100">
@@ -244,6 +255,7 @@ table tr:hover {
     </div>
 </section>
 
+{{-- ===== BlogPosting schema (dynamic) ===== --}}
 @php
     $blogUrl  = url()->current();
 $blogDesc = trim(preg_replace('/\s+/', ' ', strip_tags($blog->meta_description ?: ($blog->short_description ?? ''))));
@@ -281,6 +293,7 @@ $blogDesc = trim(preg_replace('/\s+/', ' ', strip_tags($blog->meta_description ?
     {!! json_encode($blogSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
 </script>
 
+{{-- ===== FAQPage schema ===== --}}
 @if(!empty($faqItems))
     <script type="application/ld+json">
         {!! json_encode($faqSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
@@ -294,12 +307,204 @@ document.querySelectorAll('h5').forEach(h5 => {
     h5.classList.add('sub_head');
 });
 
-const block = document.querySelector('.blogs_details .col-lg-12');
+const block = document.querySelector('.blogs_details .blog-content');
 if (block) {
-    const firstH5 = block.querySelector('h5'); 
+    const firstH5 = block.querySelector('h5');
     if (firstH5) {
         firstH5.classList.add('mt-0');
     }
 }
+</script>
+
+<script>
+// ===== Dynamic TOC (Contents sidebar) + scroll spy =====
+document.addEventListener("DOMContentLoaded", function () {
+    const sidebar = document.querySelector(".blog-sidebar");
+    const sidebarList = document.getElementById("dynamic-sidebar");
+    const content = document.querySelector(".blog-content");
+    if (!sidebar || !sidebarList || !content) return;
+
+    const headings = Array.from(content.querySelectorAll("h2, h3")).filter(function (h) {
+        return !h.closest(".faq-item, .com_inner_banners") && h.textContent.trim() !== "";
+    });
+
+    if (headings.length === 0) {
+        sidebar.style.display = "none";
+        return;
+    }
+
+    const sections = [];
+    const allDropdowns = [];
+    let currentH2Li = null;
+    let currentH3Ul = null;
+
+    function openMenu(item) {
+        item.ul.classList.add("open");
+        item.btn.classList.add("open");
+    }
+
+    function closeMenu(item) {
+        item.ul.classList.remove("open");
+        item.btn.classList.remove("open");
+    }
+
+    headings.forEach(function (heading, index) {
+        let targetId = heading.id;
+        if (!targetId) {
+            targetId = heading.tagName.toLowerCase() + "-heading-" + index;
+            heading.id = targetId;
+        }
+
+        const a = document.createElement("a");
+        a.href = "#" + targetId;
+        a.className = "nav-link";
+        a.textContent = heading.textContent.trim();
+
+        const isH3 = heading.tagName.toLowerCase() === "h3";
+
+        if (!isH3 || !currentH2Li) {
+            const li = document.createElement("li");
+            const wrapper = document.createElement("div");
+            wrapper.className = "heading-wrapper";
+            wrapper.appendChild(a);
+            li.appendChild(wrapper);
+
+            sidebarList.appendChild(li);
+            currentH2Li = li;
+            currentH3Ul = null;
+            sections.push(heading);
+        }
+        else {
+            if (!currentH3Ul) {
+                const ul = document.createElement("ul");
+                ul.className = "sub-menu";
+
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = "dropdown-toggle-btn";
+                btn.setAttribute("aria-label", "Toggle sub menu");
+                btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+                const item = { ul: ul, btn: btn };
+                allDropdowns.push(item);
+
+                if (currentH2Li === sidebarList.firstElementChild) {
+                    openMenu(item);
+                }
+
+                btn.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const wasOpen = ul.classList.contains("open");
+                    allDropdowns.forEach(closeMenu);
+                    if (!wasOpen) openMenu(item);
+                });
+
+                currentH2Li.querySelector(".heading-wrapper").appendChild(btn);
+                currentH2Li.appendChild(ul);
+                currentH3Ul = ul;
+            }
+
+            const subLi = document.createElement("li");
+            a.classList.add("sub-link");
+            subLi.appendChild(a);
+            currentH3Ul.appendChild(subLi);
+            sections.push(heading);
+        }
+    });
+
+    const links = sidebarList.querySelectorAll("a.nav-link");
+    if (links.length > 0) links[0].classList.add("active");
+
+    let isClickScrolling = false;
+
+    function keepLinkVisible(link, onlyIfHidden) {
+        const containerRect = sidebar.getBoundingClientRect();
+        const linkRect = link.getBoundingClientRect();
+
+        if (onlyIfHidden && linkRect.top >= containerRect.top && linkRect.bottom <= containerRect.bottom) {
+            return;
+        }
+
+        const relativeTop = linkRect.top - containerRect.top + sidebar.scrollTop;
+        const centerOffset = relativeTop - (sidebar.clientHeight / 2) + (linkRect.height / 2);
+        sidebar.scrollTo({ top: centerOffset > 0 ? centerOffset : 0, behavior: "smooth" });
+    }
+
+    links.forEach(function (link) {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            isClickScrolling = true;
+
+            links.forEach(function (l) { l.classList.remove("active"); });
+            this.classList.add("active");
+
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+                const headerOffset = 100;
+                const top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+                window.scrollTo({ top: top, behavior: "smooth" });
+            }
+
+            keepLinkVisible(this, false);
+
+            setTimeout(function () { isClickScrolling = false; }, 800);
+        });
+    });
+
+    // Scroll spy
+    let ticking = false;
+
+    function onScroll() {
+        let current = "";
+
+        sections.forEach(function (section) {
+            const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+            if (window.scrollY >= sectionTop - 180) {
+                current = section.id;
+            }
+        });
+
+        let currentLink = null;
+
+        if (current) {
+            links.forEach(function (link) {
+                const isCurrent = link.getAttribute("href") === "#" + current;
+                link.classList.toggle("active", isCurrent);
+                if (isCurrent) currentLink = link;
+            });
+        } else if (links.length > 0) {
+            links.forEach(function (l) { l.classList.remove("active"); });
+            links[0].classList.add("active");
+            currentLink = links[0];
+        }
+
+        if (currentLink) {
+            const parentUl = currentLink.closest(".sub-menu");
+            const li = currentLink.closest("li");
+            const ownUl = li ? li.querySelector(":scope > .sub-menu") : null;
+            const targetUl = parentUl || ownUl;
+
+            allDropdowns.forEach(function (item) {
+                if (item.ul === targetUl) {
+                    openMenu(item);
+                } else {
+                    closeMenu(item);
+                }
+            });
+
+            if (!isClickScrolling) keepLinkVisible(currentLink, true);
+        }
+    }
+
+    window.addEventListener("scroll", function () {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(function () {
+            onScroll();
+            ticking = false;
+        });
+    });
+});
 </script>
 @endpush

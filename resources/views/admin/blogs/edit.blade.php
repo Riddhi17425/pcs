@@ -9,6 +9,7 @@
 
     <div class="body d-flex py-lg-3 py-md-2">
         <div class="container-xxl">
+            {{-- Page Header --}}
             <div class="row align-items-center">
                 <div id="message-pop-up" class="alert alert-dismissible fade show" role="alert" style="display: none">
                     <span id="success-message"></span>
@@ -23,10 +24,12 @@
                 </div>
             </div>
 
+            {{-- Form Section --}}
             <div class="row clearfix g-3">
                 <div class="col-sm-12">
                     <div class="card mb-3">
                         <div class="card-body">
+                            {{-- Display success message --}}
                             @if (session('success'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                                     {{ session('success') }}
@@ -34,6 +37,7 @@
                                 </div>
                             @endif
 
+                            {{-- Display general error message --}}
                             @if (session('error'))
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                     {{ session('error') }}
@@ -41,6 +45,7 @@
                                 </div>
                             @endif
 
+                            {{-- Display all validation errors --}}
                             @if ($errors->any())
                                 <div class="alert alert-danger" role="alert">
                                     <strong>Please fix the following errors:</strong>
@@ -56,10 +61,12 @@
                                 enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
+                                {{-- blogs Info --}}
                                 <div class="card mb-4 border">
                                     <div class="card-header bg-light"><strong>Blogs Information</strong></div>
                                     <div class="card-body row">
 
+                                        {{-- Title --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Title <span class="required-star">*</span></label>
                                             <input type="text" name="title"
@@ -70,6 +77,7 @@
                                             @enderror
                                         </div>
 
+                                        {{-- Blogs Url --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Url <span class="required-star">*</span></label>
                                             <input type="text" name="url"
@@ -80,6 +88,7 @@
                                             @enderror
                                         </div>
 
+                                        {{-- Short Description --}}
                                         <div class="col-md-12 mb-3">
                                             <label class="form-label">Short Description <span
                                                     class="required-star">*</span></label>
@@ -90,6 +99,7 @@
                                             @enderror
                                         </div>
 
+                                        {{-- Front Image --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Front Image <span
                                                     class="required-star">*</span></label>
@@ -110,6 +120,7 @@
                                             @enderror
                                         </div>
 
+                                        {{-- Detail Image --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Detail Image <span
                                                     class="required-star">*</span></label>
@@ -133,6 +144,7 @@
                                             @enderror
                                         </div>
 
+                                        {{-- Status --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Status <span class="required-star">*</span></label>
                                             <select name="status"
@@ -170,6 +182,7 @@
                                                 @enderror
                                             </div>
                                         </div>
+                                        {{-- Detail Description --}}
                                         <div class="card mb-4 border">
                                             <div class="card-header bg-light"><strong>Detail Description</strong> <span
                                                     class="required-star">*</span></div>
@@ -181,6 +194,7 @@
                                                 @enderror
                                             </div>
                                         </div>
+                                        {{-- Conclusion --}}
                                         <div class="card mb-4 border">
                                             <div class="card-header bg-light"><strong>Conclusion</strong></div>
                                             <div class="card-body">
@@ -191,6 +205,7 @@
                                                 @enderror
                                             </div>
                                         </div>
+                                        {{-- Cta Image --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Cta Image</label>
                                             <input type="file" name="cta_image" id="cta_image"
@@ -204,18 +219,31 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                        <div class="col-md-6 mb-3">
-                                            <label class="form-label">Cta Text</label>
-                                            <input type="text"
-                                                name="cta_text"
-                                                class="form-control @error('cta_text') is-invalid @enderror"
-                                                value="{{ old('cta_text', $blogs->cta_text) }}"
-                                                placeholder="Enter cta text">
+                                        {{-- Cta Text --}}
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label">Cta Text</label>
+                                                <input type="text" name="cta_text"
+                                                    class="form-control @error('cta_text') is-invalid @enderror"
+                                                    value="{{ old('cta_text', $blogs->cta_text) }}"
+                                                    placeholder="Enter cta text">
+                                                @error('cta_text')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
 
-                                            @error('cta_text')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+                                            {{-- Cta Button Text --}}
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label">Cta Button Text</label>
+                                                <input type="text" name="cta_btn_text"
+                                                    class="form-control @error('cta_btn_text') is-invalid @enderror"
+                                                    value="{{ old('cta_btn_text', $blogs->cta_btn_text) }}"
+                                                    placeholder="Enter cta button text">
+                                                @error('cta_btn_text')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="col-md-6 mb-3"></div>
+                                        {{-- Meta Title --}}
                                         <div class="col-md-6">
                                             <label for="meta_title" class="form-label">Meta Title</label>
                                             <input type="text" id="meta_title" name="meta_title"
@@ -256,6 +284,7 @@
                                                         </div>
                                                     </div>
                                                 @empty
+                                                    {{-- Show one empty block if nothing stored --}}
                                                     <div class="faqGroup border rounded p-3 mb-3">
                                                         <div class="mb-3">
                                                             <label class="form-label">Title </label>
@@ -278,17 +307,19 @@
                                     </div>
                                 </div>
 
+                                {{-- Submit --}}
                                 <div class="text-end mt-4">
                                     <button type="submit" class="btn btn-primary">Update Blogs</button>
                                 </div>
                             </form>
-                        </div>
+                        </div> {{-- End Card Body --}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    {{-- JS Section --}}
     <script src="{{ asset('public/admin/js/blogs/blogs.js') }}" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -374,11 +405,13 @@
     </script>
     <script>
         $(document).ready(function() {
+            // Initialize Summernote
             $('.summernote').summernote({
                 height: 200,
                 placeholder: 'Enter Description here...'
             });
 
+            // Add More
             $('#addFaqBlock').click(function() {
                 let block = `
 <div class="faqGroup border rounded p-3 mb-3">
@@ -396,12 +429,14 @@
 </div>
             `;
                 $('#faqRepeater').append(block);
+                // Re-init summernote for new textareas
                 $('.summernote').summernote({
                     height: 200,
                     placeholder: 'Enter Description here...'
                 });
             });
 
+            // Remove block
             $(document).on('click', '.removeFaq', function() {
                 $(this).closest('.faqGroup').remove();
             });

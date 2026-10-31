@@ -23,6 +23,7 @@ class Blogs extends Model
         'meta_title',
         'meta_description',
         'cta_text',
+        'cta_btn_text',
         'date',
         'detail_description',
         'blog_faq',

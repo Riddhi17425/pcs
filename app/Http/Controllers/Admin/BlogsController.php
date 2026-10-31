@@ -27,21 +27,15 @@ public function BlogsStore(Request $request)
         'short_description'   => 'required|string',
         'detail_description'  => 'required|string',
         'conclusion'          => 'nullable|string',
-        'cta_text'            => 'nullable|string|max:255',
-
-        'date'                => 'required|date_format:Y-m-d',
-        'url'                 => 'required|string|max:255',
-
-        'front_image'         => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
-        'detail_image'        => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
-        'cta_image'           => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-
-        'front_image_alt'     => 'nullable|string|max:255',
-        'detail_image_alt'    => 'nullable|string|max:255',
-
-        'meta_title'          => 'required|string|max:255',
-        'meta_description'    => 'nullable|string',
-
+        'cta_text'            => 'nullable|string',
+        'cta_btn_text' => 'nullable|string|max:255',
+        'date'                => 'required',
+        'url'                 => 'required|string',
+        'front_image'         => 'required|file|mimes:jpg,jpeg,png,webp|max:2048',
+        'detail_image'        => 'required|file|mimes:jpg,jpeg,png,webp|max:2048',
+        'front_image_alt'  => 'nullable|string|max:255',
+        'detail_image_alt' => 'nullable|string|max:255',
+        'cta_image'           => 'nullable|file|mimes:jpg,jpeg,png,webp|max:2048',
         'status'              => 'required|in:Active,In-Active',
 
         'faq_title'           => 'nullable|array',
@@ -142,6 +136,7 @@ public function BlogsStore(Request $request)
             'detail_image_alt'   => $request->detail_image_alt,
             'cta_image'          => $ctaImagePath,
             'cta_text'           => $request->cta_text,
+            'cta_btn_text'       => $request->cta_btn_text,
             'meta_title'         =>$request->get('meta_title'),
             'meta_description'   =>$request->get('meta_description'),
             'blog_faq'         => $title_description,
@@ -202,21 +197,15 @@ public function BlogsStore(Request $request)
             'short_description'   => 'required|string',
             'detail_description'  => 'required|string',
             'conclusion'          => 'nullable|string',
-            'cta_text'            => 'nullable|string|max:255',
-
-            'date'                => 'required|date_format:Y-m-d',
-            'url'                 => 'required|string|max:255',
-
-            'front_image'         => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-            'detail_image'        => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-            'cta_image'           => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-
-            'front_image_alt'     => 'nullable|string|max:255',
-            'detail_image_alt'    => 'nullable|string|max:255',
-
-            'meta_title'          => 'required|string|max:255',
-            'meta_description'    => 'nullable|string',
-
+            'cta_text'            => 'nullable|string',
+            'cta_btn_text' => 'nullable|string|max:255',
+            'date'                => 'required',
+            'url'                 => 'required|string',
+            'front_image'         => 'nullable|file|mimes:jpg,jpeg,png,webp|max:2048',
+            'detail_image'        => 'nullable|file|mimes:jpg,jpeg,png,webp|max:2048',
+            'front_image_alt'  => 'nullable|string|max:255',
+            'detail_image_alt' => 'nullable|string|max:255',
+            'cta_image'           => 'nullable|file|mimes:jpg,jpeg,png,webp|max:2048',
             'status'              => 'required|in:Active,In-Active',
 
             'faq_title'           => 'nullable|array',
@@ -332,6 +321,7 @@ public function BlogsStore(Request $request)
                 'detail_image_alt'   => $request->detail_image_alt,
                 'cta_image'          => $ctaImagePath,
                 'cta_text'           => $request->cta_text,
+                'cta_btn_text'       => $request->cta_btn_text,
                 'meta_title'         =>$request->get('meta_title'),
                 'meta_description'   =>$request->get('meta_description'),
                 'blog_faq'         => $title_description,
