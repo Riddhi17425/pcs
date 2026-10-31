@@ -220,7 +220,6 @@
                                             @enderror
                                         </div>
                                         {{-- Cta Text --}}
-<<<<<<< HEAD
                                             <div class="col-md-6 mb-3">
                                                 <label class="form-label">Cta Text</label>
                                                 <input type="text" name="cta_text"
@@ -244,20 +243,6 @@
                                                 @enderror
                                             </div>
                                             <div class="col-md-6 mb-3"></div>
-=======
-                                        <div class="col-md-6 mb-3">
-                                            <label class="form-label">Cta Text</label>
-                                            <input type="text"
-                                                name="cta_text"
-                                                class="form-control @error('cta_text') is-invalid @enderror"
-                                                value="{{ old('cta_text', $blogs->cta_text) }}"
-                                                placeholder="Enter cta text">
-
-                                            @error('cta_text')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
->>>>>>> 9eb2174aa87a89077ec19f9450b6284b096f0969
                                         {{-- Meta Title --}}
                                         <div class="col-md-6">
                                             <label for="meta_title" class="form-label">Meta Title</label>
