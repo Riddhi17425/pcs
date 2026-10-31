@@ -12,13 +12,10 @@
                   <a class="com_btn1 color-animated-button bubble-btn mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
                         data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                        <!-- Bubble effect layers -->
                         <span class="color-button__background"></span>
                         <span class="color-button__bubble-container">
                             <span class="color-button__bubble"></span>
                         </span>
-
-                        <!-- Label and Icon -->
 
                         <span class="color-button__label relative z-10 will-change-transform me-2">Get a Quote</span>
                         <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -426,7 +423,6 @@
 
         <div class="trust_scroll_wrapper">
             <div class="trust_banner" style="background-image: url('{{asset('public/front/images/usa-img-17.png')}}');">
-                <!-- <img class="img-fluid" src="{{ asset('public/front/images/aus-img-7.png') }}" alt="bg1" /> -->
                 <div class="trust_card tax_preparation">
                     <div class="trust_card_head">
                         <h3>Federal & State Payroll Tax Filings</h3>
@@ -437,7 +433,6 @@
                 </div>
             </div>
             <div class="trust_banner" style="background-image: url('{{asset('public/front/images/usa-img-18.png')}}');">
-                <!-- <img class="img-fluid" src="{{ asset('public/front/images/aus-img-7.png') }}" alt="bg1" /> -->
                 <div class="trust_card tax_preparation">
                     <div class="trust_card_head">
                         <h3>Direct Deposit & Pay Stub Generation</h3>
@@ -448,7 +443,6 @@
                 </div>
             </div>
             <div class="trust_banner" style="background-image: url('{{asset('public/front/images/usa-img-19.png')}}');">
-                <!-- <img class="img-fluid" src="{{ asset('public/front/images/aus-img-7.png') }}" alt="bg1" /> -->
                 <div class="trust_card tax_preparation">
                     <div class="trust_card_head">
                         <h3>W-2 & 1099 Preparation</h3>
@@ -492,13 +486,11 @@
                     <a class="com_btn1 color-animated-button bubble-btn" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal"
                         data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                        <!-- Bubble effect layers -->
                         <span class="color-button__background"></span>
                         <span class="color-button__bubble-container">
                             <span class="color-button__bubble"></span>
                         </span>
 
-                        <!-- Label and Icon -->
                         <span class="color-button__label relative z-10 will-change-transform me-2">Request A
                             Call</span>
                         <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -597,13 +589,11 @@
                     <a class="com_btn1 color-animated-button bubble-btn" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal"
                         data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                        <!-- Bubble effect layers -->
                         <span class="color-button__background"></span>
                         <span class="color-button__bubble-container">
                             <span class="color-button__bubble"></span>
                         </span>
 
-                        <!-- Label and Icon -->
                         <span class="color-button__label relative z-10 will-change-transform me-2">Request A
                             Call</span>
                         <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -646,13 +636,10 @@
                         <a class="com_btn1 color-animated-button bubble-btn" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal"
                             data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                            <!-- Bubble effect layers -->
                             <span class="color-button__background"></span>
                             <span class="color-button__bubble-container">
                                 <span class="color-button__bubble"></span>
                             </span>
-
-                            <!-- Label and Icon -->
 
                             <svg width="20" height="20" viewBox="0 0 22 22" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -680,8 +667,6 @@
     <div class="container">
         <div class="com_sec_head_top">
             <h4 class="faq-head mb-2 mb-xxl-4">Frequently asked questions</h4>
-            <!--<p>Lorem ipsum dolor sit amet consectetur. Massa elit ut proin vitae sed cras duis eget nullam. Nibh-->
-            <!--    viverra.</p>-->
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-11">
@@ -708,13 +693,11 @@
                         <a class="com_btn1 color-animated-button bubble-btn load-more-faq" href="javascript:void(0)"
                             data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                            <!-- Bubble effect layers -->
                             <span class="color-button__background"></span>
                             <span class="color-button__bubble-container">
                                 <span class="color-button__bubble"></span>
                             </span>
 
-                            <!-- Label and Icon -->
                             <span class="color-button__label relative z-10 will-change-transform me-2">Load More</span>
                             <svg width="20" height="20" viewBox="0 0 24 25" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">

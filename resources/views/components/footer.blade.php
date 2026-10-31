@@ -20,7 +20,6 @@
         ['https://www.instagram.com/pcsglobalgroup/', asset('public/front/images/insta.svg'), 'insta'],
     ];
     $badgeDir = asset('public/front/images/figma-footer-badges');
-    // [file, alt, shape]
     $badges ??= [
         ["$badgeDir/iso-9001.png", 'ISO 9001', 'circle'],
         ["$badgeDir/sca-vic-member.png", 'Strata Community Association VIC', 'box'],
@@ -234,7 +233,6 @@
         <div class="footer_top">
             <div class="footer_top_flex">
                 <div class="foot_lt">
-                    <!-- <a href="{{ $homeUrl }}"><img class="ft_logo" src="{{ $logo }}" alt="logo" loading="lazy"></a> -->
                     <a href="{{ route('front.home') }}"><img class="ft_logo" src="{{ $logo }}" alt="logo"
                             loading="lazy"></a>
                     <p class="foot_lt_para">{{ $about }}</p>

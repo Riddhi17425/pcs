@@ -1,4 +1,3 @@
-<!-- Industries -->
 
 <section class="industries mt-100">
     <div class="container">

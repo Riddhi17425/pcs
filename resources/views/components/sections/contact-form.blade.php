@@ -1,6 +1,3 @@
-{{-- "Request a Consultation" form band (sits right above the footer).
-     Validation + recaptcha: footer ka common `.validated-form` handler. Submit: route('request.store').
-     cities / services = [string, ...] ; country = value saved in the `country` field --}}
 @props(['title', 'text' => '', 'cities' => [], 'services' => [], 'country' => 'Australia', 'phoneCountry' => 'au'])
 <section class="contact_band mt-100" id="consultation">
     <div class="container">
@@ -16,7 +13,6 @@
             <input type="hidden" name="country" value="{{ $country }}">
             <input type="hidden" name="full_phone" id="cfFullPhone">
             <input type="hidden" name="form_type" value="Request a Consultation">
-            {{-- Honeypot (bots ke liye) --}}
             <div style="display:none;">
                 <label>Leave this field empty</label>
                 <input type="text" name="fax_number" autocomplete="off">
@@ -57,7 +53,6 @@
                     <textarea name="message" rows="3" placeholder="Message:" aria-label="Message"></textarea>
                 </div>
                 <div class="col-12 cf_field">
-                    {{-- <div class="g-recaptcha" data-sitekey="6LfxJ7crAAAAAGJsj1iMJSQXpZLJE47H1h6StuUT"></div> --}}
                     <div class="g-recaptcha"
                       data-sitekey="{{ app()->environment('local') ? '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' : '6LfxJ7crAAAAAGJsj1iMJSQXpZLJE47H1h6StuUT' }}"></div>
                     <span class="captcha-error text-danger" style="display:none;">Please verify you are not a robot.</span>
@@ -78,31 +73,6 @@
 </section>
 
 @once
-{{-- <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contactBandForm');
-    const phone = document.getElementById('cfPhone');
-    const fullPhone = document.getElementById('cfFullPhone');
-    if (!form || !phone || !window.intlTelInput) return;
-
-    const iti = window.intlTelInput(phone, {
-        initialCountry: @json($phoneCountry),
-        separateDialCode: true,
-        utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js'
-    });
-
-    // native required (company / city / service) ko common validator se pehle check karo
-    form.addEventListener('submit', function (e) {
-        if (!form.checkValidity()) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            form.reportValidity();
-            return;
-        }
-        fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
-    }, true);
-});
-</script> --}}
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -117,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
         utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js'
     });
 
-    // Sirf wo fields jo footer ka common handler validate nahi karta
     const rules = {
         fullname: v => !v.trim() ? 'Full name is required'
                 : v.trim().length < 3 ? 'Name must be at least 3 characters' : '',
@@ -158,7 +127,6 @@ document.addEventListener('DOMContentLoaded', function () {
         field.addEventListener('change', () => validate(name));
     });
 
-    // Footer handler ke saath chalta hai (ye pehle register hota hai)
     form.addEventListener('submit', function (e) {
         fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
 
@@ -171,7 +139,6 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             firstBad.focus();
 
-            // Footer handler baaki fields valid hone par button disable kar deta hai, use wapas theek karo
             setTimeout(() => {
                 const btn = form.querySelector("button[type='submit']");
                 btn.disabled = false;

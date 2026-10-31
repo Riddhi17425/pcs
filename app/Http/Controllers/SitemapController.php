@@ -13,7 +13,6 @@ class SitemapController extends Controller
         $xml = '<?xml version="1.0" encoding="UTF-8"?>';
         $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
-        // STATIC PAGES
         $staticPages = [
             '/',
             '/about',
@@ -26,9 +25,9 @@ class SitemapController extends Controller
             '/accounting-outsourcing-services',
             '/tax-preparation-outsourcing-services',
             '/bookkeeping-outsourcing-services',
+            '/hire-offshore-accountants',
             '/payroll-outsourcing-services',
 
-            // AUSTRALIA PAGES
             '/au',
             '/au/about',
             '/au/accounting-outsourcing-services',
@@ -36,7 +35,6 @@ class SitemapController extends Controller
             '/au/strata-management-services',
             '/au/contact-us',
 
-            // UK PAGES
             '/uk',
             '/uk/about',
             '/uk/accounting-outsourcing-services',
@@ -44,7 +42,6 @@ class SitemapController extends Controller
             '/uk/tax-preparation-outsourcing-services',
             '/uk/contact-us',
 
-            // US PAGES
             '/us',
             '/us/about',
             '/us/accounting-outsourcing-services',
@@ -60,7 +57,6 @@ class SitemapController extends Controller
             $xml .= '</url>';
         }
 
-        // DYNAMIC BLOG DETAIL PAGES
         $blogs = Blogs::where('status', 'Active')
             ->whereNotNull('url')
             ->where('url', '!=', '')

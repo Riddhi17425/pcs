@@ -1,4 +1,3 @@
-{{-- Shared blog page (sab countries). Header/footer: layouts/app ($site = route middleware 'country:<key>') --}}
 @extends('layouts.app', [
     'og_image' => asset('public/admin/blogs/what-are-the-duties-of-a-strata-manager-in-australia-6982d986039b2.jpg')
 ])

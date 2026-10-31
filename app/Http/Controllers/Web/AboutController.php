@@ -10,7 +10,6 @@ use App\Models\Faq;
 
 class AboutController extends Controller
 {
-    // Shared page (India, Australia, US). Header/footer: route middleware 'country:<key>' -> $site
     public function about()
     {
         $meta_title="About PCS Global | Accounting & Finance Outsourcing Partner";

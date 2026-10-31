@@ -1,4 +1,3 @@
-<!-- Industries -->
 
 <section class="industries mt-100">
     <div class="container">
@@ -51,7 +50,6 @@ function renderIndustryRow(trackId, items) {
         </div>
     `).join('');
 
-    // duplicated so the track can loop seamlessly
     track.innerHTML = cardsHtml + cardsHtml;
 }
 

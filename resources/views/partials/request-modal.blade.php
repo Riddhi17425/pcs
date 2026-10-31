@@ -9,7 +9,6 @@
             </button>
 
             <div class="rq_grid">
-                {{-- Left: brand panel --}}
                 <aside class="rq_side">
                     <span class="rq_eyebrow">Free Consultation</span>
                     <p class="rq_title" id="exampleModalLabel">Let’s talk about your accounting needs</p>
@@ -36,7 +35,6 @@
                     </div>
                 </aside>
 
-                {{-- Right: form --}}
                 <div class="rq_main">
                     <div class="rq_head">
                         <span class="rq_head_icon">
@@ -50,7 +48,6 @@
 
                     <form id="requestForm" class="validated-form rq_form" action="{{ route('request.store') }}" method="POST" novalidate>
                         @csrf
-                        {{-- Honeypot (bots ke liye) --}}
                         <div style="display:none;">
                             <label>Leave this field empty</label>
                             <input type="text" name="fax_number" autocomplete="off">

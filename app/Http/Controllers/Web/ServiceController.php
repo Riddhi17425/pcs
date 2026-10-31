@@ -18,11 +18,8 @@ use Illuminate\Validation\ValidationException;
 
 class ServiceController extends Controller
 {
-    // Sheet 1: Enquire Now popup + baaki website enquiries (contact page ka form ContactController se isi sheet me jaata hai)
     private const MAIN_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxcIU_MubfJF-n2Et1XSIK7H2qiX45wUz1cS2C3fJWZdKtU9q3RpQ-owYPXrM2on8S6mg/exec';
 
-    // Sheet 2: "Request a Consultation" band form + CTA button wala "Free Consultation" popup
-    // (khali kar doge to ye forms bhi Sheet 1 me jayenge)
     private const CONSULTATION_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxmc2raCrl1hNlg7iZjRa11x4UarwXt9IKBOZRZ9thD6grj8hEZniC6Bl8BAddqoAug/exec';
 
     public function index()
@@ -38,14 +35,12 @@ class ServiceController extends Controller
 
     public function requestStore(Request $request)
     {
-        // Honeypot check (detect bots)
         if (! empty($request->fax_number)) {
             Log::warning('Honeypot triggered — possible spam entry', [
                 'email' => $request->email,
                 'name'  => $request->fullname,
             ]);
 
-            // Bots ko error mat dikhao — success jaisa behave karo
             return $this->requestSuccess($request);
         }
 
@@ -62,8 +57,6 @@ class ServiceController extends Controller
             'form_type'  => 'nullable|string|max:100',
         ]);
 
-        // reCAPTCHA server-side verification
-        // (sirf tab jab form me captcha field aaya ho, taaki is route ko use karne wale baaki forms na tootein)
         if ($request->has('g-recaptcha-response') && ! $this->captchaPassed($request)) {
             throw ValidationException::withMessages([
                 'g-recaptcha-response' => 'Captcha verification failed. Please try again.',
@@ -85,7 +78,6 @@ class ServiceController extends Controller
             'page_url' => url()->previous(),
         ]);
 
-        // Kaun sa form hai (sirf allowed labels, taaki koi sheet me kuch bhi na likh sake)
         $allowedFormTypes = ['Enquire Now',
                                 'Request a Consultation',
                                 'India Consultation Form',
@@ -101,22 +93,6 @@ class ServiceController extends Controller
             ? $request->form_type
             : 'Website Enquiry';
 
-        // $sheetData = [
-        //     'form_type' => $formType,
-        //     'name'      => $request->fullname ?? '',
-        //     'email'     => $request->email ?? '',
-        //     'contact'   => $phone,
-        //     'company'   => $request->company ?? '',
-        //     'country'   => $request->country ?? '',
-        //     'city'      => $request->city ?? '',
-        //     'services'  => is_array($request->services)
-        //         ? implode(', ', $request->services)
-        //         : ($request->services ?? $request->service ?? ''),
-        //     'message'   => $request->message ?? '',
-        //     'page_url'  => url()->previous(),
-        //     'date'      => now()->format('Y-m-d H:i:s'),
-        // ];
-         
         $serviceValue = is_array($request->services)
         ? implode(', ', $request->services)
         : ($request->services ?? $request->service ?? '');
@@ -144,7 +120,6 @@ class ServiceController extends Controller
             ? self::CONSULTATION_SHEET_URL
             : self::MAIN_SHEET_URL;
 
-        // Google Sheet fail ho to bhi user ko success dikhana hai (data DB me save ho chuka hai)
         try {
             $response = Http::timeout(30)
                 ->withHeaders(['Content-Type' => 'application/json'])
@@ -169,9 +144,6 @@ class ServiceController extends Controller
         return $this->requestSuccess($request);
     }
 
-    /**
-     * AJAX (jQuery) request ko JSON, normal form post ko thank-you redirect.
-     */
     private function requestSuccess(Request $request)
     {
         if ($request->expectsJson()) {
@@ -184,18 +156,14 @@ class ServiceController extends Controller
         return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
     }
 
-    /**
-     * Google reCAPTCHA token ko server par verify karta hai.
-     */
     private function captchaPassed(Request $request): bool
     {
-        // Localhost par Google ki test secret, live par apni secret key yahan daalo
         $secret = in_array($request->getHost(), ['localhost', '127.0.0.1'])
             ? '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe'
             : '';
 
         if ($secret === '') {
-            return true; // secret nahi hai to server-side check skip
+            return true;
         }
 
         $token = $request->input('g-recaptcha-response');
@@ -234,7 +202,6 @@ class ServiceController extends Controller
             'email'    => $request->c_email,
             'message'  => $request->c_message,
         ]);
-        // Redirect to contact route with success message
         return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
     }
 
@@ -272,6 +239,14 @@ class ServiceController extends Controller
         return view('pages.india.payroll-services', compact('meta_title', 'meta_description'));
     }
 
+    public function hireOffshoreAccountant()
+    {
+        $meta_title       = "Hire Offshore Accountants for CPA & Accounting Firm";
+        $meta_description = "Looking to hire offshore accountants? PCS Global supports CPA and accounting firms with expert bookkeeping, tax preparation, and accounting professionals.";
+
+        return view('pages.india.hire-offshore-accountant', compact('meta_title', 'meta_description'));
+    }
+
     public function bookkeepingServices()
     {
         $meta_title       = "Bookkeeping Outsourcing Services | PCS Global";
@@ -288,7 +263,6 @@ class ServiceController extends Controller
         return view('pages.india.taxation-services', compact('meta_title', 'meta_description'));
     }
 
-    // Shared page (India, Australia). Header/footer: route middleware 'country:<key>' -> $site
     public function strataManagement()
     {
         $faq         = Faq::where('status', 'Active')->where('faq_url', 'strata-management')->first();

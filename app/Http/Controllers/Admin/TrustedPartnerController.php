@@ -27,7 +27,7 @@ class TrustedPartnerController extends Controller
             
                 ';
             })
-            ->rawColumns(['action']) // allow HTML rendering
+            ->rawColumns(['action'])
             ->make(true);
     }
 
@@ -60,7 +60,6 @@ class TrustedPartnerController extends Controller
             $manager = new \Intervention\Image\ImageManager(new \Intervention\Image\Drivers\Gd\Driver());
             $image = $manager->read($imageFile->getRealPath());
 
-            // No resizing — only quality reduction
             $image->toJpeg(75)->save($savePath);
         } else {
             $imageFile->move($uploadPath, $uniqueName);
@@ -85,7 +84,6 @@ class TrustedPartnerController extends Controller
             return response()->json(['result' => false, 'message' => 'Image not found.']);
         }
 
-        // Optional: prevent name duplication
         $exists = TrustedPartner::where('id', $request->gallery_id)->where('id', '!=', $id)->exists();
         if ($exists) {
             return response()->json(['result' => false, 'message' => 'Image already exists.']);
@@ -104,18 +102,15 @@ class TrustedPartnerController extends Controller
                 mkdir($uploadPath, 0755, true);
             }
 
-            // Optional compression if checkbox is selected
             if ($request->has('compress')) {
                 $manager = new \Intervention\Image\ImageManager(new \Intervention\Image\Drivers\Gd\Driver());
                 $img = $manager->read($image->getRealPath());
 
-                // Save as JPEG with 75% quality without changing dimensions
                 $img->toJpeg(50)->save($savePath);
             } else {
                 $image->move($uploadPath, $imageName);
             }
 
-            // Optionally delete old image if updating
             if (!empty($gallery->image)) {
                 $oldImagePath = public_path(str_replace('public/', '', $gallery->image));
                 if (file_exists($oldImagePath)) {

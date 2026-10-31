@@ -20,7 +20,6 @@ class FaqController extends Controller
 
     public function Store(Request $request)
 {
-    // Validate input
     $validator = Validator::make($request->all(), [
         'faq_url'    => 'required|string|max:500',
         'title.*' => 'required|string',
@@ -51,7 +50,6 @@ class FaqController extends Controller
         Faq::create([
             'faq_url' => $request->faq_url,
             'title_description' => $title_description, 
-            // 'title_description' => json_encode($title_description), 
             'status'      => $request->status ?? 'Active',
             
         ]);
@@ -121,7 +119,6 @@ class FaqController extends Controller
 
     public function Update(Request $request, $id)
 {
-    // Validate the input data
     $validator = Validator::make($request->all(), [
         'faq_url' => 'required|string|max:500',
         'title.*' => 'required|string',
@@ -129,7 +126,6 @@ class FaqController extends Controller
         'status'  => 'nullable|in:Active,In-Active',
     ]);
 
-    // If validation fails, redirect back with errors
     if ($validator->fails()) {
         return redirect()->back()
             ->withErrors($validator)
@@ -138,7 +134,7 @@ class FaqController extends Controller
     }
 
    
-    $faq = Faq::findOrFail($id);  // Using findOrFail to ensure it exists
+    $faq = Faq::findOrFail($id);
 
     $titles = $request->title;
     $descriptions = $request->description;
@@ -162,7 +158,6 @@ class FaqController extends Controller
 
         return redirect()->route('faq')->with('success', 'FAQ updated successfully!');
     } catch (\Exception $e) {
-        // If an error occurs, log it and redirect with an error message
         \Log::error('FAQ update failed: ' . $e->getMessage());
         return redirect()->back()->with('error', 'Failed to update FAQ: ' . $e->getMessage());
     }

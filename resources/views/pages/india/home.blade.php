@@ -10,11 +10,8 @@
             <div class="hero_lt">
                 <div class="hero_lt_top">
                   <h1 class="hero_head">Your Trusted Partner For
-                    <!-- <span><img class="hero_gif" src="{{asset('public/front/images/pcs_hero.gif')}}"
-                                alt="" aria-hidden="true"></span> -->
                         <br /> Finance and Accounting <br> Outsourcing Solutions</h1>
 
-                    <!-- <p class="hero_para">Your Overseas Partners  <br/> For Workforce Solutions</p> -->
                 </div>
 
                 <p class="hero_lt_Ser">Our Services</p>
@@ -26,7 +23,6 @@
                 </div>
 
                 <div class="hero_btn">
-                    {{-- AU / US / UK hero jaise do buttons (common/buttons.css) --}}
                     <a class="com_btn2" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal">Book a Free Consultation</a>
                     <a class="com_btn_outline com_btn_outline_light" href="tel:+917968260121">Talk to Our Expert
                         <img src="{{ asset('public/front/images/common/icon-phone.svg') }}" width="20" height="20" alt=""></a>
@@ -44,8 +40,6 @@
     </div>
 </section>
 
-
-<!-- Clients -->
 
 <section class="clients mt-100">
     <div class="container">
@@ -65,8 +59,6 @@
     </div>
 </section>
 
-
-<!-- Comprehensive Business  -->
 
 <section class="comp_bus mt-100">
     <div class="container">
@@ -123,16 +115,6 @@
                 </div>
             </div>
             
-            <!-- <div class="precision_card">
-                <div class="precision_card_img">
-                    <img src="{{ asset('public/front/images/IT_Automation.jpg') }}" loading="lazy" alt="Payroll Outsourcing">
-                </div>
-                <div class="precision_card_body">
-                    <h3>IT Automation</h3>
-                    <p>Our specialization in development, UI/UX, QA and enterprise solutions grows your business with a smarter system.
-                            Custom tech solutions enhanced with digital integration enable a more efficient and scalable business.</p>
-                </div>
-            </div> -->
             <div class="precision_card">
                 <div class="precision_card_img">
                     <img src="{{ asset('public/front/images/Staffing__Recruitment.jpg') }}" loading="lazy" alt="Strata Management Services">
@@ -147,7 +129,6 @@
     </div>
 </section>
 
-<!-- Who are we? -->
 <section class="mt-100">
     <div class="container">
         <div class="row gy-5 gy-lg-0 justify-content-between align-items-center">
@@ -206,24 +187,6 @@
 
         <div class="trust_slider_rt">
             <div class="trust_slider_track" id="trustSliderTrack">
-                <!-- <div class="trust_slide">
-                    <div class="trust_slide_img">
-                        <img src="{{ asset('public/front/images/figma-trust-slider/accounting-finance-firms.png') }}" loading="lazy" alt="Accounting & Finance Firms">
-                    </div>
-                    <div class="trust_slide_body">
-                        <h3>Accounting & Finance Firms</h3>
-                        <p>Declining work because your team has reached capacity is a costly constraint. We provide qualified support that operates discreetly under your own brand, enabling you to take on more clients and manage peak periods without immediate recruitment. All work is completed to your standards and returned ready for review. Your clients see only your firm, while you gain the capacity to grow.</p>
-                    </div>
-                </div>
-                <div class="trust_slide">
-                    <div class="trust_slide_img">
-                        <img src="{{ asset('public/front/images/figma-trust-slider/small-medium-businesses.png') }}" loading="lazy" alt="Small & Medium-Sized Businesses">
-                    </div>
-                    <div class="trust_slide_body">
-                        <h3>Small & Medium-Sized Businesses</h3>
-                        <p>Many small and medium businesses require a complete finance function but cannot justify the cost of an in-house team. This is precisely where we add value. We manage the full scope of everyday work, from bookkeeping and payroll to BAS and reporting, at a fraction of the cost of employing staff. It provides your business with the financial capability of a far larger organisation, without the overheads.</p>
-                    </div>
-                </div> -->
                 <div class="trust_slide">
                     <div class="trust_slide_img">
                         <img src="{{ asset('public/front/images/Research-Analysis.webp') }}" loading="lazy" alt="Research & Analysis">
@@ -257,9 +220,6 @@
                 <span class="trust_slider_seg"></span>
                 <span class="trust_slider_seg"></span>
                 <span class="trust_slider_seg"></span>
-                <!-- <span class="trust_slider_seg"></span>
-                <span class="trust_slider_seg"></span>
-                <span class="trust_slider_seg"></span> -->
             </div>
         </div>
     </div>
@@ -268,141 +228,8 @@
 <script src="{{ asset('public/front/js/trust-slider.js') }}?v={{ filemtime(public_path('front/js/trust-slider.js')) }}" defer></script>
 
 
-<!-- Industries -->
-
-<!-- global_exp -->
 @include('partials.india.industries-card')
 
-{{--
-<section class="mt-100" >
-    <div class="container">
-        <div class="">
-             <div class="com_sec_head_top">
-                <h4 class="faq-head mb-2 mb-xxl-4">Accounting & Finance Roles We Provide At PCS Global</h4>
-            </div>
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-10">
-                    <div class=" text-center">
-                        <img class=" img-fluid" src="{{ asset('public/front/images/accounting-finance-global.png') }}" loading="lazy" alt="outsourcing-services">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 procure_pay_bor">
-                     <ol class="decimal_style_item">
-                        <li class="decimal_style">
-                          <span class="role-title">CFO</span>
-                          <ul>
-                            <li>Shapes financial strategy to drive company growth.</li>
-                          </ul>
-                        </li>
-                        <li class="decimal_style">
-                          <span class="role-title">Bookkeeper</span>
-                          <ul>
-                            <li>Records daily transactions and keeps accounts organized.</li>
-                          </ul>
-                        </li>
-                        <li class="decimal_style">
-                          <span class="role-title">Accounts Payable Specialist</span>
-                          <ul>
-                            <li>Manages outgoing payments to suppliers.</li>
-                          </ul>
-                        </li>
-                        <li class="decimal_style">
-                          <span class="role-title">Accounts Receivable Specialist</span>
-                          <ul>
-                            <li>Tracks and collects payments from customers.</li>
-                          </ul>
-                        </li>
-                        <li class="decimal_style">
-                          <span class="role-title">Payroll Specialist</span>
-                          <ul>
-                            <li>Prepares salaries, benefits, and tax deductions</li>
-                          </ul>
-                        </li>
-                   </ol>
-                </div>
-
-                <div class="col-lg-4 procure_pay_bor">
-                     <ol class="decimal_style_item" start="6">
-                        <li class="decimal_style">
-                          <span class="role-title">Staff Accountant</span>
-                          <ul>
-                            <li>Handles the general ledger and month-end close tasks.</li>
-                          </ul>
-                        </li>
-                        <li class="decimal_style">
-                          <span class="role-title">Cost Accountant</span>
-                          <ul>
-                            <li>Analyzes product costs for pricing and profitability.</li>
-                          </ul>
-                        </li>
-                        <li class="decimal_style">
-                          <span class="role-title">Financial Analyst</span>
-                          <ul>
-                            <li>Prepares forecasts, budgets, and performance analysis.</li>
-                          </ul>
-                        </li>
-                        <li class="decimal_style">
-                          <span class="role-title">FP&A Analyst</span>
-                          <ul>
-                            <li>Guides decision-making with forward-looking insights.</li>
-                          </ul>
-                        </li>
-                        <li class="decimal_style">
-                          <span class="role-title">Audit Support</span>
-                          <ul>
-                            <li>Reviews financial statements for accuracy and compliance.</li>
-                          </ul>
-                        </li>
-                   </ol>
-                </div>
-
-                <div class="col-lg-4 procure_pay_bor">
-
-                     <ol class="decimal_style_item" start="11">
-                        <li class="decimal_style">
-                          <span class="role-title">Tax Accountant</span>
-                          <ul>
-                            <li>Assists in preparation of tax returns and ensures legal compliance</li>
-                          </ul>
-                        </li>
-                        <li class="decimal_style">
-                          <span class="role-title">Management Accountant</span>
-                          <ul>
-                            <li>Supports business strategy with financial data.</li>
-                          </ul>
-                        </li>
-                        <!--<li class="decimal_style">-->
-                        <!--  <span class="role-title">Treasury Analyst</span>-->
-                        <!--  <ul>-->
-                        <!--    <li>Manages cash flow, liquidity, and investments.</li>-->
-                        <!--  </ul>-->
-                        <!--</li>-->
-                        <li class="decimal_style">
-                          <span class="role-title">Controller</span>
-                          <ul>
-                            <li>Oversees accounting operations and financial reporting.</li>
-                          </ul>
-                        </li>
-                        <li class="decimal_style">
-                          <span class="role-title">Finance Manager</span>
-                          <ul>
-                            <li>Leads planning, budgeting, and performance tracking.</li>
-                          </ul>
-                        </li>
-                   </ol>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section>
---}}
-
-<!-- How Does PCS Global Work With Australia Clients -->
-{{-- How does PCS Global work: section, CSS style.css .process_* --}}
 @php
     $processSteps = [
         ['title' => 'Discovery',
@@ -417,21 +244,15 @@
          'text' => 'We continuously review performance, work quality and evolving business requirements to ensure our support remains effective. Whether you need additional capacity during peak periods or a broader range of services as your business grows, we adapt our support to meet your changing needs.'],
     ];
 @endphp
-{{-- Process Steps --}}
 @php
     $processStepsSteps = $processSteps;
 @endphp
 @php
     $icons = [
-        // discovery (search)
         '<circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4.5-4.5"/>',
-        // tailored team (people)
         '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M18 14.3c2.1.7 3.5 2.6 3.5 5.7"/>',
-        // workflow integration (arrows)
         '<path d="M4 7h14m0 0-3.5-3.5M18 7l-3.5 3.5"/><path d="M20 17H6m0 0 3.5-3.5M6 17l3.5 3.5"/>',
-        // support (headset)
         '<path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M20 19c0 1.7-1.8 3-4 3h-2"/>',
-        // review & scale (growth chart)
         '<path d="M3 20h18"/><path d="m5 16 4-4 3 3 7-7"/><path d="M15 8h4v4"/>',
     ];
 @endphp
@@ -449,7 +270,6 @@
                         <span class="process_icon">
                             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{!! $icons[$loop->index % count($icons)] !!}</svg>
                         </span>
-                        <!-- <span class="process_step_label">Step {{ sprintf('%02d', $loop->iteration) }}</span> -->
                     </div>
                     <div class="process_body">
                         <h3>{!! $step['title'] !!}</h3>
@@ -519,7 +339,6 @@ document.addEventListener("DOMContentLoaded", () => {
         slider.scrollLeft = scrollLeft - walk;
     });
 
-    // Prevent link/card click firing right after a drag
     slider.addEventListener('click', (e) => {
         if (moved) {
             e.preventDefault();
@@ -528,8 +347,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, true);
 });
 </script>
-
-<!-- Certifications / Tools & Technology tabs -->
 
 <section class="clients cert_tools_sec mt-100">
     <div class="container">
@@ -765,7 +582,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<!-- home - map -->
 <section class="mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -793,13 +609,11 @@ document.addEventListener("DOMContentLoaded", () => {
                                 data-bs-toggle="modal" data-bs-target="#exampleModal"
                                 data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                                <!-- Bubble effect layers -->
                                 <span class="color-button__background"></span>
                                 <span class="color-button__bubble-container">
                                     <span class="color-button__bubble"></span>
                                 </span>
 
-                                <!-- Label and Icon -->
                                 <span class="color-button__label relative z-10 will-change-transform me-2">Book a Free Consultation</span>
                                 
                             </a>
@@ -814,8 +628,6 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     </div>
 </section>
-
-<!-- Our Experts -->
 
 <section class="our_experts mt-100 ">
     <div class="container">
@@ -867,8 +679,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </section>
 
-<!-- Insights -->
-
 <section class="card_main mt-100 ">
     <div class="container">
 
@@ -890,8 +700,6 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     </div>
 </section>
-{{-- Testimonials: AU / US / UK jaisa common section, content config/home.php ('testimonials') se --}}
-{{-- Testimonials --}}
 @php
     $testimonialsItems = config('home.testimonials');
 @endphp
@@ -942,8 +750,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </section>
 
-{{-- Contact form: AU / US / UK jaisa common form (css/common/contact-form.css) --}}
-{{-- Contact Form --}}
 @php
     $contactFormCities = ['Ahmedabad', 'Mumbai', 'Delhi', 'Bengaluru', 'Pune', 'Other'];
     $contactFormServices = ['Accounting Outsourcing', 'Bookkeeping Outsourcing', 'Taxation Outsourcing', 'Payroll Outsourcing', 'Recruitment Outsourcing', 'Strata Management Services'];
@@ -960,7 +766,6 @@ document.addEventListener("DOMContentLoaded", () => {
             <input type="hidden" name="form_type" value="India Footer Form">
             <input type="hidden" name="country" id="cfCountry" value="India">
             <input type="hidden" name="full_phone" id="cfFullPhone">
-            {{-- Honeypot (bots ke liye) --}}
             <div style="display:none;">
                 <label>Leave this field empty</label>
                 <input type="text" name="fax_number" autocomplete="off">
@@ -981,17 +786,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     <input type="tel" name="phone" id="cfPhone" maxlength="15" minlength="10" placeholder="Phone Number*:" aria-label="Phone Number"
                         oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
                 </div>
-                {{-- <div class="col-lg-6 col-12 cf_field">
-                    <input type="text" name="city" maxlength="100" placeholder="City:" aria-label="City"> --}}
 
 
-                    <!-- <select name="city" aria-label="Select City">
-                        <option value="" hidden>City:</option>
-                        {{-- @foreach ($contactFormCities as $city)
-                            <option value="{{ $city }}">{{ $city }}</option>
-                        @endforeach --}}
-                    </select> -->
-                {{-- </div> --}}
                 <div class="col-12 cf_field">
                     <select name="service" aria-label="Choose Service" required>
                         <option value="" hidden>Choose Service*:</option>
@@ -1022,32 +818,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </section>
 
-{{-- <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contactBandForm');
-    const phone = document.getElementById('cfPhone');
-    const fullPhone = document.getElementById('cfFullPhone');
-    if (!form || !phone || !window.intlTelInput) return;
-
-    const iti = window.intlTelInput(phone, {
-        initialCountry: @json('in'),
-        separateDialCode: true,
-        utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js'
-    });
-
-    // native required (company / city / service) ko common validator se pehle check karo
-    form.addEventListener('submit', function (e) {
-        if (!form.checkValidity()) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            form.reportValidity();
-            return;
-        }
-        fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
-    }, true);
-});
-</script> --}}
-
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contactBandForm');
@@ -1062,7 +832,6 @@ document.addEventListener('DOMContentLoaded', function () {
         utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js'
     });
 
-    // flag me jo country select ho, wahi "country" field me jaye
     function syncCountry() {
         const d = iti.getSelectedCountryData();
         if (d && d.name && countryInput) {

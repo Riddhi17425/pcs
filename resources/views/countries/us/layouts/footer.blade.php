@@ -1,4 +1,3 @@
-{{-- US footer: common <x-layout.footer> + US ka data (Figma) --}}
 @php
     $usUrl = fn ($path) => url('us/' . $path);
     $badgeDir = asset('public/front/images/figma-footer-badges');
@@ -8,9 +7,9 @@
     :quick-links="[
         ['Home',  route('us.home')],
         ['About Us', route('us.about')],
-        ['Data Security', route('datasecurity'), true],   // sab countries ka ek hi page, naye tab me
+        ['Data Security', route('datasecurity'), true],   // one page shared by all countries, opens in a new tab
         ['Contact Us', route('us.contact')],
-        ['Blogs', route('blog'), true],                   // sab countries ka ek hi page, naye tab me
+        ['Blogs', route('blog'), true],                   // one page shared by all countries, opens in a new tab
     ]"
     :services="[
         ['Accounting & Bookkeeping', route('pcs.global.usa')],

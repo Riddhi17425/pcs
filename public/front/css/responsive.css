@@ -115,11 +115,6 @@
     height: 48px;
 }
 
-/* .industries_card img {
-    width: 24px;
-    height: 24px;
-} */
-
 .industries_bot {
     padding: 1px 0;
 }
@@ -134,7 +129,6 @@
 
 .container
 {
-  /*max-width: 1500px;  */
 }
 
 .secure_box_par {
@@ -317,15 +311,6 @@
         height: 44px;
     }
 
-    /* .industries_card img {
-        width: 22px;
-        height: 22px;
-    } */
-
-    /* .industries_card p {
-        font-size: 16px;
-    } */
-
     .experts_card_bt {
         padding: 15px 20px;
     }
@@ -343,15 +328,7 @@
     }
 
     .circular-progress {
-        /* width: 20px;
-        height: 20px; */
     }
-
-    /* 
-    .inner-circle {
-    width: 70%;
-    height: 70%;
-} */
 
     .footer_top {
         padding: 60px 0 30px;
@@ -423,10 +400,6 @@
     .aus_manag.usa_taxservices .com_bg_card{
         width: 558px;
 }
-
-    /*.tax_preparation ul {*/
-    /*    gap: 30px;*/
-    /*}*/
 
     .accuracy p {
         font-size: 28px;
@@ -503,7 +476,6 @@
 
 
     .comp_bus_child {
-        /*height: 350px;*/
          height: 240px;
     }
 
@@ -529,16 +501,12 @@
         padding-top: 40px;
         padding-bottom: 60px;
     }
-    /*.experts_slider .slick-slide{*/
-    /*    height:340px;*/
     
-    /*}*/
     .team-slider .slick-slide{
         height:auto;
     }
 .comp_bus_front{
     justify-content: flex-start;
-    /*margin-top: 130px;*/
 }
 .tax_preparation ul{
     margin-top:5px;
@@ -646,10 +614,6 @@
         left: 72px;
     }
 
-    /* .com_hero {
-        background-size: contain;
-    } */
-
     .hero_gif {
         width: 40px;
     }
@@ -675,10 +639,6 @@
         font-size: 24px;
     }
 
-    /* .trust_card_head img {
-        width: 40px;
-    } */
-
     .industries_card {
         padding: 14px 16px;
     }
@@ -687,15 +647,6 @@
         width: 40px;
         height: 40px;
     }
-
-    /* .industries_card img {
-        width: 20px;
-        height: 20px;
-    } */
-
-    /* .industries_card p {
-        font-size: 14px;
-    } */
 
     .com_inner_banner h2 {
         font-size: 32px;
@@ -783,11 +734,6 @@
         gap: 20px;
     }
 
-    /*.ser_Out_lt svg {*/
-    /*    width: 90px;*/
-    /*    height: 90px;*/
-    /*}*/
-
     .ecosystem_left h4 {
         font-size: 26px;
         margin-bottom: 10px;
@@ -833,17 +779,12 @@
         padding: 20px;
     }
 
-    /*.choose_global .com_bg_card {*/
-    /*    width: 475px;*/
-    /*}*/
-
     .header_flags img {
         bottom: -20%;
         width: 100px;
     }
 
     .order_cash h5 {
-        /* margin-bottom: 10px; */
     }
 
     .order_cash ul {
@@ -1100,12 +1041,6 @@ nav {
         gap: 30px;
     }
 
-    /* .cert_badge img {
-        height: 60px;
-    } */
-
-
-
     .trust_slider_sec {
         padding: 50px 0;
     }
@@ -1190,11 +1125,6 @@ nav {
 
 
 
-    /* .com_hero img {
-        height: 250px;
-        object-fit: contain;
-    } */
-
     .com_sec_head_top {
         padding: 0;
         text-align: start;
@@ -1204,15 +1134,6 @@ nav {
         font-size: 26px;
         line-height: 36px;
     }
-
-    /* .comp_bus_bot {
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-
-    .comp_bus_child {
-        width: 100%;
-    } */
 
     .ft_logo {
         width: 120px;
@@ -1229,13 +1150,6 @@ nav {
     .counter {
         margin-top: 30px;
     }
-
-    /* .com_inner_banner h2 {
-        color: var(--white);
-        margin-bottom: 38px;
-        font-size: 24px;
-        line-height: 30px;
-    } */
 
     .com_inner_banner {
         padding: 15px;
@@ -1294,7 +1208,6 @@ nav {
     }
 
     .secure_box p {
-        /* margin-bottom: 0px; */
     }
 
     .ser_Out_lt svg {
@@ -1389,7 +1302,6 @@ nav {
 
     .ind_row_up,
     .ind_row_down {
-        /* transform: translateY(0); */
     }
 
     .com_inner_banner h2 {
@@ -1568,7 +1480,6 @@ nav {
     
     .dropdown-menu li
     {
-      /*margin-bottom: 7px;*/
     }
     
     .foot_rt
@@ -1649,8 +1560,6 @@ nav {
     }
 }
 
-/* ---------- footer: tablet / small laptop (769px - 1200px) ----------
-   grid ke 100px gaps is range me overflow karte the; ab links neeche 3 columns me aate hain */
 @media (min-width: 769px) and (max-width: 1200px) {
     .footer_top_flex {
         grid-template-columns: 1fr;
@@ -1678,8 +1587,6 @@ nav {
 }
 
 
-/* ---------- trust slider (image cards): pehla card poora + dusra aadha (peek) ----------
-   card ki width slider ki apni width se banti hai, isliye har screen par ek poora + ek aadha card dikhta hai */
 .trust_slider_rt {
     container-type: inline-size;
 }
@@ -1692,7 +1599,6 @@ nav {
     scroll-padding-left: 0;
 }
 
-/* laptop / tablet: heading upar (full width), slider neeche (full width) */
 @media (max-width: 1199px) {
     .trust_slider_wrap {
         flex-direction: column;
@@ -1758,8 +1664,6 @@ nav {
 }
 
 
-/* ---------- footer: laptop / desktop (1201px - 1599px) ----------
-   left column aur 100px gaps ne links ko tang kar diya tha (headings 2 line me toot-te the) */
 .foot_rt .sub_head {
     white-space: nowrap;
 }
@@ -1796,7 +1700,6 @@ nav {
 }
 
 
-/* trust slider progress line: har card ka ek segment (button), bada click area, line 2px hi dikhti hai */
 button.trust_slider_seg {
     position: relative;
     height: 2px;
@@ -1806,7 +1709,6 @@ button.trust_slider_seg {
     cursor: pointer;
 }
 
-/* invisible bada click area */
 button.trust_slider_seg::after {
     content: "";
     position: absolute;
@@ -1822,7 +1724,6 @@ button.trust_slider_seg.active {
 }
 
 
-/* trust slider (desktop 1200px+): left heading column flexible, taaki cards Figma jaisi chaudi (~600px) rahe */
 @media (min-width: 1200px) {
     .trust_slider_lt {
         width: clamp(380px, 31vw, 600px);
@@ -1845,8 +1746,6 @@ button.trust_slider_seg.active {
 }
 
 
-/* ---------- footer badges (ISO / GDPR / strata): tablet + mobile ----------
-   lines (::before/::after) wrap hone par toot-ti thi; yahan hata kar badges ek saaf center row me */
 @media (max-width: 991px) {
     .footer_badges_wrap {
         padding: 28px 0;
@@ -1905,13 +1804,10 @@ button.trust_slider_seg.active {
 
 
 
-/* header menu dropdown css */
-
 .offcanvas-logo img { height: 40px; width: auto; display: block; }
 
 @media (max-width: 991px) {
 
-  /* logo left, [country + hamburger] right, ek hi row me */
   header nav {
     display: flex;
     flex-wrap: nowrap;
@@ -1928,7 +1824,6 @@ button.trust_slider_seg.active {
     margin-left: auto;
   }
 
-  /* purana absolute/margin wagairah hata do */
   .mobile_header_right .menu-toggle {
     position: static !important;
     margin: 0 !important;
@@ -1946,7 +1841,6 @@ button.trust_slider_seg.active {
   }
   .mobile_country_btn img { width: 24px; height: auto; border-radius: 2px; display: block; }
 
-  /* global .dropdown-menu mobile rules ko override */
   .mobile_country_menu.dropdown-menu {
     position: absolute !important;
     top: 100% !important;
@@ -1969,9 +1863,6 @@ button.trust_slider_seg.active {
   .mobile_country_menu .dropdown-item img { width: 24px; height: auto; border-radius: 2px; }
 }
 
-/* end header menu dropdown css */
-
-/* offcanvas (mobile menu) header: logo left, [flag + close] right */
 .offcanvas-header {
   display: flex;
   align-items: center;
@@ -2002,11 +1893,9 @@ button.trust_slider_seg.active {
 
 .offcanvas-flag img { width: 24px; height: auto; display: block; border-radius: 2px; }
 
-/* certifications: desktop par pehle jaisa (track layout me nahi aata, duplicate hidden) */
 .cert_badges_track { display: contents; }
 .cert_dup { display: none; }
 
-/* certifications: mobile / tablet par auto-scroll */
 @media (max-width: 991px) {
   .cert_badges_row {
     display: block;
@@ -2026,7 +1915,7 @@ button.trust_slider_seg.active {
     display: flex;
     flex: 0 0 auto;
     align-items: center;
-    padding-right: 40px; /* gap ki jagah padding, taaki loop seamless rahe */
+    padding-right: 40px;
   }
 
   .cert_badges_track .cert_badge img {
@@ -2041,7 +1930,6 @@ button.trust_slider_seg.active {
   to   { transform: translateX(-50%); }
 }
 
-/* motion pasand na ho (accessibility): animation band, swipe se scroll */
 @media (prefers-reduced-motion: reduce) and (max-width: 991px) {
   .cert_badges_row { overflow-x: auto; }
   .cert_badges_track { animation: none; }
@@ -2054,7 +1942,6 @@ button.trust_slider_seg.active {
   box-shadow: none;
 }
 
-/* tools & technology: CSS marquee (desktop + mobile) */
 .tools_marquee { overflow: hidden; width: 100%; }
 
 .tools_track {
@@ -2097,7 +1984,6 @@ button.trust_slider_seg.active {
   .tools_track { animation: none; }
 }
 
-/* footer headings: red underline (sirf mobile / tablet) */
 @media (max-width: 991px) {
   .foot_rt .sub_head {
     position: relative;
@@ -2118,14 +2004,13 @@ button.trust_slider_seg.active {
   }
 }
 
-/* back to top: mobile + desktop dono par */
 .back_to_top {
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
   right: 16px;
-  bottom: 90px;            /* WhatsApp button ke upar, overlap na ho */
+  bottom: 90px;
   width: 44px;
   height: 44px;
   border: 0;
@@ -2148,7 +2033,6 @@ button.trust_slider_seg.active {
 
 .back_to_top:hover { background: #2a3d7a; }
 
-/* desktop par thoda neeche aur kone ke paas */
 @media (min-width: 992px) {
   .back_to_top {
     right: 30px;

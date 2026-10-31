@@ -2,11 +2,6 @@
 
 namespace App\Support;
 
-/**
- * Country site settings (config/sites.php) ko views ke liye ready karta hai:
- * menu / footer ke route names -> URLs, images -> asset() URLs.
- * Middleware 'country:<key>' isse $site bana ke sab views me share karta hai.
- */
 class Site
 {
     public static function get(string $country): array
@@ -22,7 +17,6 @@ class Site
                 'services' => self::links($site['services']),
                 'country' => $site['nav']['country'],
                 'phone' => $site['phone'],
-                // Data Security / Blogs sab countries ka ek hi main page hai
                 'data_security' => route('datasecurity'),
                 'blog' => route('blog'),
             ];
@@ -40,7 +34,6 @@ class Site
                 }
                 return $phone;
             }, $footer['phones']),
-            // null = footer component ke default badges
             'badges' => isset($footer['badges'])
                 ? array_map(fn ($badge) => [self::image($badge[0]), $badge[1], $badge[2]], $footer['badges'])
                 : null,
@@ -49,7 +42,6 @@ class Site
         return $site;
     }
 
-    // [label, route name, ...] -> [label, url, ...]
     private static function links(array $links): array
     {
         return array_map(function ($link) {

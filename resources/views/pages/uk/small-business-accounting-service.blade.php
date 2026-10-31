@@ -12,23 +12,19 @@
          <div class="mt-4">
             <a href="#consultation-form" style="border: 1px solid #182653;" class="com_btn1 color-animated-button bubble-btn"
                data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
-               <!-- Bubble effect layers -->
                <span class="color-button__background"></span>
                <span class="color-button__bubble-container">
                <span class="color-button__bubble"></span>
                </span>
-               <!-- Label and Icon -->
                <span class="color-button__label relative z-10 will-change-transform me-2">Book Consultation</span>
             </a>
             <a href="tel:(+44) 113 4034334" style="border: 1px solid #182653;
                background: transparent;" class="com_btn2 mt-3 mt-md-0 ms-md-3 color-animated-button bubble-btn"
                data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
-               <!-- Bubble effect layers -->
                <span class="color-button__background"></span>
                <span class="color-button__bubble-container">
                <span class="color-button__bubble"></span>
                </span>
-               <!-- Label and Icon -->
                <span class="color-button__label relative z-10 will-change-transform me-2">Talk to Expert </span>
                <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -441,12 +437,10 @@
                </p>
                <a  href="#consultation-form" class="com_btn1 color-animated-button bubble-btn mt-3" 
                   data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
-                  <!-- Bubble effect layers -->
                   <span class="color-button__background"></span>
                   <span class="color-button__bubble-container">
                   <span class="color-button__bubble"></span>
                   </span>
-                  <!-- Label and Icon -->
                   <span class="color-button__label relative z-10 will-change-transform me-2">Book a Free Consultation</span>
                   <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <path
@@ -605,8 +599,6 @@
    </div>
 </section>
 
-<!-- animation section start -->
-
 <section class="timeline-section mt-100">
    <div class="container">
       <div class="com_sec_head_top">
@@ -615,13 +607,10 @@
          </p>
       </div>
       <div class="timeline">
-         <!-- LOGO -->
          <div class="timeline__header">
             <img src="https://pcsglobalgroup.com/public/front/images/logo.svg" alt="Logo">
          </div>
-         <!-- TIMELINE CONTAINER -->
          <div class="timeline__container" id="timelineAnimation">
-            <!-- SVG LINE -->
             <svg class="timeline__svg" viewBox="0 0 1366 634" fill="none" preserveAspectRatio="xMidYMid meet">
                <defs>
                   <mask id="timeline-mask">
@@ -641,9 +630,7 @@
                   stroke-dasharray="12 12"
                   mask="url(#timeline-mask)" />
             </svg>
-            <!-- LINE CAP -->
             <div class="timeline__cap"></div>
-            <!-- ITEM 1 -->
             <div class="timeline__item timeline__item--1">
                <div class="timeline__badge js-group-1">
                   01
@@ -660,7 +647,6 @@
                   you are facing.
                </div>
             </div>
-            <!-- ITEM 2 -->
             <div class="timeline__item timeline__item--2">
                <div class="timeline__badge js-group-2">
                   02
@@ -675,7 +661,6 @@
                   </h3>
                </div>
             </div>
-            <!-- ITEM 3 -->
             <div class="timeline__item timeline__item--3">
                <div class="timeline__badge js-group-3">
                   03
@@ -690,7 +675,6 @@
                   We handle the entire onboarding process, migrate your existing financial records, and integrate with your current workflows. Your transition is safe even if you have switched from an accountant.
                </div>
             </div>
-            <!-- ITEM 4 -->
             <div class="timeline__item timeline__item--4">
                <div class="timeline__badge js-group-4">
                   04
@@ -709,8 +693,6 @@
       </div>
    </div>
 </section>
-
-<!--animaiotn section end -->
 
 <section class="our_experts mt-100 ">
    <div class="container">
@@ -879,7 +861,6 @@
                         <label>Full Name<span class="text-danger">*</span></label>
                         @error('fullname') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
-                    <!-- Honeypot Field (hidden) -->
                     <div style="display:none;">
                         <label>Leave this field empty</label>
                         <input type="text" name="fax_number" autocomplete="off">
@@ -946,7 +927,6 @@
       <div class="row justify-content-center">
          <div class="col-lg-11">
             <div class="fre_ques accordion" id="faqAccordion">
-               <!-- FAQ 1 -->
                <div class="fre_que">
                   <h5 class="sub_head"
                      data-bs-toggle="collapse"
@@ -963,7 +943,6 @@
                      </p>
                   </div>
                </div>
-               <!-- FAQ 2 -->
                <div class="fre_que">
                   <h5 class="sub_head collapsed"
                      data-bs-toggle="collapse"
@@ -980,7 +959,6 @@
                      </p>
                   </div>
                </div>
-               <!-- FAQ 3 -->
                <div class="fre_que">
                   <h5 class="sub_head collapsed"
                      data-bs-toggle="collapse"
@@ -997,7 +975,6 @@
                      </p>
                   </div>
                </div>
-               <!-- FAQ 4 -->
                <div class="fre_que">
                   <h5 class="sub_head collapsed"
                      data-bs-toggle="collapse"
@@ -1014,7 +991,6 @@
                      </p>
                   </div>
                </div>
-               <!-- FAQ 5 -->
                <div class="fre_que">
                   <h5 class="sub_head collapsed"
                      data-bs-toggle="collapse"
@@ -1032,34 +1008,6 @@
                      </p>
                   </div>
                </div>
-               <!-- LOAD MORE BUTTON -->
-               <!--<div class="fre_que text-center border-0">-->
-               <!--   <a class="com_btn1 color-animated-button bubble-btn load-more-faq"-->
-               <!--      href="javascript:void(0)"-->
-               <!--      data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>-->
-                     <!-- Bubble Effect -->
-               <!--      <span class="color-button__background"></span>-->
-               <!--      <span class="color-button__bubble-container">-->
-               <!--      <span class="color-button__bubble"></span>-->
-               <!--      </span>-->
-                     <!-- LABEL -->
-               <!--      <span class="color-button__label relative z-10 will-change-transform me-2">-->
-               <!--      Load More-->
-               <!--      </span>-->
-                     <!-- ICON -->
-               <!--      <svg width="20"-->
-               <!--         height="20"-->
-               <!--         viewBox="0 0 24 25"-->
-               <!--         fill="none"-->
-               <!--         xmlns="http://www.w3.org/2000/svg">-->
-               <!--         <path d="M12 5.67383V19.6738M12 19.6738L18 13.6738M12 19.6738L6 13.6738"-->
-               <!--            stroke="white"-->
-               <!--            stroke-width="2"-->
-               <!--            stroke-linecap="round"-->
-               <!--            stroke-linejoin="round" />-->
-               <!--      </svg>-->
-               <!--   </a>-->
-               <!--</div>-->
             </div>
          </div>
       </div>
@@ -1074,16 +1022,8 @@
    
     const pathLength = timelinePath.getTotalLength();
    
-    /* ==========================================
-    SVG LINE SETUP
-    ========================================== */
-   
     timelinePath.style.strokeDasharray = pathLength;
     timelinePath.style.strokeDashoffset = -pathLength;
-   
-    /* ==========================================
-    INTERSECTION OBSERVER
-    ========================================== */
    
     const observer = new IntersectionObserver((entries) => {
    
@@ -1091,18 +1031,10 @@
    
             if (entry.isIntersecting) {
    
-                /* =========================
-                LINE ANIMATION
-                ========================= */
-   
                 timelinePath.style.transition =
                     "stroke-dashoffset 2.5s ease-in-out";
    
                 timelinePath.style.strokeDashoffset = "0";
-   
-                /* =========================
-                GROUP ANIMATION
-                ========================= */
    
                 const animationGroups = [
                     {
@@ -1138,10 +1070,6 @@
    
                 });
    
-                /* =========================
-                CAP ANIMATION
-                ========================= */
-   
                 setTimeout(() => {
    
                     document
@@ -1171,7 +1099,6 @@ window.addEventListener("load", function () {
         const target = document.getElementById("consultation-form");
 
         if (target) {
-            // Small timeout ensures we override the browser's default jump
             setTimeout(() => {
                 const offset = 140; 
                 const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;

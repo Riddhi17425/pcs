@@ -7,7 +7,6 @@ use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\ServiceController;
 use App\Http\Controllers\Web\BlogController;
 
-// India / Global (main site, /). Middleware 'country:india' -> views me $site = config('sites.india')
 Route::middleware('country:india')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('front.home');
     Route::get('/data-security', [HomeController::class, 'datasecurity'])->name('datasecurity');
@@ -22,22 +21,15 @@ Route::middleware('country:india')->group(function () {
     Route::get('white-label-accounting-services', [ServiceController::class, 'whitelabelAccountingServices'])->name('white-label-accounting-services');
 
 
-    // Route::get('test-taxation', [ServiceController::class, 'taxationservices'])->name('test.taxation'); // TEMP LINK
-
-    // Route::get('bookkeeping-and-accounting-services', [ServiceController::class, 'accountingBookeeping'])->name('pcs.global.bookkeeping'); // OLD LINK
     Route::get('accounting-outsourcing-services', [ServiceController::class, 'accountingBookeeping'])->name('pcs.global.bookkeeping');
 
-    // Route::get('taxation-services', [ServiceController::class, 'taxationservices'])->name('taxation.services'); // OLD LINK
-    // Route::get('outsourced-taxation-services', [ServiceController::class, 'taxationservices'])->name('taxation.services'); // OLD LINK
     Route::get('tax-preparation-outsourcing-services', [ServiceController::class, 'taxationservices'])->name('taxation.services');
-    // Route::redirect('outsourced-taxation-services', '/tax-preparation-outsourcing-services', 301); 
 
     Route::get('bookkeeping-outsourcing-services', [ServiceController::class, 'bookkeepingServices'])->name('bookkeeping.services');
+    Route::get('hire-offshore-accountants', [ServiceController::class, 'hireOffshoreAccountant'])->name('hire.offshore.accountant');
 
-    // Route::get('payroll-services', [ServiceController::class, 'payrollService'])->name('payroll.services'); // OLD LINK
-    // Route::get('outsourced-payroll-services', [ServiceController::class, 'payrollService'])->name('payroll.services'); // OLD LINK
     Route::get('payroll-outsourcing-services', [ServiceController::class, 'payrollService'])->name('payroll.services');
-    Route::get('outsourced-payroll-services', fn () => redirect()->route('payroll.services', [], 301)); // purana URL -> naya (SEO)
+    Route::get('outsourced-payroll-services', fn () => redirect()->route('payroll.services', [], 301));
 
     Route::get('recruitment-services', [ServiceController::class, 'recruitmentService'])->name('recruitment.services');
     Route::get('thank-you', [ServiceController::class, 'thankyou'])->name('thank.you');

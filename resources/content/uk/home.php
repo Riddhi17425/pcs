@@ -1,17 +1,11 @@
 <?php
 
-// UK home page ka saara content (text, images, links).
-// - Neeche 'return' me sections usi order me hain jaise page par dikhte hain.
-// - 'type' = component: resources/views/components/sections/<type>.blade.php
-// - 'props' = us section ka data. Text badalna ho to yahin badlo.
-// $db: images (Trusted by logos), blogs, ourexpert (team) - admin panel / database se aate hain.
-
 return function (array $db) {
     ['images' => $images, 'blogs' => $blogs, 'ourexpert' => $ourexpert] = $db;
 
     $img = fn ($file) => asset('public/front/images/' . $file);
     $uk = fn ($path) => url('uk/' . $path);
-    $consult = url('uk') . '#consultation';   // jin services ka page abhi nahi hai, wo form par jaati hain
+    $consult = url('uk') . '#consultation';
 
     $serviceCards = [
         ['title' => 'Accounting Outsourcing', 'img' => $img('figma-precision/accounting-outsourcing.png'), 'url' => $uk('accounting-outsourcing-services'),
@@ -28,7 +22,6 @@ return function (array $db) {
          'text' => 'VAT is one of the more error-prone areas of UK tax, and mistakes can prove costly. We manage the process from calculation to submission, determining what is due, reconciling it against your records, and filing under Making Tax Digital ahead of the deadline. Every return is reviewed before it is submitted to HMRC. This removes a demanding recurring task and reduces the risk of penalties.'],
     ];
 
-    // Figma me in cards ka text Australia wala tha (AASB / GST / ATO); UK ke hisab se likha gaya hai
     $clientCards = [
         ['title' => 'Outsourcing for UK Accounting Firms', 'img' => $img('uk/client-1-2a4bc9.jpg'),
          'button' => ['Explore Accounting Outsourcing', $uk('accounting-outsourcing-services')],
@@ -78,12 +71,10 @@ return function (array $db) {
          'text' => 'We use secure, monitored systems and encrypted channels for files and communications. Access is tightly restricted, and confidential information is never sent through unsecured routes. '],
     ];
 
-    // core team (Malay, Prithvi, Umesh) config/home.php se aati hai; yahan sirf UK ka member
     $team = [
         ['name' => 'Alisha Manchanda', 'role' => 'Operations - UK', 'image' => $img('common/team/alisha-manchanda.png')],
     ];
 
-    // Figma me sirf pehle sawal ka answer tha (wo bhi Australia wala); answers page ke content se likhe gaye hain
     $faqs = [
         ['q' => 'Why do UK accounting firms outsource accounting work?',
          'a' => 'To increase capacity, manage busy periods such as year-end and self-assessment season, and take on additional clients without recruiting. Outsourcing provides skilled support under the firm\'s own brand, at a lower cost than hiring in-house.'],

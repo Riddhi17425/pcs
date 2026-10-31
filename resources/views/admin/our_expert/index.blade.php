@@ -16,7 +16,7 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- Row end  -->
+            </div>
             <div class="row clearfix g-3">
                 <div class="col-sm-12">
                     <div class="card mb-3">
@@ -36,11 +36,10 @@
                         </div>
                     </div>
                 </div>
-            </div><!-- Row End -->
+            </div>
         </div>
     </div>
 
-    <!-- Add-->
     <div class="modal fade" id="ourexpert_modal" tabindex="-1"  aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
         <div class="modal-content">
@@ -109,7 +108,6 @@
     </div>
 
     <script>
-        // js load on footer
         window.APP_URLS = {
             OurexpertStore: "{{ route('ourexpert.store') }}",
             OurexpertUpdate: "{{ route('ourexpert.update', [':id']) }}",

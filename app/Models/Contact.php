@@ -13,6 +13,6 @@ class Contact extends Model
         'fullname', 'email', 'phone', 'country', 'services', 'message'
     ];
      protected $casts = [
-        'services' => 'array', // auto cast JSON
+        'services' => 'array',
     ];
 }

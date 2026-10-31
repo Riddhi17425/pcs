@@ -1,4 +1,3 @@
-/* Contact form band (footer ke upar) - sab countries ke home par. Component: components/sections/contact-form.blade.php */
 
 .contact_band {
     padding: 60px 0;
@@ -26,11 +25,6 @@
     line-height: 26px;
     color: var(--grey);
 }
-
-/* .contact_band_form {
-    max-width: 1200px;
-    margin: 0 auto;
-} */
 
 .cf_field input:not(.iti__search-input),
 .cf_field select,
@@ -127,7 +121,6 @@
     }
 }
 
-/* phone country dropdown (intl-tel-input): light list, dark text */
 .cf_field .iti__search-input {
     padding: 10px 12px 10px 36px;
     border: 0;
@@ -146,7 +139,6 @@
     color: var(--black1);
 }
 
-/* phone flag ke paas ka dropdown arrow: white (arrow border se bana hota hai) */
 .cf_field .iti__arrow {
     border-top-color: var(--white) !important;
 }

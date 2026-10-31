@@ -1,4 +1,3 @@
-{{-- Australia header: common components/layout/header + Australia ka data --}}
 @php
     $nav = [
         'home' => route('australia.home'),

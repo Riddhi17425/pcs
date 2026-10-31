@@ -17,7 +17,6 @@
   cursor: pointer;
   writing-mode: vertical-rl;
   transform: translateY(-50%) rotate(180deg);
-  /*box-shadow: 0 4px 15px rgba(0, 0, 0, .25);*/
   transition: background .2s, box-shadow .2s;
   animation: enquiryPulse 1.5s infinite !important;
   box-shadow: 0 4px 15px rgba(228, 52, 65, 0.25);
@@ -38,7 +37,6 @@
 .enquiry-btn svg { display: none; }
 .enquiry-btn:focus-visible { outline: 3px solid #8ba6ff; outline-offset: 3px; }
 
-/* Overlay + modal */
 .enquiry-overlay {
   position: fixed;
   inset: 0;
@@ -90,7 +88,6 @@
 }
 .enquiry-body { padding: 20px 28px 24px; }
 
-/* Form */
 #enquiryForm {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -129,7 +126,6 @@
 .enquiry-field input::placeholder,
 .enquiry-field textarea::placeholder { color: #929baa; }
 
-/* Phone country flag + code */
 .iti { width: 100%; display: block; }
 .enquiry-field .iti input#enqPhone { padding-left: 100px !important; }
 .iti .iti__selected-dial-code { color: #182653; }
@@ -138,14 +134,12 @@
 .iti__country-list .iti__dial-code { color: #182653 !important; }
 .iti--container { z-index: 10000 !important; }
 
-/* Validation (jQuery Validate) */
 .enquiry-field input.is-invalid,
 .enquiry-field textarea.is-invalid { border-color: #a52020; }
 p.js-error { display: block; margin: 4px 0 0; color: #a52020; font-size: 12px; line-height: 1.3; }
 
 .enquiry-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 
-/* reCAPTCHA */
 .enquiry-captcha { min-width: 0; }
 .enquiry-captcha .g-recaptcha { transform: scale(.9); transform-origin: left top; margin-bottom: -6px; }
 .captcha-error { margin: 8px 0 0; color: #a52020; font-size: 13px; }
@@ -194,13 +188,11 @@ p.js-error { display: block; margin: 4px 0 0; color: #a52020; font-size: 12px; l
 }
 </style>
 
-<!-- Floating Enquiry Button -->
 <button type="button" class="enquiry-btn" id="openEnquiry"
   aria-haspopup="dialog" aria-controls="enquiryModal">
   Enquire Now
 </button>
 
-<!-- Popup -->
 <div class="enquiry-overlay" id="enquiryOverlay">
   <section class="enquiry-modal" id="enquiryModal" role="dialog"
     aria-modal="true" aria-labelledby="enquiryTitle">
@@ -219,7 +211,6 @@ p.js-error { display: block; margin: 4px 0 0; color: #a52020; font-size: 12px; l
     </div>
 
     <div class="enquiry-body">
-      {{-- "validated-form" class jaan-bunjh kar nahi lagayi (global main.js ke saath conflict se bachne ke liye) --}}
       <form id="enquiryForm" action="{{ route('request.store') }}" method="POST" novalidate>
         @csrf
 
@@ -292,7 +283,6 @@ window.addEventListener("load", function () {
     var $closeBtn   = $("#closeEnquiry");
     var previousFocus;
 
-    /* ---------- Custom methods ---------- */
     $.validator.addMethod("nameOnly", function (value, element) {
       return this.optional(element) || /^[A-Za-z][A-Za-z .'-]{1,69}$/.test(value);
     }, "Enter a valid name (letters only, minimum 2 characters).");
@@ -305,7 +295,6 @@ window.addEventListener("load", function () {
       return this.optional(element) || /^[0-9]{10,15}$/.test(value);
     }, "Phone number must be 10 to 15 digits.");
 
-    /* ---------- Phone country code + IP detect ---------- */
     var phoneEl = $form.find('[name="phone"]')[0];
     var $country = $("#enqCountry");
     var siteCountry = @json($site['phone_country'] ?? 'in');
@@ -342,7 +331,6 @@ window.addEventListener("load", function () {
       detectCountry();
     }
 
-    /* ---------- Validate setup ---------- */
     var validator = $form.validate({
       ignore: ".enquiry-honeypot input, [name='g-recaptcha-response']",
       errorElement: "p",
@@ -396,7 +384,6 @@ window.addEventListener("load", function () {
       this.value = this.value.replace(/\D/g, "").slice(0, 15);
     });
 
-    /* ---------- reCAPTCHA helpers ---------- */
     window.enquiryCaptchaSolved  = function () { $captchaErr.prop("hidden", true); };
     window.enquiryCaptchaExpired = function () {
       $captchaErr.text("Please complete the CAPTCHA verification.").prop("hidden", false);
@@ -408,7 +395,6 @@ window.addEventListener("load", function () {
       try { grecaptcha.reset(id); } catch (e) {}
     }
 
-    /* ---------- Modal ---------- */
     function resetFormState() {
       validator.resetForm();
       $form.find(".is-invalid").removeClass("is-invalid");
@@ -437,7 +423,6 @@ window.addEventListener("load", function () {
       if (e.key === "Escape" && $overlay.hasClass("active")) closeModal();
     });
 
-    /* ---------- AJAX submit ---------- */
     function sendForm() {
       $status.attr("class", "enquiry-status").text("");
       syncCountry();

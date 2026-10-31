@@ -13,13 +13,11 @@
                 <a class="com_btn1 color-animated-button bubble-btn mt-4" href="#jumpcontect"
                 data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                <!-- Bubble effect layers -->
                 <span class="color-button__background"></span>
                 <span class="color-button__bubble-container">
                   <span class="color-button__bubble"></span>
                 </span>
 
-                <!-- Label and Icon -->
                 <span class="color-button__label relative z-10 will-change-transform me-2">Start the Conversation</span>
 
               </a>
@@ -42,8 +40,6 @@
         <div class="contact_top">
             <h2 class="mb-4">Let’s Streamline Your <br /> Business <img src="{{asset('public/front/images/handshake.gif')}}" alt="icon" class="inner-gif"> Operations</h2>
 
-            {{-- <p class="mb-0 col-xl-6 col-xxl-4 m-auto">We’re here to help you manage finance and accounting outsourcing solutions.
-Just fill out the form, or reach out via email at <a href="mailto:info@pcsglobalgroup.com"><b>info@pcsglobalgroup.com</b></a></p> --}}
 <p class="mb-0 col-xl-7 m-auto">We’re here to help you manage finance and accounting outsourcing solutions.<br class="d-none d-xl-inline">
 Just fill out the form, or reach out via email at <a href="mailto:info@pcsglobalgroup.com"><b>info@pcsglobalgroup.com</b></a></p>
         </div>
@@ -60,7 +56,6 @@ Just fill out the form, or reach out via email at <a href="mailto:info@pcsglobal
                         <label>Full Name<span class="text-danger">*</span></label>
                         @error('fullname') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
-                    <!-- Honeypot Field (hidden) -->
                     <div style="display:none;">
                         <label>Leave this field empty</label>
                         <input type="text" name="fax_number" autocomplete="off">

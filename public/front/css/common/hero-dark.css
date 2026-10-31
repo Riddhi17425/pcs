@@ -1,5 +1,3 @@
-/* Common hero: blue gradient + bg image, left text, right person image.
-   Component: resources/views/components/sections/hero-dark.blade.php  (type "hero-dark") */
 
 .hero_dark {
     position: relative;
@@ -138,7 +136,6 @@
     }
 }
 
-/* features: desktop par har item ek line me (UK ke lambe text ke liye bhi) */
 @media (min-width: 992px) {
     .hero_dark_features {
         width: max-content;
@@ -151,7 +148,6 @@
     }
 }
 
-/* ---------- laptop / tablet landscape (992px - 1366px): heading fluid, text person ki image se door ---------- */
 @media (min-width: 992px) {
     .hero_dark h1 {
         font-size: clamp(40px, 4.2vw, 66px);
@@ -171,7 +167,6 @@
     }
 
     .hero_dark_features {
-        /* width: auto; */
         column-gap: 28px;
     }
 
@@ -186,9 +181,6 @@
     }
 }
 
-/* ---------- full viewport hero (100vh) ----------
-   svh: mobile browser ki address bar ke saath bhi sahi height; vh fallback purane browsers ke liye.
-   Content vertical center me; header (absolute overlay) ke liye upar padding. */
 .hero_dark {
     display: flex;
     align-items: center;
@@ -243,7 +235,6 @@
     }
 }
 
-/* chhoti height wali laptop / landscape phone: gaps aur padding kam */
 @media (max-height: 700px) and (min-width: 992px) {
     .hero_dark {
         padding: 112px 0 40px;
@@ -258,8 +249,6 @@
     }
 }
 
-/* ---------- text kabhi person ki image ke upar nahi ----------
-   --hd-img = image ki width; content ki width = container - (image jitna container ke andar aata hai) - gap */
 .hero_dark {
     --hd-img: min(35vw, 673px);
 }
@@ -288,7 +277,6 @@
     }
 }
 
-/* heading: lines barabar tootein (akela "for" ek line me na rahe) */
 .hero_dark h1 {
     text-wrap: balance;
 }
@@ -303,7 +291,6 @@
     }
 }
 
-/* ---------- compact sizing: content 100vh ke andar fit ho ---------- */
 @media (min-width: 992px) {
     .hero_dark h1 {
         font-size: clamp(32px, 3.2vw, 56px);

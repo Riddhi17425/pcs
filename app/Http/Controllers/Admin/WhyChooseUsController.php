@@ -22,7 +22,6 @@ class WhyChooseUsController extends Controller
 
    public function Store(Request $request)
 {
-    // Validate input
     $validator = Validator::make($request->all(), [
         'whychooseus_desc'    => 'required|string|max:500',
         'whychooseus_title'   => 'required|string|max:255',
@@ -66,7 +65,6 @@ class WhyChooseUsController extends Controller
             $imagePath = 'public/admin/whychooseus_image/' . $uniqueName;
         }
 
-        // Create whychooseus record (Correct field names)
         WhyChooseUs::create([
             'title'       => $request->whychooseus_title,
             'description' => $request->whychooseus_desc,
@@ -125,7 +123,6 @@ class WhyChooseUsController extends Controller
 
     public function Update(Request $request, $id)
     {
-        // 1. Validate the request
         $validator = Validator::make($request->all(), [
             'whychooseus_desc'    => 'required|string|max:500',
             'whychooseus_title'   => 'required|string|max:255',
@@ -143,12 +140,10 @@ class WhyChooseUsController extends Controller
         }
 
         try {
-            // 2. Find the whychooseus
             $whychooseus = WhyChooseUs::findOrFail($id);
 
             $imagePath = $whychooseus->image;
 
-            // 3. Handle new image upload (replace old one if new image is uploaded)
             if ($request->hasFile('whychooseus_image')) {
                 $imageFile = $request->file('whychooseus_image');
                 $extension = $imageFile->guessExtension() ?? 'jpg';
@@ -163,7 +158,6 @@ class WhyChooseUsController extends Controller
                     mkdir($uploadPath, 0755, true);
                 }
 
-                // Delete old image file if it exists
                 if ($imagePath && file_exists(public_path($imagePath))) {
                     @unlink(public_path($imagePath));
                 }
@@ -179,7 +173,6 @@ class WhyChooseUsController extends Controller
                 $imagePath = 'public/admin/whychooseus_image/' . $uniqueName;
             }
 
-            // 4. Update whychooseus data
             $whychooseus->update([
                 'title'       => $request->whychooseus_title,
                 'description' => $request->whychooseus_desc,

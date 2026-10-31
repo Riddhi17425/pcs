@@ -26,7 +26,6 @@
 
             </div>
             <div class="com_sec_head_top">
-                <!--<h2 class="mb-2 mb-xxl-4">Simplify Your Payroll, Empower Your People</h2>-->
                 <p>We combine expertise, innovation, and strategic guidance to simplify IT complexities and deliver long-term value. From cybersecurity to cloud transformation, software engineering to managed services, PCS Global helps businesses stay future-ready, competitive, and digitally strong.
 </p>
             </div>
@@ -81,7 +80,6 @@ For IT Services??</h2>
 
         <div class="trust_scroll_wrapper">
             <div class="trust_banner trust_banner_security" style="background-image: url(' {{ asset('public/front/images/digitalmarketing-it-solution.png') }}');">
-                <!-- <img class="img-fluid" src="http://localhost/pcsgloballaravel/public/front/images/aus-img-7.png" alt="bg1" /> -->
                 <div class="trust_card tax_preparation" id="jump-to-sec4">
                     <div class="trust_card_head">
                         <h3>Digital Marketing & Social Media</h3>
@@ -97,7 +95,6 @@ For IT Services??</h2>
                 </div>
             </div>
             <div class="trust_banner trust_banner_security" style="background-image: url(' {{ asset('public/front/images/website-development-it-solution.png') }}');">
-                <!-- <img class="img-fluid" src="http://localhost/pcsgloballaravel/public/front/images/aus-img-7.png" alt="bg1" /> -->
                 <div class="trust_card tax_preparation" id="jump-to-sec5">
                     <div class="trust_card_head">
                         <h3>Website Development</h3>
@@ -105,7 +102,6 @@ For IT Services??</h2>
                     </div>
                     <p>Your website is the digital face of your business. We design and develop responsive, secure, and high-performing websites that create meaningful user experiences and deliver strong conversions. From development to hosting, we ensure your online presence runs smoothly at all times.
 </p>
- <!--<b>Services:</b>-->
                                  <ul>
                                       <li>  E-commerce Development</li>
                                      <li> CMS Development</li>
@@ -115,7 +111,6 @@ For IT Services??</h2>
                 </div>
             </div>
             <div class="trust_banner trust_banner_security" style="background-image: url(' {{ asset('public/front/images/mobile-app-development-it-solution.png') }}');">
-                <!-- <img class="img-fluid" src="http://localhost/pcsgloballaravel/public/front/images/aus-img-7.png" alt="bg1" /> -->
                 <div class="trust_card tax_preparation" id="jump-to-sec6">
                     <div class="trust_card_head" >
                         <h3>Mobile App Development</h3>
@@ -125,7 +120,6 @@ For IT Services??</h2>
 
 </p>
 
-                                    <!--<b>Services:</b>-->
                                  <ul>
                                       <li> Android App Development</li>
                                      <li> iOS App Development</li>
@@ -133,7 +127,6 @@ For IT Services??</h2>
                 </div>
             </div>
                         <div class="trust_banner trust_banner_security" style="background-image: url(' {{ asset('public/front/images/ui-ux-development-it-solution.png') }}');">
-                <!-- <img class="img-fluid" src="http://localhost/pcsgloballaravel/public/front/images/aus-img-7.png" alt="bg1" /> -->
                 <div class="trust_card tax_preparation" id="jump-to-sec6">
                     <div class="trust_card_head" >
                         <h3>UI/UX Development</h3>
@@ -142,7 +135,6 @@ For IT Services??</h2>
                     <p>A strong product deserves interfaces that are visually appealing and easy to use. Our UI/UX team focuses on designing digital experiences that improve usability, enhance customer satisfaction, and align perfectly with your business goals.
 </p>
 
-                                    <!--<b>Services:</b>-->
                                  <ul>
                                       <li>Wireframing & Prototyping</li>
                                      <li>User Interface Development</li>
@@ -151,7 +143,6 @@ For IT Services??</h2>
                 </div>
             </div>
             <div class="trust_banner trust_banner_security" style="background-image: url(' {{ asset('public/front/images/it-consulting-automated.png') }}');">
-                <!-- <img class="img-fluid" src="http://localhost/pcsgloballaravel/public/front/images/aus-img-7.png" alt="bg1" /> -->
                 <div class="trust_card tax_preparation" id="jump-to-sec6">
                     <div class="trust_card_head" >
                         <h3>IT Consulting</h3>
@@ -160,7 +151,6 @@ For IT Services??</h2>
                    <p>Technology decisions can shape the future of your business. Our IT consultants help you navigate digital transformation with clarity, offering strategic recommendations, tech audits, and implementation roadmaps tailored to your operational needs.
 </p>
 
-                                    <!--<b>Services:</b>-->
                                  <ul>
                                       <li> IT Strategy & Roadmap Development</li>
                                      <li>Technology Architecture Consulting</li>
@@ -169,7 +159,6 @@ For IT Services??</h2>
                 </div>
             </div>
             <div class="trust_banner trust_banner_security" style="background-image: url(' {{ asset('public/front/images/custom-software-development-itsolution.png') }}');">
-                <!-- <img class="img-fluid" src="http://localhost/pcsgloballaravel/public/front/images/aus-img-7.png" alt="bg1" /> -->
                 <div class="trust_card tax_preparation" id="jump-to-sec6">
                     <div class="trust_card_head" >
                         <h3>Custom Software Development</h3>
@@ -177,7 +166,6 @@ For IT Services??</h2>
                     </div>
                    <p>Every business is unique, and your software should be too. We build custom applications that streamline operations, enhance efficiency, and support long-term scalability. Whether it’s an internal tool or a customer-facing platform, we turn business challenges into intelligent solutions.</p>
 
-                                    <!--<b>Services:</b>-->
                                  <ul>
                                       <li> Enterprise Software Development</li>
                                      <li>Custom Web & App Solutions</li>
@@ -264,13 +252,11 @@ For IT Services??</h2>
                         <a class="com_btn1 color-animated-button bubble-btn load-more-faq" href="javascript:void(0)"
                             data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                            <!-- Bubble effect layers -->
                             <span class="color-button__background"></span>
                             <span class="color-button__bubble-container">
                                 <span class="color-button__bubble"></span>
                             </span>
 
-                            <!-- Label and Icon -->
                             <span class="color-button__label relative z-10 will-change-transform me-2">Load More</span>
                             <svg width="20" height="20" viewBox="0 0 24 25" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -302,7 +288,6 @@ In today’s digital-first world, your audience is constantly scrolling, searchi
                                          Our team identifies the right channels for your business and builds campaigns that convert.
 
                                     </p>
-                                    <!--<b>Services:</b>-->
                                  <ul>
                                       <li>Search Engine Optimisation (SEO)</li>
                                      <li>Search Engine Marketing (SEM)</li>

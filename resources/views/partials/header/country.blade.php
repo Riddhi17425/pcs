@@ -142,8 +142,6 @@
     </div>
 </header>
 
-<!------------------------------------------->
-
 <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasRight">
     <div class="offcanvas-header">
         <a href="{{ url('/') }}" class="offcanvas-logo">
@@ -160,7 +158,6 @@
 
     <div class="offcanvas-body">
 
-        <!-- LEVEL 1 -->
         <div class="menu-level active" id="menu-main">
             <div class="menu-body">
                 <ul>
@@ -168,7 +165,6 @@
                     <li><a href="{{ $nav['about'] }}">About Us</a></li>
                     <li><a href="#">Services <span class="next-menu"
                                 data-target="menu-services">&rsaquo;</span></a></li>
-                    <!--<li><a href="#" class="next-menu" data-target="menu-products">Products <span>&rsaquo;</span></a></li>-->
                     <li><a href="{{ $nav['data_security'] }}" target="_blank" rel="noopener">Data Security</a></li>
                     <li><a href="{{ $nav['blog'] }}" target="_blank" rel="noopener">Blogs</a></li>
                 </ul>
@@ -179,18 +175,12 @@
                 <span class="color-button__background"></span>
                 <span class="color-button__bubble-container"><span class="color-button__bubble"></span></span>
                 <span class="color-button__label relative z-10 me-2">Contact Us</span>
-                {{-- <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M2.51 1L6.15 1.13C6.92 1.16 7.6 1.64 7.89 2.37L8.97 5.03C9.22 5.65 9.15 6.36 8.79 6.92L7.41 9.04C8.22 10.21 10.44 12.96 12.79 14.56L14.55 13.48C15 13.21 15.53 13.13 16.03 13.26L19.52 14.15C20.44 14.39 21.07 15.28 20.99 16.26L20.77 19.24C20.69 20.29 19.84 21.11 18.82 20.99C5.39 19.43 -2.48 1 2.51 1Z"
-                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg> --}}
                     </a>
                 </div>
 
             </div>
         </div>
 
-        <!-- LEVEL 2: SERVICES -->
         <div class="menu-level" id="menu-services">
             <div class="menu-header">
                 <button class="back-btn" data-back="menu-main">&lsaquo; Back</button>

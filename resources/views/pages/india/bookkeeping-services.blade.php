@@ -1,7 +1,3 @@
-{{-- Bookkeeping outsourcing page (/bookkeeping-outsourcing-services). Controller: ServiceController@bookkeepingServices.
-     Same layout and classes as taxation-services.blade.php: a PHP data block first, then the markup of each section.
-     CSS: style.css + common/hero-dark.css + common/home-sections.css + pages/accounting-outsourcing.css + common/service-split.css (see @push('styles') below).
-     Change text or images in this file only. --}}
 @extends('layouts.app', [
     'og_image' => asset('public/front/images/Full-Cycle-Bookkeeping.png')
 ])
@@ -17,7 +13,6 @@
     $img = fn ($file) => asset('public/front/images/' . $file);
     $bubbleColors = '["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0"]';
 
-    // Software logos (same files as the home page "Tools & Technology" tab). Microsoft Excel has no logo file.
     $software = [
         ['Homepage_07.png', 'QuickBooks'],
         ['Homepage_02.png', 'Xero'],
@@ -43,7 +38,6 @@
          'text' => 'Where several months are behind, we record them in date order and reconcile each one before starting the next. The file is brought current on a clear timeline, with no shortcuts.'],
     ];
 
-    // "Professional Outsourcing Bookkeeping Services for Businesses" (trust slider)
     $businessNeeds = [
         ['title' => 'Accurate Day-to-Day Bookkeeping',
          'text' => 'Coding happens every week or fortnight, never in a rush before a deadline. Because the books are reconciled that often, a wrong code or missing bill is found within days and fixed while it is still small.'],
@@ -54,10 +48,8 @@
         ['title' => 'Bookkeeping That Scales With Your Business',
          'text' => 'New bank accounts, sales channels and entities all increase transaction volume. Bookkeeping hours are adjusted to match growth and reduced after peak periods.'],
     ];
-    // Same order as $businessNeeds above
     $needImages = ['bookkeeping-outsourcing/accurate-day-to-day-bookkeeping.webp', 'bookkeeping-outsourcing/dedicated-offshore-bookkeepers.webp', 'bookkeeping-outsourcing/flexible-bookkeeping-support.webp', 'bookkeeping-outsourcing/bookkeeping-that-scales-with-your-business.webp'];
 
-    // "Bookkeeping Solutions for Global Accounting & CPA Firms" (editorial split section)
     $firmServices = [
         ['title' => 'Outsourced Bookkeeping for CPA Firms', 'icon' => 'file',
          'text' => 'Our CPA firm bookkeeping services cover coding, reconciliations and month-end bookkeeping across your client portfolio. Your team reviews each file and retains advisory, tax and compliance work.'],
@@ -69,7 +61,6 @@
          'text' => 'Firms with consistent client volume receive a team assigned exclusively to their files. The team uses your practice tools and checklists and reports to your bookkeeping manager.'],
     ];
 
-    // Icons of the split section rows (24x24, stroke)
     $firmIcons = [
         'file'   => '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/>',
         'tag'    => '<path d="M3 12.2V4a1 1 0 0 1 1-1h8.2a1 1 0 0 1 .7.3l7.8 7.8a1 1 0 0 1 0 1.4l-7.4 7.4a1 1 0 0 1-1.4 0L3.3 12.9a1 1 0 0 1-.3-.7Z"/><circle cx="8" cy="8" r="1.3"/>',
@@ -77,7 +68,6 @@
         'folder' => '<path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/><path d="M8 14h8"/>',
     ];
 
-    // The USA / UK / Australia buttons open the accounting and bookkeeping page of each country site.
     $regions = [
         ['title' => 'Outsourced Bookkeeping Services for USA', 'img' => $img('bookkeeping-outsourcing/outsourced-bookkeeping-services-for-usa.webp'),
          'button' => ['Explore US Bookkeeping Services', route('pcs.global.usa')],
@@ -161,7 +151,6 @@
          'a' => 'Yes. We maintain books for businesses and accounting firms in all three countries, coding for sales tax, VAT or GST as required. Tax returns and statutory filings remain with you or your licensed adviser.'],
     ];
 
-    // Card icons (24x24, stroke) for the process steps
     $icon = [
         'search'   => '<circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4.5-4.5"/>',
         'scope'    => '<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M9 10h6M9 14h6M9 18h3"/>',
@@ -183,7 +172,6 @@
     ];
 @endphp
 
-{{-- Hero (light): left = heading + paragraph + CTAs, right = 4 key benefit cards --}}
 <section class="acc_hero_light">
     <div class="container">
         <div class="acc_hero_inner">
@@ -210,7 +198,6 @@
     </div>
 </section>
 
-{{-- Software Slider --}}
 <section class="clients acc_software mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -219,7 +206,6 @@
     </div>
     <div class="client_slider_full">
         <div class="client_slider">
-            {{-- Rendered twice so the slider loops without gaps even with few logos --}}
             @foreach ([1, 2] as $pass)
                 @foreach ($software as [$logo, $name])
                     <div>
@@ -231,7 +217,6 @@
     </div>
 </section>
 
-{{-- What Are (image + text) --}}
 <section class="mt-100">
     <div class="container">
         <div class="row gy-4 gy-lg-0 justify-content-between align-items-stretch">
@@ -252,7 +237,6 @@
     </div>
 </section>
 
-{{-- Why India (text + image) --}}
 <section class="mt-100">
     <div class="container">
         <div class="row gy-4 gy-lg-0 justify-content-between align-items-stretch">
@@ -275,7 +259,6 @@
     </div>
 </section>
 
-{{-- Service Cards --}}
 <section class="comp_bus mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -299,8 +282,7 @@
     </div>
 </section>
 
-{{-- Accounting & CPA Firms (editorial split: sticky intro + image on the left, icon rows on the right; CSS: common/service-split.css) --}}
-<section class="svc_split svc_split_open mt-100">
+<section class="svc_split mt-100">
     <div class="container">
         <div class="svc_split_inner">
             <div class="svc_split_intro svc_reveal">
@@ -331,7 +313,6 @@
 
 @push('scripts')
 <script>
-// Split section: scroll reveal (IntersectionObserver; with reduced motion or no support everything is shown at once)
 (function () {
     const items = document.querySelectorAll('.svc_reveal');
     if (!items.length || !('IntersectionObserver' in window) ||
@@ -350,7 +331,6 @@
 </script>
 @endpush
 
-{{-- Trust Slider (professional bookkeeping for businesses): left heading + arrows, right image cards --}}
 <section class="trust_slider_sec">
     <div class="trust_slider_wrap">
         <div class="trust_slider_lt">
@@ -399,7 +379,6 @@
 <script src="{{ asset('public/front/js/trust-slider.js') }}?v={{ filemtime(public_path('front/js/trust-slider.js')) }}" defer></script>
 @endpush
 
-{{-- Industry Pills --}}
 <section class="industries mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -412,7 +391,6 @@
             @foreach ($industries as $row)
                 <div class="ind_row {{ $loop->odd ? 'ind_row_up' : 'ind_row_down' }}">
                     <div class="ind_track">
-                        {{-- Rendered four times so the track loops seamlessly even with few cards (-50% translate) --}}
                         @foreach ([1, 2, 3, 4] as $copy)
                             @foreach ($row as [$iconImg, $label])
                                 <div class="industries_card" @if ($copy > 1) aria-hidden="true" @endif>
@@ -428,7 +406,6 @@
     </div>
 </section>
 
-{{-- Region Cards (USA / UK / Australia) --}}
 <section class="trust_slider_sec trust_grid_sec mt-100">
     <div class="container">
         <div class="trust_grid_head">
@@ -454,7 +431,6 @@
     </div>
 </section>
 
-{{-- Process Steps --}}
 <section class="process_sec mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -500,7 +476,6 @@
     </div>
 </section>
 
-{{-- CTA Banner (same component as the India home page: com_inner_banners, CSS style.css + responsive.css) --}}
 <section class="mt-100">
     <div class="container">
         <div class="com_inner_banners">
@@ -515,13 +490,11 @@
                             data-bs-toggle="modal" data-bs-target="#exampleModal"
                             data-hover-colors='{{ $bubbleColors }}'>
 
-                            <!-- Bubble effect layers -->
                             <span class="color-button__background"></span>
                             <span class="color-button__bubble-container">
                                 <span class="color-button__bubble"></span>
                             </span>
 
-                            <!-- Label -->
                             <span class="color-button__label relative z-10 me-2">Book a Free Consultation</span>
                         </a>
                     </div>
@@ -531,7 +504,6 @@
     </div>
 </section>
 
-{{-- Overlay Cards (data security) --}}
 <section class="mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -582,7 +554,6 @@
     </div>
 </section>
 
-{{-- Split Accordion (why choose): heading on top, image left + benefits accordion right --}}
 <section class="acc_why mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -612,7 +583,6 @@
     </div>
 </section>
 
-{{-- CTA Banner (same component as the India home page: com_inner_banners, CSS style.css + responsive.css) --}}
 <section class="mt-100">
     <div class="container">
         <div class="com_inner_banners">
@@ -627,13 +597,11 @@
                             data-bs-toggle="modal" data-bs-target="#exampleModal"
                             data-hover-colors='{{ $bubbleColors }}'>
 
-                            <!-- Bubble effect layers -->
                             <span class="color-button__background"></span>
                             <span class="color-button__bubble-container">
                                 <span class="color-button__bubble"></span>
                             </span>
 
-                            <!-- Label -->
                             <span class="color-button__label relative z-10 me-2">Discuss Your Bookkeeping Requirements</span>
                         </a>
                     </div>
@@ -643,7 +611,10 @@
     </div>
 </section>
 
-{{-- FAQ List --}}
+@push('scripts')
+<script src="{{ asset('public/front/js/split-accordion.js') }}?v={{ filemtime(public_path('front/js/split-accordion.js')) }}" defer></script>
+@endpush
+
 <section class="mt-80">
     <div class="container">
         <div class="com_sec_head_top">
@@ -669,7 +640,6 @@
     </div>
 </section>
 
-{{-- FAQ schema (Google rich results) --}}
 <script type="application/ld+json">
 {!! json_encode([
     '@context' => 'https://schema.org',
@@ -682,7 +652,6 @@
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_PRETTY_PRINT) !!}
 </script>
 
-{{-- Contact Form --}}
 @php
     $contactFormServices = ['Accounting Outsourcing', 'Bookkeeping Outsourcing', 'Taxation Outsourcing', 'Payroll Outsourcing', 'Recruitment Outsourcing', 'Strata Management Services'];
 @endphp
@@ -698,7 +667,6 @@
             <input type="hidden" name="form_type" value="India Footer Form">
             <input type="hidden" name="country" id="cfCountry" value="India">
             <input type="hidden" name="full_phone" id="cfFullPhone">
-            {{-- Honeypot field for bots, must stay empty --}}
             <div style="display:none;">
                 <label>Leave this field empty</label>
                 <input type="text" name="fax_number" autocomplete="off">
@@ -752,7 +720,6 @@
 
 @push('scripts')
 <script>
-// Footer form: phone country flag (intl-tel-input) and "country" field sync, same as the India home page.
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contactBandForm');
     const phone = document.getElementById('cfPhone');

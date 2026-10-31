@@ -22,7 +22,7 @@ class IndustriesController extends Controller
                     <button type="button" class="btn btn-outline-secondary delete_industries" data-id="' . $row->id . '"><i class="icofont-ui-delete text-danger"></i></button>
                 ';
             })
-            ->rawColumns(['action']) // allow HTML rendering
+            ->rawColumns(['action'])
             ->make(true);
     }
 
@@ -30,7 +30,6 @@ public function IndustriesstoreAndUpdate(Request $request)
 {
     $industries_id = $request->industries_id;
 
-    // Prevent duplicate names (excluding current record if updating)
     $exists = Industries::where('name', $request->industries_name)
         ->when($industries_id, fn($q) => $q->where('id', '!=', $industries_id))
         ->exists();
@@ -65,13 +64,11 @@ public function IndustriesstoreAndUpdate(Request $request)
             $manager = new \Intervention\Image\ImageManager(new \Intervention\Image\Drivers\Gd\Driver());
             $image   = $manager->read($imageFile->getRealPath());
 
-            // Compress only
             $image->toJpeg(75)->save($savePath);
         } else {
             $imageFile->move($uploadPath, $uniqueName);
         }
 
-        // Save relative path (better for asset())
         $createData->image = 'admin/industries/' . $uniqueName;
     }
 

@@ -22,7 +22,6 @@ class OurTeamController extends Controller
 
     public function Store(Request $request)
     {
-        // Validate input
         $validator = Validator::make($request->all(), [
             'title'             => 'required|string|max:255',
             'description'       => 'required|string',
@@ -44,14 +43,14 @@ class OurTeamController extends Controller
         try {
             $imagePath = null;
 
-            if ($request->hasFile('image')) {   // ✅ changed from whychooseus_image → image
+            if ($request->hasFile('image')) {
                 $imageFile = $request->file('image');
                 $extension = $imageFile->guessExtension() ?? 'png';
                 $originalName = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
                 $sanitizedOriginal = \Str::slug($originalName);
                 $uniqueName = $sanitizedOriginal . '-' . uniqid() . '.' . $extension;
 
-                $uploadPath = public_path('admin/our_team/');  // ✅ renamed folder
+                $uploadPath = public_path('admin/our_team/');
                 $savePath = $uploadPath . $uniqueName;
 
                 if (!file_exists($uploadPath)) {
@@ -66,10 +65,9 @@ class OurTeamController extends Controller
                     $imageFile->move($uploadPath, $uniqueName);
                 }
 
-                $imagePath = 'public/admin/our_team/' . $uniqueName;  // ✅ updated path
+                $imagePath = 'public/admin/our_team/' . $uniqueName;
             }
 
-            // Save in DB (OurTeam Model)
             OurTeam::create([
                 'title'             => $request->title,
                 'description'       => $request->description,
@@ -132,7 +130,6 @@ class OurTeamController extends Controller
 
     public function Update(Request $request, $id)
     {
-        // 1. Validate the request
         $validator = Validator::make($request->all(), [
             'title'             => 'required|string|max:255',
             'description'       => 'required|string',
@@ -141,7 +138,7 @@ class OurTeamController extends Controller
             'designation'       => 'required|string|max:255',
             'status'            => 'required|in:Active,In-Active',
             'alt'           => 'required|string|max:255',
-            'image'             => 'nullable|file|mimes:jpg,jpeg,png,webp|max:2048', // ✅ optional
+            'image'             => 'nullable|file|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
 
         if ($validator->fails()) {
@@ -154,12 +151,10 @@ class OurTeamController extends Controller
         }
 
         try {
-            // 2. Find the team member
             $ourTeam = OurTeam::findOrFail($id);
 
             $imagePath = $ourTeam->image;
 
-            // 3. Handle new image upload (replace old one if uploaded)
             if ($request->hasFile('image')) {
                 $imageFile = $request->file('image');
                 $extension = $imageFile->guessExtension() ?? 'jpg';
@@ -174,7 +169,6 @@ class OurTeamController extends Controller
                     mkdir($uploadPath, 0755, true);
                 }
 
-                // Delete old image if exists
                 if ($imagePath && file_exists(public_path($imagePath))) {
                     @unlink(public_path($imagePath));
                 }
@@ -190,7 +184,6 @@ class OurTeamController extends Controller
                 $imagePath = 'public/admin/our_team/' . $uniqueName;
             }
 
-            // 4. Update team member data
             $ourTeam->update([
                 'title'             => $request->title,
                 'description'       => $request->description,

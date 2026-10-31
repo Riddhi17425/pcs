@@ -1,4 +1,3 @@
-{{-- Shared page (sab countries). Header/footer: layouts/app ($site = route middleware 'country:<key>') --}}
 @extends('layouts.app', [
     'og_image' => asset('public/front/images/governance-expertise.png')
 ])
@@ -13,13 +12,10 @@
                                  <a class="com_btn1 color-animated-button bubble-btn mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
                         data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                        <!-- Bubble effect layers -->
                         <span class="color-button__background"></span>
                         <span class="color-button__bubble-container">
                             <span class="color-button__bubble"></span>
                         </span>
-
-                        <!-- Label and Icon -->
 
                         <span class="color-button__label relative z-10 will-change-transform me-2">Book your Consultation Today</span>
                         <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -130,7 +126,6 @@
 
         <div class="trust_scroll_wrapper">
                       <div class="trust_banner trust_banner_strata" style="background-image: url('{{asset('public/front/images/strata-management-banner1.jpg')}}');">
-                <!--<img class="img-fluid" src="{{ asset('public/front/images/strata-management_7.png') }}" alt="bg1" />-->
                 <div class="trust_card tax_preparation">
                     <div class="trust_card_head">
                         <h3>Residential Strata Property:</h3>
@@ -145,14 +140,12 @@
                 </div>
             </div>
             <div class="trust_banner trust_banner_strata" style="background-image: url('{{asset('public/front/images/strata-management-banner2.jpg')}}');">
-                <!--<img class="img-fluid" src="{{ asset('public/front/images/strata-management_7.png') }}" alt="bg1" />-->
                 <div class="trust_card tax_preparation">
                     <div class="trust_card_head">
                         <h3>Commercial Strata Management:</h3>
                         <span><img src="{{ asset('public/front/images/trust_icon.png') }}" alt="icon" /></span>
                     </div>
                     <p class="audit_comp_para" style="font-weight:400; margin-bottom:16px"> We manage office towers, retail precincts, and industrial facilities with tailored expertise. Our services focus on maximizing revenue, controlling costs, and ensuring compliance. We help protect asset value while supporting efficient and sustainable operations.</p>
-                     <!--read more button for offcanvas-->
                      <a href="#" class="btn-trust-banner" data-bs-toggle="offcanvas" data-bs-target="#commercial" aria-controls="commercial" >
                                <i class="fa-solid fa-minus"></i> <span class="text-padding">Read More</span>
                             </a>
@@ -160,14 +153,12 @@
                 </div>
             </div>
             <div class="trust_banner trust_banner_strata" style="background-image: url('{{asset('public/front/images/strata-management-banner3.jpg')}}');">
-                <!--<img class="img-fluid" src="{{ asset('public/front/images/strata-management_7.png') }}" alt="bg1" />-->
                 <div class="trust_card tax_preparation">
                     <div class="trust_card_head">
                         <h3>Mixed Use Development:</h3>
                         <span><img src="{{ asset('public/front/images/trust_icon.png') }}" alt="icon" /></span>
                     </div>
                     <p class="audit_comp_para" style="font-weight:400; margin-bottom:16px">We manage developments combining residential, retail, and commercial spaces under one framework. Our services coordinate shared budgets, utilities, and common areas for seamless operations. We balance the needs of diverse owner groups to ensure every part of the community thrives.</p>
-                     <!--read more button for offcanvas-->
                      <a href="#" class="btn-trust-banner" data-bs-toggle="offcanvas" data-bs-target="#mixed" aria-controls="mixed" >
                                <i class="fa-solid fa-minus"></i> <span class="text-padding">Read More</span>
                             </a>
@@ -218,13 +209,10 @@
                      <a class="com_btn1 color-animated-button bubble-btn mt-3" href="tel:{{ $site['phone']['tel'] }}"
                         data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                        <!-- Bubble effect layers -->
                         <span class="color-button__background"></span>
                         <span class="color-button__bubble-container">
                             <span class="color-button__bubble"></span>
                         </span>
-
-                        <!-- Label and Icon -->
 
                         <span class="color-button__label relative z-10 will-change-transform me-2">Request A Call</span>
                         <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -322,7 +310,6 @@
         </div>
     </div>
 </section>
-<!-- Clients -->
 
 <section class="clients mt-100">
     <div class="container">
@@ -378,17 +365,14 @@
                         <h2>Join forces with PCS Global
                         Global Strata Management Experts
                         </h2>
-                        <!--<p class="text-white">From strata property maintenance to total professionals strata management, PCS Global provides the expert services needed to protect your investment, minimise risk, and maximise your property value.</p>-->
                         <a class="com_btn1 color-animated-button bubble-btn" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal"
                             data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                            <!-- Bubble effect layers -->
                             <span class="color-button__background"></span>
                             <span class="color-button__bubble-container">
                                 <span class="color-button__bubble"></span>
                             </span>
 
-                            <!-- Label and Icon -->
                             <span class="color-button__label relative z-10 will-change-transform me-2">Request a
                                 call</span>
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -415,8 +399,6 @@
     <div class="container">
         <div class="com_sec_head_top">
             <h4 class="faq-head mb-2 mb-xxl-4">Frequently asked questions</h4>
-            <!--<p>Lorem ipsum dolor sit amet consectetur. Massa elit ut proin vitae sed cras duis eget nullam. Nibh-->
-            <!--    viverra.</p>-->
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-11">
@@ -443,13 +425,11 @@
                         <a class="com_btn1 color-animated-button bubble-btn load-more-faq" href="javascript:void(0)"
                             data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                            <!-- Bubble effect layers -->
                             <span class="color-button__background"></span>
                             <span class="color-button__bubble-container">
                                 <span class="color-button__bubble"></span>
                             </span>
 
-                            <!-- Label and Icon -->
                             <span class="color-button__label relative z-10 will-change-transform me-2">Load More</span>
                             <svg width="20" height="20" viewBox="0 0 24 25" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">

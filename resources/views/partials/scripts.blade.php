@@ -1,31 +1,24 @@
-{{-- Footer ke baad ki sab scripts: form validation, recaptcha, CDN libraries, main.js (sab pages) --}}
 
 <script src="https://www.google.com/recaptcha/api.js?onload=initAllRecaptchas&render=explicit" async defer></script>
-<!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js" integrity="sha512-KFHXdr2oObHKI9w4Hv1XPKc898mE4kgYx58oqsc/JqqdLMDI4YjOLzom+EMlW8HFUd0QfjfAvxSL6sEq/a42fQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/additional-methods.min.js" integrity="sha512-owaCKNpctt4R4oShUTTraMPFKQWG9UdWTtG6GRzBjFV4VypcFi6+M3yc4Jk85s3ioQmkYWJbUl1b2b2r41RTjA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<!-- bootstrap js -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
 </script>
 <script src="https://unpkg.com/scrollreveal"></script>
 
-<!-- fancybox -->
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 
-<!-- slick js -->
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/intlTelInput.min.js"></script>
 
-<!-- GSAP & ScrollTrigger -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-<!-- custom js -->
 <script src="{{ asset('public/front/js/main.js') }}?v={{ filemtime(public_path('front/js/main.js')) }}"></script>
 
 
@@ -37,12 +30,10 @@ tabs.forEach(tab => {
 
   if(!panel) return;
 
-  // Show panel on hover
   tab.addEventListener('mouseenter', () => {
     panel.style.display = 'flex';
   });
 
-  // Hide panel only if not hovering over panel
   tab.addEventListener('mouseleave', () => {
     setTimeout(() => {
       if (!panel.matches(':hover')) {
@@ -51,7 +42,6 @@ tabs.forEach(tab => {
     }, 50);
   });
 
-  // Keep panel visible if mouse is over panel
   panel.addEventListener('mouseenter', () => {
     panel.style.display = 'flex';
   });
@@ -64,13 +54,11 @@ tabs.forEach(tab => {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    // === COMMON VALIDATION HANDLER FOR ALL FORMS ===
     function initFormValidation(form, captchaWidgetId) {
         if (!form) return;
 
         const submitBtn = form.querySelector("button[type='submit']");
 
-        // Collect fields
         const fields = {
             fullname: form.querySelector("[name='fullname']"),
             email: form.querySelector("[name='email']"),
@@ -93,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
           "tempmail.cc","tempmail.me","spamex.com","wegwerfemail.de","mailnesia.org"
         ];
 
-        // Show error
         function showError(field, message) {
             let parent = field.closest(".form-group") || field.closest(".col-lg-6") || field.closest(".col-lg-12") || field.parentElement;
             let errorSpan = parent.querySelector(".js-error");
@@ -105,14 +92,12 @@ document.addEventListener("DOMContentLoaded", function () {
             errorSpan.textContent = message;
         }
 
-        // Remove error
         function removeError(field) {
             let parent = field.closest(".form-group") || field.closest(".col-lg-6") || field.closest(".col-lg-12") || field.parentElement;
             let errorSpan = parent.querySelector(".js-error");
             if (errorSpan) errorSpan.remove();
         }
 
-        // Validation logic
         function validateField(field, name) {
             if (!field && name !== "services") return true;
 
@@ -160,7 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return true;
         }
 
-        // Blur + input listeners
         const blurred = new Set();
         function attachValidation(field, name) {
             if (!field) return;
@@ -186,7 +170,6 @@ document.addEventListener("DOMContentLoaded", function () {
             fields.services.forEach(chk => chk.addEventListener("change", () => validateField(chk, "services")));
         }
 
-        // On form submit
         form.addEventListener("submit", function (e) {
             let valid = true;
             if (fields.fullname && !validateField(fields.fullname, "fullname")) valid = false;
@@ -195,7 +178,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (fields.country && !validateField(fields.country, "country")) valid = false;
             if (fields.services.length && !validateField(fields.services[0], "services")) valid = false;
 
-            // Captcha validation with widgetId
             if (captchaWidgetId !== null && typeof grecaptcha !== "undefined") {
                 const captchaResponse = grecaptcha.getResponse(captchaWidgetId);
                 if (!captchaResponse) {
@@ -210,7 +192,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            // Disable submit + change text
             submitBtn.disabled = true;
             const label = submitBtn.querySelector(".color-button__label");
             if (label) {
@@ -221,28 +202,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // === RENDER RECAPTCHA FORMS ===
-    // window.initAllRecaptchas = function () {
-    //     document.querySelectorAll(".validated-form").forEach((form) => {
-    //         const captchaDiv = form.querySelector(".g-recaptcha");
-    //         if (captchaDiv) {
-    //             const widgetId = grecaptcha.render(captchaDiv, {
-    //                 sitekey: captchaDiv.getAttribute("data-sitekey")
-    //             });
-    //             initFormValidation(form, widgetId);
-    //         } else {
-    //             initFormValidation(form, null);
-    //         }
-    //     });
-    // };
     window.initAllRecaptchas = function () {
-        // Localhost par Google ki test key, live par jo data-sitekey diya hai wahi
         const host = location.hostname;
         const isLocal = host === 'localhost' || host === '127.0.0.1' || host.endsWith('.test');
         const TEST_KEY = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
 
         document.querySelectorAll('.g-recaptcha').forEach(function (captchaDiv) {
-            if (captchaDiv.querySelector('iframe')) return; // already render ho chuka
+            if (captchaDiv.querySelector('iframe')) return;
 
             const cbName  = captchaDiv.getAttribute('data-callback');
             const expName = captchaDiv.getAttribute('data-expired-callback');
@@ -262,7 +228,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (form) initFormValidation(form, widgetId);
         });
 
-        // Jin forms me captcha nahi hai
         document.querySelectorAll('.validated-form').forEach(function (form) {
             if (!form.querySelector('.g-recaptcha')) initFormValidation(form, null);
         });
@@ -280,21 +245,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!requestModal || !phoneInput) return;
 
-    // Current site ki country (config/sites.php -> phone_country)
     const siteCountry = @json($site['phone_country'] ?? 'in');
-    const isGlobal = siteCountry === 'in';   // sirf Global (India) site par IP auto-detect
+    const isGlobal = siteCountry === 'in';
 
     let itiRequest = null;
     let countryDetected = false;
 
-    // hidden "country" = phone field me chuni hui country
     function syncCountry() {
         const name = itiRequest && itiRequest.getSelectedCountryData().name;
         if (countrySelect && name) countrySelect.value = name.replace(/\s*\(.*\)\s*$/, '');
     }
 
     requestModal.addEventListener('shown.bs.modal', function () {
-        // Init intl-tel-input only once, the first time the modal opens
         if (!itiRequest) {
             itiRequest = window.intlTelInput(phoneInput, {
                 initialCountry: siteCountry,
@@ -306,7 +268,6 @@ document.addEventListener('DOMContentLoaded', function () {
             syncCountry();
         }
 
-        // AU / UK / US par site ki country fixed rahegi, IP detect sirf Global par
         if (!isGlobal || countryDetected) return;
 
         fetch('https://ipwho.is/')
@@ -348,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     .iti__country-list {
         background-color: #fff !important;
-        z-index: 1060; /* higher than modal's z-index so dropdown isn't clipped */
+        z-index: 1060;
     }
     .iti__country-list .iti__country-name,
     .iti__country-list .iti__dial-code {
@@ -366,7 +327,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 </style>
 
-{{-- Back to top (mobile + desktop) --}}
 <button type="button" id="backToTop" class="back_to_top" aria-label="Back to top">
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>

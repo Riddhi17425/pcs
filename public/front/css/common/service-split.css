@@ -1,12 +1,7 @@
-/* Shared "services split" section (editorial: sticky intro + image left, numbered/icon rows right) + scroll reveal.
-   Used by pages/india/taxation-services.blade.php and payroll-services.blade.php. */
 
-/* ---------- Services split (left sticky intro + image, right icon rows) ---------- */
 .svc_split {
     padding: 90px 0;
     background: #f3f3e6;
-    border-top: 1px solid #e2e2d5;
-    border-bottom: 1px solid #e2e2d5;
 }
 
 .svc_split_inner {
@@ -42,26 +37,10 @@
     height: auto;
 }
 
-/* numbered rows, patli divider line ke saath (box / card nahi) */
 .svc_split_list {
     margin: 0;
     padding: 0;
     list-style: none;
-    border-bottom: 1px solid #cfcfbd;
-}
-
-/* Optional modifier: the section sits directly under the previous one (no top border) and the list has no line
-   above the first row or below the last one (dividers stay between rows). */
-.svc_split_open {
-    border-top: 0;
-}
-
-.svc_split_open .svc_split_list {
-    border-bottom: 0;
-}
-
-.svc_split_open .svc_split_row:first-child {
-    border-top: 0;
 }
 
 .svc_split_row {
@@ -72,7 +51,6 @@
     border-top: 1px solid #cfcfbd;
 }
 
-/* sirf line icon (box nahi), hover par halka sa rang badalta hai */
 .svc_split_icon {
     display: block;
     color: #9aa1bd;
@@ -92,7 +70,6 @@
     color: var(--blue);
 }
 
-/* hover par title ke neeche underline khulti hai */
 .svc_split_row h3::after {
     content: "";
     position: absolute;
@@ -111,6 +88,10 @@
     max-width: 620px;
 }
 
+.svc_split_row:first-child {
+    border-top: 0;
+}
+
 .svc_split_row:hover .svc_split_icon {
     color: var(--blue);
 }
@@ -119,7 +100,6 @@
     transform: scaleX(1);
 }
 
-/* ---------- scroll reveal (class .svc_js html par JS lagati hai, JS na ho to content dikhta rahe) ---------- */
 .svc_js .svc_reveal {
     opacity: 0;
     transform: translateY(20px);

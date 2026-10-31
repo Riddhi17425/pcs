@@ -1,14 +1,5 @@
 <?php
 
-// Har country site ki settings: header type, CSS files, menu, footer, phone, home page meta.
-// - Route group ka middleware 'country:<key>' (routes/countries/*.php) is site ko views me $site bana ke share karta hai.
-// - Links yahan route NAMES hain; App\Support\Site unhe URL bana deta hai.
-// - Blogs aur Data Security sab countries ka ek hi (main) page hai; dusri countries unhe naye tab me kholti hain.
-// - 'phone_country' = contact form ke phone field ka default flag (ISO2 code, intl-tel-input)
-// - 'country_name'  = contact form ke country dropdown ka default (countries table ke `name` se match hona chahiye)
-// Poora map: STRUCTURE.md (project root)
-
-// Australia / US / UK ek hi header use karte hain, isliye CSS bhi same (order zaroori hai)
 $countryCss = [
     'style.css',
     'common/request-modal.css',
@@ -20,7 +11,6 @@ $countryCss = [
     'common/contact-form.css',
 ];
 
-// US / UK footer badges (asset path: public/front/images/...)
 $isoBadges = [
     ['figma-footer-badges/iso-9001.png', 'ISO 9001', 'circle'],
     ['figma-footer-badges/iso-27001.png', 'ISO 27001', 'circle'],
@@ -29,7 +19,7 @@ $isoBadges = [
 
 return [
     'india' => [
-        'header' => 'global',   // resources/views/partials/header/global.blade.php
+        'header' => 'global',   
         'phone_country' => 'in',
         'country_name' => 'India',
         'css' => [
@@ -39,14 +29,13 @@ return [
             'common/contact-form.css',
             'responsive.css',
         ],
-        // "Request A Call" buttons isi number par call karte hain
         'phone' => ['tel' => '+917968260121', 'label' => '(+91) 796 826 0121'],
         'blog' => 'blog',
         'blog_detail' => 'blogs.detail',
         'services' => [
             ['Accounting Outsourcing Services', 'pcs.global.bookkeeping'],
+            ['Hire Offshore Accountants', 'hire.offshore.accountant'],
             ['Bookkeeping Outsourcing Services', 'bookkeeping.services'],
-            // ['Strata Property Management', 'strata.management'],
             ['Payroll Outsourcing Services', 'payroll.services'],
             ['Tax Outsourcing Services', 'taxation.services'],
             ['Recruitment Outsourcing Services', 'recruitment.services'],
@@ -72,7 +61,7 @@ return [
     ],
 
     'australia' => [
-        'header' => 'country',   // resources/views/partials/header/country.blade.php
+        'header' => 'country',   
         'phone_country' => 'au',
         'country_name' => 'Australia',
         'css' => $countryCss,
@@ -93,9 +82,9 @@ return [
             'quick_links' => [
                 ['Home', 'australia.home'],
                 ['About Us', 'australia.about'],
-                ['Data Security', 'datasecurity', true],   // naye tab me
+                ['Data Security', 'datasecurity', true],   
                 ['Contact Us', 'australia.contact'],
-                ['Blogs', 'blog', true],                   // naye tab me
+                ['Blogs', 'blog', true],                  
             ],
             'address' => '22A Mort Street Blacktown<br>NSW 2148 Australia.',
             'phones' => [['number' => '(+613) 9998 0494']],
@@ -103,7 +92,6 @@ return [
         'home' => [
             'meta_title' => 'Accounting Outsourcing Company for Australian Businesses & Firms | PCS Global',
             'meta_description' => 'PCS Global is a trusted Australian accounting outsourcing company supporting businesses and accounting firms with bookkeeping, tax, payroll and financial support.',
-            // team slider me admin panel ke kaun se experts aayen (designation LIKE)
             'experts' => ['%Australia%'],
         ],
     ],

@@ -102,8 +102,6 @@ const cards = document.querySelectorAll(".comp_bus_child");
                 $(".slider3-next"),
                 2,
             ),
-            // Generic slider: koi bhi element jisme data-slider ho. Naye sliders ke liye yehi use karo.
-            // <div data-slider data-slider-controls="slider5" data-slider-show="3"> + <x-home.slider-controls prefix="slider5" />
             $("[data-slider]").each(function () {
                 const el = $(this);
                 if (el.hasClass("slick-initialized")) return;

@@ -16,7 +16,7 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- Row end  -->
+            </div>
             <div class="row clearfix g-3">
                 <div class="col-sm-12">
                     <div class="card mb-3">
@@ -35,11 +35,10 @@
                         </div>
                     </div>
                 </div>
-            </div><!-- Row End -->
+            </div>
         </div>
     </div>
 
-    <!-- Add Category-->
     <div class="modal fade" id="gallery_modal" tabindex="-1"  aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
         <div class="modal-content">
@@ -51,14 +50,6 @@
                 <div class="deadline-form">
                     <form id="gallery_form" method="Post" enctype="multipart/form-data">
                         @csrf
-                        {{-- <div class="row g-3 mb-3">
-                            <div class="col-sm-12">
-                                <label for="gallery_name" class="form-label">Name</label>
-                                <input type="hidden" name="gallery_id" id="gallery_id">
-                                <input type="text" class="form-control" name="gallery_name" id="gallery_name" placeholder="Add gallery name" required>
-                                <span class="text-danger" id="span_gallery"></span>
-                            </div>
-                        </div> --}}
                         <div class="row g-3 mb-3">
                             <div class="col-sm-12">
                                 <input type="text" name="gallery_id" id="gallery_id" hidden>
@@ -98,7 +89,6 @@
     </div>
 
     <script>
-        // js load on footer
         window.APP_URLS = {
             GalleryStore: "{{ route('trustedpartner.store') }}",
             GalleryUpdate: "{{ route('trustedpartner.update', [':id']) }}",

@@ -1,4 +1,3 @@
-{{-- Australia footer: common <x-layout.footer> + Australia ka data (Figma) --}}
 @php
     $auUrl = fn ($path) => url('au/' . $path);
 @endphp

@@ -1,4 +1,3 @@
-<!-- Industries -->
 
 <section class="industries mt-100">
     <div class="container">
@@ -26,8 +25,6 @@
                     <p>TRetail & E-commerce</p>
                 </div>
                 <div class="industries_card industries_card_bg">
-                    <!-- <img src="images/industries1.png" alt="image">
-                        <p>Airlines</p> -->
                 </div>
                 <div class="industries_card">
 
@@ -50,8 +47,6 @@
                 </div>
 
                 <div class="industries_card industries_card_bg">
-                    <!-- <img src="images/industries1.png" alt="image">
-                        <p>Airlines</p> -->
                 </div>
                 
                 <div class="industries_card">
@@ -73,8 +68,6 @@
 
 
                 <div class="industries_card industries_card_bg">
-                    <!-- <img src="images/industries1.png" alt="image">
-                        <p>Airlines</p> -->
                 </div>
 
                 <div class="industries_card">
@@ -86,15 +79,6 @@
     </div>
 </section>
 <style>
-/* @keyframes blinkChange {
-  0%   { opacity: 1; }
-  50%  { opacity: 0.3; transform: scale(1.03); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-.industries_card.blink {
-  animation: blinkChange 0.5s ease;
-} */
 
 @keyframes smoothFadeChange {
     0% {
@@ -142,16 +126,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.industries_card:not(.industries_card_bg):not(.fixd_card)');
     const currentVisible = new Set();
 
-    // Initialize currentVisible
     cards.forEach(card => {
         const text = card.querySelector('p')?.textContent.trim();
         if (text) currentVisible.add(text);
     });
 
     function getRandomContent(excludeText) {
-        // Allow only items not already visible
         const available = industriesData.filter(item => !currentVisible.has(item.text));
-        // If all are used, allow reset except excludeText
         const pool = available.length > 0 ? available : industriesData.filter(item => item.text !== excludeText);
 
         return pool[Math.floor(Math.random() * pool.length)];
@@ -170,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Animation
         imgTag.classList.add('blink-content');
         pTag.classList.add('blink-content');
 

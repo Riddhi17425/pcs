@@ -2,10 +2,8 @@
 
 <div id="ebazar-layout" class="theme-blue">
 
-        <!-- main body area -->
         <div class="main p-2 py-3 p-xl-5">
             
-            <!-- Body: Body -->
             <div class="body d-flex p-0 p-xl-5">
                 <div class="container-xxl">
 
@@ -27,7 +25,6 @@
                                         </ul>
                                     </div>
                                 @endif
-                                <!-- Image block -->
                                 <div class="">           
                                     <img src="{{ asset('public/admin/assets/images/signup_image.png')}}" alt="login-img">
                                 </div>
@@ -36,7 +33,6 @@
 
                         <div class="col-lg-6 d-flex justify-content-center align-items-center border-0 rounded-lg auth-h100">
                             <div class="w-100 p-3 p-md-5 card border-0 shadow-sm" style="max-width: 32rem;">
-                                <!-- Form -->
                                 <form class="row g-1 p-3 p-md-4" method="post" action="{{ route('register') }}" enctype="multipart/form-data">
                                     @csrf
                                     <div class="col-12 text-center mb-5">
@@ -83,18 +79,16 @@
                                         </div>
                                     </div>
                                     <div class="col-12 text-center mt-4">
-                                        {{-- <a href="auth-signin.html" class="btn btn-lg btn-block btn-light lift text-uppercase" alt="SIGNUP">SIGN UP</a> --}}
                                         <button type="submit" class="btn btn-lg btn-block btn-light lift text-uppercase" alt="SIGNUP">SIGN UP</button>
                                     </div>
                                     <div class="col-12 text-center mt-4">
                                         <span>Already have an account? <a href="{{ route('login') }}" title="Sign in" class="text-secondary">Sign in here</a></span>
                                     </div>
                                 </form>
-                                <!-- End Form -->
                                 
                             </div>
                         </div>
-                    </div> <!-- End Row -->
+                    </div>
                     
                 </div>
             </div>

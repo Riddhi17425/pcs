@@ -83,9 +83,8 @@ class HomeController extends Controller
             ],
         ]);
         
-         // ❌ If honeypot filled → it's a bot
         if (!empty($request->website_honey_point)) {
-            return back(); // silently ignore
+            return back();
         }
     
      WhatsappInquiry::create([
@@ -96,8 +95,6 @@ class HomeController extends Controller
     
         $timestamp = Carbon::now('Asia/Kolkata')->format('Y-m-d H:i:s');
         
-            // Google Sheet expects:
-            // form_type, contact, message, date
             $sheetsData = [
                 'form_type' => 'whatsapp inquiry',
                 'contact'   => $request->number,
@@ -105,7 +102,6 @@ class HomeController extends Controller
                 'date'      => $timestamp,
             ];
         
-            // Send to Google Sheets
             try {
                 Http::withHeaders(['Content-Type' => 'application/json'])
                     ->post('https://script.google.com/macros/s/AKfycbzCZlpHawQYaU0QRmVYRndglaOyYhFoNHCME-7eiA7zRBLGSxetFYRPAAtH2tiBXkmz/exec', 
@@ -119,7 +115,7 @@ class HomeController extends Controller
                 ]);
             }
     
-        $number = '918460268698'; // Or use $request->number if needed
+        $number = '918460268698';
         $message = "Inquiry from Website\n\n"
                 . "Customer Number: " . $request->full_number . "\n"
                 . "Message: " . $request->message;

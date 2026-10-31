@@ -1,10 +1,8 @@
 @include('admin.includes.headerUrl')
 <div id="ebazar-layout" class="theme-blue">
 
-        <!-- main body area -->
         <div class="main p-2 py-3 p-xl-5 ">
             
-            <!-- Body: Body -->
             <div class="body d-flex p-0 p-xl-5">
                 <div class="container-xxl">
 
@@ -26,7 +24,6 @@
                                         </ul>
                                     </div>
                                 @endif
-                                <!-- Image block -->
                                 <div class="">
                                     <img src="{{ asset('public/admin/assets/images/signup_image.png')}}" alt="login-img">
                                 </div>
@@ -35,22 +32,11 @@
 
                         <div class="col-lg-6 d-flex justify-content-center align-items-center border-0 rounded-lg auth-h100">
                             <div class="w-100 p-3 p-md-5 card border-0 shadow-sm" style="max-width: 32rem;">
-                                <!-- Form -->
                                 <form class="row g-1 p-3 p-md-4" method="post" action="{{ route('login') }}">
                                     @csrf
                                     <div class="col-12 text-center mb-5">
                                         <h1>Sign in</h1>
-                                        <!--<span>Free access to our dashboard.</span>-->
                                     </div>
-                                    <!-- <div class="col-12 text-center mb-4">        
-                                        <a class="btn btn-lg btn-light btn-block" href="#">
-                                            <span class="d-flex justify-content-center align-items-center">
-                                                <img class="avatar xs me-2" src="{{ asset('public/admin/assets/images/google.svg')}}" alt="Image Description">
-                                                Sign in with Google
-                                            </span>
-                                        </a>
-                                        <span class="dividers text-muted mt-4">OR</span>
-                                    </div> -->
                                     <div class="col-12">
                                         <div class="mb-2">
                                             <label class="form-label">Email address</label>
@@ -62,7 +48,6 @@
                                             <div class="form-label">
                                                 <span class="d-flex justify-content-between align-items-center">
                                                     Password
-                                                    <!--<a class="text-secondary" href="auth-password-reset.html">Forgot Password?</a>-->
                                                 </span>
                                             </div>
                                             <input type="password" name="password" class="form-control form-control-lg" placeholder="***************">
@@ -79,15 +64,11 @@
                                     <div class="col-12 text-center mt-4">
                                         <button class="btn btn-lg btn-block btn-light lift text-uppercase" type="submit" atl="signin">SIGN IN</button>
                                     </div>
-                                    <!-- <div class="col-12 text-center mt-4">
-                                        <span>Don't have an account yet? <a href="{{ route('register') }}" class="text-secondary">Sign up here</a></span>
-                                    </div> -->
                                 </form>
-                                <!-- End Form -->
                                 
                             </div>
                         </div>
-                    </div> <!-- End Row -->
+                    </div>
                     
                 </div>
             </div>

@@ -1,4 +1,3 @@
-{{-- UK header: common components/layout/header + UK ka data --}}
 @php
     $nav = [
         'home' => route('uk'),

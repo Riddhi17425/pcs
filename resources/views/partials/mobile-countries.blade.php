@@ -1,6 +1,3 @@
-{{-- Mobile menu (offcanvas) ka "Country" level: Global / Australia / UK / US.
-     Dono headers (partials/header/global + country) isse include karte hain.
-     Main menu me item: <a href="#" class="next-menu" data-target="menu-country"> --}}
 @php
   $flagDir = asset('public/front/images/contry-icon');
   $mobileCountries = [

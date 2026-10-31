@@ -1,4 +1,3 @@
-{{-- UK footer: common <x-layout.footer> + UK ka data (Figma) --}}
 @php
     $ukUrl = fn ($path) => url('uk/' . $path);
     $badgeDir = asset('public/front/images/figma-footer-badges');
@@ -8,9 +7,9 @@
     :quick-links="[
         ['Home', route('uk')],
         ['About Us', route('uk.about')],
-        ['Data Security', route('datasecurity'), true],   // sab countries ka ek hi page, naye tab me
+        ['Data Security', route('datasecurity'), true],   // one page shared by all countries, opens in a new tab
         ['Contact Us', route('uk.contact')],
-        ['Blogs', route('blog'), true],                   // sab countries ka ek hi page, naye tab me
+        ['Blogs', route('blog'), true],                   // one page shared by all countries, opens in a new tab
     ]"
     :services="[
         ['Accounting Outsourcing', route('accounting.outsourcing.services')],

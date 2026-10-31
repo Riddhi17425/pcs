@@ -12,13 +12,10 @@
              <a class="com_btn1 color-animated-button bubble-btn mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
                         data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                        <!-- Bubble effect layers -->
                         <span class="color-button__background"></span>
                         <span class="color-button__bubble-container">
                             <span class="color-button__bubble"></span>
                         </span>
-
-                        <!-- Label and Icon -->
 
                         <span class="color-button__label relative z-10 will-change-transform me-2">Get Expert Tax Advice Now</span>
                         <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +57,6 @@
             <div class="container">
                 <div class="ser_Out_lt">
                     <h2>Professional Tax Preparation Services for Businesses Across the UK</h2>
-                   <!--<img src="{{asset('public/front/images/calculator.gif')}}" alt="icon" class="inner-gif">-->
                 </div>
                 
                 <p>Staying compliant with UK tax laws is crucial for business security and its growth. PCS Global Group provides reliable <b>taxes in the UK</b>, ensuring your business meets all obligations while legally minimising your business's liabilities.</p>
@@ -207,13 +203,11 @@
                         <a class="com_btn1 color-animated-button bubble-btn" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal"
                             data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                            <!-- Bubble effect layers -->
                             <span class="color-button__background"></span>
                             <span class="color-button__bubble-container">
                                 <span class="color-button__bubble"></span>
                             </span>
 
-                            <!-- Label and Icon -->
                             <svg width="20" height="20" viewBox="0 0 22 22" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -297,7 +291,6 @@
             <div class="container">
                 <div class="ser_Out_lt">
                     <h2>Professional Tax Audit and Taxation Solutions in the UK</h2>
-                   <!--<img src="{{asset('public/front/images/calculator.gif')}}" alt="icon" class="inner-gif">-->
                 </div>
                 <P>
                     PCS Global Group delivers specialist tax compliance and audit services right across the UK. We assist both businesses and Individuals to ensure accurate financial records in the event of an HMRC inspection. The VAT audit, Corporation Tax (CT600) audit, Self Assessment (SA100) audit, and Cross Industry Scheme (CIS300) are all part and parcel of ensuring full compliance with statutory obligations. Our team, based in London, can also support and assist with audits to RTI payroll summaries and payslips that are required and submitted regularly, as well as statutory reporting to Companies House. We can assist in practical ways, with risk assessments and ongoing tax advice to limit liabilities and avoid penalties. 
@@ -449,7 +442,6 @@
         </div>
     </div>
 </section>
-<!-- Clients -->
 
 <section class="clients mt-100">
     <div class="container">
@@ -694,13 +686,11 @@ Can taxation services in the UK assist with HMRC compliance?
                         <a class="com_btn1 color-animated-button bubble-btn load-more-faq" href="javascript:void(0)" 
                             data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                            <!-- Bubble effect layers -->
                             <span class="color-button__background"></span>
                             <span class="color-button__bubble-container">
                                 <span class="color-button__bubble"></span>
                             </span>
 
-                            <!-- Label and Icon -->
                             <span class="color-button__label relative z-10 will-change-transform me-2">Load More</span>
                             <svg width="20" height="20" viewBox="0 0 24 25" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">

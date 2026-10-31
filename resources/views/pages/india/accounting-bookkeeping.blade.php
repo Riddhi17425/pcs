@@ -1,7 +1,3 @@
-{{-- Accounting outsourcing page (/outsourced-accounting-bookkeeping-services). Controller: ServiceController@accountingBookeeping.
-     Sections AU / US / UK home pages wale hain (same classes); upar data ka PHP block, neeche har section ka markup.
-     CSS: style.css + common/hero-dark.css + common/home-sections.css + pages/accounting-outsourcing.css (neeche @push('styles')).
-     Text / images badalne ho to isi file me badlo. --}}
 @extends('layouts.app', [
     'og_image' => asset('public/front/images/procure-to-pay-p2p.jpg')
 ])
@@ -19,7 +15,6 @@
 
     $heroFeatures = ['Dedicated Accounting Teams', 'ISO 27001 and ISO 9001 Certified', 'US, UK & Australian Accounting Expertise', 'Secure & Confidential Delivery'];
 
-    // Homepage_XX.png = tools logos (home page ke "Tools & Technology" tab wale)
     $software = [
         ['Homepage_07.png', 'QuickBooks'],
         ['Homepage_02.png', 'Xero'],
@@ -139,7 +134,6 @@
          'a' => 'Yes. We work with businesses and firms in all three markets, following the relevant accounting standards and reporting cycles. Regulatory filings and professional sign-off remain with you or your licensed adviser.'],
     ];
         
-    // card icons (24x24, stroke): process steps aur benefits ke liye
     $icon = [
         'search'   => '<circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4.5-4.5"/>',
         'scope'    => '<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M9 10h6M9 14h6M9 18h3"/>',
@@ -159,7 +153,6 @@
     $arrow = '<svg width="18" height="12" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19 6.33L14 11.33M19 6.33L14 1.33M19 6.33H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 @endphp
 
-{{-- Hero (light): left = heading + paragraph + CTAs, right = 4 key benefit cards --}}
 @php
     $heroBenefits = [
         ['Dedicated Accounting Teams', '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M18 14.3c2.1.7 3.5 2.6 3.5 5.7"/>'],
@@ -194,7 +187,6 @@
     </div>
 </section>
 
-{{-- Software Slider --}}
 <section class="clients acc_software mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -204,7 +196,6 @@
     </div>
     <div class="client_slider_full">
         <div class="client_slider">
-            {{-- 2 baar: kam logos me bhi slider ka loop bina khali jagah chale --}}
             @foreach ([1, 2] as $pass)
                 @foreach ($software as [$logo, $name])
                     <div>
@@ -216,7 +207,6 @@
     </div>
 </section>
 
-{{-- What Are (image + text) --}}
 <section class="mt-100">
     <div class="container">
         <div class="row gy-4 gy-lg-0 justify-content-between align-items-stretch">
@@ -237,7 +227,6 @@
     </div>
 </section>
 
-{{-- Why India (text + image) --}}
 <section class="mt-100">
     <div class="container">
         <div class="row gy-4 gy-lg-0 justify-content-between align-items-stretch">
@@ -260,7 +249,6 @@
     </div>
 </section>
 
-{{-- Service Cards --}}
 <section class="comp_bus mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -284,7 +272,6 @@
     </div>
 </section>
 
-{{-- Trust Slider (business needs): left heading + arrows, right image cards --}}
 @php
     $needImages = ['figma-trust-slider/small-medium-businesses.webp', 'figma-trust-slider/accounting-finance-firms.webp', 'figma-trust-slider/Growing-Businesses.webp', 'figma-trust-slider/Professional-Services-Firms.webp'];
 @endphp
@@ -335,7 +322,6 @@
 @push('scripts')
 <script src="{{ asset('public/front/js/trust-slider.js') }}?v={{ filemtime(public_path('front/js/trust-slider.js')) }}" defer></script>
 @endpush
-{{-- Industry Pills --}}
 <section class="industries mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -349,7 +335,6 @@
             @foreach ($industries as $row)
                 <div class="ind_row {{ $loop->odd ? 'ind_row_up' : 'ind_row_down' }}">
                     <div class="ind_track">
-                        {{-- 4 baar: kam cards me bhi track seamless loop ho (-50% translate) --}}
                         @foreach ([1, 2, 3, 4] as $copy)
                             @foreach ($row as [$iconImg, $label])
                                 <div class="industries_card" @if ($copy > 1) aria-hidden="true" @endif>
@@ -365,7 +350,6 @@
     </div>
 </section>
 
-{{-- Region Cards (USA / UK / Australia) --}}
 <section class="trust_slider_sec trust_grid_sec mt-100">
     <div class="container">
         <div class="trust_grid_head">
@@ -391,7 +375,6 @@
     </div>
 </section>
 
-{{-- Process Steps --}}
 <section class="process_sec mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -438,7 +421,6 @@
     </div>
 </section>
 
-{{-- Cta Banner (India home jaisa: com_inner_banners, CSS style.css + responsive.css) --}}
 <section class="mt-100">
     <div class="container">
         <div class="com_inner_banners">
@@ -453,13 +435,11 @@
                             data-bs-toggle="modal" data-bs-target="#exampleModal"
                             data-hover-colors='{{ $bubbleColors }}'>
 
-                            <!-- Bubble effect layers -->
                             <span class="color-button__background"></span>
                             <span class="color-button__bubble-container">
                                 <span class="color-button__bubble"></span>
                             </span>
 
-                            <!-- Label -->
                             <span class="color-button__label relative z-10 will-change-transform me-2">Book a Free Consultation</span>
                         </a>
                     </div>
@@ -468,7 +448,6 @@
         </div>
     </div>
 </section>
-{{-- Overlay Cards (data security) --}}
 <section class="mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -519,7 +498,6 @@
     </div>
 </section>
 
-{{-- Split Accordion (why choose): heading on top, image left + benefits accordion right --}}
 <section class="acc_why mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -548,7 +526,6 @@
         </div>
     </div>
 </section>
-{{-- Cta Banner (India home jaisa: com_inner_banners, CSS style.css + responsive.css) --}}
 <section class="mt-100">
     <div class="container">
         <div class="com_inner_banners">
@@ -563,13 +540,11 @@
                             data-bs-toggle="modal" data-bs-target="#exampleModal"
                             data-hover-colors='{{ $bubbleColors }}'>
 
-                            <!-- Bubble effect layers -->
                             <span class="color-button__background"></span>
                             <span class="color-button__bubble-container">
                                 <span class="color-button__bubble"></span>
                             </span>
 
-                            <!-- Label -->
                             <span class="color-button__label relative z-10 will-change-transform me-2">Discuss Your Outsourcing Requirements</span>
                         </a>
                     </div>
@@ -578,7 +553,10 @@
         </div>
     </div>
 </section>
-{{-- Faq List --}}
+@push('scripts')
+<script src="{{ asset('public/front/js/split-accordion.js') }}?v={{ filemtime(public_path('front/js/split-accordion.js')) }}" defer></script>
+@endpush
+
 <section class="mt-80">
     <div class="container">
         <div class="com_sec_head_top">
@@ -604,7 +582,6 @@
     </div>
 </section>
 
-{{-- FAQ schema (Google rich results) --}}
 <script type="application/ld+json">
 {!! json_encode([
     '@context' => 'https://schema.org',
@@ -617,7 +594,6 @@
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_PRETTY_PRINT) !!}
 </script>
 
-{{-- Contact Form --}}
 @php
     $contactFormServices = ['Accounting Outsourcing', 'Bookkeeping Outsourcing', 'Taxation Outsourcing', 'Payroll Outsourcing', 'Recruitment Outsourcing', 'Strata Management Services'];
 @endphp
@@ -633,7 +609,6 @@
             <input type="hidden" name="form_type" value="India Footer Form">
             <input type="hidden" name="country" id="cfCountry" value="India">
             <input type="hidden" name="full_phone" id="cfFullPhone">
-            {{-- Honeypot (bots ke liye) --}}
             <div style="display:none;">
                 <label>Leave this field empty</label>
                 <input type="text" name="fax_number" autocomplete="off">
@@ -687,7 +662,6 @@
 
 @push('scripts')
 <script>
-// footer form: phone ka country flag (intl-tel-input) + "country" field sync (India home jaisa)
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contactBandForm');
     const phone = document.getElementById('cfPhone');

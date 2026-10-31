@@ -1,8 +1,3 @@
-{{-- Master layout (sab pages, sab countries).
-     Page:  @extends('layouts.app')  +  @section('content') ... @endsection  (+ @push('styles') / @push('scripts'))
-     Page se data: @extends('layouts.app', ['og_image' => ..., 'header_overlay' => true])
-     $site = current country (config/sites.php), route middleware 'country:<key>' share karta hai.
-     $meta_title / $meta_description controller se aate hain. --}}
 @php($site ??= \App\Support\Site::get('india'))
 <!DOCTYPE html>
 <html lang="en">

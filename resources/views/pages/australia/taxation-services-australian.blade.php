@@ -15,14 +15,11 @@
              <a class="com_btn1 color-animated-button bubble-btn mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
                         data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                        <!-- Bubble effect layers -->
                         <span class="color-button__background"></span>
                         <span class="color-button__bubble-container">
                             <span class="color-button__bubble"></span>
                         </span>
 
-                        <!-- Label and Icon -->
-                       
                         <span class="color-button__label relative z-10 will-change-transform me-2">Get Expert Tax Advice Now</span>
                         <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -63,7 +60,6 @@
             <div class="container">
                 <div class="ser_Out_lt">
                     <h2>Expert Tax Preparation Services in Australia to Help You Save More</h2>
-                   <!--<img src="{{asset('public/front/images/calculator.gif')}}" alt="icon" class="inner-gif">-->
                 </div>
                 
                 <p>Affordable and trusted <b>tax preparation services in Australia</b> are vital for keeping your business compliant and financially secure. Australia is a highly regulated jurisdiction, and understanding taxation obligations requires expertise. Our team has the experience and knowledge to keep your business compliant, whilst legally minimising your tax expenses wherever possible. We can also provide a comprehensive range of related services, including ASIC company compliance, bookkeeping, payroll, CFO services, and operational support tailored to your specific requirements and business objectives. We pride ourselves on making things efficient, affordable, and easy to understand for you.</p>
@@ -112,9 +108,6 @@
                                 <li>Online tax filing services for businesses</li>
                                 <li>Remote and online business tax filing assistance</li>
                                 <li>Record-keeping review and compliance checks</li>
-                                <!--<li>Tax advisory for start-ups, partnerships, and trusts</li>-->
-                                <!--<li>ATO audit support and dispute resolution assistance</li>-->
-                                <!--<li>Year-round business tax guidance and compliance monitoring</li>-->
                             </ul>
                     </div>
                 </div>
@@ -132,10 +125,6 @@
                             <li>ATO-compliant partnership tax filing assistance</li>
                             <li>Online & remote partnership tax return filing solutions</li>
                             <li>Affordable and efficient partnership tax return preparation</li>
-                            <!--<li>Real-time ATO correspondence handling and updates</li>-->
-                            <!--<li>Capital gains, depreciation, and business deductions optimisation</li>-->
-                            <!--<li>Tax planning for new, growing, or restructuring partnerships</li>-->
-                            <!--<li>Assistance with partnership amendments and ATO revisions</li>-->
                         </ul>
                     </div>
                 </div>
@@ -154,7 +143,6 @@
                                 <li>Comprehensive trust tax return solutions</li>
                                 <li>Certified trust tax return filing support</li>
                                 <li>Franking credit and dividend distribution management</li>
-                                <!--<li>Guidance on trustee obligations and tax responsibilities</li>-->
                                 
                             </ul>
                            
@@ -175,7 +163,6 @@
                                 <li>Professional tax advisory services</li>
                                 <li>Strategic tax consultation for Australian companies</li>
                                 <li>Corporate restructuring and entity reclassification guidance for tax efficiency</li>
-                                <!--<li>Tax impact analysis for mergers, acquisitions, and corporate takeovers</li>-->
                             </ul>
                     </div>
                 </div>
@@ -196,7 +183,6 @@
                                 <li>Outsourcing tax filing services for businesses</li>
                                 <li>Global offshoring tax preparation solutions</li>
                                 <li>Timezone-aligned support for faster turnaround and 24/7 productivity</li>
-                                <!--<li>Specialised offshore tax teams for BAS, IAS, and GST preparation</li>-->
                             </ul>
                            
                     </div>
@@ -248,13 +234,11 @@
                         <a class="com_btn1 color-animated-button bubble-btn" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal"
                             data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                            <!-- Bubble effect layers -->
                             <span class="color-button__background"></span>
                             <span class="color-button__bubble-container">
                                 <span class="color-button__bubble"></span>
                             </span>
 
-                            <!-- Label and Icon -->
                             <svg width="20" height="20" viewBox="0 0 22 22" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -353,7 +337,6 @@
             <div class="container">
                 <div class="ser_Out_lt">
                     <h2>Reliable Tax Audit and Taxation Services You Can Trust </h2>
-                   <!--<img src="{{asset('public/front/images/calculator.gif')}}" alt="icon" class="inner-gif">-->
                 </div>
                 <P>Our team of <b>skilled tax professionals</b> ensures your financial records are compliant and audit-ready. PCS Global remains a leading firm supporting both domestic and overseas clients with Australian taxation requirements.</P>
                 <div class="budgeting_lising">
@@ -532,7 +515,6 @@
         </div>
     </div>
 </section>
-<!-- Clients -->
 
 <section class="clients mt-100">
     <div class="container">
@@ -871,13 +853,11 @@ Our combination of local knowledge, international expertise, advanced technology
                         <a class="com_btn1 color-animated-button bubble-btn load-more-faq" href="javascript:void(0)" 
                             data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                            <!-- Bubble effect layers -->
                             <span class="color-button__background"></span>
                             <span class="color-button__bubble-container">
                                 <span class="color-button__bubble"></span>
                             </span>
 
-                            <!-- Label and Icon -->
                             <span class="color-button__label relative z-10 will-change-transform me-2">Load More</span>
                             <svg width="20" height="20" viewBox="0 0 24 25" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">

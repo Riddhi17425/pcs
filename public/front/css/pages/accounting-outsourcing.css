@@ -1,13 +1,8 @@
-/* Accounting outsourcing page (/outsourced-accounting-bookkeeping-services) - sirf is page ki CSS.
-   Sections AU / US / UK home wale hain (style.css + common/hero-dark.css + common/home-sections.css);
-   yahan sirf India header aur is page ke liye chhote modifiers hain. View: pages/india/accounting-bookkeeping.blade.php */
 
-/* ---------- section heading ke neeche button ---------- */
 .acc_head_btn {
     margin-top: 28px;
 }
 
-/* ---------- text + image (What are / Why India) ---------- */
 .acc_split_text {
     display: flex;
     flex-direction: column;
@@ -31,7 +26,6 @@
     font-weight: 500;
 }
 
-/* ---------- service cards: tablet par 2 column (site default 768px se neeche 1 column) ---------- */
 @media (min-width: 576px) and (max-width: 991px) {
     .acc_services_grid {
         grid-template-columns: repeat(2, 1fr);
@@ -46,7 +40,6 @@
     }
 }
 
-/* ---------- USA / UK / Australia: 3 cards (trust_grid 2 column ka 3 column variant) ---------- */
 .acc_region_grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
@@ -76,7 +69,6 @@
     }
 }
 
-/* ---------- Why choose: benefit cards (process_card design, slider ke bina grid) ---------- */
 .acc_benefits {
     margin-top: 60px;
 }
@@ -87,7 +79,6 @@
     }
 }
 
-/* ---------- hero (light): heading + paragraph + CTAs left, key benefits right ---------- */
 .acc_hero_light {
     position: relative;
     overflow: hidden;
@@ -148,7 +139,6 @@
     padding: 14px 30px;
 }
 
-/* key benefits: ek saaf horizontal strip */
 .acc_hero_benefits {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -237,7 +227,6 @@
         justify-content: center;
     }
 }
-/* ---------- software slider: heading / paragraph / logos ke beech gap kam ---------- */
 .acc_software {
     margin-top: 60px;
 }
@@ -264,12 +253,10 @@
     }
 }
 
-/* business needs slider: left column ka button */
 .trust_slider_head .com_btn2 {
     margin-top: 8px;
 }
 
-/* why choose: stats strip heading ke neeche, center me */
 .acc_why_stats {
     max-width: 900px;
     margin: 0 auto 48px;
@@ -283,7 +270,6 @@
     margin-top: 12px;
 }
 
-/* why choose: paragraph aur image/accordion ke beech gap */
 .acc_why .com_sec_head_top {
     margin-bottom: 56px;
 }

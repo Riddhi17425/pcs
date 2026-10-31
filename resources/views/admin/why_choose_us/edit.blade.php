@@ -8,7 +8,6 @@
     </style>
     <div class="body d-flex py-lg-3 py-md-2">
         <div class="container-xxl">
-            {{-- Page Header --}}
             <div class="row align-items-center">
                 <div class="border-0 mb-4">
                     <div
@@ -19,7 +18,6 @@
                 </div>
             </div>
 
-            {{-- Form Section --}}
             <div class="row clearfix g-3">
                 <div class="col-sm-12">
                     <div class="card mb-3">
@@ -30,7 +28,6 @@
                                 <div class="card mb-4 border">
                                     <div class="card-header bg-light"><strong>Why Choose us Information</strong></div>
                                     <div class="card-body row">
-                                        {{-- Title --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Title <span class="required-star">*</span></label>
                                             <input type="text" name="whychooseus_title"
@@ -41,7 +38,6 @@
                                             @enderror
                                         </div>
 
-                                        {{-- Image --}}
                                         <div class="col-md-4 mb-3">
                                             <label class="form-label">Image</label>
                                             <input type="file" name="whychooseus_image" id="whychooseus_image"
@@ -56,7 +52,6 @@
                                             @endif
                                         </div>
 
-                                        {{-- Status --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Status <span class="required-star">*</span></label>
                                             <select name="whychooseus_status"
@@ -69,7 +64,6 @@
                                             @enderror
                                         </div>
 
-                                        {{-- Alt --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Alt <span class="required-star">*</span></label>
                                             <input type="text" name="whychooseus_alt"
@@ -80,7 +74,6 @@
                                             @enderror
                                         </div>
 
-                                        {{-- Description --}}
                                         <div class="card mb-4 border">
                                             <div class="card-header bg-light"><strong>Description </strong><span class="required-star">*</span></div>
                                             <div class="card-body">
@@ -94,19 +87,17 @@
                                         </div>
                                     </div>
 
-                                    {{-- Submit --}}
                                     <div class="text-end mt-4">
                                         <button type="submit" class="btn btn-primary">Update</button>
                                     </div>
                             </form>
-                        </div> {{-- End Card Body --}}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    {{-- JS Section --}}
     <script src="{{ asset('public/admin/js/whychooseus/whychooseus.js') }}" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 

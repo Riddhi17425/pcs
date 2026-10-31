@@ -83,7 +83,6 @@
   padding: 9px 11px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  /* font-size: 13px; */
   outline: none;
 }
 
@@ -128,12 +127,6 @@
   border: 1px solid red !important;
 }
 
-/*.text-danger {*/
-/*  color: red;*/
-/*  font-size: 13px;*/
-/*  margin-top: 5px;*/
-/*  display: block;*/
-/*}*/
 </style>
 
 @if ($errors->any())
@@ -180,7 +173,6 @@
       </form>
     </div>
 
-    <!--<img src="{{ asset('public/front/images/whatsapp.svg') }}" id="whatsappBtn" alt="whatsapp">-->
   </div>
 </div>
 
@@ -207,112 +199,36 @@ const iti = window.intlTelInput(input, {
       fetch("https://ipapi.co/json")
         .then(function (res) { return res.json(); })
         .then(function (data) { callback(data.country_code || "in"); })
-        .catch(function () { callback("in"); }); // fallback if lookup fails
+        .catch(function () { callback("in"); });
     }
   });
-  // Open popup
   whatsappBtn.addEventListener("click", () => {
     whatsappPopup.classList.toggle("active");
   });
 
-  // Close popup
   closeBtn.addEventListener("click", () => {
     whatsappPopup.classList.remove("active");
   });
 
-  // Allow only numbers in phone field
   input.addEventListener("input", function () {
     this.value = this.value.replace(/[^0-9]/g, '');
     this.classList.remove("input-error");
     document.querySelector(".wa_phone-error").textContent = "";
   });
 
-  // Remove message error on typing
   document.getElementById("waMessage").addEventListener("input", function () {
     this.classList.remove("input-error");
     document.querySelector(".waMessage-error").textContent = "";
   });
 
-  // Form validation
-//   form.addEventListener("submit", function (e) {
-//     let isValid = true;
-
-//     const message = document.getElementById("waMessage").value.trim();
-//     const phone = input.value.trim();
-//     const websiteUrl = document.getElementById("website_url").value.trim();
-
-//     // Clear old errors
-//     document.querySelector(".waMessage-error").textContent = "";
-//     document.querySelector(".wa_phone-error").textContent = "";
-//     document.getElementById("waMessage").classList.remove("input-error");
-//     input.classList.remove("input-error");
-
-//     // Honeypot validation
-//     if (websiteUrl !== "") {
-//       e.preventDefault();
-//       return false;
-//     }
-
-//     // // Message validation
-//     // if (message === "") {
-//     //   document.querySelector(".waMessage-error").textContent = "Message is required.";
-//     //   document.getElementById("waMessage").classList.add("input-error");
-//     //   isValid = false;
-//     // } else if (message.length < 5) {
-//     //   document.querySelector(".waMessage-error").textContent = "Message must be at least 5 characters.";
-//     //   document.getElementById("waMessage").classList.add("input-error");
-//     //   isValid = false;
-//     // }
-
-//     // Phone validation
-//     if (phone === "") {
-//       document.querySelector(".wa_phone-error").textContent = "Phone number is required.";
-//       input.classList.add("input-error");
-//       isValid = false;
-//     }
-
-//     // Stop submit if invalid
-//     if (!isValid) {
-//       e.preventDefault();
-//       submitBtn.disabled = false;
-//       submitBtn.innerText = "Start Chat with Us";
-//       return false;
-//     }
-
-//     // Set full number + country
-//     const countryData = iti.getSelectedCountryData();
-//     const number = input.value.replace(/\s+/g, "");
-//     fullPhone.value = "+" + countryData.dialCode + number;
-//     countryName.value = countryData.name;
-
-//     // Disable button + submitting text
-//     submitBtn.disabled = true;
-//     submitBtn.innerText = "Submitting...";
-
-//     // Close popup after valid submit
-//     whatsappPopup.classList.remove("active");
-
-//     // Reset form after short delay
-//     setTimeout(function () {
-//       form.reset();
-//       input.value = "";
-//       iti.setCountry("in");
-//       submitBtn.disabled = false;
-//       submitBtn.innerText = "Start Chat with Us";
-//     }, 1000);
-//   });
-
-// URL validation
 $.validator.addMethod("noUrl", function (value, element) {
     return this.optional(element) || !/(https?:\/\/|www\.)/i.test(value);
 }, "Links are not allowed in message.");
 
-// Cyrillic / Russian character validation
 $.validator.addMethod("noCyrillic", function (value, element) {
     return this.optional(element) || !/[А-Яа-яЁё]/u.test(value);
 }, "Invalid characters detected.");
 
-// Spam keyword validation
 $.validator.addMethod("noSpamWords", function (value, element) {
     let spamWords = [
         'seo',
@@ -351,7 +267,7 @@ $("#whatsappForm").validate({
             noHtml:true,
         },
         website_honey_point: {
-            maxlength: 0   // honeypot
+            maxlength: 0
         }
     },
 
@@ -401,7 +317,6 @@ $("#whatsappForm").validate({
 
     whatsappPopup.classList.remove("active");
 
-    // ✅ THIS IS IMPORTANT — actually submit form now
     form.submit();
 
     setTimeout(function () {

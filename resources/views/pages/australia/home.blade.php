@@ -1,6 +1,3 @@
-{{-- Australia home page (/au). Controller: CountryHomeController@home (team / logos / blogs DB se: $ourexpert, $images, $blogs).
-     Har section seedha Blade/HTML me likha hai (upar data ka PHP block, neeche markup); CSS: STRUCTURE.md ka section-table dekho.
-     Text / images badalne ho to isi file me badlo. --}}
 @extends('layouts.app', ['header_overlay' => true])
 
 @section('content')
@@ -95,7 +92,6 @@
          'text' => 'We use secure, monitored systems and encrypted channels for files and communications. Sensitive information is never transmitted through unprotected means, while access to our systems is tightly controlled. This helps minimise everyday data risks and keeps your information secure.'],
     ];
 
-    // core team (Malay, Prithvi, Umesh) config/home.php se aati hai; yahan sirf Australia ka member
     $team = [
         ['name' => 'Pratik Devmurari', 'role' => 'Operations - Australia', 'image' => $img('common/team/pratik-devmurari.png')],
     ];
@@ -124,7 +120,6 @@
     
 @endphp
 
-{{-- Hero Dark --}}
 @php
     $heroDarkFeatures = ['Australian Accounting Expertise', 'Dedicated Professional Teams', 'Scalable Outsourcing Solutions', 'Secure & Confidential Delivery'];
 @endphp
@@ -155,7 +150,6 @@
     </div>
 </section>
 
-{{-- Partner Stats --}}
 @php
     $partnerStatsParagraphs = [
         'The right partner does more than just take care of your accounting. We work as an extension of your team, a partner you can count on without having to follow up consistently. We define our workflow to mirror yours which ensures consistency in project delivery. We provide seamless service delivery and strive to be a trusted accounting outsourcing partner.',
@@ -193,7 +187,6 @@
     </div>
 </section>
 
-{{-- Service Cards --}}
 @php
     $serviceCardsCards = $serviceCards;
 @endphp
@@ -204,7 +197,6 @@
             <p>When everyday accounting work takes up too much of your employees' time, support is what you need. PCS Global offers accounting services Australian businesses and practices depend on, from everyday accounting, bookkeeping to specialist compliance, available as individual services or a complete package. </p>
         </div>
 
-        {{-- cards 3 ke multiple na hon to aakhri row center me --}}
         <div class="precision_grid {{ count($serviceCardsCards) % 3 ? 'precision_grid_center' : '' }}">
             @foreach ($serviceCardsCards as $card)
                 <div class="precision_card">
@@ -221,7 +213,6 @@
     </div>
 </section>
 
-{{-- Trust Slider --}}
 @php
     $trustSliderSlides = $clientSlides;
 @endphp
@@ -325,7 +316,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-{{-- Split Accordion --}}
 @php
     $splitAccordionItems = $standards;
 @endphp
@@ -361,7 +351,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </section>
 
-{{-- Industry Pills --}}
 @php
     $industryPillsRows = $industries;
 @endphp
@@ -377,7 +366,6 @@ document.addEventListener("DOMContentLoaded", () => {
             @foreach ($industryPillsRows as $row)
                 <div class="ind_row {{ $loop->odd ? 'ind_row_up' : 'ind_row_down' }}">
                     <div class="ind_track">
-                        {{-- 2 baar: track seamless loop ho (-50% translate) --}}
                         @foreach ([1, 2] as $copy)
                             @foreach ($row as [$icon, $label])
                                 <div class="industries_card">
@@ -393,21 +381,15 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </section>
 
-{{-- Process Steps --}}
 @php
     $processStepsSteps = $processSteps;
 @endphp
 @php
     $icons = [
-        // discovery (search)
         '<circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4.5-4.5"/>',
-        // tailored team (people)
         '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M18 14.3c2.1.7 3.5 2.6 3.5 5.7"/>',
-        // workflow integration (arrows)
         '<path d="M4 7h14m0 0-3.5-3.5M18 7l-3.5 3.5"/><path d="M20 17H6m0 0 3.5-3.5M6 17l3.5 3.5"/>',
-        // support (headset)
         '<path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M20 19c0 1.7-1.8 3-4 3h-2"/>',
-        // review & scale (growth chart)
         '<path d="M3 20h18"/><path d="m5 16 4-4 3 3 7-7"/><path d="M15 8h4v4"/>',
     ];
 @endphp
@@ -425,7 +407,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         <span class="process_icon">
                             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{!! $icons[$loop->index % count($icons)] !!}</svg>
                         </span>
-                        <!-- <span class="process_step_label">Step {{ sprintf('%02d', $loop->iteration) }}</span> -->
                     </div>
                     <div class="process_body">
                         <h3>{!! $step['title'] !!}</h3>
@@ -458,7 +439,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </section>
 
-{{-- Cert Tools --}}
 @php
     $certToolsCerts = $certs;
 @endphp
@@ -518,7 +498,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-{{-- Overlay Cards --}}
 @php
     $overlayCardsCards = $securityCards;
 @endphp
@@ -572,7 +551,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </section>
 
-{{-- Region Map --}}
 @php
     $regionMapSize = [865.8, 661.17];
     $regionMapMap = ['src' => $img('australia/map-australia.svg'), 'x' => 0, 'y' => 0, 'w' => 786.63, 'opacity' => 0.7];
@@ -594,7 +572,6 @@ document.addEventListener("DOMContentLoaded", () => {
     $x = fn ($v) => round($v / $W * 100, 3) . '%';
     $y = fn ($v) => round($v / $H * 100, 3) . '%';
     $regionMapLabel += ['font' => 18, 'py' => 9.5, 'px' => 26.8];
-    // map bahut bada na lage: height ~540px aur width ~860px se zyada nahi
     $maxW = (int) round(min($W, 540 * $W / $H, 860));
     $pin = asset('public/front/images/common/pin.png');
 @endphp
@@ -630,7 +607,6 @@ document.addEventListener("DOMContentLoaded", () => {
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.region_map').forEach(function (map) {
-        // JS na chale to map normal dikhega; JS hone par hi entry animation lagti hai
         map.classList.add('region_map_anim');
         if (!('IntersectionObserver' in window)) { map.classList.add('is-in'); return; }
         const io = new IntersectionObserver(function (entries) {
@@ -643,7 +619,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-{{-- Cta Dark --}}
 <section class="mt-100">
     <div class="container">
         <div class="cta_dark">
@@ -658,7 +633,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-{{-- Team Slider --}}
 @php
     $teamSliderMembers = $team;
     $teamSliderExperts = $ourexpert;
@@ -717,7 +691,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-{{-- Clients Slider --}}
 @php
     $clientsSliderImages = $images;
 @endphp
@@ -736,7 +709,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-{{-- Testimonials --}}
 @php
     $testimonialsItems = $testimonials;
 @endphp
@@ -787,7 +759,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-{{-- Blog Cards --}}
 @php
     $blogCardsBlogs = $blogs;
     $blogCardsDetailRoute = 'blogs.detail';
@@ -813,7 +784,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-{{-- Faq List --}}
 @php
     $faqListItems = $faqs;
 @endphp
@@ -842,7 +812,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-{{-- Contact Form --}}
 @php
     $contactFormCities = ['Sydney', 'Melbourne', 'Brisbane', 'Perth', 'Adelaide', 'Other'];
     $contactFormServices = array_column($serviceCards, 'title');
@@ -859,7 +828,6 @@ document.addEventListener('DOMContentLoaded', function () {
             <input type="hidden" name="form_type" value="Australia Footer Form">
             <input type="hidden" name="country" id="cfCountry" value="Australia">
             <input type="hidden" name="full_phone" id="cfFullPhone">
-            {{-- Honeypot (bots ke liye) --}}
             <div style="display:none;">
                 <label>Leave this field empty</label>
                 <input type="text" name="fax_number" autocomplete="off">
@@ -880,17 +848,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     <input type="tel" name="phone" id="cfPhone" maxlength="15" minlength="10" placeholder="Phone Number*:" aria-label="Phone Number"
                         oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
                 </div>
-               {{-- <div class="col-lg-6 col-12 cf_field">
-                    <input type="text" name="city" maxlength="100" placeholder="Enter your City*:" aria-label="City" required> --}}
 
 
-                    <!-- <select name="city" aria-label="Select City">
-                        <option value="" hidden>City:</option>
-                        {{-- @foreach ($contactFormCities as $city)
-                            <option value="{{ $city }}">{{ $city }}</option>
-                        @endforeach --}}
-                    </select> -->
-                {{-- </div> --}}
                 <div class="col-12 cf_field">
                     <select name="service" aria-label="Choose Service" required>
                         <option value="" hidden>Choose Service*:</option>
@@ -921,33 +880,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-{{-- <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contactBandForm');
-    const phone = document.getElementById('cfPhone');
-    const fullPhone = document.getElementById('cfFullPhone');
-    if (!form || !phone || !window.intlTelInput) return;
-
-    const iti = window.intlTelInput(phone, {
-        initialCountry: @json('au'),
-        separateDialCode: true,
-        utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js'
-    });
-
-    // native required (company / city / service) ko common validator se pehle check karo
-    form.addEventListener('submit', function (e) {
-        if (!form.checkValidity()) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            form.reportValidity();
-            return;
-        }
-        fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
-    }, true);
-});
-</script> --}}
-
-
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contactBandForm');
@@ -962,7 +894,6 @@ document.addEventListener('DOMContentLoaded', function () {
         utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js'
     });
 
-    // flag me jo country select ho, wahi "country" field me jaye
     function syncCountry() {
         const d = iti.getSelectedCountryData();
         if (d && d.name && countryInput) {

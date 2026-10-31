@@ -1,9 +1,3 @@
-{{-- Common header (Australia, US, ...). Har country ka wrapper $nav pass karta hai:
-     $nav = ['home', 'about', 'contact', 'services' => [[label, url], ...],
-             'country' => ['name' => 'Australia', 'flag' => 'australia-icon.png'],
-             'phone' => ['tel' => '+61399980494', 'label' => '(+613) 9998 0494']]
-     Data Security / Blogs sab countries ka ek hi main page hai (naye tab me), isliye default yahin hai.
-     Page se ['header_overlay' => true] do to header hero ke upar transparent aata hai. --}}
 @php
   $nav += [
     'data_security' => route('datasecurity'),
@@ -31,11 +25,9 @@
   <link rel="canonical" href="{{ url()->current() }}" />
   <link rel="icon" href="{{asset('public/front/images/fab_icon.png')}}" type="image/x-icon">
 
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
@@ -50,22 +42,17 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Sacramento&display=swap"
     rel="stylesheet">
-  <!--favicon cdn-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
     integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- scroll animation -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.css">
 
-  <!-- Slick Carousel CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 
-  <!-- Fancybox CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
 
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="{{asset('public/front/css/style.css')}}?v={{ filemtime(public_path('front/css/style.css')) }}">
   <link rel="stylesheet" href="{{asset('public/front/css/common/request-modal.css')}}?v={{ filemtime(public_path('front/css/common/request-modal.css')) }}">
   <link rel="stylesheet" href="{{asset('public/front/css/responsive.css')}}?v={{ filemtime(public_path('front/css/responsive.css')) }}">
@@ -135,13 +122,11 @@
     }
   </style>
 
-  <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PW87W9HP');</script>
-<!-- End Google Tag Manager -->
 
 @verbatim
 <script type="application/ld+json">
@@ -200,10 +185,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body>
 
-   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW87W9HP"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
   <header id="siteHeader" class="{{ !empty($header_overlay) ? 'header_overlay' : '' }}">
     <div class="container">
@@ -304,8 +287,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </header>
 
-  <!------------------------------------------->
-
     <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasRight">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title">Menu</h5>
@@ -314,14 +295,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="offcanvas-body">
 
-      <!-- LEVEL 1 -->
       <div class="menu-level active" id="menu-main">
         <div class="menu-body">
           <ul>
             <li><a href="{{ $nav['home'] }}">Home</a></li>
             <li><a href="{{ $nav['about'] }}">About Us</a></li>
             <li><a href="#" >Services <span class="next-menu" data-target="menu-services">&rsaquo;</span></a></li>
-            <!--<li><a href="#" class="next-menu" data-target="menu-products">Products <span>&rsaquo;</span></a></li>-->
             <li><a href="{{ $nav['data_security'] }}" target="_blank" rel="noopener">Data Security</a></li>
             <li><a href="{{ $nav['blog'] }}" target="_blank" rel="noopener">Blogs</a></li>
             <li><a href="{{ $nav['contact'] }}">Contact Us</a></li>
@@ -345,7 +324,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-      <!-- LEVEL 2: SERVICES -->
       <div class="menu-level" id="menu-services">
         <div class="menu-header">
           <button class="back-btn" data-back="menu-main">&lsaquo; Back</button>
@@ -365,7 +343,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
  <script>
-    // Next level navigation
     document.querySelectorAll('.next-menu').forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
@@ -375,7 +352,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
     });
 
-    // Back navigation
     document.querySelectorAll('.back-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const backTarget = btn.getAttribute('data-back');
@@ -386,14 +362,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 
   <script>
-    // Hide header on scroll down, show it on scroll up
     (function () {
       const header = document.getElementById('siteHeader');
       if (!header) return;
 
       let lastScrollY = window.scrollY;
-      const hideThreshold = 80; // don't hide until scrolled past header height
-      const delta = 5; // ignore tiny scroll jitters
+      const hideThreshold = 80;
+      const delta = 5;
 
       window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
@@ -412,7 +387,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 
   <script>
-    // Open header dropdowns (Services, country select) on hover instead of click
     document.addEventListener('DOMContentLoaded', function () {
       if (typeof bootstrap === 'undefined') return;
 

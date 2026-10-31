@@ -19,13 +19,11 @@
                 @csrf
                 @method('PUT')
 
-                {{-- Page URL --}}
                 <div class="mb-3">
                     <label class="form-label">Page URL <span class="required-star">*</span></label>
                     <input type="text" name="faq_url" class="form-control" value="{{ old('faq_url', $faq->faq_url) }}" required>
                 </div>
 
-                {{-- Repeater for Title/Description --}}
                 <div class="mb-3 d-flex justify-content-between">
                     <strong>FAQ Title & Description</strong>
                     <button type="button" id="addFaqBlock" class="btn btn-sm btn-success">+ Add More</button>
@@ -53,7 +51,6 @@
                     @endforeach
                 </div>
 
-                {{-- Status --}}
                 <div class="mb-3">
                     <label class="form-label">Status <span class="required-star">*</span></label>
                     <select name="status" class="form-control" required>
@@ -62,7 +59,6 @@
                     </select>
                 </div>
 
-                {{-- Submit --}}
                 <div class="text-end">
                     <button type="submit" class="btn btn-primary">Update FAQ</button>
                 </div>
@@ -71,7 +67,6 @@
     </div>
 </div>
 
-{{-- Scripts --}}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{ asset('public/admin/js/summernote.min.js') }}"></script>
 <link href="{{ asset('public/admin/css/summernote.min.css') }}" rel="stylesheet" />

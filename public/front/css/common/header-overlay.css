@@ -1,5 +1,3 @@
-/* Header ka overlay variant: hero ke upar transparent, white text.
-   Use: @include('countries.<country>.layouts.header', ['header_overlay' => true]) */
 
 header.header_overlay {
     position: absolute;
@@ -33,7 +31,6 @@ header.header_overlay {
 .header_overlay .country_select_btn {
     background: var(--white);
     border-color: var(--white);
-    /* padding: 12px; */
 }
 
 .header_overlay .country_select_btn span {

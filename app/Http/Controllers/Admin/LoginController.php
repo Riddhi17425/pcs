@@ -74,7 +74,6 @@ class LoginController extends Controller
             return redirect()->route('dashboard');
         }
 
-        // Invalid login
         return back()->withErrors([
             'email' => 'Invalid email or password.',
         ])->withInput();

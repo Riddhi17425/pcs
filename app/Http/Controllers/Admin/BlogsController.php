@@ -22,7 +22,6 @@ class BlogsController extends Controller
 
 public function BlogsStore(Request $request)
 {
-    // Step 1: Validation
     $validator = Validator::make($request->all(), [
         'title'               => 'required|string|max:255',
         'short_description'   => 'required|string',
@@ -67,7 +66,6 @@ public function BlogsStore(Request $request)
             mkdir($uploadPath, 0755, true);
         }
 
-        // Step 2: Handle front_image upload
         if ($request->hasFile('front_image')) {
             $frontImage = $request->file('front_image');
             
@@ -85,7 +83,6 @@ public function BlogsStore(Request $request)
             $frontImagePath = 'public/admin/blogs/' . $frontName;
         }
 
-        // Step 3: Handle detail_image upload
         if ($request->hasFile('detail_image')) {
             $detailImage = $request->file('detail_image');
             $detailName = \Str::slug(pathinfo($detailImage->getClientOriginalName(), PATHINFO_FILENAME)) . '-' . uniqid() . '.' . $detailImage->getClientOriginalExtension();
@@ -102,7 +99,6 @@ public function BlogsStore(Request $request)
             $detailImagePath = 'public/admin/blogs/' . $detailName;
         }
 
-        // Step X: Handle cta_image upload
         if ($request->hasFile('cta_image')) {
             $ctaImage = $request->file('cta_image');
             $ctaName = \Str::slug(pathinfo($ctaImage->getClientOriginalName(), PATHINFO_FILENAME)) . '-' . uniqid() . '.' . $ctaImage->getClientOriginalExtension();
@@ -132,7 +128,6 @@ public function BlogsStore(Request $request)
             ];
         }
 
-        // Step 4: Store in DB
         Blogs::create([
             'title'              => $request->title,
             'short_description'  => $request->short_description,
@@ -202,7 +197,6 @@ public function BlogsStore(Request $request)
 
     public function UpdateBlogs(Request $request, $id)
     {
-        // Step 1: Validation
         $validator = Validator::make($request->all(), [
             'title'               => 'required|string|max:255',
             'short_description'   => 'required|string',
@@ -240,7 +234,6 @@ public function BlogsStore(Request $request)
         }
 
         try {
-            // Step 2: Find existing record
             $blogs = Blogs::findOrFail($id);
 
             $frontImagePath = $blogs->front_image;
@@ -251,9 +244,7 @@ public function BlogsStore(Request $request)
                 mkdir($uploadPath, 0755, true);
             }
 
-            // Step 3: Handle front_image upload
             if ($request->hasFile('front_image')) {
-                // Delete old image
                 if ($frontImagePath && file_exists(public_path(str_replace('public/', '', $frontImagePath)))) {
                     unlink(public_path(str_replace('public/', '', $frontImagePath)));
                 }
@@ -273,9 +264,7 @@ public function BlogsStore(Request $request)
                 $frontImagePath = 'public/admin/blogs/' . $frontName;
             }
 
-            // Step 4: Handle cta_image upload
             if ($request->hasFile('detail_image')) {
-                // Delete old image
                 if ($detailImagePath && file_exists(public_path(str_replace('public/', '', $detailImagePath)))) {
                     unlink(public_path(str_replace('public/', '', $detailImagePath)));
                 }
@@ -295,14 +284,12 @@ public function BlogsStore(Request $request)
                 $detailImagePath = 'public/admin/blogs/' . $detailName;
             }
 
-        $ctaImagePath = $blogs->cta_image; // keep existing image by default
+        $ctaImagePath = $blogs->cta_image;
         if ($request->hasFile('cta_image')) {
-            // Delete old image if it exists
             if ($ctaImagePath && file_exists(public_path(str_replace('public/', '', $ctaImagePath)))) {
                 unlink(public_path(str_replace('public/', '', $ctaImagePath)));
             }
         
-            // Upload new image
             $ctaImage = $request->file('cta_image');
             $ctaName = \Str::slug(pathinfo($ctaImage->getClientOriginalName(), PATHINFO_FILENAME))
                 . '-' . uniqid() . '.' . $ctaImage->getClientOriginalExtension();
@@ -316,7 +303,7 @@ public function BlogsStore(Request $request)
                 $ctaImage->move($uploadPath, $ctaName);
             }
         
-            $ctaImagePath = 'public/admin/blogs/' . $ctaName; // new image path
+            $ctaImagePath = 'public/admin/blogs/' . $ctaName;
         }
         
         $faqTitles = $request->faq_title ?? [];
@@ -331,7 +318,6 @@ public function BlogsStore(Request $request)
                     'faq_description' => $faqDescriptions[$index],
                 ];
             }
-            // Step 5: Update in DB
             $blogs->update([
                 'title'              => $request->title,
                 'short_description'  => $request->short_description,

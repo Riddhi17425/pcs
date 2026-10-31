@@ -23,9 +23,6 @@
       font-weight: 700;
    }
 
-   /* ======================================================
-   TIMELINE SECTION & CONTAINER
-   ====================================================== */
    .timeline {
       position: relative;
       width: 100%;
@@ -38,9 +35,6 @@
       margin-top: 2cqw;
    }
 
-   /* ======================================================
-   HEADER / LOGO
-   ====================================================== */
    .timeline__header {
       position: absolute;
       bottom: -2cqw;
@@ -51,9 +45,6 @@
       width: 7cqw;
    }
 
-   /* ======================================================
-   SVG LINE & CAP
-   ====================================================== */
    .timeline__svg {
       position: absolute;
       inset: 0;
@@ -77,9 +68,6 @@
       opacity: 1;
    }
 
-   /* ======================================================
-   ITEMS & LAYOUT POSITIONS
-   ====================================================== */
    .timeline__item {
       position: absolute;
       width: 19cqw;
@@ -87,14 +75,12 @@
       flex-direction: column;
    }
 
-   /* Item X-Positions */
    .timeline__item--1 { left: 2.2%; }
    .timeline__item--2 { left: 21.2%; }
    .timeline__item--3 { left: 40.3%; }
    .timeline__item--4 { left: 59.3%; }
    .timeline__item--5 { left: 78.3%; }
 
-   /* Item Y-Positions */
    .timeline__item--1, .timeline__item--3, .timeline__item--5 {
       top: 6.6%;
    }
@@ -103,9 +89,6 @@
       justify-content: flex-end;
    }
 
-   /* ======================================================
-   ARC BOX (Contains the circle & badge)
-   ====================================================== */
    .timeline__arc-box {
       position: relative;
       width: 19cqw;
@@ -115,12 +98,9 @@
       justify-content: center;
    }
 
-   /* ======================================================
-   INNER PINK CIRCLES
-   ====================================================== */
    .timeline__circle {
       position: relative;
-      width: 15cqw;  /* Smaller than arc box to create the gap */
+      width: 15cqw;
       height: 15cqw;
       border-radius: 50%;
       background: var(--timeline-circle-bg);
@@ -135,7 +115,6 @@
       transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
    }
 
-   /* Item 2 and 4 are transparent inside */
    .timeline__item--2 .timeline__circle,
    .timeline__item--4 .timeline__circle {
       background: transparent;
@@ -149,9 +128,6 @@
       margin: 0;
    }
 
-   /* ======================================================
-   TEXT CONTENT
-   ====================================================== */
    .timeline__content {
       width: 17cqw;
       margin: 0 auto;
@@ -175,9 +151,6 @@
       margin-bottom: 1.5cqw;
    }
 
-   /* ======================================================
-   BADGES (Positioned precisely on the blue curve)
-   ====================================================== */
    .timeline__badge {
       position: absolute;
       width: 3.8cqw;
@@ -197,16 +170,12 @@
       transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
    }
 
-   /* Perfect mathematically angled coordinates for the badges */
    .timeline__item--1 .timeline__badge { top: 0.8cqw; left: 0.8cqw; }
    .timeline__item--2 .timeline__badge { top: 14.4cqw; left: 0.8cqw; }
    .timeline__item--3 .timeline__badge { top: 0.8cqw; right: 0.8cqw; }
    .timeline__item--4 .timeline__badge { top: 14.4cqw; right: 0.8cqw; }
    .timeline__item--5 .timeline__badge { top: 0.8cqw; right: 0.8cqw; }
 
-   /* ======================================================
-   VISIBLE STATE ANIMATIONS
-   ====================================================== */
    .is-visible.timeline__circle,
    .is-visible.timeline__content {
       opacity: 1;
@@ -236,15 +205,10 @@
       align-items:center;
    }
 
-   /* Card */
    .timeline__arc-box{
       width:100%;
       max-width:350px;
       padding:25px 20px;
-      /*background:#fff;*/
-      /*border:1px solid #e8e8e8;*/
-      /*border-radius:16px;*/
-      /*box-shadow:0 5px 15px rgba(0,0,0,.06);*/
 
       display:flex;
       flex-direction:column;
@@ -254,25 +218,9 @@
       text-align:center;
    }
 
-   /* Number */
    .timeline__badge{
-      /*position:static !important;*/
-      /*width:52px;*/
-      /*height:52px;*/
-      /*border-radius:50%;*/
-      /*background:#fff;*/
-      /*border:2px solid var(--timeline-line);*/
-      /*display:flex;*/
-      /*align-items:center;*/
-      /*justify-content:center;*/
-      /*font-size:22px;*/
-      /*color:var(--timeline-line);*/
-      /*opacity:1;*/
-      /*transform:none;*/
-      /*margin-bottom:5px;*/
    }
 
-   /* Heading */
    .timeline__circle{
       width:auto;
       height:auto;
@@ -292,7 +240,6 @@
       display:none;
    }
 
-   /* Paragraph */
    .timeline__content{
       width:100%;
       max-width:100%;
@@ -317,17 +264,14 @@
     align-items:center;
 }
 
-/* Heading box first */
 .timeline__arc-box{
     order:1;
 }
 
-/* Paragraph second */
 .timeline__content{
     order:2;
 }
 
-/* Badge heading ke upar */
 .timeline__badge{
     position:static !important;
     order:1;

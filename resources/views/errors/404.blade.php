@@ -1,4 +1,3 @@
-{{-- 404 page (sab countries). URL /au/... ho to Australia ka header/footer, warna India ka. Layout: layouts/app --}}
 @php
     $isAu = request()->is('au', 'au/*');
     $home = $isAu ? url('au') : url('/');
@@ -20,7 +19,6 @@
         ];
     $meta_title = 'Page Not Found | PCS Global';
     $meta_description = 'The page you are looking for could not be found.';
-    // 404 par route middleware nahi chalta, isliye site yahin chuni jaati hai
     $site = \App\Support\Site::get($isAu ? 'australia' : 'india');
 @endphp
 
@@ -47,14 +45,6 @@
                 <a class="com_btn_outline com_btn_outline_light" href="{{ $contact }}">Contact Us</a>
             </div>
 
-            <!-- <div class="error_links">
-                <span>Or try one of these pages</span>
-                <ul>
-                    @foreach ($links as [$label, $url])
-                        <li><a href="{{ $url }}">{{ $label }}</a></li>
-                    @endforeach
-                </ul>
-            </div> -->
         </div>
     </div>
 </section>

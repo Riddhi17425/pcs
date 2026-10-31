@@ -14,7 +14,6 @@ class JwtMiddleware
     {
         try {
             $user = JWTAuth::parseToken()->authenticate();
-            // Check sales man logged or not 
             if (!$user) {
                 return response()->json([
                     'result' => false,
@@ -22,7 +21,6 @@ class JwtMiddleware
                 ], 401);
             }
 
-            // Check if the user is a salesman or not 
             if ($user->role != 3) {
                 return response()->json([
                     'result' => false,

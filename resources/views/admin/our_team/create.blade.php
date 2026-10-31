@@ -8,7 +8,6 @@
     </style>
     <div class="body d-flex py-lg-3 py-md-2">
         <div class="container-xxl">
-            {{-- Page Header --}}
             <div class="row align-items-center">
                 <div id="message-pop-up" class="alert alert-dismissible fade show" role="alert" style="display: none">
                     <span id="success-message"></span>
@@ -23,14 +22,12 @@
                 </div>
             </div>
 
-            {{-- Form Section --}}
             <div class="row clearfix g-3">
                 <div class="col-sm-12">
                     <div class="card mb-3">
                         <div class="card-body">
                             <form action="{{ route('ourteam.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                {{-- ourteam Info --}}
                                 <div class="card mb-4 border">
                                     <div class="card-header bg-light"><strong>Our Team Information</strong></div>
                                     <div class="card-body row">
@@ -129,19 +126,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                    {{-- Submit --}}
                                     <div class="text-end mt-4">
                                         <button type="submit" class="btn btn-primary">Save</button>
                                     </div>
                             </form>
-                        </div> {{-- End Card Body --}}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    {{-- JS Section --}}
     <script src="{{ asset('public/admin/js/whychooseus/whychooseus.js') }}" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 

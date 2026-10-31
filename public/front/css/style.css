@@ -32,8 +32,6 @@ body {
     color: var(--white);
 }
 
-/* coman class */
-
 a {
     text-decoration: none;
 }
@@ -128,7 +126,6 @@ ul {
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
-    /* will-change: transform; */
 }
 
 .color-animated-button:hover {
@@ -167,11 +164,8 @@ ul {
 .color-button__label {
     position: relative;
     z-index: 10;
-    /* will-change: transform; */
 }
 
-/*-------------------------------------------------------------- header --------------------------------------------*/
-/* Header & Navbar */
 header {
     padding: 15px 0;
     position: sticky;
@@ -257,7 +251,6 @@ nav {
 
 .country_select_btn span {
     font-family: "Instrument Sans", sans-serif;
-    /* font-size: 16px; */
     color: var(--black3);
 }
 
@@ -320,7 +313,6 @@ nav {
     stroke: #e43441;
 }
 
-/* Mobile Menu Toggle */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -349,7 +341,6 @@ nav {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Dropdown Menu */
 .custom-dropdown-toggle {
     display: flex;
     align-items: center;
@@ -360,14 +351,12 @@ nav {
     padding: 0 20px;
     border-radius: 0;
     position: absolute !important;
-    /*width: 800px;*/
     inset: 34px auto auto 0px !important;
     background: #fffff6;
     padding-right: 0;
     display: block !important;
     opacity: 0;
     visibility: hidden;
-    /* transform: translateY(10px); */
     transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
     pointer-events: none;
     z-index: 1000;
@@ -429,7 +418,6 @@ nav {
     transform: translateX(20px);
 }
 
-/* Image Wrapper in Dropdown */
 .menu-hover-over {
     position: absolute;
     top: 0;
@@ -443,8 +431,6 @@ nav {
     position: absolute;
     top: 0;
     right: 0;
-    /*width: 80%;*/
-    /*height: 100%;*/
 }
 
 .menu-hover-img img {
@@ -456,7 +442,6 @@ nav {
     pointer-events: none;
 }
 
-/* Accordion / Submenu */
 .acco_nexts_main {
     list-style: none;
     margin: 0;
@@ -468,10 +453,8 @@ nav {
     padding: 10px 15px;
     color: #666;
     text-decoration: none;
-    /*font-weight: 600;*/
 }
 
-/* Submenu hidden by default */
 .acco_nexts {
     list-style: none;
     margin: 0;
@@ -481,25 +464,16 @@ nav {
     z-index: 99;
 }
 
-/* Show submenu on hover */
 .acco_nexts_main>li:hover>.acco_nexts {
     display: block;
 }
 
-/*----------------------------------------------------------- hero section -----------------------------------------------*/
-
 .hero {
-    /* padding-top: 95px; */
-    /* padding-bottom: 75px; */
-    /* background: linear-gradient(to right, #101825, #101825); */
-    /*background: linear-gradient(180deg, #0d1321 12.51%, #0b141e 100%), linear-gradient(270deg, #183799 0%, #082146 100%);*/
     background: #0e1622;
     display: flex;
     justify-content: end;
     position: relative;
 }
-
-/* Frame 760 */
 
 .hero_rt {
     position: relative;
@@ -508,14 +482,6 @@ nav {
 }
 
 .hero_rt::after {
-    /* content: "";
-    position: absolute;
-    top: 0;
-    left: -20px;
-    background: linear-gradient(180deg, #0C1420 12.51%, #101825 100%), linear-gradient(270deg, #183799 0%, #082146 100%);
-    height: 100%;
-    width: 40px;
-    filter: blur(10px); */
 
     content: none;
     position: absolute;
@@ -525,7 +491,6 @@ nav {
         linear-gradient(180deg, #0c1420 12.51%, #101825 0%),
         linear-gradient(270deg, #183799 0%, #082146 100%);
     height: 100%;
-    /*width: 141px;*/
     filter: blur(30px);
 }
 
@@ -547,8 +512,6 @@ nav {
 }
 
 .hero_head {
-    /* font-size: 66px;
-    line-height: 84px; */
     font-size: 56px;
     line-height: 74px;
     font-weight: 600;
@@ -557,7 +520,6 @@ nav {
 
 .hero_gif {
     width: 60px;
-    /* margin: 0 10px; */
 }
 
 .hero_para {
@@ -595,8 +557,6 @@ nav {
     gap: 16px 24px;
 }
 
-/* counter */
-
 .counter_lt {
     padding-right: 100px;
 }
@@ -627,8 +587,6 @@ nav {
     color: var(--blue);
 }
 
-/* Why Partner With PCS Global */
-
 .partner_img img {
     width: 100%;
     height: 100%;
@@ -658,9 +616,7 @@ nav {
     font-size: 16px;
 }
 
-/* ---------------------------Trust------------------------ */
 .trust_scroll_wrapper {
-    /* position: relative; */
     display: flex;
     flex-direction: column;
     row-gap: 20px;
@@ -677,7 +633,6 @@ nav {
     top: 20%;
     overflow: hidden;
     z-index: 1;
-    /*margin-bottom: 60px;*/
     background-size: 100% 100%;
     background-repeat: no-repeat;
     padding: 130px 0;
@@ -716,15 +671,8 @@ nav {
 }
 
 .trust_card.card-active {
-    /* box-shadow: 0 50px 120px rgba(0, 0, 0, 0.35); */
     z-index: 10;
 }
-
-/* ------------------------------------------------------------------------------------------------------ */
-
-/* ------------------------------------------------------------------------------------------------------- */
-
-/* Outsourcing Accounting Solutions slider */
 
 .trust_slider_sec {
     background: linear-gradient(180deg, #182653 0%, #3555b9 100%);
@@ -885,8 +833,6 @@ nav {
     background: var(--white);
 }
 
-/* Precision You Can Trust */
-
 .precision_head {
     max-width: 1400px;
     margin-left: auto;
@@ -982,8 +928,6 @@ nav {
 }
 
 
-/* Industries */
-
 .industries_top {
     text-align: center;
     margin-bottom: 42px;
@@ -997,7 +941,6 @@ nav {
 .ind_marquee {
     display: flex;
     flex-direction: column;
-    /* gap: 25px; */
 }
 
 .ind_row {
@@ -1067,7 +1010,6 @@ nav {
     text-align: left;
     padding: 20px 24px;
     border: 1px solid var(--grey);
-    /* background: var(--white); */
 }
 
 .industries_icon {
@@ -1101,14 +1043,8 @@ nav {
     margin: 0;
 }
 
-/* home_map */
-
 .home_map_top {
-    /* margin-bottom: 50px;
-    text-align: center; */
 }
-
-/* com_inner_banner */
 
 .com_inner_banners {
     margin: 0;
@@ -1171,11 +1107,7 @@ nav {
     height: 16px;
 }
 
-/* our_experts */
-
 .our_experts_top {
-    /* margin-bottom: 42px;
-    text-align: center; */
 }
 
 .experts_card {
@@ -1196,7 +1128,6 @@ nav {
 
 .experts_card_bt {
     padding: 15px 24px;
-    /* background-color: var(--white); */
 }
 
 .our_experts_bot {
@@ -1243,8 +1174,6 @@ nav {
     height: auto;
 }
 
-/* testimonial */
-
 .testimonial_slider .slick-list {
     margin: 0 -12px;
     padding-bottom: 3px !important;
@@ -1286,7 +1215,6 @@ nav {
 }
 
 .testimonial_card hr {
-    /* margin: 0; */
     height: 1px;
     background: #d3dde6;
     border: none;
@@ -1346,8 +1274,6 @@ nav {
     margin-bottom: 0;
 }
 
-/* How does PCS Global work (process steps): sab steps ek saath grid me, har card me icon + "Step 01" */
-
 .process_steps {
     display: flex;
     flex-wrap: wrap;
@@ -1390,30 +1316,6 @@ nav {
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-/* upar patli line, hover par poori khulti hai */
-/* .process_card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, #c31c26, var(--blue));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-}
-
-.process_card:hover {
-    transform: translateY(-6px);
-    border-color: transparent;
-    box-shadow: 0 18px 40px rgba(24, 38, 83, 0.12);
-}
-
-.process_card:hover::before {
-    transform: scaleX(1);
-} */
-
 .process_head {
     display: flex;
     align-items: center;
@@ -1434,10 +1336,6 @@ nav {
     flex-shrink: 0;
     transition: transform 0.3s ease;
 }
-
-/* .process_card:hover .process_icon {
-    transform: rotate(-6deg) scale(1.05);
-} */
 
 .process_step_label {
     font-size: 14px;
@@ -1504,7 +1402,6 @@ nav {
         font-size: 20px;
     }
 }
-/* Certifications / Tools & Technology tabs */
 
 .cert_tools_tabs {
     display: flex;
@@ -1570,8 +1467,6 @@ nav {
     object-fit: contain;
 }
 
-/* client_slider */
-
 .client_slider_par {
     flex-direction: column;
     text-align: center;
@@ -1628,41 +1523,9 @@ nav {
 }
 
 .client_slider .slick-slide img {
-    /* max-height: 70px;
-    max-width: 160px; */
     width: auto;
     object-fit: contain;
-    /* filter: grayscale(1); */
 }
-
-/* .client_slider .slick-slide:hover img {
-    filter: grayscale(1);
-} */
-
-
-/* .client_slider {
-    padding: 22px 0;
-    --mask-width: 4.285714285714286rem;
-    -webkit-mask-image: linear-gradient(
-        to right,
-        transparent 0%, 
-        rgb(0, 0, 0) var(--mask-width),
-        rgb(0, 0, 0) 100%
-    );
-    mask-image: linear-gradient(
-        to right,
-        transparent 0%, 
-        rgb(0, 0, 0) var(--mask-width),
-        rgb(0, 0, 0) 100%
-    );
-} */
-
-/* insights */
-/* 
-.insights_top {
-    text-align: center;
-    margin-bottom: 42px;
-} */
 
 .ins_card {
     margin-top: 16px;
@@ -1671,101 +1534,6 @@ nav {
 .ins_card p {
     margin-bottom: 8px;
 }
-
-/* footer */
-/*.email-head{*/
-/*    margin-bottom:6px!important;*/
-/*}*/
-/*.footer {*/
-/*    background: var(--blue);*/
-/*}*/
-
-/*.footer_top {*/
-/*    padding: 80px 0;*/
-/*}*/
-
-/*.foot_lt .foot_lt_para {*/
-/*    color: var(--white);*/
-/*    margin: 24px 0 32px 0;*/
-/*    line-height: 24px;*/
-/*}*/
-
-/*.foot_social {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    gap: 15px;*/
-/*}*/
-
-/*.foot_social a {*/
-/*    transition: .4s;*/
-/*}*/
-
-/*.foot_social a:hover {*/
-/*    transform: scale(1.3);*/
-/*}*/
-
-/*.foot_rt {*/
-/*    border-right: 1px solid #617CD4;*/
-/*    height: 100%;*/
-/*}*/
-
-/*.foot_rt .sub_head {*/
-/*    color: var(--white);*/
-/*    margin-bottom: 16px;*/
-/*}*/
-
-/*.foot_rt ul {*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*}*/
-
-/*.foot_rt ul li {*/
-/*    list-style: none;*/
-/*    margin-bottom: 10px;*/
-/*}*/
-
-/*.foot_rt ul a {*/
-/*    color: var(--white);*/
-/*    transition: .3s;*/
-/*}*/
-
-/*.foot_rt ul li a:hover {*/
-/*    border-left: 1px solid;*/
-/*    padding-left: 10px;*/
-/*}*/
-
-/*.foot_mail {*/
-/*    margin-top: 16px;*/
-/*}*/
-
-/*.foot_mail span {*/
-/*    color: var(--white);*/
-/*}*/
-
-/*.footer_bot {*/
-/*    text-align: center;*/
-/*    color: var(--white);*/
-/*    padding-bottom: 20px;*/
-/*}*/
-
-/*.footer_contant {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*}*/
-
-/*.com_sec_head_top {*/
-/*    text-align: center;*/
-/*    padding: 0 100px;*/
-/*    margin-bottom: 42px;*/
-/*}*/
-
-/*.comp_bus_bot {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    gap: 16px;*/
-/*}*/
-
-/* footer */
 
 .footer {
     background: var(--blue);
@@ -2030,13 +1798,8 @@ nav {
 
 .comp_bus_bot {
     display: flex;
-    /*align-items: center;*/
     gap: 16px;
 }
-
-/* sumita  start*/
-
-/* Comprehensive Business */
 
 .comp_bus_child {
     display: flex;
@@ -2085,7 +1848,6 @@ nav {
 }
 
 .comp_bus_child:hover img {
-    /* width: 340px; */
 }
 
 .comp_bus_num {
@@ -2134,7 +1896,6 @@ nav {
     inset: 0;
     display: flex;
     flex-direction: column;
-    /*justify-content: flex-end;*/
 }
 
 .comp_bus_fronts {
@@ -2164,8 +1925,6 @@ nav {
 .comp_bus_back .comp_bus_para,
 .comp_bus_back .comp_bus_ext {
     opacity: 0;
-    /*transform: translateY(15px);*/
-    /*transition: opacity 0.6s ease, transform 0.6s ease;*/
 }
 
 .comp_bus_back .comp_bus_ext {
@@ -2174,37 +1933,22 @@ nav {
 
 .comp_bus_child:hover .comp_bus_back img {
     opacity: 1;
-    /*transform: translateY(0);*/
-    /*transition-delay: 0.2s;*/
 }
 
 .comp_bus_child:hover .comp_bus_back .comp_bus_num {
     opacity: 1;
-    /*transform: translateY(0);*/
-    /*transition-delay: 0.4s;*/
 }
 
 .comp_bus_child:hover .comp_bus_back .comp_bus_para {
     opacity: 1;
-    /*transform: translateY(0);*/
-    /*transition-delay: 0.6s;*/
 }
 
 .comp_bus_child:hover .comp_bus_back .comp_bus_ext {
     opacity: 1;
-    /*transform: translateY(0);*/
-    /*transition-delay: 0.8s;*/
 }
-
-/* Sumit ends  */
-
-/* ravi */
-
-/*--------------------------------- blogs ----------------------------*/
 
 .com_hero {
     margin-bottom: 20px;
-    /* background-size: contain; */
     background-repeat: no-repeat;
     padding: 100px 0;
     text-align: center;
@@ -2213,14 +1957,7 @@ nav {
 }
 
 .com_hero_child {
-    /* width: 85%; */
     margin: auto;
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 100%; */
 }
 
 .header_flags {
@@ -2247,18 +1984,12 @@ nav {
     line-height: 32px;
 }
 
-/*--------------------------------- blogs dtails ----------------------------*/
-
 .blogs_details .sub_head {
     margin-top: 33px;
 }
 
 .blog-img-home img {
-    /*height:240px;*/
-    /*object-fit:cover;*/
 }
-
-/* -------------------------------- contact --------------------------*/
 
 .contact {
     background: var(--blue);
@@ -2362,7 +2093,6 @@ nav {
     position: absolute;
     left: 25px;
     top: 14px;
-    /*transform: translateY(-50%);*/
     color: var(--white);
     background: var(--blue);
     padding: 0 5px;
@@ -2377,46 +2107,7 @@ nav {
     top: -10px;
     left: 16px;
 
-    /* optional highlight color */
 }
-
-/* Focus hone par ya value hone par label upar chale */
-/*.form-group input:focus+label,*/
-/*.form-group select:focus+label,*/
-/*.form-group textarea:focus+label,*/
-/*.form-group input:valid+label,*/
-/*.form-group select:valid+label,*/
-/*.form-group textarea:valid+label {*/
-/*    top: -3px;*/
-/*    left: 16px;*/
-/*}*/
-
-/* Jab input focus ho ya usme value ho */
-/*.form-group input:focus + label,*/
-/*.form-group input:not(:placeholder-shown) + label,*/
-/*.form-group select:focus + label,*/
-/*.form-group select:valid + label,*/
-/*.form-group textarea:focus + label,*/
-/*.form-group textarea:not(:placeholder-shown) + label {*/
-/*    top: -3px;*/
-/*    left: 16px;*/
-/*    font-size: 12px;*/
-/*}*/
-
-/*  */
-
-/*.contact-icons {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*}*/
-
-/*.contact-icons img {*/
-/*    width: 100px;*/
-/*    height: 100px;*/
-/*    object-fit: contain;*/
-/*    opacity: 0;*/
-/*}*/
 
 .contact-icons {
     display: flex;
@@ -2459,7 +2150,6 @@ nav {
     bottom: 30px;
     background: var(--white);
     width: 55%;
-    /*height:70%;*/
     padding: 24px;
 }
 
@@ -2484,8 +2174,6 @@ nav {
     height: 30px;
     width: 30px;
 }
-
-/*------------------------ data security ---------------------------*/
 
 .secure_box_par {
     display: flex;
@@ -2540,8 +2228,6 @@ nav {
     margin: 34px 0;
 }
 
-/*----------------------------------------- about ------------------------------------------ */
-
 .about_story {
     background: var(--blue);
     padding-top: 30px;
@@ -2559,27 +2245,16 @@ nav {
     color: var(--white);
 }
 
-/*.about_story_top img*/
-/*{*/
-/*    width:60px;*/
-/*}*/
-
 .about_story_bot {
     color: var(--grey);
 }
 
-/*.future .com_bg_card {*/
-/*    width: 50%;*/
-/*    height: 60%;*/
-/*    overflow-y: scroll;*/
-/*}*/
 .future .com_bg_card_content {
     width: 100%;
     height: 100%;
     overflow-y: auto;
 }
 
-/* Chrome, Edge, Safari */
 .future .com_bg_card_content::-webkit-scrollbar {
     width: 4px;
 }
@@ -2607,12 +2282,10 @@ nav {
 
 .about_story_bot p {
     display: none;
-    /* Hide all paragraphs initially */
 }
 
 .about_story_bot p:nth-child(-n + 3) {
     display: block;
-    /* Show only first 3 paragraphs */
 }
 
 .btn-sh {
@@ -2623,8 +2296,6 @@ nav {
     font-size: 14px;
     font-weight: 600;
 }
-
-/* ------- */
 
 .our_team {
     background: var(--blue);
@@ -2745,8 +2416,6 @@ nav {
     text-align: start;
 }
 
-/*---------------------------------- servies --------------------------- */
-
 .ser_Out {
     background: var(--blue);
     padding: 90px 0;
@@ -2804,8 +2473,6 @@ nav {
     color: var(--blue);
 }
 
-/* -------------- */
-
 .fre_ques .fre_que {
     border-bottom: 1px solid var(--grey);
     margin-bottom: 32px;
@@ -2844,7 +2511,6 @@ nav {
     transform-origin: center;
 }
 
-/* Add rotation + content change */
 .fre_ques .sub_head[aria-expanded="true"]::before {
     content: "-";
     transform: rotate(180deg);
@@ -2855,12 +2521,7 @@ nav {
 }
 
 .recruitment_ser {
-    /* background: url("../images/recruitment-services7.png"); */
     background-color: var(--blue);
-    /* background-size: contain;
-    background-position: right;
-    background-repeat: no-repeat; */
-    /* padding: 100px 0; */
     padding-top: 30px;
 }
 
@@ -2868,7 +2529,6 @@ nav {
     color: var(--grey);
 }
 
-/* map */
 #maps1:hover,
 #maps2:hover,
 #maps3:hover,
@@ -2893,8 +2553,6 @@ nav {
         opacity: 0;
     }
 }
-
-/*--------------------------- Aus ---------------------*/
 
 .aus_num {
     gap: 25px;
@@ -2943,12 +2601,9 @@ nav {
 }
 
 .preparation .feature-column:first-child ul {
-    /* margin: 0;
-    padding: 0; */
 }
 
 .preparation ul {
-    /* list-style-position: inside; */
 }
 
 .budgeting_lising {
@@ -3013,8 +2668,6 @@ nav {
     justify-content: space-between;
 }
 
-/* ------------------pcs-global-uk ------------ */
-
 .uk-tree {
     filter: grayscale(1);
 }
@@ -3035,7 +2688,6 @@ nav {
 
 .management_listing {
     display: flex;
-    /* gap: 30px; */
 }
 
 .management_listing li {
@@ -3052,8 +2704,6 @@ nav {
     padding-right: 0;
     border-right: none;
 }
-
-/* ------------------------ */
 
 .roll_update {
     color: var(--grey);
@@ -3074,10 +2724,7 @@ nav {
     margin-bottom: 8px;
 }
 
-/* moadl */
-
 .modal {
-    /*z-index: 99999999;*/
 }
 
 .request_modal .modal-dialog {
@@ -3238,30 +2885,18 @@ select:-webkit-autofill {
     transition: background-color 5000s ease-in-out 0s;
 }
 
-/*------------------- accouting -------------------*/
-
 .com_bg_card_accounting {
     bottom: 10px !important;
     width: 86%;
-    /*background:#FFFFF6;*/
 }
 
 .inner-gif {
     width: 112px;
 }
 
-/*----------------------------------- all banner height same match slider effect ---------------------------------------*/
-
 .secure_box_par .secure_box {
     color: #666666;
 }
-
-/*.trust_banner_home*/
-/*{*/
-/*    height:450px;*/
-/*}*/
-
-/* whatsapp */
 
 .whatsapp-float {
     position: fixed;
@@ -3282,7 +2917,6 @@ select:-webkit-autofill {
     transform: scale(1.1);
 }
 
-/*offcanvas css*/
 .btn-trust-banner {
     color: var(--blue);
     font-weight: 600;
@@ -3315,8 +2949,6 @@ select:-webkit-autofill {
     border-left: 1px solid var(--grey);
 }
 
-/*payroll css redesign*/
-
 .ser_Out h3 {
     color: #fff;
     font-size: 24px;
@@ -3345,7 +2977,6 @@ select:-webkit-autofill {
 
 .decimal_style_item .decimal_style ul {
     list-style: disc;
-    /* dot */
     margin-top: 5px;
     padding-left: 0;
 }
@@ -3354,28 +2985,37 @@ select:-webkit-autofill {
     transition: transform 0.3s ease;
 }
 
-/*load more and show less FAQ section css*/
 .load-more-faq.expanded svg {
     transform: rotate(180deg) translateY(2px);
-    /* rotate + slight move */
 }
 
 .load-more-faq.expanded svg {
     transform: rotate(180deg) translateY(2px);
-    /* rotate + slight move */
 }
 
 .expanded.color-animated-button:hover svg {
     transform: rotate(180deg) translateY(2px) !important;
 }
 
-/*load more and show less FAQ section css*/
-
-/*.dropdown-menu.show{*/
-/*    display: flex;*/
-/*}*/
 .dropdown-item {
     padding: 12px 21px;
+}
+
+.mega-menu > li > .dropdown-item {
+    color: var(--blue);
+    background-color: transparent;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mega-menu > li > .dropdown-item:hover,
+.mega-menu > li > .dropdown-item:focus,
+.mega-menu > li > .dropdown-item:focus-visible,
+.mega-menu > li > .dropdown-item:active,
+.mega-menu > li > .dropdown-item.active {
+    color: var(--blue);
+    background-color: #f1f1e2;
+    outline: 0;
+    box-shadow: none;
 }
 
 .right-panels .dropdown-item {
@@ -3389,9 +3029,7 @@ select:-webkit-autofill {
 
 .right-panels {
     display: none;
-    /* hidden by default */
     min-width: 250px;
-    /* full width */
     flex-direction: column;
     background-color: var(--blue);
 }
@@ -3406,16 +3044,6 @@ select:-webkit-autofill {
     transform: translateX(3px);
 }
 
-/*.left-tabs .tab-item:hover .dropdown-item svg{*/
-/*    opacity: 1;*/
-/*    visibility: visible;*/
-/*    transform: translateX(3px);*/
-/*}*/
-/*.left-tabs .tab-item .dropdown-item svg {*/
-/*    opacity: 0;*/
-/*    visibility: hidden;*/
-/*    transition: opacity 0.3s, transform 0.3s;*/
-/*}*/
 .menu_container {
     overflow: hidden;
     position: relative;
@@ -3432,7 +3060,6 @@ select:-webkit-autofill {
 }
 
 .menu_body {
-    /* padding: 40px; */
 }
 
 .sidebar_submenu .menu_heading {
@@ -3454,7 +3081,6 @@ select:-webkit-autofill {
     width: 690px;
 }
 
-/*blog faq css*/
 .faq-header {
     background: #182653;
     color: #fff;
@@ -3578,7 +3204,6 @@ select:-webkit-autofill {
     font-size: 25px;
 }
 
-/* taxation-services-new css */
 .taxation-services-new {
     background: #182653;
     padding: 64px 0;
@@ -3662,22 +3287,18 @@ select:-webkit-autofill {
     border-radius: 8px;
 }
 
-/* FIXED ICON BOX */
 .industries-item .service-item-icon {
     width: 50px;
     height: 50px;
     min-width: 50px;
-    /* prevents shrinking */
     display: flex;
     align-items: center;
     justify-content: center;
     background: #182653;
-    /* orange */
     border-radius: 6px;
     margin-bottom: 0;
 }
 
-/* ICON STYLE */
 .industries-item .service-item-icon i {
     color: #fff;
     font-size: 20px;
@@ -3745,7 +3366,6 @@ select:-webkit-autofill {
 
 
 
-/* Mobile menu "Services" title: pehle <h6 class="m-0"> tha. h6 jaisa font aur line-height wapas set (p ko body ka font/line-height milta hai) */
 .menu-header .menu-services-title {
     font-family: "Public Sans", sans-serif;
     font-size: 1rem;

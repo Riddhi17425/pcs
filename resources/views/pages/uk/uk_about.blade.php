@@ -5,7 +5,6 @@
     <div class="container">
         <div class="com_hero_child">
             <h1>About Us</h1>
-            <!--<p>Unlock Your Potential. Focus on Growth. <br> Leave the Rest to Us.</p>-->
             <p>Outsource Routine Accelerate Results Harness Growth</p>
         </div>
     </div>
@@ -299,21 +298,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const paras = Array.from(container.querySelectorAll('p'));
   if (paras.length <= 3) {
-    // Nothing to toggle
     btn.style.display = 'none';
     return;
   }
 
-  // Create a wrapper for paragraphs 4+
   const extraWrap = document.createElement('div');
   extraWrap.id = 'aboutExtra';
   extraWrap.style.height = '0px';
   extraWrap.style.overflow = 'hidden';
   extraWrap.style.transition = 'height 400ms ease';
-  // (Optional fade too) -> uncomment next line:
-  // extraWrap.style.transition = 'height 400ms ease, opacity 400ms ease'; extraWrap.style.opacity = '0';
 
-  // Move paragraphs 4+ into the wrapper
   for (let i = 3; i < paras.length; i++) {
     extraWrap.appendChild(paras[i]);
   }
@@ -330,27 +324,20 @@ document.addEventListener('DOMContentLoaded', function () {
   setBtn();
 
   function expand() {
-    // From 0 -> natural height
     extraWrap.style.height = extraWrap.scrollHeight + 'px';
-    // After transition, set to 'auto' so content reflows naturally
     const onEnd = (e) => {
       if (e.propertyName !== 'height') return;
       extraWrap.style.height = 'auto';
       extraWrap.removeEventListener('transitionend', onEnd);
     };
     extraWrap.addEventListener('transitionend', onEnd);
-    // (Optional fade) -> uncomment next line:
-    // extraWrap.style.opacity = '1';
   }
 
   function collapse() {
-    // From 'auto' -> fixed px -> 0 for a reliable animation
     const h = extraWrap.scrollHeight;
     extraWrap.style.height = h + 'px';
-    void extraWrap.offsetHeight; // force reflow
+    void extraWrap.offsetHeight;
     extraWrap.style.height = '0px';
-    // (Optional fade) -> uncomment next line:
-    // extraWrap.style.opacity = '0';
   }
 
   btn.addEventListener('click', () => {

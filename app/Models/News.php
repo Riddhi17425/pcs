@@ -16,7 +16,6 @@ class News extends Model
         'detail_description',
         'url',
         'date',
-        // 'cta_image',
         'status',
         'updated_at',
         'deleted_at'

@@ -8,7 +8,6 @@
     </style>
     <div class="body d-flex py-lg-3 py-md-2">
         <div class="container-xxl">
-            {{-- Page Header --}}
             <div class="row align-items-center">
                 <div class="border-0 mb-4">
                     <div
@@ -19,7 +18,6 @@
                 </div>
             </div>
 
-            {{-- Form Section --}}
             <div class="row clearfix g-3">
                 <div class="col-sm-12">
                     <div class="card mb-3">
@@ -30,7 +28,6 @@
                                 <div class="card mb-4 border">
                                     <div class="card-header bg-light"><strong>Our Team Information</strong></div>
                                     <div class="card-body row">
-                                        {{-- Name --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Name <span class="required-star">*</span></label>
                                             <input type="text" name="name"
@@ -40,7 +37,6 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                        {{-- Designation --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Designation <span class="required-star">*</span></label>
                                             <input type="text" name="designation"
@@ -50,7 +46,6 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                        {{-- Title --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Title <span class="required-star">*</span></label>
                                             <input type="text" name="title"
@@ -61,7 +56,6 @@
                                             @enderror
                                         </div>
 
-                                        {{-- Image --}}
                                         <div class="col-md-4 mb-3">
                                             <label class="form-label">Image</label>
                                             <input type="file" name="image" id="ourteam_image"
@@ -76,7 +70,6 @@
                                             @endif
                                         </div>
 
-                                        {{-- Status --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Status <span class="required-star">*</span></label>
                                             <select name="status"
@@ -89,7 +82,6 @@
                                             @enderror
                                         </div>
 
-                                        {{-- Alt --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Alt <span class="required-star">*</span></label>
                                             <input type="text" name="alt"
@@ -99,7 +91,6 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                        {{-- Short Description --}}
                                         <div class="card mb-4 border">
                                             <div class="card-header bg-light"><strong>Short Description </strong><span class="required-star">*</span></div>
                                             <div class="card-body">
@@ -111,7 +102,6 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        {{-- Description --}}
                                         <div class="card mb-4 border">
                                             <div class="card-header bg-light"><strong>Description </strong><span class="required-star">*</span></div>
                                             <div class="card-body">
@@ -125,19 +115,17 @@
                                         </div>
                                     </div>
 
-                                    {{-- Submit --}}
                                     <div class="text-end mt-4">
                                         <button type="submit" class="btn btn-primary">Update</button>
                                     </div>
                             </form>
-                        </div> {{-- End Card Body --}}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    {{-- JS Section --}}
     <script src="{{ asset('public/admin/js/ourteam/ourteam.js') }}" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 

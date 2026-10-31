@@ -11,13 +11,10 @@
                              <a class="com_btn1 color-animated-button bubble-btn mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
                         data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                        <!-- Bubble effect layers -->
                         <span class="color-button__background"></span>
                         <span class="color-button__bubble-container">
                             <span class="color-button__bubble"></span>
                         </span>
-
-                        <!-- Label and Icon -->
 
                         <span class="color-button__label relative z-10 will-change-transform me-2">Get a Quote</span>
                         <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,13 +97,11 @@
                     <a class="com_btn1 color-animated-button bubble-btn" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal"
                         data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                        <!-- Bubble effect layers -->
                         <span class="color-button__background"></span>
                         <span class="color-button__bubble-container">
                             <span class="color-button__bubble"></span>
                         </span>
 
-                        <!-- Label and Icon -->
                         <span class="color-button__label relative z-10 will-change-transform me-2">Request A
                             Call</span>
                         <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -198,14 +193,12 @@ These options empower businesses to scale efficiently while securing the right t
         </div>
 
         <div class="trust_scroll_wrapper">
-            <!-- Background images -->
             <div class="trust_banner">
                 <img class="img-fluid trust_bg" src="{{ asset('public/front/images/trust_bg.png') }}" alt="bg1" />
                 <img class="img-fluid trust_bg" src="{{ asset('public/front/images/trust_bg2.png') }}" alt="bg2" />
                 <img class="img-fluid trust_bg" src="{{ asset('public/front/images/trust_bg3.png') }}" alt="bg3" />
             </div>
 
-            <!-- Animated cards -->
             <div class="trust_card">
                 <div class="trust_card_head">
                     <h3>Research & Analysis</h3>
@@ -266,13 +259,11 @@ These options empower businesses to scale efficiently while securing the right t
                         <a class="com_btn1 color-animated-button bubble-btn" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal"
                             data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                            <!-- Bubble effect layers -->
                             <span class="color-button__background"></span>
                             <span class="color-button__bubble-container">
                                 <span class="color-button__bubble"></span>
                             </span>
 
-                            <!-- Label and Icon -->
                             <svg width="20" height="20" viewBox="0 0 22 22" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path

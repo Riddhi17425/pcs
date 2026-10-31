@@ -1,0 +1,27 @@
+
+.hoa_center_btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+@media (max-width: 639px) {
+    .hoa_center_btn {
+        margin-top: 28px;
+    }
+
+    .hoa_center_btn .com_btn1 {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.hoa_region_note {
+    max-width: 860px;
+    margin: 36px auto 0;
+    text-align: center;
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--white);
+}
+

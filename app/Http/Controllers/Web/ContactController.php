@@ -11,7 +11,6 @@ use Illuminate\Validation\Rule;
 
 class ContactController extends Controller
 {
-    // Shared page (sab countries). Header/footer: route middleware 'country:<key>' -> $site
     public function contact()
     {
         $meta_title       = "Contact Us | Accounting, Bookkeeping &amp; Payroll Services";
@@ -61,7 +60,6 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-        // Honeypot check (detect bots)
         if (! empty($request->fax_number)) {
             Log::warning('Honeypot triggered — possible spam entry', [
                 'email' => $request->email,

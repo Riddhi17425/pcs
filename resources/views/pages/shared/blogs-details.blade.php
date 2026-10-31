@@ -1,4 +1,3 @@
-{{-- Shared blog page (sab countries). Header/footer: layouts/app ($site = route middleware 'country:<key>') --}}
 
 @extends('layouts.app', [
     'og_image' => asset('/'.$blog->detail_image)
@@ -96,9 +95,6 @@ table tr:hover {
                 <div >
                     {!! $blog->detail_description !!}
                     
-                        <!--management company. These experts bring years of experience and expertise to the table, ensuring-->
-                        <!--that your startup adheres to best practices and navigates any challenges effectively. Their-->
-                        <!--guidance can be invaluable in establishing a strong foundation for strata administration.</p>-->
                 </div>
             </div>
         </div>
@@ -116,13 +112,11 @@ table tr:hover {
                         <a class="com_btn1 color-animated-button bubble-btn" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal"
                             data-hover-colors='["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0","#F7A1A1","#A0E6E0","#F9B7B7","#E6FFB3","#FFF4B3","#FFE4B5","#FFD4B8","#FFCBA4","#FFB399"]'>
 
-                            <!-- Bubble effect layers -->
                             <span class="color-button__background"></span>
                             <span class="color-button__bubble-container">
                                 <span class="color-button__bubble"></span>
                             </span>
 
-                            <!-- Label and Icon -->
                             <svg width="20" height="20" viewBox="0 0 22 22" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -250,7 +244,6 @@ table tr:hover {
     </div>
 </section>
 
-{{-- ===== BlogPosting schema (dynamic) ===== --}}
 @php
     $blogUrl  = url()->current();
 $blogDesc = trim(preg_replace('/\s+/', ' ', strip_tags($blog->meta_description ?: ($blog->short_description ?? ''))));
@@ -288,7 +281,6 @@ $blogDesc = trim(preg_replace('/\s+/', ' ', strip_tags($blog->meta_description ?
     {!! json_encode($blogSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
 </script>
 
-{{-- ===== FAQPage schema ===== --}}
 @if(!empty($faqItems))
     <script type="application/ld+json">
         {!! json_encode($faqSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
@@ -298,12 +290,10 @@ $blogDesc = trim(preg_replace('/\s+/', ' ', strip_tags($blog->meta_description ?
 
 @push('scripts')
 <script>
-// Add sub_head to ALL h5 across the page
 document.querySelectorAll('h5').forEach(h5 => {
     h5.classList.add('sub_head');
 });
 
-// Then handle the special case inside blogs_details .col-lg-12
 const block = document.querySelector('.blogs_details .col-lg-12');
 if (block) {
     const firstH5 = block.querySelector('h5'); 

@@ -1,17 +1,11 @@
 <?php
 
-// US home page ka saara content (text, images, links).
-// - Neeche 'return' me sections usi order me hain jaise page par dikhte hain.
-// - 'type' = component: resources/views/components/sections/<type>.blade.php
-// - 'props' = us section ka data. Text badalna ho to yahin badlo.
-// $db: images (Trusted by logos), blogs, ourexpert (team) - admin panel / database se aate hain.
-
 return function (array $db) {
     ['images' => $images, 'blogs' => $blogs, 'ourexpert' => $ourexpert] = $db;
 
     $img = fn ($file) => asset('public/front/images/' . $file);
     $us = fn ($path) => url('us/' . $path);
-    $consult = url('us') . '#consultation';   // jin services ka page abhi nahi hai, wo form par jaati hain
+    $consult = url('us') . '#consultation';
 
     $serviceCards = [
         ['title' => 'Accounting Outsourcing Services', 'img' => $img('figma-precision/accounting-outsourcing.png'), 'url' => $us('bookkeeping-and-accounting-services'),
@@ -88,7 +82,6 @@ return function (array $db) {
          'text' => 'We maintain data protection measures and business continuity plans so your work continues without interruption. Backups, redundancy, and defined recovery procedures help keep your information safe and services running. You can depend on consistent delivery, whatever the circumstances.'],
     ];
 
-    // core team (Malay, Prithvi, Umesh) config/home.php se aati hai; yahan sirf US ka member
     $team = [
         ['name' => 'Parth Parekh', 'role' => 'Advisor Partner US', 'image' => $img('common/team/parth-parekh.png')],
     ];

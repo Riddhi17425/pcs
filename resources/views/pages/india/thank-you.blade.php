@@ -19,13 +19,11 @@
                     <path d="M6.71029 12.2085L1.50196 7.00016M1.50196 7.00016L6.71029 1.79183M1.50196 7.00016H26.502" stroke="white" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
 
-                <!-- Bubble effect layers -->
                 <span class="color-button__background"></span>
                 <span class="color-button__bubble-container">
                     <span class="color-button__bubble"></span>
                 </span>
 
-                <!-- Label and Icon -->
                 <span class="color-button__label relative z-10 will-change-transform me-2">Back To Home</span>
             </a>
         

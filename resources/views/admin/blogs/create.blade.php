@@ -9,7 +9,6 @@
 
     <div class="body d-flex py-lg-3 py-md-2">
         <div class="container-xxl">
-            {{-- Page Header --}}
             <div class="row align-items-center">
                 <div id="message-pop-up" class="alert alert-dismissible fade show" role="alert" style="display: none">
                     <span id="success-message"></span>
@@ -24,7 +23,6 @@
                 </div>
             </div>
 
-            {{-- Form Section --}}
             <div class="row clearfix g-3">
                 <div class="col-sm-12">
                     <div class="card mb-3">
@@ -46,12 +44,10 @@
                                 @endif
                                 
                                 
-                                {{-- Blogs Info --}}
                                 <div class="card mb-4 border">
                                     <div class="card-header bg-light"><strong>Blogs Information</strong></div>
                                     <div class="card-body row">
 
-                                        {{-- Title --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Title <span class="required-star">*</span></label>
                                             <input type="text" name="title"
@@ -61,7 +57,6 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                        {{-- Blogs Url --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Url <span class="required-star">*</span></label>
                                             <input type="text" name="url"
@@ -71,8 +66,6 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-
-                                        {{-- Short Description --}}
 
                                         <div class="col-md-12 mb-3">
                                             <label class="form-label">Short Description <span
@@ -85,7 +78,6 @@
                                             @enderror
                                         </div>
 
-                                        {{-- Front Image --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Front Image <span
                                                     class="required-star">*</span></label>
@@ -106,7 +98,6 @@
                                             @enderror
                                         </div>
 
-                                        {{-- Detail Image --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Detail Image <span
                                                     class="required-star">*</span></label>
@@ -127,7 +118,6 @@
                                             @enderror
                                         </div>
 
-                                        {{-- Status --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Status <span class="required-star">*</span></label>
                                             <select name="status"
@@ -156,7 +146,6 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                        {{-- Detail Description --}}
                                         <div class="card mb-4 border">
                                             <div class="card-header bg-light"><strong>Detail Description</strong> <span
                                                     class="required-star">*</span></div>
@@ -168,7 +157,6 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        {{-- conclusion --}}
                                         <div class="card mb-4 border">
                                             <div class="card-header bg-light"><strong>Conclusion</strong></div>
                                             <div class="card-body">
@@ -179,7 +167,6 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        {{-- Cta Image --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Cta Image</label>
                                             <input type="file" name="cta_image" id="cta_image"
@@ -191,7 +178,6 @@
                                             <img id="preview_cta_image" src="#" alt="Preview" class="mt-2"
                                                 style="max-width: 100%; height: auto; display: none;" />
                                         </div>
-                                        {{-- Cta Text --}}
                                         <div class="col-md-6 mb-3">
                                             <label class="form-label">Cta Text</label>
                                             <input type="text" name="cta_text"
@@ -220,7 +206,6 @@
                                             More</button>
                                     </div>
                                     <div class="card-body" id="faqRepeater">
-                                        {{-- One FAQ block --}}
                                         <div class="faqGroup border rounded p-3 mb-3">
                                             <div class="mb-3">
                                                 <label class="form-label">Title</label>
@@ -237,19 +222,17 @@
                                     </div>
                                 </div>
 
-                                {{-- Submit --}}
                                 <div class="text-end mt-4">
                                     <button type="submit" class="btn btn-primary">Save Blogs</button>
                                 </div>
                             </form>
-                        </div> {{-- End Card Body --}}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    {{-- JS Section --}}
     <script src="{{ asset('public/admin/js/blogs/blogs.js') }}" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -320,13 +303,11 @@
 
     <script>
         $(document).ready(function() {
-            // Initialize Summernote
             $('.summernote').summernote({
                 height: 200,
                 placeholder: 'Enter Description here...'
             });
 
-            // Add More
             $('#addFaqBlock').click(function() {
                 let block = `
 <div class="faqGroup border rounded p-3 mb-3">
@@ -344,14 +325,12 @@
 </div>
             `;
                 $('#faqRepeater').append(block);
-                // Re-init summernote for new textareas
                 $('.summernote').summernote({
                     height: 200,
                     placeholder: 'Enter Description here...'
                 });
             });
 
-            // Remove block
             $(document).on('click', '.removeFaq', function() {
                 $(this).closest('.faqGroup').remove();
             });

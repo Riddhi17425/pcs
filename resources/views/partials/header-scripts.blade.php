@@ -1,6 +1,4 @@
-{{-- Header JS (sab sites): mobile menu levels, scroll par header hide, dropdown hover --}}
  <script>
-    // Next level navigation
     document.querySelectorAll('.next-menu').forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
@@ -10,7 +8,6 @@
       });
     });
 
-    // Back navigation
     document.querySelectorAll('.back-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const backTarget = btn.getAttribute('data-back');
@@ -21,14 +18,13 @@
   </script>
 
   <script>
-    // Hide header on scroll down, show it on scroll up
     (function () {
       const header = document.getElementById('siteHeader');
       if (!header) return;
 
       let lastScrollY = window.scrollY;
-      const hideThreshold = 80; // don't hide until scrolled past header height
-      const delta = 5; // ignore tiny scroll jitters
+      const hideThreshold = 80;
+      const delta = 5;
 
       window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
@@ -47,8 +43,6 @@
   </script>
 
   <script>
-    // Open header dropdowns (Services, country select) on hover instead of click
-    // (mobile country dropdown tap se chalta hai, isliye usse bahar rakha hai)
     document.addEventListener('DOMContentLoaded', function () {
       if (typeof bootstrap === 'undefined') return;
 

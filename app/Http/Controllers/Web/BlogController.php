@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Models\Blogs;
 
-// Blogs sab countries me same hain (main India site par). Header/footer: route middleware 'country:<key>' -> $site
 class BlogController extends Controller
 {
     public function blog()

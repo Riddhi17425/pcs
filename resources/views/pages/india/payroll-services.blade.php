@@ -1,7 +1,3 @@
-{{-- Payroll outsourcing page (/payroll-outsourcing-services). Controller: ServiceController@payrollService.
-     Layout taxation-services.blade.php jaisa hi hai (same classes), upar data ka PHP block, neeche har section ka markup.
-     CSS: style.css + common/hero-dark.css + common/home-sections.css + pages/accounting-outsourcing.css + common/service-split.css (neeche @push('styles')).
-     Text / images badalne ho to isi file me badlo. --}}
 @extends('layouts.app', [
     'og_image' => asset('public/front/images/why-payroll-outsourcing.png')
 ])
@@ -17,7 +13,6 @@
     $img = fn ($file) => asset('public/front/images/' . $file);
     $bubbleColors = '["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0"]';
 
-    // Payroll_XX.png / Homepage_XX.png = software logos
     $software = [
         ['Payroll_01.png', 'QuickBooks Payroll'],
         ['Payroll_05.png', 'Xero Payroll'],
@@ -59,7 +54,6 @@
          'text' => 'Onboarding forms, timesheet follow-up, payslip distribution and employee payroll queries move to our team. Your staff focus on advisory work and client servicing.'],
     ];
 
-    // CPA firms rows ke icons (24x24, stroke)
     $firmIcons = [
         'file'     => '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/>',
         'tag'      => '<path d="M3 12.2V4a1 1 0 0 1 1-1h8.2a1 1 0 0 1 .7.3l7.8 7.8a1 1 0 0 1 0 1.4l-7.4 7.4a1 1 0 0 1-1.4 0L3.3 12.9a1 1 0 0 1-.3-.7Z"/><circle cx="8" cy="8" r="1.3"/>',
@@ -83,10 +77,8 @@
         ['title' => 'Payroll Processing for Multi-Location Businesses',
          'text' => 'We process payroll for employers with sites across states, regions or countries, applying each location’s tax and contribution rules. Reports are produced by location and entity, so payroll costs are visible site by site.'],
     ];
-    // Same order as $businessNeeds above
     $needImages = ['payroll-outsourcing/payroll-small-medium-businesses.webp', 'payroll-outsourcing/payroll-growing-businesses.webp', 'payroll-outsourcing/payroll-large-enterprises.webp', 'payroll-outsourcing/payroll-hourly-shift-workforces.webp', 'payroll-outsourcing/payroll-bookkeeping-accounting-firms.webp', 'payroll-outsourcing/payroll-multi-location-businesses.webp'];
 
-    // payroll ke USA / UK / Australia ke alag pages abhi nahi hain, isliye button country site ke home par jata hai
     $regions = [
         ['title' => 'USA Payroll Outsourcing Services', 'img' => $img('payroll-outsourcing/usa-payroll-outsourcing.webp'),
          'button' => ['Explore US Payroll Outsourcing', route('us.home')],
@@ -174,7 +166,6 @@
          'a' => 'Yes. We process payroll for employers in all three countries, including US federal and state withholding, UK PAYE and RTI, and Australian PAYG withholding, super and STP.'],
     ];
 
-    // card icons (24x24, stroke): process steps ke liye
     $icon = [
         'search'   => '<circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4.5-4.5"/>',
         'scope'    => '<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M9 10h6M9 14h6M9 18h3"/>',
@@ -196,7 +187,6 @@
     ];
 @endphp
 
-{{-- Hero (light): left = heading + paragraph + CTAs, right = 4 key benefit cards --}}
 <section class="acc_hero_light">
     <div class="container">
         <div class="acc_hero_inner">
@@ -223,7 +213,6 @@
     </div>
 </section>
 
-{{-- Software Slider --}}
 <section class="clients acc_software mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -232,7 +221,6 @@
     </div>
     <div class="client_slider_full">
         <div class="client_slider">
-            {{-- 2 baar: kam logos me bhi slider ka loop bina khali jagah chale --}}
             @foreach ([1, 2] as $pass)
                 @foreach ($software as [$logo, $name])
                     <div>
@@ -244,7 +232,6 @@
     </div>
 </section>
 
-{{-- What Are (image + text) --}}
 <section class="mt-100">
     <div class="container">
         <div class="row gy-4 gy-lg-0 justify-content-between align-items-stretch">
@@ -265,7 +252,6 @@
     </div>
 </section>
 
-{{-- Why India (text + image) --}}
 <section class="mt-100">
     <div class="container">
         <div class="row gy-4 gy-lg-0 justify-content-between align-items-stretch">
@@ -288,7 +274,6 @@
     </div>
 </section>
 
-{{-- Service Cards --}}
 <section class="comp_bus mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -312,7 +297,6 @@
     </div>
 </section>
 
-{{-- CPA & Accounting Firms (editorial split: left sticky intro + image, right icon rows; CSS: common/service-split.css) --}}
 <section class="svc_split mt-100">
     <div class="container">
         <div class="svc_split_inner">
@@ -344,7 +328,6 @@
 
 @push('scripts')
 <script>
-// services split: scroll reveal (IntersectionObserver; reduced-motion / no-support par sab seedha dikhta hai)
 (function () {
     const items = document.querySelectorAll('.svc_reveal');
     if (!items.length || !('IntersectionObserver' in window) ||
@@ -363,7 +346,6 @@
 </script>
 @endpush
 
-{{-- Trust Slider (business needs): left heading + arrows, right image cards --}}
 <section class="trust_slider_sec mt-100">
     <div class="trust_slider_wrap">
         <div class="trust_slider_lt">
@@ -412,7 +394,6 @@
 <script src="{{ asset('public/front/js/trust-slider.js') }}?v={{ filemtime(public_path('front/js/trust-slider.js')) }}" defer></script>
 @endpush
 
-{{-- Industry Pills --}}
 <section class="industries mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -425,7 +406,6 @@
             @foreach ($industries as $row)
                 <div class="ind_row {{ $loop->odd ? 'ind_row_up' : 'ind_row_down' }}">
                     <div class="ind_track">
-                        {{-- 4 baar: kam cards me bhi track seamless loop ho (-50% translate) --}}
                         @foreach ([1, 2, 3, 4] as $copy)
                             @foreach ($row as [$iconImg, $label])
                                 <div class="industries_card" @if ($copy > 1) aria-hidden="true" @endif>
@@ -441,7 +421,6 @@
     </div>
 </section>
 
-{{-- Region Cards (USA / UK / Australia) --}}
 <section class="trust_slider_sec trust_grid_sec mt-100">
     <div class="container">
         <div class="trust_grid_head">
@@ -467,7 +446,6 @@
     </div>
 </section>
 
-{{-- Process Steps --}}
 <section class="process_sec mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -513,7 +491,6 @@
     </div>
 </section>
 
-{{-- Cta Banner (India home jaisa: com_inner_banners, CSS style.css + responsive.css) --}}
 <section class="mt-100">
     <div class="container">
         <div class="com_inner_banners">
@@ -528,13 +505,11 @@
                             data-bs-toggle="modal" data-bs-target="#exampleModal"
                             data-hover-colors='{{ $bubbleColors }}'>
 
-                            <!-- Bubble effect layers -->
                             <span class="color-button__background"></span>
                             <span class="color-button__bubble-container">
                                 <span class="color-button__bubble"></span>
                             </span>
 
-                            <!-- Label -->
                             <span class="color-button__label relative z-10 me-2">Book a Free Consultation</span>
                         </a>
                     </div>
@@ -544,7 +519,6 @@
     </div>
 </section>
 
-{{-- Overlay Cards (data security) --}}
 <section class="mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -595,7 +569,6 @@
     </div>
 </section>
 
-{{-- Split Accordion (why choose): heading on top, image left + benefits accordion right --}}
 <section class="acc_why mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -625,7 +598,6 @@
     </div>
 </section>
 
-{{-- Cta Banner (India home jaisa: com_inner_banners, CSS style.css + responsive.css) --}}
 <section class="mt-100">
     <div class="container">
         <div class="com_inner_banners">
@@ -640,13 +612,11 @@
                             data-bs-toggle="modal" data-bs-target="#exampleModal"
                             data-hover-colors='{{ $bubbleColors }}'>
 
-                            <!-- Bubble effect layers -->
                             <span class="color-button__background"></span>
                             <span class="color-button__bubble-container">
                                 <span class="color-button__bubble"></span>
                             </span>
 
-                            <!-- Label -->
                             <span class="color-button__label relative z-10 me-2">Discuss Your Outsourcing Requirements</span>
                         </a>
                     </div>
@@ -656,7 +626,10 @@
     </div>
 </section>
 
-{{-- Faq List --}}
+@push('scripts')
+<script src="{{ asset('public/front/js/split-accordion.js') }}?v={{ filemtime(public_path('front/js/split-accordion.js')) }}" defer></script>
+@endpush
+
 <section class="mt-80">
     <div class="container">
         <div class="com_sec_head_top">
@@ -682,7 +655,6 @@
     </div>
 </section>
 
-{{-- FAQ schema (Google rich results) --}}
 <script type="application/ld+json">
 {!! json_encode([
     '@context' => 'https://schema.org',
@@ -695,7 +667,6 @@
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_PRETTY_PRINT) !!}
 </script>
 
-{{-- Contact Form --}}
 @php
     $contactFormServices = ['Accounting Outsourcing', 'Bookkeeping Outsourcing', 'Taxation Outsourcing', 'Payroll Outsourcing', 'Recruitment Outsourcing', 'Strata Management Services'];
 @endphp
@@ -711,7 +682,6 @@
             <input type="hidden" name="form_type" value="India Footer Form">
             <input type="hidden" name="country" id="cfCountry" value="India">
             <input type="hidden" name="full_phone" id="cfFullPhone">
-            {{-- Honeypot (bots ke liye) --}}
             <div style="display:none;">
                 <label>Leave this field empty</label>
                 <input type="text" name="fax_number" autocomplete="off">
@@ -765,7 +735,6 @@
 
 @push('scripts')
 <script>
-// footer form: phone ka country flag (intl-tel-input) + "country" field sync (India home jaisa)
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contactBandForm');
     const phone = document.getElementById('cfPhone');

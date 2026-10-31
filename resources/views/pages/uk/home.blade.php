@@ -1,13 +1,10 @@
-{{-- UK home page (/uk). Controller: CountryHomeController@home (team / logos / blogs DB se: $ourexpert, $images, $blogs).
-     Har section seedha Blade/HTML me likha hai (upar data ka PHP block, neeche markup); CSS: STRUCTURE.md ka section-table dekho.
-     Text / images badalne ho to isi file me badlo. --}}
 @extends('layouts.app', ['header_overlay' => true])
 
 @section('content')
 @php
     $img = fn ($file) => asset('public/front/images/' . $file);
     $uk = fn ($path) => url('uk/' . $path);
-    $consult = url('uk') . '#consultation';   // jin services ka page abhi nahi hai, wo form par jaati hain
+    $consult = url('uk') . '#consultation';
 
     $serviceCards = [
         ['title' => 'Accounting Outsourcing', 'img' => $img('figma-precision/accounting-outsourcing.png'), 'url' => $uk('accounting-outsourcing-services'),
@@ -24,7 +21,6 @@
          'text' => 'We manage VAT from calculation to submission, reconciling amounts against your records and filing under Making Tax Digital (MTD) ahead of the deadline. Every return is reviewed before submission to HMRC, reducing the risk of errors and penalties.'],
     ];
 
-    // Figma me in cards ka text Australia wala tha (AASB / GST / ATO); UK ke hisab se likha gaya hai
     $clientCards = [
         ['title' => 'Outsourcing for UK Accounting Firms', 'img' => $img('uk/client-1-2a4bc9.jpg'),
          'button' => ['Explore Accounting Outsourcing', $uk('accounting-outsourcing-services')],
@@ -74,12 +70,10 @@
          'text' => 'We use secure, monitored systems and encrypted channels for files and communications. Access is tightly restricted, and confidential information is never sent through unsecured routes. '],
     ];
 
-    // core team (Malay, Prithvi, Umesh) config/home.php se aati hai; yahan sirf UK ka member
     $team = [
         ['name' => 'Alisha Manchanda', 'role' => 'Operations - UK', 'image' => $img('common/team/alisha-manchanda.png')],
     ];
 
-    // Figma me sirf pehle sawal ka answer tha (wo bhi Australia wala); answers page ke content se likhe gaye hain
     $faqs = [
         ['q' => 'Why do UK accounting firms outsource accounting work?',
          'a' => 'To increase capacity, manage busy periods such as year-end and self-assessment season, and take on additional clients without recruiting. Outsourcing provides skilled support under the firm\'s own brand, at a lower cost than hiring in-house.'],
@@ -102,7 +96,6 @@
     
 @endphp
 
-{{-- Hero Dark --}}
 @php
     $heroDarkFeatures = ['UK-focused accounting support', 'Experienced accounting professionals', 'UK GAAP & IFRS expertise', 'HMRC-compliant processes'];
 @endphp
@@ -133,7 +126,6 @@
     </div>
 </section>
 
-{{-- Partner Stats --}}
 @php
     $partnerStatsParagraphs = [
         'Selecting an outsourcing partner is not an easy decision, and the right choice becomes a team you can trust without close supervision. This is the standard PCS Global works for every UK business and firm it supports, acting as your UK accounting outsourcing partner rather than a supplier that requires managing.',
@@ -172,7 +164,6 @@
     </div>
 </section>
 
-{{-- Service Cards --}}
 @php
     $serviceCardsCards = $serviceCards;
 @endphp
@@ -183,7 +174,6 @@
             <p>When routine finance tasks take up more of your team's time than they should, outsourcing returns that time to higher-value work.PCS Global provides outsourced finance and accounting services for UK businesses and firms, available as a single service or a complete solution.</p>
         </div>
 
-        {{-- cards 3 ke multiple na hon to aakhri row center me --}}
         <div class="precision_grid {{ count($serviceCardsCards) % 3 ? 'precision_grid_center' : '' }}">
             @foreach ($serviceCardsCards as $card)
                 <div class="precision_card">
@@ -200,7 +190,6 @@
     </div>
 </section>
 
-{{-- Trust Slider --}}
 @php
     $trustSliderSlides = $clientCards;
 @endphp
@@ -285,7 +274,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-{{-- Split Accordion --}}
 @php
     $splitAccordionItems = $standards;
 @endphp
@@ -321,7 +309,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </section>
 
-{{-- Industry Pills --}}
 @php
     $industryPillsRows = $industries;
 @endphp
@@ -337,7 +324,6 @@ document.addEventListener("DOMContentLoaded", () => {
             @foreach ($industryPillsRows as $row)
                 <div class="ind_row {{ $loop->odd ? 'ind_row_up' : 'ind_row_down' }}">
                     <div class="ind_track">
-                        {{-- 2 baar: track seamless loop ho (-50% translate) --}}
                         @foreach ([1, 2] as $copy)
                             @foreach ($row as [$icon, $label])
                                 <div class="industries_card">
@@ -353,21 +339,15 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </section>
 
-{{-- Process Steps --}}
 @php
     $processStepsSteps = config('home.process_steps');
 @endphp
 @php
     $icons = [
-        // discovery (search)
         '<circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4.5-4.5"/>',
-        // tailored team (people)
         '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M18 14.3c2.1.7 3.5 2.6 3.5 5.7"/>',
-        // workflow integration (arrows)
         '<path d="M4 7h14m0 0-3.5-3.5M18 7l-3.5 3.5"/><path d="M20 17H6m0 0 3.5-3.5M6 17l3.5 3.5"/>',
-        // support (headset)
         '<path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M20 19c0 1.7-1.8 3-4 3h-2"/>',
-        // review & scale (growth chart)
         '<path d="M3 20h18"/><path d="m5 16 4-4 3 3 7-7"/><path d="M15 8h4v4"/>',
     ];
 @endphp
@@ -386,7 +366,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         <span class="process_icon">
                             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{!! $icons[$loop->index % count($icons)] !!}</svg>
                         </span>
-                        <!-- <span class="process_step_label">Step {{ sprintf('%02d', $loop->iteration) }}</span> -->
                     </div>
                     <div class="process_body">
                         <h3>{!! $step['title'] !!}</h3>
@@ -419,7 +398,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </section>
 
-{{-- Cert Tools --}}
 @php
     $certToolsCerts = $certs;
 @endphp
@@ -479,7 +457,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-{{-- Overlay Cards --}}
 @php
     $overlayCardsCards = $securityCards;
 @endphp
@@ -533,7 +510,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </section>
 
-{{-- Region Map --}}
 @php
     $regionMapSize = [1189.58, 955.61];
     $regionMapMap = ['src' => $img('uk/map-uk.svg'), 'x' => 0, 'y' => 0, 'w' => 1189.58];
@@ -554,7 +530,6 @@ document.addEventListener("DOMContentLoaded", () => {
     $x = fn ($v) => round($v / $W * 100, 3) . '%';
     $y = fn ($v) => round($v / $H * 100, 3) . '%';
     $regionMapLabel += ['font' => 18, 'py' => 9.5, 'px' => 26.8];
-    // map bahut bada na lage: height ~540px aur width ~860px se zyada nahi
     $maxW = (int) round(min($W, 540 * $W / $H, 860));
     $pin = asset('public/front/images/common/pin.png');
 @endphp
@@ -590,7 +565,6 @@ document.addEventListener("DOMContentLoaded", () => {
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.region_map').forEach(function (map) {
-        // JS na chale to map normal dikhega; JS hone par hi entry animation lagti hai
         map.classList.add('region_map_anim');
         if (!('IntersectionObserver' in window)) { map.classList.add('is-in'); return; }
         const io = new IntersectionObserver(function (entries) {
@@ -603,7 +577,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-{{-- Cta Dark --}}
 <section class="mt-100">
     <div class="container">
         <div class="cta_dark">
@@ -618,7 +591,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-{{-- Team Slider --}}
 @php
     $teamSliderMembers = $team;
     $teamSliderExperts = $ourexpert;
@@ -677,7 +649,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-{{-- Clients Slider --}}
 @php
     $clientsSliderImages = $images;
 @endphp
@@ -696,7 +667,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-{{-- Testimonials --}}
 @php
     $testimonialsItems = config('home.testimonials');
 @endphp
@@ -747,7 +717,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-{{-- Blog Cards --}}
 @php
     $blogCardsBlogs = $blogs;
     $blogCardsDetailRoute = 'blogs.detail';
@@ -773,7 +742,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-{{-- Faq List --}}
 @php
     $faqListItems = $faqs;
 @endphp
@@ -802,7 +770,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-{{-- Contact Form --}}
 @php
     $contactFormCities = ['London', 'Birmingham', 'Manchester', 'Leeds', 'Liverpool', 'Other'];
     $contactFormServices = array_column($serviceCards, 'title');
@@ -819,7 +786,6 @@ document.addEventListener('DOMContentLoaded', function () {
             <input type="hidden" name="form_type" value="UK Footer Form">
             <input type="hidden" name="country" id="cfCountry" value="United Kingdom">
             <input type="hidden" name="full_phone" id="cfFullPhone">
-            {{-- Honeypot (bots ke liye) --}}
             <div style="display:none;">
                 <label>Leave this field empty</label>
                 <input type="text" name="fax_number" autocomplete="off">
@@ -840,17 +806,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     <input type="tel" name="phone" id="cfPhone" maxlength="15" minlength="10" placeholder="Phone Number*:" aria-label="Phone Number"
                         oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,15);">
                 </div>
-                {{-- <div class="col-lg-6 col-12 cf_field">
-                    <input type="text" name="city" maxlength="100" placeholder="Enter your City*:" aria-label="City" required>
-                </div> --}}
-                <!-- <div class="col-lg-6 col-12 cf_field">
-                    <select name="city" aria-label="Select City" required>
-                        <option value="" hidden>Select City*:</option>
-                        {{-- @foreach ($contactFormCities as $city)
-                            <option value="{{ $city }}">{{ $city }}</option>
-                        @endforeach --}}
-                    </select>
-                </div> -->
                 <div class="col-12 cf_field">
                     <select name="service" aria-label="Choose Service" required>
                         <option value="" hidden>Choose Service*:</option>
@@ -881,32 +836,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
-{{-- <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contactBandForm');
-    const phone = document.getElementById('cfPhone');
-    const fullPhone = document.getElementById('cfFullPhone');
-    if (!form || !phone || !window.intlTelInput) return;
-
-    const iti = window.intlTelInput(phone, {
-        initialCountry: @json('gb'),
-        separateDialCode: true,
-        utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js'
-    });
-
-    // native required (company / city / service) ko common validator se pehle check karo
-    form.addEventListener('submit', function (e) {
-        if (!form.checkValidity()) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            form.reportValidity();
-            return;
-        }
-        fullPhone.value = '+' + iti.getSelectedCountryData().dialCode + phone.value.replace(/\s+/g, '');
-    }, true);
-});
-</script> --}}
-
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contactBandForm');
@@ -921,7 +850,6 @@ document.addEventListener('DOMContentLoaded', function () {
         utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/js/utils.js'
     });
 
-    // flag me jo country select ho, wahi "country" field me jaye
     function syncCountry() {
         const d = iti.getSelectedCountryData();
         if (d && d.name && countryInput) {

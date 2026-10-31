@@ -1,9 +1,7 @@
 <?php
 
-// Country home pages ka shared content (sab countries me same). Country-specific cheezein page me hi rehti hain.
 return [
 
-    // Team slider ke pehle members (sab countries). Image: public/front/images/common/team/
     'core_team' => [
         ['name' => 'Malay Dalal FCA', 'role' => 'President/Chairman', 'image' => 'malay-dalal.png'],
         ['name' => 'Prithvi Dodla', 'role' => 'CEO / Managing Director', 'image' => 'prithvi-dodla.png'],
@@ -21,7 +19,6 @@ return [
          'text' => 'They provide prompt, accurate and professional service, relieving us of the burden of keeping up with changing payroll legislation. I value having an expert contact who understands our business and provides tailored advice when needed.'],
     ],
 
-    // Data security slider: Figma ke 3 cards ke baad ye 3 aur (slider chalne ke liye). Image page deta hai.
     'security_extra' => [
         ['title' => 'Certified Security Standards',
          'text' => 'Our practices align with recognised security standards and certifications for protecting, accessing and managing data. This provides independent assurance that your information is handled to a professional benchmark. '],
@@ -29,7 +26,6 @@ return [
          'text' => 'We use secure, monitored systems and encrypted channels for files and communications. Access is tightly restricted, and confidential information is never sent through unsecured routes. ' ],
     ],
 
-    // 'How does PCS Global work' ke 3 steps (Australia, UK)
     'process_steps' => [
         ['title' => 'Discovery',
          'text' => 'Every engagement opens with a discussion. Our priority is to learn how your business runs, which areas are under most pressure, and the responsibilities you would prefer to pass on. With that understanding, we can pinpoint the work to take on and the best way to sit alongside your team.'],

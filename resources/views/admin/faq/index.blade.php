@@ -22,7 +22,6 @@
                     <span id="success-message"></span>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-                {{-- Success Message --}}
                 @if(session('success'))
                     <div class="alert alert-success alert-dismissible fade show" id="success-message" role="alert">
                         {{ session('success') }}
@@ -30,7 +29,7 @@
                     </div>
                 @endif
 
-            </div> <!-- Row end  -->
+            </div>
             <div class="row clearfix g-3">
                 <div class="col-sm-12">
                     <div class="card mb-3">
@@ -49,7 +48,7 @@
                         </div>
                     </div>
                 </div>
-            </div><!-- Row End -->
+            </div>
         </div>
     </div>
 

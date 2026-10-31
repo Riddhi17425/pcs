@@ -1,11 +1,5 @@
 <?php
 
-// Australia home page ka saara content (text, images, links).
-// - Neeche 'return' me sections usi order me hain jaise page par dikhte hain.
-// - 'type' = component: resources/views/components/sections/<type>.blade.php
-// - 'props' = us section ka data. Text badalna ho to yahin badlo.
-// $db: images (Trusted by logos), blogs, ourexpert (team) - admin panel / database se aate hain.
-
 return function (array $db) {
     ['images' => $images, 'blogs' => $blogs, 'ourexpert' => $ourexpert] = $db;
 
@@ -97,7 +91,6 @@ return function (array $db) {
          'text' => 'We use secure, monitored systems and encrypted channels for files and communications. Sensitive information is never transmitted through unprotected means, while access to our systems is tightly controlled. This helps minimise everyday data risks and keeps your information secure.'],
     ];
 
-    // core team (Malay, Prithvi, Umesh) config/home.php se aati hai; yahan sirf Australia ka member
     $team = [
         ['name' => 'Pratik Devmurari', 'role' => 'Operations - Australia', 'image' => $img('common/team/pratik-devmurari.png')],
     ];
