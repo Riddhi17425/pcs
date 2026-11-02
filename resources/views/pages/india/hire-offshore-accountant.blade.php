@@ -151,9 +151,9 @@
 
 
     $roleImages = [
-        'hire-offshore-accountant/hire-offshore-accountant-manager.webp',
         'hire-offshore-accountant/hire-offshore-accounts-payable-clerk.webp',
         'hire-offshore-accountant/hire-offshore-accounts-receivable-clerk.webp',
+        'hire-offshore-accountant/hire-offshore-accountant-manager.webp',
         'hire-offshore-accountant/hire-offshore-tax-accountant.webp',
         'hire-offshore-accountant/hire-offshore-finance-and-accounting-staff.webp',
         'hire-offshore-accountant/hire-offshore-account-representatives.webp',
@@ -278,7 +278,7 @@
             <p>{{ $rolesIntro }}</p>
         </div>
 
-        <div class="precision_grid acc_services_grid {{ count($roles) % 3 ? 'precision_grid_center' : '' }}">
+        <div class="precision_grid acc_services_grid hire_roles_grid {{ count($roles) % 3 ? 'precision_grid_center' : '' }}">
             @foreach ($roles as $i => $card)
                 <div class="precision_card">
                     <div class="precision_card_img">
