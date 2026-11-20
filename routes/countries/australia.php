@@ -11,6 +11,8 @@ Route::middleware('country:australia')->prefix('au')->group(function () {
     Route::get('contact-us', [ContactController::class, 'contact'])->name('australia.contact');
     Route::get('strata-management-services', [ServiceController::class, 'strataManagement'])->name('australia.strata');
     Route::get('accounting-outsourcing-services', [ServiceController::class, 'globalAus'])->name('pcs.global.aus');
+    Route::get('bookkeeping-outsourcing-services', [ServiceController::class, 'bookkeepingAustralian'])->name('australia.bookkeeping');
+    Route::get('payroll-outsourcing-services', [ServiceController::class, 'payrollAustralian'])->name('australia.payroll');
      Route::get('tax-preparation-outsourcing-services', [ServiceController::class, 'taxationaustralian'])->name('taxation.services.australian');
 });
 

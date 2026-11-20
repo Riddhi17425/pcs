@@ -35,6 +35,8 @@ class SitemapController extends Controller
             '/au',
             '/au/about',
             '/au/accounting-outsourcing-services',
+            '/au/bookkeeping-outsourcing-services',
+            '/au/payroll-outsourcing-services',
             '/au/tax-preparation-outsourcing-services',
             '/au/strata-management-services',
             '/au/contact-us',

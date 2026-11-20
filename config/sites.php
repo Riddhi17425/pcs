@@ -67,8 +67,10 @@ return [
         'css' => $countryCss,
         'phone' => ['tel' => '+61399980494', 'label' => '(+613) 9998 0494'],
         'services' => [
-            ['Accounting & Bookkeeping', 'pcs.global.aus'],
-            ['Taxation Services', 'taxation.services.australian'],
+            ['Accounting Outsourcing Services', 'pcs.global.aus'],
+            ['Bookkeeping Outsourcing Services', 'australia.bookkeeping'],
+            ['Tax Preparation Outsourcing Services', 'taxation.services.australian'],
+            ['Payroll Outsourcing Services', 'australia.payroll'],
             ['Strata Property Management', 'australia.strata'],
         ],
         'nav' => [

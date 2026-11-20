@@ -296,12 +296,34 @@ class ServiceController extends Controller
 
     public function globalAus()
     {
-        $faq = Faq::where('status', 'Active')->where('faq_url', 'pcs-global-aus')->first();
-
         $meta_title       = "Accounting & Bookkeeping Services for Australian Businesses";
         $meta_description = "PCS is a leading Australia-based accounting and bookkeeping service provider. Outsource your financial tasks to our expert team and focus on growth.";
 
-        return view('pages.australia.pcs-global-aus', compact('meta_title', 'meta_description', 'faq'));
+        return $this->australiaServicePage('accounting', $meta_title, $meta_description);
+    }
+
+    public function bookkeepingAustralian()
+    {
+        $meta_title       = "Bookkeeping Outsourcing Services in Australia | PCS Global";
+        $meta_description = "PCS Global provides bookkeeping outsourcing services in Australia: GST-coded, BAS-ready bookkeeping in Xero, MYOB or QuickBooks for businesses and accounting firms.";
+
+        return $this->australiaServicePage('bookkeeping', $meta_title, $meta_description);
+    }
+
+    public function payrollAustralian()
+    {
+        $meta_title       = "Payroll Outsourcing Services in Australia | PCS Global";
+        $meta_description = "PCS Global provides payroll outsourcing services in Australia: pay runs, PAYG withholding, superannuation and STP support for businesses and accounting firms.";
+
+        return $this->australiaServicePage('payroll', $meta_title, $meta_description);
+    }
+
+    // Shared view for the Australia service pages; content lives in resources/content/australia/services/<key>.php
+    private function australiaServicePage(string $key, string $meta_title, string $meta_description)
+    {
+        $page = require resource_path("content/australia/services/{$key}.php");
+
+        return view('pages.australia.service-page', compact('page', 'meta_title', 'meta_description'));
     }
 
     public function globalUk()
@@ -335,7 +357,7 @@ class ServiceController extends Controller
         $meta_title       = "Tax Preparation Services for Australian Business";
         $meta_description = "As a trusted Australian Tax Outsourcing partner, PCS Global specialises in corporate tax compliance, GST registration, and international tax structuring.";
 
-        return view('pages.australia.taxation-services-australian', compact('meta_title', 'meta_description'));
+        return $this->australiaServicePage('tax', $meta_title, $meta_description);
     }
 
     public function taxationservicesuk()
