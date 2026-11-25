@@ -6,7 +6,7 @@
 
 return [
     'key' => 'tax',
-    'og' => 'tax-outsourcing/usa-tax-outsourcing.webp',
+    'og' => 'tax-usa/what-are-us-tax-preparation-outsourcing-services.webp',
     'title' => 'Outsource Tax Preparation Services in the USA',
     'titleSpan' => '',
     'heroText' => 'Looking for tax preparation services USA firms can rely on through the busy season? PCS Global prepares individual and business returns, workpapers and supporting schedules in your tax software. Your CPA or EA reviews, signs and files every return, and your firm keeps the client relationship.',
@@ -31,7 +31,7 @@ return [
             'Preparation happens in your firm’s tax software, following your checklists and file conventions. Source documents arrive through your client portal or a secure file-sharing platform.',
             'Signing and e-filing stay with your CPA or EA, under your firm’s EFIN. Your firm also obtains Section 7216 consent from clients before any return information is shared offshore.',
         ],
-        'img' => 'tax-outsourcing/what-are-taxation-outsourcing.webp',
+        'img' => 'tax-usa/what-are-us-tax-preparation-outsourcing-services.webp',
     ],
     'why' => [
         'title' => 'Why USA Companies Choose Tax Outsourcing?',
@@ -41,7 +41,7 @@ return [
             'Outside the busy season, the same team can support fiscal-year clients, extensions and IRS notices. Firms gain one steady preparation partner across the full tax calendar.',
         ],
         'cta' => 'Discuss Your Outsourcing Requirements',
-        'img' => 'tax-outsourcing/why-outsource-tax-india.webp',
+        'img' => 'tax-usa/why-usa-companies-choose-tax-outsourcing.webp',
     ],
     'services' => [
         'title' => 'Our Tax Preparation Services in the USA',
@@ -50,42 +50,42 @@ return [
             [
                 'title' => 'Individual Tax Return Preparation',
                 'text' => 'We prepare Form 1040 returns with the schedules your clients need, including Schedule C for self-employment, Schedule D for capital gains and Schedule E for rental income. W-2s, 1099s and K-1s are entered and tied out, and open items are flagged before handover.',
-                'img' => 'tax-outsourcing/individual-tax-return-preparation.webp',
+                'img' => 'tax-usa/individual-tax-return-preparation.webp',
             ],
             [
                 'title' => 'Business Tax Return Preparation',
                 'text' => 'Partnership, S corporation and C corporation returns are prepared on Forms 1065, 1120-S and 1120. We work from the trial balance, post book-to-tax adjustments and prepare K-1s for owners. Owner-level details, such as basis and distributions, are summarized for your reviewer.',
-                'img' => 'tax-outsourcing/corporate-tax-preparation.webp',
+                'img' => 'tax-usa/business-tax-return-preparation.webp',
             ],
             [
                 'title' => 'Tax Workpaper Preparation',
                 'text' => 'Every return is supported by a workpaper file built to your firm’s format. Lead schedules tie to the trial balance, depreciation schedules are rolled forward, and each adjustment carries a short explanation. Reviewers can see exactly how every figure on the return was reached.',
-                'img' => 'tax-australia/tax-working-papers-and-supporting-schedules.webp',
+                'img' => 'tax-usa/tax-workpaper-preparation.webp',
             ],
             [
                 'title' => 'Tax Data Entry & Document Processing',
                 'text' => 'Client documents are sorted, indexed and entered into your tax software, including W-2s, 1099s, K-1s, brokerage statements and organizers. Outstanding documents are listed for your team to request. Preparation then starts with a complete, well-organized set of source records for each client.',
-                'img' => 'tax-australia/tax-documentation-and-file-preparation.webp',
+                'img' => 'tax-usa/tax-data-entry-and-document-processing.webp',
             ],
             [
                 'title' => 'Tax Return Review Support',
                 'text' => 'Our first-level review checks each return against your firm’s checklist before it reaches you. We compare figures with the prior year, confirm carryovers and verify data entry against source documents. Your CPA or EA then completes the final review and signs the return.',
-                'img' => 'tax-australia/tax-reconciliation-and-review-support.webp',
+                'img' => 'tax-usa/tax-return-review-support.webp',
             ],
             [
                 'title' => 'Tax Extensions & Deadline Management',
                 'text' => 'We prepare draft extensions on Form 4868 for individuals and Form 7004 for businesses, along with state extension requests where needed. A deadline tracker shows each client’s due dates and status. Your firm reviews and files every extension through its own systems.',
-                'img' => 'tax-outsourcing/tax-return-outsourcing.webp',
+                'img' => 'tax-usa/tax-extensions-and-deadline-management.webp',
             ],
             [
                 'title' => 'IRS Notices & Amendments Support',
                 'text' => 'When a client receives an IRS notice, we compare it with the filed return and prepare a summary with supporting schedules. Draft amended returns on Form 1040-X or Form 1120-X are prepared where needed. Your firm handles every response and all client representation.',
-                'img' => 'tax-australia/catch-up-and-backlog-tax-preparation-support.webp',
+                'img' => 'tax-usa/irs-notices-and-amendments-support.webp',
             ],
             [
                 'title' => 'Federal & State Tax Compliance',
                 'text' => 'Federal returns are prepared alongside the state returns each client needs. For multi-state filers, we prepare apportionment and allocation workpapers and nonresident returns. State rules vary, so your reviewer confirms filing positions before the returns are signed and filed.',
-                'img' => 'tax-outsourcing/tax-compliance-outsourcing.webp',
+                'img' => 'tax-usa/federal-and-state-tax-compliance.webp',
             ],
         ],
     ],
@@ -93,7 +93,7 @@ return [
         'title' => 'Tax Outsourcing Services for CPA & Tax Firms',
         'intro' => 'US CPA firms, tax practices and enrolled agents use our team to prepare returns in their own software and to their own standards. Each firm obtains Section 7216 consent from clients before return information is shared with our offshore team.',
         'cta' => 'Request a Consultation',
-        'img' => 'tax-outsourcing/tax-support-cpa-firms.webp',
+        'img' => 'tax-usa/tax-outsourcing-services-for-cpa-and-tax-firms.webp',
         'items' => [
             [
                 'title' => 'CPA & Accounting Firms',
@@ -117,27 +117,27 @@ return [
             [
                 'title' => 'Small Businesses',
                 'text' => 'We help small businesses manage tax documents, organize financial records, and prepare tax returns. Our outsourcing support reduces internal workloads while keeping tax preparation processes organized.',
-                'img' => 'tax-outsourcing/tax-small-medium-businesses.webp',
+                'img' => 'tax-usa/small-businesses.webp',
             ],
             [
                 'title' => 'Startups',
                 'text' => 'Our tax preparation support helps startups manage financial documents, organize tax records, and prepare supporting workpapers. This allows founders to focus on business growth while keeping their tax records in order.',
-                'img' => 'tax-outsourcing/tax-growing-businesses.webp',
+                'img' => 'tax-usa/startup.webp',
             ],
             [
                 'title' => 'E-commerce Businesses',
                 'text' => 'We support e-commerce businesses with transaction data processing, sales records, expense documentation, and tax workpaper preparation. Our services help manage financial data across multiple sales channels and payment platforms.',
-                'img' => 'tax-outsourcing/sales-tax-outsourcing.webp',
+                'img' => 'tax-usa/e-commerce-businesses.webp',
             ],
             [
                 'title' => 'Professional Services Firms',
                 'text' => 'We provide tax preparation support to consultancies, agencies, IT companies, and other professional service providers. Our team assists with tax data entry, document organization, workpaper preparation, and return processing.',
-                'img' => 'tax-australia/professional-services-businesses.webp',
+                'img' => 'tax-usa/professional-services-firms.webp',
             ],
             [
                 'title' => 'Growing & Mid-Sized Businesses',
                 'text' => 'We help growing businesses manage increasing tax preparation workloads without expanding their in-house teams. Our support includes tax data processing, reconciliation, workpaper preparation, and federal and state tax return assistance.',
-                'img' => 'tax-outsourcing/tax-enterprises.webp',
+                'img' => 'tax-usa/growing-and-mid-sized-businesses.webp',
             ],
         ],
     ],
@@ -190,39 +190,39 @@ return [
             [
                 'title' => 'Data Confidentiality',
                 'text' => 'An NDA is signed before any taxpayer data reaches us. Return information is used solely for preparation work your firm has approved. Confidentiality obligations continue after an engagement ends, and records are handled under our written data policies.',
-                'img' => 'tax-outsourcing/consent-confidentiality.webp',
+                'img' => 'tax-usa/data-confidentiality.webp',
             ],
             [
                 'title' => 'Access Controls',
                 'text' => 'Preparers work on the client files assigned to them, using multi-factor authentication and approved IP addresses. Your firm controls access to its tax software and client portals. Permissions are reviewed and updated whenever team assignments change during the season.',
-                'img' => 'tax-outsourcing/controlled-access.webp',
+                'img' => 'tax-usa/access-controls.webp',
             ],
             [
                 'title' => 'Secure Communication',
                 'text' => 'Organizers, source documents and draft returns are exchanged through your client portal or an approved secure platform. Data moves over TLS 1.3 and is stored with AES-256 encryption. Each upload and download is logged against the client file.',
-                'img' => 'tax-outsourcing/secure-file-transfer.webp',
+                'img' => 'tax-usa/secure-communication.webp',
             ],
             [
                 'title' => 'Quality Assurance',
                 'text' => 'Each return follows a written checklist under our ISO 9001-certified quality management system. Checklists are tailored to each return type, from Schedule C filers to multi-state corporations. Quality findings feed back into training, keeping standards consistent across the team.',
-                'img' => 'tax-outsourcing/return-quality-checks.webp',
+                'img' => 'tax-usa/quality-assurance.webp',
             ],
             [
                 'title' => 'Review Processes',
                 'text' => 'Each return carries a preparer and reviewer sign-off trail inside the workpaper file. Changes made after review are logged with a short note. Your firm can see who worked on every return and when each step was completed.',
-                'img' => 'tax-australia/tax-reconciliation-and-review-support.webp',
+                'img' => 'tax-usa/review-processes.webp',
             ],
             [
                 'title' => 'Client Data Handling',
                 'text' => 'Social Security numbers and ITINs are masked wherever possible. Our information security is ISO 27001 certified. E-filing credentials, EFINs and IRS e-Services access remain with your firm, and taxpayer records stay inside your approved systems.',
-                'img' => 'tax-outsourcing/protected-systems-backups.webp',
+                'img' => 'tax-usa/client-data-handling.webp',
             ],
         ],
     ],
     'whyChoose' => [
         'title' => 'Why Choose PCS Global for Tax Preparation Outsourcing in the USA?',
         'intro' => 'CPA firms and tax practices choose PCS Global for preparers who understand US returns, work in their systems and respect the line between preparation and signing.',
-        'img' => 'uk-services/why-choose-pcs-global.webp',
+        'img' => 'usa-services/why-choose-pcs-global.webp',
         'items' => [
             [
                 'title' => 'Experienced US Tax Preparers',

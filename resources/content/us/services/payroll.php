@@ -6,7 +6,7 @@
 
 return [
     'key' => 'payroll',
-    'og' => 'payroll-outsourcing/usa-payroll-outsourcing.webp',
+    'og' => 'payroll-usa/what-are-us-payroll-outsourcing-services.webp',
     'title' => 'Payroll Outsourcing Services USA',
     'titleSpan' => '',
     'heroText' => 'One needs trained payroll staff, a fixed pay calendar and a clear understanding of federal and state rules to pay employees correctly on every pay date. At PCS Global, we provide payroll outsourcing services USA businesses and CPA firms use for their regular pay cycles, and our capability ranges from payroll processing and employee data upkeep to reconciliations and payroll reports. We work in your payroll platform, and every payroll is approved by you before employees are paid.',
@@ -32,7 +32,7 @@ return [
             'All the controls rest with you as the employer. Your team approves the payroll and releases net pay and direct deposits, and the payroll tax deposits and filings are made by you or your payroll provider under your authority. What we do is prepare, check and reconcile the numbers before they come to you.',
             'Most clients test the waters with one part of the process first, typically payroll reconciliation or year-end support. After a few pay cycles, when the numbers are consistently tying out, most clients move the complete pay cycle to us.',
         ],
-        'img' => 'payroll-outsourcing/what-are-payroll-outsourcing.webp',
+        'img' => 'payroll-usa/what-are-us-payroll-outsourcing-services.webp',
     ],
     'why' => [
         'title' => 'Why USA Companies Choose Payroll Outsourcing?',
@@ -42,7 +42,7 @@ return [
             'When payroll preparation is handled by an outside team, HR managers and owners get more time for hiring, people management and running the business. Every pay run comes with reports that show where payroll costs are going, and the general ledger stays in agreement with payroll each month.',
         ],
         'cta' => 'Discuss Your Outsourcing Requirements',
-        'img' => 'payroll-outsourcing/why-outsource-payroll-india.webp',
+        'img' => 'payroll-usa/why-usa-companies-choose-payroll-outsourcing.webp',
     ],
     'services' => [
         'title' => 'Our Payroll Outsourcing Services in the USA',
@@ -51,42 +51,42 @@ return [
             [
                 'title' => 'Complete Payroll Processing',
                 'text' => 'We handle the full pay cycle, starting from the collection of approved hours, salary changes, bonuses and commissions all the way to the payroll being ready for your approval. Weekly, biweekly, semimonthly and monthly payrolls can run side by side on one calendar. Once you approve, net pay and direct deposits are released by your team or payroll provider.',
-                'img' => 'payroll-australia/payroll-processing-outsourcing.webp',
+                'img' => 'payroll-usa/complete-payroll-processing.webp',
             ],
             [
                 'title' => 'Employee Payroll Data Management',
                 'text' => 'Employee master data needs regular upkeep. We set up new hires from their Form W-4 and state withholding forms, update pay rates, addresses and bank details as instructed, and process terminations along with final pay as per your approval. Every change is made against a written instruction from your authorized contact.',
-                'img' => 'payroll-australia/payroll-administration-outsourcing.webp',
+                'img' => 'payroll-usa/employee-payroll-data-management.webp',
             ],
             [
                 'title' => 'Payroll Calculations & Deductions',
                 'text' => 'Gross-to-net pay is worked out for each employee, and this covers federal income tax withholding, Social Security and Medicare, along with state and local taxes in the places where they apply. Deductions for 401(k), Section 125 benefits, HSA contributions and wage garnishments are applied as per the instructions you approve, and overtime follows the rules confirmed by you.',
-                'img' => 'payroll-outsourcing/gross-to-net-salary.webp',
+                'img' => 'payroll-usa/payroll-calculations-and-deductions.webp',
             ],
             [
                 'title' => 'Payroll Reconciliation',
                 'text' => 'After each pay run, payroll totals are reconciled with the bank account, the general ledger and the payroll tax liability accounts. Any difference is investigated and explained in a short note. Payroll journals can be posted to your accounting system as well. See our [[link:pcs.global.usa|accounting outsourcing services]].',
-                'img' => 'payroll-australia/payroll-reconciliation-services.webp',
+                'img' => 'payroll-usa/payroll-reconciliation.webp',
             ],
             [
                 'title' => 'Payroll Reporting',
                 'text' => 'Each payroll is followed by a payroll register, a summary of employer taxes and a cost report split by department, location or entity. Reports for workers’ compensation, 401(k) contributions and paid time off balances are also prepared on request. All reports follow the format agreed during onboarding.',
-                'img' => 'payroll-australia/payroll-reporting-and-management-reports.webp',
+                'img' => 'payroll-usa/payroll-reporting.webp',
             ],
             [
                 'title' => 'Payroll Tax Support',
                 'text' => 'We prepare and reconcile the workings for quarterly Form 941, annual Form 940, state withholding returns and state unemployment insurance reports. Tax deposit amounts are calculated for each pay date, and notices received from agencies are reviewed against payroll records. Deposits and filings are made by you or your payroll provider under your authority.',
-                'img' => 'payroll-australia/payg-withholding-support.webp',
+                'img' => 'payroll-usa/payroll-tax-support.webp',
             ],
             [
                 'title' => 'Year-End Payroll Support',
                 'text' => 'Year-end is when payroll records come under the most scrutiny. We reconcile annual wages and withholding to the quarterly returns, review employee details and prepare W-2 and W-3 data for your review. Payments to independent contractors are reconciled for Form 1099-NEC, and the forms are filed by you or your provider.',
-                'img' => 'payroll-outsourcing/payroll-reports-reconciliation.webp',
+                'img' => 'payroll-usa/year-end-payroll-support.webp',
             ],
             [
                 'title' => 'Payroll Setup & Transition Support',
                 'text' => 'When you move to a new payroll platform or change providers, we help set up employees, pay types, deductions and tax details in the new system. Year-to-date balances are loaded and checked, and a test payroll is compared with your previous results before going live, so the switch is smooth for employees.',
-                'img' => 'payroll-australia/employee-onboarding-and-offboarding-payroll-support.webp',
+                'img' => 'payroll-usa/payroll-setup-and-transition-support.webp',
             ],
         ],
     ],
@@ -94,7 +94,7 @@ return [
         'title' => 'Payroll Outsourcing for US Accounting & Recruiting Firms',
         'intro' => 'Most accounting firms and staffing agencies reach out to us when payroll volumes grow quickly, or when year-end W-2 work starts building up alongside other client deadlines. We work inside the payroll platforms you and your clients use, follow your procedures, and every payroll goes back to your team for approval.',
         'cta' => 'Request a Consultation',
-        'img' => 'payroll-outsourcing/payroll-for-accounting-cpa-firms.webp',
+        'img' => 'payroll-usa/payroll-outsourcing-for-us-accounting-and-recruiting-firms.webp',
         'items' => [
             [
                 'title' => 'CPA & Accounting Firms',
@@ -126,22 +126,22 @@ return [
             [
                 'title' => 'Payroll Outsourcing for Small Businesses',
                 'text' => 'Even with a handful of employees, every payroll involves federal withholding, FICA, state taxes and benefit deductions. We prepare and reconcile each payroll for the owner, who then reviews and approves it. Payroll reports for each pay run are shared with you in a simple format.',
-                'img' => 'payroll-outsourcing/payroll-small-medium-businesses.webp',
+                'img' => 'payroll-usa/payroll-outsourcing-for-small-businesses.webp',
             ],
             [
                 'title' => 'Payroll Outsourcing for Startups',
                 'text' => 'In a startup, headcount, pay structures and benefits tend to change quickly, at times every few months. We set up payroll in a way that lets it scale with the company, take care of new hires and remote employees in different states, and every month share a payroll cost report that founders use for planning hiring and cash.',
-                'img' => 'payroll-outsourcing/payroll-growing-businesses.webp',
+                'img' => 'payroll-usa/payroll-outsourcing-for-startups.webp',
             ],
             [
                 'title' => 'Payroll Outsourcing for Mid-Sized Businesses',
                 'text' => 'A mid-sized business typically runs several departments, pay groups and benefit plans through one payroll. We manage the volume, see that cost centers are coded correctly and reconcile payroll with the general ledger each month. As a result, the finance team has payroll numbers it can rely on for budgeting and reporting.',
-                'img' => 'payroll-outsourcing/payroll-large-enterprises.webp',
+                'img' => 'payroll-usa/payroll-outsourcing-for-mid-sized-businesses.webp',
             ],
             [
                 'title' => 'Payroll Outsourcing for Multi-State & Multi-Location Businesses',
                 'text' => 'Employees in different states bring different withholding rules, unemployment insurance rates and, in some places, local taxes. We keep each state’s setup current in your payroll platform and report payroll costs by location, while state registrations and filings remain with you or your provider.',
-                'img' => 'payroll-outsourcing/payroll-multi-location-businesses.webp',
+                'img' => 'payroll-usa/multi-state-and-multi-location-businesses.webp',
             ],
         ],
     ],
@@ -195,17 +195,17 @@ return [
             [
                 'title' => 'Confidential Employee Data Handling',
                 'text' => 'Employee information is used solely for payroll processing. Pay rates, benefits and personal details are shared only with the payroll team handling your account. External data requests require approval from your authorized contact.',
-                'img' => 'payroll-outsourcing/salary-data-confidentiality.webp',
+                'img' => 'payroll-usa/confidential-employee-data-handling.webp',
             ],
             [
                 'title' => 'Controlled System Access',
                 'text' => 'Your payroll platform, bank and EFTPS credentials remain with your business. Our specialists use individual accounts with access levels set by you. Direct deposit release and payment authorization always remain under your teams control.',
-                'img' => 'payroll-outsourcing/credentials-stay-with-you.webp',
+                'img' => 'payroll-usa/controlled-system-access.webp',
             ],
             [
                 'title' => 'Role-Based Access',
                 'text' => 'Access is assigned according to each specialists role and responsibilities. Multi-factor authentication is required at every login, administrative access is IP-restricted, and permissions are reviewed whenever team assignments change.',
-                'img' => 'payroll-outsourcing/approved-changes-only.webp',
+                'img' => 'payroll-usa/role-based-access.webp',
             ],
             [
                 'title' => 'Secure Document Exchange',
@@ -220,24 +220,24 @@ return [
             [
                 'title' => 'SSN & Direct Deposit Protection',
                 'text' => 'Social Security numbers and bank account details remain masked wherever the payroll platform allows. Changes to direct deposit information are made only after confirmation from your authorized contact, adding another layer of verification.',
-                'img' => 'payroll-outsourcing/employee-data-payroll-records.webp',
+                'img' => 'payroll-usa/ssn-and-direct-deposit-protection.webp',
             ],
             [
                 'title' => 'Secure Payroll Records',
                 'text' => 'Payroll history is stored in encrypted systems, with immutable backups replicated off-site. Documented payroll procedures allow a trained colleague to step in during absences, keeping payroll processing on schedule and pay dates unchanged.',
-                'img' => 'payroll-outsourcing/certified-security-processes.webp',
+                'img' => 'payroll-usa/secure-payroll-records.webp',
             ],
             [
                 'title' => 'Access Monitoring',
                 'text' => 'Logins and file activity are regularly logged and reviewed. Monthly vulnerability scans, quarterly penetration tests and escalation procedures for unusual activity support information security under our ISO 27001 framework.',
-                'img' => 'payroll-outsourcing/payment-release-control.webp',
+                'img' => 'payroll-usa/access-monitoring.webp',
             ],
         ],
     ],
     'whyChoose' => [
         'title' => 'Why Choose PCS Global as Your Payroll Outsourcing Company in the USA?',
         'intro' => 'When businesses evaluate payroll partners, they usually look at payroll experience, data security, review processes and how well the team adapts to their setup. To date, our team has supported 60+ clients across 800+ projects, and together brings over 100 years of experience in accounting and payroll work.',
-        'img' => 'uk-services/why-choose-pcs-global.webp',
+        'img' => 'usa-services/why-choose-pcs-global.webp',
         'items' => [
             [
                 'title' => 'Experienced Payroll Professionals',

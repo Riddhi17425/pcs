@@ -6,7 +6,7 @@
 
 return [
     'key' => 'accounting',
-    'og' => 'accounting-outsourcing/what-are-outsourcing-accounting.webp',
+    'og' => 'accounting-usa/what-are-us-accounting-outsourcing-services.webp',
     'title' => 'Accounting Outsourcing Services in the USA',
     'titleSpan' => '',
     'heroText' => 'PCS Global offers accounting outsourcing services in the USA to CPA firms, small businesses and companies in growth mode. Our accountants are based in India, log in to your accounting software and take care of payables, receivables, reconciliations and the month-end close. A second accountant checks each file before it comes back to you.',
@@ -31,7 +31,7 @@ return [
             'Most of the accounting outsourcing services USA companies use run inside their existing software. QuickBooks, Xero and NetSuite are common. The team works to your close calendar and your report formats.',
             'Approvals and judgment calls stay with your leadership team or CPA firm. What comes back from us is reviewed work, delivered on the dates you set.',
         ],
-        'img' => 'accounting-outsourcing/what-are-outsourcing-accounting.webp',
+        'img' => 'accounting-usa/what-are-us-accounting-outsourcing-services.webp',
     ],
     'why' => [
         'title' => 'Why USA Companies Choose Accounting Outsourcing?',
@@ -41,7 +41,7 @@ return [
             'Owners, CFOs and partners gain time for planning, advice and client meetings. Monthly reporting gives leadership a reliable view of performance, and your financial data supports confident decisions.',
         ],
         'cta' => 'Discuss Your Outsourcing Requirements',
-        'img' => 'accounting-outsourcing/why-outsource-accounting-india.webp',
+        'img' => 'accounting-usa/why-usa-companies-choose-accounting-outsourcing.webp',
     ],
     'services' => [
         'title' => 'Our Accounting Outsourcing Services in the USA',
@@ -50,32 +50,32 @@ return [
             [
                 'title' => 'Accounts Payable Outsourcing',
                 'text' => 'Our accounts payable outsourcing services for US businesses start when a vendor bill arrives. We match it to the PO, code it to the right GL account and send it to your approver. Payment batches and Form 1099-NEC vendor details are kept ready.',
-                'img' => 'accounting-australia/accounts-payable-outsourcing.webp',
+                'img' => 'accounting-usa/accounts-payable-outsourcing.webp',
             ],
             [
                 'title' => 'Accounts Receivable Outsourcing',
                 'text' => 'With accounts receivable outsourcing USA companies pass invoicing, cash application and aging to our team. Each payment, including partial payments, is applied to its invoice. Each week, you get a short note on what is owed and when to expect it.',
-                'img' => 'accounting-australia/accounts-receivable-outsourcing.webp',
+                'img' => 'accounting-usa/accounts-receivable-outsourcing.webp',
             ],
             [
                 'title' => 'Bank Reconciliations',
                 'text' => 'Every bank, credit card and loan account is reconciled to its statement each month. Stripe, PayPal and Square balances are cleared to the bank as well. Any reconciling item gets a note, so your controller can review the close quickly.',
-                'img' => 'accounting-australia/account-reconciliation-services.webp',
+                'img' => 'accounting-usa/bank-reconciliations.webp',
             ],
             [
                 'title' => 'Financial Reporting & Month-End Close',
                 'text' => 'We close your books to a calendar we agree up front. That covers accruals, prepaids and balance sheet reconciliations. You then receive US GAAP statements (P&L, balance sheet and cash flow) with a short note on the main movements.',
-                'img' => 'accounting-australia/financial-reporting-and-management-accounting.webp',
+                'img' => 'accounting-usa/financial-reporting-and-month-end-close.webp',
             ],
             [
                 'title' => 'Payroll Processing and Compliance Support',
                 'text' => 'We prepare payroll data and check gross-to-net figures, including federal withholding, FICA and state withholding where applicable, before approval. The payroll journal is then posted and reconciled to the bank. Your provider files using our Form 941, 940 and W-2 workings.',
-                'img' => 'payroll-outsourcing/gross-to-net-salary.webp',
+                'img' => 'accounting-usa/payroll-processing-and-compliance-support.webp',
             ],
             [
                 'title' => 'Tax Accounting & Tax Preparation Support',
                 'text' => 'Our team prepares tax workpapers, book-to-tax adjustments and draft federal and state returns, including Forms 1120, 1120-S and 1065. Your CPA or EA reviews, signs and files them. Firms collect Section 7216 consent before any work goes offshore.',
-                'img' => 'tax-outsourcing/tax-compliance-outsourcing.webp',
+                'img' => 'accounting-usa/tax-accounting-and-tax-preparation-support.webp',
             ],
         ],
     ],
@@ -83,7 +83,7 @@ return [
         'title' => 'Accounting Outsourcing for US Accounting & CPA Firms',
         'intro' => 'CPA firms across the United States use PCS Global to extend their accounting professional services with dedicated offshore capacity. We work in your clients’ files, follow your procedures and return every engagement for partner or manager review.',
         'cta' => 'Request a Consultation',
-        'img' => 'accounting-australia/accounting-outsourcing-for-australian-accounting-firms.webp',
+        'img' => 'accounting-usa/accounting-outsourcing-for-us-accounting-and-cpa-firms.webp',
         'items' => [
             [
                 'title' => 'White Label Accounting for Your Clients',
@@ -115,27 +115,27 @@ return [
             [
                 'title' => 'Small Businesses',
                 'text' => 'For small businesses, we handle the monthly accounting end to end: AP, AR, reconciliations and financial statements. The books close on the same date each month. Owners get simple reports for their bank, CPA and leadership. See our small business accounting services.',
-                'img' => 'accounting-australia/small-and-medium-sized-businesses.webp',
+                'img' => 'accounting-usa/small-and-medium-sized-businesses.webp',
             ],
             [
                 'title' => 'Startups',
                 'text' => 'Startups get organized, investor-friendly financials from the first close. We set up a chart of accounts that can grow, track burn and runway, and prepare a board package each month. New rounds and hires are built into the books as they happen.',
-                'img' => 'accounting-australia/growing-businesses.webp',
+                'img' => 'accounting-usa/startups.webp',
             ],
             [
                 'title' => 'E-commerce Businesses',
                 'text' => 'We incorporate payments from Shopify, Amazon, and other marketplaces in the bank and account for fees, chargebacks, and refunds when running an online business. We monitor sales tax and state taxes to ensure accurate monthly filings.',
-                'img' => 'bookkeeping-australia/high-volume-e-commerce-businesses.webp',
+                'img' => 'accounting-usa/e-commerce-businesses.webp',
             ],
             [
                 'title' => 'Professional Services Firms',
                 'text' => 'Professional services firms involved in law, consulting, engineering, and agency require project-based accounting. We monitor billable hours, WIP, and retainers and create documentation of the partners\' draws, distributions, and expense allocations. Monthly reports show profits by client, project, and service line.',
-                'img' => 'accounting-australia/professional-services-businesses.webp',
+                'img' => 'accounting-usa/professional-services-firms.webp',
             ],
             [
                 'title' => 'Growing & Mid-Sized Businesses',
                 'text' => 'As companies grow, the work shifts toward controller-level tasks: multi-entity consolidations, intercompany reconciliations and a written close checklist. Leadership sees results by department every month. Your own finance team has more room for analysis, planning and strategic projects.',
-                'img' => 'accounting-australia/businesses-with-complex-accounting-workflows.webp',
+                'img' => 'accounting-usa/growing-and-mid-sized-businesses.webp',
             ],
         ],
     ],
@@ -204,7 +204,7 @@ return [
             [
                 'title' => 'SSN & Tax Data Protection',
                 'text' => 'Wherever we can, Social Security numbers and taxpayer details are masked, and access is limited to the people working on the file. For tax work, your firm confirms Section 7216 consent first. Sensitive records remain inside the systems you approve.',
-                'img' => 'tax-outsourcing/consent-confidentiality.webp',
+                'img' => 'accounting-usa/ssn-and-tax-data-protection.webp',
             ],
             [
                 'title' => 'ISO 27001 & ISO 9001 Certification',
@@ -221,7 +221,7 @@ return [
     'whyChoose' => [
         'title' => 'Why Choose PCS Global as Your Accounting Service Provider in the USA?',
         'intro' => 'US businesses and CPA firms work with PCS Global for trained accountants, secure processes and dependable delivery. These are the strengths behind every engagement.',
-        'img' => 'uk-services/why-choose-pcs-global.webp',
+        'img' => 'usa-services/why-choose-pcs-global.webp',
         'items' => [
             [
                 'title' => 'US GAAP-Trained Accountants',

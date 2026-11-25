@@ -6,7 +6,7 @@
 
 return [
     'key' => 'bookkeeping',
-    'og' => 'bookkeeping-outsourcing/outsourced-bookkeeping-services-for-usa.webp',
+    'og' => 'bookkeeping-usa/what-are-outsourced-bookkeeping-services.webp',
     'title' => 'Outsourced Bookkeeping Services in the USA',
     'titleSpan' => '',
     'heroText' => 'Keeping a business’s books in order on a regular basis takes trained people, a fixed routine and accounting software that is set up properly. At PCS Global, we provide outsourced bookkeeping services in the USA to small businesses, growing companies and CPA firms, where our team takes care of recording transactions, bank reconciliations and month-end bookkeeping. We map our work to your chart of accounts and coding rules and work inside QuickBooks, Xero or whichever platform your business is already on.',
@@ -31,7 +31,7 @@ return [
             'The virtual bookkeeping services USA businesses use today are delivered fully remote. Our bookkeepers log in to your accounting software, and receipts, bills and statements are shared with us through secure apps or your document portal. Approving payments and deciding credit terms remains with your team at all times.',
             'In most cases, a client begins with something small, like bank reconciliations or bill entry. Once the process settles down and they are happy with the output, the engagement is usually extended to full monthly bookkeeping and closing. Where you need adjustments, analysis or US GAAP reporting on top of the books, that is handled by our [[link:pcs.global.usa|accounting outsourcing services]].',
         ],
-        'img' => 'bookkeeping-outsourcing/what-are-outsourcing-bookkeeping-services.webp',
+        'img' => 'bookkeeping-usa/what-are-outsourced-bookkeeping-services.webp',
     ],
     'why' => [
         'title' => 'Why USA Companies Choose Bookkeeping Outsourcing?',
@@ -41,7 +41,7 @@ return [
             'For owners and office managers, this means more of the week goes into customers, sales and operations. Every month you get reports that show how cash and profit are moving, and when year-end comes around, your CPA receives books that are already reconciled and ready for tax work.',
         ],
         'cta' => 'Discuss Your Outsourcing Requirements',
-        'img' => 'bookkeeping-outsourcing/why-global-companies-outsource-bookkeeping-services-from-india.webp',
+        'img' => 'bookkeeping-usa/why-usa-companies-choose-bookkeeping-outsourcing.webp',
     ],
     'services' => [
         'title' => 'Our Outsourced Bookkeeping Services in the USA',
@@ -50,33 +50,33 @@ return [
             [
                 'title' => 'General Bookkeeping & Transaction Recording',
                 'text' => 'Depending on how many transactions you have, we record sales, expenses, deposits and transfers either daily or weekly. Bank and credit card feeds are categorized as per your chart of accounts, and for regular items like rent or software subscriptions, we set up bank rules. Every entry is backed by its receipt or document.',
-                'img' => 'bookkeeping-outsourcing/general-bookkeeping-and-transaction-recording.webp',
+                'img' => 'bookkeeping-usa/general-bookkeeping-and-transaction-recording.webp',
             ],
             [
                 'title' => 'Accounts Payable Bookkeeping',
                 'text' => 'Our AP bookkeeping begins from the time a vendor bill is received. The bill is entered, coded to the correct expense account and later matched with the payment once it clears the bank. We also collect Form W-9 details when a new vendor is added and keep track of 1099-reportable payments during the year, which helps your CPA at year-end.',
-                'img' => 'bookkeeping-outsourcing/accounts-payable-bookkeeping.webp',
+                'img' => 'bookkeeping-usa/accounts-payable-bookkeeping.webp',
             ],
             [
                 'title' => 'Accounts Receivable Bookkeeping',
                 'text' => 'Cash flow depends a lot on invoices going out on time and payments being recorded correctly. We enter customer invoices and deposits as they happen and apply every payment to its open invoice, partial payments and credit memos included. Customer balance reports can be pulled whenever you need them, while follow-up and credit decisions stay with your team.',
-                'img' => 'bookkeeping-outsourcing/accounts-receivable-bookkeeping.webp',
+                'img' => 'bookkeeping-usa/accounts-receivable-bookkeeping.webp',
             ],
             [
                 'title' => 'Bank & Credit Card Reconciliation',
                 'text' => 'All bank, credit card and merchant accounts are reconciled to the monthly statement, line by line. Any uncleared checks, deposits in transit or transfers between accounts are listed in a reconciliation schedule, so your book balance agrees with the bank and your CPA has a reliable number to start from.',
-                'img' => 'bookkeeping-outsourcing/bank-and-credit-card-reconciliation.webp',
+                'img' => 'bookkeeping-usa/bank-and-credit-card-reconciliation.webp',
             ],
             
             [
                 'title' => 'Financial Statements & Bookkeeping Reports',
                 'text' => 'A profit and loss statement, balance sheet and AR and AP aging reports are prepared every month straight from your books, in the format you prefer. Along with them, we add a short note on the main movements for the month. US GAAP financial statements and detailed analysis are part of our [[link:pcs.global.usa|accounting outsourcing services]].',
-                'img' => 'bookkeeping-outsourcing/financial-statement-preparation.webp',
+                'img' => 'bookkeeping-usa/financial-statements-and-bookkeeping-reports.webp',
             ],
             [
                 'title' => 'Month-End Bookkeeping & Closing',
                 'text' => 'Month-end closing is done against a checklist that we agree with you during onboarding. Accounts are reconciled, transactions categorized and any open items sent to you, after which the period is closed and locked in your software. At year-end, your CPA gets tax-ready books along with all supporting documents.',
-                'img' => 'bookkeeping-outsourcing/month-end-bookkeeping-and-closing.webp',
+                'img' => 'bookkeeping-usa/month-end-bookkeeping-and-closing.webp',
             ],
         ],
     ],
@@ -84,7 +84,7 @@ return [
         'title' => 'Bookkeeping Outsourcing for US Accounting & CPA Firms',
         'intro' => 'Most CPA firms get in touch with us either just before busy season or when client write-up work starts growing faster than their own team. As one of the outsourced bookkeeping firms that CPA practices partner with, we operate in your clients’ files and your practice tools, follow your procedures and send every file back to you for review.',
         'cta' => 'Request a Consultation',
-        'img' => 'bookkeeping-outsourcing/bookkeeping-solutions-for-global-accounting-and-cpa-firms.webp',
+        'img' => 'bookkeeping-usa/bookkeeping-outsourcing-for-us-accounting-and-cpa-firms.webp',
         'items' => [
             [
                 'title' => 'White Label Bookkeeping Services',
@@ -116,22 +116,22 @@ return [
             [
                 'title' => 'Outsourced Bookkeeping for Small Businesses',
                 'text' => 'A small business might run with a lean team, yet it still needs its books in order, sales tax tracked and a clear picture of cash at any point. Owners send us their receipts, bills and bank feeds, and every month the books come back organized. Any sales tax collected sits in a liability account, and vendors who need a 1099 are flagged at the time of payment.',
-                'img' => 'bookkeeping-australia/small-and-medium-sized-businesses.webp',
+                'img' => 'bookkeeping-usa/outsourced-bookkeeping-for-small-businesses.webp',
             ],
             [
                 'title' => 'Outsourced Bookkeeping for Startups',
                 'text' => 'The first few months are when most startups set up their accounting habits, so getting the foundation right early saves rework later on. We build a chart of accounts that can expand as the company grows, record software subscriptions, expenses and funding receipts, and share a simple cash burn report every month. When investors ask for updates or a due diligence pack, the numbers are already in order.',
-                'img' => 'bookkeeping-outsourcing/bookkeeping-that-scales-with-your-business.webp',
+                'img' => 'bookkeeping-usa/outsourced-bookkeeping-for-startups.webp',
             ],
             [
                 'title' => 'Outsourced Bookkeeping for Professional Services Businesses',
                 'text' => 'Law, consulting, design and agency firms usually track how much each client or project earns them. Using classes or projects in your software, we record retainers, reimbursable expenses and partner draws the same way every month. Partners then receive a monthly report that shows which clients and services are bringing in the most income.',
-                'img' => 'accounting-australia/professional-services-businesses.webp',
+                'img' => 'bookkeeping-usa/outsourced-bookkeeping-for-professional-services-businesses.webp',
             ],
             [
                 'title' => 'Outsourced Bookkeeping for Growing & Mid-Sized Businesses',
                 'text' => 'As a business expands, new bank accounts, locations and entities tend to get added, sometimes within a few months. Our bookkeeping hours are increased to match this growth, and each entity is maintained in its own file using a common structure. Your finance team receives reconciled records each month, which frees up their time for analysis and planning.',
-                'img' => 'bookkeeping-australia/multi-entity-and-franchise-businesses.webp',
+                'img' => 'bookkeeping-usa/outsourced-bookkeeping-for-growing-and-mid-sized-businesses.webp',
             ],
         ],
     ],
@@ -210,12 +210,12 @@ return [
             [
                 'title' => 'Bookkeeper Training',
                 'text' => 'Our bookkeepers receive training in US bookkeeping practices, QuickBooks, Xero, sales tax and 1099 records before client assignment. Regular sessions cover software updates and data protection. ',
-                'img' => 'bookkeeping-outsourcing/dedicated-offshore-bookkeepers.webp',
+                'img' => 'bookkeeping-usa/bookkeeper-training.webp',
             ],
             [
                 'title' => 'Personal & Payment Data Handling',
                 'text' => 'ISO 27001-certified security and GDPR-compliant data handling protect your information. Vendor tax IDs, customer details and payment records are restricted to your assigned team, masked wherever possible and kept within approved systems. ',
-                'img' => 'bookkeeping-outsourcing/certified-standards.webp',
+                'img' => 'bookkeeping-usa/personal-and-payment-data-handling.webp',
             ],
             [
                 'title' => 'Backup & Continuity',
@@ -227,7 +227,7 @@ return [
     'whyChoose' => [
         'title' => 'Why Choose PCS Global as Your Outsourced Bookkeeping Company in the USA?',
         'intro' => 'Bookkeeping partners are generally assessed on their experience, team continuity, data security and how carefully the work is reviewed, and these are also the points our US clients look at most. PCS Global has so far worked with 60+ clients on 800+ projects, with a team that brings more than 100 years of combined experience.',
-        'img' => 'uk-services/why-choose-pcs-global.webp',
+        'img' => 'usa-services/why-choose-pcs-global.webp',
         'items' => [
             [
                 'title' => 'Experienced US Bookkeepers',
