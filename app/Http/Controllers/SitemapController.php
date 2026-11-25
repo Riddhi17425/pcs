@@ -44,13 +44,17 @@ class SitemapController extends Controller
             '/uk',
             '/uk/about',
             '/uk/accounting-outsourcing-services',
+            '/uk/bookkeeping-outsourcing-services',
             '/uk/small-business-accounting-services',
             '/uk/tax-preparation-outsourcing-services',
+            '/uk/payroll-outsourcing-services',
             '/uk/contact-us',
 
             '/us',
             '/us/about',
             '/us/accounting-outsourcing-services',
+            '/us/bookkeeping-outsourcing-services',
+            '/us/payroll-outsourcing-services',
             '/us/tax-preparation-outsourcing-services',
             '/us/contact-us',
         ];

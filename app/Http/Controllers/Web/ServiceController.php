@@ -286,12 +286,34 @@ class ServiceController extends Controller
 
     public function globalUsa()
     {
-        $faq = Faq::where('status', 'Active')->where('faq_url', 'pcs-global-usa')->first();
+        $meta_title       = "Accounting Outsourcing Services USA | PCS Global";
+        $meta_description = "Accounting outsourcing services for US businesses and CPA firms. Get GAAP-compliant accounts payable, accounting receivable and reporting support. Inquire Now!";
 
-        $meta_title       = "Accounting & Bookkeeping Services for US Businesses";
-        $meta_description = "Looking for reliable accounting and bookkeeping services in the USA? PCS offers expert bookkeeping, VAT registration, payroll, and CFO solutions for SMEs.";
+        return $this->usServicePage('accounting', $meta_title, $meta_description);
+    }
 
-        return view('pages.us.pcs-global-usa', compact('meta_title', 'meta_description', 'faq'));
+    public function bookkeepingUsa()
+    {
+        $meta_title       = "Outsourced Bookkeeping Services in USA | PCS Global";
+        $meta_description = "Outsourced bookkeeping services in the USA for small businesses and CPA firms. Bank reconciliation, ledgers and QuickBooks or Xero support. Get a quote.";
+
+        return $this->usServicePage('bookkeeping', $meta_title, $meta_description);
+    }
+
+    public function payrollUsa()
+    {
+        $meta_title       = "Payroll Outsourcing Services USA | PCS Global";
+        $meta_description = "Payroll outsourcing services for CPA & Recruiting Firms. Get accurate payroll processing, direct deposit, pay stubs and payroll tax compliance. Inquire Now!";
+
+        return $this->usServicePage('payroll', $meta_title, $meta_description);
+    }
+
+    // Shared view for the US service pages; content lives in resources/content/us/services/<key>.php
+    private function usServicePage(string $key, string $meta_title, string $meta_description)
+    {
+        $page = require resource_path("content/us/services/{$key}.php");
+
+        return view('pages.us.service-page', compact('page', 'meta_title', 'meta_description'));
     }
 
     public function globalAus()
@@ -346,10 +368,10 @@ class ServiceController extends Controller
 
     public function taxationservicesusa()
     {
-        $meta_title       = "Tax Preparation Services in USA | PCS Global";
-        $meta_description = "At PCs Global, our expert US tax professionals assist you in minimizing your tax liability and staying fully compliant with state regulations.";
+        $meta_title       = "Outsource Tax Preparation Services in USA | PCS Global";
+        $meta_description = "Outsource tax return preparation services for CPA & Tax firms. Get individual, corporate and partnership returns, state filings and audit support. Inquire Now!";
 
-        return view('pages.us.taxation-services-usa', compact('meta_title', 'meta_description'));
+        return $this->usServicePage('tax', $meta_title, $meta_description);
     }
 
     public function taxationaustralian()
@@ -379,17 +401,17 @@ class ServiceController extends Controller
     public function smallBusinessAccountingServices(Request $request)
     {
         $meta_title       = "Accounting Services for Small Businesses & SMEs | PCS Global";
-        $meta_description = "Simplify your accounting with PCS Global. We provide dedicated services for UK small businesses and SMEs, ensuring compliance and financial clarity.";
+        $meta_description = "Accountant services for small business and SMEs across the UK. PCS Global manages VAT, payroll, corporation tax and year-end accounts. Get a quote.";
 
         return view('pages.uk.small-business-accounting-service', compact('meta_title', 'meta_description'));
     }
 
     public function outsourceTaxPreparationServices(Request $request)
     {
-        $meta_title       = "Tax Preparation Services in UK | PCS Global";
-        $meta_description = "At PCS Global, we make taxation easy to understand for UK businesses, offering full-service assistance so businesses remain compliant and financially optimised.";
+        $meta_title       = "Outsourcing Tax Preparation Services in UK | PCS Global";
+        $meta_description = "Outsourced tax services for accountants and tax return outsourcing for UK businesses. Personal and corporate tax, tax planning, HMRC filing. Get a quote.";
 
-        return view('pages.uk.outsource-tax-preparation-services', compact('meta_title', 'meta_description'));
+        return $this->ukServicePage('tax', $meta_title, $meta_description);
     }
 
     public function ukLanding(Request $request)
@@ -403,11 +425,34 @@ class ServiceController extends Controller
 
     public function accountingOutSourcingServices(Request $request)
     {
-        $meta_title       = "Outsourced Accounting Services for UK Accounting Firms | PCS Global";
-        $meta_description = "Scale your UK accounting firm with expert outsourced accounting services from PCS Global. Improve productivity, reduce costs, and meet deadlines easily.";
+        $meta_title       = "Accounting Outsourcing Services in UK | PCS Global";
+        $meta_description = "Accounting outsourcing services in the UK for accountancy firms. PCS Global manage accounts payable, accounts receivable & year-end accounts. Get a quote.";
 
-        $faq = Faq::where('status', 'Active')->where('faq_url', 'pcs-global-uk')->first();
-        return view('pages.uk.accounting-outsourcing-service', compact('meta_title', 'meta_description', 'faq'));
+        return $this->ukServicePage('accounting', $meta_title, $meta_description);
+    }
+
+    public function bookkeepingUk()
+    {
+        $meta_title       = "Outsourced Bookkeeping Services UK | PCS Global";
+        $meta_description = "Outsourced bookkeeping services in the UK for accountants and small businesses. Bank reconciliation, ledgers and VAT-ready records on Xero or QuickBooks.";
+
+        return $this->ukServicePage('bookkeeping', $meta_title, $meta_description);
+    }
+
+    public function payrollUk()
+    {
+        $meta_title       = "Payroll Outsourcing Services UK | PCS Global";
+        $meta_description = "Outsourced payroll services for accountants and small businesses. PCS global provide accurate payroll processing, RTI, PAYE, pensions and P60s. Get a quote.";
+
+        return $this->ukServicePage('payroll', $meta_title, $meta_description);
+    }
+
+    // Shared view for the UK service pages; content lives in resources/content/uk/services/<key>.php
+    private function ukServicePage(string $key, string $meta_title, string $meta_description)
+    {
+        $page = require resource_path("content/uk/services/{$key}.php");
+
+        return view('pages.uk.service-page', compact('page', 'meta_title', 'meta_description'));
     }
 
     public function whitelabelAccountingServices()

@@ -105,8 +105,10 @@ return [
         'css' => $countryCss,
         'phone' => ['tel' => '+13478018715', 'label' => '(+1) 347 801 8715'],
         'services' => [
-            ['Accounting & Bookkeeping', 'pcs.global.usa'],
-            ['Taxation Services', 'taxation-services-usa'],
+            ['Accounting Outsourcing Services', 'pcs.global.usa'],
+            ['Bookkeeping Outsourcing Services', 'us.bookkeeping'],
+            ['Tax Preparation Outsourcing Services', 'taxation-services-usa'],
+            ['Payroll Outsourcing Services', 'us.payroll'],
         ],
         'nav' => [
             'home' => 'us.home',
@@ -141,9 +143,11 @@ return [
         'css' => $countryCss,
         'phone' => ['tel' => '+441134034334', 'label' => '(+44) 113 4034334'],
         'services' => [
-            ['Accounting Outsourcing', 'accounting.outsourcing.services'],
+            ['Accounting Outsourcing Services', 'accounting.outsourcing.services'],
+            ['Bookkeeping Outsourcing Services', 'uk.bookkeeping'],
+            ['Tax Preparation Outsourcing Services', 'outsource.tax.preparation.services'],
+            ['Payroll Outsourcing Services', 'uk.payroll'],
             ['Small Business Accounting', 'small.business.accounting.services'],
-            ['Tax Preparation Outsourcing', 'outsource.tax.preparation.services'],
         ],
         'nav' => [
             'home' => 'uk',

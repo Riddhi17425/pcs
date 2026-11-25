@@ -11,5 +11,7 @@ Route::middleware('country:us')->prefix('us')->group(function () {
     Route::get('about', [AboutController::class, 'about'])->name('us.about');
     Route::get('contact-us', [ContactController::class, 'contact'])->name('us.contact');
     Route::get('accounting-outsourcing-services', [ServiceController::class, 'globalUsa'])->name('pcs.global.usa');
+    Route::get('bookkeeping-outsourcing-services', [ServiceController::class, 'bookkeepingUsa'])->name('us.bookkeeping');
+    Route::get('payroll-outsourcing-services', [ServiceController::class, 'payrollUsa'])->name('us.payroll');
     Route::get('tax-preparation-outsourcing-services/', [ServiceController::class, 'taxationservicesusa'])->name('taxation-services-usa');
 });
