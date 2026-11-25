@@ -221,7 +221,7 @@ return [
     'whyChoose' => [
         'title' => 'Why Choose PCS Global as Your Accounting Service Provider in the USA?',
         'intro' => 'US businesses and CPA firms work with PCS Global for trained accountants, secure processes and dependable delivery. These are the strengths behind every engagement.',
-        'img' => 'usa-services/why-choose-pcs-global.webp',
+        'img' => 'accounting-usa/why-choose-pcs-global-as-your-accounting-service-provider-in-the-usa.webp',
         'items' => [
             [
                 'title' => 'US GAAP-Trained Accountants',
