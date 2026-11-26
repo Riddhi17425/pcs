@@ -420,6 +420,14 @@
         font-size: 20px;
     }
 
+    /* On phones the paragraph is always shown (no hover), so tapping or swiping never makes the text jump */
+    .ov_card_body p {
+        max-height: none;
+        margin-top: 14px;
+        opacity: 1;
+        transition: none;
+    }
+
     .ov_slider .slick-list {
         margin: 0 -10px;
     }

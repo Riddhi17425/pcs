@@ -11,10 +11,26 @@ use Illuminate\Validation\Rule;
 
 class ContactController extends Controller
 {
-    public function contact()
+    public function contact(Request $request)
     {
-        $meta_title       = "Contact Us | Accounting, Bookkeeping &amp; Payroll Services";
-        $meta_description = "Get in touch with PCS Global Group for expert Accounting, Bookkeeping, Payroll Services, and Strata Management solutions tailored to your business needs.";
+        // Meta per country (the route's country middleware sets the 'country' attribute)
+        [$meta_title, $meta_description] = [
+            'australia' => [
+                'Contact PCS Global Australia | Talk to Our Accounting Experts',
+                'Contact PCS Global Australia for outsourced accounting, bookkeeping, BAS/IAS, payroll, tax and strata management support. Book a free consultation today.',
+            ],
+            'uk' => [
+                'Contact PCS Global UK | Talk to Our UK Accounting Experts',
+                'Contact PCS Global UK for outsourced accounting, small business accounting, bookkeeping, payroll and VAT support. Book a free consultation today.',
+            ],
+            'us' => [
+                'Contact PCS Global USA | Talk to Our US Accounting Experts',
+                'Contact PCS Global USA for outsourced accounting, bookkeeping, tax preparation, payroll and audit support. Book a free consultation today.',
+            ],
+        ][$request->attributes->get('country')] ?? [
+            'Contact PCS Global | Talk to Our Accounting Experts',
+            'Contact PCS Global for outsourced accounting, bookkeeping, tax and payroll support. Offices in India, the US, UK and Australia. Get in touch today',
+        ];
         $countries        = Country::all();
         return view('pages.shared.contact', compact('meta_title', 'meta_description', 'countries'));
     }

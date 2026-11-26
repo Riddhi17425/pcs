@@ -10,6 +10,8 @@ Route::middleware('country:uk')->prefix('uk')->group(function () {
     Route::get('contact-us', [ContactController::class, 'contact'])->name('uk.contact');
     Route::get('about/', [AboutController::class, 'ukAbout'])->name('uk.about');
     Route::get('accounting-outsourcing-services/', [ServiceController::class, 'accountingOutSourcingServices'])->name('accounting.outsourcing.services');
+    Route::get('bookkeeping-outsourcing-services/', [ServiceController::class, 'bookkeepingUk'])->name('uk.bookkeeping');
+    Route::get('payroll-outsourcing-services/', [ServiceController::class, 'payrollUk'])->name('uk.payroll');
     Route::get('small-business-accounting-services/', [ServiceController::class, 'smallBusinessAccountingServices'])->name('small.business.accounting.services');
     Route::get('tax-preparation-outsourcing-services/', [ServiceController::class, 'outsourceTaxPreparationServices'])->name('outsource.tax.preparation.services');
     Route::get('taxation-services', [ServiceController::class, 'taxationservicesuk'])->name('taxation-services-uk');
