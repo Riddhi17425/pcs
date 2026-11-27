@@ -10,7 +10,7 @@
     <meta property="og:image:height" content="627">
     <meta property="og:url" content="{{url()->current()}}" />
     <meta property="og:type" content="website">
-    @if (request()->is('privacy-policy'))
+    @if (request()->is('privacy-policy', 'thank-you', 'uk/thank-you', 'us/thank-you', 'au/thank-you'))
     <meta name="robots" content="noindex, nofollow">
     @else
         <meta name="robots" content="index, follow">
