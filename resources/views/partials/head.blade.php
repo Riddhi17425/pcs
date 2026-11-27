@@ -17,6 +17,11 @@
     @endif
 
   <link rel="canonical" href="{{ url()->current() }}" />
+  @include('partials.breadcrumb-schema')
+  @include('partials.organization-schema')
+  @include('partials.uk-home-schema')
+  @include('partials.us-home-schema')
+  @include('partials.au-home-schema')
   <link rel="icon" href="{{asset('public/front/images/fab_icon.png')}}" type="image/x-icon">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -117,53 +122,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PW87W9HP');</script>
 
-@verbatim
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "PCS Global Group",
-  "alternateName": "PCS Global Pvt Ltd.",
-  "url": "https://pcsglobalgroup.com/",
-  "logo": "https://pcsglobalgroup.com/public/front/images/logo.svg",
-  "contactPoint": [
-    {
-      "@type": "ContactPoint",
-      "telephone": "(+613) 9998 0494",
-      "contactType": "customer service",
-      "areaServed": "AU",
-      "availableLanguage": "en"
-    },
-    {
-      "@type": "ContactPoint",
-      "telephone": "(+1) 347 801 8715",
-      "contactType": "customer service",
-      "areaServed": "US",
-      "availableLanguage": "en"
-    },
-    {
-      "@type": "ContactPoint",
-      "telephone": "+44 113 4034334",
-      "contactType": "customer service",
-      "areaServed": "GB",
-      "availableLanguage": "en"
-    },
-    {
-      "@type": "ContactPoint",
-      "telephone": "(+91) 796 826 0121",
-      "contactType": "customer service",
-      "areaServed": "IN",
-      "availableLanguage": "en"
-    }
-  ],
-  "sameAs": [
-    "https://www.facebook.com/PCSGlobalGroup/",
-    "",
-    "https://www.linkedin.com/company/pcs-global-group/"
-  ]
-}
-</script>
-@endverbatim
   <style>
       nav{
           padding-top: 20px;

@@ -1,6 +1,3 @@
-{{-- Australia service page (accounting / bookkeeping / tax / payroll). One template for all four.
-     Controller: ServiceController (australia service methods) passes $page from resources/content/australia/services/<key>.php.
-     CSS: style.css + common/hero-dark.css + common/home-sections.css (site CSS) + pages/accounting-outsourcing.css + common/service-split.css + pages/australia-service.css --}}
 @extends('layouts.app', [
     'og_image' => asset('public/front/images/' . $page['og'])
 ])
@@ -16,7 +13,6 @@
     $img = fn ($file) => asset('public/front/images/' . $file);
     $bubbleColors = '["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0"]';
 
-    // Escapes the text, then turns [[link:route.name|text]] markers into links
     $t = fn ($s) => preg_replace_callback('/\[\[link:([\w.]+)\|([^\]]+)\]\]/', fn ($m) => '<a href="' . route($m[1]) . '">' . $m[2] . '</a>', e($s));
     $plain = fn ($s) => preg_replace('/\[\[link:[\w.]+\|([^\]]+)\]\]/', '$1', $s);
 
@@ -115,7 +111,6 @@
     </div>
 </section>
 
-{{-- Why choose outsourcing (text left, image right) --}}
 <section class="mt-100">
     <div class="container">
         <div class="row gy-4 gy-lg-0 justify-content-between align-items-stretch">
@@ -161,7 +156,6 @@
     </div>
 </section>
 
-{{-- For accounting firms (editorial split: sticky intro left, icon rows right) --}}
 <section class="svc_split mt-100">
     <div class="container">
         <div class="svc_split_inner">
@@ -211,7 +205,6 @@
 </script>
 @endpush
 
-{{-- Solutions for businesses (trust slider: left heading + arrows, right image cards) --}}
 <section class="trust_slider_sec">
     <div class="trust_slider_wrap">
         <div class="trust_slider_lt">
@@ -365,7 +358,6 @@
     </div>
 </section>
 
-{{-- Data security (overlay cards: image with heading, paragraph opens on hover) --}}
 <section class="mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -416,7 +408,6 @@
     </div>
 </section>
 
-{{-- Why choose PCS Global (split accordion: image left, items right) --}}
 <section class="acc_why mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -507,7 +498,7 @@
 
 <script type="application/ld+json">
 {!! json_encode([
-    '@context' => 'https://schema.org',
+    '@@context' => 'https://schema.org',
     '@type' => 'FAQPage',
     'mainEntity' => array_map(fn ($f) => [
         '@type' => 'Question',

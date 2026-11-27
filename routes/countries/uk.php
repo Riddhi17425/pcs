@@ -6,7 +6,8 @@ use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\ServiceController;use App\Http\Controllers\Web\CountryHomeController;
 
 Route::middleware('country:uk')->prefix('uk')->group(function () {
-    Route::get('/', [CountryHomeController::class, 'home'])->name('uk');
+        Route::get('thank-you', [ServiceController::class, 'thankyou'])->name('uk.thank.you');
+Route::get('/', [CountryHomeController::class, 'home'])->name('uk');
     Route::get('contact-us', [ContactController::class, 'contact'])->name('uk.contact');
     Route::get('about/', [AboutController::class, 'ukAbout'])->name('uk.about');
     Route::get('accounting-outsourcing-services/', [ServiceController::class, 'accountingOutSourcingServices'])->name('accounting.outsourcing.services');

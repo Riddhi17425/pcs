@@ -784,6 +784,18 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 </section>
 
+<script type="application/ld+json">
+{!! json_encode([
+    '@@context' => 'https://schema.org',
+    '@type' => 'FAQPage',
+    'mainEntity' => array_map(fn ($f) => [
+        '@type' => 'Question',
+        'name' => $f['q'],
+        'acceptedAnswer' => ['@type' => 'Answer', 'text' => trim(html_entity_decode(strip_tags($f['a']), ENT_QUOTES | ENT_HTML5, 'UTF-8'))],
+    ], $faqs),
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_PRETTY_PRINT) !!}
+</script>
+
 @php
     $faqListItems = $faqs;
 @endphp

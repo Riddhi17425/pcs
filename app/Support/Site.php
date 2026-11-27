@@ -42,6 +42,27 @@ class Site
         return $site;
     }
 
+    /**
+     * Thank-you route name for the country the form was submitted from.
+     * Uses the posted page_country, otherwise the referring page's URL prefix.
+     */
+    public static function thankYouRoute(\Illuminate\Http\Request $request): string
+    {
+        $map = [
+            'au' => 'australia.thank.you', 'australia' => 'australia.thank.you',
+            'gb' => 'uk.thank.you', 'uk' => 'uk.thank.you',
+            'us' => 'us.thank.you',
+        ];
+
+        $country = strtolower((string) $request->input('page_country'));
+        if (! isset($map[$country])) {
+            $path    = (string) parse_url((string) $request->headers->get('referer'), PHP_URL_PATH);
+            $country = strtolower(explode('/', trim($path, '/'))[0] ?? '');
+        }
+
+        return $map[$country] ?? 'thank.you';
+    }
+
     private static function links(array $links): array
     {
         return array_map(function ($link) {

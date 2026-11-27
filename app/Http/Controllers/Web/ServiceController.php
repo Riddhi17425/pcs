@@ -153,7 +153,7 @@ class ServiceController extends Controller
             ]);
         }
 
-        return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
+        return redirect()->route(\App\Support\Site::thankYouRoute($request))->with('success', 'Your message has been sent successfully.');
     }
 
     private function captchaPassed(Request $request): bool
@@ -202,7 +202,7 @@ class ServiceController extends Controller
             'email'    => $request->c_email,
             'message'  => $request->c_message,
         ]);
-        return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
+        return redirect()->route(\App\Support\Site::thankYouRoute($request))->with('success', 'Your message has been sent successfully.');
     }
 
     public function about()
@@ -268,8 +268,8 @@ class ServiceController extends Controller
         $faq         = Faq::where('status', 'Active')->where('faq_url', 'strata-management')->first();
         $whychooseus = WhyChooseUs::where('status', 'Active')->get();
 
-        $meta_title       = "Strata Management Services – PCS Global ";
-        $meta_description = "PCS Global specializes in strata management, providing expert administration, operations & management for residential, commercial & industrial properties.";
+        $meta_title       = "Outsourced Strata Management Services Australia | PCS Global";
+        $meta_description = "Looking for the best strata management services in Australia? PCS Global offers outsourced support that helps strata companies save time and reduce costs.";
 
         return view('pages.shared.strata-management', compact('meta_title', 'meta_description', 'faq', 'whychooseus'));
     }
@@ -318,24 +318,24 @@ class ServiceController extends Controller
 
     public function globalAus()
     {
-        $meta_title       = "Accounting & Bookkeeping Services for Australian Businesses";
-        $meta_description = "PCS is a leading Australia-based accounting and bookkeeping service provider. Outsource your financial tasks to our expert team and focus on growth.";
+        $meta_title       = "Accounting Outsourcing Services Australia | PCS Global";
+        $meta_description = "Looking for the best outsourced accounting services in Australia? PCS Global offers offshore accounting support with expert teams and secure processes.";
 
         return $this->australiaServicePage('accounting', $meta_title, $meta_description);
     }
 
     public function bookkeepingAustralian()
     {
-        $meta_title       = "Bookkeeping Outsourcing Services in Australia | PCS Global";
-        $meta_description = "PCS Global provides bookkeeping outsourcing services in Australia: GST-coded, BAS-ready bookkeeping in Xero, MYOB or QuickBooks for businesses and accounting firms.";
+        $meta_title       = "Bookkeeping Outsourcing Services Australia | PCS Global";
+        $meta_description = "Need outsourced bookkeeping services in Australia? PCS Global delivers accurate, offshore bookkeeping with expert teams and secure processes. Talk to Us!";
 
         return $this->australiaServicePage('bookkeeping', $meta_title, $meta_description);
     }
 
     public function payrollAustralian()
     {
-        $meta_title       = "Payroll Outsourcing Services in Australia | PCS Global";
-        $meta_description = "PCS Global provides payroll outsourcing services in Australia: pay runs, PAYG withholding, superannuation and STP support for businesses and accounting firms.";
+        $meta_title       = "Payroll Outsourcing Services Australia | PCS Global";
+        $meta_description = "PCS Global offers outsourced payroll services in Australia, including payroll processing, administration and management support for accounting firms. Inquire Now!";
 
         return $this->australiaServicePage('payroll', $meta_title, $meta_description);
     }
@@ -363,7 +363,7 @@ class ServiceController extends Controller
         $meta_title       = "";
         $meta_description = "";
 
-        return view('pages.india.thank-you', compact('meta_title', 'meta_description'));
+        return view('pages.shared.thank-you', compact('meta_title', 'meta_description'));
     }
 
     public function taxationservicesusa()
@@ -376,8 +376,8 @@ class ServiceController extends Controller
 
     public function taxationaustralian()
     {
-        $meta_title       = "Tax Preparation Services for Australian Business";
-        $meta_description = "As a trusted Australian Tax Outsourcing partner, PCS Global specialises in corporate tax compliance, GST registration, and international tax structuring.";
+        $meta_title       = "Tax Preparation Outsourcing Services Australia | PCS Global";
+        $meta_description = "Get outsource tax preparation services in Australia with PCS Global. Accurate, compliant tax return preparation by experienced offshore tax specialists.";
 
         return $this->australiaServicePage('tax', $meta_title, $meta_description);
     }

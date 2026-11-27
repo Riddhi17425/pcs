@@ -7,7 +7,8 @@ use App\Http\Controllers\Web\ServiceController;
 use App\Http\Controllers\Web\CountryHomeController;
 
 Route::middleware('country:us')->prefix('us')->group(function () {
-    Route::get('/', [CountryHomeController::class, 'home'])->name('us.home');
+        Route::get('thank-you', [ServiceController::class, 'thankyou'])->name('us.thank.you');
+Route::get('/', [CountryHomeController::class, 'home'])->name('us.home');
     Route::get('about', [AboutController::class, 'about'])->name('us.about');
     Route::get('contact-us', [ContactController::class, 'contact'])->name('us.contact');
     Route::get('accounting-outsourcing-services', [ServiceController::class, 'globalUsa'])->name('pcs.global.usa');

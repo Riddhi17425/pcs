@@ -441,7 +441,7 @@ window.addEventListener("load", function () {
       })
       .done(function (data) {
         $submitBtn.prop("disabled", true).text("Redirecting...");
-        window.location.href = "{{ route('thank.you') }}";
+        window.location.href = "{{ route(['australia'=>'australia.thank.you','uk'=>'uk.thank.you','us'=>'us.thank.you'][$site['key'] ?? ''] ?? 'thank.you') }}";
       })
       .fail(function (xhr) {
         var res = xhr.responseJSON || {};

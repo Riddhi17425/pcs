@@ -236,6 +236,21 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <script>
+// Tell the server which country site a form was submitted from, so it can redirect to that country's thank-you page.
+document.addEventListener('DOMContentLoaded', function () {
+    const siteKey = @json($site['key'] ?? 'india');
+    document.querySelectorAll('form[action*="request-store"], form[action*="consultant-store"]').forEach(function (form) {
+        if (form.querySelector('[name="page_country"]')) return;
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'page_country';
+        input.value = siteKey;
+        form.appendChild(input);
+    });
+});
+</script>
+
+<script>
 document.addEventListener('DOMContentLoaded', function () {
     const requestModal = document.getElementById('exampleModal');
     const countrySelect = document.getElementById('requestCountrySelect');

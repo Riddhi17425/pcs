@@ -1,7 +1,3 @@
-{{-- US service page (accounting / bookkeeping / tax / payroll). One template for all four (same structure as pages/uk/service-page.blade.php).
-     Controller: ServiceController (usServicePage helper) passes $page from resources/content/us/services/<key>.php.
-     Sections are @case blocks of one loop, in the order of $page['order'] (default order below); a page only lists the sections it has.
-     CSS: style.css + common/hero-dark.css + common/home-sections.css (site CSS) + pages/accounting-outsourcing.css + common/service-split.css + pages/uk-service.css --}}
 @extends('layouts.app', [
     'og_image' => asset('public/front/images/' . $page['og'])
 ])
@@ -17,7 +13,6 @@
     $img = fn ($file) => asset('public/front/images/' . $file);
     $bubbleColors = '["#B074BC","#CF7C7C","#7496BC","#7B9993","#9F7159","#EAD1DC","#D7BDE2","#FFD1BA","#D1F2EB","#A4C8F0"]';
 
-    // Escapes the text, then turns [[link:route.name|text]] markers into links
     $t = fn ($s) => preg_replace_callback('/\[\[link:([\w.-]+)\|([^\]]+)\]\]/', fn ($m) => '<a href="' . route($m[1]) . '">' . $m[2] . '</a>', e($s));
     $plain = fn ($s) => preg_replace('/\[\[link:[\w.-]+\|([^\]]+)\]\]/', '$1', $s);
 
@@ -42,17 +37,14 @@
         '<rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/><path d="M12 14.5v2.5"/>',
     ];
 
-    // Buttons that ask for a consultation open the modal; a page can set 'ctaTarget' => 'form' to jump to the form on the page instead
     $ctaAttr = ($page['ctaTarget'] ?? 'modal') === 'form' ? 'href="#consultation"' : 'href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal"';
 
-    // Section order: a page can list its sections in its own order in $page['order']
     $order = $page['order'] ?? ['hero', 'software', 'what', 'why', 'services', 'firms', 'solutions', 'extra', 'industries', 'process', 'cta1', 'security', 'whyChoose', 'cta2', 'faq', 'contact'];
 
     // Industries marquee: two rows
     $indSplit = (int) ceil(count($page['industries'] ?? []) / 2);
     $industryRows = [array_slice($page['industries'] ?? [], 0, $indSplit), array_slice($page['industries'] ?? [], $indSplit)];
 
-    // Texts of the form fields (a page can give its own in $page['contact']['labels']: name, email, company, phone, message)
     $cl = $page['contact']['labels'] ?? ['Full Name*:', 'Email Address*:', 'Company Name*:', 'Phone Number*:', 'Message:'];
 
     $contactFormServices = ['Accounting Outsourcing', 'Bookkeeping Outsourcing', 'Taxation Outsourcing', 'Payroll Outsourcing'];
@@ -136,7 +128,6 @@
 @break
 
 @case('why')
-{{-- Why choose outsourcing (text left, image right) --}}
 <section class="mt-100">
     <div class="container">
         <div class="row gy-4 gy-lg-0 justify-content-between align-items-stretch">
@@ -196,7 +187,6 @@
 
 @case('firms')
 @case('challenges')
-{{-- For accounting firms / challenges (editorial split: sticky intro left, icon rows right). $block is the content block of the section --}}
 @php $block = $page[$sectionName]; @endphp
 <section class="svc_split mt-100">
     <div class="container">
@@ -257,7 +247,6 @@
 @break
 
 @case('solutions')
-{{-- Solutions for businesses (trust slider: left heading + arrows, right image cards). Only when the content file has it --}}
 @if (!empty($page['solutions']))
 <section class="trust_slider_sec">
     <div class="trust_slider_wrap">
@@ -314,11 +303,9 @@
 @break
 
 @case('extra')
-{{-- Extra sections that only some pages have (for example corporate tax, regulations and compliance) --}}
 @foreach ($page['extra'] ?? [] as $block)
     @if ($block['type'] === 'panel')
-        {{-- Dark panel + numbered points in one rounded card (personal / corporate tax). The dark panel content stays in view (sticky)
-             while the points scroll with the page; $block['side'] is the side of the dark panel, so two sections in a row make a zig-zag. --}}
+        
         <section class="uk_panel mt-100">
             <div class="container">
                 <div class="uk_panel_inner {{ $block['side'] === 'right' ? 'uk_panel_rev' : '' }}">
@@ -328,7 +315,6 @@
                         <p>{!! $t($block['intro']) !!}</p>
                         <a class="com_btn2" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal">{{ $block['cta'] }}</a>
 
-                        {{-- Animated illustration (CSS animations in uk-service.css, classes uk_a_*; --d is the start delay in the 8s loop) --}}
                         <svg class="uk_panel_art" viewBox="0 0 320 210" fill="none" aria-hidden="true">
                             <rect class="uk_a_back" x="78" y="16" width="190" height="162" rx="14" transform="rotate(7 173 97)"/>
                             <g class="uk_a_card">
@@ -337,7 +323,6 @@
                                 <rect class="uk_a_sub" x="58" y="58" width="118" height="5" rx="2.500"/>
 
                                 @if ($block['art'] === 'chart')
-                                    {{-- Bars grow one after another, then the trend line is drawn over them --}}
                                     <rect class="uk_a_bar" style="--d:0.6s" x="62" y="124" width="22" height="34" rx="4"/>
                                     <rect class="uk_a_bar" style="--d:1.1s" x="94" y="108" width="22" height="50" rx="4"/>
                                     <rect class="uk_a_bar" style="--d:1.6s" x="126" y="116" width="22" height="42" rx="4"/>
@@ -345,7 +330,6 @@
                                     <path class="uk_a_line" style="--d:2.7s" pathLength="1" d="M66 112l40-20 32 8 36-30"/>
                                     <rect class="uk_a_row" style="--d:2.7s" x="58" y="166" width="70" height="5" rx="2.500"/>
                                 @else
-                                    {{-- Checklist: each box gets ticked in turn and its line brightens --}}
                                     @foreach ([[84, 100, '0.8s'], [112, 120, '1.7s'], [140, 84, '2.6s']] as [$y, $w, $d])
                                         <rect class="uk_a_box" x="58" y="{{ $y }}" width="18" height="18" rx="5"/>
                                         <path class="uk_a_tick" style="--d:{{ $d }}" pathLength="1" d="M62 {{ $y + 9 }}l4.500 4.500 8-9"/>
@@ -384,10 +368,8 @@
             </div>
         </section>
     @else
-        {{-- Tabbed section ("Regulations & Compliance Support"): tabs on the left, the selected point on the right. The panels sit on top of
-             each other in one grid cell, so the section keeps the height of the longest panel and does not jump when the tab changes. --}}
+        
         @php
-            // Different line widths per tab, so the little document illustration is not identical on every tab
             $lineSets = [[104, 84, 96, 60], [96, 104, 70, 88], [84, 96, 104, 66], [104, 70, 88, 96], [90, 104, 76, 100]];
             $count = count($block['items']);
             $uid = 'ukt' . substr(md5($block['title']), 0, 6);
@@ -423,7 +405,6 @@
                                     <p>{!! $t($card['text']) !!}</p>
                                 </div>
 
-                                {{-- Small document illustration: it draws itself again every time its tab is shown (CSS in uk-service.css, uk_t_*) --}}
                                 <svg class="uk_tabs_art" viewBox="0 0 140 170" fill="none" aria-hidden="true">
                                     <rect class="uk_t_card" x="1" y="1" width="138" height="168" rx="14"/>
                                     <rect class="uk_t_bar" x="18" y="20" width="44" height="8" rx="4"/>
@@ -444,7 +425,6 @@
         @push('scripts')
         <script>
         (function () {
-            // Tabs: click or keyboard (arrows, Home, End) to switch; only the active tab is in the tab order
             document.querySelectorAll('[data-uk-tabs]').forEach(function (root) {
                 var tabs = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]'));
                 var panels = Array.prototype.slice.call(root.querySelectorAll('[role="tabpanel"]'));
@@ -497,7 +477,6 @@
             @foreach ($industryRows as $row)
                 <div class="ind_row {{ $loop->odd ? 'ind_row_up' : 'ind_row_down' }}">
                     <div class="ind_track" style="animation-duration: {{ count($row) * 7.5 }}s">
-                        {{-- Rendered four times so the track loops seamlessly even with few cards (-50% translate) --}}
                         @foreach ([1, 2, 3, 4] as $copy)
                             @foreach ($row as [$iconImg, $label])
                                 <div class="industries_card" @if ($copy > 1) aria-hidden="true" @endif>
@@ -600,7 +579,6 @@
 @break
 
 @case('security')
-{{-- Data security (overlay cards: image with heading, paragraph opens on hover) --}}
 <section class="mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -655,7 +633,6 @@
 @break
 
 @case('whyChoose')
-{{-- Why choose PCS Global (split accordion: image left, items right) --}}
 <section class="acc_why mt-100">
     <div class="container">
         <div class="com_sec_head_top">
@@ -695,7 +672,6 @@
 @push('scripts')
 <script>
 (function () {
-    // The image on the left follows the open item (items with a data-img): fade out, swap, fade in
     var list = document.getElementById('whyAcc');
     var photo = document.querySelector('.acc_why .split_acc_img img');
     if (!list || !photo) return;
@@ -776,7 +752,7 @@
 
 <script type="application/ld+json">
 {!! json_encode([
-    '@context' => 'https://schema.org',
+    '@@context' => 'https://schema.org',
     '@type' => 'FAQPage',
     'mainEntity' => array_map(fn ($f) => [
         '@type' => 'Question',

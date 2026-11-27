@@ -81,7 +81,7 @@ class ContactController extends Controller
                 'email' => $request->email,
                 'name'  => $request->fullname,
             ]);
-            return redirect()->route('thank.you');
+            return redirect()->route(\App\Support\Site::thankYouRoute($request));
         }
 
         $pageCountry     = strtolower((string) $request->page_country);
@@ -154,6 +154,6 @@ class ContactController extends Controller
             ]);
         }
 
-        return redirect()->route('thank.you')->with('success', 'Your message has been sent successfully.');
+        return redirect()->route(\App\Support\Site::thankYouRoute($request))->with('success', 'Your message has been sent successfully.');
     }
 }
